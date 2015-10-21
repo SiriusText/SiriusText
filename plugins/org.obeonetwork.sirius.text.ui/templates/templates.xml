@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<templates>
+<template id="modelFileExtensionsTemplate" name="modelFileExtensions" description="Model File Extensions" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_modelFileExtensions" enabled="true">modelFileExtensions = ['xmi']</template> 
+</templates>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.obeonetwork.sirius.text.sdk.feature_1.0.0.qualifier.jar" id="org.obeonetwork.sirius.text.sdk.feature" version="1.0.0.qualifier">
+      <category name="org.obeonetwork.sirius.text.category"/>
+   </feature>
+   <category-def name="org.obeonetwork.sirius.text.category" label="Sirius Text">
+      <description>
+         A Textual DSL used to build Sirius-based designers
+      </description>
+   </category-def>
+</site>

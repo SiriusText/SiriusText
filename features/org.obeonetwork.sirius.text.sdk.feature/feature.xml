@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.obeonetwork.sirius.text.sdk.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%featureVendor">
+
+   <description url="%descriptionUrl">
+      %description
+   </description>
+
+   <copyright url="%copyrightUrl">
+      %copyright
+   </copyright>
+
+   <license url="%licenseUrl">
+      %license
+   </license>
+
+   <plugin
+         id="org.obeonetwork.sirius.text"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.obeonetwork.sirius.text.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

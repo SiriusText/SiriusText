@@ -1,0 +1,21 @@
+target "Eclipse Neon"
+
+with source requirements
+
+location "http://download.eclipse.org/releases/neon" {
+	org.eclipse.sdk.feature.group lazy
+	
+	org.eclipse.emf.sdk.feature.group lazy
+	
+	org.eclipse.emf.compare.feature.group lazy
+	
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.jar lazy
+	org.eclipse.sirius.aql.feature.group lazy
+	
+	
+	org.eclipse.xtend.sdk.feature.group lazy
+	org.eclipse.xtext.sdk.feature.group lazy
+	org.eclipse.emf.mwe2.runtime.sdk.feature.group lazy
+}
