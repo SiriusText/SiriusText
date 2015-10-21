@@ -10,6 +10,10 @@
  */
 package org.obeonetwork.sirius.text.validation
 
+import org.eclipse.xtext.validation.Check
+import org.obeonetwork.sirius.text.siriusTextDsl.RGB
+import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage
+
 //import org.eclipse.xtext.validation.Check
 
 /**
@@ -18,15 +22,19 @@ package org.obeonetwork.sirius.text.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class SiriusTextDslValidator extends AbstractSiriusTextDslValidator {
-
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	
+	public static val INVALID_COLOR_RANGE = "invalidColorRange"
+	
+	@Check
+	def checkRGBColorRange(RGB rgb) {
+		if (rgb.red < 0 || rgb.red > 255) {
+			this.error("The RGB red color should be between 0 and 255", SiriusTextDslPackage.Literals.RGB__RED, INVALID_COLOR_RANGE)
+		}
+		if (rgb.green< 0 || rgb.green> 255) {
+			this.error("The RGB green color should be between 0 and 255", SiriusTextDslPackage.Literals.RGB__GREEN, INVALID_COLOR_RANGE)
+		}
+		if (rgb.blue < 0 || rgb.blue > 255) {
+			this.error("The RGB blue color should be between 0 and 255", SiriusTextDslPackage.Literals.RGB__BLUE, INVALID_COLOR_RANGE)
+		}
+	}
 }
