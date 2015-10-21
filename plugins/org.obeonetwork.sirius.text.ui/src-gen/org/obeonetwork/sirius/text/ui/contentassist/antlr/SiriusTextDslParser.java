@@ -144,8 +144,8 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGradientAccess().getBorderSizeAssignment_10_3(), "rule__Gradient__BorderSizeAssignment_10_3");
 					put(grammarAccess.getGradientAccess().getBorderColorAssignment_10_5(), "rule__Gradient__BorderColorAssignment_10_5");
 					put(grammarAccess.getGradientAccess().getIconAssignment_11_2(), "rule__Gradient__IconAssignment_11_2");
-					put(grammarAccess.getGradientAccess().getHeightAssignment_12_2(), "rule__Gradient__HeightAssignment_12_2");
-					put(grammarAccess.getGradientAccess().getWidthAssignment_13_2(), "rule__Gradient__WidthAssignment_13_2");
+					put(grammarAccess.getGradientAccess().getHeightComputationExpressionAssignment_12_2(), "rule__Gradient__HeightComputationExpressionAssignment_12_2");
+					put(grammarAccess.getGradientAccess().getWidthComputationExpressionAssignment_13_2(), "rule__Gradient__WidthComputationExpressionAssignment_13_2");
 					put(grammarAccess.getPaletteAccess().getDocumentationAssignment_0(), "rule__Palette__DocumentationAssignment_0");
 					put(grammarAccess.getPaletteAccess().getNameAssignment_2(), "rule__Palette__NameAssignment_2");
 					put(grammarAccess.getPaletteAccess().getColorsAssignment_4(), "rule__Palette__ColorsAssignment_4");

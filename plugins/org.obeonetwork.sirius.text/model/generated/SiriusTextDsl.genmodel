@@ -94,8 +94,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/borderSize"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Gradient/borderColor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/icon"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/height"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/heightComputationExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/widthComputationExpression"/>
     </genClasses>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Palette">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Palette/documentation"/>

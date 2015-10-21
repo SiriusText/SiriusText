@@ -175,6 +175,12 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 	
 	def populateGradientStyle(FlatContainerStyleDescription gradientStyle, Gradient gradient) {
 		gradientStyle.labelExpression = this.trimQuotes(gradient.labelExpression)
+		if (gradient.heightComputationExpression != null) {
+			gradientStyle.heightComputationExpression = this.trimQuotes(gradient.heightComputationExpression)
+		}
+		if (gradient.widthComputationExpression != null) {
+			gradientStyle.widthComputationExpression = this.trimQuotes(gradient.widthComputationExpression)
+		}
 		
 		if (gradient.direction == GradientDirection.LEFTTORIGHT) {
 			gradientStyle.backgroundStyle = BackgroundStyle.GRADIENT_LEFT_TO_RIGHT_LITERAL

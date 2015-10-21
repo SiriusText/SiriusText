@@ -25,7 +25,7 @@
 'for'=33
 'from'=49
 'gradient'=48
-'height'=55
+'heightComputationExpression'=55
 'icon'=24
 'if'=47
 'import'=13
@@ -51,7 +51,7 @@
 'to'=50
 'toptobottom'=66
 'viewpoint'=18
-'width'=56
+'widthComputationExpression'=56
 '{'=16
 '}'=17
 '})'=31

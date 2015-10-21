@@ -6441,11 +6441,11 @@ rule__Gradient__Group_12__0__Impl
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getHeightKeyword_12_0()); }
+{ before(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); }
 
-	'height' 
+	'heightComputationExpression' 
 
-{ after(grammarAccess.getGradientAccess().getHeightKeyword_12_0()); }
+{ after(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); }
 )
 
 ;
@@ -6502,9 +6502,9 @@ rule__Gradient__Group_12__2__Impl
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getHeightAssignment_12_2()); }
-(rule__Gradient__HeightAssignment_12_2)
-{ after(grammarAccess.getGradientAccess().getHeightAssignment_12_2()); }
+{ before(grammarAccess.getGradientAccess().getHeightComputationExpressionAssignment_12_2()); }
+(rule__Gradient__HeightComputationExpressionAssignment_12_2)
+{ after(grammarAccess.getGradientAccess().getHeightComputationExpressionAssignment_12_2()); }
 )
 
 ;
@@ -6537,11 +6537,11 @@ rule__Gradient__Group_13__0__Impl
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getWidthKeyword_13_0()); }
+{ before(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); }
 
-	'width' 
+	'widthComputationExpression' 
 
-{ after(grammarAccess.getGradientAccess().getWidthKeyword_13_0()); }
+{ after(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); }
 )
 
 ;
@@ -6598,9 +6598,9 @@ rule__Gradient__Group_13__2__Impl
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getWidthAssignment_13_2()); }
-(rule__Gradient__WidthAssignment_13_2)
-{ after(grammarAccess.getGradientAccess().getWidthAssignment_13_2()); }
+{ before(grammarAccess.getGradientAccess().getWidthComputationExpressionAssignment_13_2()); }
+(rule__Gradient__WidthComputationExpressionAssignment_13_2)
+{ after(grammarAccess.getGradientAccess().getWidthComputationExpressionAssignment_13_2()); }
 )
 
 ;
@@ -8142,14 +8142,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Gradient__HeightAssignment_12_2
+rule__Gradient__HeightComputationExpressionAssignment_12_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); }
-	RULE_INT{ after(grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); }
+{ before(grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); }
+	RULE_EXPRESSION{ after(grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); }
 )
 
 ;
@@ -8157,14 +8157,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Gradient__WidthAssignment_13_2
+rule__Gradient__WidthComputationExpressionAssignment_13_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); }
-	RULE_INT{ after(grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); }
+{ before(grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); }
+	RULE_EXPRESSION{ after(grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); }
 )
 
 ;

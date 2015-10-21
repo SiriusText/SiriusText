@@ -810,22 +810,22 @@ public interface SiriusTextDslPackage extends EPackage
   int GRADIENT__ICON = CONTAINER_STYLE_FEATURE_COUNT + 10;
 
   /**
-   * The feature id for the '<em><b>Height</b></em>' attribute.
+   * The feature id for the '<em><b>Height Computation Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__HEIGHT = CONTAINER_STYLE_FEATURE_COUNT + 11;
+  int GRADIENT__HEIGHT_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * The feature id for the '<em><b>Width Computation Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__WIDTH = CONTAINER_STYLE_FEATURE_COUNT + 12;
+  int GRADIENT__WIDTH_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Gradient</em>' class.
@@ -1751,26 +1751,26 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getGradient_Icon();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeight <em>Height</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression <em>Height Computation Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Height</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeight()
+   * @return the meta object for the attribute '<em>Height Computation Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression()
    * @see #getGradient()
    * @generated
    */
-  EAttribute getGradient_Height();
+  EAttribute getGradient_HeightComputationExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidth <em>Width</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidthComputationExpression <em>Width Computation Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Width</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidth()
+   * @return the meta object for the attribute '<em>Width Computation Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidthComputationExpression()
    * @see #getGradient()
    * @generated
    */
-  EAttribute getGradient_Width();
+  EAttribute getGradient_WidthComputationExpression();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Palette <em>Palette</em>}'.
@@ -2524,20 +2524,20 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute GRADIENT__ICON = eINSTANCE.getGradient_Icon();
 
     /**
-     * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Height Computation Expression</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GRADIENT__HEIGHT = eINSTANCE.getGradient_Height();
+    EAttribute GRADIENT__HEIGHT_COMPUTATION_EXPRESSION = eINSTANCE.getGradient_HeightComputationExpression();
 
     /**
-     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Width Computation Expression</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GRADIENT__WIDTH = eINSTANCE.getGradient_Width();
+    EAttribute GRADIENT__WIDTH_COMPUTATION_EXPRESSION = eINSTANCE.getGradient_WidthComputationExpression();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.PaletteImpl <em>Palette</em>}' class.

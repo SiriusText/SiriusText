@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'if'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'height'", "'width'", "'palette'", "'color'", "'rgb('", "')'", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'if'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'palette'", "'color'", "'rgb('", "')'", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -3892,7 +3892,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGradient"
-    // InternalSiriusTextDsl.g:1647:1: ruleGradient returns [EObject current=null] : ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )? (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )? otherlv_29= '}' ) ;
+    // InternalSiriusTextDsl.g:1647:1: ruleGradient returns [EObject current=null] : ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )? (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )? otherlv_29= '}' ) ;
     public final EObject ruleGradient() throws RecognitionException {
         EObject current = null;
 
@@ -3915,10 +3915,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
         Token lv_icon_22_0=null;
         Token otherlv_23=null;
         Token otherlv_24=null;
-        Token lv_height_25_0=null;
+        Token lv_heightComputationExpression_25_0=null;
         Token otherlv_26=null;
         Token otherlv_27=null;
-        Token lv_width_28_0=null;
+        Token lv_widthComputationExpression_28_0=null;
         Token otherlv_29=null;
         Enumerator lv_direction_2_0 = null;
 
@@ -3928,11 +3928,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalSiriusTextDsl.g:1650:28: ( ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )? (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )? otherlv_29= '}' ) )
-            // InternalSiriusTextDsl.g:1651:1: ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )? (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )? otherlv_29= '}' )
+            // InternalSiriusTextDsl.g:1650:28: ( ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )? (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )? otherlv_29= '}' ) )
+            // InternalSiriusTextDsl.g:1651:1: ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )? (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )? otherlv_29= '}' )
             {
-            // InternalSiriusTextDsl.g:1651:1: ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )? (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )? otherlv_29= '}' )
-            // InternalSiriusTextDsl.g:1651:2: ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )? (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )? otherlv_29= '}'
+            // InternalSiriusTextDsl.g:1651:1: ( ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )? (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )? otherlv_29= '}' )
+            // InternalSiriusTextDsl.g:1651:2: ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )? otherlv_1= 'gradient' ( (lv_direction_2_0= ruleGradientDirection ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'from' ( ( ruleQualifiedName ) ) otherlv_6= 'to' ( ( ruleQualifiedName ) ) otherlv_8= '{' (otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) ) )? (otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) ) )? (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )? (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )? otherlv_29= '}'
             {
             // InternalSiriusTextDsl.g:1651:2: ( (lv_documentation_0_0= RULE_DOCUMENTATION ) )?
             int alt42=2;
@@ -4348,7 +4348,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSiriusTextDsl.g:1885:4: (otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) ) )?
+            // InternalSiriusTextDsl.g:1885:4: (otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) ) )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -4357,25 +4357,25 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt46) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:1885:6: otherlv_23= 'height' otherlv_24= '=' ( (lv_height_25_0= RULE_INT ) )
+                    // InternalSiriusTextDsl.g:1885:6: otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) )
                     {
                     otherlv_23=(Token)match(input,55,FOLLOW_15); 
 
-                        	newLeafNode(otherlv_23, grammarAccess.getGradientAccess().getHeightKeyword_12_0());
+                        	newLeafNode(otherlv_23, grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0());
                         
-                    otherlv_24=(Token)match(input,20,FOLLOW_58); 
+                    otherlv_24=(Token)match(input,20,FOLLOW_32); 
 
                         	newLeafNode(otherlv_24, grammarAccess.getGradientAccess().getEqualsSignKeyword_12_1());
                         
-                    // InternalSiriusTextDsl.g:1893:1: ( (lv_height_25_0= RULE_INT ) )
-                    // InternalSiriusTextDsl.g:1894:1: (lv_height_25_0= RULE_INT )
+                    // InternalSiriusTextDsl.g:1893:1: ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) )
+                    // InternalSiriusTextDsl.g:1894:1: (lv_heightComputationExpression_25_0= RULE_EXPRESSION )
                     {
-                    // InternalSiriusTextDsl.g:1894:1: (lv_height_25_0= RULE_INT )
-                    // InternalSiriusTextDsl.g:1895:3: lv_height_25_0= RULE_INT
+                    // InternalSiriusTextDsl.g:1894:1: (lv_heightComputationExpression_25_0= RULE_EXPRESSION )
+                    // InternalSiriusTextDsl.g:1895:3: lv_heightComputationExpression_25_0= RULE_EXPRESSION
                     {
-                    lv_height_25_0=(Token)match(input,RULE_INT,FOLLOW_61); 
+                    lv_heightComputationExpression_25_0=(Token)match(input,RULE_EXPRESSION,FOLLOW_61); 
 
-                    			newLeafNode(lv_height_25_0, grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); 
+                    			newLeafNode(lv_heightComputationExpression_25_0, grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); 
                     		
 
                     	        if (current==null) {
@@ -4383,9 +4383,9 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	        }
                            		setWithLastConsumed(
                            			current, 
-                           			"height",
-                            		lv_height_25_0, 
-                            		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+                           			"heightComputationExpression",
+                            		lv_heightComputationExpression_25_0, 
+                            		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
                     	    
 
                     }
@@ -4399,7 +4399,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSiriusTextDsl.g:1911:4: (otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) ) )?
+            // InternalSiriusTextDsl.g:1911:4: (otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -4408,25 +4408,25 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt47) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:1911:6: otherlv_26= 'width' otherlv_27= '=' ( (lv_width_28_0= RULE_INT ) )
+                    // InternalSiriusTextDsl.g:1911:6: otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) )
                     {
                     otherlv_26=(Token)match(input,56,FOLLOW_15); 
 
-                        	newLeafNode(otherlv_26, grammarAccess.getGradientAccess().getWidthKeyword_13_0());
+                        	newLeafNode(otherlv_26, grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0());
                         
-                    otherlv_27=(Token)match(input,20,FOLLOW_58); 
+                    otherlv_27=(Token)match(input,20,FOLLOW_32); 
 
                         	newLeafNode(otherlv_27, grammarAccess.getGradientAccess().getEqualsSignKeyword_13_1());
                         
-                    // InternalSiriusTextDsl.g:1919:1: ( (lv_width_28_0= RULE_INT ) )
-                    // InternalSiriusTextDsl.g:1920:1: (lv_width_28_0= RULE_INT )
+                    // InternalSiriusTextDsl.g:1919:1: ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) )
+                    // InternalSiriusTextDsl.g:1920:1: (lv_widthComputationExpression_28_0= RULE_EXPRESSION )
                     {
-                    // InternalSiriusTextDsl.g:1920:1: (lv_width_28_0= RULE_INT )
-                    // InternalSiriusTextDsl.g:1921:3: lv_width_28_0= RULE_INT
+                    // InternalSiriusTextDsl.g:1920:1: (lv_widthComputationExpression_28_0= RULE_EXPRESSION )
+                    // InternalSiriusTextDsl.g:1921:3: lv_widthComputationExpression_28_0= RULE_EXPRESSION
                     {
-                    lv_width_28_0=(Token)match(input,RULE_INT,FOLLOW_21); 
+                    lv_widthComputationExpression_28_0=(Token)match(input,RULE_EXPRESSION,FOLLOW_21); 
 
-                    			newLeafNode(lv_width_28_0, grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); 
+                    			newLeafNode(lv_widthComputationExpression_28_0, grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); 
                     		
 
                     	        if (current==null) {
@@ -4434,9 +4434,9 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	        }
                            		setWithLastConsumed(
                            			current, 
-                           			"width",
-                            		lv_width_28_0, 
-                            		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+                           			"widthComputationExpression",
+                            		lv_widthComputationExpression_28_0, 
+                            		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
                     	    
 
                     }

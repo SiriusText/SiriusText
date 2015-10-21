@@ -1138,15 +1138,15 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIconAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
 		private final RuleCall cIconSTRINGTerminalRuleCall_11_2_0 = (RuleCall)cIconAssignment_11_2.eContents().get(0);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cHeightKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cHeightComputationExpressionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Assignment cHeightAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cHeightINTTerminalRuleCall_12_2_0 = (RuleCall)cHeightAssignment_12_2.eContents().get(0);
+		private final Assignment cHeightComputationExpressionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final RuleCall cHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0 = (RuleCall)cHeightComputationExpressionAssignment_12_2.eContents().get(0);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cWidthKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Keyword cWidthComputationExpressionKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Assignment cWidthAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
-		private final RuleCall cWidthINTTerminalRuleCall_13_2_0 = (RuleCall)cWidthAssignment_13_2.eContents().get(0);
+		private final Assignment cWidthComputationExpressionAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
+		private final RuleCall cWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0 = (RuleCall)cWidthComputationExpressionAssignment_13_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//Gradient:
@@ -1154,14 +1154,16 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName] 'to'
 		//	foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 		//	labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])?
-		//	('icon' '=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)?
+		//	('icon' '=' icon=STRING)? ('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
+		//	('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//documentation=DOCUMENTATION? 'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName]
 		//'to' foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 		//labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])? ('icon'
-		//'=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)? '}'
+		//'=' icon=STRING)? ('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
+		//('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//documentation=DOCUMENTATION?
@@ -1287,35 +1289,35 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getIconSTRINGTerminalRuleCall_11_2_0() { return cIconSTRINGTerminalRuleCall_11_2_0; }
 
-		//('height' '=' height=INT)?
+		//('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//'height'
-		public Keyword getHeightKeyword_12_0() { return cHeightKeyword_12_0; }
+		//'heightComputationExpression'
+		public Keyword getHeightComputationExpressionKeyword_12_0() { return cHeightComputationExpressionKeyword_12_0; }
 
 		//'='
 		public Keyword getEqualsSignKeyword_12_1() { return cEqualsSignKeyword_12_1; }
 
-		//height=INT
-		public Assignment getHeightAssignment_12_2() { return cHeightAssignment_12_2; }
+		//heightComputationExpression=EXPRESSION
+		public Assignment getHeightComputationExpressionAssignment_12_2() { return cHeightComputationExpressionAssignment_12_2; }
 
-		//INT
-		public RuleCall getHeightINTTerminalRuleCall_12_2_0() { return cHeightINTTerminalRuleCall_12_2_0; }
+		//EXPRESSION
+		public RuleCall getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0() { return cHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0; }
 
-		//('width' '=' width=INT)?
+		//('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//'width'
-		public Keyword getWidthKeyword_13_0() { return cWidthKeyword_13_0; }
+		//'widthComputationExpression'
+		public Keyword getWidthComputationExpressionKeyword_13_0() { return cWidthComputationExpressionKeyword_13_0; }
 
 		//'='
 		public Keyword getEqualsSignKeyword_13_1() { return cEqualsSignKeyword_13_1; }
 
-		//width=INT
-		public Assignment getWidthAssignment_13_2() { return cWidthAssignment_13_2; }
+		//widthComputationExpression=EXPRESSION
+		public Assignment getWidthComputationExpressionAssignment_13_2() { return cWidthComputationExpressionAssignment_13_2; }
 
-		//INT
-		public RuleCall getWidthINTTerminalRuleCall_13_2_0() { return cWidthINTTerminalRuleCall_13_2_0; }
+		//EXPRESSION
+		public RuleCall getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0() { return cWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0; }
 
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
@@ -1562,8 +1564,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ContainerStyleElements pContainerStyle;
 	private final GradientElements pGradient;
 	private final LabelAlignmentElements eLabelAlignment;
-	private final PaletteElements pPalette;
 	private final GradientDirectionElements eGradientDirection;
+	private final PaletteElements pPalette;
 	private final ColorElements pColor;
 	private final ColorValueElements pColorValue;
 	private final RGBElements pRGB;
@@ -1596,8 +1598,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pContainerStyle = new ContainerStyleElements();
 		this.pGradient = new GradientElements();
 		this.eLabelAlignment = new LabelAlignmentElements();
-		this.pPalette = new PaletteElements();
 		this.eGradientDirection = new GradientDirectionElements();
+		this.pPalette = new PaletteElements();
 		this.pColor = new ColorElements();
 		this.pColorValue = new ColorValueElements();
 		this.pRGB = new RGBElements();
@@ -1819,7 +1821,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName] 'to'
 	//	foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 	//	labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])?
-	//	('icon' '=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)?
+	//	('icon' '=' icon=STRING)? ('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
+	//	('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)?
 	//	'}';
 	public GradientElements getGradientAccess() {
 		return pGradient;
@@ -1839,6 +1842,16 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getLabelAlignmentAccess().getRule();
 	}
 
+	//enum GradientDirection:
+	//	oblique | lefttoright | toptobottom;
+	public GradientDirectionElements getGradientDirectionAccess() {
+		return eGradientDirection;
+	}
+	
+	public EnumRule getGradientDirectionRule() {
+		return getGradientDirectionAccess().getRule();
+	}
+
 	//Palette:
 	//	documentation=DOCUMENTATION?
 	//	'palette' name=ID '{'
@@ -1850,16 +1863,6 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPaletteRule() {
 		return getPaletteAccess().getRule();
-	}
-
-	//enum GradientDirection:
-	//	oblique | lefttoright | toptobottom;
-	public GradientDirectionElements getGradientDirectionAccess() {
-		return eGradientDirection;
-	}
-	
-	public EnumRule getGradientDirectionRule() {
-		return getGradientDirectionAccess().getRule();
 	}
 
 	//Color:

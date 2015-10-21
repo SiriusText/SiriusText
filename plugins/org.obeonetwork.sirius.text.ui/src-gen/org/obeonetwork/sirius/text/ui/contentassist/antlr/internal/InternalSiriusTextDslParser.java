@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'container'", "'style'", "'semanticCandidatesExpression'", "'if'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'height'", "'width'", "'palette'", "'color'", "'rgb('", "')'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'list'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'container'", "'style'", "'semanticCandidatesExpression'", "'if'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'palette'", "'color'", "'rgb('", "')'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'list'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -16892,21 +16892,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__Group_12__0__Impl"
-    // InternalSiriusTextDsl.g:6438:1: rule__Gradient__Group_12__0__Impl : ( 'height' ) ;
+    // InternalSiriusTextDsl.g:6438:1: rule__Gradient__Group_12__0__Impl : ( 'heightComputationExpression' ) ;
     public final void rule__Gradient__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:6442:1: ( ( 'height' ) )
-            // InternalSiriusTextDsl.g:6443:1: ( 'height' )
+            // InternalSiriusTextDsl.g:6442:1: ( ( 'heightComputationExpression' ) )
+            // InternalSiriusTextDsl.g:6443:1: ( 'heightComputationExpression' )
             {
-            // InternalSiriusTextDsl.g:6443:1: ( 'height' )
-            // InternalSiriusTextDsl.g:6444:1: 'height'
+            // InternalSiriusTextDsl.g:6443:1: ( 'heightComputationExpression' )
+            // InternalSiriusTextDsl.g:6444:1: 'heightComputationExpression'
             {
-             before(grammarAccess.getGradientAccess().getHeightKeyword_12_0()); 
+             before(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); 
             match(input,57,FOLLOW_2); 
-             after(grammarAccess.getGradientAccess().getHeightKeyword_12_0()); 
+             after(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); 
 
             }
 
@@ -16938,7 +16938,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6461:1: ( rule__Gradient__Group_12__1__Impl rule__Gradient__Group_12__2 )
             // InternalSiriusTextDsl.g:6462:2: rule__Gradient__Group_12__1__Impl rule__Gradient__Group_12__2
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_31);
             rule__Gradient__Group_12__1__Impl();
 
             state._fsp--;
@@ -17037,31 +17037,31 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__Group_12__2__Impl"
-    // InternalSiriusTextDsl.g:6499:1: rule__Gradient__Group_12__2__Impl : ( ( rule__Gradient__HeightAssignment_12_2 ) ) ;
+    // InternalSiriusTextDsl.g:6499:1: rule__Gradient__Group_12__2__Impl : ( ( rule__Gradient__HeightComputationExpressionAssignment_12_2 ) ) ;
     public final void rule__Gradient__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:6503:1: ( ( ( rule__Gradient__HeightAssignment_12_2 ) ) )
-            // InternalSiriusTextDsl.g:6504:1: ( ( rule__Gradient__HeightAssignment_12_2 ) )
+            // InternalSiriusTextDsl.g:6503:1: ( ( ( rule__Gradient__HeightComputationExpressionAssignment_12_2 ) ) )
+            // InternalSiriusTextDsl.g:6504:1: ( ( rule__Gradient__HeightComputationExpressionAssignment_12_2 ) )
             {
-            // InternalSiriusTextDsl.g:6504:1: ( ( rule__Gradient__HeightAssignment_12_2 ) )
-            // InternalSiriusTextDsl.g:6505:1: ( rule__Gradient__HeightAssignment_12_2 )
+            // InternalSiriusTextDsl.g:6504:1: ( ( rule__Gradient__HeightComputationExpressionAssignment_12_2 ) )
+            // InternalSiriusTextDsl.g:6505:1: ( rule__Gradient__HeightComputationExpressionAssignment_12_2 )
             {
-             before(grammarAccess.getGradientAccess().getHeightAssignment_12_2()); 
-            // InternalSiriusTextDsl.g:6506:1: ( rule__Gradient__HeightAssignment_12_2 )
-            // InternalSiriusTextDsl.g:6506:2: rule__Gradient__HeightAssignment_12_2
+             before(grammarAccess.getGradientAccess().getHeightComputationExpressionAssignment_12_2()); 
+            // InternalSiriusTextDsl.g:6506:1: ( rule__Gradient__HeightComputationExpressionAssignment_12_2 )
+            // InternalSiriusTextDsl.g:6506:2: rule__Gradient__HeightComputationExpressionAssignment_12_2
             {
             pushFollow(FOLLOW_2);
-            rule__Gradient__HeightAssignment_12_2();
+            rule__Gradient__HeightComputationExpressionAssignment_12_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGradientAccess().getHeightAssignment_12_2()); 
+             after(grammarAccess.getGradientAccess().getHeightComputationExpressionAssignment_12_2()); 
 
             }
 
@@ -17122,21 +17122,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__Group_13__0__Impl"
-    // InternalSiriusTextDsl.g:6534:1: rule__Gradient__Group_13__0__Impl : ( 'width' ) ;
+    // InternalSiriusTextDsl.g:6534:1: rule__Gradient__Group_13__0__Impl : ( 'widthComputationExpression' ) ;
     public final void rule__Gradient__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:6538:1: ( ( 'width' ) )
-            // InternalSiriusTextDsl.g:6539:1: ( 'width' )
+            // InternalSiriusTextDsl.g:6538:1: ( ( 'widthComputationExpression' ) )
+            // InternalSiriusTextDsl.g:6539:1: ( 'widthComputationExpression' )
             {
-            // InternalSiriusTextDsl.g:6539:1: ( 'width' )
-            // InternalSiriusTextDsl.g:6540:1: 'width'
+            // InternalSiriusTextDsl.g:6539:1: ( 'widthComputationExpression' )
+            // InternalSiriusTextDsl.g:6540:1: 'widthComputationExpression'
             {
-             before(grammarAccess.getGradientAccess().getWidthKeyword_13_0()); 
+             before(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); 
             match(input,58,FOLLOW_2); 
-             after(grammarAccess.getGradientAccess().getWidthKeyword_13_0()); 
+             after(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); 
 
             }
 
@@ -17168,7 +17168,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6557:1: ( rule__Gradient__Group_13__1__Impl rule__Gradient__Group_13__2 )
             // InternalSiriusTextDsl.g:6558:2: rule__Gradient__Group_13__1__Impl rule__Gradient__Group_13__2
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_31);
             rule__Gradient__Group_13__1__Impl();
 
             state._fsp--;
@@ -17267,31 +17267,31 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__Group_13__2__Impl"
-    // InternalSiriusTextDsl.g:6595:1: rule__Gradient__Group_13__2__Impl : ( ( rule__Gradient__WidthAssignment_13_2 ) ) ;
+    // InternalSiriusTextDsl.g:6595:1: rule__Gradient__Group_13__2__Impl : ( ( rule__Gradient__WidthComputationExpressionAssignment_13_2 ) ) ;
     public final void rule__Gradient__Group_13__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:6599:1: ( ( ( rule__Gradient__WidthAssignment_13_2 ) ) )
-            // InternalSiriusTextDsl.g:6600:1: ( ( rule__Gradient__WidthAssignment_13_2 ) )
+            // InternalSiriusTextDsl.g:6599:1: ( ( ( rule__Gradient__WidthComputationExpressionAssignment_13_2 ) ) )
+            // InternalSiriusTextDsl.g:6600:1: ( ( rule__Gradient__WidthComputationExpressionAssignment_13_2 ) )
             {
-            // InternalSiriusTextDsl.g:6600:1: ( ( rule__Gradient__WidthAssignment_13_2 ) )
-            // InternalSiriusTextDsl.g:6601:1: ( rule__Gradient__WidthAssignment_13_2 )
+            // InternalSiriusTextDsl.g:6600:1: ( ( rule__Gradient__WidthComputationExpressionAssignment_13_2 ) )
+            // InternalSiriusTextDsl.g:6601:1: ( rule__Gradient__WidthComputationExpressionAssignment_13_2 )
             {
-             before(grammarAccess.getGradientAccess().getWidthAssignment_13_2()); 
-            // InternalSiriusTextDsl.g:6602:1: ( rule__Gradient__WidthAssignment_13_2 )
-            // InternalSiriusTextDsl.g:6602:2: rule__Gradient__WidthAssignment_13_2
+             before(grammarAccess.getGradientAccess().getWidthComputationExpressionAssignment_13_2()); 
+            // InternalSiriusTextDsl.g:6602:1: ( rule__Gradient__WidthComputationExpressionAssignment_13_2 )
+            // InternalSiriusTextDsl.g:6602:2: rule__Gradient__WidthComputationExpressionAssignment_13_2
             {
             pushFollow(FOLLOW_2);
-            rule__Gradient__WidthAssignment_13_2();
+            rule__Gradient__WidthComputationExpressionAssignment_13_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGradientAccess().getWidthAssignment_13_2()); 
+             after(grammarAccess.getGradientAccess().getWidthComputationExpressionAssignment_13_2()); 
 
             }
 
@@ -21122,22 +21122,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Gradient__IconAssignment_11_2"
 
 
-    // $ANTLR start "rule__Gradient__HeightAssignment_12_2"
-    // InternalSiriusTextDsl.g:8145:1: rule__Gradient__HeightAssignment_12_2 : ( RULE_INT ) ;
-    public final void rule__Gradient__HeightAssignment_12_2() throws RecognitionException {
+    // $ANTLR start "rule__Gradient__HeightComputationExpressionAssignment_12_2"
+    // InternalSiriusTextDsl.g:8145:1: rule__Gradient__HeightComputationExpressionAssignment_12_2 : ( RULE_EXPRESSION ) ;
+    public final void rule__Gradient__HeightComputationExpressionAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:8149:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:8150:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:8149:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:8150:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:8150:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:8151:1: RULE_INT
+            // InternalSiriusTextDsl.g:8150:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:8151:1: RULE_EXPRESSION
             {
-             before(grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); 
+             before(grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); 
+            match(input,RULE_EXPRESSION,FOLLOW_2); 
+             after(grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); 
 
             }
 
@@ -21156,25 +21156,25 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Gradient__HeightAssignment_12_2"
+    // $ANTLR end "rule__Gradient__HeightComputationExpressionAssignment_12_2"
 
 
-    // $ANTLR start "rule__Gradient__WidthAssignment_13_2"
-    // InternalSiriusTextDsl.g:8160:1: rule__Gradient__WidthAssignment_13_2 : ( RULE_INT ) ;
-    public final void rule__Gradient__WidthAssignment_13_2() throws RecognitionException {
+    // $ANTLR start "rule__Gradient__WidthComputationExpressionAssignment_13_2"
+    // InternalSiriusTextDsl.g:8160:1: rule__Gradient__WidthComputationExpressionAssignment_13_2 : ( RULE_EXPRESSION ) ;
+    public final void rule__Gradient__WidthComputationExpressionAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:8164:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:8165:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:8164:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:8165:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:8165:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:8166:1: RULE_INT
+            // InternalSiriusTextDsl.g:8165:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:8166:1: RULE_EXPRESSION
             {
-             before(grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); 
+             before(grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); 
+            match(input,RULE_EXPRESSION,FOLLOW_2); 
+             after(grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); 
 
             }
 
@@ -21193,7 +21193,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__Gradient__WidthAssignment_13_2"
+    // $ANTLR end "rule__Gradient__WidthComputationExpressionAssignment_13_2"
 
 
     // $ANTLR start "rule__Palette__DocumentationAssignment_0"

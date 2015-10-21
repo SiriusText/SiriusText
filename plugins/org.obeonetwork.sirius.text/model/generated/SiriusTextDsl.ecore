@@ -90,24 +90,26 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="borderColor" eType="#//Color"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="heightComputationExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="widthComputationExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LabelAlignment">
     <eLiterals name="left" literal="left"/>
     <eLiterals name="center" value="1" literal="center"/>
     <eLiterals name="right" value="2" literal="right"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GradientDirection">
+    <eLiterals name="oblique" literal="oblique"/>
+    <eLiterals name="lefttoright" value="1" literal="lefttoright"/>
+    <eLiterals name="toptobottom" value="2" literal="toptobottom"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Palette" eSuperTypes="#//SiriusFileBody">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="colors" upperBound="-1"
         eType="#//Color" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="GradientDirection">
-    <eLiterals name="oblique" literal="oblique"/>
-    <eLiterals name="lefttoright" value="1" literal="lefttoright"/>
-    <eLiterals name="toptobottom" value="2" literal="toptobottom"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Color">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

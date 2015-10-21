@@ -107,8 +107,8 @@ Gradient:
 		('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in' labelColor=[Color | QualifiedName] )?
 		('border''size' '=' borderSize=INT 'in' borderColor=[Color | QualifiedName])?
 		('icon' '=' icon=STRING)?
-		('height' '=' height=INT)?
-		('width' '=' width=INT)?
+		('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
+		('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)?
 		
 	'}'
 ;
@@ -117,15 +117,15 @@ enum LabelAlignment:
 	left | center | right
 ;
 
+enum GradientDirection:
+	oblique | lefttoright | toptobottom
+;
+
 Palette:
 	(documentation=DOCUMENTATION)?
 	'palette' name=ID '{'
 		(colors+=Color)*
 	'}'
-;
-
-enum GradientDirection:
-	oblique | lefttoright | toptobottom
 ;
 
 Color:

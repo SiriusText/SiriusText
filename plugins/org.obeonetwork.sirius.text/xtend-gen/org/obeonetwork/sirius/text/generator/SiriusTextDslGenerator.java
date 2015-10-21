@@ -302,6 +302,20 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     String _labelExpression = gradient.getLabelExpression();
     String _trimQuotes = this.trimQuotes(_labelExpression);
     gradientStyle.setLabelExpression(_trimQuotes);
+    String _heightComputationExpression = gradient.getHeightComputationExpression();
+    boolean _notEquals = (!Objects.equal(_heightComputationExpression, null));
+    if (_notEquals) {
+      String _heightComputationExpression_1 = gradient.getHeightComputationExpression();
+      String _trimQuotes_1 = this.trimQuotes(_heightComputationExpression_1);
+      gradientStyle.setHeightComputationExpression(_trimQuotes_1);
+    }
+    String _widthComputationExpression = gradient.getWidthComputationExpression();
+    boolean _notEquals_1 = (!Objects.equal(_widthComputationExpression, null));
+    if (_notEquals_1) {
+      String _widthComputationExpression_1 = gradient.getWidthComputationExpression();
+      String _trimQuotes_2 = this.trimQuotes(_widthComputationExpression_1);
+      gradientStyle.setWidthComputationExpression(_trimQuotes_2);
+    }
     GradientDirection _direction = gradient.getDirection();
     boolean _equals = Objects.equal(_direction, GradientDirection.LEFTTORIGHT);
     if (_equals) {
@@ -339,12 +353,12 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     final Group group = this.getGroup(gradientStyle);
     boolean _and = false;
     Color _backgroundColor = gradient.getBackgroundColor();
-    boolean _notEquals = (!Objects.equal(_backgroundColor, null));
-    if (!_notEquals) {
+    boolean _notEquals_2 = (!Objects.equal(_backgroundColor, null));
+    if (!_notEquals_2) {
       _and = false;
     } else {
-      boolean _notEquals_1 = (!Objects.equal(group, null));
-      _and = _notEquals_1;
+      boolean _notEquals_3 = (!Objects.equal(group, null));
+      _and = _notEquals_3;
     }
     if (_and) {
       Color _backgroundColor_1 = gradient.getBackgroundColor();
@@ -353,12 +367,12 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     }
     boolean _and_1 = false;
     Color _foregroundColor = gradient.getForegroundColor();
-    boolean _notEquals_2 = (!Objects.equal(_foregroundColor, null));
-    if (!_notEquals_2) {
+    boolean _notEquals_4 = (!Objects.equal(_foregroundColor, null));
+    if (!_notEquals_4) {
       _and_1 = false;
     } else {
-      boolean _notEquals_3 = (!Objects.equal(group, null));
-      _and_1 = _notEquals_3;
+      boolean _notEquals_5 = (!Objects.equal(group, null));
+      _and_1 = _notEquals_5;
     }
     if (_and_1) {
       Color _foregroundColor_1 = gradient.getForegroundColor();

@@ -937,7 +937,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_Height()
+  public EAttribute getGradient_HeightComputationExpression()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(11);
   }
@@ -947,7 +947,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_Width()
+  public EAttribute getGradient_WidthComputationExpression()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(12);
   }
@@ -1204,8 +1204,8 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(gradientEClass, GRADIENT__BORDER_SIZE);
     createEReference(gradientEClass, GRADIENT__BORDER_COLOR);
     createEAttribute(gradientEClass, GRADIENT__ICON);
-    createEAttribute(gradientEClass, GRADIENT__HEIGHT);
-    createEAttribute(gradientEClass, GRADIENT__WIDTH);
+    createEAttribute(gradientEClass, GRADIENT__HEIGHT_COMPUTATION_EXPRESSION);
+    createEAttribute(gradientEClass, GRADIENT__WIDTH_COMPUTATION_EXPRESSION);
 
     paletteEClass = createEClass(PALETTE);
     createEAttribute(paletteEClass, PALETTE__DOCUMENTATION);
@@ -1352,8 +1352,8 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getGradient_BorderSize(), ecorePackage.getEInt(), "borderSize", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_BorderColor(), this.getColor(), null, "borderColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_HeightComputationExpression(), ecorePackage.getEString(), "heightComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_WidthComputationExpression(), ecorePackage.getEString(), "widthComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paletteEClass, Palette.class, "Palette", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPalette_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Palette.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

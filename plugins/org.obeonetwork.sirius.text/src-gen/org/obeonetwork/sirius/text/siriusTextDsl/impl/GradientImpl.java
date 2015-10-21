@@ -34,8 +34,8 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorderSize <em>Border Size</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorderColor <em>Border Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getHeight <em>Height</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getHeightComputationExpression <em>Height Computation Expression</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getWidthComputationExpression <em>Width Computation Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -223,44 +223,44 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
   protected String icon = ICON_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
+   * The default value of the '{@link #getHeightComputationExpression() <em>Height Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeight()
+   * @see #getHeightComputationExpression()
    * @generated
    * @ordered
    */
-  protected static final int HEIGHT_EDEFAULT = 0;
+  protected static final String HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
+   * The cached value of the '{@link #getHeightComputationExpression() <em>Height Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHeight()
+   * @see #getHeightComputationExpression()
    * @generated
    * @ordered
    */
-  protected int height = HEIGHT_EDEFAULT;
+  protected String heightComputationExpression = HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
+   * The default value of the '{@link #getWidthComputationExpression() <em>Width Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWidth()
+   * @see #getWidthComputationExpression()
    * @generated
    * @ordered
    */
-  protected static final int WIDTH_EDEFAULT = 0;
+  protected static final String WIDTH_COMPUTATION_EXPRESSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
+   * The cached value of the '{@link #getWidthComputationExpression() <em>Width Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWidth()
+   * @see #getWidthComputationExpression()
    * @generated
    * @ordered
    */
-  protected int width = WIDTH_EDEFAULT;
+  protected String widthComputationExpression = WIDTH_COMPUTATION_EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -621,9 +621,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getHeight()
+  public String getHeightComputationExpression()
   {
-    return height;
+    return heightComputationExpression;
   }
 
   /**
@@ -631,12 +631,12 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHeight(int newHeight)
+  public void setHeightComputationExpression(String newHeightComputationExpression)
   {
-    int oldHeight = height;
-    height = newHeight;
+    String oldHeightComputationExpression = heightComputationExpression;
+    heightComputationExpression = newHeightComputationExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__HEIGHT, oldHeight, height));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION, oldHeightComputationExpression, heightComputationExpression));
   }
 
   /**
@@ -644,9 +644,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getWidth()
+  public String getWidthComputationExpression()
   {
-    return width;
+    return widthComputationExpression;
   }
 
   /**
@@ -654,12 +654,12 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWidth(int newWidth)
+  public void setWidthComputationExpression(String newWidthComputationExpression)
   {
-    int oldWidth = width;
-    width = newWidth;
+    String oldWidthComputationExpression = widthComputationExpression;
+    widthComputationExpression = newWidthComputationExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__WIDTH, oldWidth, width));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION, oldWidthComputationExpression, widthComputationExpression));
   }
 
   /**
@@ -698,10 +698,10 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
         return basicGetBorderColor();
       case SiriusTextDslPackage.GRADIENT__ICON:
         return getIcon();
-      case SiriusTextDslPackage.GRADIENT__HEIGHT:
-        return getHeight();
-      case SiriusTextDslPackage.GRADIENT__WIDTH:
-        return getWidth();
+      case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
+        return getHeightComputationExpression();
+      case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
+        return getWidthComputationExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -749,11 +749,11 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__ICON:
         setIcon((String)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__HEIGHT:
-        setHeight((Integer)newValue);
+      case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
+        setHeightComputationExpression((String)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__WIDTH:
-        setWidth((Integer)newValue);
+      case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
+        setWidthComputationExpression((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -802,11 +802,11 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__ICON:
         setIcon(ICON_EDEFAULT);
         return;
-      case SiriusTextDslPackage.GRADIENT__HEIGHT:
-        setHeight(HEIGHT_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
+        setHeightComputationExpression(HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT);
         return;
-      case SiriusTextDslPackage.GRADIENT__WIDTH:
-        setWidth(WIDTH_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
+        setWidthComputationExpression(WIDTH_COMPUTATION_EXPRESSION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -844,10 +844,10 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
         return borderColor != null;
       case SiriusTextDslPackage.GRADIENT__ICON:
         return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
-      case SiriusTextDslPackage.GRADIENT__HEIGHT:
-        return height != HEIGHT_EDEFAULT;
-      case SiriusTextDslPackage.GRADIENT__WIDTH:
-        return width != WIDTH_EDEFAULT;
+      case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
+        return HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT == null ? heightComputationExpression != null : !HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT.equals(heightComputationExpression);
+      case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
+        return WIDTH_COMPUTATION_EXPRESSION_EDEFAULT == null ? widthComputationExpression != null : !WIDTH_COMPUTATION_EXPRESSION_EDEFAULT.equals(widthComputationExpression);
     }
     return super.eIsSet(featureID);
   }
@@ -877,10 +877,10 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
     result.append(borderSize);
     result.append(", icon: ");
     result.append(icon);
-    result.append(", height: ");
-    result.append(height);
-    result.append(", width: ");
-    result.append(width);
+    result.append(", heightComputationExpression: ");
+    result.append(heightComputationExpression);
+    result.append(", widthComputationExpression: ");
+    result.append(widthComputationExpression);
     result.append(')');
     return result.toString();
   }

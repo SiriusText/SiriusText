@@ -1882,9 +1882,9 @@ ruleGradient returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_23='height' 
+))?(	otherlv_23='heightComputationExpression' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getGradientAccess().getHeightKeyword_12_0());
+    	newLeafNode(otherlv_23, grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0());
     }
 	otherlv_24='=' 
     {
@@ -1892,9 +1892,9 @@ ruleGradient returns [EObject current=null]
     }
 (
 (
-		lv_height_25_0=RULE_INT
+		lv_heightComputationExpression_25_0=RULE_EXPRESSION
 		{
-			newLeafNode(lv_height_25_0, grammarAccess.getGradientAccess().getHeightINTTerminalRuleCall_12_2_0()); 
+			newLeafNode(lv_heightComputationExpression_25_0, grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1902,15 +1902,15 @@ ruleGradient returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"height",
-        		lv_height_25_0, 
-        		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+       			"heightComputationExpression",
+        		lv_heightComputationExpression_25_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
 	    }
 
 )
-))?(	otherlv_26='width' 
+))?(	otherlv_26='widthComputationExpression' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getGradientAccess().getWidthKeyword_13_0());
+    	newLeafNode(otherlv_26, grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0());
     }
 	otherlv_27='=' 
     {
@@ -1918,9 +1918,9 @@ ruleGradient returns [EObject current=null]
     }
 (
 (
-		lv_width_28_0=RULE_INT
+		lv_widthComputationExpression_28_0=RULE_EXPRESSION
 		{
-			newLeafNode(lv_width_28_0, grammarAccess.getGradientAccess().getWidthINTTerminalRuleCall_13_2_0()); 
+			newLeafNode(lv_widthComputationExpression_28_0, grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1928,9 +1928,9 @@ ruleGradient returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"width",
-        		lv_width_28_0, 
-        		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+       			"widthComputationExpression",
+        		lv_widthComputationExpression_28_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
 	    }
 
 )

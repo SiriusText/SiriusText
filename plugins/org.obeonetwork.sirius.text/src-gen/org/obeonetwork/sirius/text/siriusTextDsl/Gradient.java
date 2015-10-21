@@ -23,8 +23,8 @@ package org.obeonetwork.sirius.text.siriusTextDsl;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize <em>Border Size</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderColor <em>Border Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getIcon <em>Icon</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeight <em>Height</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidth <em>Width</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression <em>Height Computation Expression</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidthComputationExpression <em>Width Computation Expression</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient()
@@ -326,55 +326,55 @@ public interface Gradient extends ContainerStyle
   void setIcon(String value);
 
   /**
-   * Returns the value of the '<em><b>Height</b></em>' attribute.
+   * Returns the value of the '<em><b>Height Computation Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Height</em>' attribute isn't clear,
+   * If the meaning of the '<em>Height Computation Expression</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Height</em>' attribute.
-   * @see #setHeight(int)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Height()
+   * @return the value of the '<em>Height Computation Expression</em>' attribute.
+   * @see #setHeightComputationExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_HeightComputationExpression()
    * @model
    * @generated
    */
-  int getHeight();
+  String getHeightComputationExpression();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeight <em>Height</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression <em>Height Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Height</em>' attribute.
-   * @see #getHeight()
+   * @param value the new value of the '<em>Height Computation Expression</em>' attribute.
+   * @see #getHeightComputationExpression()
    * @generated
    */
-  void setHeight(int value);
+  void setHeightComputationExpression(String value);
 
   /**
-   * Returns the value of the '<em><b>Width</b></em>' attribute.
+   * Returns the value of the '<em><b>Width Computation Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Width</em>' attribute isn't clear,
+   * If the meaning of the '<em>Width Computation Expression</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Width</em>' attribute.
-   * @see #setWidth(int)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Width()
+   * @return the value of the '<em>Width Computation Expression</em>' attribute.
+   * @see #setWidthComputationExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_WidthComputationExpression()
    * @model
    * @generated
    */
-  int getWidth();
+  String getWidthComputationExpression();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidth <em>Width</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidthComputationExpression <em>Width Computation Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Width</em>' attribute.
-   * @see #getWidth()
+   * @param value the new value of the '<em>Width Computation Expression</em>' attribute.
+   * @see #getWidthComputationExpression()
    * @generated
    */
-  void setWidth(int value);
+  void setWidthComputationExpression(String value);
 
 } // Gradient

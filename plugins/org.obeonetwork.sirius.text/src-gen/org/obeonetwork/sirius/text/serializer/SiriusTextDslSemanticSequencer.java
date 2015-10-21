@@ -182,8 +182,8 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         (labelAlignment=LabelAlignment labelExpression=EXPRESSION labelColor=[Color|QualifiedName])? 
 	 *         (borderSize=INT borderColor=[Color|QualifiedName])? 
 	 *         icon=STRING? 
-	 *         height=INT? 
-	 *         width=INT?
+	 *         heightComputationExpression=EXPRESSION? 
+	 *         widthComputationExpression=EXPRESSION?
 	 *     )
 	 */
 	protected void sequence_Gradient(EObject context, Gradient semanticObject) {
