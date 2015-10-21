@@ -924,14 +924,14 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Container:
 		//	documentation=DOCUMENTATION?
 		//	list?='list'? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style'
-		//	style+=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
+		//	style=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
 		//	semanticCanditatesExpression=EXPRESSION)?
 		//	conditionalStyles+=ConditionalContainerStyleDeclaration*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//documentation=DOCUMENTATION? list?='list'? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style'
-		//style+=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
+		//style=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
 		//semanticCanditatesExpression=EXPRESSION)? conditionalStyles+=ConditionalContainerStyleDeclaration* '}'
 		public Group getGroup() { return cGroup; }
 
@@ -980,7 +980,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'style'
 		public Keyword getStyleKeyword_7() { return cStyleKeyword_7; }
 
-		//style+=[ContainerStyle|QualifiedName]
+		//style=[ContainerStyle|QualifiedName]
 		public Assignment getStyleAssignment_8() { return cStyleAssignment_8; }
 
 		//[ContainerStyle|QualifiedName]
@@ -1114,8 +1114,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cLabelKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cPositionAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cPositionLabelPositionEnumRuleCall_9_1_0 = (RuleCall)cPositionAssignment_9_1.eContents().get(0);
+		private final Assignment cLabelAlignmentAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cLabelAlignmentLabelAlignmentEnumRuleCall_9_1_0 = (RuleCall)cLabelAlignmentAssignment_9_1.eContents().get(0);
 		private final Assignment cLabelExpressionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cLabelExpressionEXPRESSIONTerminalRuleCall_9_2_0 = (RuleCall)cLabelExpressionAssignment_9_2.eContents().get(0);
 		private final Keyword cInKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
@@ -1152,14 +1152,14 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Gradient:
 		//	documentation=DOCUMENTATION?
 		//	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName] 'to'
-		//	foregroundColor=[Color|QualifiedName] '{' ('label' position=LabelPosition labelExpression=EXPRESSION 'in'
+		//	foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 		//	labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])?
 		//	('icon' '=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//documentation=DOCUMENTATION? 'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName]
-		//'to' foregroundColor=[Color|QualifiedName] '{' ('label' position=LabelPosition labelExpression=EXPRESSION 'in'
+		//'to' foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 		//labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])? ('icon'
 		//'=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)? '}'
 		public Group getGroup() { return cGroup; }
@@ -1212,17 +1212,17 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
 
-		//('label' position=LabelPosition labelExpression=EXPRESSION 'in' labelColor=[Color|QualifiedName])?
+		//('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in' labelColor=[Color|QualifiedName])?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//'label'
 		public Keyword getLabelKeyword_9_0() { return cLabelKeyword_9_0; }
 
-		//position=LabelPosition
-		public Assignment getPositionAssignment_9_1() { return cPositionAssignment_9_1; }
+		//labelAlignment=LabelAlignment
+		public Assignment getLabelAlignmentAssignment_9_1() { return cLabelAlignmentAssignment_9_1; }
 
-		//LabelPosition
-		public RuleCall getPositionLabelPositionEnumRuleCall_9_1_0() { return cPositionLabelPositionEnumRuleCall_9_1_0; }
+		//LabelAlignment
+		public RuleCall getLabelAlignmentLabelAlignmentEnumRuleCall_9_1_0() { return cLabelAlignmentLabelAlignmentEnumRuleCall_9_1_0; }
 
 		//labelExpression=EXPRESSION
 		public Assignment getLabelExpressionAssignment_9_2() { return cLabelExpressionAssignment_9_2; }
@@ -1380,13 +1380,13 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueColorValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//Color:
-		//	'color' name=ID '=' value=STRING;
+		//	'color' name=ID '=' value=ColorValue;
 		@Override public ParserRule getRule() { return rule; }
 
-		//'color' name=ID '=' value=STRING
+		//'color' name=ID '=' value=ColorValue
 		public Group getGroup() { return cGroup; }
 
 		//'color'
@@ -1401,16 +1401,80 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
-		//value=STRING
+		//value=ColorValue
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_3_0() { return cValueSTRINGTerminalRuleCall_3_0; }
+		//ColorValue
+		public RuleCall getValueColorValueParserRuleCall_3_0() { return cValueColorValueParserRuleCall_3_0; }
+	}
+
+	public class ColorValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.ColorValue");
+		private final RuleCall cRGBParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ColorValue:
+		//	RGB;
+		@Override public ParserRule getRule() { return rule; }
+
+		//RGB
+		public RuleCall getRGBParserRuleCall() { return cRGBParserRuleCall; }
+	}
+
+	public class RGBElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.RGB");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRgbKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cRedAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRedINTTerminalRuleCall_1_0 = (RuleCall)cRedAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cGreenAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGreenINTTerminalRuleCall_3_0 = (RuleCall)cGreenAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBlueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cBlueINTTerminalRuleCall_5_0 = (RuleCall)cBlueAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//RGB:
+		//	'rgb(' red=INT ',' green=INT ',' blue=INT ')';
+		@Override public ParserRule getRule() { return rule; }
+
+		//'rgb(' red=INT ',' green=INT ',' blue=INT ')'
+		public Group getGroup() { return cGroup; }
+
+		//'rgb('
+		public Keyword getRgbKeyword_0() { return cRgbKeyword_0; }
+
+		//red=INT
+		public Assignment getRedAssignment_1() { return cRedAssignment_1; }
+
+		//INT
+		public RuleCall getRedINTTerminalRuleCall_1_0() { return cRedINTTerminalRuleCall_1_0; }
+
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+
+		//green=INT
+		public Assignment getGreenAssignment_3() { return cGreenAssignment_3; }
+
+		//INT
+		public RuleCall getGreenINTTerminalRuleCall_3_0() { return cGreenINTTerminalRuleCall_3_0; }
+
+		//','
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+
+		//blue=INT
+		public Assignment getBlueAssignment_5() { return cBlueAssignment_5; }
+
+		//INT
+		public RuleCall getBlueINTTerminalRuleCall_5_0() { return cBlueINTTerminalRuleCall_5_0; }
+
+		//')'
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	
 	
-	public class LabelPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.LabelPosition");
+	public class LabelAlignmentElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.LabelAlignment");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cLeftEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cLeftLeftKeyword_0_0 = (Keyword)cLeftEnumLiteralDeclaration_0.eContents().get(0);
@@ -1419,7 +1483,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cRightEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cRightRightKeyword_2_0 = (Keyword)cRightEnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum LabelPosition:
+		//enum LabelAlignment:
 		//	left | center | right;
 		public EnumRule getRule() { return rule; }
 
@@ -1497,10 +1561,12 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final StyleElements pStyle;
 	private final ContainerStyleElements pContainerStyle;
 	private final GradientElements pGradient;
-	private final LabelPositionElements eLabelPosition;
+	private final LabelAlignmentElements eLabelAlignment;
 	private final PaletteElements pPalette;
-	private final ColorElements pColor;
 	private final GradientDirectionElements eGradientDirection;
+	private final ColorElements pColor;
+	private final ColorValueElements pColorValue;
+	private final RGBElements pRGB;
 	private final TerminalRule tDOCUMENTATION;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
@@ -1529,10 +1595,12 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStyle = new StyleElements();
 		this.pContainerStyle = new ContainerStyleElements();
 		this.pGradient = new GradientElements();
-		this.eLabelPosition = new LabelPositionElements();
+		this.eLabelAlignment = new LabelAlignmentElements();
 		this.pPalette = new PaletteElements();
-		this.pColor = new ColorElements();
 		this.eGradientDirection = new GradientDirectionElements();
+		this.pColor = new ColorElements();
+		this.pColorValue = new ColorValueElements();
+		this.pRGB = new RGBElements();
 		this.tDOCUMENTATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.DOCUMENTATION");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.INT");
@@ -1704,7 +1772,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Container:
 	//	documentation=DOCUMENTATION?
 	//	list?='list'? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style'
-	//	style+=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
+	//	style=[ContainerStyle|QualifiedName] ('?' precondition=EXPRESSION)? '{' ('semanticCandidatesExpression' '='
 	//	semanticCanditatesExpression=EXPRESSION)?
 	//	conditionalStyles+=ConditionalContainerStyleDeclaration*
 	//	'}';
@@ -1749,7 +1817,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Gradient:
 	//	documentation=DOCUMENTATION?
 	//	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color|QualifiedName] 'to'
-	//	foregroundColor=[Color|QualifiedName] '{' ('label' position=LabelPosition labelExpression=EXPRESSION 'in'
+	//	foregroundColor=[Color|QualifiedName] '{' ('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in'
 	//	labelColor=[Color|QualifiedName])? ('border' 'size' '=' borderSize=INT 'in' borderColor=[Color|QualifiedName])?
 	//	('icon' '=' icon=STRING)? ('height' '=' height=INT)? ('width' '=' width=INT)?
 	//	'}';
@@ -1761,14 +1829,14 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getGradientAccess().getRule();
 	}
 
-	//enum LabelPosition:
+	//enum LabelAlignment:
 	//	left | center | right;
-	public LabelPositionElements getLabelPositionAccess() {
-		return eLabelPosition;
+	public LabelAlignmentElements getLabelAlignmentAccess() {
+		return eLabelAlignment;
 	}
 	
-	public EnumRule getLabelPositionRule() {
-		return getLabelPositionAccess().getRule();
+	public EnumRule getLabelAlignmentRule() {
+		return getLabelAlignmentAccess().getRule();
 	}
 
 	//Palette:
@@ -1784,16 +1852,6 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getPaletteAccess().getRule();
 	}
 
-	//Color:
-	//	'color' name=ID '=' value=STRING;
-	public ColorElements getColorAccess() {
-		return pColor;
-	}
-	
-	public ParserRule getColorRule() {
-		return getColorAccess().getRule();
-	}
-
 	//enum GradientDirection:
 	//	oblique | lefttoright | toptobottom;
 	public GradientDirectionElements getGradientDirectionAccess() {
@@ -1802,6 +1860,36 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getGradientDirectionRule() {
 		return getGradientDirectionAccess().getRule();
+	}
+
+	//Color:
+	//	'color' name=ID '=' value=ColorValue;
+	public ColorElements getColorAccess() {
+		return pColor;
+	}
+	
+	public ParserRule getColorRule() {
+		return getColorAccess().getRule();
+	}
+
+	//ColorValue:
+	//	RGB;
+	public ColorValueElements getColorValueAccess() {
+		return pColorValue;
+	}
+	
+	public ParserRule getColorValueRule() {
+		return getColorValueAccess().getRule();
+	}
+
+	//RGB:
+	//	'rgb(' red=INT ',' green=INT ',' blue=INT ')';
+	public RGBElements getRGBAccess() {
+		return pRGB;
+	}
+	
+	public ParserRule getRGBRule() {
+		return getRGBAccess().getRule();
 	}
 
 	//terminal DOCUMENTATION:

@@ -17,7 +17,7 @@ package org.obeonetwork.sirius.text.siriusTextDsl;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getForegroundColor <em>Foreground Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getPosition <em>Position</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelColor <em>Label Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize <em>Border Size</em>}</li>
@@ -167,33 +167,33 @@ public interface Gradient extends ContainerStyle
   void setForegroundColor(Color value);
 
   /**
-   * Returns the value of the '<em><b>Position</b></em>' attribute.
-   * The literals are from the enumeration {@link org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition}.
+   * Returns the value of the '<em><b>Label Alignment</b></em>' attribute.
+   * The literals are from the enumeration {@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Position</em>' attribute isn't clear,
+   * If the meaning of the '<em>Label Alignment</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Position</em>' attribute.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition
-   * @see #setPosition(LabelPosition)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Position()
+   * @return the value of the '<em>Label Alignment</em>' attribute.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
+   * @see #setLabelAlignment(LabelAlignment)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_LabelAlignment()
    * @model
    * @generated
    */
-  LabelPosition getPosition();
+  LabelAlignment getLabelAlignment();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getPosition <em>Position</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Position</em>' attribute.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition
-   * @see #getPosition()
+   * @param value the new value of the '<em>Label Alignment</em>' attribute.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
+   * @see #getLabelAlignment()
    * @generated
    */
-  void setPosition(LabelPosition value);
+  void setLabelAlignment(LabelAlignment value);
 
   /**
    * Returns the value of the '<em><b>Label Expression</b></em>' attribute.

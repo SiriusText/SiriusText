@@ -38,7 +38,7 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getSiriusFileBodyAccess().getAlternatives(), "rule__SiriusFileBody__Alternatives");
-					put(grammarAccess.getLabelPositionAccess().getAlternatives(), "rule__LabelPosition__Alternatives");
+					put(grammarAccess.getLabelAlignmentAccess().getAlternatives(), "rule__LabelAlignment__Alternatives");
 					put(grammarAccess.getGradientDirectionAccess().getAlternatives(), "rule__GradientDirection__Alternatives");
 					put(grammarAccess.getSiriusFileAccess().getGroup(), "rule__SiriusFile__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
@@ -83,6 +83,7 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGradientAccess().getGroup_13(), "rule__Gradient__Group_13__0");
 					put(grammarAccess.getPaletteAccess().getGroup(), "rule__Palette__Group__0");
 					put(grammarAccess.getColorAccess().getGroup(), "rule__Color__Group__0");
+					put(grammarAccess.getRGBAccess().getGroup(), "rule__RGB__Group__0");
 					put(grammarAccess.getSiriusFileAccess().getDocumentationAssignment_0(), "rule__SiriusFile__DocumentationAssignment_0");
 					put(grammarAccess.getSiriusFileAccess().getNameAssignment_2(), "rule__SiriusFile__NameAssignment_2");
 					put(grammarAccess.getSiriusFileAccess().getImportsAssignment_3(), "rule__SiriusFile__ImportsAssignment_3");
@@ -137,7 +138,7 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGradientAccess().getNameAssignment_3(), "rule__Gradient__NameAssignment_3");
 					put(grammarAccess.getGradientAccess().getBackgroundColorAssignment_5(), "rule__Gradient__BackgroundColorAssignment_5");
 					put(grammarAccess.getGradientAccess().getForegroundColorAssignment_7(), "rule__Gradient__ForegroundColorAssignment_7");
-					put(grammarAccess.getGradientAccess().getPositionAssignment_9_1(), "rule__Gradient__PositionAssignment_9_1");
+					put(grammarAccess.getGradientAccess().getLabelAlignmentAssignment_9_1(), "rule__Gradient__LabelAlignmentAssignment_9_1");
 					put(grammarAccess.getGradientAccess().getLabelExpressionAssignment_9_2(), "rule__Gradient__LabelExpressionAssignment_9_2");
 					put(grammarAccess.getGradientAccess().getLabelColorAssignment_9_4(), "rule__Gradient__LabelColorAssignment_9_4");
 					put(grammarAccess.getGradientAccess().getBorderSizeAssignment_10_3(), "rule__Gradient__BorderSizeAssignment_10_3");
@@ -150,6 +151,9 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPaletteAccess().getColorsAssignment_4(), "rule__Palette__ColorsAssignment_4");
 					put(grammarAccess.getColorAccess().getNameAssignment_1(), "rule__Color__NameAssignment_1");
 					put(grammarAccess.getColorAccess().getValueAssignment_3(), "rule__Color__ValueAssignment_3");
+					put(grammarAccess.getRGBAccess().getRedAssignment_1(), "rule__RGB__RedAssignment_1");
+					put(grammarAccess.getRGBAccess().getGreenAssignment_3(), "rule__RGB__GreenAssignment_3");
+					put(grammarAccess.getRGBAccess().getBlueAssignment_5(), "rule__RGB__BlueAssignment_5");
 				}
 			};
 		}

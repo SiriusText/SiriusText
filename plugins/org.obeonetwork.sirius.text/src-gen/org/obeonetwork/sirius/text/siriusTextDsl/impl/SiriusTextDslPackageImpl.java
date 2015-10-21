@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
+import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
@@ -18,7 +19,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
-import org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition;
+import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
@@ -155,7 +156,21 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum labelPositionEEnum = null;
+  private EClass colorValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rgbEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum labelAlignmentEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -862,7 +877,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_Position()
+  public EAttribute getGradient_LabelAlignment()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(5);
   }
@@ -1002,9 +1017,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getColor_Value()
+  public EReference getColor_Value()
   {
-    return (EAttribute)colorEClass.getEStructuralFeatures().get(1);
+    return (EReference)colorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1012,9 +1027,59 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getLabelPosition()
+  public EClass getColorValue()
   {
-    return labelPositionEEnum;
+    return colorValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRGB()
+  {
+    return rgbEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRGB_Red()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRGB_Green()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRGB_Blue()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLabelAlignment()
+  {
+    return labelAlignmentEEnum;
   }
 
   /**
@@ -1133,7 +1198,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(gradientEClass, GRADIENT__NAME);
     createEReference(gradientEClass, GRADIENT__BACKGROUND_COLOR);
     createEReference(gradientEClass, GRADIENT__FOREGROUND_COLOR);
-    createEAttribute(gradientEClass, GRADIENT__POSITION);
+    createEAttribute(gradientEClass, GRADIENT__LABEL_ALIGNMENT);
     createEAttribute(gradientEClass, GRADIENT__LABEL_EXPRESSION);
     createEReference(gradientEClass, GRADIENT__LABEL_COLOR);
     createEAttribute(gradientEClass, GRADIENT__BORDER_SIZE);
@@ -1149,10 +1214,17 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     colorEClass = createEClass(COLOR);
     createEAttribute(colorEClass, COLOR__NAME);
-    createEAttribute(colorEClass, COLOR__VALUE);
+    createEReference(colorEClass, COLOR__VALUE);
+
+    colorValueEClass = createEClass(COLOR_VALUE);
+
+    rgbEClass = createEClass(RGB);
+    createEAttribute(rgbEClass, RGB__RED);
+    createEAttribute(rgbEClass, RGB__GREEN);
+    createEAttribute(rgbEClass, RGB__BLUE);
 
     // Create enums
-    labelPositionEEnum = createEEnum(LABEL_POSITION);
+    labelAlignmentEEnum = createEEnum(LABEL_ALIGNMENT);
     gradientDirectionEEnum = createEEnum(GRADIENT_DIRECTION);
   }
 
@@ -1195,6 +1267,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     containerStyleEClass.getESuperTypes().add(this.getStyle());
     gradientEClass.getESuperTypes().add(this.getContainerStyle());
     paletteEClass.getESuperTypes().add(this.getSiriusFileBody());
+    rgbEClass.getESuperTypes().add(this.getColorValue());
 
     // Initialize classes and features; add operations and parameters
     initEClass(siriusFileEClass, SiriusFile.class, "SiriusFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1254,7 +1327,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_Label(), ecorePackage.getEString(), "label", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContainer_Style(), this.getContainerStyle(), null, "style", null, 0, -1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainer_Style(), this.getContainerStyle(), null, "style", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_Precondition(), ecorePackage.getEString(), "precondition", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_SemanticCanditatesExpression(), ecorePackage.getEString(), "semanticCanditatesExpression", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_ConditionalStyles(), this.getConditionalContainerStyleDeclaration(), null, "conditionalStyles", null, 0, -1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1273,7 +1346,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getGradient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_BackgroundColor(), this.getColor(), null, "backgroundColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_ForegroundColor(), this.getColor(), null, "foregroundColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_Position(), this.getLabelPosition(), "position", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_LabelAlignment(), this.getLabelAlignment(), "labelAlignment", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_LabelColor(), this.getColor(), null, "labelColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_BorderSize(), ecorePackage.getEInt(), "borderSize", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1289,13 +1362,20 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     initEClass(colorEClass, Color.class, "Color", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Color.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, Color.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getColor_Value(), this.getColorValue(), null, "value", null, 0, 1, Color.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(colorValueEClass, ColorValue.class, "ColorValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(rgbEClass, org.obeonetwork.sirius.text.siriusTextDsl.RGB.class, "RGB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRGB_Red(), ecorePackage.getEInt(), "red", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRGB_Green(), ecorePackage.getEInt(), "green", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRGB_Blue(), ecorePackage.getEInt(), "blue", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(labelPositionEEnum, LabelPosition.class, "LabelPosition");
-    addEEnumLiteral(labelPositionEEnum, LabelPosition.LEFT);
-    addEEnumLiteral(labelPositionEEnum, LabelPosition.CENTER);
-    addEEnumLiteral(labelPositionEEnum, LabelPosition.RIGHT);
+    initEEnum(labelAlignmentEEnum, LabelAlignment.class, "LabelAlignment");
+    addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.LEFT);
+    addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.CENTER);
+    addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.RIGHT);
 
     initEEnum(gradientDirectionEEnum, GradientDirection.class, "GradientDirection");
     addEEnumLiteral(gradientDirectionEEnum, GradientDirection.OBLIQUE);

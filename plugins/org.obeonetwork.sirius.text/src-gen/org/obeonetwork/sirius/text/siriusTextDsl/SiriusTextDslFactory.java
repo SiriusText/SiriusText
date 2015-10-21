@@ -167,6 +167,24 @@ public interface SiriusTextDslFactory extends EFactory
   Color createColor();
 
   /**
+   * Returns a new object of class '<em>Color Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color Value</em>'.
+   * @generated
+   */
+  ColorValue createColorValue();
+
+  /**
+   * Returns a new object of class '<em>RGB</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>RGB</em>'.
+   * @generated
+   */
+  RGB createRGB();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

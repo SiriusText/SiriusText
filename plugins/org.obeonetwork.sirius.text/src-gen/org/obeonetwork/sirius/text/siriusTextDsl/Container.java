@@ -161,20 +161,30 @@ public interface Container extends Mapping
   void setDomainClass(String value);
 
   /**
-   * Returns the value of the '<em><b>Style</b></em>' reference list.
-   * The list contents are of type {@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle}.
+   * Returns the value of the '<em><b>Style</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Style</em>' reference list isn't clear,
+   * If the meaning of the '<em>Style</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Style</em>' reference list.
+   * @return the value of the '<em>Style</em>' reference.
+   * @see #setStyle(ContainerStyle)
    * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getContainer_Style()
    * @model
    * @generated
    */
-  EList<ContainerStyle> getStyle();
+  ContainerStyle getStyle();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getStyle <em>Style</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Style</em>' reference.
+   * @see #getStyle()
+   * @generated
+   */
+  void setStyle(ContainerStyle value);
 
   /**
    * Returns the value of the '<em><b>Precondition</b></em>' attribute.

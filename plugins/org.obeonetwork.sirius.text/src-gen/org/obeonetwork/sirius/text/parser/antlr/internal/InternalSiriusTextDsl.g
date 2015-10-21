@@ -1755,17 +1755,17 @@ ruleGradient returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGradientAccess().getPositionLabelPositionEnumRuleCall_9_1_0()); 
+	        newCompositeNode(grammarAccess.getGradientAccess().getLabelAlignmentLabelAlignmentEnumRuleCall_9_1_0()); 
 	    }
-		lv_position_10_0=ruleLabelPosition		{
+		lv_labelAlignment_10_0=ruleLabelAlignment		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGradientRule());
 	        }
        		set(
        			$current, 
-       			"position",
-        		lv_position_10_0, 
-        		"org.obeonetwork.sirius.text.SiriusTextDsl.LabelPosition");
+       			"labelAlignment",
+        		lv_labelAlignment_10_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.LabelAlignment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2074,19 +2074,19 @@ ruleColor returns [EObject current=null]
     }
 (
 (
-		lv_value_3_0=RULE_STRING
-		{
-			newLeafNode(lv_value_3_0, grammarAccess.getColorAccess().getValueSTRINGTerminalRuleCall_3_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getColorAccess().getValueColorValueParserRuleCall_3_0()); 
+	    }
+		lv_value_3_0=ruleColorValue		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getColorRule());
+	            $current = createModelElementForParent(grammarAccess.getColorRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"value",
         		lv_value_3_0, 
-        		"org.obeonetwork.sirius.text.SiriusTextDsl.STRING");
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.ColorValue");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -2097,26 +2097,147 @@ ruleColor returns [EObject current=null]
 
 
 
-// Rule LabelPosition
-ruleLabelPosition returns [Enumerator current=null] 
+// Entry rule entryRuleColorValue
+entryRuleColorValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getColorValueRule()); }
+	 iv_ruleColorValue=ruleColorValue 
+	 { $current=$iv_ruleColorValue.current; } 
+	 EOF 
+;
+
+// Rule ColorValue
+ruleColorValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getColorValueAccess().getRGBParserRuleCall()); 
+    }
+    this_RGB_0=ruleRGB
+    { 
+        $current = $this_RGB_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleRGB
+entryRuleRGB returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRGBRule()); }
+	 iv_ruleRGB=ruleRGB 
+	 { $current=$iv_ruleRGB.current; } 
+	 EOF 
+;
+
+// Rule RGB
+ruleRGB returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='rgb(' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getRGBAccess().getRgbKeyword_0());
+    }
+(
+(
+		lv_red_1_0=RULE_INT
+		{
+			newLeafNode(lv_red_1_0, grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRGBRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"red",
+        		lv_red_1_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+	    }
+
+)
+)	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getRGBAccess().getCommaKeyword_2());
+    }
+(
+(
+		lv_green_3_0=RULE_INT
+		{
+			newLeafNode(lv_green_3_0, grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRGBRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"green",
+        		lv_green_3_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+	    }
+
+)
+)	otherlv_4=',' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getRGBAccess().getCommaKeyword_4());
+    }
+(
+(
+		lv_blue_5_0=RULE_INT
+		{
+			newLeafNode(lv_blue_5_0, grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRGBRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"blue",
+        		lv_blue_5_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
+	    }
+
+)
+)	otherlv_6=')' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getRGBAccess().getRightParenthesisKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Rule LabelAlignment
+ruleLabelAlignment returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
 ((	enumLiteral_0='left' 
 	{
-        $current = grammarAccess.getLabelPositionAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getLabelPositionAccess().getLeftEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getLabelAlignmentAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getLabelAlignmentAccess().getLeftEnumLiteralDeclaration_0()); 
     }
 )
     |(	enumLiteral_1='center' 
 	{
-        $current = grammarAccess.getLabelPositionAccess().getCenterEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getLabelPositionAccess().getCenterEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getLabelAlignmentAccess().getCenterEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getLabelAlignmentAccess().getCenterEnumLiteralDeclaration_1()); 
     }
 )
     |(	enumLiteral_2='right' 
 	{
-        $current = grammarAccess.getLabelPositionAccess().getRightEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getLabelPositionAccess().getRightEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getLabelAlignmentAccess().getRightEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getLabelAlignmentAccess().getRightEnumLiteralDeclaration_2()); 
     }
 ));
 

@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
@@ -146,14 +145,14 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
   protected String domainClass = DOMAIN_CLASS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStyle() <em>Style</em>}' reference list.
+   * The cached value of the '{@link #getStyle() <em>Style</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStyle()
    * @generated
    * @ordered
    */
-  protected EList<ContainerStyle> style;
+  protected ContainerStyle style;
 
   /**
    * The default value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
@@ -346,13 +345,42 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContainerStyle> getStyle()
+  public ContainerStyle getStyle()
   {
-    if (style == null)
+    if (style != null && style.eIsProxy())
     {
-      style = new EObjectResolvingEList<ContainerStyle>(ContainerStyle.class, this, SiriusTextDslPackage.CONTAINER__STYLE);
+      InternalEObject oldStyle = (InternalEObject)style;
+      style = (ContainerStyle)eResolveProxy(oldStyle);
+      if (style != oldStyle)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SiriusTextDslPackage.CONTAINER__STYLE, oldStyle, style));
+      }
     }
     return style;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ContainerStyle basicGetStyle()
+  {
+    return style;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStyle(ContainerStyle newStyle)
+  {
+    ContainerStyle oldStyle = style;
+    style = newStyle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.CONTAINER__STYLE, oldStyle, style));
   }
 
   /**
@@ -452,7 +480,8 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
       case SiriusTextDslPackage.CONTAINER__DOMAIN_CLASS:
         return getDomainClass();
       case SiriusTextDslPackage.CONTAINER__STYLE:
-        return getStyle();
+        if (resolve) return getStyle();
+        return basicGetStyle();
       case SiriusTextDslPackage.CONTAINER__PRECONDITION:
         return getPrecondition();
       case SiriusTextDslPackage.CONTAINER__SEMANTIC_CANDITATES_EXPRESSION:
@@ -490,8 +519,7 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
         setDomainClass((String)newValue);
         return;
       case SiriusTextDslPackage.CONTAINER__STYLE:
-        getStyle().clear();
-        getStyle().addAll((Collection<? extends ContainerStyle>)newValue);
+        setStyle((ContainerStyle)newValue);
         return;
       case SiriusTextDslPackage.CONTAINER__PRECONDITION:
         setPrecondition((String)newValue);
@@ -533,7 +561,7 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
         setDomainClass(DOMAIN_CLASS_EDEFAULT);
         return;
       case SiriusTextDslPackage.CONTAINER__STYLE:
-        getStyle().clear();
+        setStyle((ContainerStyle)null);
         return;
       case SiriusTextDslPackage.CONTAINER__PRECONDITION:
         setPrecondition(PRECONDITION_EDEFAULT);
@@ -569,7 +597,7 @@ public class ContainerImpl extends MappingImpl implements org.obeonetwork.sirius
       case SiriusTextDslPackage.CONTAINER__DOMAIN_CLASS:
         return DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !DOMAIN_CLASS_EDEFAULT.equals(domainClass);
       case SiriusTextDslPackage.CONTAINER__STYLE:
-        return style != null && !style.isEmpty();
+        return style != null;
       case SiriusTextDslPackage.CONTAINER__PRECONDITION:
         return PRECONDITION_EDEFAULT == null ? precondition != null : !PRECONDITION_EDEFAULT.equals(precondition);
       case SiriusTextDslPackage.CONTAINER__SEMANTIC_CANDITATES_EXPRESSION:

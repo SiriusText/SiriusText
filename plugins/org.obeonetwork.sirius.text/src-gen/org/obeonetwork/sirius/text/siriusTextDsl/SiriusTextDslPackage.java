@@ -581,7 +581,7 @@ public interface SiriusTextDslPackage extends EPackage
   int CONTAINER__DOMAIN_CLASS = MAPPING_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Style</b></em>' reference list.
+   * The feature id for the '<em><b>Style</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -756,13 +756,13 @@ public interface SiriusTextDslPackage extends EPackage
   int GRADIENT__FOREGROUND_COLOR = CONTAINER_STYLE_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Position</b></em>' attribute.
+   * The feature id for the '<em><b>Label Alignment</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__POSITION = CONTAINER_STYLE_FEATURE_COUNT + 5;
+  int GRADIENT__LABEL_ALIGNMENT = CONTAINER_STYLE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -902,7 +902,7 @@ public interface SiriusTextDslPackage extends EPackage
   int COLOR__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -920,14 +920,79 @@ public interface SiriusTextDslPackage extends EPackage
   int COLOR_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition <em>Label Position</em>}' enum.
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ColorValueImpl <em>Color Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelPosition()
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ColorValueImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColorValue()
    * @generated
    */
-  int LABEL_POSITION = 16;
+  int COLOR_VALUE = 16;
+
+  /**
+   * The number of structural features of the '<em>Color Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_VALUE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RGBImpl <em>RGB</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RGBImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRGB()
+   * @generated
+   */
+  int RGB = 17;
+
+  /**
+   * The feature id for the '<em><b>Red</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__RED = COLOR_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Green</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__GREEN = COLOR_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Blue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__BLUE = COLOR_VALUE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>RGB</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB_FEATURE_COUNT = COLOR_VALUE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelAlignment()
+   * @generated
+   */
+  int LABEL_ALIGNMENT = 18;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.
@@ -937,7 +1002,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradientDirection()
    * @generated
    */
-  int GRADIENT_DIRECTION = 17;
+  int GRADIENT_DIRECTION = 19;
 
 
   /**
@@ -1459,10 +1524,10 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getContainer_DomainClass();
 
   /**
-   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getStyle <em>Style</em>}'.
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getStyle <em>Style</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Style</em>'.
+   * @return the meta object for the reference '<em>Style</em>'.
    * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getStyle()
    * @see #getContainer()
    * @generated
@@ -1620,15 +1685,15 @@ public interface SiriusTextDslPackage extends EPackage
   EReference getGradient_ForegroundColor();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getPosition <em>Position</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Position</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getPosition()
+   * @return the meta object for the attribute '<em>Label Alignment</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment()
    * @see #getGradient()
    * @generated
    */
-  EAttribute getGradient_Position();
+  EAttribute getGradient_LabelAlignment();
 
   /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression <em>Label Expression</em>}'.
@@ -1772,25 +1837,78 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getColor_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Color#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Color#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see org.obeonetwork.sirius.text.siriusTextDsl.Color#getValue()
    * @see #getColor()
    * @generated
    */
-  EAttribute getColor_Value();
+  EReference getColor_Value();
 
   /**
-   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition <em>Label Position</em>}'.
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ColorValue <em>Color Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Label Position</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition
+   * @return the meta object for class '<em>Color Value</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ColorValue
    * @generated
    */
-  EEnum getLabelPosition();
+  EClass getColorValue();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.RGB <em>RGB</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>RGB</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RGB
+   * @generated
+   */
+  EClass getRGB();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RGB#getRed <em>Red</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Red</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RGB#getRed()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Red();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RGB#getGreen <em>Green</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Green</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RGB#getGreen()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Green();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RGB#getBlue <em>Blue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Blue</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RGB#getBlue()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Blue();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Label Alignment</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
+   * @generated
+   */
+  EEnum getLabelAlignment();
 
   /**
    * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}'.
@@ -2230,7 +2348,7 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute CONTAINER__DOMAIN_CLASS = eINSTANCE.getContainer_DomainClass();
 
     /**
-     * The meta object literal for the '<em><b>Style</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Style</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2358,12 +2476,12 @@ public interface SiriusTextDslPackage extends EPackage
     EReference GRADIENT__FOREGROUND_COLOR = eINSTANCE.getGradient_ForegroundColor();
 
     /**
-     * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Label Alignment</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GRADIENT__POSITION = eINSTANCE.getGradient_Position();
+    EAttribute GRADIENT__LABEL_ALIGNMENT = eINSTANCE.getGradient_LabelAlignment();
 
     /**
      * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
@@ -2474,22 +2592,66 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute COLOR__NAME = eINSTANCE.getColor_Name();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COLOR__VALUE = eINSTANCE.getColor_Value();
+    EReference COLOR__VALUE = eINSTANCE.getColor_Value();
 
     /**
-     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition <em>Label Position</em>}' enum.
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ColorValueImpl <em>Color Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition
-     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelPosition()
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ColorValueImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColorValue()
      * @generated
      */
-    EEnum LABEL_POSITION = eINSTANCE.getLabelPosition();
+    EClass COLOR_VALUE = eINSTANCE.getColorValue();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RGBImpl <em>RGB</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RGBImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRGB()
+     * @generated
+     */
+    EClass RGB = eINSTANCE.getRGB();
+
+    /**
+     * The meta object literal for the '<em><b>Red</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__RED = eINSTANCE.getRGB_Red();
+
+    /**
+     * The meta object literal for the '<em><b>Green</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__GREEN = eINSTANCE.getRGB_Green();
+
+    /**
+     * The meta object literal for the '<em><b>Blue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__BLUE = eINSTANCE.getRGB_Blue();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelAlignment()
+     * @generated
+     */
+    EEnum LABEL_ALIGNMENT = eINSTANCE.getLabelAlignment();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.

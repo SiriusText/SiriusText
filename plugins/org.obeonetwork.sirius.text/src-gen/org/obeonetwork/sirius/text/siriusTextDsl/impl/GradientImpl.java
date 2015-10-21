@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
-import org.obeonetwork.sirius.text.siriusTextDsl.LabelPosition;
+import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 
 /**
@@ -28,7 +28,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getForegroundColor <em>Foreground Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getPosition <em>Position</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelAlignment <em>Label Alignment</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelColor <em>Label Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorderSize <em>Border Size</em>}</li>
@@ -123,24 +123,24 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
   protected Color foregroundColor;
 
   /**
-   * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
+   * The default value of the '{@link #getLabelAlignment() <em>Label Alignment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPosition()
+   * @see #getLabelAlignment()
    * @generated
    * @ordered
    */
-  protected static final LabelPosition POSITION_EDEFAULT = LabelPosition.LEFT;
+  protected static final LabelAlignment LABEL_ALIGNMENT_EDEFAULT = LabelAlignment.LEFT;
 
   /**
-   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
+   * The cached value of the '{@link #getLabelAlignment() <em>Label Alignment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPosition()
+   * @see #getLabelAlignment()
    * @generated
    * @ordered
    */
-  protected LabelPosition position = POSITION_EDEFAULT;
+  protected LabelAlignment labelAlignment = LABEL_ALIGNMENT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
@@ -443,9 +443,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public LabelPosition getPosition()
+  public LabelAlignment getLabelAlignment()
   {
-    return position;
+    return labelAlignment;
   }
 
   /**
@@ -453,12 +453,12 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPosition(LabelPosition newPosition)
+  public void setLabelAlignment(LabelAlignment newLabelAlignment)
   {
-    LabelPosition oldPosition = position;
-    position = newPosition == null ? POSITION_EDEFAULT : newPosition;
+    LabelAlignment oldLabelAlignment = labelAlignment;
+    labelAlignment = newLabelAlignment == null ? LABEL_ALIGNMENT_EDEFAULT : newLabelAlignment;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__POSITION, oldPosition, position));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT, oldLabelAlignment, labelAlignment));
   }
 
   /**
@@ -684,8 +684,8 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         if (resolve) return getForegroundColor();
         return basicGetForegroundColor();
-      case SiriusTextDslPackage.GRADIENT__POSITION:
-        return getPosition();
+      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
+        return getLabelAlignment();
       case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
         return getLabelExpression();
       case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
@@ -731,8 +731,8 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         setForegroundColor((Color)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__POSITION:
-        setPosition((LabelPosition)newValue);
+      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
+        setLabelAlignment((LabelAlignment)newValue);
         return;
       case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
         setLabelExpression((String)newValue);
@@ -784,8 +784,8 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         setForegroundColor((Color)null);
         return;
-      case SiriusTextDslPackage.GRADIENT__POSITION:
-        setPosition(POSITION_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
+        setLabelAlignment(LABEL_ALIGNMENT_EDEFAULT);
         return;
       case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
         setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
@@ -832,8 +832,8 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
         return backgroundColor != null;
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         return foregroundColor != null;
-      case SiriusTextDslPackage.GRADIENT__POSITION:
-        return position != POSITION_EDEFAULT;
+      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
+        return labelAlignment != LABEL_ALIGNMENT_EDEFAULT;
       case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
         return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
       case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
@@ -869,8 +869,8 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
     result.append(direction);
     result.append(", name: ");
     result.append(name);
-    result.append(", position: ");
-    result.append(position);
+    result.append(", labelAlignment: ");
+    result.append(labelAlignment);
     result.append(", labelExpression: ");
     result.append(labelExpression);
     result.append(", borderSize: ");

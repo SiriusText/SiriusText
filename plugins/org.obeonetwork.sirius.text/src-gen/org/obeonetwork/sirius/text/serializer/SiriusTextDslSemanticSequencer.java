@@ -26,6 +26,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
+import org.obeonetwork.sirius.text.siriusTextDsl.RGB;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
@@ -66,6 +67,9 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			case SiriusTextDslPackage.PALETTE:
 				sequence_Palette(context, (Palette) semanticObject); 
 				return; 
+			case SiriusTextDslPackage.RGB:
+				sequence_RGB(context, (RGB) semanticObject); 
+				return; 
 			case SiriusTextDslPackage.SIRIUS_FILE:
 				sequence_SiriusFile(context, (SiriusFile) semanticObject); 
 				return; 
@@ -78,7 +82,7 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID value=STRING)
+	 *     (name=ID value=ColorValue)
 	 */
 	protected void sequence_Color(EObject context, Color semanticObject) {
 		if(errorAcceptor != null) {
@@ -90,7 +94,7 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getColorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getColorAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getColorAccess().getValueColorValueParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -122,7 +126,7 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         name=ID 
 	 *         label=STRING? 
 	 *         domainClass=STRING 
-	 *         style+=[ContainerStyle|QualifiedName] 
+	 *         style=[ContainerStyle|QualifiedName] 
 	 *         precondition=EXPRESSION? 
 	 *         semanticCanditatesExpression=EXPRESSION? 
 	 *         conditionalStyles+=ConditionalContainerStyleDeclaration*
@@ -175,7 +179,7 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         name=ID 
 	 *         backgroundColor=[Color|QualifiedName] 
 	 *         foregroundColor=[Color|QualifiedName] 
-	 *         (position=LabelPosition labelExpression=EXPRESSION labelColor=[Color|QualifiedName])? 
+	 *         (labelAlignment=LabelAlignment labelExpression=EXPRESSION labelColor=[Color|QualifiedName])? 
 	 *         (borderSize=INT borderColor=[Color|QualifiedName])? 
 	 *         icon=STRING? 
 	 *         height=INT? 
@@ -218,6 +222,28 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_Palette(EObject context, Palette semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (red=INT green=INT blue=INT)
+	 */
+	protected void sequence_RGB(EObject context, RGB semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SiriusTextDslPackage.Literals.RGB__RED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SiriusTextDslPackage.Literals.RGB__RED));
+			if(transientValues.isValueTransient(semanticObject, SiriusTextDslPackage.Literals.RGB__GREEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SiriusTextDslPackage.Literals.RGB__GREEN));
+			if(transientValues.isValueTransient(semanticObject, SiriusTextDslPackage.Literals.RGB__BLUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SiriusTextDslPackage.Literals.RGB__BLUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0(), semanticObject.getRed());
+		feeder.accept(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0(), semanticObject.getGreen());
+		feeder.accept(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0(), semanticObject.getBlue());
+		feeder.finish();
 	}
 	
 	

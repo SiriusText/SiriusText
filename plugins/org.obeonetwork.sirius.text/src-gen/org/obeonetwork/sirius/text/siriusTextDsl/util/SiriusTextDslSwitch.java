@@ -199,6 +199,21 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SiriusTextDslPackage.COLOR_VALUE:
+      {
+        ColorValue colorValue = (ColorValue)theEObject;
+        T result = caseColorValue(colorValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.RGB:
+      {
+        RGB rgb = (RGB)theEObject;
+        T result = caseRGB(rgb);
+        if (result == null) result = caseColorValue(rgb);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -455,6 +470,38 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseColor(Color object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Color Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Color Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColorValue(ColorValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>RGB</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>RGB</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRGB(RGB object)
   {
     return null;
   }

@@ -81,6 +81,8 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
       case SiriusTextDslPackage.GRADIENT: return createGradient();
       case SiriusTextDslPackage.PALETTE: return createPalette();
       case SiriusTextDslPackage.COLOR: return createColor();
+      case SiriusTextDslPackage.COLOR_VALUE: return createColorValue();
+      case SiriusTextDslPackage.RGB: return createRGB();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,8 +98,8 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     switch (eDataType.getClassifierID())
     {
-      case SiriusTextDslPackage.LABEL_POSITION:
-        return createLabelPositionFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.LABEL_ALIGNMENT:
+        return createLabelAlignmentFromString(eDataType, initialValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return createGradientDirectionFromString(eDataType, initialValue);
       default:
@@ -115,8 +117,8 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     switch (eDataType.getClassifierID())
     {
-      case SiriusTextDslPackage.LABEL_POSITION:
-        return convertLabelPositionToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.LABEL_ALIGNMENT:
+        return convertLabelAlignmentToString(eDataType, instanceValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return convertGradientDirectionToString(eDataType, instanceValue);
       default:
@@ -305,9 +307,31 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public LabelPosition createLabelPositionFromString(EDataType eDataType, String initialValue)
+  public ColorValue createColorValue()
   {
-    LabelPosition result = LabelPosition.get(initialValue);
+    ColorValueImpl colorValue = new ColorValueImpl();
+    return colorValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RGB createRGB()
+  {
+    RGBImpl rgb = new RGBImpl();
+    return rgb;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LabelAlignment createLabelAlignmentFromString(EDataType eDataType, String initialValue)
+  {
+    LabelAlignment result = LabelAlignment.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -317,7 +341,7 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertLabelPositionToString(EDataType eDataType, Object instanceValue)
+  public String convertLabelAlignmentToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

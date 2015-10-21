@@ -155,6 +155,16 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
         return createColorAdapter();
       }
       @Override
+      public Adapter caseColorValue(ColorValue object)
+      {
+        return createColorValueAdapter();
+      }
+      @Override
+      public Adapter caseRGB(RGB object)
+      {
+        return createRGBAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -412,6 +422,36 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createColorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ColorValue <em>Color Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ColorValue
+   * @generated
+   */
+  public Adapter createColorValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.RGB <em>RGB</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RGB
+   * @generated
+   */
+  public Adapter createRGBAdapter()
   {
     return null;
   }

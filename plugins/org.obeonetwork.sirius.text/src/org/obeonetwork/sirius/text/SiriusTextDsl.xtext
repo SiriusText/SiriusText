@@ -83,7 +83,7 @@ Mapping:
 
 Container:
 	(documentation=DOCUMENTATION)?
-	(list ?= 'list')? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style' style+=[ContainerStyle | QualifiedName] ('?' precondition=EXPRESSION)? '{'
+	(list ?= 'list')? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style' style=[ContainerStyle | QualifiedName] ('?' precondition=EXPRESSION)? '{'
 		('semanticCandidatesExpression' '=' semanticCanditatesExpression=EXPRESSION)?
 		(conditionalStyles+=ConditionalContainerStyleDeclaration)*
 	'}'
@@ -104,7 +104,7 @@ ContainerStyle:
 Gradient:
 	(documentation=DOCUMENTATION)?
 	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color | QualifiedName] 'to' foregroundColor=[Color | QualifiedName] '{'
-		('label' position=LabelPosition labelExpression=EXPRESSION 'in' labelColor=[Color | QualifiedName] )?
+		('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in' labelColor=[Color | QualifiedName] )?
 		('border''size' '=' borderSize=INT 'in' borderColor=[Color | QualifiedName])?
 		('icon' '=' icon=STRING)?
 		('height' '=' height=INT)?
@@ -113,7 +113,7 @@ Gradient:
 	'}'
 ;
 
-enum LabelPosition:
+enum LabelAlignment:
 	left | center | right
 ;
 
@@ -124,12 +124,20 @@ Palette:
 	'}'
 ;
 
-Color:
-	'color' name=ID '=' value=STRING 
-;
-
 enum GradientDirection:
 	oblique | lefttoright | toptobottom
+;
+
+Color:
+	'color' name=ID '=' value=ColorValue 
+;
+
+ColorValue:
+	RGB
+;
+
+RGB:
+	'rgb(' red=INT ',' green=INT ',' blue=INT ')'
 ;
 
 terminal DOCUMENTATION: '/**' -> '*/';
