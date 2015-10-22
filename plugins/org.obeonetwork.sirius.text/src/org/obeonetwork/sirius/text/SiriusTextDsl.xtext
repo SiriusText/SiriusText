@@ -12,7 +12,7 @@ SiriusFile:
 ;
 
 SiriusFileBody:
-	Designer | Representation | Layer | Mapping | Style | Palette
+	Designer | Representation | Layer | Mapping | Style | Palette | Edge
 ;
 
 QualifiedName:
@@ -73,7 +73,9 @@ Layer:
 		'mappings' '=' '['
 			(mappings+=[Mapping | QualifiedName] (',' mappings+=[Mapping | QualifiedName])*)?
 		']'
-		'edges' '=' '['']'
+		'edges' '=' '['
+			(edges+=[Edge | QualifiedName] (',' edges+=[Edge | QualifiedName])*)?
+		']'
 	'}'
 ;
 
@@ -94,7 +96,7 @@ ConditionalContainerStyleDeclaration:
 ;
 
 Style:
-	ContainerStyle
+	ContainerStyle | EdgeStyle
 ;
 
 ContainerStyle:
@@ -119,6 +121,53 @@ enum LabelAlignment:
 
 enum GradientDirection:
 	oblique | lefttoright | toptobottom
+;
+
+Edge:
+	RelationBasedEdge
+;
+
+RelationBasedEdge:
+	(documentation=DOCUMENTATION)?
+	'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle | QualifiedName] '{'
+		'sourceMappings' '=' '['
+			(sourceMappings+=[Mapping | QualifiedName] (',' sourceMappings+=[Mapping | QualifiedName])*)?
+		']'
+		'targetMappings' '=' '['
+			(targetMappings+=[Mapping | QualifiedName] (',' targetMappings+=[Mapping | QualifiedName])*)?
+		']'
+		'targetFileExpression' '=' targetFinderExpression=EXPRESSION
+	'}'
+;
+
+EdgeStyle:
+	'edgeStyle' name=ID 'in' strokeColor=[Color | QualifiedName] ('line' '=' lineStyle=LineStyle)? ('routing' '=' routingStyle=RoutingStyle)? '{'
+		('sourceArrow' '=' sourceArrow=ArrowDecorator)?
+		('targetArrow' '=' targetArrow=ArrowDecorator)?
+		('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)?
+		('foldingStyle' '=' foldingStyle=FoldingStyle)?
+		('endsCentering' '=' endsCentering=EndsCentering)?
+	'}'
+;
+
+enum LineStyle:
+	solid | dash | dot | dash_dot
+;
+
+enum RoutingStyle:
+	straight | manhattan | tree
+;
+
+enum ArrowDecorator:
+	NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow | InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond | InputArrowWithFillDiamond
+;
+
+enum FoldingStyle:
+	none | source | target
+;
+
+enum EndsCentering:
+	none | both | source | target
 ;
 
 Palette:

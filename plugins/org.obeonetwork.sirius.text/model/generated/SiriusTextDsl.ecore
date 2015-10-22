@@ -56,6 +56,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" unique="false"
         upperBound="-1" eType="#//Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" unique="false" upperBound="-1"
+        eType="#//Edge"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mapping" eSuperTypes="#//SiriusFileBody"/>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//Mapping">
@@ -104,6 +106,66 @@
     <eLiterals name="oblique" literal="oblique"/>
     <eLiterals name="lefttoright" value="1" literal="lefttoright"/>
     <eLiterals name="toptobottom" value="2" literal="toptobottom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//SiriusFileBody"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationBasedEdge" eSuperTypes="#//Edge">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EdgeStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceMappings" unique="false"
+        upperBound="-1" eType="#//Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetMappings" unique="false"
+        upperBound="-1" eType="#//Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetFinderExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeStyle" eSuperTypes="#//Style">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strokeColor" eType="#//Color"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="#//LineStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="routingStyle" eType="#//RoutingStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceArrow" eType="#//ArrowDecorator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetArrow" eType="#//ArrowDecorator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeComputationExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldingStyle" eType="#//FoldingStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endsCentering" eType="#//EndsCentering"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LineStyle">
+    <eLiterals name="solid" literal="solid"/>
+    <eLiterals name="dash" value="1" literal="dash"/>
+    <eLiterals name="dot" value="2" literal="dot"/>
+    <eLiterals name="dash_dot" value="3" literal="dash_dot"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoutingStyle">
+    <eLiterals name="straight" literal="straight"/>
+    <eLiterals name="manhattan" value="1" literal="manhattan"/>
+    <eLiterals name="tree" value="2" literal="tree"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArrowDecorator">
+    <eLiterals name="NoDecoration" literal="NoDecoration"/>
+    <eLiterals name="OutputArrow" value="1" literal="OutputArrow"/>
+    <eLiterals name="InputArrow" value="2" literal="InputArrow"/>
+    <eLiterals name="OutputClosedArrow" value="3" literal="OutputClosedArrow"/>
+    <eLiterals name="InputClosedArrow" value="4" literal="InputClosedArrow"/>
+    <eLiterals name="OutputFillClosedArrow" value="5" literal="OutputFillClosedArrow"/>
+    <eLiterals name="InputFillClosedArrow" value="6" literal="InputFillClosedArrow"/>
+    <eLiterals name="Diamond" value="7" literal="Diamond"/>
+    <eLiterals name="FillDiamond" value="8" literal="FillDiamond"/>
+    <eLiterals name="InputArrowWithDiamond" value="9" literal="InputArrowWithDiamond"/>
+    <eLiterals name="InputArrowWithFillDiamond" value="10" literal="InputArrowWithFillDiamond"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FoldingStyle">
+    <eLiterals name="none" literal="none"/>
+    <eLiterals name="source" value="1" literal="source"/>
+    <eLiterals name="target" value="2" literal="target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EndsCentering">
+    <eLiterals name="none" literal="none"/>
+    <eLiterals name="both" value="1" literal="both"/>
+    <eLiterals name="source" value="2" literal="source"/>
+    <eLiterals name="target" value="3" literal="target"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Palette" eSuperTypes="#//SiriusFileBody">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

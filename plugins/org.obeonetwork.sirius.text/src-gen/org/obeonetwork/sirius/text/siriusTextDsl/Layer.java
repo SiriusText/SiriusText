@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getEdges <em>Edges</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getLayer()
@@ -118,5 +119,21 @@ public interface Layer extends SiriusFileBody
    * @generated
    */
   EList<Mapping> getMappings();
+
+  /**
+   * Returns the value of the '<em><b>Edges</b></em>' reference list.
+   * The list contents are of type {@link org.obeonetwork.sirius.text.siriusTextDsl.Edge}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Edges</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Edges</em>' reference list.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getLayer_Edges()
+   * @model
+   * @generated
+   */
+  EList<Edge> getEdges();
 
 } // Layer

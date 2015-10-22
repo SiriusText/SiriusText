@@ -77,12 +77,13 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMappingParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cStyleParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cPaletteParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cEdgeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//SiriusFileBody:
-		//	Designer | Representation | Layer | Mapping | Style | Palette;
+		//	Designer | Representation | Layer | Mapping | Style | Palette | Edge;
 		@Override public ParserRule getRule() { return rule; }
 
-		//Designer | Representation | Layer | Mapping | Style | Palette
+		//Designer | Representation | Layer | Mapping | Style | Palette | Edge
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Designer
@@ -102,6 +103,9 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Palette
 		public RuleCall getPaletteParserRuleCall_5() { return cPaletteParserRuleCall_5; }
+
+		//Edge
+		public RuleCall getEdgeParserRuleCall_6() { return cEdgeParserRuleCall_6; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -770,20 +774,31 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEdgesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cEqualsSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Assignment cEdgesAssignment_13_0 = (Assignment)cGroup_13.eContents().get(0);
+		private final CrossReference cEdgesEdgeCrossReference_13_0_0 = (CrossReference)cEdgesAssignment_13_0.eContents().get(0);
+		private final RuleCall cEdgesEdgeQualifiedNameParserRuleCall_13_0_0_1 = (RuleCall)cEdgesEdgeCrossReference_13_0_0.eContents().get(1);
+		private final Group cGroup_13_1 = (Group)cGroup_13.eContents().get(1);
+		private final Keyword cCommaKeyword_13_1_0 = (Keyword)cGroup_13_1.eContents().get(0);
+		private final Assignment cEdgesAssignment_13_1_1 = (Assignment)cGroup_13_1.eContents().get(1);
+		private final CrossReference cEdgesEdgeCrossReference_13_1_1_0 = (CrossReference)cEdgesAssignment_13_1_1.eContents().get(0);
+		private final RuleCall cEdgesEdgeQualifiedNameParserRuleCall_13_1_1_0_1 = (RuleCall)cEdgesEdgeCrossReference_13_1_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Layer:
 		//	documentation=DOCUMENTATION?
 		//	'layer' name=ID '{' ('icon' '=' icon=STRING)?
 		//	'mappings' '=' '[' (mappings+=[Mapping|QualifiedName] (',' mappings+=[Mapping|QualifiedName])*)?
 		//	']'
-		//	'edges' '=' '[' ']'
+		//	'edges' '=' '[' (edges+=[Edge|QualifiedName] (',' edges+=[Edge|QualifiedName])*)?
+		//	']'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//documentation=DOCUMENTATION? 'layer' name=ID '{' ('icon' '=' icon=STRING)? 'mappings' '=' '['
-		//(mappings+=[Mapping|QualifiedName] (',' mappings+=[Mapping|QualifiedName])*)? ']' 'edges' '=' '[' ']' '}'
+		//(mappings+=[Mapping|QualifiedName] (',' mappings+=[Mapping|QualifiedName])*)? ']' 'edges' '=' '['
+		//(edges+=[Edge|QualifiedName] (',' edges+=[Edge|QualifiedName])*)? ']' '}'
 		public Group getGroup() { return cGroup; }
 
 		//documentation=DOCUMENTATION?
@@ -867,11 +882,38 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_12() { return cLeftSquareBracketKeyword_12; }
 
+		//(edges+=[Edge|QualifiedName] (',' edges+=[Edge|QualifiedName])*)?
+		public Group getGroup_13() { return cGroup_13; }
+
+		//edges+=[Edge|QualifiedName]
+		public Assignment getEdgesAssignment_13_0() { return cEdgesAssignment_13_0; }
+
+		//[Edge|QualifiedName]
+		public CrossReference getEdgesEdgeCrossReference_13_0_0() { return cEdgesEdgeCrossReference_13_0_0; }
+
+		//QualifiedName
+		public RuleCall getEdgesEdgeQualifiedNameParserRuleCall_13_0_0_1() { return cEdgesEdgeQualifiedNameParserRuleCall_13_0_0_1; }
+
+		//(',' edges+=[Edge|QualifiedName])*
+		public Group getGroup_13_1() { return cGroup_13_1; }
+
+		//','
+		public Keyword getCommaKeyword_13_1_0() { return cCommaKeyword_13_1_0; }
+
+		//edges+=[Edge|QualifiedName]
+		public Assignment getEdgesAssignment_13_1_1() { return cEdgesAssignment_13_1_1; }
+
+		//[Edge|QualifiedName]
+		public CrossReference getEdgesEdgeCrossReference_13_1_1_0() { return cEdgesEdgeCrossReference_13_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getEdgesEdgeQualifiedNameParserRuleCall_13_1_1_0_1() { return cEdgesEdgeQualifiedNameParserRuleCall_13_1_1_0_1; }
+
 		//']'
-		public Keyword getRightSquareBracketKeyword_13() { return cRightSquareBracketKeyword_13; }
+		public Keyword getRightSquareBracketKeyword_14() { return cRightSquareBracketKeyword_14; }
 
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 	}
 
 	public class MappingElements extends AbstractParserRuleElementFinder {
@@ -1071,14 +1113,22 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class StyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.Style");
-		private final RuleCall cContainerStyleParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cContainerStyleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEdgeStyleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Style:
-		//	ContainerStyle;
+		//	ContainerStyle | EdgeStyle;
 		@Override public ParserRule getRule() { return rule; }
 
+		//ContainerStyle | EdgeStyle
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//ContainerStyle
-		public RuleCall getContainerStyleParserRuleCall() { return cContainerStyleParserRuleCall; }
+		public RuleCall getContainerStyleParserRuleCall_0() { return cContainerStyleParserRuleCall_0; }
+
+		//EdgeStyle
+		public RuleCall getEdgeStyleParserRuleCall_1() { return cEdgeStyleParserRuleCall_1; }
 	}
 
 	public class ContainerStyleElements extends AbstractParserRuleElementFinder {
@@ -1323,6 +1373,415 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 	}
 
+	public class EdgeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.Edge");
+		private final RuleCall cRelationBasedEdgeParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Edge:
+		//	RelationBasedEdge;
+		@Override public ParserRule getRule() { return rule; }
+
+		//RelationBasedEdge
+		public RuleCall getRelationBasedEdgeParserRuleCall() { return cRelationBasedEdgeParserRuleCall; }
+	}
+
+	public class RelationBasedEdgeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.RelationBasedEdge");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocumentationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocumentationDOCUMENTATIONTerminalRuleCall_0_0 = (RuleCall)cDocumentationAssignment_0.eContents().get(0);
+		private final Keyword cRelationBasedEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cAsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cLabelAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cLabelAssignment_3_1.eContents().get(0);
+		private final Keyword cStyleKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cStyleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cStyleEdgeStyleCrossReference_5_0 = (CrossReference)cStyleAssignment_5.eContents().get(0);
+		private final RuleCall cStyleEdgeStyleQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cStyleEdgeStyleCrossReference_5_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cSourceMappingsKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cEqualsSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cLeftSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Assignment cSourceMappingsAssignment_10_0 = (Assignment)cGroup_10.eContents().get(0);
+		private final CrossReference cSourceMappingsMappingCrossReference_10_0_0 = (CrossReference)cSourceMappingsAssignment_10_0.eContents().get(0);
+		private final RuleCall cSourceMappingsMappingQualifiedNameParserRuleCall_10_0_0_1 = (RuleCall)cSourceMappingsMappingCrossReference_10_0_0.eContents().get(1);
+		private final Group cGroup_10_1 = (Group)cGroup_10.eContents().get(1);
+		private final Keyword cCommaKeyword_10_1_0 = (Keyword)cGroup_10_1.eContents().get(0);
+		private final Assignment cSourceMappingsAssignment_10_1_1 = (Assignment)cGroup_10_1.eContents().get(1);
+		private final CrossReference cSourceMappingsMappingCrossReference_10_1_1_0 = (CrossReference)cSourceMappingsAssignment_10_1_1.eContents().get(0);
+		private final RuleCall cSourceMappingsMappingQualifiedNameParserRuleCall_10_1_1_0_1 = (RuleCall)cSourceMappingsMappingCrossReference_10_1_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cTargetMappingsKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cEqualsSignKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cLeftSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Assignment cTargetMappingsAssignment_15_0 = (Assignment)cGroup_15.eContents().get(0);
+		private final CrossReference cTargetMappingsMappingCrossReference_15_0_0 = (CrossReference)cTargetMappingsAssignment_15_0.eContents().get(0);
+		private final RuleCall cTargetMappingsMappingQualifiedNameParserRuleCall_15_0_0_1 = (RuleCall)cTargetMappingsMappingCrossReference_15_0_0.eContents().get(1);
+		private final Group cGroup_15_1 = (Group)cGroup_15.eContents().get(1);
+		private final Keyword cCommaKeyword_15_1_0 = (Keyword)cGroup_15_1.eContents().get(0);
+		private final Assignment cTargetMappingsAssignment_15_1_1 = (Assignment)cGroup_15_1.eContents().get(1);
+		private final CrossReference cTargetMappingsMappingCrossReference_15_1_1_0 = (CrossReference)cTargetMappingsAssignment_15_1_1.eContents().get(0);
+		private final RuleCall cTargetMappingsMappingQualifiedNameParserRuleCall_15_1_1_0_1 = (RuleCall)cTargetMappingsMappingCrossReference_15_1_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cTargetFileExpressionKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cEqualsSignKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cTargetFinderExpressionAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cTargetFinderExpressionEXPRESSIONTerminalRuleCall_19_0 = (RuleCall)cTargetFinderExpressionAssignment_19.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		
+		//RelationBasedEdge:
+		//	documentation=DOCUMENTATION?
+		//	'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle|QualifiedName] '{'
+		//	'sourceMappings' '=' '[' (sourceMappings+=[Mapping|QualifiedName] (',' sourceMappings+=[Mapping|QualifiedName])*)?
+		//	']'
+		//	'targetMappings' '=' '[' (targetMappings+=[Mapping|QualifiedName] (',' targetMappings+=[Mapping|QualifiedName])*)?
+		//	']'
+		//	'targetFileExpression' '=' targetFinderExpression=EXPRESSION
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+
+		//documentation=DOCUMENTATION? 'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle|QualifiedName]
+		//'{' 'sourceMappings' '=' '[' (sourceMappings+=[Mapping|QualifiedName] (',' sourceMappings+=[Mapping|QualifiedName])*)?
+		//']' 'targetMappings' '=' '[' (targetMappings+=[Mapping|QualifiedName] (',' targetMappings+=[Mapping|QualifiedName])*)?
+		//']' 'targetFileExpression' '=' targetFinderExpression=EXPRESSION '}'
+		public Group getGroup() { return cGroup; }
+
+		//documentation=DOCUMENTATION?
+		public Assignment getDocumentationAssignment_0() { return cDocumentationAssignment_0; }
+
+		//DOCUMENTATION
+		public RuleCall getDocumentationDOCUMENTATIONTerminalRuleCall_0_0() { return cDocumentationDOCUMENTATIONTerminalRuleCall_0_0; }
+
+		//'relationBasedEdge'
+		public Keyword getRelationBasedEdgeKeyword_1() { return cRelationBasedEdgeKeyword_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//('as' label=STRING)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//'as'
+		public Keyword getAsKeyword_3_0() { return cAsKeyword_3_0; }
+
+		//label=STRING
+		public Assignment getLabelAssignment_3_1() { return cLabelAssignment_3_1; }
+
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_3_1_0() { return cLabelSTRINGTerminalRuleCall_3_1_0; }
+
+		//'style'
+		public Keyword getStyleKeyword_4() { return cStyleKeyword_4; }
+
+		//style=[EdgeStyle|QualifiedName]
+		public Assignment getStyleAssignment_5() { return cStyleAssignment_5; }
+
+		//[EdgeStyle|QualifiedName]
+		public CrossReference getStyleEdgeStyleCrossReference_5_0() { return cStyleEdgeStyleCrossReference_5_0; }
+
+		//QualifiedName
+		public RuleCall getStyleEdgeStyleQualifiedNameParserRuleCall_5_0_1() { return cStyleEdgeStyleQualifiedNameParserRuleCall_5_0_1; }
+
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+
+		//'sourceMappings'
+		public Keyword getSourceMappingsKeyword_7() { return cSourceMappingsKeyword_7; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_8() { return cEqualsSignKeyword_8; }
+
+		//'['
+		public Keyword getLeftSquareBracketKeyword_9() { return cLeftSquareBracketKeyword_9; }
+
+		//(sourceMappings+=[Mapping|QualifiedName] (',' sourceMappings+=[Mapping|QualifiedName])*)?
+		public Group getGroup_10() { return cGroup_10; }
+
+		//sourceMappings+=[Mapping|QualifiedName]
+		public Assignment getSourceMappingsAssignment_10_0() { return cSourceMappingsAssignment_10_0; }
+
+		//[Mapping|QualifiedName]
+		public CrossReference getSourceMappingsMappingCrossReference_10_0_0() { return cSourceMappingsMappingCrossReference_10_0_0; }
+
+		//QualifiedName
+		public RuleCall getSourceMappingsMappingQualifiedNameParserRuleCall_10_0_0_1() { return cSourceMappingsMappingQualifiedNameParserRuleCall_10_0_0_1; }
+
+		//(',' sourceMappings+=[Mapping|QualifiedName])*
+		public Group getGroup_10_1() { return cGroup_10_1; }
+
+		//','
+		public Keyword getCommaKeyword_10_1_0() { return cCommaKeyword_10_1_0; }
+
+		//sourceMappings+=[Mapping|QualifiedName]
+		public Assignment getSourceMappingsAssignment_10_1_1() { return cSourceMappingsAssignment_10_1_1; }
+
+		//[Mapping|QualifiedName]
+		public CrossReference getSourceMappingsMappingCrossReference_10_1_1_0() { return cSourceMappingsMappingCrossReference_10_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getSourceMappingsMappingQualifiedNameParserRuleCall_10_1_1_0_1() { return cSourceMappingsMappingQualifiedNameParserRuleCall_10_1_1_0_1; }
+
+		//']'
+		public Keyword getRightSquareBracketKeyword_11() { return cRightSquareBracketKeyword_11; }
+
+		//'targetMappings'
+		public Keyword getTargetMappingsKeyword_12() { return cTargetMappingsKeyword_12; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_13() { return cEqualsSignKeyword_13; }
+
+		//'['
+		public Keyword getLeftSquareBracketKeyword_14() { return cLeftSquareBracketKeyword_14; }
+
+		//(targetMappings+=[Mapping|QualifiedName] (',' targetMappings+=[Mapping|QualifiedName])*)?
+		public Group getGroup_15() { return cGroup_15; }
+
+		//targetMappings+=[Mapping|QualifiedName]
+		public Assignment getTargetMappingsAssignment_15_0() { return cTargetMappingsAssignment_15_0; }
+
+		//[Mapping|QualifiedName]
+		public CrossReference getTargetMappingsMappingCrossReference_15_0_0() { return cTargetMappingsMappingCrossReference_15_0_0; }
+
+		//QualifiedName
+		public RuleCall getTargetMappingsMappingQualifiedNameParserRuleCall_15_0_0_1() { return cTargetMappingsMappingQualifiedNameParserRuleCall_15_0_0_1; }
+
+		//(',' targetMappings+=[Mapping|QualifiedName])*
+		public Group getGroup_15_1() { return cGroup_15_1; }
+
+		//','
+		public Keyword getCommaKeyword_15_1_0() { return cCommaKeyword_15_1_0; }
+
+		//targetMappings+=[Mapping|QualifiedName]
+		public Assignment getTargetMappingsAssignment_15_1_1() { return cTargetMappingsAssignment_15_1_1; }
+
+		//[Mapping|QualifiedName]
+		public CrossReference getTargetMappingsMappingCrossReference_15_1_1_0() { return cTargetMappingsMappingCrossReference_15_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getTargetMappingsMappingQualifiedNameParserRuleCall_15_1_1_0_1() { return cTargetMappingsMappingQualifiedNameParserRuleCall_15_1_1_0_1; }
+
+		//']'
+		public Keyword getRightSquareBracketKeyword_16() { return cRightSquareBracketKeyword_16; }
+
+		//'targetFileExpression'
+		public Keyword getTargetFileExpressionKeyword_17() { return cTargetFileExpressionKeyword_17; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_18() { return cEqualsSignKeyword_18; }
+
+		//targetFinderExpression=EXPRESSION
+		public Assignment getTargetFinderExpressionAssignment_19() { return cTargetFinderExpressionAssignment_19; }
+
+		//EXPRESSION
+		public RuleCall getTargetFinderExpressionEXPRESSIONTerminalRuleCall_19_0() { return cTargetFinderExpressionEXPRESSIONTerminalRuleCall_19_0; }
+
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
+	}
+
+	public class EdgeStyleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.EdgeStyle");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEdgeStyleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStrokeColorAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cStrokeColorColorCrossReference_3_0 = (CrossReference)cStrokeColorAssignment_3.eContents().get(0);
+		private final RuleCall cStrokeColorColorQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cStrokeColorColorCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLineKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cLineStyleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cLineStyleLineStyleEnumRuleCall_4_2_0 = (RuleCall)cLineStyleAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRoutingKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cRoutingStyleAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cRoutingStyleRoutingStyleEnumRuleCall_5_2_0 = (RuleCall)cRoutingStyleAssignment_5_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cSourceArrowKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cSourceArrowAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cSourceArrowArrowDecoratorEnumRuleCall_7_2_0 = (RuleCall)cSourceArrowAssignment_7_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cTargetArrowKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cTargetArrowAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cTargetArrowArrowDecoratorEnumRuleCall_8_2_0 = (RuleCall)cTargetArrowAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSizeComputationExpressionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSizeComputationExpressionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cSizeComputationExpressionEXPRESSIONTerminalRuleCall_9_2_0 = (RuleCall)cSizeComputationExpressionAssignment_9_2.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cFoldingStyleKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cFoldingStyleAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cFoldingStyleFoldingStyleEnumRuleCall_10_2_0 = (RuleCall)cFoldingStyleAssignment_10_2.eContents().get(0);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cEndsCenteringKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Assignment cEndsCenteringAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
+		private final RuleCall cEndsCenteringEndsCenteringEnumRuleCall_11_2_0 = (RuleCall)cEndsCenteringAssignment_11_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//EdgeStyle:
+		//	'edgeStyle' name=ID 'in' strokeColor=[Color|QualifiedName] ('line' '=' lineStyle=LineStyle)? ('routing' '='
+		//	routingStyle=RoutingStyle)? '{' ('sourceArrow' '=' sourceArrow=ArrowDecorator)? ('targetArrow' '='
+		//	targetArrow=ArrowDecorator)? ('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)? ('foldingStyle'
+		//	'=' foldingStyle=FoldingStyle)? ('endsCentering' '=' endsCentering=EndsCentering)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+
+		//'edgeStyle' name=ID 'in' strokeColor=[Color|QualifiedName] ('line' '=' lineStyle=LineStyle)? ('routing' '='
+		//routingStyle=RoutingStyle)? '{' ('sourceArrow' '=' sourceArrow=ArrowDecorator)? ('targetArrow' '='
+		//targetArrow=ArrowDecorator)? ('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)? ('foldingStyle'
+		//'=' foldingStyle=FoldingStyle)? ('endsCentering' '=' endsCentering=EndsCentering)? '}'
+		public Group getGroup() { return cGroup; }
+
+		//'edgeStyle'
+		public Keyword getEdgeStyleKeyword_0() { return cEdgeStyleKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//'in'
+		public Keyword getInKeyword_2() { return cInKeyword_2; }
+
+		//strokeColor=[Color|QualifiedName]
+		public Assignment getStrokeColorAssignment_3() { return cStrokeColorAssignment_3; }
+
+		//[Color|QualifiedName]
+		public CrossReference getStrokeColorColorCrossReference_3_0() { return cStrokeColorColorCrossReference_3_0; }
+
+		//QualifiedName
+		public RuleCall getStrokeColorColorQualifiedNameParserRuleCall_3_0_1() { return cStrokeColorColorQualifiedNameParserRuleCall_3_0_1; }
+
+		//('line' '=' lineStyle=LineStyle)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//'line'
+		public Keyword getLineKeyword_4_0() { return cLineKeyword_4_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_4_1() { return cEqualsSignKeyword_4_1; }
+
+		//lineStyle=LineStyle
+		public Assignment getLineStyleAssignment_4_2() { return cLineStyleAssignment_4_2; }
+
+		//LineStyle
+		public RuleCall getLineStyleLineStyleEnumRuleCall_4_2_0() { return cLineStyleLineStyleEnumRuleCall_4_2_0; }
+
+		//('routing' '=' routingStyle=RoutingStyle)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//'routing'
+		public Keyword getRoutingKeyword_5_0() { return cRoutingKeyword_5_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_5_1() { return cEqualsSignKeyword_5_1; }
+
+		//routingStyle=RoutingStyle
+		public Assignment getRoutingStyleAssignment_5_2() { return cRoutingStyleAssignment_5_2; }
+
+		//RoutingStyle
+		public RuleCall getRoutingStyleRoutingStyleEnumRuleCall_5_2_0() { return cRoutingStyleRoutingStyleEnumRuleCall_5_2_0; }
+
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+
+		//('sourceArrow' '=' sourceArrow=ArrowDecorator)?
+		public Group getGroup_7() { return cGroup_7; }
+
+		//'sourceArrow'
+		public Keyword getSourceArrowKeyword_7_0() { return cSourceArrowKeyword_7_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_7_1() { return cEqualsSignKeyword_7_1; }
+
+		//sourceArrow=ArrowDecorator
+		public Assignment getSourceArrowAssignment_7_2() { return cSourceArrowAssignment_7_2; }
+
+		//ArrowDecorator
+		public RuleCall getSourceArrowArrowDecoratorEnumRuleCall_7_2_0() { return cSourceArrowArrowDecoratorEnumRuleCall_7_2_0; }
+
+		//('targetArrow' '=' targetArrow=ArrowDecorator)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//'targetArrow'
+		public Keyword getTargetArrowKeyword_8_0() { return cTargetArrowKeyword_8_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_8_1() { return cEqualsSignKeyword_8_1; }
+
+		//targetArrow=ArrowDecorator
+		public Assignment getTargetArrowAssignment_8_2() { return cTargetArrowAssignment_8_2; }
+
+		//ArrowDecorator
+		public RuleCall getTargetArrowArrowDecoratorEnumRuleCall_8_2_0() { return cTargetArrowArrowDecoratorEnumRuleCall_8_2_0; }
+
+		//('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)?
+		public Group getGroup_9() { return cGroup_9; }
+
+		//'sizeComputationExpression'
+		public Keyword getSizeComputationExpressionKeyword_9_0() { return cSizeComputationExpressionKeyword_9_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_9_1() { return cEqualsSignKeyword_9_1; }
+
+		//sizeComputationExpression=EXPRESSION
+		public Assignment getSizeComputationExpressionAssignment_9_2() { return cSizeComputationExpressionAssignment_9_2; }
+
+		//EXPRESSION
+		public RuleCall getSizeComputationExpressionEXPRESSIONTerminalRuleCall_9_2_0() { return cSizeComputationExpressionEXPRESSIONTerminalRuleCall_9_2_0; }
+
+		//('foldingStyle' '=' foldingStyle=FoldingStyle)?
+		public Group getGroup_10() { return cGroup_10; }
+
+		//'foldingStyle'
+		public Keyword getFoldingStyleKeyword_10_0() { return cFoldingStyleKeyword_10_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_10_1() { return cEqualsSignKeyword_10_1; }
+
+		//foldingStyle=FoldingStyle
+		public Assignment getFoldingStyleAssignment_10_2() { return cFoldingStyleAssignment_10_2; }
+
+		//FoldingStyle
+		public RuleCall getFoldingStyleFoldingStyleEnumRuleCall_10_2_0() { return cFoldingStyleFoldingStyleEnumRuleCall_10_2_0; }
+
+		//('endsCentering' '=' endsCentering=EndsCentering)?
+		public Group getGroup_11() { return cGroup_11; }
+
+		//'endsCentering'
+		public Keyword getEndsCenteringKeyword_11_0() { return cEndsCenteringKeyword_11_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_11_1() { return cEqualsSignKeyword_11_1; }
+
+		//endsCentering=EndsCentering
+		public Assignment getEndsCenteringAssignment_11_2() { return cEndsCenteringAssignment_11_2; }
+
+		//EndsCentering
+		public RuleCall getEndsCenteringEndsCenteringEnumRuleCall_11_2_0() { return cEndsCenteringEndsCenteringEnumRuleCall_11_2_0; }
+
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+	}
+
 	public class PaletteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.Palette");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1546,6 +2005,268 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"toptobottom"
 		public Keyword getToptobottomToptobottomKeyword_2_0() { return cToptobottomToptobottomKeyword_2_0; }
 	}
+
+	public class LineStyleElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.LineStyle");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSolidEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSolidSolidKeyword_0_0 = (Keyword)cSolidEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDashEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDashDashKeyword_1_0 = (Keyword)cDashEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDotEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDotDotKeyword_2_0 = (Keyword)cDotEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cDash_dotEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cDash_dotDash_dotKeyword_3_0 = (Keyword)cDash_dotEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum LineStyle:
+		//	solid | dash | dot | dash_dot;
+		public EnumRule getRule() { return rule; }
+
+		//solid | dash | dot | dash_dot
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//solid
+		public EnumLiteralDeclaration getSolidEnumLiteralDeclaration_0() { return cSolidEnumLiteralDeclaration_0; }
+
+		//"solid"
+		public Keyword getSolidSolidKeyword_0_0() { return cSolidSolidKeyword_0_0; }
+
+		//dash
+		public EnumLiteralDeclaration getDashEnumLiteralDeclaration_1() { return cDashEnumLiteralDeclaration_1; }
+
+		//"dash"
+		public Keyword getDashDashKeyword_1_0() { return cDashDashKeyword_1_0; }
+
+		//dot
+		public EnumLiteralDeclaration getDotEnumLiteralDeclaration_2() { return cDotEnumLiteralDeclaration_2; }
+
+		//"dot"
+		public Keyword getDotDotKeyword_2_0() { return cDotDotKeyword_2_0; }
+
+		//dash_dot
+		public EnumLiteralDeclaration getDash_dotEnumLiteralDeclaration_3() { return cDash_dotEnumLiteralDeclaration_3; }
+
+		//"dash_dot"
+		public Keyword getDash_dotDash_dotKeyword_3_0() { return cDash_dotDash_dotKeyword_3_0; }
+	}
+
+	public class RoutingStyleElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.RoutingStyle");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cStraightEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cStraightStraightKeyword_0_0 = (Keyword)cStraightEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cManhattanEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cManhattanManhattanKeyword_1_0 = (Keyword)cManhattanEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTreeEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTreeTreeKeyword_2_0 = (Keyword)cTreeEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum RoutingStyle:
+		//	straight | manhattan | tree;
+		public EnumRule getRule() { return rule; }
+
+		//straight | manhattan | tree
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//straight
+		public EnumLiteralDeclaration getStraightEnumLiteralDeclaration_0() { return cStraightEnumLiteralDeclaration_0; }
+
+		//"straight"
+		public Keyword getStraightStraightKeyword_0_0() { return cStraightStraightKeyword_0_0; }
+
+		//manhattan
+		public EnumLiteralDeclaration getManhattanEnumLiteralDeclaration_1() { return cManhattanEnumLiteralDeclaration_1; }
+
+		//"manhattan"
+		public Keyword getManhattanManhattanKeyword_1_0() { return cManhattanManhattanKeyword_1_0; }
+
+		//tree
+		public EnumLiteralDeclaration getTreeEnumLiteralDeclaration_2() { return cTreeEnumLiteralDeclaration_2; }
+
+		//"tree"
+		public Keyword getTreeTreeKeyword_2_0() { return cTreeTreeKeyword_2_0; }
+	}
+
+	public class ArrowDecoratorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.ArrowDecorator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNoDecorationEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNoDecorationNoDecorationKeyword_0_0 = (Keyword)cNoDecorationEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOutputArrowEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cOutputArrowOutputArrowKeyword_1_0 = (Keyword)cOutputArrowEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cInputArrowEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cInputArrowInputArrowKeyword_2_0 = (Keyword)cInputArrowEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cOutputClosedArrowEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cOutputClosedArrowOutputClosedArrowKeyword_3_0 = (Keyword)cOutputClosedArrowEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cInputClosedArrowEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cInputClosedArrowInputClosedArrowKeyword_4_0 = (Keyword)cInputClosedArrowEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cOutputFillClosedArrowEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cOutputFillClosedArrowOutputFillClosedArrowKeyword_5_0 = (Keyword)cOutputFillClosedArrowEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cInputFillClosedArrowEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cInputFillClosedArrowInputFillClosedArrowKeyword_6_0 = (Keyword)cInputFillClosedArrowEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cDiamondEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cDiamondDiamondKeyword_7_0 = (Keyword)cDiamondEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cFillDiamondEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cFillDiamondFillDiamondKeyword_8_0 = (Keyword)cFillDiamondEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cInputArrowWithDiamondEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cInputArrowWithDiamondInputArrowWithDiamondKeyword_9_0 = (Keyword)cInputArrowWithDiamondEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cInputArrowWithFillDiamondEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cInputArrowWithFillDiamondInputArrowWithFillDiamondKeyword_10_0 = (Keyword)cInputArrowWithFillDiamondEnumLiteralDeclaration_10.eContents().get(0);
+		
+		//enum ArrowDecorator:
+		//	NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
+		//	InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond | InputArrowWithFillDiamond;
+		public EnumRule getRule() { return rule; }
+
+		//NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
+		//InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond | InputArrowWithFillDiamond
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//NoDecoration
+		public EnumLiteralDeclaration getNoDecorationEnumLiteralDeclaration_0() { return cNoDecorationEnumLiteralDeclaration_0; }
+
+		//"NoDecoration"
+		public Keyword getNoDecorationNoDecorationKeyword_0_0() { return cNoDecorationNoDecorationKeyword_0_0; }
+
+		//OutputArrow
+		public EnumLiteralDeclaration getOutputArrowEnumLiteralDeclaration_1() { return cOutputArrowEnumLiteralDeclaration_1; }
+
+		//"OutputArrow"
+		public Keyword getOutputArrowOutputArrowKeyword_1_0() { return cOutputArrowOutputArrowKeyword_1_0; }
+
+		//InputArrow
+		public EnumLiteralDeclaration getInputArrowEnumLiteralDeclaration_2() { return cInputArrowEnumLiteralDeclaration_2; }
+
+		//"InputArrow"
+		public Keyword getInputArrowInputArrowKeyword_2_0() { return cInputArrowInputArrowKeyword_2_0; }
+
+		//OutputClosedArrow
+		public EnumLiteralDeclaration getOutputClosedArrowEnumLiteralDeclaration_3() { return cOutputClosedArrowEnumLiteralDeclaration_3; }
+
+		//"OutputClosedArrow"
+		public Keyword getOutputClosedArrowOutputClosedArrowKeyword_3_0() { return cOutputClosedArrowOutputClosedArrowKeyword_3_0; }
+
+		//InputClosedArrow
+		public EnumLiteralDeclaration getInputClosedArrowEnumLiteralDeclaration_4() { return cInputClosedArrowEnumLiteralDeclaration_4; }
+
+		//"InputClosedArrow"
+		public Keyword getInputClosedArrowInputClosedArrowKeyword_4_0() { return cInputClosedArrowInputClosedArrowKeyword_4_0; }
+
+		//OutputFillClosedArrow
+		public EnumLiteralDeclaration getOutputFillClosedArrowEnumLiteralDeclaration_5() { return cOutputFillClosedArrowEnumLiteralDeclaration_5; }
+
+		//"OutputFillClosedArrow"
+		public Keyword getOutputFillClosedArrowOutputFillClosedArrowKeyword_5_0() { return cOutputFillClosedArrowOutputFillClosedArrowKeyword_5_0; }
+
+		//InputFillClosedArrow
+		public EnumLiteralDeclaration getInputFillClosedArrowEnumLiteralDeclaration_6() { return cInputFillClosedArrowEnumLiteralDeclaration_6; }
+
+		//"InputFillClosedArrow"
+		public Keyword getInputFillClosedArrowInputFillClosedArrowKeyword_6_0() { return cInputFillClosedArrowInputFillClosedArrowKeyword_6_0; }
+
+		//Diamond
+		public EnumLiteralDeclaration getDiamondEnumLiteralDeclaration_7() { return cDiamondEnumLiteralDeclaration_7; }
+
+		//"Diamond"
+		public Keyword getDiamondDiamondKeyword_7_0() { return cDiamondDiamondKeyword_7_0; }
+
+		//FillDiamond
+		public EnumLiteralDeclaration getFillDiamondEnumLiteralDeclaration_8() { return cFillDiamondEnumLiteralDeclaration_8; }
+
+		//"FillDiamond"
+		public Keyword getFillDiamondFillDiamondKeyword_8_0() { return cFillDiamondFillDiamondKeyword_8_0; }
+
+		//InputArrowWithDiamond
+		public EnumLiteralDeclaration getInputArrowWithDiamondEnumLiteralDeclaration_9() { return cInputArrowWithDiamondEnumLiteralDeclaration_9; }
+
+		//"InputArrowWithDiamond"
+		public Keyword getInputArrowWithDiamondInputArrowWithDiamondKeyword_9_0() { return cInputArrowWithDiamondInputArrowWithDiamondKeyword_9_0; }
+
+		//InputArrowWithFillDiamond
+		public EnumLiteralDeclaration getInputArrowWithFillDiamondEnumLiteralDeclaration_10() { return cInputArrowWithFillDiamondEnumLiteralDeclaration_10; }
+
+		//"InputArrowWithFillDiamond"
+		public Keyword getInputArrowWithFillDiamondInputArrowWithFillDiamondKeyword_10_0() { return cInputArrowWithFillDiamondInputArrowWithFillDiamondKeyword_10_0; }
+	}
+
+	public class FoldingStyleElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.FoldingStyle");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNoneNoneKeyword_0_0 = (Keyword)cNoneEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSourceEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSourceSourceKeyword_1_0 = (Keyword)cSourceEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTargetEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTargetTargetKeyword_2_0 = (Keyword)cTargetEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum FoldingStyle:
+		//	none | source | target;
+		public EnumRule getRule() { return rule; }
+
+		//none | source | target
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//none
+		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_0() { return cNoneEnumLiteralDeclaration_0; }
+
+		//"none"
+		public Keyword getNoneNoneKeyword_0_0() { return cNoneNoneKeyword_0_0; }
+
+		//source
+		public EnumLiteralDeclaration getSourceEnumLiteralDeclaration_1() { return cSourceEnumLiteralDeclaration_1; }
+
+		//"source"
+		public Keyword getSourceSourceKeyword_1_0() { return cSourceSourceKeyword_1_0; }
+
+		//target
+		public EnumLiteralDeclaration getTargetEnumLiteralDeclaration_2() { return cTargetEnumLiteralDeclaration_2; }
+
+		//"target"
+		public Keyword getTargetTargetKeyword_2_0() { return cTargetTargetKeyword_2_0; }
+	}
+
+	public class EndsCenteringElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.EndsCentering");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNoneNoneKeyword_0_0 = (Keyword)cNoneEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cBothEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cBothBothKeyword_1_0 = (Keyword)cBothEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSourceEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSourceSourceKeyword_2_0 = (Keyword)cSourceEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cTargetEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cTargetTargetKeyword_3_0 = (Keyword)cTargetEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum EndsCentering:
+		//	none | both | source | target;
+		public EnumRule getRule() { return rule; }
+
+		//none | both | source | target
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//none
+		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_0() { return cNoneEnumLiteralDeclaration_0; }
+
+		//"none"
+		public Keyword getNoneNoneKeyword_0_0() { return cNoneNoneKeyword_0_0; }
+
+		//both
+		public EnumLiteralDeclaration getBothEnumLiteralDeclaration_1() { return cBothEnumLiteralDeclaration_1; }
+
+		//"both"
+		public Keyword getBothBothKeyword_1_0() { return cBothBothKeyword_1_0; }
+
+		//source
+		public EnumLiteralDeclaration getSourceEnumLiteralDeclaration_2() { return cSourceEnumLiteralDeclaration_2; }
+
+		//"source"
+		public Keyword getSourceSourceKeyword_2_0() { return cSourceSourceKeyword_2_0; }
+
+		//target
+		public EnumLiteralDeclaration getTargetEnumLiteralDeclaration_3() { return cTargetEnumLiteralDeclaration_3; }
+
+		//"target"
+		public Keyword getTargetTargetKeyword_3_0() { return cTargetTargetKeyword_3_0; }
+	}
 	
 	private final SiriusFileElements pSiriusFile;
 	private final SiriusFileBodyElements pSiriusFileBody;
@@ -1565,6 +2286,14 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final GradientElements pGradient;
 	private final LabelAlignmentElements eLabelAlignment;
 	private final GradientDirectionElements eGradientDirection;
+	private final EdgeElements pEdge;
+	private final RelationBasedEdgeElements pRelationBasedEdge;
+	private final EdgeStyleElements pEdgeStyle;
+	private final LineStyleElements eLineStyle;
+	private final RoutingStyleElements eRoutingStyle;
+	private final ArrowDecoratorElements eArrowDecorator;
+	private final FoldingStyleElements eFoldingStyle;
+	private final EndsCenteringElements eEndsCentering;
 	private final PaletteElements pPalette;
 	private final ColorElements pColor;
 	private final ColorValueElements pColorValue;
@@ -1599,6 +2328,14 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGradient = new GradientElements();
 		this.eLabelAlignment = new LabelAlignmentElements();
 		this.eGradientDirection = new GradientDirectionElements();
+		this.pEdge = new EdgeElements();
+		this.pRelationBasedEdge = new RelationBasedEdgeElements();
+		this.pEdgeStyle = new EdgeStyleElements();
+		this.eLineStyle = new LineStyleElements();
+		this.eRoutingStyle = new RoutingStyleElements();
+		this.eArrowDecorator = new ArrowDecoratorElements();
+		this.eFoldingStyle = new FoldingStyleElements();
+		this.eEndsCentering = new EndsCenteringElements();
 		this.pPalette = new PaletteElements();
 		this.pColor = new ColorElements();
 		this.pColorValue = new ColorValueElements();
@@ -1648,7 +2385,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SiriusFileBody:
-	//	Designer | Representation | Layer | Mapping | Style | Palette;
+	//	Designer | Representation | Layer | Mapping | Style | Palette | Edge;
 	public SiriusFileBodyElements getSiriusFileBodyAccess() {
 		return pSiriusFileBody;
 	}
@@ -1751,7 +2488,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'layer' name=ID '{' ('icon' '=' icon=STRING)?
 	//	'mappings' '=' '[' (mappings+=[Mapping|QualifiedName] (',' mappings+=[Mapping|QualifiedName])*)?
 	//	']'
-	//	'edges' '=' '[' ']'
+	//	'edges' '=' '[' (edges+=[Edge|QualifiedName] (',' edges+=[Edge|QualifiedName])*)?
+	//	']'
 	//	'}';
 	public LayerElements getLayerAccess() {
 		return pLayer;
@@ -1797,7 +2535,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Style:
-	//	ContainerStyle;
+	//	ContainerStyle | EdgeStyle;
 	public StyleElements getStyleAccess() {
 		return pStyle;
 	}
@@ -1850,6 +2588,98 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getGradientDirectionRule() {
 		return getGradientDirectionAccess().getRule();
+	}
+
+	//Edge:
+	//	RelationBasedEdge;
+	public EdgeElements getEdgeAccess() {
+		return pEdge;
+	}
+	
+	public ParserRule getEdgeRule() {
+		return getEdgeAccess().getRule();
+	}
+
+	//RelationBasedEdge:
+	//	documentation=DOCUMENTATION?
+	//	'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle|QualifiedName] '{'
+	//	'sourceMappings' '=' '[' (sourceMappings+=[Mapping|QualifiedName] (',' sourceMappings+=[Mapping|QualifiedName])*)?
+	//	']'
+	//	'targetMappings' '=' '[' (targetMappings+=[Mapping|QualifiedName] (',' targetMappings+=[Mapping|QualifiedName])*)?
+	//	']'
+	//	'targetFileExpression' '=' targetFinderExpression=EXPRESSION
+	//	'}';
+	public RelationBasedEdgeElements getRelationBasedEdgeAccess() {
+		return pRelationBasedEdge;
+	}
+	
+	public ParserRule getRelationBasedEdgeRule() {
+		return getRelationBasedEdgeAccess().getRule();
+	}
+
+	//EdgeStyle:
+	//	'edgeStyle' name=ID 'in' strokeColor=[Color|QualifiedName] ('line' '=' lineStyle=LineStyle)? ('routing' '='
+	//	routingStyle=RoutingStyle)? '{' ('sourceArrow' '=' sourceArrow=ArrowDecorator)? ('targetArrow' '='
+	//	targetArrow=ArrowDecorator)? ('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)? ('foldingStyle'
+	//	'=' foldingStyle=FoldingStyle)? ('endsCentering' '=' endsCentering=EndsCentering)?
+	//	'}';
+	public EdgeStyleElements getEdgeStyleAccess() {
+		return pEdgeStyle;
+	}
+	
+	public ParserRule getEdgeStyleRule() {
+		return getEdgeStyleAccess().getRule();
+	}
+
+	//enum LineStyle:
+	//	solid | dash | dot | dash_dot;
+	public LineStyleElements getLineStyleAccess() {
+		return eLineStyle;
+	}
+	
+	public EnumRule getLineStyleRule() {
+		return getLineStyleAccess().getRule();
+	}
+
+	//enum RoutingStyle:
+	//	straight | manhattan | tree;
+	public RoutingStyleElements getRoutingStyleAccess() {
+		return eRoutingStyle;
+	}
+	
+	public EnumRule getRoutingStyleRule() {
+		return getRoutingStyleAccess().getRule();
+	}
+
+	//enum ArrowDecorator:
+	//	NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
+	//	InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond | InputArrowWithFillDiamond;
+	public ArrowDecoratorElements getArrowDecoratorAccess() {
+		return eArrowDecorator;
+	}
+	
+	public EnumRule getArrowDecoratorRule() {
+		return getArrowDecoratorAccess().getRule();
+	}
+
+	//enum FoldingStyle:
+	//	none | source | target;
+	public FoldingStyleElements getFoldingStyleAccess() {
+		return eFoldingStyle;
+	}
+	
+	public EnumRule getFoldingStyleRule() {
+		return getFoldingStyleAccess().getRule();
+	}
+
+	//enum EndsCentering:
+	//	none | both | source | target;
+	public EndsCenteringElements getEndsCenteringAccess() {
+		return eEndsCentering;
+	}
+	
+	public EnumRule getEndsCenteringRule() {
+		return getEndsCenteringAccess().getRule();
 	}
 
 	//Palette:

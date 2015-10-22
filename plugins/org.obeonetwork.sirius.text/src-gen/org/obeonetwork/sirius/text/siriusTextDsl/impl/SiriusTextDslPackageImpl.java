@@ -10,20 +10,28 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
+import org.obeonetwork.sirius.text.siriusTextDsl.Edge;
+import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering;
+import org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
 import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
+import org.obeonetwork.sirius.text.siriusTextDsl.LineStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
+import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
 import org.obeonetwork.sirius.text.siriusTextDsl.Representation;
+import org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFileBody;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslFactory;
@@ -142,6 +150,27 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass edgeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationBasedEdgeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass edgeStyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass paletteEClass = null;
 
   /**
@@ -178,6 +207,41 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * @generated
    */
   private EEnum gradientDirectionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum lineStyleEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum routingStyleEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum arrowDecoratorEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum foldingStyleEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum endsCenteringEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -657,6 +721,16 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLayer_Edges()
+  {
+    return (EReference)layerEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMapping()
   {
     return mappingEClass;
@@ -957,6 +1031,196 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getEdge()
+  {
+    return edgeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationBasedEdge()
+  {
+    return relationBasedEdgeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationBasedEdge_Documentation()
+  {
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationBasedEdge_Name()
+  {
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationBasedEdge_Label()
+  {
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationBasedEdge_Style()
+  {
+    return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationBasedEdge_SourceMappings()
+  {
+    return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationBasedEdge_TargetMappings()
+  {
+    return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationBasedEdge_TargetFinderExpression()
+  {
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEdgeStyle()
+  {
+    return edgeStyleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_Name()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEdgeStyle_StrokeColor()
+  {
+    return (EReference)edgeStyleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_LineStyle()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_RoutingStyle()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_SourceArrow()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_TargetArrow()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_SizeComputationExpression()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_FoldingStyle()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_EndsCentering()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPalette()
   {
     return paletteEClass;
@@ -1097,6 +1361,56 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getLineStyle()
+  {
+    return lineStyleEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getRoutingStyle()
+  {
+    return routingStyleEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getArrowDecorator()
+  {
+    return arrowDecoratorEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getFoldingStyle()
+  {
+    return foldingStyleEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getEndsCentering()
+  {
+    return endsCenteringEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SiriusTextDslFactory getSiriusTextDslFactory()
   {
     return (SiriusTextDslFactory)getEFactoryInstance();
@@ -1170,6 +1484,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(layerEClass, LAYER__NAME);
     createEAttribute(layerEClass, LAYER__ICON);
     createEReference(layerEClass, LAYER__MAPPINGS);
+    createEReference(layerEClass, LAYER__EDGES);
 
     mappingEClass = createEClass(MAPPING);
 
@@ -1207,6 +1522,28 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(gradientEClass, GRADIENT__HEIGHT_COMPUTATION_EXPRESSION);
     createEAttribute(gradientEClass, GRADIENT__WIDTH_COMPUTATION_EXPRESSION);
 
+    edgeEClass = createEClass(EDGE);
+
+    relationBasedEdgeEClass = createEClass(RELATION_BASED_EDGE);
+    createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__DOCUMENTATION);
+    createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__NAME);
+    createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__LABEL);
+    createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__STYLE);
+    createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__SOURCE_MAPPINGS);
+    createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__TARGET_MAPPINGS);
+    createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION);
+
+    edgeStyleEClass = createEClass(EDGE_STYLE);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__NAME);
+    createEReference(edgeStyleEClass, EDGE_STYLE__STROKE_COLOR);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__LINE_STYLE);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__ROUTING_STYLE);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__SOURCE_ARROW);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__TARGET_ARROW);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__FOLDING_STYLE);
+    createEAttribute(edgeStyleEClass, EDGE_STYLE__ENDS_CENTERING);
+
     paletteEClass = createEClass(PALETTE);
     createEAttribute(paletteEClass, PALETTE__DOCUMENTATION);
     createEAttribute(paletteEClass, PALETTE__NAME);
@@ -1226,6 +1563,11 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     // Create enums
     labelAlignmentEEnum = createEEnum(LABEL_ALIGNMENT);
     gradientDirectionEEnum = createEEnum(GRADIENT_DIRECTION);
+    lineStyleEEnum = createEEnum(LINE_STYLE);
+    routingStyleEEnum = createEEnum(ROUTING_STYLE);
+    arrowDecoratorEEnum = createEEnum(ARROW_DECORATOR);
+    foldingStyleEEnum = createEEnum(FOLDING_STYLE);
+    endsCenteringEEnum = createEEnum(ENDS_CENTERING);
   }
 
   /**
@@ -1266,6 +1608,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     styleEClass.getESuperTypes().add(this.getSiriusFileBody());
     containerStyleEClass.getESuperTypes().add(this.getStyle());
     gradientEClass.getESuperTypes().add(this.getContainerStyle());
+    edgeEClass.getESuperTypes().add(this.getSiriusFileBody());
+    relationBasedEdgeEClass.getESuperTypes().add(this.getEdge());
+    edgeStyleEClass.getESuperTypes().add(this.getStyle());
     paletteEClass.getESuperTypes().add(this.getSiriusFileBody());
     rgbEClass.getESuperTypes().add(this.getColorValue());
 
@@ -1318,6 +1663,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getLayer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLayer_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Mappings(), this.getMapping(), null, "mappings", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayer_Edges(), this.getEdge(), null, "edges", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1355,6 +1701,28 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getGradient_HeightComputationExpression(), ecorePackage.getEString(), "heightComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_WidthComputationExpression(), ecorePackage.getEString(), "widthComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(relationBasedEdgeEClass, RelationBasedEdge.class, "RelationBasedEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRelationBasedEdge_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationBasedEdge_Name(), ecorePackage.getEString(), "name", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationBasedEdge_Label(), ecorePackage.getEString(), "label", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationBasedEdge_Style(), this.getEdgeStyle(), null, "style", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationBasedEdge_SourceMappings(), this.getMapping(), null, "sourceMappings", null, 0, -1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationBasedEdge_TargetMappings(), this.getMapping(), null, "targetMappings", null, 0, -1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationBasedEdge_TargetFinderExpression(), ecorePackage.getEString(), "targetFinderExpression", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(edgeStyleEClass, EdgeStyle.class, "EdgeStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEdgeStyle_Name(), ecorePackage.getEString(), "name", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEdgeStyle_StrokeColor(), this.getColor(), null, "strokeColor", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_LineStyle(), this.getLineStyle(), "lineStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_RoutingStyle(), this.getRoutingStyle(), "routingStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_SourceArrow(), this.getArrowDecorator(), "sourceArrow", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_TargetArrow(), this.getArrowDecorator(), "targetArrow", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_SizeComputationExpression(), ecorePackage.getEString(), "sizeComputationExpression", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_FoldingStyle(), this.getFoldingStyle(), "foldingStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeStyle_EndsCentering(), this.getEndsCentering(), "endsCentering", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(paletteEClass, Palette.class, "Palette", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPalette_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Palette.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPalette_Name(), ecorePackage.getEString(), "name", null, 0, 1, Palette.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1381,6 +1749,41 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     addEEnumLiteral(gradientDirectionEEnum, GradientDirection.OBLIQUE);
     addEEnumLiteral(gradientDirectionEEnum, GradientDirection.LEFTTORIGHT);
     addEEnumLiteral(gradientDirectionEEnum, GradientDirection.TOPTOBOTTOM);
+
+    initEEnum(lineStyleEEnum, LineStyle.class, "LineStyle");
+    addEEnumLiteral(lineStyleEEnum, LineStyle.SOLID);
+    addEEnumLiteral(lineStyleEEnum, LineStyle.DASH);
+    addEEnumLiteral(lineStyleEEnum, LineStyle.DOT);
+    addEEnumLiteral(lineStyleEEnum, LineStyle.DASH_DOT);
+
+    initEEnum(routingStyleEEnum, RoutingStyle.class, "RoutingStyle");
+    addEEnumLiteral(routingStyleEEnum, RoutingStyle.STRAIGHT);
+    addEEnumLiteral(routingStyleEEnum, RoutingStyle.MANHATTAN);
+    addEEnumLiteral(routingStyleEEnum, RoutingStyle.TREE);
+
+    initEEnum(arrowDecoratorEEnum, ArrowDecorator.class, "ArrowDecorator");
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.NO_DECORATION);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.OUTPUT_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.INPUT_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.OUTPUT_CLOSED_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.INPUT_CLOSED_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.OUTPUT_FILL_CLOSED_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.INPUT_FILL_CLOSED_ARROW);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.DIAMOND);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.FILL_DIAMOND);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.INPUT_ARROW_WITH_DIAMOND);
+    addEEnumLiteral(arrowDecoratorEEnum, ArrowDecorator.INPUT_ARROW_WITH_FILL_DIAMOND);
+
+    initEEnum(foldingStyleEEnum, FoldingStyle.class, "FoldingStyle");
+    addEEnumLiteral(foldingStyleEEnum, FoldingStyle.NONE);
+    addEEnumLiteral(foldingStyleEEnum, FoldingStyle.SOURCE);
+    addEEnumLiteral(foldingStyleEEnum, FoldingStyle.TARGET);
+
+    initEEnum(endsCenteringEEnum, EndsCentering.class, "EndsCentering");
+    addEEnumLiteral(endsCenteringEEnum, EndsCentering.NONE);
+    addEEnumLiteral(endsCenteringEEnum, EndsCentering.BOTH);
+    addEEnumLiteral(endsCenteringEEnum, EndsCentering.SOURCE);
+    addEEnumLiteral(endsCenteringEEnum, EndsCentering.TARGET);
 
     // Create resource
     createResource(eNS_URI);

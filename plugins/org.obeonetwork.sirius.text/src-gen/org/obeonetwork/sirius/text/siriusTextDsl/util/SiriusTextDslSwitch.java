@@ -184,6 +184,32 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SiriusTextDslPackage.EDGE:
+      {
+        Edge edge = (Edge)theEObject;
+        T result = caseEdge(edge);
+        if (result == null) result = caseSiriusFileBody(edge);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.RELATION_BASED_EDGE:
+      {
+        RelationBasedEdge relationBasedEdge = (RelationBasedEdge)theEObject;
+        T result = caseRelationBasedEdge(relationBasedEdge);
+        if (result == null) result = caseEdge(relationBasedEdge);
+        if (result == null) result = caseSiriusFileBody(relationBasedEdge);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.EDGE_STYLE:
+      {
+        EdgeStyle edgeStyle = (EdgeStyle)theEObject;
+        T result = caseEdgeStyle(edgeStyle);
+        if (result == null) result = caseStyle(edgeStyle);
+        if (result == null) result = caseSiriusFileBody(edgeStyle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SiriusTextDslPackage.PALETTE:
       {
         Palette palette = (Palette)theEObject;
@@ -438,6 +464,54 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGradient(Gradient object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edge</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edge</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEdge(Edge object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relation Based Edge</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relation Based Edge</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationBasedEdge(RelationBasedEdge object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edge Style</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edge Style</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEdgeStyle(EdgeStyle object)
   {
     return null;
   }

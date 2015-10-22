@@ -17,6 +17,41 @@
       <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//GradientDirection/lefttoright"/>
       <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//GradientDirection/toptobottom"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SiriusTextDsl.ecore#//LineStyle">
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//LineStyle/solid"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//LineStyle/dash"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//LineStyle/dot"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//LineStyle/dash_dot"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SiriusTextDsl.ecore#//RoutingStyle">
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//RoutingStyle/straight"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//RoutingStyle/manhattan"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//RoutingStyle/tree"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SiriusTextDsl.ecore#//ArrowDecorator">
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/NoDecoration"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/OutputArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/InputArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/OutputClosedArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/InputClosedArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/OutputFillClosedArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/InputFillClosedArrow"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/Diamond"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/FillDiamond"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/InputArrowWithDiamond"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//ArrowDecorator/InputArrowWithFillDiamond"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SiriusTextDsl.ecore#//FoldingStyle">
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//FoldingStyle/none"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//FoldingStyle/source"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//FoldingStyle/target"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SiriusTextDsl.ecore#//EndsCentering">
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//EndsCentering/none"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//EndsCentering/both"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//EndsCentering/source"/>
+      <genEnumLiterals ecoreEnumLiteral="SiriusTextDsl.ecore#//EndsCentering/target"/>
+    </genEnums>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//SiriusFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//SiriusFile/documentation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//SiriusFile/name"/>
@@ -63,6 +98,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Layer/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Layer/icon"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Layer/mappings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Layer/edges"/>
     </genClasses>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Mapping"/>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Container">
@@ -96,6 +132,27 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/icon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/heightComputationExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Gradient/widthComputationExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Edge"/>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//RelationBasedEdge">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//RelationBasedEdge/documentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//RelationBasedEdge/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//RelationBasedEdge/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//RelationBasedEdge/style"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//RelationBasedEdge/sourceMappings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//RelationBasedEdge/targetMappings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//RelationBasedEdge/targetFinderExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//EdgeStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//EdgeStyle/strokeColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/lineStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/routingStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/sourceArrow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/targetArrow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/sizeComputationExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/foldingStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//EdgeStyle/endsCentering"/>
     </genClasses>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Palette">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Palette/documentation"/>

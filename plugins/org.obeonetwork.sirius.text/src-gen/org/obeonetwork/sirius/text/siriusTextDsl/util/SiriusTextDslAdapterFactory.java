@@ -145,6 +145,21 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
         return createGradientAdapter();
       }
       @Override
+      public Adapter caseEdge(Edge object)
+      {
+        return createEdgeAdapter();
+      }
+      @Override
+      public Adapter caseRelationBasedEdge(RelationBasedEdge object)
+      {
+        return createRelationBasedEdgeAdapter();
+      }
+      @Override
+      public Adapter caseEdgeStyle(EdgeStyle object)
+      {
+        return createEdgeStyleAdapter();
+      }
+      @Override
       public Adapter casePalette(Palette object)
       {
         return createPaletteAdapter();
@@ -392,6 +407,51 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGradientAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Edge <em>Edge</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Edge
+   * @generated
+   */
+  public Adapter createEdgeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge <em>Relation Based Edge</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge
+   * @generated
+   */
+  public Adapter createRelationBasedEdgeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle <em>Edge Style</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle
+   * @generated
+   */
+  public Adapter createEdgeStyleAdapter()
   {
     return null;
   }

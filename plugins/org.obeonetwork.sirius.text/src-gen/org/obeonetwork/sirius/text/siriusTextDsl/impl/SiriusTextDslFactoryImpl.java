@@ -79,6 +79,9 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
       case SiriusTextDslPackage.STYLE: return createStyle();
       case SiriusTextDslPackage.CONTAINER_STYLE: return createContainerStyle();
       case SiriusTextDslPackage.GRADIENT: return createGradient();
+      case SiriusTextDslPackage.EDGE: return createEdge();
+      case SiriusTextDslPackage.RELATION_BASED_EDGE: return createRelationBasedEdge();
+      case SiriusTextDslPackage.EDGE_STYLE: return createEdgeStyle();
       case SiriusTextDslPackage.PALETTE: return createPalette();
       case SiriusTextDslPackage.COLOR: return createColor();
       case SiriusTextDslPackage.COLOR_VALUE: return createColorValue();
@@ -102,6 +105,16 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
         return createLabelAlignmentFromString(eDataType, initialValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return createGradientDirectionFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.LINE_STYLE:
+        return createLineStyleFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.ROUTING_STYLE:
+        return createRoutingStyleFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.ARROW_DECORATOR:
+        return createArrowDecoratorFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.FOLDING_STYLE:
+        return createFoldingStyleFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.ENDS_CENTERING:
+        return createEndsCenteringFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -121,6 +134,16 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
         return convertLabelAlignmentToString(eDataType, instanceValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return convertGradientDirectionToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.LINE_STYLE:
+        return convertLineStyleToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.ROUTING_STYLE:
+        return convertRoutingStyleToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.ARROW_DECORATOR:
+        return convertArrowDecoratorToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.FOLDING_STYLE:
+        return convertFoldingStyleToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.ENDS_CENTERING:
+        return convertEndsCenteringToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -285,6 +308,39 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public Edge createEdge()
+  {
+    EdgeImpl edge = new EdgeImpl();
+    return edge;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationBasedEdge createRelationBasedEdge()
+  {
+    RelationBasedEdgeImpl relationBasedEdge = new RelationBasedEdgeImpl();
+    return relationBasedEdge;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EdgeStyle createEdgeStyle()
+  {
+    EdgeStyleImpl edgeStyle = new EdgeStyleImpl();
+    return edgeStyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Palette createPalette()
   {
     PaletteImpl palette = new PaletteImpl();
@@ -364,6 +420,116 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * @generated
    */
   public String convertGradientDirectionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LineStyle createLineStyleFromString(EDataType eDataType, String initialValue)
+  {
+    LineStyle result = LineStyle.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLineStyleToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RoutingStyle createRoutingStyleFromString(EDataType eDataType, String initialValue)
+  {
+    RoutingStyle result = RoutingStyle.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertRoutingStyleToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrowDecorator createArrowDecoratorFromString(EDataType eDataType, String initialValue)
+  {
+    ArrowDecorator result = ArrowDecorator.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertArrowDecoratorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FoldingStyle createFoldingStyleFromString(EDataType eDataType, String initialValue)
+  {
+    FoldingStyle result = FoldingStyle.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFoldingStyleToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EndsCentering createEndsCenteringFromString(EDataType eDataType, String initialValue)
+  {
+    EndsCentering result = EndsCentering.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertEndsCenteringToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

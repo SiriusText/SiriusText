@@ -498,13 +498,22 @@ public interface SiriusTextDslPackage extends EPackage
   int LAYER__MAPPINGS = SIRIUS_FILE_BODY_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Edges</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYER__EDGES = SIRIUS_FILE_BODY_FEATURE_COUNT + 4;
+
+  /**
    * The number of structural features of the '<em>Layer</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYER_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 4;
+  int LAYER_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MappingImpl <em>Mapping</em>}' class.
@@ -837,6 +846,207 @@ public interface SiriusTextDslPackage extends EPackage
   int GRADIENT_FEATURE_COUNT = CONTAINER_STYLE_FEATURE_COUNT + 13;
 
   /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeImpl <em>Edge</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdge()
+   * @generated
+   */
+  int EDGE = 14;
+
+  /**
+   * The number of structural features of the '<em>Edge</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl <em>Relation Based Edge</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRelationBasedEdge()
+   * @generated
+   */
+  int RELATION_BASED_EDGE = 15;
+
+  /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__DOCUMENTATION = EDGE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__NAME = EDGE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__LABEL = EDGE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Style</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__STYLE = EDGE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Source Mappings</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__SOURCE_MAPPINGS = EDGE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Target Mappings</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__TARGET_MAPPINGS = EDGE_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Target Finder Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION = EDGE_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Relation Based Edge</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE_FEATURE_COUNT = EDGE_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl <em>Edge Style</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeStyle()
+   * @generated
+   */
+  int EDGE_STYLE = 16;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__NAME = STYLE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Stroke Color</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__STROKE_COLOR = STYLE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Line Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__LINE_STYLE = STYLE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Routing Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__ROUTING_STYLE = STYLE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Source Arrow</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__SOURCE_ARROW = STYLE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Target Arrow</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__TARGET_ARROW = STYLE_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Size Computation Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION = STYLE_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Folding Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__FOLDING_STYLE = STYLE_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Ends Centering</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__ENDS_CENTERING = STYLE_FEATURE_COUNT + 8;
+
+  /**
+   * The number of structural features of the '<em>Edge Style</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE_FEATURE_COUNT = STYLE_FEATURE_COUNT + 9;
+
+  /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.PaletteImpl <em>Palette</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -844,7 +1054,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getPalette()
    * @generated
    */
-  int PALETTE = 14;
+  int PALETTE = 17;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -890,7 +1100,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 15;
+  int COLOR = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -927,7 +1137,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColorValue()
    * @generated
    */
-  int COLOR_VALUE = 16;
+  int COLOR_VALUE = 19;
 
   /**
    * The number of structural features of the '<em>Color Value</em>' class.
@@ -946,7 +1156,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRGB()
    * @generated
    */
-  int RGB = 17;
+  int RGB = 20;
 
   /**
    * The feature id for the '<em><b>Red</b></em>' attribute.
@@ -992,7 +1202,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelAlignment()
    * @generated
    */
-  int LABEL_ALIGNMENT = 18;
+  int LABEL_ALIGNMENT = 21;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.
@@ -1002,7 +1212,57 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradientDirection()
    * @generated
    */
-  int GRADIENT_DIRECTION = 19;
+  int GRADIENT_DIRECTION = 22;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LineStyle <em>Line Style</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LineStyle
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLineStyle()
+   * @generated
+   */
+  int LINE_STYLE = 23;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle <em>Routing Style</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRoutingStyle()
+   * @generated
+   */
+  int ROUTING_STYLE = 24;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator <em>Arrow Decorator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getArrowDecorator()
+   * @generated
+   */
+  int ARROW_DECORATOR = 25;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle <em>Folding Style</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFoldingStyle()
+   * @generated
+   */
+  int FOLDING_STYLE = 26;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering <em>Ends Centering</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEndsCentering()
+   * @generated
+   */
+  int ENDS_CENTERING = 27;
 
 
   /**
@@ -1449,6 +1709,17 @@ public interface SiriusTextDslPackage extends EPackage
   EReference getLayer_Mappings();
 
   /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getEdges <em>Edges</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Edges</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Layer#getEdges()
+   * @see #getLayer()
+   * @generated
+   */
+  EReference getLayer_Edges();
+
+  /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping <em>Mapping</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1773,6 +2044,212 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getGradient_WidthComputationExpression();
 
   /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Edge <em>Edge</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edge</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Edge
+   * @generated
+   */
+  EClass getEdge();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge <em>Relation Based Edge</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Relation Based Edge</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge
+   * @generated
+   */
+  EClass getRelationBasedEdge();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getDocumentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Documentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getDocumentation()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EAttribute getRelationBasedEdge_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getName()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EAttribute getRelationBasedEdge_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getLabel()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EAttribute getRelationBasedEdge_Label();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getStyle <em>Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getStyle()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EReference getRelationBasedEdge_Style();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getSourceMappings <em>Source Mappings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Source Mappings</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getSourceMappings()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EReference getRelationBasedEdge_SourceMappings();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetMappings <em>Target Mappings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Target Mappings</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetMappings()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EReference getRelationBasedEdge_TargetMappings();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetFinderExpression <em>Target Finder Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target Finder Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetFinderExpression()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EAttribute getRelationBasedEdge_TargetFinderExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle <em>Edge Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edge Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle
+   * @generated
+   */
+  EClass getEdgeStyle();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getName()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getStrokeColor <em>Stroke Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Stroke Color</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getStrokeColor()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EReference getEdgeStyle_StrokeColor();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLineStyle <em>Line Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Line Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLineStyle()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_LineStyle();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getRoutingStyle <em>Routing Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Routing Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getRoutingStyle()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_RoutingStyle();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSourceArrow <em>Source Arrow</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source Arrow</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSourceArrow()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_SourceArrow();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getTargetArrow <em>Target Arrow</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target Arrow</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getTargetArrow()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_TargetArrow();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSizeComputationExpression <em>Size Computation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size Computation Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSizeComputationExpression()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_SizeComputationExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getFoldingStyle <em>Folding Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Folding Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getFoldingStyle()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_FoldingStyle();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getEndsCentering <em>Ends Centering</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ends Centering</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getEndsCentering()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EAttribute getEdgeStyle_EndsCentering();
+
+  /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Palette <em>Palette</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1919,6 +2396,56 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EEnum getGradientDirection();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.LineStyle <em>Line Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Line Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LineStyle
+   * @generated
+   */
+  EEnum getLineStyle();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle <em>Routing Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Routing Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle
+   * @generated
+   */
+  EEnum getRoutingStyle();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator <em>Arrow Decorator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Arrow Decorator</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator
+   * @generated
+   */
+  EEnum getArrowDecorator();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle <em>Folding Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Folding Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle
+   * @generated
+   */
+  EEnum getFoldingStyle();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering <em>Ends Centering</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Ends Centering</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering
+   * @generated
+   */
+  EEnum getEndsCentering();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2288,6 +2815,14 @@ public interface SiriusTextDslPackage extends EPackage
     EReference LAYER__MAPPINGS = eINSTANCE.getLayer_Mappings();
 
     /**
+     * The meta object literal for the '<em><b>Edges</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYER__EDGES = eINSTANCE.getLayer_Edges();
+
+    /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MappingImpl <em>Mapping</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2540,6 +3075,164 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute GRADIENT__WIDTH_COMPUTATION_EXPRESSION = eINSTANCE.getGradient_WidthComputationExpression();
 
     /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeImpl <em>Edge</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdge()
+     * @generated
+     */
+    EClass EDGE = eINSTANCE.getEdge();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl <em>Relation Based Edge</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRelationBasedEdge()
+     * @generated
+     */
+    EClass RELATION_BASED_EDGE = eINSTANCE.getRelationBasedEdge();
+
+    /**
+     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION_BASED_EDGE__DOCUMENTATION = eINSTANCE.getRelationBasedEdge_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION_BASED_EDGE__NAME = eINSTANCE.getRelationBasedEdge_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION_BASED_EDGE__LABEL = eINSTANCE.getRelationBasedEdge_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Style</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RELATION_BASED_EDGE__STYLE = eINSTANCE.getRelationBasedEdge_Style();
+
+    /**
+     * The meta object literal for the '<em><b>Source Mappings</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RELATION_BASED_EDGE__SOURCE_MAPPINGS = eINSTANCE.getRelationBasedEdge_SourceMappings();
+
+    /**
+     * The meta object literal for the '<em><b>Target Mappings</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RELATION_BASED_EDGE__TARGET_MAPPINGS = eINSTANCE.getRelationBasedEdge_TargetMappings();
+
+    /**
+     * The meta object literal for the '<em><b>Target Finder Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION = eINSTANCE.getRelationBasedEdge_TargetFinderExpression();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl <em>Edge Style</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeStyle()
+     * @generated
+     */
+    EClass EDGE_STYLE = eINSTANCE.getEdgeStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__NAME = eINSTANCE.getEdgeStyle_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Stroke Color</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDGE_STYLE__STROKE_COLOR = eINSTANCE.getEdgeStyle_StrokeColor();
+
+    /**
+     * The meta object literal for the '<em><b>Line Style</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__LINE_STYLE = eINSTANCE.getEdgeStyle_LineStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Routing Style</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__ROUTING_STYLE = eINSTANCE.getEdgeStyle_RoutingStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Source Arrow</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__SOURCE_ARROW = eINSTANCE.getEdgeStyle_SourceArrow();
+
+    /**
+     * The meta object literal for the '<em><b>Target Arrow</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__TARGET_ARROW = eINSTANCE.getEdgeStyle_TargetArrow();
+
+    /**
+     * The meta object literal for the '<em><b>Size Computation Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION = eINSTANCE.getEdgeStyle_SizeComputationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Folding Style</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__FOLDING_STYLE = eINSTANCE.getEdgeStyle_FoldingStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Ends Centering</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_STYLE__ENDS_CENTERING = eINSTANCE.getEdgeStyle_EndsCentering();
+
+    /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.PaletteImpl <em>Palette</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2662,6 +3355,56 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EEnum GRADIENT_DIRECTION = eINSTANCE.getGradientDirection();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LineStyle <em>Line Style</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.LineStyle
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLineStyle()
+     * @generated
+     */
+    EEnum LINE_STYLE = eINSTANCE.getLineStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle <em>Routing Style</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRoutingStyle()
+     * @generated
+     */
+    EEnum ROUTING_STYLE = eINSTANCE.getRoutingStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator <em>Arrow Decorator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getArrowDecorator()
+     * @generated
+     */
+    EEnum ARROW_DECORATOR = eINSTANCE.getArrowDecorator();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle <em>Folding Style</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFoldingStyle()
+     * @generated
+     */
+    EEnum FOLDING_STYLE = eINSTANCE.getFoldingStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering <em>Ends Centering</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEndsCentering()
+     * @generated
+     */
+    EEnum ENDS_CENTERING = eINSTANCE.getEndsCentering();
 
   }
 

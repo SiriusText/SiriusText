@@ -149,6 +149,33 @@ public interface SiriusTextDslFactory extends EFactory
   Gradient createGradient();
 
   /**
+   * Returns a new object of class '<em>Edge</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edge</em>'.
+   * @generated
+   */
+  Edge createEdge();
+
+  /**
+   * Returns a new object of class '<em>Relation Based Edge</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relation Based Edge</em>'.
+   * @generated
+   */
+  RelationBasedEdge createRelationBasedEdge();
+
+  /**
+   * Returns a new object of class '<em>Edge Style</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edge Style</em>'.
+   * @generated
+   */
+  EdgeStyle createEdgeStyle();
+
+  /**
    * Returns a new object of class '<em>Palette</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -22,11 +22,13 @@ import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclar
 import org.obeonetwork.sirius.text.siriusTextDsl.Container;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
+import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RGB;
+import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
@@ -55,6 +57,9 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			case SiriusTextDslPackage.DIAGRAM:
 				sequence_Diagram(context, (Diagram) semanticObject); 
 				return; 
+			case SiriusTextDslPackage.EDGE_STYLE:
+				sequence_EdgeStyle(context, (EdgeStyle) semanticObject); 
+				return; 
 			case SiriusTextDslPackage.GRADIENT:
 				sequence_Gradient(context, (Gradient) semanticObject); 
 				return; 
@@ -69,6 +74,9 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 				return; 
 			case SiriusTextDslPackage.RGB:
 				sequence_RGB(context, (RGB) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.RELATION_BASED_EDGE:
+				sequence_RelationBasedEdge(context, (RelationBasedEdge) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.SIRIUS_FILE:
 				sequence_SiriusFile(context, (SiriusFile) semanticObject); 
@@ -174,6 +182,25 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	/**
 	 * Constraint:
 	 *     (
+	 *         name=ID 
+	 *         strokeColor=[Color|QualifiedName] 
+	 *         lineStyle=LineStyle? 
+	 *         routingStyle=RoutingStyle? 
+	 *         sourceArrow=ArrowDecorator? 
+	 *         targetArrow=ArrowDecorator? 
+	 *         sizeComputationExpression=EXPRESSION? 
+	 *         foldingStyle=FoldingStyle? 
+	 *         endsCentering=EndsCentering?
+	 *     )
+	 */
+	protected void sequence_EdgeStyle(EObject context, EdgeStyle semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
 	 *         documentation=DOCUMENTATION? 
 	 *         direction=GradientDirection 
 	 *         name=ID 
@@ -209,7 +236,13 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (documentation=DOCUMENTATION? name=ID icon=STRING? (mappings+=[Mapping|QualifiedName] mappings+=[Mapping|QualifiedName]*)?)
+	 *     (
+	 *         documentation=DOCUMENTATION? 
+	 *         name=ID 
+	 *         icon=STRING? 
+	 *         (mappings+=[Mapping|QualifiedName] mappings+=[Mapping|QualifiedName]*)? 
+	 *         (edges+=[Edge|QualifiedName] edges+=[Edge|QualifiedName]*)?
+	 *     )
 	 */
 	protected void sequence_Layer(EObject context, Layer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -244,6 +277,23 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 		feeder.accept(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0(), semanticObject.getGreen());
 		feeder.accept(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0(), semanticObject.getBlue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         documentation=DOCUMENTATION? 
+	 *         name=ID 
+	 *         label=STRING? 
+	 *         style=[EdgeStyle|QualifiedName] 
+	 *         (sourceMappings+=[Mapping|QualifiedName] sourceMappings+=[Mapping|QualifiedName]*)? 
+	 *         (targetMappings+=[Mapping|QualifiedName] targetMappings+=[Mapping|QualifiedName]*)? 
+	 *         targetFinderExpression=EXPRESSION
+	 *     )
+	 */
+	protected void sequence_RelationBasedEdge(EObject context, RelationBasedEdge semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -234,6 +234,16 @@ ruleSiriusFileBody returns [EObject current=null]
         $current = $this_Palette_5.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSiriusFileBodyAccess().getEdgeParserRuleCall_6()); 
+    }
+    this_Edge_6=ruleEdge
+    { 
+        $current = $this_Edge_6.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1254,13 +1264,47 @@ ruleLayer returns [EObject current=null]
     {
     	newLeafNode(otherlv_16, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_12());
     }
-	otherlv_17=']' 
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLayerRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getLayerAccess().getEdgesEdgeCrossReference_13_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_18=',' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_13());
+    	newLeafNode(otherlv_18, grammarAccess.getLayerAccess().getCommaKeyword_13_1_0());
     }
-	otherlv_18='}' 
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLayerRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getLayerAccess().getEdgesEdgeCrossReference_13_1_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?	otherlv_20=']' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getLayerAccess().getRightCurlyBracketKeyword_14());
+    	newLeafNode(otherlv_20, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_14());
+    }
+	otherlv_21='}' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getLayerAccess().getRightCurlyBracketKeyword_15());
     }
 )
 ;
@@ -1588,9 +1632,9 @@ ruleStyle returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getStyleAccess().getContainerStyleParserRuleCall()); 
+        newCompositeNode(grammarAccess.getStyleAccess().getContainerStyleParserRuleCall_0()); 
     }
     this_ContainerStyle_0=ruleContainerStyle
     { 
@@ -1598,6 +1642,16 @@ ruleStyle returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
+    |
+    { 
+        newCompositeNode(grammarAccess.getStyleAccess().getEdgeStyleParserRuleCall_1()); 
+    }
+    this_EdgeStyle_1=ruleEdgeStyle
+    { 
+        $current = $this_EdgeStyle_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -1945,6 +1999,524 @@ ruleGradient returns [EObject current=null]
 
 
 
+// Entry rule entryRuleEdge
+entryRuleEdge returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEdgeRule()); }
+	 iv_ruleEdge=ruleEdge 
+	 { $current=$iv_ruleEdge.current; } 
+	 EOF 
+;
+
+// Rule Edge
+ruleEdge returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getEdgeAccess().getRelationBasedEdgeParserRuleCall()); 
+    }
+    this_RelationBasedEdge_0=ruleRelationBasedEdge
+    { 
+        $current = $this_RelationBasedEdge_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleRelationBasedEdge
+entryRuleRelationBasedEdge returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRelationBasedEdgeRule()); }
+	 iv_ruleRelationBasedEdge=ruleRelationBasedEdge 
+	 { $current=$iv_ruleRelationBasedEdge.current; } 
+	 EOF 
+;
+
+// Rule RelationBasedEdge
+ruleRelationBasedEdge returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_documentation_0_0=RULE_DOCUMENTATION
+		{
+			newLeafNode(lv_documentation_0_0, grammarAccess.getRelationBasedEdgeAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"documentation",
+        		lv_documentation_0_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.DOCUMENTATION");
+	    }
+
+)
+)?	otherlv_1='relationBasedEdge' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRelationBasedEdgeAccess().getRelationBasedEdgeKeyword_1());
+    }
+(
+(
+		lv_name_2_0=RULE_ID
+		{
+			newLeafNode(lv_name_2_0, grammarAccess.getRelationBasedEdgeAccess().getNameIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.ID");
+	    }
+
+)
+)(	otherlv_3='as' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRelationBasedEdgeAccess().getAsKeyword_3_0());
+    }
+(
+(
+		lv_label_4_0=RULE_STRING
+		{
+			newLeafNode(lv_label_4_0, grammarAccess.getRelationBasedEdgeAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"label",
+        		lv_label_4_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.STRING");
+	    }
+
+)
+))?	otherlv_5='style' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRelationBasedEdgeAccess().getStyleKeyword_4());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRelationBasedEdgeAccess().getStyleEdgeStyleCrossReference_5_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7='{' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getRelationBasedEdgeAccess().getLeftCurlyBracketKeyword_6());
+    }
+	otherlv_8='sourceMappings' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsKeyword_7());
+    }
+	otherlv_9='=' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_8());
+    }
+	otherlv_10='[' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_9());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingCrossReference_10_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_12=',' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_10_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingCrossReference_10_1_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?	otherlv_14=']' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_11());
+    }
+	otherlv_15='targetMappings' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsKeyword_12());
+    }
+	otherlv_16='=' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_13());
+    }
+	otherlv_17='[' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_14());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingCrossReference_15_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_19=',' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_15_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingCrossReference_15_1_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?	otherlv_21=']' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_16());
+    }
+	otherlv_22='targetFileExpression' 
+    {
+    	newLeafNode(otherlv_22, grammarAccess.getRelationBasedEdgeAccess().getTargetFileExpressionKeyword_17());
+    }
+	otherlv_23='=' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_18());
+    }
+(
+(
+		lv_targetFinderExpression_24_0=RULE_EXPRESSION
+		{
+			newLeafNode(lv_targetFinderExpression_24_0, grammarAccess.getRelationBasedEdgeAccess().getTargetFinderExpressionEXPRESSIONTerminalRuleCall_19_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRelationBasedEdgeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"targetFinderExpression",
+        		lv_targetFinderExpression_24_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
+	    }
+
+)
+)	otherlv_25='}' 
+    {
+    	newLeafNode(otherlv_25, grammarAccess.getRelationBasedEdgeAccess().getRightCurlyBracketKeyword_20());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleEdgeStyle
+entryRuleEdgeStyle returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEdgeStyleRule()); }
+	 iv_ruleEdgeStyle=ruleEdgeStyle 
+	 { $current=$iv_ruleEdgeStyle.current; } 
+	 EOF 
+;
+
+// Rule EdgeStyle
+ruleEdgeStyle returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='edgeStyle' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getEdgeStyleAccess().getEdgeStyleKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getEdgeStyleAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEdgeStyleRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.ID");
+	    }
+
+)
+)	otherlv_2='in' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getEdgeStyleAccess().getInKeyword_2());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEdgeStyleRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getStrokeColorColorCrossReference_3_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_4='line' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getEdgeStyleAccess().getLineKeyword_4_0());
+    }
+	otherlv_5='=' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_4_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getLineStyleLineStyleEnumRuleCall_4_2_0()); 
+	    }
+		lv_lineStyle_6_0=ruleLineStyle		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"lineStyle",
+        		lv_lineStyle_6_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.LineStyle");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_7='routing' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleAccess().getRoutingKeyword_5_0());
+    }
+	otherlv_8='=' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_5_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getRoutingStyleRoutingStyleEnumRuleCall_5_2_0()); 
+	    }
+		lv_routingStyle_9_0=ruleRoutingStyle		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"routingStyle",
+        		lv_routingStyle_9_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.RoutingStyle");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_10='{' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getEdgeStyleAccess().getLeftCurlyBracketKeyword_6());
+    }
+(	otherlv_11='sourceArrow' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getEdgeStyleAccess().getSourceArrowKeyword_7_0());
+    }
+	otherlv_12='=' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_7_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getSourceArrowArrowDecoratorEnumRuleCall_7_2_0()); 
+	    }
+		lv_sourceArrow_13_0=ruleArrowDecorator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"sourceArrow",
+        		lv_sourceArrow_13_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.ArrowDecorator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_14='targetArrow' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getEdgeStyleAccess().getTargetArrowKeyword_8_0());
+    }
+	otherlv_15='=' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_8_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getTargetArrowArrowDecoratorEnumRuleCall_8_2_0()); 
+	    }
+		lv_targetArrow_16_0=ruleArrowDecorator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"targetArrow",
+        		lv_targetArrow_16_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.ArrowDecorator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_17='sizeComputationExpression' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionKeyword_9_0());
+    }
+	otherlv_18='=' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_9_1());
+    }
+(
+(
+		lv_sizeComputationExpression_19_0=RULE_EXPRESSION
+		{
+			newLeafNode(lv_sizeComputationExpression_19_0, grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionEXPRESSIONTerminalRuleCall_9_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEdgeStyleRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"sizeComputationExpression",
+        		lv_sizeComputationExpression_19_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
+	    }
+
+)
+))?(	otherlv_20='foldingStyle' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getEdgeStyleAccess().getFoldingStyleKeyword_10_0());
+    }
+	otherlv_21='=' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_10_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getFoldingStyleFoldingStyleEnumRuleCall_10_2_0()); 
+	    }
+		lv_foldingStyle_22_0=ruleFoldingStyle		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"foldingStyle",
+        		lv_foldingStyle_22_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.FoldingStyle");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_23='endsCentering' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getEdgeStyleAccess().getEndsCenteringKeyword_11_0());
+    }
+	otherlv_24='=' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_11_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeStyleAccess().getEndsCenteringEndsCenteringEnumRuleCall_11_2_0()); 
+	    }
+		lv_endsCentering_25_0=ruleEndsCentering		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeStyleRule());
+	        }
+       		set(
+       			$current, 
+       			"endsCentering",
+        		lv_endsCentering_25_0, 
+        		"org.obeonetwork.sirius.text.SiriusTextDsl.EndsCentering");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_26='}' 
+    {
+    	newLeafNode(otherlv_26, grammarAccess.getEdgeStyleAccess().getRightCurlyBracketKeyword_12());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRulePalette
 entryRulePalette returns [EObject current=null] 
 	:
@@ -2263,6 +2835,191 @@ ruleGradientDirection returns [Enumerator current=null]
 	{
         $current = grammarAccess.getGradientDirectionAccess().getToptobottomEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getGradientDirectionAccess().getToptobottomEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule LineStyle
+ruleLineStyle returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='solid' 
+	{
+        $current = grammarAccess.getLineStyleAccess().getSolidEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getLineStyleAccess().getSolidEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='dash' 
+	{
+        $current = grammarAccess.getLineStyleAccess().getDashEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getLineStyleAccess().getDashEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='dot' 
+	{
+        $current = grammarAccess.getLineStyleAccess().getDotEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getLineStyleAccess().getDotEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='dash_dot' 
+	{
+        $current = grammarAccess.getLineStyleAccess().getDash_dotEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getLineStyleAccess().getDash_dotEnumLiteralDeclaration_3()); 
+    }
+));
+
+
+
+// Rule RoutingStyle
+ruleRoutingStyle returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='straight' 
+	{
+        $current = grammarAccess.getRoutingStyleAccess().getStraightEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getRoutingStyleAccess().getStraightEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='manhattan' 
+	{
+        $current = grammarAccess.getRoutingStyleAccess().getManhattanEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getRoutingStyleAccess().getManhattanEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='tree' 
+	{
+        $current = grammarAccess.getRoutingStyleAccess().getTreeEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getRoutingStyleAccess().getTreeEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule ArrowDecorator
+ruleArrowDecorator returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='NoDecoration' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getNoDecorationEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getArrowDecoratorAccess().getNoDecorationEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='OutputArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getOutputArrowEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getArrowDecoratorAccess().getOutputArrowEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='InputArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getInputArrowEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getArrowDecoratorAccess().getInputArrowEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='OutputClosedArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getOutputClosedArrowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getArrowDecoratorAccess().getOutputClosedArrowEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='InputClosedArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getInputClosedArrowEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getArrowDecoratorAccess().getInputClosedArrowEnumLiteralDeclaration_4()); 
+    }
+)
+    |(	enumLiteral_5='OutputFillClosedArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getOutputFillClosedArrowEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getArrowDecoratorAccess().getOutputFillClosedArrowEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='InputFillClosedArrow' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getInputFillClosedArrowEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getArrowDecoratorAccess().getInputFillClosedArrowEnumLiteralDeclaration_6()); 
+    }
+)
+    |(	enumLiteral_7='Diamond' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getDiamondEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_7, grammarAccess.getArrowDecoratorAccess().getDiamondEnumLiteralDeclaration_7()); 
+    }
+)
+    |(	enumLiteral_8='FillDiamond' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getFillDiamondEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_8, grammarAccess.getArrowDecoratorAccess().getFillDiamondEnumLiteralDeclaration_8()); 
+    }
+)
+    |(	enumLiteral_9='InputArrowWithDiamond' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getInputArrowWithDiamondEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_9, grammarAccess.getArrowDecoratorAccess().getInputArrowWithDiamondEnumLiteralDeclaration_9()); 
+    }
+)
+    |(	enumLiteral_10='InputArrowWithFillDiamond' 
+	{
+        $current = grammarAccess.getArrowDecoratorAccess().getInputArrowWithFillDiamondEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_10, grammarAccess.getArrowDecoratorAccess().getInputArrowWithFillDiamondEnumLiteralDeclaration_10()); 
+    }
+));
+
+
+
+// Rule FoldingStyle
+ruleFoldingStyle returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='none' 
+	{
+        $current = grammarAccess.getFoldingStyleAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getFoldingStyleAccess().getNoneEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='source' 
+	{
+        $current = grammarAccess.getFoldingStyleAccess().getSourceEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getFoldingStyleAccess().getSourceEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='target' 
+	{
+        $current = grammarAccess.getFoldingStyleAccess().getTargetEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getFoldingStyleAccess().getTargetEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule EndsCentering
+ruleEndsCentering returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='none' 
+	{
+        $current = grammarAccess.getEndsCenteringAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getEndsCenteringAccess().getNoneEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='both' 
+	{
+        $current = grammarAccess.getEndsCenteringAccess().getBothEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getEndsCenteringAccess().getBothEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='source' 
+	{
+        $current = grammarAccess.getEndsCenteringAccess().getSourceEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getEndsCenteringAccess().getSourceEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='target' 
+	{
+        $current = grammarAccess.getEndsCenteringAccess().getTargetEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getEndsCenteringAccess().getTargetEnumLiteralDeclaration_3()); 
     }
 ));
 

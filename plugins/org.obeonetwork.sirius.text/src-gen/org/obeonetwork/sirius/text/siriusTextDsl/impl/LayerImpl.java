@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.obeonetwork.sirius.text.siriusTextDsl.Edge;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
@@ -30,6 +31,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LayerImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LayerImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LayerImpl#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LayerImpl#getEdges <em>Edges</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +107,16 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
    * @ordered
    */
   protected EList<Mapping> mappings;
+
+  /**
+   * The cached value of the '{@link #getEdges() <em>Edges</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEdges()
+   * @generated
+   * @ordered
+   */
+  protected EList<Edge> edges;
 
   /**
    * <!-- begin-user-doc -->
@@ -215,6 +227,20 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Edge> getEdges()
+  {
+    if (edges == null)
+    {
+      edges = new EObjectResolvingEList<Edge>(Edge.class, this, SiriusTextDslPackage.LAYER__EDGES);
+    }
+    return edges;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -228,6 +254,8 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
         return getIcon();
       case SiriusTextDslPackage.LAYER__MAPPINGS:
         return getMappings();
+      case SiriusTextDslPackage.LAYER__EDGES:
+        return getEdges();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -256,6 +284,10 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
         getMappings().clear();
         getMappings().addAll((Collection<? extends Mapping>)newValue);
         return;
+      case SiriusTextDslPackage.LAYER__EDGES:
+        getEdges().clear();
+        getEdges().addAll((Collection<? extends Edge>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -282,6 +314,9 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
       case SiriusTextDslPackage.LAYER__MAPPINGS:
         getMappings().clear();
         return;
+      case SiriusTextDslPackage.LAYER__EDGES:
+        getEdges().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -304,6 +339,8 @@ public class LayerImpl extends SiriusFileBodyImpl implements Layer
         return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
       case SiriusTextDslPackage.LAYER__MAPPINGS:
         return mappings != null && !mappings.isEmpty();
+      case SiriusTextDslPackage.LAYER__EDGES:
+        return edges != null && !edges.isEmpty();
     }
     return super.eIsSet(featureID);
   }
