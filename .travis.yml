@@ -1,0 +1,5 @@
+language: java
+before_script:
+- cd releng/org.obeonetwork.sirius.text.releng
+script: mvn clean verify
+jdk: oraclejdk8
