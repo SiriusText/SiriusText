@@ -2,6 +2,8 @@
 
 A textual DSL for [Eclipse Sirius](https://www.eclipse.org/sirius/)
 
+[![Build Status](https://travis-ci.org/SiriusText/SiriusText.svg?branch=master)](https://travis-ci.org/SiriusText/SiriusText)
+
 ## Installation
 
 This project can not be installed today since its first release has not been delivered. An Eclipse update site will soon be available.
