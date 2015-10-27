@@ -79,6 +79,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Move
 import org.obeonetwork.sirius.text.siriusTextDsl.Switch
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage
 import org.obeonetwork.sirius.text.siriusTextDsl.Default
+import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration
 
 /**
  * Generates code from your model files on save.
@@ -592,6 +593,25 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 			containerMapping.style = gradientStyle
 			this.populateGradientStyle(gradientStyle, gradient)
 		}
+		
+		container.conditionalStyles.forEach[s |
+			if (s instanceof ConditionalContainerStyleDeclaration) {
+				val conditionalContainerStyle = s as ConditionalContainerStyleDeclaration
+				val conditionnalStyle = DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription
+				
+				conditionnalStyle.predicateExpression = this.trimQuotes(conditionalContainerStyle.conditionalStyleExpression)
+				containerMapping.conditionnalStyles.add(conditionnalStyle)
+				
+				val style = conditionalContainerStyle.style
+				if (style instanceof Gradient) {
+					val gradient = style as Gradient
+					val gradientStyle = StyleFactory.eINSTANCE.createFlatContainerStyleDescription
+					conditionnalStyle.style = gradientStyle
+					this.populateGradientStyle(gradientStyle, gradient)
+				}
+				
+			}
+		]
 	}
 	
 	def private String trimQuotes(String expressionOrLabel) {

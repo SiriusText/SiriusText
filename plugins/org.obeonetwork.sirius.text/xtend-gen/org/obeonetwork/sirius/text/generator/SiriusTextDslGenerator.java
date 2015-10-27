@@ -30,6 +30,7 @@ import org.eclipse.sirius.diagram.EdgeRouting;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.description.CenteringStyle;
+import org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
@@ -71,6 +72,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Case;
 import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
+import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
 import org.obeonetwork.sirius.text.siriusTextDsl.Container;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
@@ -958,6 +960,26 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
       containerMapping.setStyle(gradientStyle);
       this.populateGradientStyle(gradientStyle, gradient);
     }
+    EList<ConditionalContainerStyleDeclaration> _conditionalStyles = container.getConditionalStyles();
+    final Consumer<ConditionalContainerStyleDeclaration> _function = (ConditionalContainerStyleDeclaration s) -> {
+      if ((s instanceof ConditionalContainerStyleDeclaration)) {
+        final ConditionalContainerStyleDeclaration conditionalContainerStyle = ((ConditionalContainerStyleDeclaration) s);
+        final ConditionalContainerStyleDescription conditionnalStyle = org.eclipse.sirius.diagram.description.DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription();
+        String _conditionalStyleExpression = conditionalContainerStyle.getConditionalStyleExpression();
+        String _trimQuotes_1 = this.trimQuotes(_conditionalStyleExpression);
+        conditionnalStyle.setPredicateExpression(_trimQuotes_1);
+        EList<ConditionalContainerStyleDescription> _conditionnalStyles = containerMapping.getConditionnalStyles();
+        _conditionnalStyles.add(conditionnalStyle);
+        final ContainerStyle style = conditionalContainerStyle.getStyle();
+        if ((style instanceof Gradient)) {
+          final Gradient gradient_1 = ((Gradient) style);
+          final FlatContainerStyleDescription gradientStyle_1 = StyleFactory.eINSTANCE.createFlatContainerStyleDescription();
+          conditionnalStyle.setStyle(gradientStyle_1);
+          this.populateGradientStyle(gradientStyle_1, gradient_1);
+        }
+      }
+    };
+    _conditionalStyles.forEach(_function);
   }
   
   private String trimQuotes(final String expressionOrLabel) {
