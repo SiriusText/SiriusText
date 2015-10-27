@@ -12,7 +12,7 @@ SiriusFile:
 ;
 
 SiriusFileBody:
-	Designer | Representation | Layer | Mapping | Style | Palette | Edge
+	Designer | Representation | Layer | Mapping | Style | Palette | Edge | Section | Tool
 ;
 
 QualifiedName:
@@ -70,12 +70,140 @@ Layer:
 	(documentation=DOCUMENTATION)?
 	'layer' name=ID '{'
 		('icon' '=' icon=STRING)?
-		'mappings' '=' '['
+		('mappings' '=' '['
 			(mappings+=[Mapping | QualifiedName] (',' mappings+=[Mapping | QualifiedName])*)?
-		']'
-		'edges' '=' '['
+		']')?
+		('edges' '=' '['
 			(edges+=[Edge | QualifiedName] (',' edges+=[Edge | QualifiedName])*)?
+		']')?
+		('sections' '=' '['
+			(sections+=[Section | QualifiedName] (',' sections+=[Section | QualifiedName])*)?
+		']')?
+	'}'
+;
+
+Section:
+	(documentation=DOCUMENTATION)?
+	'section' name=ID ('as' label=STRING)? '{'
+		('icon' '=' icon=STRING)?
+		('tools' '=' '['
+			(tools+=[Tool | QualifiedName] (',' tools+=[Tool | QualifiedName])*)?
+		']')?
+	'}'	
+;
+
+Tool:
+	ContainerCreation
+;
+
+ContainerCreation:
+	(documentation=DOCUMENTATION)?
+	(forceRefresh?='@ForceRefresh')?
+	'@NodeCreationVariable' '('nodeCreationVariable=STRING')'
+	'@ContainerViewVariable' '('containerViewVariable=STRING')'
+	'containerCreation' name=ID ('as' label=STRING)? ('?' precondition=EXPRESSION)? '{'
+		('icon' '=' icon=STRING)?
+		'containerMappings' '=' '['
+			(containerMappings+=[Mapping | QualifiedName] (',' containerMappings+=[Mapping | QualifiedName])*)?
 		']'
+		('extraMappings' '=' '['
+			(extraMappings+=[Mapping | QualifiedName] (',' extraMappings+=[Mapping | QualifiedName])*)?
+		']')?
+		'begin' '{'
+			(body=Operation)?
+		'}'
+	'}'
+;
+
+Operation:
+	ChangeContext | For | If | Set | CreateInstance | CreateView | Unset | CreateEdgeView | DeleteView | Remove | Move | Switch
+;
+
+ChangeContext:
+	'changeContext' '(' browseExpression=EXPRESSION ')' ( '{'
+		(body+=Operation)*
+	'}')?
+;
+
+For:
+	'for' '('iteratorName=STRING ':' expression=EXPRESSION ')' '{'
+		(body+=Operation)*
+	'}'
+;
+
+If:
+	'if' '(' conditionExpression=EXPRESSION ')' '{'
+		(body+=Operation)*
+	'}'
+;
+
+Set:
+	'set' '(' 'featureName' ':' featureName=STRING ',' 'valueExpression' ':' valueExpression=EXPRESSION ')' ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+Unset:
+	'unset' '(' 'featureName' ':' featureName=STRING (',' 'elementExpression' ':' elementExpression=EXPRESSION)? ')' ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+CreateInstance:
+	'createInstance' '(' 'referenceName' ':' referenceName=STRING ',' 'type' ':' type=STRING ')' 'as' variableName=STRING ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+CreateView:
+	'createView' '(' 'mapping' ':' mapping=[Mapping | QualifiedName] ',' 'containerViewExpression' ':' containerViewExpression=EXPRESSION ')' 'as' variableName=STRING ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+CreateEdgeView:
+	'createEdgeView' '(' 'mapping' ':' edge=[Edge | QualifiedName] ',' 'sourceExpression' ':' sourceExpression=EXPRESSION ',' 'targetExpression' ':' targetExpression=EXPRESSION ',' 'containerViewExpression' ':' containerViewExpression=EXPRESSION ')' 'as' variableName=STRING ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+DeleteView:
+	{DeleteView}
+	'deleteView''()' ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+Remove:
+	{Remove}
+	'remove''()' ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+Move:
+	'move' '(' 'newContainerExpression' ':' newContainerExpression=EXPRESSION ',' 'featureName' ':' featureName=STRING ')' ('{'
+		(body+=Operation)*
+	'}')?
+;
+
+Switch:
+	'switch' '{'
+		(cases+=Case)+
+		(default=Default)?
+	'}'
+;
+
+Case:
+	'case' '(' conditionExpression=EXPRESSION ')' '{'
+		(body+=Operation)*
+	'}'
+;
+
+Default:
+	{Default}
+	'default' '{'
+		(body+=Operation)*
 	'}'
 ;
 

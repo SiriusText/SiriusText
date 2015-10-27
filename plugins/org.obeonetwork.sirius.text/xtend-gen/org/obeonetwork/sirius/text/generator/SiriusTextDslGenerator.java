@@ -27,6 +27,7 @@ import org.eclipse.sirius.diagram.BackgroundStyle;
 import org.eclipse.sirius.diagram.ContainerLayout;
 import org.eclipse.sirius.diagram.EdgeArrows;
 import org.eclipse.sirius.diagram.EdgeRouting;
+import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.description.CenteringStyle;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
@@ -36,6 +37,9 @@ import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.style.StyleFactory;
+import org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription;
+import org.eclipse.sirius.diagram.description.tool.ToolFactory;
+import org.eclipse.sirius.diagram.description.tool.ToolSection;
 import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
@@ -44,6 +48,13 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.UserColor;
 import org.eclipse.sirius.viewpoint.description.UserColorsPalette;
 import org.eclipse.sirius.viewpoint.description.UserFixedColor;
+import org.eclipse.sirius.viewpoint.description.tool.InitialNodeCreationOperation;
+import org.eclipse.sirius.viewpoint.description.tool.ModelOperation;
+import org.eclipse.sirius.viewpoint.description.tool.MoveElement;
+import org.eclipse.sirius.viewpoint.description.tool.RemoveElement;
+import org.eclipse.sirius.viewpoint.description.tool.SetValue;
+import org.eclipse.sirius.viewpoint.description.tool.ToolEntry;
+import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
 import org.eclipse.xtext.generator.AbstractFileSystemAccess;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.CollectionExtensions;
@@ -54,29 +65,46 @@ import org.eclipse.xtext.xbase.lib.Functions.Function2;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.obeonetwork.sirius.text.generator.IMultipleResourcesGenerator;
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
+import org.obeonetwork.sirius.text.siriusTextDsl.Case;
+import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.Container;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateView;
+import org.obeonetwork.sirius.text.siriusTextDsl.Default;
+import org.obeonetwork.sirius.text.siriusTextDsl.DeleteView;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
 import org.obeonetwork.sirius.text.siriusTextDsl.Edge;
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering;
 import org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.For;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
+import org.obeonetwork.sirius.text.siriusTextDsl.If;
 import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.LineStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
+import org.obeonetwork.sirius.text.siriusTextDsl.Move;
+import org.obeonetwork.sirius.text.siriusTextDsl.Operation;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RGB;
 import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
+import org.obeonetwork.sirius.text.siriusTextDsl.Remove;
 import org.obeonetwork.sirius.text.siriusTextDsl.Representation;
 import org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.Section;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFileBody;
+import org.obeonetwork.sirius.text.siriusTextDsl.Switch;
+import org.obeonetwork.sirius.text.siriusTextDsl.Tool;
+import org.obeonetwork.sirius.text.siriusTextDsl.Unset;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
 
 /**
@@ -167,8 +195,69 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
   
   private void resolveLinks() {
     this.resolveMappingsForEdges();
+    this.resolveMappingsForTools();
+    this.resolveMappingsForOperations();
     this.cache.clear();
     this.elementsToResolve.clear();
+  }
+  
+  private void resolveMappingsForOperations() {
+    Set<Map.Entry<Object, Object>> _entrySet = this.elementsToResolve.entrySet();
+    final Function1<Map.Entry<Object, Object>, Boolean> _function = (Map.Entry<Object, Object> e) -> {
+      Object _key = e.getKey();
+      return Boolean.valueOf((_key instanceof CreateView));
+    };
+    Iterable<Map.Entry<Object, Object>> _filter = IterableExtensions.<Map.Entry<Object, Object>>filter(_entrySet, _function);
+    final Consumer<Map.Entry<Object, Object>> _function_1 = (Map.Entry<Object, Object> e) -> {
+      boolean _and = false;
+      Object _key = e.getKey();
+      if (!(_key instanceof CreateView)) {
+        _and = false;
+      } else {
+        Object _value = e.getValue();
+        _and = (_value instanceof org.eclipse.sirius.diagram.description.tool.CreateView);
+      }
+      if (_and) {
+        Object _key_1 = e.getKey();
+        final CreateView createView = ((CreateView) _key_1);
+        Object _value_1 = e.getValue();
+        final org.eclipse.sirius.diagram.description.tool.CreateView siriusCreateView = ((org.eclipse.sirius.diagram.description.tool.CreateView) _value_1);
+        Mapping _mapping = createView.getMapping();
+        final Object mapping = this.cache.get(_mapping);
+        if ((mapping instanceof DiagramElementMapping)) {
+          siriusCreateView.setMapping(((DiagramElementMapping)mapping));
+        }
+      }
+    };
+    _filter.forEach(_function_1);
+    Set<Map.Entry<Object, Object>> _entrySet_1 = this.elementsToResolve.entrySet();
+    final Function1<Map.Entry<Object, Object>, Boolean> _function_2 = (Map.Entry<Object, Object> e) -> {
+      Object _key = e.getKey();
+      return Boolean.valueOf((_key instanceof CreateEdgeView));
+    };
+    Iterable<Map.Entry<Object, Object>> _filter_1 = IterableExtensions.<Map.Entry<Object, Object>>filter(_entrySet_1, _function_2);
+    final Consumer<Map.Entry<Object, Object>> _function_3 = (Map.Entry<Object, Object> e) -> {
+      boolean _and = false;
+      Object _key = e.getKey();
+      if (!(_key instanceof CreateEdgeView)) {
+        _and = false;
+      } else {
+        Object _value = e.getValue();
+        _and = (_value instanceof org.eclipse.sirius.diagram.description.tool.CreateEdgeView);
+      }
+      if (_and) {
+        Object _key_1 = e.getKey();
+        final CreateEdgeView createEdgeView = ((CreateEdgeView) _key_1);
+        Object _value_1 = e.getValue();
+        final org.eclipse.sirius.diagram.description.tool.CreateEdgeView siriusCreateEdgeView = ((org.eclipse.sirius.diagram.description.tool.CreateEdgeView) _value_1);
+        Edge _edge = createEdgeView.getEdge();
+        final Object edge = this.cache.get(_edge);
+        if ((edge instanceof DiagramElementMapping)) {
+          siriusCreateEdgeView.setMapping(((DiagramElementMapping)edge));
+        }
+      }
+    };
+    _filter_1.forEach(_function_3);
   }
   
   private void resolveMappingsForEdges() {
@@ -210,6 +299,50 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
           }
         };
         _targetMappings.forEach(_function_3);
+      }
+    };
+    _filter.forEach(_function_1);
+  }
+  
+  private void resolveMappingsForTools() {
+    Set<Map.Entry<Object, Object>> _entrySet = this.elementsToResolve.entrySet();
+    final Function1<Map.Entry<Object, Object>, Boolean> _function = (Map.Entry<Object, Object> e) -> {
+      Object _key = e.getKey();
+      return Boolean.valueOf((_key instanceof Tool));
+    };
+    Iterable<Map.Entry<Object, Object>> _filter = IterableExtensions.<Map.Entry<Object, Object>>filter(_entrySet, _function);
+    final Consumer<Map.Entry<Object, Object>> _function_1 = (Map.Entry<Object, Object> t) -> {
+      boolean _and = false;
+      Object _key = t.getKey();
+      if (!(_key instanceof ContainerCreation)) {
+        _and = false;
+      } else {
+        Object _value = t.getValue();
+        _and = (_value instanceof ContainerCreationDescription);
+      }
+      if (_and) {
+        Object _key_1 = t.getKey();
+        final ContainerCreation containerCreation = ((ContainerCreation) _key_1);
+        Object _value_1 = t.getValue();
+        final ContainerCreationDescription containerCreationDescription = ((ContainerCreationDescription) _value_1);
+        EList<Mapping> _containerMappings = containerCreation.getContainerMappings();
+        final Consumer<Mapping> _function_2 = (Mapping m) -> {
+          final Object mapping = this.cache.get(m);
+          if ((mapping instanceof ContainerMapping)) {
+            EList<ContainerMapping> _containerMappings_1 = containerCreationDescription.getContainerMappings();
+            _containerMappings_1.add(((ContainerMapping)mapping));
+          }
+        };
+        _containerMappings.forEach(_function_2);
+        EList<Mapping> _extraMappings = containerCreation.getExtraMappings();
+        final Consumer<Mapping> _function_3 = (Mapping m) -> {
+          final Object mapping = this.cache.get(m);
+          if ((mapping instanceof AbstractNodeMapping)) {
+            EList<AbstractNodeMapping> _extraMappings_1 = containerCreationDescription.getExtraMappings();
+            _extraMappings_1.add(((AbstractNodeMapping)mapping));
+          }
+        };
+        _extraMappings.forEach(_function_3);
       }
     };
     _filter.forEach(_function_1);
@@ -312,10 +445,307 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
       this.populateRelationBasedEdgeMapping(edgeMapping, r);
     };
     _filter_1.forEach(_function_1);
+    EList<Section> _sections = layer.getSections();
+    final Consumer<Section> _function_2 = (Section s) -> {
+      final ToolSection toolSection = ToolFactory.eINSTANCE.createToolSection();
+      EList<ToolSection> _toolSections = siriusLayer.getToolSections();
+      _toolSections.add(toolSection);
+      this.populateToolSection(toolSection, s);
+    };
+    _sections.forEach(_function_2);
   }
   
   private Object populateAdditionalLayer(final AdditionalLayer siriusLayer, final Layer layer) {
     return null;
+  }
+  
+  private void populateToolSection(final ToolSection toolSection, final Section section) {
+    String _name = section.getName();
+    toolSection.setName(_name);
+    String _label = section.getLabel();
+    toolSection.setLabel(_label);
+    EList<Tool> _tools = section.getTools();
+    final Consumer<Tool> _function = (Tool t) -> {
+      if ((t instanceof ContainerCreation)) {
+        final ContainerCreationDescription containerCreationDescription = ToolFactory.eINSTANCE.createContainerCreationDescription();
+        EList<ToolEntry> _ownedTools = toolSection.getOwnedTools();
+        _ownedTools.add(containerCreationDescription);
+        this.populateContainerCreationDescription(containerCreationDescription, ((ContainerCreation) t));
+      }
+    };
+    _tools.forEach(_function);
+  }
+  
+  private Object populateContainerCreationDescription(final ContainerCreationDescription containerCreationDescription, final ContainerCreation containerCreation) {
+    Object _xblockexpression = null;
+    {
+      String _name = containerCreation.getName();
+      containerCreationDescription.setName(_name);
+      String _label = containerCreation.getLabel();
+      containerCreationDescription.setLabel(_label);
+      final Operation body = containerCreation.getBody();
+      boolean _notEquals = (!Objects.equal(body, null));
+      if (_notEquals) {
+        final InitialNodeCreationOperation initialOperation = containerCreationDescription.getInitialOperation();
+        ModelOperation _createModelOperation = this.createModelOperation(body);
+        initialOperation.setFirstModelOperations(_createModelOperation);
+      }
+      _xblockexpression = this.elementsToResolve.put(containerCreation, containerCreationDescription);
+    }
+    return _xblockexpression;
+  }
+  
+  private ModelOperation createModelOperation(final Operation operation) {
+    ModelOperation modelOperation = null;
+    if ((operation instanceof ChangeContext)) {
+      final ChangeContext changeContext = ((ChangeContext) operation);
+      org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory = ToolPackage.eINSTANCE.getToolFactory();
+      final org.eclipse.sirius.viewpoint.description.tool.ChangeContext siriusChangeContext = _toolFactory.createChangeContext();
+      String _browseExpression = changeContext.getBrowseExpression();
+      String _trimQuotes = this.trimQuotes(_browseExpression);
+      siriusChangeContext.setBrowseExpression(_trimQuotes);
+      EList<Operation> _body = changeContext.getBody();
+      final Consumer<Operation> _function = (Operation o) -> {
+        final ModelOperation childOperation = this.createModelOperation(o);
+        EList<ModelOperation> _subModelOperations = siriusChangeContext.getSubModelOperations();
+        _subModelOperations.add(childOperation);
+      };
+      _body.forEach(_function);
+      modelOperation = siriusChangeContext;
+    } else {
+      if ((operation instanceof For)) {
+        final For forOperation = ((For) operation);
+        org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_1 = ToolPackage.eINSTANCE.getToolFactory();
+        final org.eclipse.sirius.viewpoint.description.tool.For siriusForOperation = _toolFactory_1.createFor();
+        String _iteratorName = forOperation.getIteratorName();
+        String _trimQuotes_1 = this.trimQuotes(_iteratorName);
+        siriusForOperation.setIteratorName(_trimQuotes_1);
+        String _expression = forOperation.getExpression();
+        String _trimQuotes_2 = this.trimQuotes(_expression);
+        siriusForOperation.setExpression(_trimQuotes_2);
+        EList<Operation> _body_1 = forOperation.getBody();
+        final Consumer<Operation> _function_1 = (Operation o) -> {
+          final ModelOperation childOperation = this.createModelOperation(o);
+          EList<ModelOperation> _subModelOperations = siriusForOperation.getSubModelOperations();
+          _subModelOperations.add(childOperation);
+        };
+        _body_1.forEach(_function_1);
+        modelOperation = siriusForOperation;
+      } else {
+        if ((operation instanceof If)) {
+          final If ifOperation = ((If) operation);
+          org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_2 = ToolPackage.eINSTANCE.getToolFactory();
+          final org.eclipse.sirius.viewpoint.description.tool.If siriusIfOperation = _toolFactory_2.createIf();
+          String _conditionExpression = ifOperation.getConditionExpression();
+          String _trimQuotes_3 = this.trimQuotes(_conditionExpression);
+          siriusIfOperation.setConditionExpression(_trimQuotes_3);
+          EList<Operation> _body_2 = ifOperation.getBody();
+          final Consumer<Operation> _function_2 = (Operation o) -> {
+            final ModelOperation childOperation = this.createModelOperation(o);
+            EList<ModelOperation> _subModelOperations = siriusIfOperation.getSubModelOperations();
+            _subModelOperations.add(childOperation);
+          };
+          _body_2.forEach(_function_2);
+          modelOperation = siriusIfOperation;
+        } else {
+          if ((operation instanceof org.obeonetwork.sirius.text.siriusTextDsl.Set)) {
+            final org.obeonetwork.sirius.text.siriusTextDsl.Set setOperation = ((org.obeonetwork.sirius.text.siriusTextDsl.Set) operation);
+            org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_3 = ToolPackage.eINSTANCE.getToolFactory();
+            final SetValue siriusSetOperation = _toolFactory_3.createSetValue();
+            String _featureName = setOperation.getFeatureName();
+            String _trimQuotes_4 = this.trimQuotes(_featureName);
+            siriusSetOperation.setFeatureName(_trimQuotes_4);
+            String _valueExpression = setOperation.getValueExpression();
+            String _trimQuotes_5 = this.trimQuotes(_valueExpression);
+            siriusSetOperation.setValueExpression(_trimQuotes_5);
+            EList<Operation> _body_3 = setOperation.getBody();
+            final Consumer<Operation> _function_3 = (Operation o) -> {
+              final ModelOperation childOperation = this.createModelOperation(o);
+              EList<ModelOperation> _subModelOperations = siriusSetOperation.getSubModelOperations();
+              _subModelOperations.add(childOperation);
+            };
+            _body_3.forEach(_function_3);
+            modelOperation = siriusSetOperation;
+          } else {
+            if ((operation instanceof CreateInstance)) {
+              final CreateInstance createInstance = ((CreateInstance) operation);
+              org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_4 = ToolPackage.eINSTANCE.getToolFactory();
+              final org.eclipse.sirius.viewpoint.description.tool.CreateInstance siriusCreateInstance = _toolFactory_4.createCreateInstance();
+              String _referenceName = createInstance.getReferenceName();
+              String _trimQuotes_6 = this.trimQuotes(_referenceName);
+              siriusCreateInstance.setReferenceName(_trimQuotes_6);
+              String _type = createInstance.getType();
+              String _trimQuotes_7 = this.trimQuotes(_type);
+              siriusCreateInstance.setTypeName(_trimQuotes_7);
+              String _variableName = createInstance.getVariableName();
+              String _trimQuotes_8 = this.trimQuotes(_variableName);
+              siriusCreateInstance.setVariableName(_trimQuotes_8);
+              EList<Operation> _body_4 = createInstance.getBody();
+              final Consumer<Operation> _function_4 = (Operation o) -> {
+                final ModelOperation childOperation = this.createModelOperation(o);
+                EList<ModelOperation> _subModelOperations = siriusCreateInstance.getSubModelOperations();
+                _subModelOperations.add(childOperation);
+              };
+              _body_4.forEach(_function_4);
+              modelOperation = siriusCreateInstance;
+            } else {
+              if ((operation instanceof CreateView)) {
+                final CreateView createView = ((CreateView) operation);
+                final org.eclipse.sirius.diagram.description.tool.CreateView siriusCreateView = ToolFactory.eINSTANCE.createCreateView();
+                String _containerViewExpression = createView.getContainerViewExpression();
+                String _trimQuotes_9 = this.trimQuotes(_containerViewExpression);
+                siriusCreateView.setContainerViewExpression(_trimQuotes_9);
+                String _variableName_1 = createView.getVariableName();
+                String _trimQuotes_10 = this.trimQuotes(_variableName_1);
+                siriusCreateView.setVariableName(_trimQuotes_10);
+                EList<Operation> _body_5 = createView.getBody();
+                final Consumer<Operation> _function_5 = (Operation o) -> {
+                  final ModelOperation childOperation = this.createModelOperation(o);
+                  EList<ModelOperation> _subModelOperations = siriusCreateView.getSubModelOperations();
+                  _subModelOperations.add(childOperation);
+                };
+                _body_5.forEach(_function_5);
+                this.elementsToResolve.put(createView, siriusCreateView);
+                modelOperation = siriusCreateView;
+              } else {
+                if ((operation instanceof Unset)) {
+                  final Unset unset = ((Unset) operation);
+                  org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_5 = ToolPackage.eINSTANCE.getToolFactory();
+                  final org.eclipse.sirius.viewpoint.description.tool.Unset siriusUnset = _toolFactory_5.createUnset();
+                  String _elementExpression = unset.getElementExpression();
+                  String _trimQuotes_11 = this.trimQuotes(_elementExpression);
+                  siriusUnset.setElementExpression(_trimQuotes_11);
+                  String _featureName_1 = unset.getFeatureName();
+                  String _trimQuotes_12 = this.trimQuotes(_featureName_1);
+                  siriusUnset.setFeatureName(_trimQuotes_12);
+                  EList<Operation> _body_6 = unset.getBody();
+                  final Consumer<Operation> _function_6 = (Operation o) -> {
+                    final ModelOperation childOperation = this.createModelOperation(o);
+                    EList<ModelOperation> _subModelOperations = siriusUnset.getSubModelOperations();
+                    _subModelOperations.add(childOperation);
+                  };
+                  _body_6.forEach(_function_6);
+                  modelOperation = siriusUnset;
+                } else {
+                  if ((operation instanceof CreateEdgeView)) {
+                    final CreateEdgeView createEdgeView = ((CreateEdgeView) operation);
+                    final org.eclipse.sirius.diagram.description.tool.CreateEdgeView siriusCreateEdgeView = ToolFactory.eINSTANCE.createCreateEdgeView();
+                    String _containerViewExpression_1 = createEdgeView.getContainerViewExpression();
+                    String _trimQuotes_13 = this.trimQuotes(_containerViewExpression_1);
+                    siriusCreateEdgeView.setContainerViewExpression(_trimQuotes_13);
+                    String _sourceExpression = createEdgeView.getSourceExpression();
+                    String _trimQuotes_14 = this.trimQuotes(_sourceExpression);
+                    siriusCreateEdgeView.setSourceExpression(_trimQuotes_14);
+                    String _targetExpression = createEdgeView.getTargetExpression();
+                    String _trimQuotes_15 = this.trimQuotes(_targetExpression);
+                    siriusCreateEdgeView.setTargetExpression(_trimQuotes_15);
+                    EList<Operation> _body_7 = createEdgeView.getBody();
+                    final Consumer<Operation> _function_7 = (Operation o) -> {
+                      final ModelOperation childOperation = this.createModelOperation(o);
+                      EList<ModelOperation> _subModelOperations = siriusCreateEdgeView.getSubModelOperations();
+                      _subModelOperations.add(childOperation);
+                    };
+                    _body_7.forEach(_function_7);
+                    this.elementsToResolve.put(createEdgeView, siriusCreateEdgeView);
+                    modelOperation = siriusCreateEdgeView;
+                  } else {
+                    if ((operation instanceof DeleteView)) {
+                      final DeleteView deleteView = ((DeleteView) operation);
+                      org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_6 = ToolPackage.eINSTANCE.getToolFactory();
+                      final org.eclipse.sirius.viewpoint.description.tool.DeleteView siriusDeleteView = _toolFactory_6.createDeleteView();
+                      EList<Operation> _body_8 = deleteView.getBody();
+                      final Consumer<Operation> _function_8 = (Operation o) -> {
+                        final ModelOperation childOperation = this.createModelOperation(o);
+                        EList<ModelOperation> _subModelOperations = siriusDeleteView.getSubModelOperations();
+                        _subModelOperations.add(childOperation);
+                      };
+                      _body_8.forEach(_function_8);
+                      modelOperation = siriusDeleteView;
+                    } else {
+                      if ((operation instanceof Remove)) {
+                        final Remove remove = ((Remove) operation);
+                        org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_7 = ToolPackage.eINSTANCE.getToolFactory();
+                        final RemoveElement siriusRemove = _toolFactory_7.createRemoveElement();
+                        EList<Operation> _body_9 = remove.getBody();
+                        final Consumer<Operation> _function_9 = (Operation o) -> {
+                          final ModelOperation childOperation = this.createModelOperation(o);
+                          EList<ModelOperation> _subModelOperations = siriusRemove.getSubModelOperations();
+                          _subModelOperations.add(childOperation);
+                        };
+                        _body_9.forEach(_function_9);
+                        modelOperation = siriusRemove;
+                      } else {
+                        if ((operation instanceof Move)) {
+                          final Move move = ((Move) operation);
+                          org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_8 = ToolPackage.eINSTANCE.getToolFactory();
+                          final MoveElement siriusMove = _toolFactory_8.createMoveElement();
+                          String _featureName_2 = move.getFeatureName();
+                          String _trimQuotes_16 = this.trimQuotes(_featureName_2);
+                          siriusMove.setFeatureName(_trimQuotes_16);
+                          String _newContainerExpression = move.getNewContainerExpression();
+                          String _trimQuotes_17 = this.trimQuotes(_newContainerExpression);
+                          siriusMove.setNewContainerExpression(_trimQuotes_17);
+                          EList<Operation> _body_10 = move.getBody();
+                          final Consumer<Operation> _function_10 = (Operation o) -> {
+                            final ModelOperation childOperation = this.createModelOperation(o);
+                            EList<ModelOperation> _subModelOperations = siriusMove.getSubModelOperations();
+                            _subModelOperations.add(childOperation);
+                          };
+                          _body_10.forEach(_function_10);
+                          modelOperation = siriusMove;
+                        } else {
+                          if ((operation instanceof Switch)) {
+                            final Switch switchOperation = ((Switch) operation);
+                            org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_9 = ToolPackage.eINSTANCE.getToolFactory();
+                            final org.eclipse.sirius.viewpoint.description.tool.Switch siriusSwitchOperation = _toolFactory_9.createSwitch();
+                            EList<Case> _cases = switchOperation.getCases();
+                            final Consumer<Case> _function_11 = (Case c) -> {
+                              org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_10 = ToolPackage.eINSTANCE.getToolFactory();
+                              final org.eclipse.sirius.viewpoint.description.tool.Case siriusCase = _toolFactory_10.createCase();
+                              String _conditionExpression_1 = c.getConditionExpression();
+                              String _trimQuotes_18 = this.trimQuotes(_conditionExpression_1);
+                              siriusCase.setConditionExpression(_trimQuotes_18);
+                              EList<Operation> _body_11 = c.getBody();
+                              final Consumer<Operation> _function_12 = (Operation o) -> {
+                                final ModelOperation childOperation = this.createModelOperation(o);
+                                EList<ModelOperation> _subModelOperations = siriusCase.getSubModelOperations();
+                                _subModelOperations.add(childOperation);
+                              };
+                              _body_11.forEach(_function_12);
+                              EList<org.eclipse.sirius.viewpoint.description.tool.Case> _cases_1 = siriusSwitchOperation.getCases();
+                              _cases_1.add(siriusCase);
+                            };
+                            _cases.forEach(_function_11);
+                            Default _default = switchOperation.getDefault();
+                            boolean _notEquals = (!Objects.equal(_default, null));
+                            if (_notEquals) {
+                              Default _default_1 = switchOperation.getDefault();
+                              final Default defaultOperation = ((Default) _default_1);
+                              org.eclipse.sirius.viewpoint.description.tool.ToolFactory _toolFactory_10 = ToolPackage.eINSTANCE.getToolFactory();
+                              final org.eclipse.sirius.viewpoint.description.tool.Default siriusDefaultOperation = _toolFactory_10.createDefault();
+                              EList<Operation> _body_11 = defaultOperation.getBody();
+                              final Consumer<Operation> _function_12 = (Operation o) -> {
+                                final ModelOperation childOperation = this.createModelOperation(o);
+                                EList<ModelOperation> _subModelOperations = siriusDefaultOperation.getSubModelOperations();
+                                _subModelOperations.add(childOperation);
+                              };
+                              _body_11.forEach(_function_12);
+                              siriusSwitchOperation.setDefault(siriusDefaultOperation);
+                            }
+                            modelOperation = siriusSwitchOperation;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return modelOperation;
   }
   
   private void populateRelationBasedEdgeMapping(final EdgeMapping edgeMapping, final RelationBasedEdge relationBasedEdge) {

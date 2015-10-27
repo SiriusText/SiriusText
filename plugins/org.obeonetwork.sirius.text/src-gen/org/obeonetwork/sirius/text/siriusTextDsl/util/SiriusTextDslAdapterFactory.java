@@ -115,6 +115,96 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
         return createLayerAdapter();
       }
       @Override
+      public Adapter caseSection(Section object)
+      {
+        return createSectionAdapter();
+      }
+      @Override
+      public Adapter caseTool(Tool object)
+      {
+        return createToolAdapter();
+      }
+      @Override
+      public Adapter caseContainerCreation(ContainerCreation object)
+      {
+        return createContainerCreationAdapter();
+      }
+      @Override
+      public Adapter caseOperation(Operation object)
+      {
+        return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseChangeContext(ChangeContext object)
+      {
+        return createChangeContextAdapter();
+      }
+      @Override
+      public Adapter caseFor(For object)
+      {
+        return createForAdapter();
+      }
+      @Override
+      public Adapter caseIf(If object)
+      {
+        return createIfAdapter();
+      }
+      @Override
+      public Adapter caseSet(Set object)
+      {
+        return createSetAdapter();
+      }
+      @Override
+      public Adapter caseUnset(Unset object)
+      {
+        return createUnsetAdapter();
+      }
+      @Override
+      public Adapter caseCreateInstance(CreateInstance object)
+      {
+        return createCreateInstanceAdapter();
+      }
+      @Override
+      public Adapter caseCreateView(CreateView object)
+      {
+        return createCreateViewAdapter();
+      }
+      @Override
+      public Adapter caseCreateEdgeView(CreateEdgeView object)
+      {
+        return createCreateEdgeViewAdapter();
+      }
+      @Override
+      public Adapter caseDeleteView(DeleteView object)
+      {
+        return createDeleteViewAdapter();
+      }
+      @Override
+      public Adapter caseRemove(Remove object)
+      {
+        return createRemoveAdapter();
+      }
+      @Override
+      public Adapter caseMove(Move object)
+      {
+        return createMoveAdapter();
+      }
+      @Override
+      public Adapter caseSwitch(Switch object)
+      {
+        return createSwitchAdapter();
+      }
+      @Override
+      public Adapter caseCase(Case object)
+      {
+        return createCaseAdapter();
+      }
+      @Override
+      public Adapter caseDefault(Default object)
+      {
+        return createDefaultAdapter();
+      }
+      @Override
       public Adapter caseMapping(Mapping object)
       {
         return createMappingAdapter();
@@ -317,6 +407,276 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLayerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section <em>Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section
+   * @generated
+   */
+  public Adapter createSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Tool <em>Tool</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Tool
+   * @generated
+   */
+  public Adapter createToolAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation <em>Container Creation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation
+   * @generated
+   */
+  public Adapter createContainerCreationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Operation
+   * @generated
+   */
+  public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext <em>Change Context</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext
+   * @generated
+   */
+  public Adapter createChangeContextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.For <em>For</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.For
+   * @generated
+   */
+  public Adapter createForAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.If <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.If
+   * @generated
+   */
+  public Adapter createIfAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Set <em>Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Set
+   * @generated
+   */
+  public Adapter createSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Unset <em>Unset</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Unset
+   * @generated
+   */
+  public Adapter createUnsetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance <em>Create Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance
+   * @generated
+   */
+  public Adapter createCreateInstanceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView <em>Create View</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView
+   * @generated
+   */
+  public Adapter createCreateViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView <em>Create Edge View</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView
+   * @generated
+   */
+  public Adapter createCreateEdgeViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.DeleteView <em>Delete View</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.DeleteView
+   * @generated
+   */
+  public Adapter createDeleteViewAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Remove <em>Remove</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Remove
+   * @generated
+   */
+  public Adapter createRemoveAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Move <em>Move</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Move
+   * @generated
+   */
+  public Adapter createMoveAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Switch <em>Switch</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Switch
+   * @generated
+   */
+  public Adapter createSwitchAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Case <em>Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Case
+   * @generated
+   */
+  public Adapter createCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Default <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Default
+   * @generated
+   */
+  public Adapter createDefaultAdapter()
   {
     return null;
   }

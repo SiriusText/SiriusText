@@ -95,6 +95,168 @@ public interface SiriusTextDslFactory extends EFactory
   Layer createLayer();
 
   /**
+   * Returns a new object of class '<em>Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Section</em>'.
+   * @generated
+   */
+  Section createSection();
+
+  /**
+   * Returns a new object of class '<em>Tool</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tool</em>'.
+   * @generated
+   */
+  Tool createTool();
+
+  /**
+   * Returns a new object of class '<em>Container Creation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Container Creation</em>'.
+   * @generated
+   */
+  ContainerCreation createContainerCreation();
+
+  /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Change Context</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Change Context</em>'.
+   * @generated
+   */
+  ChangeContext createChangeContext();
+
+  /**
+   * Returns a new object of class '<em>For</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For</em>'.
+   * @generated
+   */
+  For createFor();
+
+  /**
+   * Returns a new object of class '<em>If</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If</em>'.
+   * @generated
+   */
+  If createIf();
+
+  /**
+   * Returns a new object of class '<em>Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set</em>'.
+   * @generated
+   */
+  Set createSet();
+
+  /**
+   * Returns a new object of class '<em>Unset</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unset</em>'.
+   * @generated
+   */
+  Unset createUnset();
+
+  /**
+   * Returns a new object of class '<em>Create Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Instance</em>'.
+   * @generated
+   */
+  CreateInstance createCreateInstance();
+
+  /**
+   * Returns a new object of class '<em>Create View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create View</em>'.
+   * @generated
+   */
+  CreateView createCreateView();
+
+  /**
+   * Returns a new object of class '<em>Create Edge View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Edge View</em>'.
+   * @generated
+   */
+  CreateEdgeView createCreateEdgeView();
+
+  /**
+   * Returns a new object of class '<em>Delete View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Delete View</em>'.
+   * @generated
+   */
+  DeleteView createDeleteView();
+
+  /**
+   * Returns a new object of class '<em>Remove</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Remove</em>'.
+   * @generated
+   */
+  Remove createRemove();
+
+  /**
+   * Returns a new object of class '<em>Move</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Move</em>'.
+   * @generated
+   */
+  Move createMove();
+
+  /**
+   * Returns a new object of class '<em>Switch</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Switch</em>'.
+   * @generated
+   */
+  Switch createSwitch();
+
+  /**
+   * Returns a new object of class '<em>Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Case</em>'.
+   * @generated
+   */
+  Case createCase();
+
+  /**
+   * Returns a new object of class '<em>Default</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default</em>'.
+   * @generated
+   */
+  Default createDefault();
+
+  /**
    * Returns a new object of class '<em>Mapping</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -13,6 +13,11 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 	public static final String KEYWORD_ID = "keyword"
 	public static final String STRING_ID = "string"
 	public static final String EXPRESSION_ID = "expression"
+	public static final String OPERATION_ID = "operation"
+	public static final String PARAMETER_NAME_ID = "parameter name"
+	public static final String FOR_ID = "for"
+	public static final String IF_ID = "if"
+	public static final String SWITCH_ID = "switch"
 	
 	override configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(DEFAULT_ID, "Default", defaultTextStyle)
@@ -21,6 +26,11 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle)
 		acceptor.acceptDefaultHighlighting(STRING_ID, "String", stringTextStyle)
 		acceptor.acceptDefaultHighlighting(EXPRESSION_ID, "Expression", expressionTextStyle)
+		acceptor.acceptDefaultHighlighting(OPERATION_ID, "Operation", operationTextStyle)
+		acceptor.acceptDefaultHighlighting(PARAMETER_NAME_ID, "Parameter Name", parameterNameTextStyle)
+		acceptor.acceptDefaultHighlighting(FOR_ID, "For", forTextStyle)
+		acceptor.acceptDefaultHighlighting(IF_ID, "If", ifTextStyle)
+		acceptor.acceptDefaultHighlighting(SWITCH_ID, "Switch", switchTextStyle)
 	}
 	
 	def TextStyle defaultTextStyle() {
@@ -55,6 +65,38 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 	def TextStyle expressionTextStyle() {
 		val textStyle = defaultTextStyle.copy
 		textStyle.setColor(new RGB(22, 147, 165))
+		return textStyle
+	}
+	
+	def TextStyle operationTextStyle() {
+		val textStyle = defaultTextStyle.copy
+		return textStyle
+	}
+	
+	def TextStyle parameterNameTextStyle() {
+		val textStyle = defaultTextStyle.copy
+		textStyle.setColor(new RGB(85, 98, 112))
+		return textStyle
+	}
+	
+	def TextStyle forTextStyle() {
+		val textStyle = defaultTextStyle.copy
+		textStyle.setColor(new RGB(127, 0, 85))
+		textStyle.setStyle(SWT.BOLD)
+		return textStyle
+	}
+	
+	def TextStyle ifTextStyle() {
+		val textStyle = defaultTextStyle.copy
+		textStyle.setColor(new RGB(127, 0, 85))
+		textStyle.setStyle(SWT.BOLD)
+		return textStyle
+	}
+	
+	def TextStyle switchTextStyle() {
+		val textStyle = defaultTextStyle.copy
+		textStyle.setColor(new RGB(127, 0, 85))
+		textStyle.setStyle(SWT.BOLD)
 		return textStyle
 	}
 }

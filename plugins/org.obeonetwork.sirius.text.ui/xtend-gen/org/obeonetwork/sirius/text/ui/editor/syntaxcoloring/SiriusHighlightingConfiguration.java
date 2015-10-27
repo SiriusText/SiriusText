@@ -20,6 +20,16 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
   
   public final static String EXPRESSION_ID = "expression";
   
+  public final static String OPERATION_ID = "operation";
+  
+  public final static String PARAMETER_NAME_ID = "parameter name";
+  
+  public final static String FOR_ID = "for";
+  
+  public final static String IF_ID = "if";
+  
+  public final static String SWITCH_ID = "switch";
+  
   @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
     TextStyle _defaultTextStyle = this.defaultTextStyle();
@@ -34,6 +44,16 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.STRING_ID, "String", _stringTextStyle);
     TextStyle _expressionTextStyle = this.expressionTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.EXPRESSION_ID, "Expression", _expressionTextStyle);
+    TextStyle _operationTextStyle = this.operationTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.OPERATION_ID, "Operation", _operationTextStyle);
+    TextStyle _parameterNameTextStyle = this.parameterNameTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.PARAMETER_NAME_ID, "Parameter Name", _parameterNameTextStyle);
+    TextStyle _forTextStyle = this.forTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.FOR_ID, "For", _forTextStyle);
+    TextStyle _ifTextStyle = this.ifTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.IF_ID, "If", _ifTextStyle);
+    TextStyle _switchTextStyle = this.switchTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.SWITCH_ID, "Switch", _switchTextStyle);
   }
   
   public TextStyle defaultTextStyle() {
@@ -77,6 +97,47 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     final TextStyle textStyle = _defaultTextStyle.copy();
     RGB _rGB = new RGB(22, 147, 165);
     textStyle.setColor(_rGB);
+    return textStyle;
+  }
+  
+  public TextStyle operationTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    return textStyle;
+  }
+  
+  public TextStyle parameterNameTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(85, 98, 112);
+    textStyle.setColor(_rGB);
+    return textStyle;
+  }
+  
+  public TextStyle forTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(127, 0, 85);
+    textStyle.setColor(_rGB);
+    textStyle.setStyle(SWT.BOLD);
+    return textStyle;
+  }
+  
+  public TextStyle ifTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(127, 0, 85);
+    textStyle.setColor(_rGB);
+    textStyle.setStyle(SWT.BOLD);
+    return textStyle;
+  }
+  
+  public TextStyle switchTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(127, 0, 85);
+    textStyle.setColor(_rGB);
+    textStyle.setStyle(SWT.BOLD);
     return textStyle;
   }
 }

@@ -12,6 +12,7 @@ package org.obeonetwork.sirius.text.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.builder.IXtextBuilderParticipant;
+import org.eclipse.xtext.ide.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 
@@ -34,6 +35,10 @@ public class SiriusTextDslUiModule extends org.obeonetwork.sirius.text.ui.Abstra
 	
 	public Class<? extends DefaultAntlrTokenToAttributeIdMapper> bindTokenToAttributeMapper() {
 		return org.obeonetwork.sirius.text.ui.editor.syntaxcoloring.SiriusTokenToAttribruteIdMapper.class;
+	}
+	
+	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+		return org.obeonetwork.sirius.text.ui.editor.syntaxcoloring.SiriusSemanticHighlightingCalculator.class;
 	}
 	
 	

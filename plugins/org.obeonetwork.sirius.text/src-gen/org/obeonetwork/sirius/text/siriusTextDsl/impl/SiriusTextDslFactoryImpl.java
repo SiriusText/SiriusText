@@ -73,6 +73,24 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
       case SiriusTextDslPackage.REPRESENTATION: return createRepresentation();
       case SiriusTextDslPackage.DIAGRAM: return createDiagram();
       case SiriusTextDslPackage.LAYER: return createLayer();
+      case SiriusTextDslPackage.SECTION: return createSection();
+      case SiriusTextDslPackage.TOOL: return createTool();
+      case SiriusTextDslPackage.CONTAINER_CREATION: return createContainerCreation();
+      case SiriusTextDslPackage.OPERATION: return createOperation();
+      case SiriusTextDslPackage.CHANGE_CONTEXT: return createChangeContext();
+      case SiriusTextDslPackage.FOR: return createFor();
+      case SiriusTextDslPackage.IF: return createIf();
+      case SiriusTextDslPackage.SET: return createSet();
+      case SiriusTextDslPackage.UNSET: return createUnset();
+      case SiriusTextDslPackage.CREATE_INSTANCE: return createCreateInstance();
+      case SiriusTextDslPackage.CREATE_VIEW: return createCreateView();
+      case SiriusTextDslPackage.CREATE_EDGE_VIEW: return createCreateEdgeView();
+      case SiriusTextDslPackage.DELETE_VIEW: return createDeleteView();
+      case SiriusTextDslPackage.REMOVE: return createRemove();
+      case SiriusTextDslPackage.MOVE: return createMove();
+      case SiriusTextDslPackage.SWITCH: return createSwitch();
+      case SiriusTextDslPackage.CASE: return createCase();
+      case SiriusTextDslPackage.DEFAULT: return createDefault();
       case SiriusTextDslPackage.MAPPING: return createMapping();
       case SiriusTextDslPackage.CONTAINER: return createContainer();
       case SiriusTextDslPackage.CONDITIONAL_CONTAINER_STYLE_DECLARATION: return createConditionalContainerStyleDeclaration();
@@ -235,6 +253,204 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     LayerImpl layer = new LayerImpl();
     return layer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Section createSection()
+  {
+    SectionImpl section = new SectionImpl();
+    return section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Tool createTool()
+  {
+    ToolImpl tool = new ToolImpl();
+    return tool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ContainerCreation createContainerCreation()
+  {
+    ContainerCreationImpl containerCreation = new ContainerCreationImpl();
+    return containerCreation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation createOperation()
+  {
+    OperationImpl operation = new OperationImpl();
+    return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ChangeContext createChangeContext()
+  {
+    ChangeContextImpl changeContext = new ChangeContextImpl();
+    return changeContext;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public For createFor()
+  {
+    ForImpl for_ = new ForImpl();
+    return for_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public If createIf()
+  {
+    IfImpl if_ = new IfImpl();
+    return if_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Set createSet()
+  {
+    SetImpl set = new SetImpl();
+    return set;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Unset createUnset()
+  {
+    UnsetImpl unset = new UnsetImpl();
+    return unset;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CreateInstance createCreateInstance()
+  {
+    CreateInstanceImpl createInstance = new CreateInstanceImpl();
+    return createInstance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CreateView createCreateView()
+  {
+    CreateViewImpl createView = new CreateViewImpl();
+    return createView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CreateEdgeView createCreateEdgeView()
+  {
+    CreateEdgeViewImpl createEdgeView = new CreateEdgeViewImpl();
+    return createEdgeView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeleteView createDeleteView()
+  {
+    DeleteViewImpl deleteView = new DeleteViewImpl();
+    return deleteView;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Remove createRemove()
+  {
+    RemoveImpl remove = new RemoveImpl();
+    return remove;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Move createMove()
+  {
+    MoveImpl move = new MoveImpl();
+    return move;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Switch createSwitch()
+  {
+    SwitchImpl switch_ = new SwitchImpl();
+    return switch_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Case createCase()
+  {
+    CaseImpl case_ = new CaseImpl();
+    return case_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Default createDefault()
+  {
+    DefaultImpl default_ = new DefaultImpl();
+    return default_;
   }
 
   /**

@@ -99,6 +99,94 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Layer/icon"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Layer/mappings"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Layer/edges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Layer/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Section">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Section/documentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Section/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Section/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Section/icon"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Section/tools"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Tool"/>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//ContainerCreation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/documentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/forceRefresh"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/nodeCreationVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/containerViewVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/precondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ContainerCreation/icon"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//ContainerCreation/containerMappings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//ContainerCreation/extraMappings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//ContainerCreation/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Operation"/>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//ChangeContext">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//ChangeContext/browseExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//ChangeContext/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//For">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//For/iteratorName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//For/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//For/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//If">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//If/conditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//If/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Set">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Set/featureName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Set/valueExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Set/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Unset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Unset/featureName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Unset/elementExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Unset/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//CreateInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateInstance/referenceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateInstance/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateInstance/variableName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//CreateInstance/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//CreateView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//CreateView/mapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateView/containerViewExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateView/variableName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//CreateView/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//CreateEdgeView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//CreateEdgeView/edge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateEdgeView/sourceExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateEdgeView/targetExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateEdgeView/containerViewExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//CreateEdgeView/variableName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//CreateEdgeView/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//DeleteView">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//DeleteView/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Remove">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Remove/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Move">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Move/newContainerExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Move/featureName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Move/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Switch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Switch/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Switch/default"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Case">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SiriusTextDsl.ecore#//Case/conditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Case/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SiriusTextDsl.ecore#//Default">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SiriusTextDsl.ecore#//Default/body"/>
     </genClasses>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Mapping"/>
     <genClasses ecoreClass="SiriusTextDsl.ecore#//Container">

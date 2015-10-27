@@ -11,32 +11,50 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
+import org.obeonetwork.sirius.text.siriusTextDsl.Case;
+import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateView;
+import org.obeonetwork.sirius.text.siriusTextDsl.Default;
+import org.obeonetwork.sirius.text.siriusTextDsl.DeleteView;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
 import org.obeonetwork.sirius.text.siriusTextDsl.Edge;
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering;
 import org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.For;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
+import org.obeonetwork.sirius.text.siriusTextDsl.If;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
 import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.LineStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
+import org.obeonetwork.sirius.text.siriusTextDsl.Move;
+import org.obeonetwork.sirius.text.siriusTextDsl.Operation;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
+import org.obeonetwork.sirius.text.siriusTextDsl.Remove;
 import org.obeonetwork.sirius.text.siriusTextDsl.Representation;
 import org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.Section;
+import org.obeonetwork.sirius.text.siriusTextDsl.Set;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFileBody;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslFactory;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 import org.obeonetwork.sirius.text.siriusTextDsl.Style;
+import org.obeonetwork.sirius.text.siriusTextDsl.Switch;
+import org.obeonetwork.sirius.text.siriusTextDsl.Tool;
+import org.obeonetwork.sirius.text.siriusTextDsl.Unset;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
 
 /**
@@ -102,6 +120,132 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * @generated
    */
   private EClass layerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass containerCreationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass changeContextEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unsetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createInstanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createEdgeViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass deleteViewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass removeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moveEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass switchEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass caseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defaultEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -724,6 +868,726 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
   public EReference getLayer_Edges()
   {
     return (EReference)layerEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLayer_Sections()
+  {
+    return (EReference)layerEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSection()
+  {
+    return sectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSection_Documentation()
+  {
+    return (EAttribute)sectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSection_Name()
+  {
+    return (EAttribute)sectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSection_Label()
+  {
+    return (EAttribute)sectionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSection_Icon()
+  {
+    return (EAttribute)sectionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSection_Tools()
+  {
+    return (EReference)sectionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTool()
+  {
+    return toolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getContainerCreation()
+  {
+    return containerCreationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_Documentation()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_ForceRefresh()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_NodeCreationVariable()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_ContainerViewVariable()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_Name()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_Label()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_Precondition()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerCreation_Icon()
+  {
+    return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContainerCreation_ContainerMappings()
+  {
+    return (EReference)containerCreationEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContainerCreation_ExtraMappings()
+  {
+    return (EReference)containerCreationEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContainerCreation_Body()
+  {
+    return (EReference)containerCreationEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOperation()
+  {
+    return operationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getChangeContext()
+  {
+    return changeContextEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getChangeContext_BrowseExpression()
+  {
+    return (EAttribute)changeContextEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getChangeContext_Body()
+  {
+    return (EReference)changeContextEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFor()
+  {
+    return forEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFor_IteratorName()
+  {
+    return (EAttribute)forEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFor_Expression()
+  {
+    return (EAttribute)forEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFor_Body()
+  {
+    return (EReference)forEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIf()
+  {
+    return ifEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIf_ConditionExpression()
+  {
+    return (EAttribute)ifEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_Body()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSet()
+  {
+    return setEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSet_FeatureName()
+  {
+    return (EAttribute)setEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSet_ValueExpression()
+  {
+    return (EAttribute)setEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSet_Body()
+  {
+    return (EReference)setEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnset()
+  {
+    return unsetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUnset_FeatureName()
+  {
+    return (EAttribute)unsetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUnset_ElementExpression()
+  {
+    return (EAttribute)unsetEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnset_Body()
+  {
+    return (EReference)unsetEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCreateInstance()
+  {
+    return createInstanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateInstance_ReferenceName()
+  {
+    return (EAttribute)createInstanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateInstance_Type()
+  {
+    return (EAttribute)createInstanceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateInstance_VariableName()
+  {
+    return (EAttribute)createInstanceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCreateInstance_Body()
+  {
+    return (EReference)createInstanceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCreateView()
+  {
+    return createViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCreateView_Mapping()
+  {
+    return (EReference)createViewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateView_ContainerViewExpression()
+  {
+    return (EAttribute)createViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateView_VariableName()
+  {
+    return (EAttribute)createViewEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCreateView_Body()
+  {
+    return (EReference)createViewEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCreateEdgeView()
+  {
+    return createEdgeViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCreateEdgeView_Edge()
+  {
+    return (EReference)createEdgeViewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateEdgeView_SourceExpression()
+  {
+    return (EAttribute)createEdgeViewEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateEdgeView_TargetExpression()
+  {
+    return (EAttribute)createEdgeViewEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateEdgeView_ContainerViewExpression()
+  {
+    return (EAttribute)createEdgeViewEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCreateEdgeView_VariableName()
+  {
+    return (EAttribute)createEdgeViewEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCreateEdgeView_Body()
+  {
+    return (EReference)createEdgeViewEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeleteView()
+  {
+    return deleteViewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeleteView_Body()
+  {
+    return (EReference)deleteViewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRemove()
+  {
+    return removeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRemove_Body()
+  {
+    return (EReference)removeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMove()
+  {
+    return moveEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMove_NewContainerExpression()
+  {
+    return (EAttribute)moveEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMove_FeatureName()
+  {
+    return (EAttribute)moveEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMove_Body()
+  {
+    return (EReference)moveEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSwitch()
+  {
+    return switchEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitch_Cases()
+  {
+    return (EReference)switchEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitch_Default()
+  {
+    return (EReference)switchEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCase()
+  {
+    return caseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCase_ConditionExpression()
+  {
+    return (EAttribute)caseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCase_Body()
+  {
+    return (EReference)caseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDefault()
+  {
+    return defaultEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefault_Body()
+  {
+    return (EReference)defaultEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1485,6 +2349,96 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(layerEClass, LAYER__ICON);
     createEReference(layerEClass, LAYER__MAPPINGS);
     createEReference(layerEClass, LAYER__EDGES);
+    createEReference(layerEClass, LAYER__SECTIONS);
+
+    sectionEClass = createEClass(SECTION);
+    createEAttribute(sectionEClass, SECTION__DOCUMENTATION);
+    createEAttribute(sectionEClass, SECTION__NAME);
+    createEAttribute(sectionEClass, SECTION__LABEL);
+    createEAttribute(sectionEClass, SECTION__ICON);
+    createEReference(sectionEClass, SECTION__TOOLS);
+
+    toolEClass = createEClass(TOOL);
+
+    containerCreationEClass = createEClass(CONTAINER_CREATION);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__DOCUMENTATION);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__FORCE_REFRESH);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__NODE_CREATION_VARIABLE);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__NAME);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__LABEL);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__PRECONDITION);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__ICON);
+    createEReference(containerCreationEClass, CONTAINER_CREATION__CONTAINER_MAPPINGS);
+    createEReference(containerCreationEClass, CONTAINER_CREATION__EXTRA_MAPPINGS);
+    createEReference(containerCreationEClass, CONTAINER_CREATION__BODY);
+
+    operationEClass = createEClass(OPERATION);
+
+    changeContextEClass = createEClass(CHANGE_CONTEXT);
+    createEAttribute(changeContextEClass, CHANGE_CONTEXT__BROWSE_EXPRESSION);
+    createEReference(changeContextEClass, CHANGE_CONTEXT__BODY);
+
+    forEClass = createEClass(FOR);
+    createEAttribute(forEClass, FOR__ITERATOR_NAME);
+    createEAttribute(forEClass, FOR__EXPRESSION);
+    createEReference(forEClass, FOR__BODY);
+
+    ifEClass = createEClass(IF);
+    createEAttribute(ifEClass, IF__CONDITION_EXPRESSION);
+    createEReference(ifEClass, IF__BODY);
+
+    setEClass = createEClass(SET);
+    createEAttribute(setEClass, SET__FEATURE_NAME);
+    createEAttribute(setEClass, SET__VALUE_EXPRESSION);
+    createEReference(setEClass, SET__BODY);
+
+    unsetEClass = createEClass(UNSET);
+    createEAttribute(unsetEClass, UNSET__FEATURE_NAME);
+    createEAttribute(unsetEClass, UNSET__ELEMENT_EXPRESSION);
+    createEReference(unsetEClass, UNSET__BODY);
+
+    createInstanceEClass = createEClass(CREATE_INSTANCE);
+    createEAttribute(createInstanceEClass, CREATE_INSTANCE__REFERENCE_NAME);
+    createEAttribute(createInstanceEClass, CREATE_INSTANCE__TYPE);
+    createEAttribute(createInstanceEClass, CREATE_INSTANCE__VARIABLE_NAME);
+    createEReference(createInstanceEClass, CREATE_INSTANCE__BODY);
+
+    createViewEClass = createEClass(CREATE_VIEW);
+    createEReference(createViewEClass, CREATE_VIEW__MAPPING);
+    createEAttribute(createViewEClass, CREATE_VIEW__CONTAINER_VIEW_EXPRESSION);
+    createEAttribute(createViewEClass, CREATE_VIEW__VARIABLE_NAME);
+    createEReference(createViewEClass, CREATE_VIEW__BODY);
+
+    createEdgeViewEClass = createEClass(CREATE_EDGE_VIEW);
+    createEReference(createEdgeViewEClass, CREATE_EDGE_VIEW__EDGE);
+    createEAttribute(createEdgeViewEClass, CREATE_EDGE_VIEW__SOURCE_EXPRESSION);
+    createEAttribute(createEdgeViewEClass, CREATE_EDGE_VIEW__TARGET_EXPRESSION);
+    createEAttribute(createEdgeViewEClass, CREATE_EDGE_VIEW__CONTAINER_VIEW_EXPRESSION);
+    createEAttribute(createEdgeViewEClass, CREATE_EDGE_VIEW__VARIABLE_NAME);
+    createEReference(createEdgeViewEClass, CREATE_EDGE_VIEW__BODY);
+
+    deleteViewEClass = createEClass(DELETE_VIEW);
+    createEReference(deleteViewEClass, DELETE_VIEW__BODY);
+
+    removeEClass = createEClass(REMOVE);
+    createEReference(removeEClass, REMOVE__BODY);
+
+    moveEClass = createEClass(MOVE);
+    createEAttribute(moveEClass, MOVE__NEW_CONTAINER_EXPRESSION);
+    createEAttribute(moveEClass, MOVE__FEATURE_NAME);
+    createEReference(moveEClass, MOVE__BODY);
+
+    switchEClass = createEClass(SWITCH);
+    createEReference(switchEClass, SWITCH__CASES);
+    createEReference(switchEClass, SWITCH__DEFAULT);
+
+    caseEClass = createEClass(CASE);
+    createEAttribute(caseEClass, CASE__CONDITION_EXPRESSION);
+    createEReference(caseEClass, CASE__BODY);
+
+    defaultEClass = createEClass(DEFAULT);
+    createEReference(defaultEClass, DEFAULT__BODY);
 
     mappingEClass = createEClass(MAPPING);
 
@@ -1603,6 +2557,21 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     representationEClass.getESuperTypes().add(this.getSiriusFileBody());
     diagramEClass.getESuperTypes().add(this.getRepresentation());
     layerEClass.getESuperTypes().add(this.getSiriusFileBody());
+    sectionEClass.getESuperTypes().add(this.getSiriusFileBody());
+    toolEClass.getESuperTypes().add(this.getSiriusFileBody());
+    containerCreationEClass.getESuperTypes().add(this.getTool());
+    changeContextEClass.getESuperTypes().add(this.getOperation());
+    forEClass.getESuperTypes().add(this.getOperation());
+    ifEClass.getESuperTypes().add(this.getOperation());
+    setEClass.getESuperTypes().add(this.getOperation());
+    unsetEClass.getESuperTypes().add(this.getOperation());
+    createInstanceEClass.getESuperTypes().add(this.getOperation());
+    createViewEClass.getESuperTypes().add(this.getOperation());
+    createEdgeViewEClass.getESuperTypes().add(this.getOperation());
+    deleteViewEClass.getESuperTypes().add(this.getOperation());
+    removeEClass.getESuperTypes().add(this.getOperation());
+    moveEClass.getESuperTypes().add(this.getOperation());
+    switchEClass.getESuperTypes().add(this.getOperation());
     mappingEClass.getESuperTypes().add(this.getSiriusFileBody());
     containerEClass.getESuperTypes().add(this.getMapping());
     styleEClass.getESuperTypes().add(this.getSiriusFileBody());
@@ -1664,6 +2633,96 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getLayer_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Mappings(), this.getMapping(), null, "mappings", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Edges(), this.getEdge(), null, "edges", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLayer_Sections(), this.getSection(), null, "sections", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSection_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSection_Label(), ecorePackage.getEString(), "label", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSection_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSection_Tools(), this.getTool(), null, "tools", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(containerCreationEClass, ContainerCreation.class, "ContainerCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContainerCreation_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_ForceRefresh(), ecorePackage.getEBoolean(), "forceRefresh", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_NodeCreationVariable(), ecorePackage.getEString(), "nodeCreationVariable", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_ContainerViewVariable(), ecorePackage.getEString(), "containerViewVariable", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_Label(), ecorePackage.getEString(), "label", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_Precondition(), ecorePackage.getEString(), "precondition", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainerCreation_ContainerMappings(), this.getMapping(), null, "containerMappings", null, 0, -1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainerCreation_ExtraMappings(), this.getMapping(), null, "extraMappings", null, 0, -1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainerCreation_Body(), this.getOperation(), null, "body", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(changeContextEClass, ChangeContext.class, "ChangeContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChangeContext_BrowseExpression(), ecorePackage.getEString(), "browseExpression", null, 0, 1, ChangeContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getChangeContext_Body(), this.getOperation(), null, "body", null, 0, -1, ChangeContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(forEClass, For.class, "For", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFor_IteratorName(), ecorePackage.getEString(), "iteratorName", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFor_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFor_Body(), this.getOperation(), null, "body", null, 0, -1, For.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIf_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Body(), this.getOperation(), null, "body", null, 0, -1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setEClass, Set.class, "Set", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSet_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSet_ValueExpression(), ecorePackage.getEString(), "valueExpression", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSet_Body(), this.getOperation(), null, "body", null, 0, -1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unsetEClass, Unset.class, "Unset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUnset_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, Unset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUnset_ElementExpression(), ecorePackage.getEString(), "elementExpression", null, 0, 1, Unset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnset_Body(), this.getOperation(), null, "body", null, 0, -1, Unset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createInstanceEClass, CreateInstance.class, "CreateInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCreateInstance_ReferenceName(), ecorePackage.getEString(), "referenceName", null, 0, 1, CreateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateInstance_Type(), ecorePackage.getEString(), "type", null, 0, 1, CreateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateInstance_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, CreateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateInstance_Body(), this.getOperation(), null, "body", null, 0, -1, CreateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createViewEClass, CreateView.class, "CreateView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateView_Mapping(), this.getMapping(), null, "mapping", null, 0, 1, CreateView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateView_ContainerViewExpression(), ecorePackage.getEString(), "containerViewExpression", null, 0, 1, CreateView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateView_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, CreateView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateView_Body(), this.getOperation(), null, "body", null, 0, -1, CreateView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createEdgeViewEClass, CreateEdgeView.class, "CreateEdgeView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateEdgeView_Edge(), this.getEdge(), null, "edge", null, 0, 1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateEdgeView_SourceExpression(), ecorePackage.getEString(), "sourceExpression", null, 0, 1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateEdgeView_TargetExpression(), ecorePackage.getEString(), "targetExpression", null, 0, 1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateEdgeView_ContainerViewExpression(), ecorePackage.getEString(), "containerViewExpression", null, 0, 1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateEdgeView_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateEdgeView_Body(), this.getOperation(), null, "body", null, 0, -1, CreateEdgeView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(deleteViewEClass, DeleteView.class, "DeleteView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeleteView_Body(), this.getOperation(), null, "body", null, 0, -1, DeleteView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(removeEClass, Remove.class, "Remove", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRemove_Body(), this.getOperation(), null, "body", null, 0, -1, Remove.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moveEClass, Move.class, "Move", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMove_NewContainerExpression(), ecorePackage.getEString(), "newContainerExpression", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMove_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMove_Body(), this.getOperation(), null, "body", null, 0, -1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(switchEClass, Switch.class, "Switch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSwitch_Cases(), this.getCase(), null, "cases", null, 0, -1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitch_Default(), this.getDefault(), null, "default", null, 0, 1, Switch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(caseEClass, Case.class, "Case", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCase_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, Case.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCase_Body(), this.getOperation(), null, "body", null, 0, -1, Case.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDefault_Body(), this.getOperation(), null, "body", null, 0, -1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

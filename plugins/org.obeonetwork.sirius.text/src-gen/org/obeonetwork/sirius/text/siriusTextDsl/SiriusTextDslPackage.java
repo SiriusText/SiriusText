@@ -507,13 +507,841 @@ public interface SiriusTextDslPackage extends EPackage
   int LAYER__EDGES = SIRIUS_FILE_BODY_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Sections</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYER__SECTIONS = SIRIUS_FILE_BODY_FEATURE_COUNT + 5;
+
+  /**
    * The number of structural features of the '<em>Layer</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYER_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 5;
+  int LAYER_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl <em>Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSection()
+   * @generated
+   */
+  int SECTION = 8;
+
+  /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__DOCUMENTATION = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__LABEL = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Icon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__ICON = SIRIUS_FILE_BODY_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Tools</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__TOOLS = SIRIUS_FILE_BODY_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ToolImpl <em>Tool</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ToolImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getTool()
+   * @generated
+   */
+  int TOOL = 9;
+
+  /**
+   * The number of structural features of the '<em>Tool</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOOL_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl <em>Container Creation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerCreation()
+   * @generated
+   */
+  int CONTAINER_CREATION = 10;
+
+  /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__DOCUMENTATION = TOOL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Force Refresh</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__FORCE_REFRESH = TOOL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Node Creation Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__NODE_CREATION_VARIABLE = TOOL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Container View Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE = TOOL_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__NAME = TOOL_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__LABEL = TOOL_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Precondition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__PRECONDITION = TOOL_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Icon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__ICON = TOOL_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Container Mappings</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__CONTAINER_MAPPINGS = TOOL_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Extra Mappings</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__EXTRA_MAPPINGS = TOOL_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__BODY = TOOL_FEATURE_COUNT + 10;
+
+  /**
+   * The number of structural features of the '<em>Container Creation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION_FEATURE_COUNT = TOOL_FEATURE_COUNT + 11;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.OperationImpl <em>Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.OperationImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getOperation()
+   * @generated
+   */
+  int OPERATION = 11;
+
+  /**
+   * The number of structural features of the '<em>Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ChangeContextImpl <em>Change Context</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ChangeContextImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getChangeContext()
+   * @generated
+   */
+  int CHANGE_CONTEXT = 12;
+
+  /**
+   * The feature id for the '<em><b>Browse Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_CONTEXT__BROWSE_EXPRESSION = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_CONTEXT__BODY = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Change Context</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_CONTEXT_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ForImpl <em>For</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ForImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFor()
+   * @generated
+   */
+  int FOR = 13;
+
+  /**
+   * The feature id for the '<em><b>Iterator Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR__ITERATOR_NAME = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR__EXPRESSION = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR__BODY = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>For</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.IfImpl <em>If</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.IfImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getIf()
+   * @generated
+   */
+  int IF = 14;
+
+  /**
+   * The feature id for the '<em><b>Condition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__CONDITION_EXPRESSION = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__BODY = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>If</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SetImpl <em>Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SetImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSet()
+   * @generated
+   */
+  int SET = 15;
+
+  /**
+   * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET__FEATURE_NAME = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET__VALUE_EXPRESSION = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET__BODY = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.UnsetImpl <em>Unset</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.UnsetImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getUnset()
+   * @generated
+   */
+  int UNSET = 16;
+
+  /**
+   * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSET__FEATURE_NAME = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSET__ELEMENT_EXPRESSION = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSET__BODY = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Unset</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSET_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateInstanceImpl <em>Create Instance</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateInstanceImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateInstance()
+   * @generated
+   */
+  int CREATE_INSTANCE = 17;
+
+  /**
+   * The feature id for the '<em><b>Reference Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INSTANCE__REFERENCE_NAME = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INSTANCE__TYPE = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INSTANCE__VARIABLE_NAME = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INSTANCE__BODY = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Create Instance</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INSTANCE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateViewImpl <em>Create View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateViewImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateView()
+   * @generated
+   */
+  int CREATE_VIEW = 18;
+
+  /**
+   * The feature id for the '<em><b>Mapping</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_VIEW__MAPPING = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Container View Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_VIEW__CONTAINER_VIEW_EXPRESSION = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_VIEW__VARIABLE_NAME = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_VIEW__BODY = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Create View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_VIEW_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateEdgeViewImpl <em>Create Edge View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateEdgeViewImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateEdgeView()
+   * @generated
+   */
+  int CREATE_EDGE_VIEW = 19;
+
+  /**
+   * The feature id for the '<em><b>Edge</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__EDGE = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Source Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__SOURCE_EXPRESSION = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Target Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__TARGET_EXPRESSION = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Container View Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__CONTAINER_VIEW_EXPRESSION = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Variable Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__VARIABLE_NAME = OPERATION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW__BODY = OPERATION_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Create Edge View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_EDGE_VIEW_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DeleteViewImpl <em>Delete View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.DeleteViewImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getDeleteView()
+   * @generated
+   */
+  int DELETE_VIEW = 20;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DELETE_VIEW__BODY = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Delete View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DELETE_VIEW_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RemoveImpl <em>Remove</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RemoveImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRemove()
+   * @generated
+   */
+  int REMOVE = 21;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REMOVE__BODY = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Remove</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REMOVE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MoveImpl <em>Move</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.MoveImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getMove()
+   * @generated
+   */
+  int MOVE = 22;
+
+  /**
+   * The feature id for the '<em><b>New Container Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE__NEW_CONTAINER_EXPRESSION = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE__FEATURE_NAME = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE__BODY = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Move</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOVE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SwitchImpl <em>Switch</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SwitchImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSwitch()
+   * @generated
+   */
+  int SWITCH = 23;
+
+  /**
+   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH__CASES = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Default</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH__DEFAULT = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Switch</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CaseImpl <em>Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CaseImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCase()
+   * @generated
+   */
+  int CASE = 24;
+
+  /**
+   * The feature id for the '<em><b>Condition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE__CONDITION_EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE__BODY = 1;
+
+  /**
+   * The number of structural features of the '<em>Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DefaultImpl <em>Default</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.DefaultImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getDefault()
+   * @generated
+   */
+  int DEFAULT = 25;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT__BODY = 0;
+
+  /**
+   * The number of structural features of the '<em>Default</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MappingImpl <em>Mapping</em>}' class.
@@ -523,7 +1351,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getMapping()
    * @generated
    */
-  int MAPPING = 8;
+  int MAPPING = 26;
 
   /**
    * The number of structural features of the '<em>Mapping</em>' class.
@@ -542,7 +1370,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainer()
    * @generated
    */
-  int CONTAINER = 9;
+  int CONTAINER = 27;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -642,7 +1470,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getConditionalContainerStyleDeclaration()
    * @generated
    */
-  int CONDITIONAL_CONTAINER_STYLE_DECLARATION = 10;
+  int CONDITIONAL_CONTAINER_STYLE_DECLARATION = 28;
 
   /**
    * The feature id for the '<em><b>Style</b></em>' reference.
@@ -679,7 +1507,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getStyle()
    * @generated
    */
-  int STYLE = 11;
+  int STYLE = 29;
 
   /**
    * The number of structural features of the '<em>Style</em>' class.
@@ -698,7 +1526,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerStyle()
    * @generated
    */
-  int CONTAINER_STYLE = 12;
+  int CONTAINER_STYLE = 30;
 
   /**
    * The number of structural features of the '<em>Container Style</em>' class.
@@ -717,7 +1545,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradient()
    * @generated
    */
-  int GRADIENT = 13;
+  int GRADIENT = 31;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -853,7 +1681,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdge()
    * @generated
    */
-  int EDGE = 14;
+  int EDGE = 32;
 
   /**
    * The number of structural features of the '<em>Edge</em>' class.
@@ -872,7 +1700,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRelationBasedEdge()
    * @generated
    */
-  int RELATION_BASED_EDGE = 15;
+  int RELATION_BASED_EDGE = 33;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -954,7 +1782,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeStyle()
    * @generated
    */
-  int EDGE_STYLE = 16;
+  int EDGE_STYLE = 34;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1054,7 +1882,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getPalette()
    * @generated
    */
-  int PALETTE = 17;
+  int PALETTE = 35;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1100,7 +1928,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 18;
+  int COLOR = 36;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1137,7 +1965,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColorValue()
    * @generated
    */
-  int COLOR_VALUE = 19;
+  int COLOR_VALUE = 37;
 
   /**
    * The number of structural features of the '<em>Color Value</em>' class.
@@ -1156,7 +1984,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRGB()
    * @generated
    */
-  int RGB = 20;
+  int RGB = 38;
 
   /**
    * The feature id for the '<em><b>Red</b></em>' attribute.
@@ -1202,7 +2030,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelAlignment()
    * @generated
    */
-  int LABEL_ALIGNMENT = 21;
+  int LABEL_ALIGNMENT = 39;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.
@@ -1212,7 +2040,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradientDirection()
    * @generated
    */
-  int GRADIENT_DIRECTION = 22;
+  int GRADIENT_DIRECTION = 40;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LineStyle <em>Line Style</em>}' enum.
@@ -1222,7 +2050,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLineStyle()
    * @generated
    */
-  int LINE_STYLE = 23;
+  int LINE_STYLE = 41;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle <em>Routing Style</em>}' enum.
@@ -1232,7 +2060,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRoutingStyle()
    * @generated
    */
-  int ROUTING_STYLE = 24;
+  int ROUTING_STYLE = 42;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator <em>Arrow Decorator</em>}' enum.
@@ -1242,7 +2070,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getArrowDecorator()
    * @generated
    */
-  int ARROW_DECORATOR = 25;
+  int ARROW_DECORATOR = 43;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle <em>Folding Style</em>}' enum.
@@ -1252,7 +2080,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFoldingStyle()
    * @generated
    */
-  int FOLDING_STYLE = 26;
+  int FOLDING_STYLE = 44;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering <em>Ends Centering</em>}' enum.
@@ -1262,7 +2090,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEndsCentering()
    * @generated
    */
-  int ENDS_CENTERING = 27;
+  int ENDS_CENTERING = 45;
 
 
   /**
@@ -1718,6 +2546,780 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EReference getLayer_Edges();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getSections <em>Sections</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Sections</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Layer#getSections()
+   * @see #getLayer()
+   * @generated
+   */
+  EReference getLayer_Sections();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section <em>Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Section</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section
+   * @generated
+   */
+  EClass getSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getDocumentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Documentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getDocumentation()
+   * @see #getSection()
+   * @generated
+   */
+  EAttribute getSection_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getName()
+   * @see #getSection()
+   * @generated
+   */
+  EAttribute getSection_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getLabel()
+   * @see #getSection()
+   * @generated
+   */
+  EAttribute getSection_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon <em>Icon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon()
+   * @see #getSection()
+   * @generated
+   */
+  EAttribute getSection_Icon();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getTools <em>Tools</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Tools</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getTools()
+   * @see #getSection()
+   * @generated
+   */
+  EReference getSection_Tools();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Tool <em>Tool</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tool</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Tool
+   * @generated
+   */
+  EClass getTool();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation <em>Container Creation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Container Creation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation
+   * @generated
+   */
+  EClass getContainerCreation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getDocumentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Documentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getDocumentation()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#isForceRefresh <em>Force Refresh</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Force Refresh</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#isForceRefresh()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_ForceRefresh();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getNodeCreationVariable <em>Node Creation Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Node Creation Variable</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getNodeCreationVariable()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_NodeCreationVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerViewVariable <em>Container View Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Container View Variable</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerViewVariable()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_ContainerViewVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getName()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getLabel()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition <em>Precondition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Precondition</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_Precondition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon <em>Icon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_Icon();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerMappings <em>Container Mappings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Container Mappings</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerMappings()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EReference getContainerCreation_ContainerMappings();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getExtraMappings <em>Extra Mappings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Extra Mappings</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getExtraMappings()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EReference getContainerCreation_ExtraMappings();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getBody()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EReference getContainerCreation_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Operation
+   * @generated
+   */
+  EClass getOperation();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext <em>Change Context</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Change Context</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext
+   * @generated
+   */
+  EClass getChangeContext();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext#getBrowseExpression <em>Browse Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Browse Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext#getBrowseExpression()
+   * @see #getChangeContext()
+   * @generated
+   */
+  EAttribute getChangeContext_BrowseExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext#getBody()
+   * @see #getChangeContext()
+   * @generated
+   */
+  EReference getChangeContext_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.For <em>For</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.For
+   * @generated
+   */
+  EClass getFor();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.For#getIteratorName <em>Iterator Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Iterator Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.For#getIteratorName()
+   * @see #getFor()
+   * @generated
+   */
+  EAttribute getFor_IteratorName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.For#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.For#getExpression()
+   * @see #getFor()
+   * @generated
+   */
+  EAttribute getFor_Expression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.For#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.For#getBody()
+   * @see #getFor()
+   * @generated
+   */
+  EReference getFor_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.If <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.If
+   * @generated
+   */
+  EClass getIf();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.If#getConditionExpression <em>Condition Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.If#getConditionExpression()
+   * @see #getIf()
+   * @generated
+   */
+  EAttribute getIf_ConditionExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.If#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.If#getBody()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Set <em>Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Set
+   * @generated
+   */
+  EClass getSet();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Set#getFeatureName <em>Feature Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Feature Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Set#getFeatureName()
+   * @see #getSet()
+   * @generated
+   */
+  EAttribute getSet_FeatureName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Set#getValueExpression <em>Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Set#getValueExpression()
+   * @see #getSet()
+   * @generated
+   */
+  EAttribute getSet_ValueExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Set#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Set#getBody()
+   * @see #getSet()
+   * @generated
+   */
+  EReference getSet_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Unset <em>Unset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unset</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Unset
+   * @generated
+   */
+  EClass getUnset();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Unset#getFeatureName <em>Feature Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Feature Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Unset#getFeatureName()
+   * @see #getUnset()
+   * @generated
+   */
+  EAttribute getUnset_FeatureName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Unset#getElementExpression <em>Element Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Element Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Unset#getElementExpression()
+   * @see #getUnset()
+   * @generated
+   */
+  EAttribute getUnset_ElementExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Unset#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Unset#getBody()
+   * @see #getUnset()
+   * @generated
+   */
+  EReference getUnset_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance <em>Create Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Instance</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance
+   * @generated
+   */
+  EClass getCreateInstance();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getReferenceName <em>Reference Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Reference Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getReferenceName()
+   * @see #getCreateInstance()
+   * @generated
+   */
+  EAttribute getCreateInstance_ReferenceName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getType()
+   * @see #getCreateInstance()
+   * @generated
+   */
+  EAttribute getCreateInstance_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getVariableName <em>Variable Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getVariableName()
+   * @see #getCreateInstance()
+   * @generated
+   */
+  EAttribute getCreateInstance_VariableName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance#getBody()
+   * @see #getCreateInstance()
+   * @generated
+   */
+  EReference getCreateInstance_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView <em>Create View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create View</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView
+   * @generated
+   */
+  EClass getCreateView();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getMapping <em>Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Mapping</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getMapping()
+   * @see #getCreateView()
+   * @generated
+   */
+  EReference getCreateView_Mapping();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getContainerViewExpression <em>Container View Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Container View Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getContainerViewExpression()
+   * @see #getCreateView()
+   * @generated
+   */
+  EAttribute getCreateView_ContainerViewExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getVariableName <em>Variable Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getVariableName()
+   * @see #getCreateView()
+   * @generated
+   */
+  EAttribute getCreateView_VariableName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateView#getBody()
+   * @see #getCreateView()
+   * @generated
+   */
+  EReference getCreateView_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView <em>Create Edge View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Edge View</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView
+   * @generated
+   */
+  EClass getCreateEdgeView();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getEdge <em>Edge</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Edge</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getEdge()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EReference getCreateEdgeView_Edge();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getSourceExpression <em>Source Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getSourceExpression()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EAttribute getCreateEdgeView_SourceExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getTargetExpression <em>Target Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getTargetExpression()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EAttribute getCreateEdgeView_TargetExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getContainerViewExpression <em>Container View Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Container View Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getContainerViewExpression()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EAttribute getCreateEdgeView_ContainerViewExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getVariableName <em>Variable Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getVariableName()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EAttribute getCreateEdgeView_VariableName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView#getBody()
+   * @see #getCreateEdgeView()
+   * @generated
+   */
+  EReference getCreateEdgeView_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.DeleteView <em>Delete View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Delete View</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.DeleteView
+   * @generated
+   */
+  EClass getDeleteView();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.DeleteView#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.DeleteView#getBody()
+   * @see #getDeleteView()
+   * @generated
+   */
+  EReference getDeleteView_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Remove <em>Remove</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Remove</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Remove
+   * @generated
+   */
+  EClass getRemove();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Remove#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Remove#getBody()
+   * @see #getRemove()
+   * @generated
+   */
+  EReference getRemove_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Move <em>Move</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Move</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Move
+   * @generated
+   */
+  EClass getMove();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Move#getNewContainerExpression <em>New Container Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>New Container Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Move#getNewContainerExpression()
+   * @see #getMove()
+   * @generated
+   */
+  EAttribute getMove_NewContainerExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Move#getFeatureName <em>Feature Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Feature Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Move#getFeatureName()
+   * @see #getMove()
+   * @generated
+   */
+  EAttribute getMove_FeatureName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Move#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Move#getBody()
+   * @see #getMove()
+   * @generated
+   */
+  EReference getMove_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Switch <em>Switch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Switch</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Switch
+   * @generated
+   */
+  EClass getSwitch();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Switch#getCases <em>Cases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cases</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Switch#getCases()
+   * @see #getSwitch()
+   * @generated
+   */
+  EReference getSwitch_Cases();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Switch#getDefault <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Default</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Switch#getDefault()
+   * @see #getSwitch()
+   * @generated
+   */
+  EReference getSwitch_Default();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Case <em>Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Case</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Case
+   * @generated
+   */
+  EClass getCase();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Case#getConditionExpression <em>Condition Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Case#getConditionExpression()
+   * @see #getCase()
+   * @generated
+   */
+  EAttribute getCase_ConditionExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Case#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Case#getBody()
+   * @see #getCase()
+   * @generated
+   */
+  EReference getCase_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Default <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Default
+   * @generated
+   */
+  EClass getDefault();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Default#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Default#getBody()
+   * @see #getDefault()
+   * @generated
+   */
+  EReference getDefault_Body();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping <em>Mapping</em>}'.
@@ -2821,6 +4423,618 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EReference LAYER__EDGES = eINSTANCE.getLayer_Edges();
+
+    /**
+     * The meta object literal for the '<em><b>Sections</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAYER__SECTIONS = eINSTANCE.getLayer_Sections();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl <em>Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSection()
+     * @generated
+     */
+    EClass SECTION = eINSTANCE.getSection();
+
+    /**
+     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECTION__DOCUMENTATION = eINSTANCE.getSection_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECTION__NAME = eINSTANCE.getSection_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECTION__LABEL = eINSTANCE.getSection_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECTION__ICON = eINSTANCE.getSection_Icon();
+
+    /**
+     * The meta object literal for the '<em><b>Tools</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SECTION__TOOLS = eINSTANCE.getSection_Tools();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ToolImpl <em>Tool</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ToolImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getTool()
+     * @generated
+     */
+    EClass TOOL = eINSTANCE.getTool();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl <em>Container Creation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerCreation()
+     * @generated
+     */
+    EClass CONTAINER_CREATION = eINSTANCE.getContainerCreation();
+
+    /**
+     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__DOCUMENTATION = eINSTANCE.getContainerCreation_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Force Refresh</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__FORCE_REFRESH = eINSTANCE.getContainerCreation_ForceRefresh();
+
+    /**
+     * The meta object literal for the '<em><b>Node Creation Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__NODE_CREATION_VARIABLE = eINSTANCE.getContainerCreation_NodeCreationVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Container View Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE = eINSTANCE.getContainerCreation_ContainerViewVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__NAME = eINSTANCE.getContainerCreation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__LABEL = eINSTANCE.getContainerCreation_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Precondition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__PRECONDITION = eINSTANCE.getContainerCreation_Precondition();
+
+    /**
+     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__ICON = eINSTANCE.getContainerCreation_Icon();
+
+    /**
+     * The meta object literal for the '<em><b>Container Mappings</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTAINER_CREATION__CONTAINER_MAPPINGS = eINSTANCE.getContainerCreation_ContainerMappings();
+
+    /**
+     * The meta object literal for the '<em><b>Extra Mappings</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTAINER_CREATION__EXTRA_MAPPINGS = eINSTANCE.getContainerCreation_ExtraMappings();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTAINER_CREATION__BODY = eINSTANCE.getContainerCreation_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.OperationImpl <em>Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.OperationImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getOperation()
+     * @generated
+     */
+    EClass OPERATION = eINSTANCE.getOperation();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ChangeContextImpl <em>Change Context</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ChangeContextImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getChangeContext()
+     * @generated
+     */
+    EClass CHANGE_CONTEXT = eINSTANCE.getChangeContext();
+
+    /**
+     * The meta object literal for the '<em><b>Browse Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHANGE_CONTEXT__BROWSE_EXPRESSION = eINSTANCE.getChangeContext_BrowseExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHANGE_CONTEXT__BODY = eINSTANCE.getChangeContext_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ForImpl <em>For</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ForImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFor()
+     * @generated
+     */
+    EClass FOR = eINSTANCE.getFor();
+
+    /**
+     * The meta object literal for the '<em><b>Iterator Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOR__ITERATOR_NAME = eINSTANCE.getFor_IteratorName();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOR__EXPRESSION = eINSTANCE.getFor_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR__BODY = eINSTANCE.getFor_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.IfImpl <em>If</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.IfImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getIf()
+     * @generated
+     */
+    EClass IF = eINSTANCE.getIf();
+
+    /**
+     * The meta object literal for the '<em><b>Condition Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IF__CONDITION_EXPRESSION = eINSTANCE.getIf_ConditionExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__BODY = eINSTANCE.getIf_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SetImpl <em>Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SetImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSet()
+     * @generated
+     */
+    EClass SET = eINSTANCE.getSet();
+
+    /**
+     * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET__FEATURE_NAME = eINSTANCE.getSet_FeatureName();
+
+    /**
+     * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET__VALUE_EXPRESSION = eINSTANCE.getSet_ValueExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SET__BODY = eINSTANCE.getSet_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.UnsetImpl <em>Unset</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.UnsetImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getUnset()
+     * @generated
+     */
+    EClass UNSET = eINSTANCE.getUnset();
+
+    /**
+     * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNSET__FEATURE_NAME = eINSTANCE.getUnset_FeatureName();
+
+    /**
+     * The meta object literal for the '<em><b>Element Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNSET__ELEMENT_EXPRESSION = eINSTANCE.getUnset_ElementExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNSET__BODY = eINSTANCE.getUnset_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateInstanceImpl <em>Create Instance</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateInstanceImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateInstance()
+     * @generated
+     */
+    EClass CREATE_INSTANCE = eINSTANCE.getCreateInstance();
+
+    /**
+     * The meta object literal for the '<em><b>Reference Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_INSTANCE__REFERENCE_NAME = eINSTANCE.getCreateInstance_ReferenceName();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_INSTANCE__TYPE = eINSTANCE.getCreateInstance_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_INSTANCE__VARIABLE_NAME = eINSTANCE.getCreateInstance_VariableName();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_INSTANCE__BODY = eINSTANCE.getCreateInstance_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateViewImpl <em>Create View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateViewImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateView()
+     * @generated
+     */
+    EClass CREATE_VIEW = eINSTANCE.getCreateView();
+
+    /**
+     * The meta object literal for the '<em><b>Mapping</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_VIEW__MAPPING = eINSTANCE.getCreateView_Mapping();
+
+    /**
+     * The meta object literal for the '<em><b>Container View Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_VIEW__CONTAINER_VIEW_EXPRESSION = eINSTANCE.getCreateView_ContainerViewExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_VIEW__VARIABLE_NAME = eINSTANCE.getCreateView_VariableName();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_VIEW__BODY = eINSTANCE.getCreateView_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateEdgeViewImpl <em>Create Edge View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CreateEdgeViewImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCreateEdgeView()
+     * @generated
+     */
+    EClass CREATE_EDGE_VIEW = eINSTANCE.getCreateEdgeView();
+
+    /**
+     * The meta object literal for the '<em><b>Edge</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_EDGE_VIEW__EDGE = eINSTANCE.getCreateEdgeView_Edge();
+
+    /**
+     * The meta object literal for the '<em><b>Source Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_EDGE_VIEW__SOURCE_EXPRESSION = eINSTANCE.getCreateEdgeView_SourceExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Target Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_EDGE_VIEW__TARGET_EXPRESSION = eINSTANCE.getCreateEdgeView_TargetExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Container View Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_EDGE_VIEW__CONTAINER_VIEW_EXPRESSION = eINSTANCE.getCreateEdgeView_ContainerViewExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_EDGE_VIEW__VARIABLE_NAME = eINSTANCE.getCreateEdgeView_VariableName();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_EDGE_VIEW__BODY = eINSTANCE.getCreateEdgeView_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DeleteViewImpl <em>Delete View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.DeleteViewImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getDeleteView()
+     * @generated
+     */
+    EClass DELETE_VIEW = eINSTANCE.getDeleteView();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DELETE_VIEW__BODY = eINSTANCE.getDeleteView_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RemoveImpl <em>Remove</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.RemoveImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRemove()
+     * @generated
+     */
+    EClass REMOVE = eINSTANCE.getRemove();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REMOVE__BODY = eINSTANCE.getRemove_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MoveImpl <em>Move</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.MoveImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getMove()
+     * @generated
+     */
+    EClass MOVE = eINSTANCE.getMove();
+
+    /**
+     * The meta object literal for the '<em><b>New Container Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MOVE__NEW_CONTAINER_EXPRESSION = eINSTANCE.getMove_NewContainerExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MOVE__FEATURE_NAME = eINSTANCE.getMove_FeatureName();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOVE__BODY = eINSTANCE.getMove_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SwitchImpl <em>Switch</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SwitchImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSwitch()
+     * @generated
+     */
+    EClass SWITCH = eINSTANCE.getSwitch();
+
+    /**
+     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH__CASES = eINSTANCE.getSwitch_Cases();
+
+    /**
+     * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH__DEFAULT = eINSTANCE.getSwitch_Default();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.CaseImpl <em>Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.CaseImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getCase()
+     * @generated
+     */
+    EClass CASE = eINSTANCE.getCase();
+
+    /**
+     * The meta object literal for the '<em><b>Condition Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CASE__CONDITION_EXPRESSION = eINSTANCE.getCase_ConditionExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASE__BODY = eINSTANCE.getCase_Body();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DefaultImpl <em>Default</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.DefaultImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getDefault()
+     * @generated
+     */
+    EClass DEFAULT = eINSTANCE.getDefault();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFAULT__BODY = eINSTANCE.getDefault_Body();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.MappingImpl <em>Mapping</em>}' class.

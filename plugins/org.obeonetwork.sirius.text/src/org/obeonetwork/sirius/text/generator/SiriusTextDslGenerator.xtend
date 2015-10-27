@@ -20,6 +20,7 @@ import org.eclipse.sirius.diagram.BackgroundStyle
 import org.eclipse.sirius.diagram.ContainerLayout
 import org.eclipse.sirius.diagram.EdgeArrows
 import org.eclipse.sirius.diagram.EdgeRouting
+import org.eclipse.sirius.diagram.description.AbstractNodeMapping
 import org.eclipse.sirius.diagram.description.AdditionalLayer
 import org.eclipse.sirius.diagram.description.CenteringStyle
 import org.eclipse.sirius.diagram.description.ContainerMapping
@@ -30,6 +31,9 @@ import org.eclipse.sirius.diagram.description.EdgeMapping
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription
 import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription
 import org.eclipse.sirius.diagram.description.style.StyleFactory
+import org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription
+import org.eclipse.sirius.diagram.description.tool.ToolFactory
+import org.eclipse.sirius.diagram.description.tool.ToolSection
 import org.eclipse.sirius.viewpoint.LabelAlignment
 import org.eclipse.sirius.viewpoint.description.ColorDescription
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage
@@ -41,6 +45,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator
 import org.obeonetwork.sirius.text.siriusTextDsl.Color
 import org.obeonetwork.sirius.text.siriusTextDsl.Container
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle
@@ -54,8 +59,26 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Palette
 import org.obeonetwork.sirius.text.siriusTextDsl.RGB
 import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge
 import org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle
+import org.obeonetwork.sirius.text.siriusTextDsl.Section
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile
+import org.obeonetwork.sirius.text.siriusTextDsl.Tool
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint
+import org.obeonetwork.sirius.text.siriusTextDsl.Operation
+import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext
+import org.eclipse.sirius.viewpoint.description.tool.ModelOperation
+import org.obeonetwork.sirius.text.siriusTextDsl.For
+import org.obeonetwork.sirius.text.siriusTextDsl.If
+import org.obeonetwork.sirius.text.siriusTextDsl.Set
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateView
+import org.obeonetwork.sirius.text.siriusTextDsl.Unset
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView
+import org.obeonetwork.sirius.text.siriusTextDsl.DeleteView
+import org.obeonetwork.sirius.text.siriusTextDsl.Remove
+import org.obeonetwork.sirius.text.siriusTextDsl.Move
+import org.obeonetwork.sirius.text.siriusTextDsl.Switch
+import org.eclipse.sirius.viewpoint.description.tool.ToolPackage
+import org.obeonetwork.sirius.text.siriusTextDsl.Default
 
 /**
  * Generates code from your model files on save.
@@ -102,8 +125,36 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 	
 	def private resolveLinks() {
 		this.resolveMappingsForEdges()
+		this.resolveMappingsForTools()
+		this.resolveMappingsForOperations()
 		cache.clear()
 		elementsToResolve.clear()
+	}
+	
+	def private resolveMappingsForOperations() {
+		elementsToResolve.entrySet.filter[e | e.key instanceof CreateView].forEach[e |
+			if (e.key instanceof CreateView && e.value instanceof org.eclipse.sirius.diagram.description.tool.CreateView) {
+				val createView = e.key as CreateView
+				val siriusCreateView = e.value as org.eclipse.sirius.diagram.description.tool.CreateView
+				
+				val mapping = cache.get(createView.mapping)
+				if (mapping instanceof DiagramElementMapping) {
+					siriusCreateView.mapping = mapping
+				}
+			}
+		]
+		
+		elementsToResolve.entrySet.filter[e | e.key instanceof CreateEdgeView].forEach[e |
+			if (e.key instanceof CreateEdgeView && e.value instanceof org.eclipse.sirius.diagram.description.tool.CreateEdgeView) {
+				val createEdgeView = e.key as CreateEdgeView
+				val siriusCreateEdgeView = e.value as org.eclipse.sirius.diagram.description.tool.CreateEdgeView
+				
+				val edge = cache.get(createEdgeView.edge)
+				if (edge instanceof DiagramElementMapping) {
+					siriusCreateEdgeView.mapping = edge
+				}
+			}
+		]
 	}
 	
 	def private resolveMappingsForEdges() {
@@ -123,6 +174,29 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 					val targetMapping = cache.get(s)
 					if (targetMapping instanceof DiagramElementMapping) {
 						edgeMapping.targetMapping.add(targetMapping as DiagramElementMapping)
+					}
+				]
+			}
+		]
+	}
+	
+	def private resolveMappingsForTools() {
+		elementsToResolve.entrySet.filter[e | e.key instanceof Tool].forEach[t |
+			if (t.key instanceof ContainerCreation && t.value instanceof ContainerCreationDescription) {
+				val containerCreation = t.key as ContainerCreation
+				val containerCreationDescription = t.value as ContainerCreationDescription
+				
+				containerCreation.containerMappings.forEach[m |
+					val mapping = cache.get(m)
+					if (mapping instanceof ContainerMapping) {
+						containerCreationDescription.containerMappings.add(mapping)
+					}
+				]
+				
+				containerCreation.extraMappings.forEach[m |
+					val mapping = cache.get(m)
+					if (mapping instanceof AbstractNodeMapping) {
+						containerCreationDescription.extraMappings.add(mapping)
 					}
 				]
 			}
@@ -175,7 +249,7 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		diagram.additionalLayers.forEach[l |
 			val siriusLayer = DescriptionFactory.eINSTANCE.createAdditionalLayer
 			diagramDescription.additionalLayers.add(siriusLayer)
-			populateAdditionalLayer(siriusLayer, l)
+			this.populateAdditionalLayer(siriusLayer, l)
 		]
 	}
 	
@@ -185,19 +259,216 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 			val containerMapping = DescriptionFactory.eINSTANCE.createContainerMapping
 			siriusLayer.containerMappings.add(containerMapping)
 			cache.put(c, containerMapping)
-			populateContainerMapping(containerMapping, c)
+			this.populateContainerMapping(containerMapping, c)
 		]
 		
 		layer.edges.filter(RelationBasedEdge).forEach[r |
 			val edgeMapping = DescriptionFactory.eINSTANCE.createEdgeMapping
 			siriusLayer.edgeMappings.add(edgeMapping)
 			elementsToResolve.put(r, edgeMapping)
-			populateRelationBasedEdgeMapping(edgeMapping, r)
+			this.populateRelationBasedEdgeMapping(edgeMapping, r)
+		]
+		
+		layer.sections.forEach[s |
+			val toolSection = ToolFactory.eINSTANCE.createToolSection
+			siriusLayer.toolSections.add(toolSection)
+			this.populateToolSection(toolSection, s)
 		]
 	}
 	
 	def private populateAdditionalLayer(AdditionalLayer siriusLayer, Layer layer) {
 		// TODO
+	}
+	
+	def private populateToolSection(ToolSection toolSection, Section section) {
+		toolSection.name = section.name
+		toolSection.label = section.label
+		section.tools.forEach[t |
+			if (t instanceof ContainerCreation) {
+				val containerCreationDescription = ToolFactory.eINSTANCE.createContainerCreationDescription
+				toolSection.ownedTools.add(containerCreationDescription)
+				this.populateContainerCreationDescription(containerCreationDescription, t as ContainerCreation)
+			}
+		]
+	}
+	
+	def private populateContainerCreationDescription(ContainerCreationDescription containerCreationDescription, ContainerCreation containerCreation) {
+		containerCreationDescription.name = containerCreation.name
+		containerCreationDescription.label = containerCreation.label
+		
+		val body = containerCreation.body;
+		if (body != null) {
+			val initialOperation = containerCreationDescription.initialOperation
+			initialOperation.firstModelOperations = this.createModelOperation(body)
+		}
+		
+		this.elementsToResolve.put(containerCreation, containerCreationDescription)
+	}
+	
+	def private ModelOperation createModelOperation(Operation operation) {
+		var ModelOperation modelOperation = null
+		
+		if (operation instanceof ChangeContext) {
+			val changeContext = operation as ChangeContext
+			val siriusChangeContext = ToolPackage.eINSTANCE.toolFactory.createChangeContext
+			
+			siriusChangeContext.browseExpression = this.trimQuotes(changeContext.browseExpression)
+			changeContext.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusChangeContext.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusChangeContext
+		} else if (operation instanceof For) {
+			val forOperation = operation as For
+			val siriusForOperation = ToolPackage.eINSTANCE.toolFactory.createFor
+			
+			siriusForOperation.iteratorName = this.trimQuotes(forOperation.iteratorName)
+			siriusForOperation.expression = this.trimQuotes(forOperation.expression)
+			forOperation.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusForOperation.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusForOperation
+		} else if (operation instanceof If) {
+			val ifOperation = operation as If
+			val siriusIfOperation = ToolPackage.eINSTANCE.toolFactory.createIf
+			
+			siriusIfOperation.conditionExpression = this.trimQuotes(ifOperation.conditionExpression)
+			ifOperation.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusIfOperation.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusIfOperation
+		} else if (operation instanceof Set) {
+			val setOperation = operation as Set
+			val siriusSetOperation = ToolPackage.eINSTANCE.toolFactory.createSetValue
+			
+			siriusSetOperation.featureName = this.trimQuotes(setOperation.featureName)
+			siriusSetOperation.valueExpression = this.trimQuotes(setOperation.valueExpression)
+			setOperation.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusSetOperation.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusSetOperation
+		} else if (operation instanceof CreateInstance) {
+			val createInstance = operation as CreateInstance
+			val siriusCreateInstance = ToolPackage.eINSTANCE.toolFactory.createCreateInstance
+			
+			siriusCreateInstance.referenceName = this.trimQuotes(createInstance.referenceName)
+			siriusCreateInstance.typeName = this.trimQuotes(createInstance.type)
+			siriusCreateInstance.variableName = this.trimQuotes(createInstance.variableName)
+			createInstance.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusCreateInstance.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusCreateInstance
+		} else if (operation instanceof CreateView) {
+			val createView = operation as CreateView
+			val siriusCreateView = ToolFactory.eINSTANCE.createCreateView
+			
+			siriusCreateView.containerViewExpression = this.trimQuotes(createView.containerViewExpression)
+			siriusCreateView.variableName = this.trimQuotes(createView.variableName)
+			createView.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusCreateView.subModelOperations.add(childOperation)
+			]
+			this.elementsToResolve.put(createView, siriusCreateView)
+			
+			modelOperation = siriusCreateView
+		} else if (operation instanceof Unset) {
+			val unset = operation as Unset
+			val siriusUnset = ToolPackage.eINSTANCE.toolFactory.createUnset
+			
+			siriusUnset.elementExpression = this.trimQuotes(unset.elementExpression)
+			siriusUnset.featureName = this.trimQuotes(unset.featureName)
+			unset.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusUnset.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusUnset
+		} else if (operation instanceof CreateEdgeView) {
+			val createEdgeView = operation as CreateEdgeView
+			val siriusCreateEdgeView = ToolFactory.eINSTANCE.createCreateEdgeView
+			
+			siriusCreateEdgeView.containerViewExpression = this.trimQuotes(createEdgeView.containerViewExpression)
+			siriusCreateEdgeView.sourceExpression = this.trimQuotes(createEdgeView.sourceExpression)
+			siriusCreateEdgeView.targetExpression = this.trimQuotes(createEdgeView.targetExpression)
+			createEdgeView.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusCreateEdgeView.subModelOperations.add(childOperation)
+			]
+			this.elementsToResolve.put(createEdgeView, siriusCreateEdgeView)
+			
+			modelOperation = siriusCreateEdgeView
+		} else if (operation instanceof DeleteView) {
+			val deleteView = operation as DeleteView
+			val siriusDeleteView = ToolPackage.eINSTANCE.toolFactory.createDeleteView
+			
+			deleteView.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusDeleteView.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusDeleteView
+		} else if (operation instanceof Remove) {
+			val remove = operation as Remove
+			val siriusRemove = ToolPackage.eINSTANCE.toolFactory.createRemoveElement
+			
+			remove.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusRemove.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusRemove
+		} else if (operation instanceof Move) {
+			val move = operation as Move
+			val siriusMove = ToolPackage.eINSTANCE.toolFactory.createMoveElement
+			
+			siriusMove.featureName = this.trimQuotes(move.featureName)
+			siriusMove.newContainerExpression = this.trimQuotes(move.newContainerExpression)
+			move.body.forEach[o |
+				val childOperation = this.createModelOperation(o)
+				siriusMove.subModelOperations.add(childOperation)
+			]
+			
+			modelOperation = siriusMove
+		} else if (operation instanceof Switch) {
+			val switchOperation = operation as Switch
+			val siriusSwitchOperation = ToolPackage.eINSTANCE.toolFactory.createSwitch
+			
+			switchOperation.cases.forEach[c |
+				val siriusCase = ToolPackage.eINSTANCE.toolFactory.createCase
+				siriusCase.conditionExpression = this.trimQuotes(c.conditionExpression)
+				c.body.forEach[o |
+					val childOperation = this.createModelOperation(o)
+					siriusCase.subModelOperations.add(childOperation)
+				]
+				
+				siriusSwitchOperation.cases.add(siriusCase)
+			]
+			
+			if (switchOperation.^default != null) {
+				val defaultOperation = switchOperation.^default as Default
+				val siriusDefaultOperation = ToolPackage.eINSTANCE.toolFactory.createDefault
+				
+				defaultOperation.body.forEach[o |
+					val childOperation = this.createModelOperation(o)
+					siriusDefaultOperation.subModelOperations.add(childOperation)
+				]
+				
+				siriusSwitchOperation.^default = siriusDefaultOperation
+			}
+			
+			modelOperation = siriusSwitchOperation
+		}
+		
+		return modelOperation
 	}
 	
 	def private populateRelationBasedEdgeMapping(EdgeMapping edgeMapping, RelationBasedEdge relationBasedEdge) {

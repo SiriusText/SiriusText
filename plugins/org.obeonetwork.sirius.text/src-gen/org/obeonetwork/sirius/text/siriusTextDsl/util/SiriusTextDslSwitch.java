@@ -133,6 +133,148 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SiriusTextDslPackage.SECTION:
+      {
+        Section section = (Section)theEObject;
+        T result = caseSection(section);
+        if (result == null) result = caseSiriusFileBody(section);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.TOOL:
+      {
+        Tool tool = (Tool)theEObject;
+        T result = caseTool(tool);
+        if (result == null) result = caseSiriusFileBody(tool);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CONTAINER_CREATION:
+      {
+        ContainerCreation containerCreation = (ContainerCreation)theEObject;
+        T result = caseContainerCreation(containerCreation);
+        if (result == null) result = caseTool(containerCreation);
+        if (result == null) result = caseSiriusFileBody(containerCreation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.OPERATION:
+      {
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CHANGE_CONTEXT:
+      {
+        ChangeContext changeContext = (ChangeContext)theEObject;
+        T result = caseChangeContext(changeContext);
+        if (result == null) result = caseOperation(changeContext);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.FOR:
+      {
+        For for_ = (For)theEObject;
+        T result = caseFor(for_);
+        if (result == null) result = caseOperation(for_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.IF:
+      {
+        If if_ = (If)theEObject;
+        T result = caseIf(if_);
+        if (result == null) result = caseOperation(if_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.SET:
+      {
+        Set set = (Set)theEObject;
+        T result = caseSet(set);
+        if (result == null) result = caseOperation(set);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.UNSET:
+      {
+        Unset unset = (Unset)theEObject;
+        T result = caseUnset(unset);
+        if (result == null) result = caseOperation(unset);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CREATE_INSTANCE:
+      {
+        CreateInstance createInstance = (CreateInstance)theEObject;
+        T result = caseCreateInstance(createInstance);
+        if (result == null) result = caseOperation(createInstance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CREATE_VIEW:
+      {
+        CreateView createView = (CreateView)theEObject;
+        T result = caseCreateView(createView);
+        if (result == null) result = caseOperation(createView);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CREATE_EDGE_VIEW:
+      {
+        CreateEdgeView createEdgeView = (CreateEdgeView)theEObject;
+        T result = caseCreateEdgeView(createEdgeView);
+        if (result == null) result = caseOperation(createEdgeView);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.DELETE_VIEW:
+      {
+        DeleteView deleteView = (DeleteView)theEObject;
+        T result = caseDeleteView(deleteView);
+        if (result == null) result = caseOperation(deleteView);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.REMOVE:
+      {
+        Remove remove = (Remove)theEObject;
+        T result = caseRemove(remove);
+        if (result == null) result = caseOperation(remove);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.MOVE:
+      {
+        Move move = (Move)theEObject;
+        T result = caseMove(move);
+        if (result == null) result = caseOperation(move);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.SWITCH:
+      {
+        org.obeonetwork.sirius.text.siriusTextDsl.Switch switch_ = (org.obeonetwork.sirius.text.siriusTextDsl.Switch)theEObject;
+        T result = caseSwitch(switch_);
+        if (result == null) result = caseOperation(switch_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CASE:
+      {
+        Case case_ = (Case)theEObject;
+        T result = caseCase(case_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.DEFAULT:
+      {
+        Default default_ = (Default)theEObject;
+        T result = caseDefault(default_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SiriusTextDslPackage.MAPPING:
       {
         Mapping mapping = (Mapping)theEObject;
@@ -368,6 +510,294 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLayer(Layer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSection(Section object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tool</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tool</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTool(Tool object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Container Creation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Container Creation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContainerCreation(ContainerCreation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Change Context</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Change Context</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChangeContext(ChangeContext object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFor(For object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIf(If object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSet(Set object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unset</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unset</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnset(Unset object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Instance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Instance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateInstance(CreateInstance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create View</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create View</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateView(CreateView object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Edge View</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Edge View</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateEdgeView(CreateEdgeView object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Delete View</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Delete View</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeleteView(DeleteView object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Remove</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Remove</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRemove(Remove object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Move</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Move</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMove(Move object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Switch</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Switch</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSwitch(org.obeonetwork.sirius.text.siriusTextDsl.Switch object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCase(Case object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefault(Default object)
   {
     return null;
   }

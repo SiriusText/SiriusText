@@ -17,20 +17,36 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.obeonetwork.sirius.text.services.SiriusTextDslGrammarAccess;
+import org.obeonetwork.sirius.text.siriusTextDsl.Case;
+import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
 import org.obeonetwork.sirius.text.siriusTextDsl.Container;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance;
+import org.obeonetwork.sirius.text.siriusTextDsl.CreateView;
+import org.obeonetwork.sirius.text.siriusTextDsl.Default;
+import org.obeonetwork.sirius.text.siriusTextDsl.DeleteView;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.For;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
+import org.obeonetwork.sirius.text.siriusTextDsl.If;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
+import org.obeonetwork.sirius.text.siriusTextDsl.Move;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RGB;
 import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
+import org.obeonetwork.sirius.text.siriusTextDsl.Remove;
+import org.obeonetwork.sirius.text.siriusTextDsl.Section;
+import org.obeonetwork.sirius.text.siriusTextDsl.Set;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
+import org.obeonetwork.sirius.text.siriusTextDsl.Switch;
+import org.obeonetwork.sirius.text.siriusTextDsl.Unset;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
 
 @SuppressWarnings("all")
@@ -42,6 +58,12 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SiriusTextDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case SiriusTextDslPackage.CASE:
+				sequence_Case(context, (Case) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.CHANGE_CONTEXT:
+				sequence_ChangeContext(context, (ChangeContext) semanticObject); 
+				return; 
 			case SiriusTextDslPackage.COLOR:
 				sequence_Color(context, (Color) semanticObject); 
 				return; 
@@ -50,6 +72,24 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 				return; 
 			case SiriusTextDslPackage.CONTAINER:
 				sequence_Container(context, (Container) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.CONTAINER_CREATION:
+				sequence_ContainerCreation(context, (ContainerCreation) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.CREATE_EDGE_VIEW:
+				sequence_CreateEdgeView(context, (CreateEdgeView) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.CREATE_INSTANCE:
+				sequence_CreateInstance(context, (CreateInstance) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.CREATE_VIEW:
+				sequence_CreateView(context, (CreateView) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.DEFAULT:
+				sequence_Default(context, (Default) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.DELETE_VIEW:
+				sequence_DeleteView(context, (DeleteView) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.DESIGNER:
 				sequence_Designer(context, (Designer) semanticObject); 
@@ -60,14 +100,23 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			case SiriusTextDslPackage.EDGE_STYLE:
 				sequence_EdgeStyle(context, (EdgeStyle) semanticObject); 
 				return; 
+			case SiriusTextDslPackage.FOR:
+				sequence_For(context, (For) semanticObject); 
+				return; 
 			case SiriusTextDslPackage.GRADIENT:
 				sequence_Gradient(context, (Gradient) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.IF:
+				sequence_If(context, (If) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.LAYER:
 				sequence_Layer(context, (Layer) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.MOVE:
+				sequence_Move(context, (Move) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.PALETTE:
 				sequence_Palette(context, (Palette) semanticObject); 
@@ -78,8 +127,23 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			case SiriusTextDslPackage.RELATION_BASED_EDGE:
 				sequence_RelationBasedEdge(context, (RelationBasedEdge) semanticObject); 
 				return; 
+			case SiriusTextDslPackage.REMOVE:
+				sequence_Remove(context, (Remove) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.SECTION:
+				sequence_Section(context, (Section) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.SET:
+				sequence_Set(context, (Set) semanticObject); 
+				return; 
 			case SiriusTextDslPackage.SIRIUS_FILE:
 				sequence_SiriusFile(context, (SiriusFile) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.SWITCH:
+				sequence_Switch(context, (Switch) semanticObject); 
+				return; 
+			case SiriusTextDslPackage.UNSET:
+				sequence_Unset(context, (Unset) semanticObject); 
 				return; 
 			case SiriusTextDslPackage.VIEWPOINT:
 				sequence_Viewpoint(context, (Viewpoint) semanticObject); 
@@ -87,6 +151,24 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (conditionExpression=EXPRESSION body+=Operation*)
+	 */
+	protected void sequence_Case(EObject context, Case semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (browseExpression=EXPRESSION body+=Operation*)
+	 */
+	protected void sequence_ChangeContext(EObject context, ChangeContext semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -130,6 +212,27 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 * Constraint:
 	 *     (
 	 *         documentation=DOCUMENTATION? 
+	 *         forceRefresh?='@ForceRefresh'? 
+	 *         nodeCreationVariable=STRING 
+	 *         containerViewVariable=STRING 
+	 *         name=ID 
+	 *         label=STRING? 
+	 *         precondition=EXPRESSION? 
+	 *         icon=STRING? 
+	 *         (containerMappings+=[Mapping|QualifiedName] containerMappings+=[Mapping|QualifiedName]*)? 
+	 *         (extraMappings+=[Mapping|QualifiedName] extraMappings+=[Mapping|QualifiedName]*)? 
+	 *         body=Operation?
+	 *     )
+	 */
+	protected void sequence_ContainerCreation(EObject context, ContainerCreation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         documentation=DOCUMENTATION? 
 	 *         list?='list'? 
 	 *         name=ID 
 	 *         label=STRING? 
@@ -141,6 +244,58 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     )
 	 */
 	protected void sequence_Container(EObject context, Container semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         edge=[Edge|QualifiedName] 
+	 *         sourceExpression=EXPRESSION 
+	 *         targetExpression=EXPRESSION 
+	 *         containerViewExpression=EXPRESSION 
+	 *         variableName=STRING 
+	 *         body+=Operation*
+	 *     )
+	 */
+	protected void sequence_CreateEdgeView(EObject context, CreateEdgeView semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (referenceName=STRING type=STRING variableName=STRING body+=Operation*)
+	 */
+	protected void sequence_CreateInstance(EObject context, CreateInstance semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (mapping=[Mapping|QualifiedName] containerViewExpression=EXPRESSION variableName=STRING body+=Operation*)
+	 */
+	protected void sequence_CreateView(EObject context, CreateView semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (body+=Operation*)
+	 */
+	protected void sequence_Default(EObject context, Default semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (body+=Operation*)
+	 */
+	protected void sequence_DeleteView(EObject context, DeleteView semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -200,6 +355,15 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
+	 *     (iteratorName=STRING expression=EXPRESSION body+=Operation*)
+	 */
+	protected void sequence_For(EObject context, For semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         documentation=DOCUMENTATION? 
 	 *         direction=GradientDirection 
@@ -214,6 +378,15 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     )
 	 */
 	protected void sequence_Gradient(EObject context, Gradient semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (conditionExpression=EXPRESSION body+=Operation*)
+	 */
+	protected void sequence_If(EObject context, If semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -241,10 +414,20 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         name=ID 
 	 *         icon=STRING? 
 	 *         (mappings+=[Mapping|QualifiedName] mappings+=[Mapping|QualifiedName]*)? 
-	 *         (edges+=[Edge|QualifiedName] edges+=[Edge|QualifiedName]*)?
+	 *         (edges+=[Edge|QualifiedName] edges+=[Edge|QualifiedName]*)? 
+	 *         (sections+=[Section|QualifiedName] sections+=[Section|QualifiedName]*)?
 	 *     )
 	 */
 	protected void sequence_Layer(EObject context, Layer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (newContainerExpression=EXPRESSION featureName=STRING body+=Operation*)
+	 */
+	protected void sequence_Move(EObject context, Move semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -299,9 +482,54 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
+	 *     (body+=Operation*)
+	 */
+	protected void sequence_Remove(EObject context, Remove semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (documentation=DOCUMENTATION? name=ID label=STRING? icon=STRING? (tools+=[Tool|QualifiedName] tools+=[Tool|QualifiedName]*)?)
+	 */
+	protected void sequence_Section(EObject context, Section semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (featureName=STRING valueExpression=EXPRESSION body+=Operation*)
+	 */
+	protected void sequence_Set(EObject context, Set semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (documentation=DOCUMENTATION? name=QualifiedName imports+=Import* body=SiriusFileBody)
 	 */
 	protected void sequence_SiriusFile(EObject context, SiriusFile semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (cases+=Case+ default=Default?)
+	 */
+	protected void sequence_Switch(EObject context, Switch semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (featureName=STRING elementExpression=EXPRESSION? body+=Operation*)
+	 */
+	protected void sequence_Unset(EObject context, Unset semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
