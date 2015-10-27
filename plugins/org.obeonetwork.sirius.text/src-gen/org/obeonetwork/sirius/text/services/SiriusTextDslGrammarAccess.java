@@ -298,19 +298,37 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRepresentationsRepresentationCrossReference_7_3_1_1_0 = (CrossReference)cRepresentationsAssignment_7_3_1_1.eContents().get(0);
 		private final RuleCall cRepresentationsRepresentationQualifiedNameParserRuleCall_7_3_1_1_0_1 = (RuleCall)cRepresentationsRepresentationCrossReference_7_3_1_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cJavaExtensionsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final Assignment cJavaExtensionAssignment_8_3_0 = (Assignment)cGroup_8_3.eContents().get(0);
+		private final CrossReference cJavaExtensionJvmTypeCrossReference_8_3_0_0 = (CrossReference)cJavaExtensionAssignment_8_3_0.eContents().get(0);
+		private final RuleCall cJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_0_0_1 = (RuleCall)cJavaExtensionJvmTypeCrossReference_8_3_0_0.eContents().get(1);
+		private final Group cGroup_8_3_1 = (Group)cGroup_8_3.eContents().get(1);
+		private final Keyword cCommaKeyword_8_3_1_0 = (Keyword)cGroup_8_3_1.eContents().get(0);
+		private final Assignment cJavaExtensionAssignment_8_3_1_1 = (Assignment)cGroup_8_3_1.eContents().get(1);
+		private final CrossReference cJavaExtensionJvmTypeCrossReference_8_3_1_1_0 = (CrossReference)cJavaExtensionAssignment_8_3_1_1.eContents().get(0);
+		private final RuleCall cJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_1_1_0_1 = (RuleCall)cJavaExtensionJvmTypeCrossReference_8_3_1_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Viewpoint:
 		//	documentation=DOCUMENTATION?
 		//	'viewpoint' name=ID ('as' label=STRING)? '{' ('modelFileExtensions' '=' '[' modelFileExtensions+=STRING (','
 		//	modelFileExtensions+=STRING)* ']')? ('icon' '=' icon=STRING)? ('representations' '=' '['
 		//	(representations+=[Representation|QualifiedName] (',' representations+=[Representation|QualifiedName])*)? ']')?
+		//	('javaExtensions' '=' '[' (javaExtension+=[jvmTypes::JvmType|QualifiedName] (','
+		//	javaExtension+=[jvmTypes::JvmType|QualifiedName])*)? ']')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//documentation=DOCUMENTATION? 'viewpoint' name=ID ('as' label=STRING)? '{' ('modelFileExtensions' '=' '['
 		//modelFileExtensions+=STRING (',' modelFileExtensions+=STRING)* ']')? ('icon' '=' icon=STRING)? ('representations' '='
-		//'[' (representations+=[Representation|QualifiedName] (',' representations+=[Representation|QualifiedName])*)? ']')? '}'
+		//'[' (representations+=[Representation|QualifiedName] (',' representations+=[Representation|QualifiedName])*)? ']')?
+		//('javaExtensions' '=' '[' (javaExtension+=[jvmTypes::JvmType|QualifiedName] (','
+		//javaExtension+=[jvmTypes::JvmType|QualifiedName])*)? ']')? '}'
 		public Group getGroup() { return cGroup; }
 
 		//documentation=DOCUMENTATION?
@@ -434,8 +452,51 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		//']'
 		public Keyword getRightSquareBracketKeyword_7_4() { return cRightSquareBracketKeyword_7_4; }
 
+		//('javaExtensions' '=' '[' (javaExtension+=[jvmTypes::JvmType|QualifiedName] (','
+		//javaExtension+=[jvmTypes::JvmType|QualifiedName])*)? ']')?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//'javaExtensions'
+		public Keyword getJavaExtensionsKeyword_8_0() { return cJavaExtensionsKeyword_8_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_8_1() { return cEqualsSignKeyword_8_1; }
+
+		//'['
+		public Keyword getLeftSquareBracketKeyword_8_2() { return cLeftSquareBracketKeyword_8_2; }
+
+		//(javaExtension+=[jvmTypes::JvmType|QualifiedName] (',' javaExtension+=[jvmTypes::JvmType|QualifiedName])*)?
+		public Group getGroup_8_3() { return cGroup_8_3; }
+
+		//javaExtension+=[jvmTypes::JvmType|QualifiedName]
+		public Assignment getJavaExtensionAssignment_8_3_0() { return cJavaExtensionAssignment_8_3_0; }
+
+		//[jvmTypes::JvmType|QualifiedName]
+		public CrossReference getJavaExtensionJvmTypeCrossReference_8_3_0_0() { return cJavaExtensionJvmTypeCrossReference_8_3_0_0; }
+
+		//QualifiedName
+		public RuleCall getJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_0_0_1() { return cJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_0_0_1; }
+
+		//(',' javaExtension+=[jvmTypes::JvmType|QualifiedName])*
+		public Group getGroup_8_3_1() { return cGroup_8_3_1; }
+
+		//','
+		public Keyword getCommaKeyword_8_3_1_0() { return cCommaKeyword_8_3_1_0; }
+
+		//javaExtension+=[jvmTypes::JvmType|QualifiedName]
+		public Assignment getJavaExtensionAssignment_8_3_1_1() { return cJavaExtensionAssignment_8_3_1_1; }
+
+		//[jvmTypes::JvmType|QualifiedName]
+		public CrossReference getJavaExtensionJvmTypeCrossReference_8_3_1_1_0() { return cJavaExtensionJvmTypeCrossReference_8_3_1_1_0; }
+
+		//QualifiedName
+		public RuleCall getJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_1_1_0_1() { return cJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_1_1_0_1; }
+
+		//']'
+		public Keyword getRightSquareBracketKeyword_8_4() { return cRightSquareBracketKeyword_8_4; }
+
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class RepresentationElements extends AbstractParserRuleElementFinder {
@@ -4031,6 +4092,8 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'viewpoint' name=ID ('as' label=STRING)? '{' ('modelFileExtensions' '=' '[' modelFileExtensions+=STRING (','
 	//	modelFileExtensions+=STRING)* ']')? ('icon' '=' icon=STRING)? ('representations' '=' '['
 	//	(representations+=[Representation|QualifiedName] (',' representations+=[Representation|QualifiedName])*)? ']')?
+	//	('javaExtensions' '=' '[' (javaExtension+=[jvmTypes::JvmType|QualifiedName] (','
+	//	javaExtension+=[jvmTypes::JvmType|QualifiedName])*)? ']')?
 	//	'}';
 	public ViewpointElements getViewpointAccess() {
 		return pViewpoint;

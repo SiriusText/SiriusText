@@ -62,6 +62,9 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getViewpointAccess().getGroup_7(), "rule__Viewpoint__Group_7__0");
 					put(grammarAccess.getViewpointAccess().getGroup_7_3(), "rule__Viewpoint__Group_7_3__0");
 					put(grammarAccess.getViewpointAccess().getGroup_7_3_1(), "rule__Viewpoint__Group_7_3_1__0");
+					put(grammarAccess.getViewpointAccess().getGroup_8(), "rule__Viewpoint__Group_8__0");
+					put(grammarAccess.getViewpointAccess().getGroup_8_3(), "rule__Viewpoint__Group_8_3__0");
+					put(grammarAccess.getViewpointAccess().getGroup_8_3_1(), "rule__Viewpoint__Group_8_3_1__0");
 					put(grammarAccess.getDiagramAccess().getGroup(), "rule__Diagram__Group__0");
 					put(grammarAccess.getDiagramAccess().getGroup_7(), "rule__Diagram__Group_7__0");
 					put(grammarAccess.getDiagramAccess().getGroup_11(), "rule__Diagram__Group_11__0");
@@ -168,6 +171,8 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getViewpointAccess().getIconAssignment_6_2(), "rule__Viewpoint__IconAssignment_6_2");
 					put(grammarAccess.getViewpointAccess().getRepresentationsAssignment_7_3_0(), "rule__Viewpoint__RepresentationsAssignment_7_3_0");
 					put(grammarAccess.getViewpointAccess().getRepresentationsAssignment_7_3_1_1(), "rule__Viewpoint__RepresentationsAssignment_7_3_1_1");
+					put(grammarAccess.getViewpointAccess().getJavaExtensionAssignment_8_3_0(), "rule__Viewpoint__JavaExtensionAssignment_8_3_0");
+					put(grammarAccess.getViewpointAccess().getJavaExtensionAssignment_8_3_1_1(), "rule__Viewpoint__JavaExtensionAssignment_8_3_1_1");
 					put(grammarAccess.getDiagramAccess().getDocumentationAssignment_0(), "rule__Diagram__DocumentationAssignment_0");
 					put(grammarAccess.getDiagramAccess().getInitializedAssignment_1(), "rule__Diagram__InitializedAssignment_1");
 					put(grammarAccess.getDiagramAccess().getShowOnStartupAssignment_2(), "rule__Diagram__ShowOnStartupAssignment_2");

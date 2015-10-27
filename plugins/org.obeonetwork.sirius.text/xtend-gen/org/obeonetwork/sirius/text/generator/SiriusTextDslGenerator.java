@@ -44,6 +44,7 @@ import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 import org.eclipse.sirius.viewpoint.description.Group;
+import org.eclipse.sirius.viewpoint.description.JavaExtension;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.UserColor;
 import org.eclipse.sirius.viewpoint.description.UserColorsPalette;
@@ -55,6 +56,7 @@ import org.eclipse.sirius.viewpoint.description.tool.RemoveElement;
 import org.eclipse.sirius.viewpoint.description.tool.SetValue;
 import org.eclipse.sirius.viewpoint.description.tool.ToolEntry;
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage;
+import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.generator.AbstractFileSystemAccess;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.xbase.lib.CollectionExtensions;
@@ -379,8 +381,18 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     };
     String _reduce = IterableExtensions.<String>reduce(_modelFileExtensions, _function);
     siriusViewpoint.setModelFileExtension(_reduce);
+    EList<JvmType> _javaExtension = viewpoint.getJavaExtension();
+    final Consumer<JvmType> _function_1 = (JvmType j) -> {
+      DescriptionFactory _descriptionFactory = DescriptionPackage.eINSTANCE.getDescriptionFactory();
+      final JavaExtension javaExtension = _descriptionFactory.createJavaExtension();
+      String _identifier = j.getIdentifier();
+      javaExtension.setQualifiedClassName(_identifier);
+      EList<JavaExtension> _ownedJavaExtensions = siriusViewpoint.getOwnedJavaExtensions();
+      _ownedJavaExtensions.add(javaExtension);
+    };
+    _javaExtension.forEach(_function_1);
     EList<Representation> _representations = viewpoint.getRepresentations();
-    final Consumer<Representation> _function_1 = (Representation r) -> {
+    final Consumer<Representation> _function_2 = (Representation r) -> {
       if ((r instanceof Diagram)) {
         final Diagram diagram = ((Diagram) r);
         final DiagramDescription diagramDescription = org.eclipse.sirius.diagram.description.DescriptionFactory.eINSTANCE.createDiagramDescription();
@@ -389,7 +401,7 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
         this.populateDiagram(diagramDescription, diagram);
       }
     };
-    _representations.forEach(_function_1);
+    _representations.forEach(_function_2);
   }
   
   private void populateDiagram(final DiagramDescription diagramDescription, final Diagram diagram) {

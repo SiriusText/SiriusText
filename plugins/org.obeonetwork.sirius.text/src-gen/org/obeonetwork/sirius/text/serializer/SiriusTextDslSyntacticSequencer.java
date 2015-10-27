@@ -37,6 +37,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	protected AbstractElementAlias match_Section___ToolsKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q;
 	protected AbstractElementAlias match_Set___LeftCurlyBracketKeyword_10_0_RightCurlyBracketKeyword_10_2__q;
 	protected AbstractElementAlias match_Unset___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q;
+	protected AbstractElementAlias match_Viewpoint___JavaExtensionsKeyword_8_0_EqualsSignKeyword_8_1_LeftSquareBracketKeyword_8_2_RightSquareBracketKeyword_8_4__q;
 	protected AbstractElementAlias match_Viewpoint___RepresentationsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q;
 	
 	@Inject
@@ -58,6 +59,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 		match_Section___ToolsKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSectionAccess().getToolsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getSectionAccess().getEqualsSignKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getSectionAccess().getLeftSquareBracketKeyword_6_2()), new TokenAlias(false, false, grammarAccess.getSectionAccess().getRightSquareBracketKeyword_6_4()));
 		match_Set___LeftCurlyBracketKeyword_10_0_RightCurlyBracketKeyword_10_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSetAccess().getLeftCurlyBracketKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getSetAccess().getRightCurlyBracketKeyword_10_2()));
 		match_Unset___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getUnsetAccess().getLeftCurlyBracketKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getUnsetAccess().getRightCurlyBracketKeyword_7_2()));
+		match_Viewpoint___JavaExtensionsKeyword_8_0_EqualsSignKeyword_8_1_LeftSquareBracketKeyword_8_2_RightSquareBracketKeyword_8_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getViewpointAccess().getJavaExtensionsKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getEqualsSignKeyword_8_1()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_8_2()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_8_4()));
 		match_Viewpoint___RepresentationsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getViewpointAccess().getRepresentationsKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getEqualsSignKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_7_2()), new TokenAlias(false, false, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_7_4()));
 	}
 	
@@ -105,6 +107,8 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 				emit_Set___LeftCurlyBracketKeyword_10_0_RightCurlyBracketKeyword_10_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Unset___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q.equals(syntax))
 				emit_Unset___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Viewpoint___JavaExtensionsKeyword_8_0_EqualsSignKeyword_8_1_LeftSquareBracketKeyword_8_2_RightSquareBracketKeyword_8_4__q.equals(syntax))
+				emit_Viewpoint___JavaExtensionsKeyword_8_0_EqualsSignKeyword_8_1_LeftSquareBracketKeyword_8_2_RightSquareBracketKeyword_8_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Viewpoint___RepresentationsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q.equals(syntax))
 				emit_Viewpoint___RepresentationsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -323,13 +327,32 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('javaExtensions' '=' '[' ']')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     icon=STRING ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
+	 *     label=STRING '{' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
+	 *     modelFileExtensions+=STRING ']' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
+	 *     name=ID '{' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
+	 *     representations+=[Representation|QualifiedName] ']' (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Viewpoint___JavaExtensionsKeyword_8_0_EqualsSignKeyword_8_1_LeftSquareBracketKeyword_8_2_RightSquareBracketKeyword_8_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('representations' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING (ambiguity) '}' (rule end)
-	 *     label=STRING '{' (ambiguity) '}' (rule end)
-	 *     modelFileExtensions+=STRING ']' (ambiguity) '}' (rule end)
-	 *     name=ID '{' (ambiguity) '}' (rule end)
+	 *     icon=STRING (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
+	 *     icon=STRING (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
+	 *     label=STRING '{' (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
+	 *     label=STRING '{' (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
+	 *     modelFileExtensions+=STRING ']' (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
+	 *     modelFileExtensions+=STRING ']' (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
+	 *     name=ID '{' (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
+	 *     name=ID '{' (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
 	 */
 	protected void emit_Viewpoint___RepresentationsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

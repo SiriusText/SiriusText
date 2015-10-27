@@ -714,9 +714,59 @@ ruleViewpoint returns [EObject current=null]
     {
     	newLeafNode(otherlv_22, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_7_4());
     }
-)?	otherlv_23='}' 
+)?(	otherlv_23='javaExtensions' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_23, grammarAccess.getViewpointAccess().getJavaExtensionsKeyword_8_0());
+    }
+	otherlv_24='=' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getViewpointAccess().getEqualsSignKeyword_8_1());
+    }
+	otherlv_25='[' 
+    {
+    	newLeafNode(otherlv_25, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_8_2());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getViewpointRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeCrossReference_8_3_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_27=',' 
+    {
+    	newLeafNode(otherlv_27, grammarAccess.getViewpointAccess().getCommaKeyword_8_3_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getViewpointRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeCrossReference_8_3_1_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?	otherlv_29=']' 
+    {
+    	newLeafNode(otherlv_29, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_8_4());
+    }
+)?	otherlv_30='}' 
+    {
+    	newLeafNode(otherlv_30, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;

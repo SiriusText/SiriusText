@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.xtext.common.types.JvmType;
+
 import org.obeonetwork.sirius.text.siriusTextDsl.Representation;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
@@ -34,6 +36,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getModelFileExtensions <em>Model File Extensions</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getRepresentations <em>Representations</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getJavaExtension <em>Java Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -139,6 +142,16 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * @ordered
    */
   protected EList<Representation> representations;
+
+  /**
+   * The cached value of the '{@link #getJavaExtension() <em>Java Extension</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getJavaExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<JvmType> javaExtension;
 
   /**
    * <!-- begin-user-doc -->
@@ -286,6 +299,20 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<JvmType> getJavaExtension()
+  {
+    if (javaExtension == null)
+    {
+      javaExtension = new EObjectResolvingEList<JvmType>(JvmType.class, this, SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION);
+    }
+    return javaExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -303,6 +330,8 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return getIcon();
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         return getRepresentations();
+      case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
+        return getJavaExtension();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -338,6 +367,10 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         getRepresentations().clear();
         getRepresentations().addAll((Collection<? extends Representation>)newValue);
         return;
+      case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
+        getJavaExtension().clear();
+        getJavaExtension().addAll((Collection<? extends JvmType>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -370,6 +403,9 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         getRepresentations().clear();
         return;
+      case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
+        getJavaExtension().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -396,6 +432,8 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         return representations != null && !representations.isEmpty();
+      case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
+        return javaExtension != null && !javaExtension.isEmpty();
     }
     return super.eIsSet(featureID);
   }

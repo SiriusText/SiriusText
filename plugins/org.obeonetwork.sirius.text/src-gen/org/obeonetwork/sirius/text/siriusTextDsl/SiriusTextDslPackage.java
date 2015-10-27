@@ -279,13 +279,22 @@ public interface SiriusTextDslPackage extends EPackage
   int VIEWPOINT__REPRESENTATIONS = 5;
 
   /**
+   * The feature id for the '<em><b>Java Extension</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEWPOINT__JAVA_EXTENSION = 6;
+
+  /**
    * The number of structural features of the '<em>Viewpoint</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEWPOINT_FEATURE_COUNT = 6;
+  int VIEWPOINT_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RepresentationImpl <em>Representation</em>}' class.
@@ -2309,6 +2318,17 @@ public interface SiriusTextDslPackage extends EPackage
   EReference getViewpoint_Representations();
 
   /**
+   * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getJavaExtension <em>Java Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Java Extension</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getJavaExtension()
+   * @see #getViewpoint()
+   * @generated
+   */
+  EReference getViewpoint_JavaExtension();
+
+  /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Representation <em>Representation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4241,6 +4261,14 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EReference VIEWPOINT__REPRESENTATIONS = eINSTANCE.getViewpoint_Representations();
+
+    /**
+     * The meta object literal for the '<em><b>Java Extension</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VIEWPOINT__JAVA_EXTENSION = eINSTANCE.getViewpoint_JavaExtension();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RepresentationImpl <em>Representation</em>}' class.

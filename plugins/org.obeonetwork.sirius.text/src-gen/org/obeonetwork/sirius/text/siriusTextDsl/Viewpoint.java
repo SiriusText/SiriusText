@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.common.types.JvmType;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Viewpoint</b></em>'.
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getModelFileExtensions <em>Model File Extensions</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getRepresentations <em>Representations</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getJavaExtension <em>Java Extension</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getViewpoint()
@@ -164,5 +167,21 @@ public interface Viewpoint extends EObject
    * @generated
    */
   EList<Representation> getRepresentations();
+
+  /**
+   * Returns the value of the '<em><b>Java Extension</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.xtext.common.types.JvmType}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Java Extension</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Java Extension</em>' reference list.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getViewpoint_JavaExtension()
+   * @model
+   * @generated
+   */
+  EList<JvmType> getJavaExtension();
 
 } // Viewpoint

@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.xtext.common.types.TypesPackage;
+
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
 import org.obeonetwork.sirius.text.siriusTextDsl.Case;
 import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
@@ -435,6 +437,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     isInited = true;
 
+    // Initialize simple dependencies
+    TypesPackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theSiriusTextDslPackage.createPackageContents();
 
@@ -648,6 +653,16 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
   public EReference getViewpoint_Representations()
   {
     return (EReference)viewpointEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getViewpoint_JavaExtension()
+  {
+    return (EReference)viewpointEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2324,6 +2339,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(viewpointEClass, VIEWPOINT__MODEL_FILE_EXTENSIONS);
     createEAttribute(viewpointEClass, VIEWPOINT__ICON);
     createEReference(viewpointEClass, VIEWPOINT__REPRESENTATIONS);
+    createEReference(viewpointEClass, VIEWPOINT__JAVA_EXTENSION);
 
     representationEClass = createEClass(REPRESENTATION);
 
@@ -2548,6 +2564,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
@@ -2608,6 +2627,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getViewpoint_ModelFileExtensions(), ecorePackage.getEString(), "modelFileExtensions", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_Representations(), this.getRepresentation(), null, "representations", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getViewpoint_JavaExtension(), theTypesPackage.getJvmType(), null, "javaExtension", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(representationEClass, Representation.class, "Representation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

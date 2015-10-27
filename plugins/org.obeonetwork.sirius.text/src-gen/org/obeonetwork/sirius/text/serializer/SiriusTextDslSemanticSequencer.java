@@ -542,7 +542,8 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         label=STRING? 
 	 *         (modelFileExtensions+=STRING modelFileExtensions+=STRING*)? 
 	 *         icon=STRING? 
-	 *         (representations+=[Representation|QualifiedName] representations+=[Representation|QualifiedName]*)?
+	 *         (representations+=[Representation|QualifiedName] representations+=[Representation|QualifiedName]*)? 
+	 *         (javaExtension+=[JvmType|QualifiedName] javaExtension+=[JvmType|QualifiedName]*)?
 	 *     )
 	 */
 	protected void sequence_Viewpoint(EObject context, Viewpoint semanticObject) {

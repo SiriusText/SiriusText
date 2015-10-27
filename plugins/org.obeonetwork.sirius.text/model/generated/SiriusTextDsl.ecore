@@ -30,6 +30,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="representations" unique="false"
         upperBound="-1" eType="#//Representation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaExtension" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Representation" eSuperTypes="#//SiriusFileBody"/>
   <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//Representation">

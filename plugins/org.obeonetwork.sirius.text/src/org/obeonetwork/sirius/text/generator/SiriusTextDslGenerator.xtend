@@ -221,6 +221,12 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		siriusViewpoint.icon = viewpoint.icon
 		siriusViewpoint.modelFileExtension = viewpoint.modelFileExtensions.reduce[a, b | a + ", " + b]
 		
+		viewpoint.javaExtension.forEach[j |
+			val javaExtension = DescriptionPackage.eINSTANCE.descriptionFactory.createJavaExtension
+			javaExtension.qualifiedClassName = j.identifier
+			siriusViewpoint.ownedJavaExtensions.add(javaExtension)
+		]
+		
 		viewpoint.representations.forEach[r |
 			if (r instanceof Diagram) {
 				val diagram = r as Diagram
