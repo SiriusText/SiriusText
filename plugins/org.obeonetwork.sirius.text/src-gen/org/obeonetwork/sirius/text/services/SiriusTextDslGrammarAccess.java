@@ -3939,6 +3939,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tEXPRESSION;
+	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tWS;
 	
 	private final Grammar grammar;
@@ -3999,6 +4000,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.STRING");
 		this.tEXPRESSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.EXPRESSION");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.SL_COMMENT");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.WS");
 	}
 	
@@ -4643,6 +4645,12 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'"' ('\\' . | !('\\' | '"'))* '"';
 	public TerminalRule getEXPRESSIONRule() {
 		return tEXPRESSION;
+	} 
+
+	//terminal SL_COMMENT:
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return tSL_COMMENT;
 	} 
 
 	//terminal WS:

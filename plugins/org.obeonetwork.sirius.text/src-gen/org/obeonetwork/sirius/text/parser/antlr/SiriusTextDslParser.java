@@ -15,7 +15,7 @@ public class SiriusTextDslParser extends org.eclipse.xtext.parser.antlr.Abstract
 	
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS");
+		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_SL_COMMENT");
 	}
 	
 	@Override

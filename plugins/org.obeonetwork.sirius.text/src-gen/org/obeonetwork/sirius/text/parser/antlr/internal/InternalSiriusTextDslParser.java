@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'javaExtensions'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@ForceRefresh'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'extraMappings'", "'begin'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_SL_COMMENT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'javaExtensions'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@ForceRefresh'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'extraMappings'", "'begin'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -31,6 +31,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__57=57;
     public static final int T__58=58;
     public static final int T__51=51;
+    public static final int T__137=137;
     public static final int T__52=52;
     public static final int T__136=136;
     public static final int T__53=53;
@@ -99,7 +100,6 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__95=95;
     public static final int T__96=96;
     public static final int T__97=97;
-    public static final int T__10=10;
     public static final int T__98=98;
     public static final int RULE_DOCUMENTATION=4;
     public static final int T__26=26;
@@ -122,6 +122,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__120=120;
     public static final int RULE_STRING=6;
     public static final int RULE_EXPRESSION=7;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__77=77;
     public static final int T__119=119;
     public static final int T__78=78;
@@ -144,7 +145,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final int T__113=113;
     public static final int T__83=83;
     public static final int T__112=112;
-    public static final int RULE_WS=9;
+    public static final int RULE_WS=10;
     public static final int T__88=88;
     public static final int T__108=108;
     public static final int T__89=89;
@@ -293,7 +294,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,10,FOLLOW_4); 
+            otherlv_1=(Token)match(input,11,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSiriusFileAccess().getPackageKeyword_1());
                 
@@ -334,7 +335,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==13) ) {
+                if ( (LA2_0==14) ) {
                     alt2=1;
                 }
 
@@ -747,7 +748,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==11) ) {
+                if ( (LA4_0==12) ) {
                     alt4=1;
                 }
 
@@ -756,7 +757,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalSiriusTextDsl.g:296:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,11,FOLLOW_4); 
+            	    kw=(Token)match(input,12,FOLLOW_4); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
@@ -869,14 +870,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==12) ) {
+            if ( (LA5_0==13) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
                     // InternalSiriusTextDsl.g:341:2: kw= '.*'
                     {
-                    kw=(Token)match(input,12,FOLLOW_2); 
+                    kw=(Token)match(input,13,FOLLOW_2); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
@@ -961,7 +962,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:367:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) )
             // InternalSiriusTextDsl.g:367:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_4); 
+            otherlv_0=(Token)match(input,14,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
                 
@@ -1113,7 +1114,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FOLLOW_4); 
+            otherlv_1=(Token)match(input,15,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDesignerAccess().getDesignerKeyword_1());
                 
@@ -1147,14 +1148,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==15) ) {
+            if ( (LA7_0==16) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
                     // InternalSiriusTextDsl.g:450:4: otherlv_3= 'as' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getDesignerAccess().getAsKeyword_3_0());
                         
@@ -1190,7 +1191,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,16,FOLLOW_12); 
+            otherlv_5=(Token)match(input,17,FOLLOW_12); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getDesignerAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -1200,7 +1201,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_DOCUMENTATION||LA8_0==18) ) {
+                if ( (LA8_0==RULE_DOCUMENTATION||LA8_0==19) ) {
                     alt8=1;
                 }
 
@@ -1243,7 +1244,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,17,FOLLOW_2); 
+            otherlv_7=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getDesignerAccess().getRightCurlyBracketKeyword_6());
                 
@@ -1382,7 +1383,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,18,FOLLOW_4); 
+            otherlv_1=(Token)match(input,19,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getViewpointAccess().getViewpointKeyword_1());
                 
@@ -1416,14 +1417,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==15) ) {
+            if ( (LA10_0==16) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
                     // InternalSiriusTextDsl.g:559:4: otherlv_3= 'as' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getViewpointAccess().getAsKeyword_3_0());
                         
@@ -1459,7 +1460,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,16,FOLLOW_14); 
+            otherlv_5=(Token)match(input,17,FOLLOW_14); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getViewpointAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -1467,22 +1468,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==19) ) {
+            if ( (LA12_0==20) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
                     // InternalSiriusTextDsl.g:585:3: otherlv_6= 'modelFileExtensions' otherlv_7= '=' otherlv_8= '[' ( (lv_modelFileExtensions_9_0= RULE_STRING ) ) (otherlv_10= ',' ( (lv_modelFileExtensions_11_0= RULE_STRING ) ) )* otherlv_12= ']'
                     {
-                    otherlv_6=(Token)match(input,19,FOLLOW_15); 
+                    otherlv_6=(Token)match(input,20,FOLLOW_15); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getViewpointAccess().getModelFileExtensionsKeyword_5_0());
                         
-                    otherlv_7=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_7=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getViewpointAccess().getEqualsSignKeyword_5_1());
                         
-                    otherlv_8=(Token)match(input,21,FOLLOW_10); 
+                    otherlv_8=(Token)match(input,22,FOLLOW_10); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_5_2());
                         
@@ -1518,7 +1519,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt11=2;
                         int LA11_0 = input.LA(1);
 
-                        if ( (LA11_0==22) ) {
+                        if ( (LA11_0==23) ) {
                             alt11=1;
                         }
 
@@ -1527,7 +1528,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalSiriusTextDsl.g:615:4: otherlv_10= ',' ( (lv_modelFileExtensions_11_0= RULE_STRING ) )
                     	    {
-                    	    otherlv_10=(Token)match(input,22,FOLLOW_10); 
+                    	    otherlv_10=(Token)match(input,23,FOLLOW_10); 
 
                     	        	newLeafNode(otherlv_10, grammarAccess.getViewpointAccess().getCommaKeyword_5_4_0());
                     	        
@@ -1566,7 +1567,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,23,FOLLOW_18); 
+                    otherlv_12=(Token)match(input,24,FOLLOW_18); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_5_5());
                         
@@ -1580,18 +1581,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==24) ) {
+            if ( (LA13_0==25) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
                     // InternalSiriusTextDsl.g:641:5: otherlv_13= 'icon' otherlv_14= '=' ( (lv_icon_15_0= RULE_STRING ) )
                     {
-                    otherlv_13=(Token)match(input,24,FOLLOW_15); 
+                    otherlv_13=(Token)match(input,25,FOLLOW_15); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getViewpointAccess().getIconKeyword_6_0());
                         
-                    otherlv_14=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_14=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getViewpointAccess().getEqualsSignKeyword_6_1());
                         
@@ -1631,22 +1632,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==25) ) {
+            if ( (LA16_0==26) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
                     // InternalSiriusTextDsl.g:667:6: otherlv_16= 'representations' otherlv_17= '=' otherlv_18= '[' ( ( ( ruleQualifiedName ) ) (otherlv_20= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_22= ']'
                     {
-                    otherlv_16=(Token)match(input,25,FOLLOW_15); 
+                    otherlv_16=(Token)match(input,26,FOLLOW_15); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getViewpointAccess().getRepresentationsKeyword_7_0());
                         
-                    otherlv_17=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_17=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getViewpointAccess().getEqualsSignKeyword_7_1());
                         
-                    otherlv_18=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_18=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_7_2());
                         
@@ -1695,7 +1696,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt14=2;
                                 int LA14_0 = input.LA(1);
 
-                                if ( (LA14_0==22) ) {
+                                if ( (LA14_0==23) ) {
                                     alt14=1;
                                 }
 
@@ -1704,7 +1705,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:694:4: otherlv_20= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_20=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_20=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_20, grammarAccess.getViewpointAccess().getCommaKeyword_7_3_1_0());
                             	        
@@ -1751,7 +1752,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,23,FOLLOW_21); 
+                    otherlv_22=(Token)match(input,24,FOLLOW_21); 
 
                         	newLeafNode(otherlv_22, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_7_4());
                         
@@ -1765,22 +1766,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==26) ) {
+            if ( (LA19_0==27) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
                     // InternalSiriusTextDsl.g:717:5: otherlv_23= 'javaExtensions' otherlv_24= '=' otherlv_25= '[' ( ( ( ruleQualifiedName ) ) (otherlv_27= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_29= ']'
                     {
-                    otherlv_23=(Token)match(input,26,FOLLOW_15); 
+                    otherlv_23=(Token)match(input,27,FOLLOW_15); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getViewpointAccess().getJavaExtensionsKeyword_8_0());
                         
-                    otherlv_24=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_24=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_24, grammarAccess.getViewpointAccess().getEqualsSignKeyword_8_1());
                         
-                    otherlv_25=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_25=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_25, grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_8_2());
                         
@@ -1829,7 +1830,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt17=2;
                                 int LA17_0 = input.LA(1);
 
-                                if ( (LA17_0==22) ) {
+                                if ( (LA17_0==23) ) {
                                     alt17=1;
                                 }
 
@@ -1838,7 +1839,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:744:4: otherlv_27= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_27=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_27=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_27, grammarAccess.getViewpointAccess().getCommaKeyword_8_3_1_0());
                             	        
@@ -1885,7 +1886,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_29=(Token)match(input,23,FOLLOW_22); 
+                    otherlv_29=(Token)match(input,24,FOLLOW_22); 
 
                         	newLeafNode(otherlv_29, grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_8_4());
                         
@@ -1895,7 +1896,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_30=(Token)match(input,17,FOLLOW_2); 
+            otherlv_30=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_30, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_9());
                 
@@ -2126,7 +2127,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==27) ) {
+            if ( (LA21_0==28) ) {
                 alt21=1;
             }
             switch (alt21) {
@@ -2136,7 +2137,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:841:1: (lv_initialized_1_0= '@Initialized' )
                     // InternalSiriusTextDsl.g:842:3: lv_initialized_1_0= '@Initialized'
                     {
-                    lv_initialized_1_0=(Token)match(input,27,FOLLOW_24); 
+                    lv_initialized_1_0=(Token)match(input,28,FOLLOW_24); 
 
                             newLeafNode(lv_initialized_1_0, grammarAccess.getDiagramAccess().getInitializedInitializedKeyword_1_0());
                         
@@ -2159,7 +2160,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==28) ) {
+            if ( (LA22_0==29) ) {
                 alt22=1;
             }
             switch (alt22) {
@@ -2169,7 +2170,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:856:1: (lv_showOnStartup_2_0= '@ShowOnStartup' )
                     // InternalSiriusTextDsl.g:857:3: lv_showOnStartup_2_0= '@ShowOnStartup'
                     {
-                    lv_showOnStartup_2_0=(Token)match(input,28,FOLLOW_25); 
+                    lv_showOnStartup_2_0=(Token)match(input,29,FOLLOW_25); 
 
                             newLeafNode(lv_showOnStartup_2_0, grammarAccess.getDiagramAccess().getShowOnStartupShowOnStartupKeyword_2_0());
                         
@@ -2192,7 +2193,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==29) ) {
+            if ( (LA23_0==30) ) {
                 alt23=1;
             }
             switch (alt23) {
@@ -2202,7 +2203,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:871:1: (lv_enablePopupBars_3_0= '@EnablePopupBars' )
                     // InternalSiriusTextDsl.g:872:3: lv_enablePopupBars_3_0= '@EnablePopupBars'
                     {
-                    lv_enablePopupBars_3_0=(Token)match(input,29,FOLLOW_26); 
+                    lv_enablePopupBars_3_0=(Token)match(input,30,FOLLOW_26); 
 
                             newLeafNode(lv_enablePopupBars_3_0, grammarAccess.getDiagramAccess().getEnablePopupBarsEnablePopupBarsKeyword_3_0());
                         
@@ -2228,7 +2229,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==30) ) {
+                if ( (LA24_0==31) ) {
                     alt24=1;
                 }
 
@@ -2237,7 +2238,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalSiriusTextDsl.g:885:5: otherlv_4= '@MetamodelUris'
             	    {
-            	    otherlv_4=(Token)match(input,30,FOLLOW_27); 
+            	    otherlv_4=(Token)match(input,31,FOLLOW_27); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getDiagramAccess().getMetamodelUrisKeyword_4());
             	        
@@ -2254,7 +2255,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 cnt24++;
             } while (true);
 
-            otherlv_5=(Token)match(input,31,FOLLOW_10); 
+            otherlv_5=(Token)match(input,32,FOLLOW_10); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getDiagramAccess().getLeftParenthesisLeftCurlyBracketKeyword_5());
                 
@@ -2290,7 +2291,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==22) ) {
+                if ( (LA25_0==23) ) {
                     alt25=1;
                 }
 
@@ -2299,7 +2300,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalSiriusTextDsl.g:911:4: otherlv_7= ',' ( (lv_metamodelUris_8_0= RULE_STRING ) )
             	    {
-            	    otherlv_7=(Token)match(input,22,FOLLOW_10); 
+            	    otherlv_7=(Token)match(input,23,FOLLOW_10); 
 
             	        	newLeafNode(otherlv_7, grammarAccess.getDiagramAccess().getCommaKeyword_7_0());
             	        
@@ -2338,11 +2339,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,32,FOLLOW_29); 
+            otherlv_9=(Token)match(input,33,FOLLOW_29); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getDiagramAccess().getRightCurlyBracketRightParenthesisKeyword_8());
                 
-            otherlv_10=(Token)match(input,33,FOLLOW_4); 
+            otherlv_10=(Token)match(input,34,FOLLOW_4); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getDiagramAccess().getDiagramKeyword_9());
                 
@@ -2376,14 +2377,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==15) ) {
+            if ( (LA26_0==16) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
                     // InternalSiriusTextDsl.g:959:4: otherlv_12= 'as' ( (lv_label_13_0= RULE_STRING ) )
                     {
-                    otherlv_12=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_12=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getDiagramAccess().getAsKeyword_11_0());
                         
@@ -2419,7 +2420,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_14=(Token)match(input,34,FOLLOW_10); 
+            otherlv_14=(Token)match(input,35,FOLLOW_10); 
 
                 	newLeafNode(otherlv_14, grammarAccess.getDiagramAccess().getForKeyword_12());
                 
@@ -2453,14 +2454,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==35) ) {
+            if ( (LA27_0==36) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1003:4: otherlv_16= '?' ( (lv_precondition_17_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_16=(Token)match(input,35,FOLLOW_33); 
+                    otherlv_16=(Token)match(input,36,FOLLOW_33); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getDiagramAccess().getQuestionMarkKeyword_14_0());
                         
@@ -2496,7 +2497,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,16,FOLLOW_34); 
+            otherlv_18=(Token)match(input,17,FOLLOW_34); 
 
                 	newLeafNode(otherlv_18, grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_15());
                 
@@ -2504,18 +2505,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt28=2;
             int LA28_0 = input.LA(1);
 
-            if ( (LA28_0==36) ) {
+            if ( (LA28_0==37) ) {
                 alt28=1;
             }
             switch (alt28) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1029:3: otherlv_19= 'documentation' otherlv_20= '=' ( (lv_endUserDocumentation_21_0= RULE_STRING ) )
                     {
-                    otherlv_19=(Token)match(input,36,FOLLOW_15); 
+                    otherlv_19=(Token)match(input,37,FOLLOW_15); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getDiagramAccess().getDocumentationKeyword_16_0());
                         
-                    otherlv_20=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_20=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getDiagramAccess().getEqualsSignKeyword_16_1());
                         
@@ -2555,18 +2556,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==37) ) {
+            if ( (LA29_0==38) ) {
                 alt29=1;
             }
             switch (alt29) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1055:6: otherlv_22= 'titleExpression' otherlv_23= '=' ( (lv_titleExpression_24_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_22=(Token)match(input,37,FOLLOW_15); 
+                    otherlv_22=(Token)match(input,38,FOLLOW_15); 
 
                         	newLeafNode(otherlv_22, grammarAccess.getDiagramAccess().getTitleExpressionKeyword_17_0());
                         
-                    otherlv_23=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_23=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getDiagramAccess().getEqualsSignKeyword_17_1());
                         
@@ -2606,18 +2607,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==38) ) {
+            if ( (LA30_0==39) ) {
                 alt30=1;
             }
             switch (alt30) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1081:6: otherlv_25= 'rootExpression' otherlv_26= '=' ( (lv_rootExpression_27_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_25=(Token)match(input,38,FOLLOW_15); 
+                    otherlv_25=(Token)match(input,39,FOLLOW_15); 
 
                         	newLeafNode(otherlv_25, grammarAccess.getDiagramAccess().getRootExpressionKeyword_18_0());
                         
-                    otherlv_26=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_26=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_26, grammarAccess.getDiagramAccess().getEqualsSignKeyword_18_1());
                         
@@ -2657,18 +2658,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0==39) ) {
+            if ( (LA31_0==40) ) {
                 alt31=1;
             }
             switch (alt31) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1107:6: otherlv_28= 'defaultLayer' otherlv_29= '=' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_28=(Token)match(input,39,FOLLOW_15); 
+                    otherlv_28=(Token)match(input,40,FOLLOW_15); 
 
                         	newLeafNode(otherlv_28, grammarAccess.getDiagramAccess().getDefaultLayerKeyword_19_0());
                         
-                    otherlv_29=(Token)match(input,20,FOLLOW_4); 
+                    otherlv_29=(Token)match(input,21,FOLLOW_4); 
 
                         	newLeafNode(otherlv_29, grammarAccess.getDiagramAccess().getEqualsSignKeyword_19_1());
                         
@@ -2710,22 +2711,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt34=2;
             int LA34_0 = input.LA(1);
 
-            if ( (LA34_0==40) ) {
+            if ( (LA34_0==41) ) {
                 alt34=1;
             }
             switch (alt34) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1130:6: otherlv_31= 'additionalLayers' otherlv_32= '=' otherlv_33= '[' ( ( ( ruleQualifiedName ) ) (otherlv_35= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_37= ']'
                     {
-                    otherlv_31=(Token)match(input,40,FOLLOW_15); 
+                    otherlv_31=(Token)match(input,41,FOLLOW_15); 
 
                         	newLeafNode(otherlv_31, grammarAccess.getDiagramAccess().getAdditionalLayersKeyword_20_0());
                         
-                    otherlv_32=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_32=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_32, grammarAccess.getDiagramAccess().getEqualsSignKeyword_20_1());
                         
-                    otherlv_33=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_33=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_33, grammarAccess.getDiagramAccess().getLeftSquareBracketKeyword_20_2());
                         
@@ -2774,7 +2775,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt32=2;
                                 int LA32_0 = input.LA(1);
 
-                                if ( (LA32_0==22) ) {
+                                if ( (LA32_0==23) ) {
                                     alt32=1;
                                 }
 
@@ -2783,7 +2784,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1157:4: otherlv_35= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_35=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_35=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_35, grammarAccess.getDiagramAccess().getCommaKeyword_20_3_1_0());
                             	        
@@ -2830,7 +2831,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_37=(Token)match(input,23,FOLLOW_22); 
+                    otherlv_37=(Token)match(input,24,FOLLOW_22); 
 
                         	newLeafNode(otherlv_37, grammarAccess.getDiagramAccess().getRightSquareBracketKeyword_20_4());
                         
@@ -2840,7 +2841,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_38=(Token)match(input,17,FOLLOW_2); 
+            otherlv_38=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_38, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_21());
                 
@@ -2975,7 +2976,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,41,FOLLOW_4); 
+            otherlv_1=(Token)match(input,42,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getLayerAccess().getLayerKeyword_1());
                 
@@ -3005,7 +3006,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_40); 
+            otherlv_3=(Token)match(input,17,FOLLOW_40); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getLayerAccess().getLeftCurlyBracketKeyword_3());
                 
@@ -3013,18 +3014,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==24) ) {
+            if ( (LA36_0==25) ) {
                 alt36=1;
             }
             switch (alt36) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1249:3: otherlv_4= 'icon' otherlv_5= '=' ( (lv_icon_6_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,24,FOLLOW_15); 
+                    otherlv_4=(Token)match(input,25,FOLLOW_15); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getLayerAccess().getIconKeyword_4_0());
                         
-                    otherlv_5=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_5=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getLayerAccess().getEqualsSignKeyword_4_1());
                         
@@ -3064,22 +3065,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt39=2;
             int LA39_0 = input.LA(1);
 
-            if ( (LA39_0==42) ) {
+            if ( (LA39_0==43) ) {
                 alt39=1;
             }
             switch (alt39) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1275:6: otherlv_7= 'mappings' otherlv_8= '=' otherlv_9= '[' ( ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_13= ']'
                     {
-                    otherlv_7=(Token)match(input,42,FOLLOW_15); 
+                    otherlv_7=(Token)match(input,43,FOLLOW_15); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getLayerAccess().getMappingsKeyword_5_0());
                         
-                    otherlv_8=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_8=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getLayerAccess().getEqualsSignKeyword_5_1());
                         
-                    otherlv_9=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_9=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_5_2());
                         
@@ -3128,7 +3129,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt37=2;
                                 int LA37_0 = input.LA(1);
 
-                                if ( (LA37_0==22) ) {
+                                if ( (LA37_0==23) ) {
                                     alt37=1;
                                 }
 
@@ -3137,7 +3138,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1302:4: otherlv_11= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_11=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_11, grammarAccess.getLayerAccess().getCommaKeyword_5_3_1_0());
                             	        
@@ -3184,7 +3185,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,23,FOLLOW_42); 
+                    otherlv_13=(Token)match(input,24,FOLLOW_42); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_5_4());
                         
@@ -3198,22 +3199,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==43) ) {
+            if ( (LA42_0==44) ) {
                 alt42=1;
             }
             switch (alt42) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1325:5: otherlv_14= 'edges' otherlv_15= '=' otherlv_16= '[' ( ( ( ruleQualifiedName ) ) (otherlv_18= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_20= ']'
                     {
-                    otherlv_14=(Token)match(input,43,FOLLOW_15); 
+                    otherlv_14=(Token)match(input,44,FOLLOW_15); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getLayerAccess().getEdgesKeyword_6_0());
                         
-                    otherlv_15=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_15=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getLayerAccess().getEqualsSignKeyword_6_1());
                         
-                    otherlv_16=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_16=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_6_2());
                         
@@ -3262,7 +3263,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt40=2;
                                 int LA40_0 = input.LA(1);
 
-                                if ( (LA40_0==22) ) {
+                                if ( (LA40_0==23) ) {
                                     alt40=1;
                                 }
 
@@ -3271,7 +3272,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1352:4: otherlv_18= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_18=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_18=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_18, grammarAccess.getLayerAccess().getCommaKeyword_6_3_1_0());
                             	        
@@ -3318,7 +3319,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_20=(Token)match(input,23,FOLLOW_43); 
+                    otherlv_20=(Token)match(input,24,FOLLOW_43); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_6_4());
                         
@@ -3332,22 +3333,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==44) ) {
+            if ( (LA45_0==45) ) {
                 alt45=1;
             }
             switch (alt45) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1375:5: otherlv_21= 'sections' otherlv_22= '=' otherlv_23= '[' ( ( ( ruleQualifiedName ) ) (otherlv_25= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_27= ']'
                     {
-                    otherlv_21=(Token)match(input,44,FOLLOW_15); 
+                    otherlv_21=(Token)match(input,45,FOLLOW_15); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getLayerAccess().getSectionsKeyword_7_0());
                         
-                    otherlv_22=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_22=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_22, grammarAccess.getLayerAccess().getEqualsSignKeyword_7_1());
                         
-                    otherlv_23=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_23=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_7_2());
                         
@@ -3396,7 +3397,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt43=2;
                                 int LA43_0 = input.LA(1);
 
-                                if ( (LA43_0==22) ) {
+                                if ( (LA43_0==23) ) {
                                     alt43=1;
                                 }
 
@@ -3405,7 +3406,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1402:4: otherlv_25= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_25=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_25=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_25, grammarAccess.getLayerAccess().getCommaKeyword_7_3_1_0());
                             	        
@@ -3452,7 +3453,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_27=(Token)match(input,23,FOLLOW_22); 
+                    otherlv_27=(Token)match(input,24,FOLLOW_22); 
 
                         	newLeafNode(otherlv_27, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_7_4());
                         
@@ -3462,7 +3463,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_28=(Token)match(input,17,FOLLOW_2); 
+            otherlv_28=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_28, grammarAccess.getLayerAccess().getRightCurlyBracketKeyword_8());
                 
@@ -3589,7 +3590,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,45,FOLLOW_4); 
+            otherlv_1=(Token)match(input,46,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSectionAccess().getSectionKeyword_1());
                 
@@ -3623,14 +3624,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==15) ) {
+            if ( (LA47_0==16) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1490:4: otherlv_3= 'as' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getSectionAccess().getAsKeyword_3_0());
                         
@@ -3666,7 +3667,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,16,FOLLOW_45); 
+            otherlv_5=(Token)match(input,17,FOLLOW_45); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -3674,18 +3675,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==24) ) {
+            if ( (LA48_0==25) ) {
                 alt48=1;
             }
             switch (alt48) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1516:3: otherlv_6= 'icon' otherlv_7= '=' ( (lv_icon_8_0= RULE_STRING ) )
                     {
-                    otherlv_6=(Token)match(input,24,FOLLOW_15); 
+                    otherlv_6=(Token)match(input,25,FOLLOW_15); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getSectionAccess().getIconKeyword_5_0());
                         
-                    otherlv_7=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_7=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getSectionAccess().getEqualsSignKeyword_5_1());
                         
@@ -3725,22 +3726,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==46) ) {
+            if ( (LA51_0==47) ) {
                 alt51=1;
             }
             switch (alt51) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1542:6: otherlv_9= 'tools' otherlv_10= '=' otherlv_11= '[' ( ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_15= ']'
                     {
-                    otherlv_9=(Token)match(input,46,FOLLOW_15); 
+                    otherlv_9=(Token)match(input,47,FOLLOW_15); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getSectionAccess().getToolsKeyword_6_0());
                         
-                    otherlv_10=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_10=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getSectionAccess().getEqualsSignKeyword_6_1());
                         
-                    otherlv_11=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_11=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getSectionAccess().getLeftSquareBracketKeyword_6_2());
                         
@@ -3789,7 +3790,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt49=2;
                                 int LA49_0 = input.LA(1);
 
-                                if ( (LA49_0==22) ) {
+                                if ( (LA49_0==23) ) {
                                     alt49=1;
                                 }
 
@@ -3798,7 +3799,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1569:4: otherlv_13= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_13=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_13=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_13, grammarAccess.getSectionAccess().getCommaKeyword_6_3_1_0());
                             	        
@@ -3845,7 +3846,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_15=(Token)match(input,23,FOLLOW_22); 
+                    otherlv_15=(Token)match(input,24,FOLLOW_22); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getSectionAccess().getRightSquareBracketKeyword_6_4());
                         
@@ -3855,7 +3856,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_16=(Token)match(input,17,FOLLOW_2); 
+            otherlv_16=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_16, grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_7());
                 
@@ -4086,7 +4087,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt53=2;
             int LA53_0 = input.LA(1);
 
-            if ( (LA53_0==47) ) {
+            if ( (LA53_0==48) ) {
                 alt53=1;
             }
             switch (alt53) {
@@ -4096,7 +4097,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:1666:1: (lv_forceRefresh_1_0= '@ForceRefresh' )
                     // InternalSiriusTextDsl.g:1667:3: lv_forceRefresh_1_0= '@ForceRefresh'
                     {
-                    lv_forceRefresh_1_0=(Token)match(input,47,FOLLOW_48); 
+                    lv_forceRefresh_1_0=(Token)match(input,48,FOLLOW_48); 
 
                             newLeafNode(lv_forceRefresh_1_0, grammarAccess.getContainerCreationAccess().getForceRefreshForceRefreshKeyword_1_0());
                         
@@ -4115,11 +4116,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,48,FOLLOW_49); 
+            otherlv_2=(Token)match(input,49,FOLLOW_49); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getContainerCreationAccess().getNodeCreationVariableKeyword_2());
                 
-            otherlv_3=(Token)match(input,49,FOLLOW_10); 
+            otherlv_3=(Token)match(input,50,FOLLOW_10); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_3());
                 
@@ -4149,15 +4150,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,50,FOLLOW_51); 
+            otherlv_5=(Token)match(input,51,FOLLOW_51); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_5());
                 
-            otherlv_6=(Token)match(input,51,FOLLOW_49); 
+            otherlv_6=(Token)match(input,52,FOLLOW_49); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getContainerCreationAccess().getContainerViewVariableKeyword_6());
                 
-            otherlv_7=(Token)match(input,49,FOLLOW_10); 
+            otherlv_7=(Token)match(input,50,FOLLOW_10); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_7());
                 
@@ -4187,11 +4188,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_52); 
+            otherlv_9=(Token)match(input,51,FOLLOW_52); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_9());
                 
-            otherlv_10=(Token)match(input,52,FOLLOW_4); 
+            otherlv_10=(Token)match(input,53,FOLLOW_4); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getContainerCreationAccess().getContainerCreationKeyword_10());
                 
@@ -4225,14 +4226,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( (LA54_0==15) ) {
+            if ( (LA54_0==16) ) {
                 alt54=1;
             }
             switch (alt54) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1762:4: otherlv_12= 'as' ( (lv_label_13_0= RULE_STRING ) )
                     {
-                    otherlv_12=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_12=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getContainerCreationAccess().getAsKeyword_12_0());
                         
@@ -4272,14 +4273,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==35) ) {
+            if ( (LA55_0==36) ) {
                 alt55=1;
             }
             switch (alt55) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1784:6: otherlv_14= '?' ( (lv_precondition_15_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_14=(Token)match(input,35,FOLLOW_33); 
+                    otherlv_14=(Token)match(input,36,FOLLOW_33); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getContainerCreationAccess().getQuestionMarkKeyword_13_0());
                         
@@ -4315,7 +4316,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_16=(Token)match(input,16,FOLLOW_54); 
+            otherlv_16=(Token)match(input,17,FOLLOW_54); 
 
                 	newLeafNode(otherlv_16, grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_14());
                 
@@ -4323,18 +4324,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( (LA56_0==24) ) {
+            if ( (LA56_0==25) ) {
                 alt56=1;
             }
             switch (alt56) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1810:3: otherlv_17= 'icon' otherlv_18= '=' ( (lv_icon_19_0= RULE_STRING ) )
                     {
-                    otherlv_17=(Token)match(input,24,FOLLOW_15); 
+                    otherlv_17=(Token)match(input,25,FOLLOW_15); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getContainerCreationAccess().getIconKeyword_15_0());
                         
-                    otherlv_18=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_18=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_15_1());
                         
@@ -4370,15 +4371,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_20=(Token)match(input,53,FOLLOW_15); 
+            otherlv_20=(Token)match(input,54,FOLLOW_15); 
 
                 	newLeafNode(otherlv_20, grammarAccess.getContainerCreationAccess().getContainerMappingsKeyword_16());
                 
-            otherlv_21=(Token)match(input,20,FOLLOW_16); 
+            otherlv_21=(Token)match(input,21,FOLLOW_16); 
 
                 	newLeafNode(otherlv_21, grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_17());
                 
-            otherlv_22=(Token)match(input,21,FOLLOW_20); 
+            otherlv_22=(Token)match(input,22,FOLLOW_20); 
 
                 	newLeafNode(otherlv_22, grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_18());
                 
@@ -4427,7 +4428,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt57=2;
                         int LA57_0 = input.LA(1);
 
-                        if ( (LA57_0==22) ) {
+                        if ( (LA57_0==23) ) {
                             alt57=1;
                         }
 
@@ -4436,7 +4437,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalSiriusTextDsl.g:1863:4: otherlv_24= ',' ( ( ruleQualifiedName ) )
                     	    {
-                    	    otherlv_24=(Token)match(input,22,FOLLOW_4); 
+                    	    otherlv_24=(Token)match(input,23,FOLLOW_4); 
 
                     	        	newLeafNode(otherlv_24, grammarAccess.getContainerCreationAccess().getCommaKeyword_19_1_0());
                     	        
@@ -4483,7 +4484,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_26=(Token)match(input,23,FOLLOW_56); 
+            otherlv_26=(Token)match(input,24,FOLLOW_56); 
 
                 	newLeafNode(otherlv_26, grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_20());
                 
@@ -4491,22 +4492,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt61=2;
             int LA61_0 = input.LA(1);
 
-            if ( (LA61_0==54) ) {
+            if ( (LA61_0==55) ) {
                 alt61=1;
             }
             switch (alt61) {
                 case 1 :
                     // InternalSiriusTextDsl.g:1886:3: otherlv_27= 'extraMappings' otherlv_28= '=' otherlv_29= '[' ( ( ( ruleQualifiedName ) ) (otherlv_31= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_33= ']'
                     {
-                    otherlv_27=(Token)match(input,54,FOLLOW_15); 
+                    otherlv_27=(Token)match(input,55,FOLLOW_15); 
 
                         	newLeafNode(otherlv_27, grammarAccess.getContainerCreationAccess().getExtraMappingsKeyword_21_0());
                         
-                    otherlv_28=(Token)match(input,20,FOLLOW_16); 
+                    otherlv_28=(Token)match(input,21,FOLLOW_16); 
 
                         	newLeafNode(otherlv_28, grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_21_1());
                         
-                    otherlv_29=(Token)match(input,21,FOLLOW_20); 
+                    otherlv_29=(Token)match(input,22,FOLLOW_20); 
 
                         	newLeafNode(otherlv_29, grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_21_2());
                         
@@ -4555,7 +4556,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                                 int alt59=2;
                                 int LA59_0 = input.LA(1);
 
-                                if ( (LA59_0==22) ) {
+                                if ( (LA59_0==23) ) {
                                     alt59=1;
                                 }
 
@@ -4564,7 +4565,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // InternalSiriusTextDsl.g:1913:4: otherlv_31= ',' ( ( ruleQualifiedName ) )
                             	    {
-                            	    otherlv_31=(Token)match(input,22,FOLLOW_4); 
+                            	    otherlv_31=(Token)match(input,23,FOLLOW_4); 
 
                             	        	newLeafNode(otherlv_31, grammarAccess.getContainerCreationAccess().getCommaKeyword_21_3_1_0());
                             	        
@@ -4611,7 +4612,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_33=(Token)match(input,23,FOLLOW_57); 
+                    otherlv_33=(Token)match(input,24,FOLLOW_57); 
 
                         	newLeafNode(otherlv_33, grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_21_4());
                         
@@ -4621,11 +4622,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_34=(Token)match(input,55,FOLLOW_11); 
+            otherlv_34=(Token)match(input,56,FOLLOW_11); 
 
                 	newLeafNode(otherlv_34, grammarAccess.getContainerCreationAccess().getBeginKeyword_22());
                 
-            otherlv_35=(Token)match(input,16,FOLLOW_58); 
+            otherlv_35=(Token)match(input,17,FOLLOW_58); 
 
                 	newLeafNode(otherlv_35, grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_23());
                 
@@ -4633,7 +4634,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( (LA62_0==34||LA62_0==56||(LA62_0>=58 && LA62_0<=59)||LA62_0==62||LA62_0==64||LA62_0==67||LA62_0==70||LA62_0==73||(LA62_0>=75 && LA62_0<=76)||LA62_0==78) ) {
+            if ( (LA62_0==35||LA62_0==57||(LA62_0>=59 && LA62_0<=60)||LA62_0==63||LA62_0==65||LA62_0==68||LA62_0==71||LA62_0==74||(LA62_0>=76 && LA62_0<=77)||LA62_0==79) ) {
                 alt62=1;
             }
             switch (alt62) {
@@ -4671,11 +4672,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_37=(Token)match(input,17,FOLLOW_22); 
+            otherlv_37=(Token)match(input,18,FOLLOW_22); 
 
                 	newLeafNode(otherlv_37, grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_25());
                 
-            otherlv_38=(Token)match(input,17,FOLLOW_2); 
+            otherlv_38=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_38, grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_26());
                 
@@ -4774,62 +4775,62 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:1991:1: (this_ChangeContext_0= ruleChangeContext | this_For_1= ruleFor | this_If_2= ruleIf | this_Set_3= ruleSet | this_CreateInstance_4= ruleCreateInstance | this_CreateView_5= ruleCreateView | this_Unset_6= ruleUnset | this_CreateEdgeView_7= ruleCreateEdgeView | this_DeleteView_8= ruleDeleteView | this_Remove_9= ruleRemove | this_Move_10= ruleMove | this_Switch_11= ruleSwitch )
             int alt63=12;
             switch ( input.LA(1) ) {
-            case 56:
+            case 57:
                 {
                 alt63=1;
                 }
                 break;
-            case 34:
+            case 35:
                 {
                 alt63=2;
                 }
                 break;
-            case 58:
+            case 59:
                 {
                 alt63=3;
                 }
                 break;
-            case 59:
+            case 60:
                 {
                 alt63=4;
                 }
                 break;
-            case 64:
+            case 65:
                 {
                 alt63=5;
                 }
                 break;
-            case 67:
+            case 68:
                 {
                 alt63=6;
                 }
                 break;
-            case 62:
+            case 63:
                 {
                 alt63=7;
                 }
                 break;
-            case 70:
+            case 71:
                 {
                 alt63=8;
                 }
                 break;
-            case 73:
+            case 74:
                 {
                 alt63=9;
                 }
                 break;
-            case 75:
+            case 76:
                 {
                 alt63=10;
                 }
                 break;
-            case 76:
+            case 77:
                 {
                 alt63=11;
                 }
                 break;
-            case 78:
+            case 79:
                 {
                 alt63=12;
                 }
@@ -5137,11 +5138,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2131:1: (otherlv_0= 'changeContext' otherlv_1= '(' ( (lv_browseExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}' )? )
             // InternalSiriusTextDsl.g:2131:3: otherlv_0= 'changeContext' otherlv_1= '(' ( (lv_browseExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}' )?
             {
-            otherlv_0=(Token)match(input,56,FOLLOW_49); 
+            otherlv_0=(Token)match(input,57,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getChangeContextAccess().getChangeContextKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_33); 
+            otherlv_1=(Token)match(input,50,FOLLOW_33); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getChangeContextAccess().getLeftParenthesisKeyword_1());
                 
@@ -5171,7 +5172,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,50,FOLLOW_59); 
+            otherlv_3=(Token)match(input,51,FOLLOW_59); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getChangeContextAccess().getRightParenthesisKeyword_3());
                 
@@ -5179,14 +5180,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt65=2;
             int LA65_0 = input.LA(1);
 
-            if ( (LA65_0==16) ) {
+            if ( (LA65_0==17) ) {
                 alt65=1;
             }
             switch (alt65) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2161:3: otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}'
                     {
-                    otherlv_4=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_4=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getChangeContextAccess().getLeftCurlyBracketKeyword_4_0());
                         
@@ -5196,7 +5197,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt64=2;
                         int LA64_0 = input.LA(1);
 
-                        if ( (LA64_0==34||LA64_0==56||(LA64_0>=58 && LA64_0<=59)||LA64_0==62||LA64_0==64||LA64_0==67||LA64_0==70||LA64_0==73||(LA64_0>=75 && LA64_0<=76)||LA64_0==78) ) {
+                        if ( (LA64_0==35||LA64_0==57||(LA64_0>=59 && LA64_0<=60)||LA64_0==63||LA64_0==65||LA64_0==68||LA64_0==71||LA64_0==74||(LA64_0>=76 && LA64_0<=77)||LA64_0==79) ) {
                             alt64=1;
                         }
 
@@ -5239,7 +5240,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_6=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_6=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getChangeContextAccess().getRightCurlyBracketKeyword_4_2());
                         
@@ -5330,11 +5331,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2208:1: (otherlv_0= 'for' otherlv_1= '(' ( (lv_iteratorName_2_0= RULE_STRING ) ) otherlv_3= ':' ( (lv_expression_4_0= RULE_EXPRESSION ) ) otherlv_5= ')' otherlv_6= '{' ( (lv_body_7_0= ruleOperation ) )* otherlv_8= '}' )
             // InternalSiriusTextDsl.g:2208:3: otherlv_0= 'for' otherlv_1= '(' ( (lv_iteratorName_2_0= RULE_STRING ) ) otherlv_3= ':' ( (lv_expression_4_0= RULE_EXPRESSION ) ) otherlv_5= ')' otherlv_6= '{' ( (lv_body_7_0= ruleOperation ) )* otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_49); 
+            otherlv_0=(Token)match(input,35,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getForAccess().getForKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_10); 
+            otherlv_1=(Token)match(input,50,FOLLOW_10); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getForAccess().getLeftParenthesisKeyword_1());
                 
@@ -5364,7 +5365,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,57,FOLLOW_33); 
+            otherlv_3=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getForAccess().getColonKeyword_3());
                 
@@ -5394,11 +5395,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,50,FOLLOW_11); 
+            otherlv_5=(Token)match(input,51,FOLLOW_11); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getForAccess().getRightParenthesisKeyword_5());
                 
-            otherlv_6=(Token)match(input,16,FOLLOW_58); 
+            otherlv_6=(Token)match(input,17,FOLLOW_58); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getForAccess().getLeftCurlyBracketKeyword_6());
                 
@@ -5408,7 +5409,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt66=2;
                 int LA66_0 = input.LA(1);
 
-                if ( (LA66_0==34||LA66_0==56||(LA66_0>=58 && LA66_0<=59)||LA66_0==62||LA66_0==64||LA66_0==67||LA66_0==70||LA66_0==73||(LA66_0>=75 && LA66_0<=76)||LA66_0==78) ) {
+                if ( (LA66_0==35||LA66_0==57||(LA66_0>=59 && LA66_0<=60)||LA66_0==63||LA66_0==65||LA66_0==68||LA66_0==71||LA66_0==74||(LA66_0>=76 && LA66_0<=77)||LA66_0==79) ) {
                     alt66=1;
                 }
 
@@ -5451,7 +5452,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,17,FOLLOW_2); 
+            otherlv_8=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getForAccess().getRightCurlyBracketKeyword_8());
                 
@@ -5534,11 +5535,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2307:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_conditionExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}' )
             // InternalSiriusTextDsl.g:2307:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_conditionExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_49); 
+            otherlv_0=(Token)match(input,59,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIfAccess().getIfKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_33); 
+            otherlv_1=(Token)match(input,50,FOLLOW_33); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getIfAccess().getLeftParenthesisKeyword_1());
                 
@@ -5568,11 +5569,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,50,FOLLOW_11); 
+            otherlv_3=(Token)match(input,51,FOLLOW_11); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getIfAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_4=(Token)match(input,16,FOLLOW_58); 
+            otherlv_4=(Token)match(input,17,FOLLOW_58); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -5582,7 +5583,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt67=2;
                 int LA67_0 = input.LA(1);
 
-                if ( (LA67_0==34||LA67_0==56||(LA67_0>=58 && LA67_0<=59)||LA67_0==62||LA67_0==64||LA67_0==67||LA67_0==70||LA67_0==73||(LA67_0>=75 && LA67_0<=76)||LA67_0==78) ) {
+                if ( (LA67_0==35||LA67_0==57||(LA67_0>=59 && LA67_0<=60)||LA67_0==63||LA67_0==65||LA67_0==68||LA67_0==71||LA67_0==74||(LA67_0>=76 && LA67_0<=77)||LA67_0==79) ) {
                     alt67=1;
                 }
 
@@ -5625,7 +5626,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_2); 
+            otherlv_6=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getIfAccess().getRightCurlyBracketKeyword_6());
                 
@@ -5714,19 +5715,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2384:1: (otherlv_0= 'set' otherlv_1= '(' otherlv_2= 'featureName' otherlv_3= ':' ( (lv_featureName_4_0= RULE_STRING ) ) otherlv_5= ',' otherlv_6= 'valueExpression' otherlv_7= ':' ( (lv_valueExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )? )
             // InternalSiriusTextDsl.g:2384:3: otherlv_0= 'set' otherlv_1= '(' otherlv_2= 'featureName' otherlv_3= ':' ( (lv_featureName_4_0= RULE_STRING ) ) otherlv_5= ',' otherlv_6= 'valueExpression' otherlv_7= ':' ( (lv_valueExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )?
             {
-            otherlv_0=(Token)match(input,59,FOLLOW_49); 
+            otherlv_0=(Token)match(input,60,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSetAccess().getSetKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_61); 
+            otherlv_1=(Token)match(input,50,FOLLOW_61); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSetAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,60,FOLLOW_60); 
+            otherlv_2=(Token)match(input,61,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getSetAccess().getFeatureNameKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_10); 
+            otherlv_3=(Token)match(input,58,FOLLOW_10); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSetAccess().getColonKeyword_3());
                 
@@ -5756,15 +5757,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_63); 
+            otherlv_5=(Token)match(input,23,FOLLOW_63); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getSetAccess().getCommaKeyword_5());
                 
-            otherlv_6=(Token)match(input,61,FOLLOW_60); 
+            otherlv_6=(Token)match(input,62,FOLLOW_60); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getSetAccess().getValueExpressionKeyword_6());
                 
-            otherlv_7=(Token)match(input,57,FOLLOW_33); 
+            otherlv_7=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getSetAccess().getColonKeyword_7());
                 
@@ -5794,7 +5795,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_59); 
+            otherlv_9=(Token)match(input,51,FOLLOW_59); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getSetAccess().getRightParenthesisKeyword_9());
                 
@@ -5802,14 +5803,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt69=2;
             int LA69_0 = input.LA(1);
 
-            if ( (LA69_0==16) ) {
+            if ( (LA69_0==17) ) {
                 alt69=1;
             }
             switch (alt69) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2452:3: otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}'
                     {
-                    otherlv_10=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_10=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getSetAccess().getLeftCurlyBracketKeyword_10_0());
                         
@@ -5819,7 +5820,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt68=2;
                         int LA68_0 = input.LA(1);
 
-                        if ( (LA68_0==34||LA68_0==56||(LA68_0>=58 && LA68_0<=59)||LA68_0==62||LA68_0==64||LA68_0==67||LA68_0==70||LA68_0==73||(LA68_0>=75 && LA68_0<=76)||LA68_0==78) ) {
+                        if ( (LA68_0==35||LA68_0==57||(LA68_0>=59 && LA68_0<=60)||LA68_0==63||LA68_0==65||LA68_0==68||LA68_0==71||LA68_0==74||(LA68_0>=76 && LA68_0<=77)||LA68_0==79) ) {
                             alt68=1;
                         }
 
@@ -5862,7 +5863,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_12=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getSetAccess().getRightCurlyBracketKeyword_10_2());
                         
@@ -5957,19 +5958,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2499:1: (otherlv_0= 'unset' otherlv_1= '(' otherlv_2= 'featureName' otherlv_3= ':' ( (lv_featureName_4_0= RULE_STRING ) ) (otherlv_5= ',' otherlv_6= 'elementExpression' otherlv_7= ':' ( (lv_elementExpression_8_0= RULE_EXPRESSION ) ) )? otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )? )
             // InternalSiriusTextDsl.g:2499:3: otherlv_0= 'unset' otherlv_1= '(' otherlv_2= 'featureName' otherlv_3= ':' ( (lv_featureName_4_0= RULE_STRING ) ) (otherlv_5= ',' otherlv_6= 'elementExpression' otherlv_7= ':' ( (lv_elementExpression_8_0= RULE_EXPRESSION ) ) )? otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )?
             {
-            otherlv_0=(Token)match(input,62,FOLLOW_49); 
+            otherlv_0=(Token)match(input,63,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getUnsetAccess().getUnsetKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_61); 
+            otherlv_1=(Token)match(input,50,FOLLOW_61); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getUnsetAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,60,FOLLOW_60); 
+            otherlv_2=(Token)match(input,61,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getUnsetAccess().getFeatureNameKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_10); 
+            otherlv_3=(Token)match(input,58,FOLLOW_10); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getUnsetAccess().getColonKeyword_3());
                 
@@ -6003,22 +6004,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt70=2;
             int LA70_0 = input.LA(1);
 
-            if ( (LA70_0==22) ) {
+            if ( (LA70_0==23) ) {
                 alt70=1;
             }
             switch (alt70) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2533:4: otherlv_5= ',' otherlv_6= 'elementExpression' otherlv_7= ':' ( (lv_elementExpression_8_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_5=(Token)match(input,22,FOLLOW_65); 
+                    otherlv_5=(Token)match(input,23,FOLLOW_65); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getUnsetAccess().getCommaKeyword_5_0());
                         
-                    otherlv_6=(Token)match(input,63,FOLLOW_60); 
+                    otherlv_6=(Token)match(input,64,FOLLOW_60); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getUnsetAccess().getElementExpressionKeyword_5_1());
                         
-                    otherlv_7=(Token)match(input,57,FOLLOW_33); 
+                    otherlv_7=(Token)match(input,58,FOLLOW_33); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getUnsetAccess().getColonKeyword_5_2());
                         
@@ -6054,7 +6055,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_59); 
+            otherlv_9=(Token)match(input,51,FOLLOW_59); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getUnsetAccess().getRightParenthesisKeyword_6());
                 
@@ -6062,14 +6063,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt72=2;
             int LA72_0 = input.LA(1);
 
-            if ( (LA72_0==16) ) {
+            if ( (LA72_0==17) ) {
                 alt72=1;
             }
             switch (alt72) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2567:3: otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}'
                     {
-                    otherlv_10=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_10=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getUnsetAccess().getLeftCurlyBracketKeyword_7_0());
                         
@@ -6079,7 +6080,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt71=2;
                         int LA71_0 = input.LA(1);
 
-                        if ( (LA71_0==34||LA71_0==56||(LA71_0>=58 && LA71_0<=59)||LA71_0==62||LA71_0==64||LA71_0==67||LA71_0==70||LA71_0==73||(LA71_0>=75 && LA71_0<=76)||LA71_0==78) ) {
+                        if ( (LA71_0==35||LA71_0==57||(LA71_0>=59 && LA71_0<=60)||LA71_0==63||LA71_0==65||LA71_0==68||LA71_0==71||LA71_0==74||(LA71_0>=76 && LA71_0<=77)||LA71_0==79) ) {
                             alt71=1;
                         }
 
@@ -6122,7 +6123,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_12=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getUnsetAccess().getRightCurlyBracketKeyword_7_2());
                         
@@ -6219,19 +6220,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2614:1: (otherlv_0= 'createInstance' otherlv_1= '(' otherlv_2= 'referenceName' otherlv_3= ':' ( (lv_referenceName_4_0= RULE_STRING ) ) otherlv_5= ',' otherlv_6= 'type' otherlv_7= ':' ( (lv_type_8_0= RULE_STRING ) ) otherlv_9= ')' otherlv_10= 'as' ( (lv_variableName_11_0= RULE_STRING ) ) (otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}' )? )
             // InternalSiriusTextDsl.g:2614:3: otherlv_0= 'createInstance' otherlv_1= '(' otherlv_2= 'referenceName' otherlv_3= ':' ( (lv_referenceName_4_0= RULE_STRING ) ) otherlv_5= ',' otherlv_6= 'type' otherlv_7= ':' ( (lv_type_8_0= RULE_STRING ) ) otherlv_9= ')' otherlv_10= 'as' ( (lv_variableName_11_0= RULE_STRING ) ) (otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}' )?
             {
-            otherlv_0=(Token)match(input,64,FOLLOW_49); 
+            otherlv_0=(Token)match(input,65,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCreateInstanceAccess().getCreateInstanceKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_66); 
+            otherlv_1=(Token)match(input,50,FOLLOW_66); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCreateInstanceAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,65,FOLLOW_60); 
+            otherlv_2=(Token)match(input,66,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCreateInstanceAccess().getReferenceNameKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_10); 
+            otherlv_3=(Token)match(input,58,FOLLOW_10); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCreateInstanceAccess().getColonKeyword_3());
                 
@@ -6261,15 +6262,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_67); 
+            otherlv_5=(Token)match(input,23,FOLLOW_67); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCreateInstanceAccess().getCommaKeyword_5());
                 
-            otherlv_6=(Token)match(input,66,FOLLOW_60); 
+            otherlv_6=(Token)match(input,67,FOLLOW_60); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getCreateInstanceAccess().getTypeKeyword_6());
                 
-            otherlv_7=(Token)match(input,57,FOLLOW_10); 
+            otherlv_7=(Token)match(input,58,FOLLOW_10); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getCreateInstanceAccess().getColonKeyword_7());
                 
@@ -6299,11 +6300,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_68); 
+            otherlv_9=(Token)match(input,51,FOLLOW_68); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getCreateInstanceAccess().getRightParenthesisKeyword_9());
                 
-            otherlv_10=(Token)match(input,15,FOLLOW_10); 
+            otherlv_10=(Token)match(input,16,FOLLOW_10); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getCreateInstanceAccess().getAsKeyword_10());
                 
@@ -6337,14 +6338,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt74=2;
             int LA74_0 = input.LA(1);
 
-            if ( (LA74_0==16) ) {
+            if ( (LA74_0==17) ) {
                 alt74=1;
             }
             switch (alt74) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2704:4: otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}'
                     {
-                    otherlv_12=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_12=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getCreateInstanceAccess().getLeftCurlyBracketKeyword_12_0());
                         
@@ -6354,7 +6355,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt73=2;
                         int LA73_0 = input.LA(1);
 
-                        if ( (LA73_0==34||LA73_0==56||(LA73_0>=58 && LA73_0<=59)||LA73_0==62||LA73_0==64||LA73_0==67||LA73_0==70||LA73_0==73||(LA73_0>=75 && LA73_0<=76)||LA73_0==78) ) {
+                        if ( (LA73_0==35||LA73_0==57||(LA73_0>=59 && LA73_0<=60)||LA73_0==63||LA73_0==65||LA73_0==68||LA73_0==71||LA73_0==74||(LA73_0>=76 && LA73_0<=77)||LA73_0==79) ) {
                             alt73=1;
                         }
 
@@ -6397,7 +6398,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_14=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getCreateInstanceAccess().getRightCurlyBracketKeyword_12_2());
                         
@@ -6493,19 +6494,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2751:1: (otherlv_0= 'createView' otherlv_1= '(' otherlv_2= 'mapping' otherlv_3= ':' ( ( ruleQualifiedName ) ) otherlv_5= ',' otherlv_6= 'containerViewExpression' otherlv_7= ':' ( (lv_containerViewExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ')' otherlv_10= 'as' ( (lv_variableName_11_0= RULE_STRING ) ) (otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}' )? )
             // InternalSiriusTextDsl.g:2751:3: otherlv_0= 'createView' otherlv_1= '(' otherlv_2= 'mapping' otherlv_3= ':' ( ( ruleQualifiedName ) ) otherlv_5= ',' otherlv_6= 'containerViewExpression' otherlv_7= ':' ( (lv_containerViewExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ')' otherlv_10= 'as' ( (lv_variableName_11_0= RULE_STRING ) ) (otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}' )?
             {
-            otherlv_0=(Token)match(input,67,FOLLOW_49); 
+            otherlv_0=(Token)match(input,68,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCreateViewAccess().getCreateViewKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_69); 
+            otherlv_1=(Token)match(input,50,FOLLOW_69); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCreateViewAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,68,FOLLOW_60); 
+            otherlv_2=(Token)match(input,69,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCreateViewAccess().getMappingKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_4); 
+            otherlv_3=(Token)match(input,58,FOLLOW_4); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCreateViewAccess().getColonKeyword_3());
                 
@@ -6537,15 +6538,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_70); 
+            otherlv_5=(Token)match(input,23,FOLLOW_70); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCreateViewAccess().getCommaKeyword_5());
                 
-            otherlv_6=(Token)match(input,69,FOLLOW_60); 
+            otherlv_6=(Token)match(input,70,FOLLOW_60); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getCreateViewAccess().getContainerViewExpressionKeyword_6());
                 
-            otherlv_7=(Token)match(input,57,FOLLOW_33); 
+            otherlv_7=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getCreateViewAccess().getColonKeyword_7());
                 
@@ -6575,11 +6576,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_68); 
+            otherlv_9=(Token)match(input,51,FOLLOW_68); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getCreateViewAccess().getRightParenthesisKeyword_9());
                 
-            otherlv_10=(Token)match(input,15,FOLLOW_10); 
+            otherlv_10=(Token)match(input,16,FOLLOW_10); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getCreateViewAccess().getAsKeyword_10());
                 
@@ -6613,14 +6614,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt76=2;
             int LA76_0 = input.LA(1);
 
-            if ( (LA76_0==16) ) {
+            if ( (LA76_0==17) ) {
                 alt76=1;
             }
             switch (alt76) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2838:4: otherlv_12= '{' ( (lv_body_13_0= ruleOperation ) )* otherlv_14= '}'
                     {
-                    otherlv_12=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_12=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getCreateViewAccess().getLeftCurlyBracketKeyword_12_0());
                         
@@ -6630,7 +6631,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt75=2;
                         int LA75_0 = input.LA(1);
 
-                        if ( (LA75_0==34||LA75_0==56||(LA75_0>=58 && LA75_0<=59)||LA75_0==62||LA75_0==64||LA75_0==67||LA75_0==70||LA75_0==73||(LA75_0>=75 && LA75_0<=76)||LA75_0==78) ) {
+                        if ( (LA75_0==35||LA75_0==57||(LA75_0>=59 && LA75_0<=60)||LA75_0==63||LA75_0==65||LA75_0==68||LA75_0==71||LA75_0==74||(LA75_0>=76 && LA75_0<=77)||LA75_0==79) ) {
                             alt75=1;
                         }
 
@@ -6673,7 +6674,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_14=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getCreateViewAccess().getRightCurlyBracketKeyword_12_2());
                         
@@ -6777,19 +6778,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:2885:1: (otherlv_0= 'createEdgeView' otherlv_1= '(' otherlv_2= 'mapping' otherlv_3= ':' ( ( ruleQualifiedName ) ) otherlv_5= ',' otherlv_6= 'sourceExpression' otherlv_7= ':' ( (lv_sourceExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ',' otherlv_10= 'targetExpression' otherlv_11= ':' ( (lv_targetExpression_12_0= RULE_EXPRESSION ) ) otherlv_13= ',' otherlv_14= 'containerViewExpression' otherlv_15= ':' ( (lv_containerViewExpression_16_0= RULE_EXPRESSION ) ) otherlv_17= ')' otherlv_18= 'as' ( (lv_variableName_19_0= RULE_STRING ) ) (otherlv_20= '{' ( (lv_body_21_0= ruleOperation ) )* otherlv_22= '}' )? )
             // InternalSiriusTextDsl.g:2885:3: otherlv_0= 'createEdgeView' otherlv_1= '(' otherlv_2= 'mapping' otherlv_3= ':' ( ( ruleQualifiedName ) ) otherlv_5= ',' otherlv_6= 'sourceExpression' otherlv_7= ':' ( (lv_sourceExpression_8_0= RULE_EXPRESSION ) ) otherlv_9= ',' otherlv_10= 'targetExpression' otherlv_11= ':' ( (lv_targetExpression_12_0= RULE_EXPRESSION ) ) otherlv_13= ',' otherlv_14= 'containerViewExpression' otherlv_15= ':' ( (lv_containerViewExpression_16_0= RULE_EXPRESSION ) ) otherlv_17= ')' otherlv_18= 'as' ( (lv_variableName_19_0= RULE_STRING ) ) (otherlv_20= '{' ( (lv_body_21_0= ruleOperation ) )* otherlv_22= '}' )?
             {
-            otherlv_0=(Token)match(input,70,FOLLOW_49); 
+            otherlv_0=(Token)match(input,71,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCreateEdgeViewAccess().getCreateEdgeViewKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_69); 
+            otherlv_1=(Token)match(input,50,FOLLOW_69); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCreateEdgeViewAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,68,FOLLOW_60); 
+            otherlv_2=(Token)match(input,69,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCreateEdgeViewAccess().getMappingKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_4); 
+            otherlv_3=(Token)match(input,58,FOLLOW_4); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCreateEdgeViewAccess().getColonKeyword_3());
                 
@@ -6821,15 +6822,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_71); 
+            otherlv_5=(Token)match(input,23,FOLLOW_71); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_5());
                 
-            otherlv_6=(Token)match(input,71,FOLLOW_60); 
+            otherlv_6=(Token)match(input,72,FOLLOW_60); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getCreateEdgeViewAccess().getSourceExpressionKeyword_6());
                 
-            otherlv_7=(Token)match(input,57,FOLLOW_33); 
+            otherlv_7=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getCreateEdgeViewAccess().getColonKeyword_7());
                 
@@ -6859,15 +6860,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,22,FOLLOW_72); 
+            otherlv_9=(Token)match(input,23,FOLLOW_72); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_9());
                 
-            otherlv_10=(Token)match(input,72,FOLLOW_60); 
+            otherlv_10=(Token)match(input,73,FOLLOW_60); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getCreateEdgeViewAccess().getTargetExpressionKeyword_10());
                 
-            otherlv_11=(Token)match(input,57,FOLLOW_33); 
+            otherlv_11=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getCreateEdgeViewAccess().getColonKeyword_11());
                 
@@ -6897,15 +6898,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,22,FOLLOW_70); 
+            otherlv_13=(Token)match(input,23,FOLLOW_70); 
 
                 	newLeafNode(otherlv_13, grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_13());
                 
-            otherlv_14=(Token)match(input,69,FOLLOW_60); 
+            otherlv_14=(Token)match(input,70,FOLLOW_60); 
 
                 	newLeafNode(otherlv_14, grammarAccess.getCreateEdgeViewAccess().getContainerViewExpressionKeyword_14());
                 
-            otherlv_15=(Token)match(input,57,FOLLOW_33); 
+            otherlv_15=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_15, grammarAccess.getCreateEdgeViewAccess().getColonKeyword_15());
                 
@@ -6935,11 +6936,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_17=(Token)match(input,50,FOLLOW_68); 
+            otherlv_17=(Token)match(input,51,FOLLOW_68); 
 
                 	newLeafNode(otherlv_17, grammarAccess.getCreateEdgeViewAccess().getRightParenthesisKeyword_17());
                 
-            otherlv_18=(Token)match(input,15,FOLLOW_10); 
+            otherlv_18=(Token)match(input,16,FOLLOW_10); 
 
                 	newLeafNode(otherlv_18, grammarAccess.getCreateEdgeViewAccess().getAsKeyword_18());
                 
@@ -6973,14 +6974,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt78=2;
             int LA78_0 = input.LA(1);
 
-            if ( (LA78_0==16) ) {
+            if ( (LA78_0==17) ) {
                 alt78=1;
             }
             switch (alt78) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3032:4: otherlv_20= '{' ( (lv_body_21_0= ruleOperation ) )* otherlv_22= '}'
                     {
-                    otherlv_20=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_20=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getCreateEdgeViewAccess().getLeftCurlyBracketKeyword_20_0());
                         
@@ -6990,7 +6991,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt77=2;
                         int LA77_0 = input.LA(1);
 
-                        if ( (LA77_0==34||LA77_0==56||(LA77_0>=58 && LA77_0<=59)||LA77_0==62||LA77_0==64||LA77_0==67||LA77_0==70||LA77_0==73||(LA77_0>=75 && LA77_0<=76)||LA77_0==78) ) {
+                        if ( (LA77_0==35||LA77_0==57||(LA77_0>=59 && LA77_0<=60)||LA77_0==63||LA77_0==65||LA77_0==68||LA77_0==71||LA77_0==74||(LA77_0>=76 && LA77_0<=77)||LA77_0==79) ) {
                             alt77=1;
                         }
 
@@ -7033,7 +7034,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_22=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_22=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_22, grammarAccess.getCreateEdgeViewAccess().getRightCurlyBracketKeyword_20_2());
                         
@@ -7131,11 +7132,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,73,FOLLOW_73); 
+            otherlv_1=(Token)match(input,74,FOLLOW_73); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDeleteViewAccess().getDeleteViewKeyword_1());
                 
-            otherlv_2=(Token)match(input,74,FOLLOW_59); 
+            otherlv_2=(Token)match(input,75,FOLLOW_59); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDeleteViewAccess().getLeftParenthesisRightParenthesisKeyword_2());
                 
@@ -7143,14 +7144,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt80=2;
             int LA80_0 = input.LA(1);
 
-            if ( (LA80_0==16) ) {
+            if ( (LA80_0==17) ) {
                 alt80=1;
             }
             switch (alt80) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3093:3: otherlv_3= '{' ( (lv_body_4_0= ruleOperation ) )* otherlv_5= '}'
                     {
-                    otherlv_3=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_3=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getDeleteViewAccess().getLeftCurlyBracketKeyword_3_0());
                         
@@ -7160,7 +7161,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt79=2;
                         int LA79_0 = input.LA(1);
 
-                        if ( (LA79_0==34||LA79_0==56||(LA79_0>=58 && LA79_0<=59)||LA79_0==62||LA79_0==64||LA79_0==67||LA79_0==70||LA79_0==73||(LA79_0>=75 && LA79_0<=76)||LA79_0==78) ) {
+                        if ( (LA79_0==35||LA79_0==57||(LA79_0>=59 && LA79_0<=60)||LA79_0==63||LA79_0==65||LA79_0==68||LA79_0==71||LA79_0==74||(LA79_0>=76 && LA79_0<=77)||LA79_0==79) ) {
                             alt79=1;
                         }
 
@@ -7203,7 +7204,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getDeleteViewAccess().getRightCurlyBracketKeyword_3_2());
                         
@@ -7301,11 +7302,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,75,FOLLOW_73); 
+            otherlv_1=(Token)match(input,76,FOLLOW_73); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRemoveAccess().getRemoveKeyword_1());
                 
-            otherlv_2=(Token)match(input,74,FOLLOW_59); 
+            otherlv_2=(Token)match(input,75,FOLLOW_59); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRemoveAccess().getLeftParenthesisRightParenthesisKeyword_2());
                 
@@ -7313,14 +7314,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt82=2;
             int LA82_0 = input.LA(1);
 
-            if ( (LA82_0==16) ) {
+            if ( (LA82_0==17) ) {
                 alt82=1;
             }
             switch (alt82) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3154:3: otherlv_3= '{' ( (lv_body_4_0= ruleOperation ) )* otherlv_5= '}'
                     {
-                    otherlv_3=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_3=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRemoveAccess().getLeftCurlyBracketKeyword_3_0());
                         
@@ -7330,7 +7331,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt81=2;
                         int LA81_0 = input.LA(1);
 
-                        if ( (LA81_0==34||LA81_0==56||(LA81_0>=58 && LA81_0<=59)||LA81_0==62||LA81_0==64||LA81_0==67||LA81_0==70||LA81_0==73||(LA81_0>=75 && LA81_0<=76)||LA81_0==78) ) {
+                        if ( (LA81_0==35||LA81_0==57||(LA81_0>=59 && LA81_0<=60)||LA81_0==63||LA81_0==65||LA81_0==68||LA81_0==71||LA81_0==74||(LA81_0>=76 && LA81_0<=77)||LA81_0==79) ) {
                             alt81=1;
                         }
 
@@ -7373,7 +7374,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getRemoveAccess().getRightCurlyBracketKeyword_3_2());
                         
@@ -7468,19 +7469,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:3201:1: (otherlv_0= 'move' otherlv_1= '(' otherlv_2= 'newContainerExpression' otherlv_3= ':' ( (lv_newContainerExpression_4_0= RULE_EXPRESSION ) ) otherlv_5= ',' otherlv_6= 'featureName' otherlv_7= ':' ( (lv_featureName_8_0= RULE_STRING ) ) otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )? )
             // InternalSiriusTextDsl.g:3201:3: otherlv_0= 'move' otherlv_1= '(' otherlv_2= 'newContainerExpression' otherlv_3= ':' ( (lv_newContainerExpression_4_0= RULE_EXPRESSION ) ) otherlv_5= ',' otherlv_6= 'featureName' otherlv_7= ':' ( (lv_featureName_8_0= RULE_STRING ) ) otherlv_9= ')' (otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}' )?
             {
-            otherlv_0=(Token)match(input,76,FOLLOW_49); 
+            otherlv_0=(Token)match(input,77,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMoveAccess().getMoveKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_74); 
+            otherlv_1=(Token)match(input,50,FOLLOW_74); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMoveAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,77,FOLLOW_60); 
+            otherlv_2=(Token)match(input,78,FOLLOW_60); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getMoveAccess().getNewContainerExpressionKeyword_2());
                 
-            otherlv_3=(Token)match(input,57,FOLLOW_33); 
+            otherlv_3=(Token)match(input,58,FOLLOW_33); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getMoveAccess().getColonKeyword_3());
                 
@@ -7510,15 +7511,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_61); 
+            otherlv_5=(Token)match(input,23,FOLLOW_61); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getMoveAccess().getCommaKeyword_5());
                 
-            otherlv_6=(Token)match(input,60,FOLLOW_60); 
+            otherlv_6=(Token)match(input,61,FOLLOW_60); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getMoveAccess().getFeatureNameKeyword_6());
                 
-            otherlv_7=(Token)match(input,57,FOLLOW_10); 
+            otherlv_7=(Token)match(input,58,FOLLOW_10); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getMoveAccess().getColonKeyword_7());
                 
@@ -7548,7 +7549,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,50,FOLLOW_59); 
+            otherlv_9=(Token)match(input,51,FOLLOW_59); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getMoveAccess().getRightParenthesisKeyword_9());
                 
@@ -7556,14 +7557,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt84=2;
             int LA84_0 = input.LA(1);
 
-            if ( (LA84_0==16) ) {
+            if ( (LA84_0==17) ) {
                 alt84=1;
             }
             switch (alt84) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3269:3: otherlv_10= '{' ( (lv_body_11_0= ruleOperation ) )* otherlv_12= '}'
                     {
-                    otherlv_10=(Token)match(input,16,FOLLOW_58); 
+                    otherlv_10=(Token)match(input,17,FOLLOW_58); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getMoveAccess().getLeftCurlyBracketKeyword_10_0());
                         
@@ -7573,7 +7574,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt83=2;
                         int LA83_0 = input.LA(1);
 
-                        if ( (LA83_0==34||LA83_0==56||(LA83_0>=58 && LA83_0<=59)||LA83_0==62||LA83_0==64||LA83_0==67||LA83_0==70||LA83_0==73||(LA83_0>=75 && LA83_0<=76)||LA83_0==78) ) {
+                        if ( (LA83_0==35||LA83_0==57||(LA83_0>=59 && LA83_0<=60)||LA83_0==63||LA83_0==65||LA83_0==68||LA83_0==71||LA83_0==74||(LA83_0>=76 && LA83_0<=77)||LA83_0==79) ) {
                             alt83=1;
                         }
 
@@ -7616,7 +7617,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_12=(Token)match(input,18,FOLLOW_2); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getMoveAccess().getRightCurlyBracketKeyword_10_2());
                         
@@ -7704,11 +7705,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:3316:1: (otherlv_0= 'switch' otherlv_1= '{' ( (lv_cases_2_0= ruleCase ) )+ ( (lv_default_3_0= ruleDefault ) )? otherlv_4= '}' )
             // InternalSiriusTextDsl.g:3316:3: otherlv_0= 'switch' otherlv_1= '{' ( (lv_cases_2_0= ruleCase ) )+ ( (lv_default_3_0= ruleDefault ) )? otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,78,FOLLOW_11); 
+            otherlv_0=(Token)match(input,79,FOLLOW_11); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSwitchAccess().getSwitchKeyword_0());
                 
-            otherlv_1=(Token)match(input,16,FOLLOW_75); 
+            otherlv_1=(Token)match(input,17,FOLLOW_75); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSwitchAccess().getLeftCurlyBracketKeyword_1());
                 
@@ -7719,7 +7720,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt85=2;
                 int LA85_0 = input.LA(1);
 
-                if ( (LA85_0==79) ) {
+                if ( (LA85_0==80) ) {
                     alt85=1;
                 }
 
@@ -7770,7 +7771,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt86=2;
             int LA86_0 = input.LA(1);
 
-            if ( (LA86_0==80) ) {
+            if ( (LA86_0==81) ) {
                 alt86=1;
             }
             switch (alt86) {
@@ -7808,7 +7809,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_2); 
+            otherlv_4=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getSwitchAccess().getRightCurlyBracketKeyword_4());
                 
@@ -7891,11 +7892,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:3385:1: (otherlv_0= 'case' otherlv_1= '(' ( (lv_conditionExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}' )
             // InternalSiriusTextDsl.g:3385:3: otherlv_0= 'case' otherlv_1= '(' ( (lv_conditionExpression_2_0= RULE_EXPRESSION ) ) otherlv_3= ')' otherlv_4= '{' ( (lv_body_5_0= ruleOperation ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,79,FOLLOW_49); 
+            otherlv_0=(Token)match(input,80,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCaseAccess().getCaseKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_33); 
+            otherlv_1=(Token)match(input,50,FOLLOW_33); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCaseAccess().getLeftParenthesisKeyword_1());
                 
@@ -7925,11 +7926,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,50,FOLLOW_11); 
+            otherlv_3=(Token)match(input,51,FOLLOW_11); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCaseAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_4=(Token)match(input,16,FOLLOW_58); 
+            otherlv_4=(Token)match(input,17,FOLLOW_58); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getCaseAccess().getLeftCurlyBracketKeyword_4());
                 
@@ -7939,7 +7940,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt87=2;
                 int LA87_0 = input.LA(1);
 
-                if ( (LA87_0==34||LA87_0==56||(LA87_0>=58 && LA87_0<=59)||LA87_0==62||LA87_0==64||LA87_0==67||LA87_0==70||LA87_0==73||(LA87_0>=75 && LA87_0<=76)||LA87_0==78) ) {
+                if ( (LA87_0==35||LA87_0==57||(LA87_0>=59 && LA87_0<=60)||LA87_0==63||LA87_0==65||LA87_0==68||LA87_0==71||LA87_0==74||(LA87_0>=76 && LA87_0<=77)||LA87_0==79) ) {
                     alt87=1;
                 }
 
@@ -7982,7 +7983,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_2); 
+            otherlv_6=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getCaseAccess().getRightCurlyBracketKeyword_6());
                 
@@ -8073,11 +8074,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,80,FOLLOW_11); 
+            otherlv_1=(Token)match(input,81,FOLLOW_11); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDefaultAccess().getDefaultKeyword_1());
                 
-            otherlv_2=(Token)match(input,16,FOLLOW_58); 
+            otherlv_2=(Token)match(input,17,FOLLOW_58); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDefaultAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -8087,7 +8088,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt88=2;
                 int LA88_0 = input.LA(1);
 
-                if ( (LA88_0==34||LA88_0==56||(LA88_0>=58 && LA88_0<=59)||LA88_0==62||LA88_0==64||LA88_0==67||LA88_0==70||LA88_0==73||(LA88_0>=75 && LA88_0<=76)||LA88_0==78) ) {
+                if ( (LA88_0==35||LA88_0==57||(LA88_0>=59 && LA88_0<=60)||LA88_0==63||LA88_0==65||LA88_0==68||LA88_0==71||LA88_0==74||(LA88_0>=76 && LA88_0<=77)||LA88_0==79) ) {
                     alt88=1;
                 }
 
@@ -8130,7 +8131,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,17,FOLLOW_2); 
+            otherlv_4=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getDefaultAccess().getRightCurlyBracketKeyword_4());
                 
@@ -8343,7 +8344,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt90=2;
             int LA90_0 = input.LA(1);
 
-            if ( (LA90_0==81) ) {
+            if ( (LA90_0==82) ) {
                 alt90=1;
             }
             switch (alt90) {
@@ -8353,7 +8354,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:3568:1: (lv_list_1_0= 'list' )
                     // InternalSiriusTextDsl.g:3569:3: lv_list_1_0= 'list'
                     {
-                    lv_list_1_0=(Token)match(input,81,FOLLOW_78); 
+                    lv_list_1_0=(Token)match(input,82,FOLLOW_78); 
 
                             newLeafNode(lv_list_1_0, grammarAccess.getContainerAccess().getListListKeyword_1_0());
                         
@@ -8372,7 +8373,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,82,FOLLOW_4); 
+            otherlv_2=(Token)match(input,83,FOLLOW_4); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getContainerAccess().getContainerKeyword_2());
                 
@@ -8406,14 +8407,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt91=2;
             int LA91_0 = input.LA(1);
 
-            if ( (LA91_0==15) ) {
+            if ( (LA91_0==16) ) {
                 alt91=1;
             }
             switch (alt91) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3604:4: otherlv_4= 'as' ( (lv_label_5_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_4=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getContainerAccess().getAsKeyword_4_0());
                         
@@ -8449,7 +8450,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,34,FOLLOW_10); 
+            otherlv_6=(Token)match(input,35,FOLLOW_10); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getContainerAccess().getForKeyword_5());
                 
@@ -8479,7 +8480,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,83,FOLLOW_4); 
+            otherlv_8=(Token)match(input,84,FOLLOW_4); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getContainerAccess().getStyleKeyword_7());
                 
@@ -8515,14 +8516,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt92=2;
             int LA92_0 = input.LA(1);
 
-            if ( (LA92_0==35) ) {
+            if ( (LA92_0==36) ) {
                 alt92=1;
             }
             switch (alt92) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3667:4: otherlv_10= '?' ( (lv_precondition_11_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_10=(Token)match(input,35,FOLLOW_33); 
+                    otherlv_10=(Token)match(input,36,FOLLOW_33); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getContainerAccess().getQuestionMarkKeyword_9_0());
                         
@@ -8558,7 +8559,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,16,FOLLOW_80); 
+            otherlv_12=(Token)match(input,17,FOLLOW_80); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_10());
                 
@@ -8566,18 +8567,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt93=2;
             int LA93_0 = input.LA(1);
 
-            if ( (LA93_0==84) ) {
+            if ( (LA93_0==85) ) {
                 alt93=1;
             }
             switch (alt93) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3693:3: otherlv_13= 'semanticCandidatesExpression' otherlv_14= '=' ( (lv_semanticCanditatesExpression_15_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_13=(Token)match(input,84,FOLLOW_15); 
+                    otherlv_13=(Token)match(input,85,FOLLOW_15); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getContainerAccess().getSemanticCandidatesExpressionKeyword_11_0());
                         
-                    otherlv_14=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_14=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getContainerAccess().getEqualsSignKeyword_11_1());
                         
@@ -8619,7 +8620,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt94=2;
                 int LA94_0 = input.LA(1);
 
-                if ( (LA94_0==83) ) {
+                if ( (LA94_0==84) ) {
                     alt94=1;
                 }
 
@@ -8662,7 +8663,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_17=(Token)match(input,17,FOLLOW_2); 
+            otherlv_17=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_17, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_13());
                 
@@ -8740,7 +8741,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:3762:1: (otherlv_0= 'style' ( ( ruleQualifiedName ) ) otherlv_2= 'if' ( (lv_conditionalStyleExpression_3_0= RULE_EXPRESSION ) ) )
             // InternalSiriusTextDsl.g:3762:3: otherlv_0= 'style' ( ( ruleQualifiedName ) ) otherlv_2= 'if' ( (lv_conditionalStyleExpression_3_0= RULE_EXPRESSION ) )
             {
-            otherlv_0=(Token)match(input,83,FOLLOW_4); 
+            otherlv_0=(Token)match(input,84,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getConditionalContainerStyleDeclarationAccess().getStyleKeyword_0());
                 
@@ -8772,7 +8773,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,58,FOLLOW_33); 
+            otherlv_2=(Token)match(input,59,FOLLOW_33); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getConditionalContainerStyleDeclarationAccess().getIfKeyword_2());
                 
@@ -8878,10 +8879,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt95=2;
             int LA95_0 = input.LA(1);
 
-            if ( (LA95_0==RULE_DOCUMENTATION||LA95_0==85) ) {
+            if ( (LA95_0==RULE_DOCUMENTATION||LA95_0==86) ) {
                 alt95=1;
             }
-            else if ( (LA95_0==98) ) {
+            else if ( (LA95_0==99) ) {
                 alt95=2;
             }
             else {
@@ -9142,7 +9143,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,85,FOLLOW_84); 
+            otherlv_1=(Token)match(input,86,FOLLOW_84); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getGradientAccess().getGradientKeyword_1());
                 
@@ -9203,7 +9204,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,86,FOLLOW_4); 
+            otherlv_4=(Token)match(input,87,FOLLOW_4); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getGradientAccess().getFromKeyword_4());
                 
@@ -9235,7 +9236,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,87,FOLLOW_4); 
+            otherlv_6=(Token)match(input,88,FOLLOW_4); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getGradientAccess().getToKeyword_6());
                 
@@ -9267,7 +9268,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,16,FOLLOW_87); 
+            otherlv_8=(Token)match(input,17,FOLLOW_87); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getGradientAccess().getLeftCurlyBracketKeyword_8());
                 
@@ -9275,14 +9276,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt97=2;
             int LA97_0 = input.LA(1);
 
-            if ( (LA97_0==88) ) {
+            if ( (LA97_0==89) ) {
                 alt97=1;
             }
             switch (alt97) {
                 case 1 :
                     // InternalSiriusTextDsl.g:3994:3: otherlv_9= 'label' ( (lv_labelAlignment_10_0= ruleLabelAlignment ) ) ( (lv_labelExpression_11_0= RULE_EXPRESSION ) ) otherlv_12= 'in' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_9=(Token)match(input,88,FOLLOW_88); 
+                    otherlv_9=(Token)match(input,89,FOLLOW_88); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getGradientAccess().getLabelKeyword_9_0());
                         
@@ -9343,7 +9344,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_12=(Token)match(input,89,FOLLOW_4); 
+                    otherlv_12=(Token)match(input,90,FOLLOW_4); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getGradientAccess().getInKeyword_9_3());
                         
@@ -9385,22 +9386,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt98=2;
             int LA98_0 = input.LA(1);
 
-            if ( (LA98_0==90) ) {
+            if ( (LA98_0==91) ) {
                 alt98=1;
             }
             switch (alt98) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4053:6: otherlv_14= 'border' otherlv_15= 'size' otherlv_16= '=' ( (lv_borderSize_17_0= RULE_INT ) ) otherlv_18= 'in' ( ( ruleQualifiedName ) )
                     {
-                    otherlv_14=(Token)match(input,90,FOLLOW_91); 
+                    otherlv_14=(Token)match(input,91,FOLLOW_91); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getGradientAccess().getBorderKeyword_10_0());
                         
-                    otherlv_15=(Token)match(input,91,FOLLOW_15); 
+                    otherlv_15=(Token)match(input,92,FOLLOW_15); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getGradientAccess().getSizeKeyword_10_1());
                         
-                    otherlv_16=(Token)match(input,20,FOLLOW_92); 
+                    otherlv_16=(Token)match(input,21,FOLLOW_92); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getGradientAccess().getEqualsSignKeyword_10_2());
                         
@@ -9430,7 +9431,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_18=(Token)match(input,89,FOLLOW_4); 
+                    otherlv_18=(Token)match(input,90,FOLLOW_4); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getGradientAccess().getInKeyword_10_4());
                         
@@ -9472,18 +9473,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt99=2;
             int LA99_0 = input.LA(1);
 
-            if ( (LA99_0==24) ) {
+            if ( (LA99_0==25) ) {
                 alt99=1;
             }
             switch (alt99) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4102:6: otherlv_20= 'icon' otherlv_21= '=' ( (lv_icon_22_0= RULE_STRING ) )
                     {
-                    otherlv_20=(Token)match(input,24,FOLLOW_15); 
+                    otherlv_20=(Token)match(input,25,FOLLOW_15); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getGradientAccess().getIconKeyword_11_0());
                         
-                    otherlv_21=(Token)match(input,20,FOLLOW_10); 
+                    otherlv_21=(Token)match(input,21,FOLLOW_10); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getGradientAccess().getEqualsSignKeyword_11_1());
                         
@@ -9523,18 +9524,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt100=2;
             int LA100_0 = input.LA(1);
 
-            if ( (LA100_0==92) ) {
+            if ( (LA100_0==93) ) {
                 alt100=1;
             }
             switch (alt100) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4128:6: otherlv_23= 'heightComputationExpression' otherlv_24= '=' ( (lv_heightComputationExpression_25_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_23=(Token)match(input,92,FOLLOW_15); 
+                    otherlv_23=(Token)match(input,93,FOLLOW_15); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0());
                         
-                    otherlv_24=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_24=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_24, grammarAccess.getGradientAccess().getEqualsSignKeyword_12_1());
                         
@@ -9574,18 +9575,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt101=2;
             int LA101_0 = input.LA(1);
 
-            if ( (LA101_0==93) ) {
+            if ( (LA101_0==94) ) {
                 alt101=1;
             }
             switch (alt101) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4154:6: otherlv_26= 'widthComputationExpression' otherlv_27= '=' ( (lv_widthComputationExpression_28_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_26=(Token)match(input,93,FOLLOW_15); 
+                    otherlv_26=(Token)match(input,94,FOLLOW_15); 
 
                         	newLeafNode(otherlv_26, grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0());
                         
-                    otherlv_27=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_27=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_27, grammarAccess.getGradientAccess().getEqualsSignKeyword_13_1());
                         
@@ -9621,7 +9622,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_29=(Token)match(input,17,FOLLOW_2); 
+            otherlv_29=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_29, grammarAccess.getGradientAccess().getRightCurlyBracketKeyword_14());
                 
@@ -9833,7 +9834,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,94,FOLLOW_4); 
+            otherlv_1=(Token)match(input,95,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRelationBasedEdgeAccess().getRelationBasedEdgeKeyword_1());
                 
@@ -9867,14 +9868,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt103=2;
             int LA103_0 = input.LA(1);
 
-            if ( (LA103_0==15) ) {
+            if ( (LA103_0==16) ) {
                 alt103=1;
             }
             switch (alt103) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4275:4: otherlv_3= 'as' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,16,FOLLOW_10); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRelationBasedEdgeAccess().getAsKeyword_3_0());
                         
@@ -9910,7 +9911,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,83,FOLLOW_4); 
+            otherlv_5=(Token)match(input,84,FOLLOW_4); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getRelationBasedEdgeAccess().getStyleKeyword_4());
                 
@@ -9942,19 +9943,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,16,FOLLOW_98); 
+            otherlv_7=(Token)match(input,17,FOLLOW_98); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getRelationBasedEdgeAccess().getLeftCurlyBracketKeyword_6());
                 
-            otherlv_8=(Token)match(input,95,FOLLOW_15); 
+            otherlv_8=(Token)match(input,96,FOLLOW_15); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsKeyword_7());
                 
-            otherlv_9=(Token)match(input,20,FOLLOW_16); 
+            otherlv_9=(Token)match(input,21,FOLLOW_16); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_8());
                 
-            otherlv_10=(Token)match(input,21,FOLLOW_20); 
+            otherlv_10=(Token)match(input,22,FOLLOW_20); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_9());
                 
@@ -10003,7 +10004,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt104=2;
                         int LA104_0 = input.LA(1);
 
-                        if ( (LA104_0==22) ) {
+                        if ( (LA104_0==23) ) {
                             alt104=1;
                         }
 
@@ -10012,7 +10013,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalSiriusTextDsl.g:4347:4: otherlv_12= ',' ( ( ruleQualifiedName ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,22,FOLLOW_4); 
+                    	    otherlv_12=(Token)match(input,23,FOLLOW_4); 
 
                     	        	newLeafNode(otherlv_12, grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_10_1_0());
                     	        
@@ -10059,19 +10060,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_14=(Token)match(input,23,FOLLOW_99); 
+            otherlv_14=(Token)match(input,24,FOLLOW_99); 
 
                 	newLeafNode(otherlv_14, grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_11());
                 
-            otherlv_15=(Token)match(input,96,FOLLOW_15); 
+            otherlv_15=(Token)match(input,97,FOLLOW_15); 
 
                 	newLeafNode(otherlv_15, grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsKeyword_12());
                 
-            otherlv_16=(Token)match(input,20,FOLLOW_16); 
+            otherlv_16=(Token)match(input,21,FOLLOW_16); 
 
                 	newLeafNode(otherlv_16, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_13());
                 
-            otherlv_17=(Token)match(input,21,FOLLOW_20); 
+            otherlv_17=(Token)match(input,22,FOLLOW_20); 
 
                 	newLeafNode(otherlv_17, grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_14());
                 
@@ -10120,7 +10121,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                         int alt106=2;
                         int LA106_0 = input.LA(1);
 
-                        if ( (LA106_0==22) ) {
+                        if ( (LA106_0==23) ) {
                             alt106=1;
                         }
 
@@ -10129,7 +10130,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalSiriusTextDsl.g:4397:4: otherlv_19= ',' ( ( ruleQualifiedName ) )
                     	    {
-                    	    otherlv_19=(Token)match(input,22,FOLLOW_4); 
+                    	    otherlv_19=(Token)match(input,23,FOLLOW_4); 
 
                     	        	newLeafNode(otherlv_19, grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_15_1_0());
                     	        
@@ -10176,15 +10177,15 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,23,FOLLOW_100); 
+            otherlv_21=(Token)match(input,24,FOLLOW_100); 
 
                 	newLeafNode(otherlv_21, grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_16());
                 
-            otherlv_22=(Token)match(input,97,FOLLOW_15); 
+            otherlv_22=(Token)match(input,98,FOLLOW_15); 
 
                 	newLeafNode(otherlv_22, grammarAccess.getRelationBasedEdgeAccess().getTargetFileExpressionKeyword_17());
                 
-            otherlv_23=(Token)match(input,20,FOLLOW_33); 
+            otherlv_23=(Token)match(input,21,FOLLOW_33); 
 
                 	newLeafNode(otherlv_23, grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_18());
                 
@@ -10214,7 +10215,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_25=(Token)match(input,17,FOLLOW_2); 
+            otherlv_25=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_25, grammarAccess.getRelationBasedEdgeAccess().getRightCurlyBracketKeyword_20());
                 
@@ -10321,7 +10322,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:4471:1: (otherlv_0= 'edgeStyle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( ( ruleQualifiedName ) ) (otherlv_4= 'line' otherlv_5= '=' ( (lv_lineStyle_6_0= ruleLineStyle ) ) )? (otherlv_7= 'routing' otherlv_8= '=' ( (lv_routingStyle_9_0= ruleRoutingStyle ) ) )? otherlv_10= '{' (otherlv_11= 'sourceArrow' otherlv_12= '=' ( (lv_sourceArrow_13_0= ruleArrowDecorator ) ) )? (otherlv_14= 'targetArrow' otherlv_15= '=' ( (lv_targetArrow_16_0= ruleArrowDecorator ) ) )? (otherlv_17= 'sizeComputationExpression' otherlv_18= '=' ( (lv_sizeComputationExpression_19_0= RULE_EXPRESSION ) ) )? (otherlv_20= 'foldingStyle' otherlv_21= '=' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'endsCentering' otherlv_24= '=' ( (lv_endsCentering_25_0= ruleEndsCentering ) ) )? otherlv_26= '}' )
             // InternalSiriusTextDsl.g:4471:3: otherlv_0= 'edgeStyle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( ( ruleQualifiedName ) ) (otherlv_4= 'line' otherlv_5= '=' ( (lv_lineStyle_6_0= ruleLineStyle ) ) )? (otherlv_7= 'routing' otherlv_8= '=' ( (lv_routingStyle_9_0= ruleRoutingStyle ) ) )? otherlv_10= '{' (otherlv_11= 'sourceArrow' otherlv_12= '=' ( (lv_sourceArrow_13_0= ruleArrowDecorator ) ) )? (otherlv_14= 'targetArrow' otherlv_15= '=' ( (lv_targetArrow_16_0= ruleArrowDecorator ) ) )? (otherlv_17= 'sizeComputationExpression' otherlv_18= '=' ( (lv_sizeComputationExpression_19_0= RULE_EXPRESSION ) ) )? (otherlv_20= 'foldingStyle' otherlv_21= '=' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'endsCentering' otherlv_24= '=' ( (lv_endsCentering_25_0= ruleEndsCentering ) ) )? otherlv_26= '}'
             {
-            otherlv_0=(Token)match(input,98,FOLLOW_4); 
+            otherlv_0=(Token)match(input,99,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEdgeStyleAccess().getEdgeStyleKeyword_0());
                 
@@ -10351,7 +10352,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,89,FOLLOW_4); 
+            otherlv_2=(Token)match(input,90,FOLLOW_4); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEdgeStyleAccess().getInKeyword_2());
                 
@@ -10387,18 +10388,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt108=2;
             int LA108_0 = input.LA(1);
 
-            if ( (LA108_0==99) ) {
+            if ( (LA108_0==100) ) {
                 alt108=1;
             }
             switch (alt108) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4512:4: otherlv_4= 'line' otherlv_5= '=' ( (lv_lineStyle_6_0= ruleLineStyle ) )
                     {
-                    otherlv_4=(Token)match(input,99,FOLLOW_15); 
+                    otherlv_4=(Token)match(input,100,FOLLOW_15); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getEdgeStyleAccess().getLineKeyword_4_0());
                         
-                    otherlv_5=(Token)match(input,20,FOLLOW_102); 
+                    otherlv_5=(Token)match(input,21,FOLLOW_102); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_4_1());
                         
@@ -10443,18 +10444,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt109=2;
             int LA109_0 = input.LA(1);
 
-            if ( (LA109_0==100) ) {
+            if ( (LA109_0==101) ) {
                 alt109=1;
             }
             switch (alt109) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4538:6: otherlv_7= 'routing' otherlv_8= '=' ( (lv_routingStyle_9_0= ruleRoutingStyle ) )
                     {
-                    otherlv_7=(Token)match(input,100,FOLLOW_15); 
+                    otherlv_7=(Token)match(input,101,FOLLOW_15); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleAccess().getRoutingKeyword_5_0());
                         
-                    otherlv_8=(Token)match(input,20,FOLLOW_104); 
+                    otherlv_8=(Token)match(input,21,FOLLOW_104); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_5_1());
                         
@@ -10495,7 +10496,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,16,FOLLOW_105); 
+            otherlv_10=(Token)match(input,17,FOLLOW_105); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getEdgeStyleAccess().getLeftCurlyBracketKeyword_6());
                 
@@ -10503,18 +10504,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt110=2;
             int LA110_0 = input.LA(1);
 
-            if ( (LA110_0==101) ) {
+            if ( (LA110_0==102) ) {
                 alt110=1;
             }
             switch (alt110) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4568:3: otherlv_11= 'sourceArrow' otherlv_12= '=' ( (lv_sourceArrow_13_0= ruleArrowDecorator ) )
                     {
-                    otherlv_11=(Token)match(input,101,FOLLOW_15); 
+                    otherlv_11=(Token)match(input,102,FOLLOW_15); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getEdgeStyleAccess().getSourceArrowKeyword_7_0());
                         
-                    otherlv_12=(Token)match(input,20,FOLLOW_106); 
+                    otherlv_12=(Token)match(input,21,FOLLOW_106); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_7_1());
                         
@@ -10559,18 +10560,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt111=2;
             int LA111_0 = input.LA(1);
 
-            if ( (LA111_0==102) ) {
+            if ( (LA111_0==103) ) {
                 alt111=1;
             }
             switch (alt111) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4594:6: otherlv_14= 'targetArrow' otherlv_15= '=' ( (lv_targetArrow_16_0= ruleArrowDecorator ) )
                     {
-                    otherlv_14=(Token)match(input,102,FOLLOW_15); 
+                    otherlv_14=(Token)match(input,103,FOLLOW_15); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getEdgeStyleAccess().getTargetArrowKeyword_8_0());
                         
-                    otherlv_15=(Token)match(input,20,FOLLOW_106); 
+                    otherlv_15=(Token)match(input,21,FOLLOW_106); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_8_1());
                         
@@ -10615,18 +10616,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt112=2;
             int LA112_0 = input.LA(1);
 
-            if ( (LA112_0==103) ) {
+            if ( (LA112_0==104) ) {
                 alt112=1;
             }
             switch (alt112) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4620:6: otherlv_17= 'sizeComputationExpression' otherlv_18= '=' ( (lv_sizeComputationExpression_19_0= RULE_EXPRESSION ) )
                     {
-                    otherlv_17=(Token)match(input,103,FOLLOW_15); 
+                    otherlv_17=(Token)match(input,104,FOLLOW_15); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionKeyword_9_0());
                         
-                    otherlv_18=(Token)match(input,20,FOLLOW_33); 
+                    otherlv_18=(Token)match(input,21,FOLLOW_33); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_9_1());
                         
@@ -10666,18 +10667,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt113=2;
             int LA113_0 = input.LA(1);
 
-            if ( (LA113_0==104) ) {
+            if ( (LA113_0==105) ) {
                 alt113=1;
             }
             switch (alt113) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4646:6: otherlv_20= 'foldingStyle' otherlv_21= '=' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) )
                     {
-                    otherlv_20=(Token)match(input,104,FOLLOW_15); 
+                    otherlv_20=(Token)match(input,105,FOLLOW_15); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getEdgeStyleAccess().getFoldingStyleKeyword_10_0());
                         
-                    otherlv_21=(Token)match(input,20,FOLLOW_110); 
+                    otherlv_21=(Token)match(input,21,FOLLOW_110); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_10_1());
                         
@@ -10722,18 +10723,18 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             int alt114=2;
             int LA114_0 = input.LA(1);
 
-            if ( (LA114_0==105) ) {
+            if ( (LA114_0==106) ) {
                 alt114=1;
             }
             switch (alt114) {
                 case 1 :
                     // InternalSiriusTextDsl.g:4672:6: otherlv_23= 'endsCentering' otherlv_24= '=' ( (lv_endsCentering_25_0= ruleEndsCentering ) )
                     {
-                    otherlv_23=(Token)match(input,105,FOLLOW_15); 
+                    otherlv_23=(Token)match(input,106,FOLLOW_15); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getEdgeStyleAccess().getEndsCenteringKeyword_11_0());
                         
-                    otherlv_24=(Token)match(input,20,FOLLOW_112); 
+                    otherlv_24=(Token)match(input,21,FOLLOW_112); 
 
                         	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_11_1());
                         
@@ -10774,7 +10775,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_26=(Token)match(input,17,FOLLOW_2); 
+            otherlv_26=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_26, grammarAccess.getEdgeStyleAccess().getRightCurlyBracketKeyword_12());
                 
@@ -10893,7 +10894,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,106,FOLLOW_4); 
+            otherlv_1=(Token)match(input,107,FOLLOW_4); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPaletteAccess().getPaletteKeyword_1());
                 
@@ -10923,7 +10924,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_114); 
+            otherlv_3=(Token)match(input,17,FOLLOW_114); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getPaletteAccess().getLeftCurlyBracketKeyword_3());
                 
@@ -10933,7 +10934,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 int alt116=2;
                 int LA116_0 = input.LA(1);
 
-                if ( (LA116_0==107) ) {
+                if ( (LA116_0==108) ) {
                     alt116=1;
                 }
 
@@ -10976,7 +10977,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,17,FOLLOW_2); 
+            otherlv_5=(Token)match(input,18,FOLLOW_2); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getPaletteAccess().getRightCurlyBracketKeyword_5());
                 
@@ -11056,7 +11057,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:4810:1: (otherlv_0= 'color' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleColorValue ) ) )
             // InternalSiriusTextDsl.g:4810:3: otherlv_0= 'color' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleColorValue ) )
             {
-            otherlv_0=(Token)match(input,107,FOLLOW_4); 
+            otherlv_0=(Token)match(input,108,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getColorAccess().getColorKeyword_0());
                 
@@ -11086,7 +11087,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_115); 
+            otherlv_2=(Token)match(input,21,FOLLOW_115); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getColorAccess().getEqualsSignKeyword_2());
                 
@@ -11279,11 +11280,11 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:4905:1: (otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')' )
             // InternalSiriusTextDsl.g:4905:3: otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,108,FOLLOW_49); 
+            otherlv_0=(Token)match(input,109,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRGBAccess().getRgbKeyword_0());
                 
-            otherlv_1=(Token)match(input,49,FOLLOW_92); 
+            otherlv_1=(Token)match(input,50,FOLLOW_92); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1());
                 
@@ -11313,7 +11314,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_92); 
+            otherlv_3=(Token)match(input,23,FOLLOW_92); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getRGBAccess().getCommaKeyword_3());
                 
@@ -11343,7 +11344,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_92); 
+            otherlv_5=(Token)match(input,23,FOLLOW_92); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getRGBAccess().getCommaKeyword_5());
                 
@@ -11373,7 +11374,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,50,FOLLOW_2); 
+            otherlv_7=(Token)match(input,51,FOLLOW_2); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getRGBAccess().getRightParenthesisKeyword_7());
                 
@@ -11414,17 +11415,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:4990:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) )
             int alt117=3;
             switch ( input.LA(1) ) {
-            case 109:
+            case 110:
                 {
                 alt117=1;
                 }
                 break;
-            case 110:
+            case 111:
                 {
                 alt117=2;
                 }
                 break;
-            case 111:
+            case 112:
                 {
                 alt117=3;
                 }
@@ -11443,7 +11444,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:4990:2: (enumLiteral_0= 'left' )
                     // InternalSiriusTextDsl.g:4990:4: enumLiteral_0= 'left'
                     {
-                    enumLiteral_0=(Token)match(input,109,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,110,FOLLOW_2); 
 
                             current = grammarAccess.getLabelAlignmentAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getLabelAlignmentAccess().getLeftEnumLiteralDeclaration_0()); 
@@ -11460,7 +11461,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:4996:6: (enumLiteral_1= 'center' )
                     // InternalSiriusTextDsl.g:4996:8: enumLiteral_1= 'center'
                     {
-                    enumLiteral_1=(Token)match(input,110,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,111,FOLLOW_2); 
 
                             current = grammarAccess.getLabelAlignmentAccess().getCenterEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getLabelAlignmentAccess().getCenterEnumLiteralDeclaration_1()); 
@@ -11477,7 +11478,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5002:6: (enumLiteral_2= 'right' )
                     // InternalSiriusTextDsl.g:5002:8: enumLiteral_2= 'right'
                     {
-                    enumLiteral_2=(Token)match(input,111,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,112,FOLLOW_2); 
 
                             current = grammarAccess.getLabelAlignmentAccess().getRightEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getLabelAlignmentAccess().getRightEnumLiteralDeclaration_2()); 
@@ -11525,17 +11526,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5015:1: ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) )
             int alt118=3;
             switch ( input.LA(1) ) {
-            case 112:
+            case 113:
                 {
                 alt118=1;
                 }
                 break;
-            case 113:
+            case 114:
                 {
                 alt118=2;
                 }
                 break;
-            case 114:
+            case 115:
                 {
                 alt118=3;
                 }
@@ -11554,7 +11555,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5015:2: (enumLiteral_0= 'oblique' )
                     // InternalSiriusTextDsl.g:5015:4: enumLiteral_0= 'oblique'
                     {
-                    enumLiteral_0=(Token)match(input,112,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,113,FOLLOW_2); 
 
                             current = grammarAccess.getGradientDirectionAccess().getObliqueEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getGradientDirectionAccess().getObliqueEnumLiteralDeclaration_0()); 
@@ -11571,7 +11572,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5021:6: (enumLiteral_1= 'lefttoright' )
                     // InternalSiriusTextDsl.g:5021:8: enumLiteral_1= 'lefttoright'
                     {
-                    enumLiteral_1=(Token)match(input,113,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,114,FOLLOW_2); 
 
                             current = grammarAccess.getGradientDirectionAccess().getLefttorightEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getGradientDirectionAccess().getLefttorightEnumLiteralDeclaration_1()); 
@@ -11588,7 +11589,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5027:6: (enumLiteral_2= 'toptobottom' )
                     // InternalSiriusTextDsl.g:5027:8: enumLiteral_2= 'toptobottom'
                     {
-                    enumLiteral_2=(Token)match(input,114,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,115,FOLLOW_2); 
 
                             current = grammarAccess.getGradientDirectionAccess().getToptobottomEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getGradientDirectionAccess().getToptobottomEnumLiteralDeclaration_2()); 
@@ -11637,22 +11638,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5040:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
             int alt119=4;
             switch ( input.LA(1) ) {
-            case 115:
+            case 116:
                 {
                 alt119=1;
                 }
                 break;
-            case 116:
+            case 117:
                 {
                 alt119=2;
                 }
                 break;
-            case 117:
+            case 118:
                 {
                 alt119=3;
                 }
                 break;
-            case 118:
+            case 119:
                 {
                 alt119=4;
                 }
@@ -11671,7 +11672,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5040:2: (enumLiteral_0= 'solid' )
                     // InternalSiriusTextDsl.g:5040:4: enumLiteral_0= 'solid'
                     {
-                    enumLiteral_0=(Token)match(input,115,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,116,FOLLOW_2); 
 
                             current = grammarAccess.getLineStyleAccess().getSolidEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getLineStyleAccess().getSolidEnumLiteralDeclaration_0()); 
@@ -11688,7 +11689,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5046:6: (enumLiteral_1= 'dash' )
                     // InternalSiriusTextDsl.g:5046:8: enumLiteral_1= 'dash'
                     {
-                    enumLiteral_1=(Token)match(input,116,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,117,FOLLOW_2); 
 
                             current = grammarAccess.getLineStyleAccess().getDashEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getLineStyleAccess().getDashEnumLiteralDeclaration_1()); 
@@ -11705,7 +11706,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5052:6: (enumLiteral_2= 'dot' )
                     // InternalSiriusTextDsl.g:5052:8: enumLiteral_2= 'dot'
                     {
-                    enumLiteral_2=(Token)match(input,117,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,118,FOLLOW_2); 
 
                             current = grammarAccess.getLineStyleAccess().getDotEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getLineStyleAccess().getDotEnumLiteralDeclaration_2()); 
@@ -11722,7 +11723,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5058:6: (enumLiteral_3= 'dash_dot' )
                     // InternalSiriusTextDsl.g:5058:8: enumLiteral_3= 'dash_dot'
                     {
-                    enumLiteral_3=(Token)match(input,118,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,119,FOLLOW_2); 
 
                             current = grammarAccess.getLineStyleAccess().getDash_dotEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getLineStyleAccess().getDash_dotEnumLiteralDeclaration_3()); 
@@ -11770,17 +11771,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5071:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
             int alt120=3;
             switch ( input.LA(1) ) {
-            case 119:
+            case 120:
                 {
                 alt120=1;
                 }
                 break;
-            case 120:
+            case 121:
                 {
                 alt120=2;
                 }
                 break;
-            case 121:
+            case 122:
                 {
                 alt120=3;
                 }
@@ -11799,7 +11800,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5071:2: (enumLiteral_0= 'straight' )
                     // InternalSiriusTextDsl.g:5071:4: enumLiteral_0= 'straight'
                     {
-                    enumLiteral_0=(Token)match(input,119,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,120,FOLLOW_2); 
 
                             current = grammarAccess.getRoutingStyleAccess().getStraightEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getRoutingStyleAccess().getStraightEnumLiteralDeclaration_0()); 
@@ -11816,7 +11817,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5077:6: (enumLiteral_1= 'manhattan' )
                     // InternalSiriusTextDsl.g:5077:8: enumLiteral_1= 'manhattan'
                     {
-                    enumLiteral_1=(Token)match(input,120,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,121,FOLLOW_2); 
 
                             current = grammarAccess.getRoutingStyleAccess().getManhattanEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getRoutingStyleAccess().getManhattanEnumLiteralDeclaration_1()); 
@@ -11833,7 +11834,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5083:6: (enumLiteral_2= 'tree' )
                     // InternalSiriusTextDsl.g:5083:8: enumLiteral_2= 'tree'
                     {
-                    enumLiteral_2=(Token)match(input,121,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,122,FOLLOW_2); 
 
                             current = grammarAccess.getRoutingStyleAccess().getTreeEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getRoutingStyleAccess().getTreeEnumLiteralDeclaration_2()); 
@@ -11889,57 +11890,57 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5096:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) )
             int alt121=11;
             switch ( input.LA(1) ) {
-            case 122:
+            case 123:
                 {
                 alt121=1;
                 }
                 break;
-            case 123:
+            case 124:
                 {
                 alt121=2;
                 }
                 break;
-            case 124:
+            case 125:
                 {
                 alt121=3;
                 }
                 break;
-            case 125:
+            case 126:
                 {
                 alt121=4;
                 }
                 break;
-            case 126:
+            case 127:
                 {
                 alt121=5;
                 }
                 break;
-            case 127:
+            case 128:
                 {
                 alt121=6;
                 }
                 break;
-            case 128:
+            case 129:
                 {
                 alt121=7;
                 }
                 break;
-            case 129:
+            case 130:
                 {
                 alt121=8;
                 }
                 break;
-            case 130:
+            case 131:
                 {
                 alt121=9;
                 }
                 break;
-            case 131:
+            case 132:
                 {
                 alt121=10;
                 }
                 break;
-            case 132:
+            case 133:
                 {
                 alt121=11;
                 }
@@ -11958,7 +11959,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5096:2: (enumLiteral_0= 'NoDecoration' )
                     // InternalSiriusTextDsl.g:5096:4: enumLiteral_0= 'NoDecoration'
                     {
-                    enumLiteral_0=(Token)match(input,122,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,123,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getNoDecorationEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getArrowDecoratorAccess().getNoDecorationEnumLiteralDeclaration_0()); 
@@ -11975,7 +11976,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5102:6: (enumLiteral_1= 'OutputArrow' )
                     // InternalSiriusTextDsl.g:5102:8: enumLiteral_1= 'OutputArrow'
                     {
-                    enumLiteral_1=(Token)match(input,123,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,124,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getOutputArrowEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getArrowDecoratorAccess().getOutputArrowEnumLiteralDeclaration_1()); 
@@ -11992,7 +11993,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5108:6: (enumLiteral_2= 'InputArrow' )
                     // InternalSiriusTextDsl.g:5108:8: enumLiteral_2= 'InputArrow'
                     {
-                    enumLiteral_2=(Token)match(input,124,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,125,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getInputArrowEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getArrowDecoratorAccess().getInputArrowEnumLiteralDeclaration_2()); 
@@ -12009,7 +12010,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5114:6: (enumLiteral_3= 'OutputClosedArrow' )
                     // InternalSiriusTextDsl.g:5114:8: enumLiteral_3= 'OutputClosedArrow'
                     {
-                    enumLiteral_3=(Token)match(input,125,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,126,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getOutputClosedArrowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getArrowDecoratorAccess().getOutputClosedArrowEnumLiteralDeclaration_3()); 
@@ -12026,7 +12027,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5120:6: (enumLiteral_4= 'InputClosedArrow' )
                     // InternalSiriusTextDsl.g:5120:8: enumLiteral_4= 'InputClosedArrow'
                     {
-                    enumLiteral_4=(Token)match(input,126,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,127,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getInputClosedArrowEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getArrowDecoratorAccess().getInputClosedArrowEnumLiteralDeclaration_4()); 
@@ -12043,7 +12044,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5126:6: (enumLiteral_5= 'OutputFillClosedArrow' )
                     // InternalSiriusTextDsl.g:5126:8: enumLiteral_5= 'OutputFillClosedArrow'
                     {
-                    enumLiteral_5=(Token)match(input,127,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,128,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getOutputFillClosedArrowEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getArrowDecoratorAccess().getOutputFillClosedArrowEnumLiteralDeclaration_5()); 
@@ -12060,7 +12061,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5132:6: (enumLiteral_6= 'InputFillClosedArrow' )
                     // InternalSiriusTextDsl.g:5132:8: enumLiteral_6= 'InputFillClosedArrow'
                     {
-                    enumLiteral_6=(Token)match(input,128,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,129,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getInputFillClosedArrowEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getArrowDecoratorAccess().getInputFillClosedArrowEnumLiteralDeclaration_6()); 
@@ -12077,7 +12078,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5138:6: (enumLiteral_7= 'Diamond' )
                     // InternalSiriusTextDsl.g:5138:8: enumLiteral_7= 'Diamond'
                     {
-                    enumLiteral_7=(Token)match(input,129,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,130,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getDiamondEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_7, grammarAccess.getArrowDecoratorAccess().getDiamondEnumLiteralDeclaration_7()); 
@@ -12094,7 +12095,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5144:6: (enumLiteral_8= 'FillDiamond' )
                     // InternalSiriusTextDsl.g:5144:8: enumLiteral_8= 'FillDiamond'
                     {
-                    enumLiteral_8=(Token)match(input,130,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,131,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getFillDiamondEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_8, grammarAccess.getArrowDecoratorAccess().getFillDiamondEnumLiteralDeclaration_8()); 
@@ -12111,7 +12112,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5150:6: (enumLiteral_9= 'InputArrowWithDiamond' )
                     // InternalSiriusTextDsl.g:5150:8: enumLiteral_9= 'InputArrowWithDiamond'
                     {
-                    enumLiteral_9=(Token)match(input,131,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,132,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getInputArrowWithDiamondEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_9, grammarAccess.getArrowDecoratorAccess().getInputArrowWithDiamondEnumLiteralDeclaration_9()); 
@@ -12128,7 +12129,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5156:6: (enumLiteral_10= 'InputArrowWithFillDiamond' )
                     // InternalSiriusTextDsl.g:5156:8: enumLiteral_10= 'InputArrowWithFillDiamond'
                     {
-                    enumLiteral_10=(Token)match(input,132,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,133,FOLLOW_2); 
 
                             current = grammarAccess.getArrowDecoratorAccess().getInputArrowWithFillDiamondEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_10, grammarAccess.getArrowDecoratorAccess().getInputArrowWithFillDiamondEnumLiteralDeclaration_10()); 
@@ -12176,17 +12177,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5169:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) )
             int alt122=3;
             switch ( input.LA(1) ) {
-            case 133:
+            case 134:
                 {
                 alt122=1;
                 }
                 break;
-            case 134:
+            case 135:
                 {
                 alt122=2;
                 }
                 break;
-            case 135:
+            case 136:
                 {
                 alt122=3;
                 }
@@ -12205,7 +12206,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5169:2: (enumLiteral_0= 'none' )
                     // InternalSiriusTextDsl.g:5169:4: enumLiteral_0= 'none'
                     {
-                    enumLiteral_0=(Token)match(input,133,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,134,FOLLOW_2); 
 
                             current = grammarAccess.getFoldingStyleAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getFoldingStyleAccess().getNoneEnumLiteralDeclaration_0()); 
@@ -12222,7 +12223,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5175:6: (enumLiteral_1= 'source' )
                     // InternalSiriusTextDsl.g:5175:8: enumLiteral_1= 'source'
                     {
-                    enumLiteral_1=(Token)match(input,134,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,135,FOLLOW_2); 
 
                             current = grammarAccess.getFoldingStyleAccess().getSourceEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getFoldingStyleAccess().getSourceEnumLiteralDeclaration_1()); 
@@ -12239,7 +12240,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5181:6: (enumLiteral_2= 'target' )
                     // InternalSiriusTextDsl.g:5181:8: enumLiteral_2= 'target'
                     {
-                    enumLiteral_2=(Token)match(input,135,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,136,FOLLOW_2); 
 
                             current = grammarAccess.getFoldingStyleAccess().getTargetEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getFoldingStyleAccess().getTargetEnumLiteralDeclaration_2()); 
@@ -12288,22 +12289,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
             // InternalSiriusTextDsl.g:5194:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) )
             int alt123=4;
             switch ( input.LA(1) ) {
-            case 133:
+            case 134:
                 {
                 alt123=1;
                 }
                 break;
-            case 136:
+            case 137:
                 {
                 alt123=2;
                 }
                 break;
-            case 134:
+            case 135:
                 {
                 alt123=3;
                 }
                 break;
-            case 135:
+            case 136:
                 {
                 alt123=4;
                 }
@@ -12322,7 +12323,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5194:2: (enumLiteral_0= 'none' )
                     // InternalSiriusTextDsl.g:5194:4: enumLiteral_0= 'none'
                     {
-                    enumLiteral_0=(Token)match(input,133,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,134,FOLLOW_2); 
 
                             current = grammarAccess.getEndsCenteringAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getEndsCenteringAccess().getNoneEnumLiteralDeclaration_0()); 
@@ -12339,7 +12340,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5200:6: (enumLiteral_1= 'both' )
                     // InternalSiriusTextDsl.g:5200:8: enumLiteral_1= 'both'
                     {
-                    enumLiteral_1=(Token)match(input,136,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,137,FOLLOW_2); 
 
                             current = grammarAccess.getEndsCenteringAccess().getBothEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getEndsCenteringAccess().getBothEnumLiteralDeclaration_1()); 
@@ -12356,7 +12357,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5206:6: (enumLiteral_2= 'source' )
                     // InternalSiriusTextDsl.g:5206:8: enumLiteral_2= 'source'
                     {
-                    enumLiteral_2=(Token)match(input,134,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,135,FOLLOW_2); 
 
                             current = grammarAccess.getEndsCenteringAccess().getSourceEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getEndsCenteringAccess().getSourceEnumLiteralDeclaration_2()); 
@@ -12373,7 +12374,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     // InternalSiriusTextDsl.g:5212:6: (enumLiteral_3= 'target' )
                     // InternalSiriusTextDsl.g:5212:8: enumLiteral_3= 'target'
                     {
-                    enumLiteral_3=(Token)match(input,135,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,136,FOLLOW_2); 
 
                             current = grammarAccess.getEndsCenteringAccess().getTargetEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getEndsCenteringAccess().getTargetEnumLiteralDeclaration_3()); 
@@ -12408,12 +12409,12 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
     protected DFA3 dfa3 = new DFA3(this);
     static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\1\4\1\16\11\uffff";
-    static final String dfa_3s = "\2\152\11\uffff";
+    static final String dfa_2s = "\1\4\1\17\11\uffff";
+    static final String dfa_3s = "\2\153\11\uffff";
     static final String dfa_4s = "\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11";
     static final String dfa_5s = "\13\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1\11\uffff\1\2\14\uffff\4\3\12\uffff\1\4\3\uffff\1\11\1\uffff\2\12\40\uffff\2\5\2\uffff\1\6\10\uffff\1\10\3\uffff\1\6\7\uffff\1\7",
+            "\1\1\12\uffff\1\2\14\uffff\4\3\12\uffff\1\4\3\uffff\1\11\1\uffff\2\12\40\uffff\2\5\2\uffff\1\6\10\uffff\1\10\3\uffff\1\6\7\uffff\1\7",
             "\1\2\14\uffff\4\3\12\uffff\1\4\3\uffff\1\11\1\uffff\2\12\40\uffff\2\5\2\uffff\1\6\10\uffff\1\10\13\uffff\1\7",
             "",
             "",
@@ -12454,118 +12455,118 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0001A20078006010L,0x0000040440260000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x00034400F000C010L,0x00000808804C0000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000030000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000060010L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x00000000070A0000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000007020000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000006020000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800020L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004020000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000078000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000070000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000060000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x00000000C0000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000400008000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000C0010L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000E140000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x000000000E040000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000000C040000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000020L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008040000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000F0000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x00000000E0000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000200800000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000001000020000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x000001F000020000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x000001E000020000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x000001C000020000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000018000020000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000010000020000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x00001C0001020000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x00001C0000020000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000180000020000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000100000020000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000400001020000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000400000020000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0001800000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000800018000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0020000001000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x00C0000000000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x4D00000400020000L,0x0000000000005A49L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0004000000400000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000020000L,0x0000000000018000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000020000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000020000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0007000000000000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000001020000L,0x0000000035000000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0000E00000000000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000001020000L,0x0000000034000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x000003E000040000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x000003C000040000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000038000040000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000030000040000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000020000040000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000380002040000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000380000040000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000300000040000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000200000040000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000800002040000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000800000040000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0003000000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000001000030000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0040000002000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0180000000000000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x9A00000800040000L,0x000000000000B492L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0008000000800000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000040000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000040000L,0x0000000000300000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000040000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x000E000000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000002040000L,0x000000006A000000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0001C00000000000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000002040000L,0x0000000068000000L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
     public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000001020000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000020000L,0x0000000030000000L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000020000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000008000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000000010000L,0x0000001800000000L});
-    public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x0000000000000000L,0x0078000000000000L});
-    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x0000000000010000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000000L,0x0380000000000000L});
-    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000020000L,0x000003E000000000L});
-    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000000000L,0xFC00000000000000L,0x000000000000001FL});
-    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x0000000000020000L,0x000003C000000000L});
-    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000020000L,0x0000038000000000L});
-    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000020000L,0x0000030000000000L});
-    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000000000E0L});
-    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000020000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000000001E0L});
-    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000020000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000002040000L,0x0000000060000000L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000040000L,0x0000000060000000L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000040000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000010000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000000020000L,0x0000003000000000L});
+    public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x0000000000000000L,0x00F0000000000000L});
+    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x0000000000020000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000000L,0x0700000000000000L});
+    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000040000L,0x000007C000000000L});
+    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000000000L,0xF800000000000000L,0x000000000000003FL});
+    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x0000000000040000L,0x0000078000000000L});
+    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000040000L,0x0000070000000000L});
+    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000040000L,0x0000060000000000L});
+    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000000001C0L});
+    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000040000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000000003C0L});
+    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000040000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
 
 }

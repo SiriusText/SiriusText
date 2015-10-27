@@ -14,6 +14,8 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
   
   public final static String DOCUMENTATION_ID = "documentation";
   
+  public final static String COMMENT_ID = "comment";
+  
   public final static String KEYWORD_ID = "keyword";
   
   public final static String STRING_ID = "string";
@@ -28,7 +30,11 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
   
   public final static String IF_ID = "if";
   
+  public final static String AS_ID = "as";
+  
   public final static String SWITCH_ID = "switch";
+  
+  public final static String ANNOTATION_ID = "annotation";
   
   @Override
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
@@ -38,6 +44,8 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.INVALID_ID, "Invalid Symbol", _invalidTextStyle);
     TextStyle _documentationTextStyle = this.documentationTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.DOCUMENTATION_ID, "Documentation", _documentationTextStyle);
+    TextStyle _commentTextStyle = this.commentTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.COMMENT_ID, "Comment", _commentTextStyle);
     TextStyle _keywordTextStyle = this.keywordTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.KEYWORD_ID, "Keyword", _keywordTextStyle);
     TextStyle _stringTextStyle = this.stringTextStyle();
@@ -52,8 +60,12 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.FOR_ID, "For", _forTextStyle);
     TextStyle _ifTextStyle = this.ifTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.IF_ID, "If", _ifTextStyle);
+    TextStyle _asTextStyle = this.asTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.AS_ID, "As", _asTextStyle);
     TextStyle _switchTextStyle = this.switchTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.SWITCH_ID, "Switch", _switchTextStyle);
+    TextStyle _annotationTextStyle = this.annotationTextStyle();
+    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.ANNOTATION_ID, "As", _annotationTextStyle);
   }
   
   public TextStyle defaultTextStyle() {
@@ -132,12 +144,34 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     return textStyle;
   }
   
+  public TextStyle asTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    return textStyle;
+  }
+  
   public TextStyle switchTextStyle() {
     TextStyle _defaultTextStyle = this.defaultTextStyle();
     final TextStyle textStyle = _defaultTextStyle.copy();
     RGB _rGB = new RGB(127, 0, 85);
     textStyle.setColor(_rGB);
     textStyle.setStyle(SWT.BOLD);
+    return textStyle;
+  }
+  
+  public TextStyle annotationTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(85, 98, 112);
+    textStyle.setColor(_rGB);
+    return textStyle;
+  }
+  
+  public TextStyle commentTextStyle() {
+    TextStyle _defaultTextStyle = this.defaultTextStyle();
+    final TextStyle textStyle = _defaultTextStyle.copy();
+    RGB _rGB = new RGB(63, 127, 95);
+    textStyle.setColor(_rGB);
     return textStyle;
   }
 }

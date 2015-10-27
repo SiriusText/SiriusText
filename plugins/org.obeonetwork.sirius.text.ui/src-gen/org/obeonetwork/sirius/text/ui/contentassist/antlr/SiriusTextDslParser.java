@@ -323,7 +323,7 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS" };
+		return new String[] { "RULE_WS", "RULE_SL_COMMENT" };
 	}
 	
 	public SiriusTextDslGrammarAccess getGrammarAccess() {

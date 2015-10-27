@@ -1,4 +1,4 @@
-grammar org.obeonetwork.sirius.text.SiriusTextDsl hidden (WS)
+grammar org.obeonetwork.sirius.text.SiriusTextDsl hidden (WS, SL_COMMENT)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
@@ -328,5 +328,7 @@ terminal INT returns ecore::EInt: ('0'..'9')+;
 terminal STRING	: "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'";
 
 terminal EXPRESSION : '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"';
+
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
 
 terminal WS	: (' '|'\t'|'\r'|'\n')+;

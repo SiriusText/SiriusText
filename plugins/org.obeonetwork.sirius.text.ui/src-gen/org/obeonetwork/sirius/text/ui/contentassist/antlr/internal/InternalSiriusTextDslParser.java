@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'javaExtensions'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'begin'", "'extraMappings'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@ForceRefresh'", "'list'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_SL_COMMENT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'javaExtensions'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'begin'", "'extraMappings'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@ForceRefresh'", "'list'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -31,6 +31,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     public static final int T__57=57;
     public static final int T__58=58;
     public static final int T__51=51;
+    public static final int T__137=137;
     public static final int T__52=52;
     public static final int T__136=136;
     public static final int T__53=53;
@@ -99,7 +100,6 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     public static final int T__95=95;
     public static final int T__96=96;
     public static final int T__97=97;
-    public static final int T__10=10;
     public static final int T__98=98;
     public static final int RULE_DOCUMENTATION=5;
     public static final int T__26=26;
@@ -122,6 +122,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     public static final int T__120=120;
     public static final int RULE_STRING=6;
     public static final int RULE_EXPRESSION=7;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__77=77;
     public static final int T__119=119;
     public static final int T__78=78;
@@ -144,7 +145,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     public static final int T__113=113;
     public static final int T__83=83;
     public static final int T__112=112;
-    public static final int RULE_WS=9;
+    public static final int RULE_WS=10;
     public static final int T__88=88;
     public static final int T__108=108;
     public static final int T__89=89;
@@ -3855,62 +3856,62 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1409:1: ( ( ruleChangeContext ) | ( ruleFor ) | ( ruleIf ) | ( ruleSet ) | ( ruleCreateInstance ) | ( ruleCreateView ) | ( ruleUnset ) | ( ruleCreateEdgeView ) | ( ruleDeleteView ) | ( ruleRemove ) | ( ruleMove ) | ( ruleSwitch ) )
             int alt2=12;
             switch ( input.LA(1) ) {
-            case 80:
+            case 81:
                 {
                 alt2=1;
                 }
                 break;
-            case 59:
+            case 60:
                 {
                 alt2=2;
                 }
                 break;
-            case 82:
+            case 83:
                 {
                 alt2=3;
                 }
                 break;
-            case 83:
+            case 84:
                 {
                 alt2=4;
                 }
                 break;
-            case 88:
+            case 89:
                 {
                 alt2=5;
                 }
                 break;
-            case 91:
+            case 92:
                 {
                 alt2=6;
                 }
                 break;
-            case 86:
+            case 87:
                 {
                 alt2=7;
                 }
                 break;
-            case 94:
+            case 95:
                 {
                 alt2=8;
                 }
                 break;
-            case 97:
+            case 98:
                 {
                 alt2=9;
                 }
                 break;
-            case 99:
+            case 100:
                 {
                 alt2=10;
                 }
                 break;
-            case 100:
+            case 101:
                 {
                 alt2=11;
                 }
                 break;
-            case 102:
+            case 103:
                 {
                 alt2=12;
                 }
@@ -4179,10 +4180,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_DOCUMENTATION||LA3_0==108) ) {
+            if ( (LA3_0==RULE_DOCUMENTATION||LA3_0==109) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==121) ) {
+            else if ( (LA3_0==122) ) {
                 alt3=2;
             }
             else {
@@ -4257,17 +4258,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1513:1: ( ( ( 'left' ) ) | ( ( 'center' ) ) | ( ( 'right' ) ) )
             int alt4=3;
             switch ( input.LA(1) ) {
-            case 10:
+            case 11:
                 {
                 alt4=1;
                 }
                 break;
-            case 11:
+            case 12:
                 {
                 alt4=2;
                 }
                 break;
-            case 12:
+            case 13:
                 {
                 alt4=3;
                 }
@@ -4290,7 +4291,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1516:1: ( 'left' )
                     // InternalSiriusTextDsl.g:1516:3: 'left'
                     {
-                    match(input,10,FOLLOW_2); 
+                    match(input,11,FOLLOW_2); 
 
                     }
 
@@ -4311,7 +4312,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1523:1: ( 'center' )
                     // InternalSiriusTextDsl.g:1523:3: 'center'
                     {
-                    match(input,11,FOLLOW_2); 
+                    match(input,12,FOLLOW_2); 
 
                     }
 
@@ -4332,7 +4333,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1530:1: ( 'right' )
                     // InternalSiriusTextDsl.g:1530:3: 'right'
                     {
-                    match(input,12,FOLLOW_2); 
+                    match(input,13,FOLLOW_2); 
 
                     }
 
@@ -4370,17 +4371,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1544:1: ( ( ( 'oblique' ) ) | ( ( 'lefttoright' ) ) | ( ( 'toptobottom' ) ) )
             int alt5=3;
             switch ( input.LA(1) ) {
-            case 13:
+            case 14:
                 {
                 alt5=1;
                 }
                 break;
-            case 14:
+            case 15:
                 {
                 alt5=2;
                 }
                 break;
-            case 15:
+            case 16:
                 {
                 alt5=3;
                 }
@@ -4403,7 +4404,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1547:1: ( 'oblique' )
                     // InternalSiriusTextDsl.g:1547:3: 'oblique'
                     {
-                    match(input,13,FOLLOW_2); 
+                    match(input,14,FOLLOW_2); 
 
                     }
 
@@ -4424,7 +4425,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1554:1: ( 'lefttoright' )
                     // InternalSiriusTextDsl.g:1554:3: 'lefttoright'
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,15,FOLLOW_2); 
 
                     }
 
@@ -4445,7 +4446,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1561:1: ( 'toptobottom' )
                     // InternalSiriusTextDsl.g:1561:3: 'toptobottom'
                     {
-                    match(input,15,FOLLOW_2); 
+                    match(input,16,FOLLOW_2); 
 
                     }
 
@@ -4483,22 +4484,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1575:1: ( ( ( 'solid' ) ) | ( ( 'dash' ) ) | ( ( 'dot' ) ) | ( ( 'dash_dot' ) ) )
             int alt6=4;
             switch ( input.LA(1) ) {
-            case 16:
+            case 17:
                 {
                 alt6=1;
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt6=2;
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt6=3;
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt6=4;
                 }
@@ -4521,7 +4522,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1578:1: ( 'solid' )
                     // InternalSiriusTextDsl.g:1578:3: 'solid'
                     {
-                    match(input,16,FOLLOW_2); 
+                    match(input,17,FOLLOW_2); 
 
                     }
 
@@ -4542,7 +4543,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1585:1: ( 'dash' )
                     // InternalSiriusTextDsl.g:1585:3: 'dash'
                     {
-                    match(input,17,FOLLOW_2); 
+                    match(input,18,FOLLOW_2); 
 
                     }
 
@@ -4563,7 +4564,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1592:1: ( 'dot' )
                     // InternalSiriusTextDsl.g:1592:3: 'dot'
                     {
-                    match(input,18,FOLLOW_2); 
+                    match(input,19,FOLLOW_2); 
 
                     }
 
@@ -4584,7 +4585,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1599:1: ( 'dash_dot' )
                     // InternalSiriusTextDsl.g:1599:3: 'dash_dot'
                     {
-                    match(input,19,FOLLOW_2); 
+                    match(input,20,FOLLOW_2); 
 
                     }
 
@@ -4622,17 +4623,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1613:1: ( ( ( 'straight' ) ) | ( ( 'manhattan' ) ) | ( ( 'tree' ) ) )
             int alt7=3;
             switch ( input.LA(1) ) {
-            case 20:
+            case 21:
                 {
                 alt7=1;
                 }
                 break;
-            case 21:
+            case 22:
                 {
                 alt7=2;
                 }
                 break;
-            case 22:
+            case 23:
                 {
                 alt7=3;
                 }
@@ -4655,7 +4656,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1616:1: ( 'straight' )
                     // InternalSiriusTextDsl.g:1616:3: 'straight'
                     {
-                    match(input,20,FOLLOW_2); 
+                    match(input,21,FOLLOW_2); 
 
                     }
 
@@ -4676,7 +4677,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1623:1: ( 'manhattan' )
                     // InternalSiriusTextDsl.g:1623:3: 'manhattan'
                     {
-                    match(input,21,FOLLOW_2); 
+                    match(input,22,FOLLOW_2); 
 
                     }
 
@@ -4697,7 +4698,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1630:1: ( 'tree' )
                     // InternalSiriusTextDsl.g:1630:3: 'tree'
                     {
-                    match(input,22,FOLLOW_2); 
+                    match(input,23,FOLLOW_2); 
 
                     }
 
@@ -4735,57 +4736,57 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1644:1: ( ( ( 'NoDecoration' ) ) | ( ( 'OutputArrow' ) ) | ( ( 'InputArrow' ) ) | ( ( 'OutputClosedArrow' ) ) | ( ( 'InputClosedArrow' ) ) | ( ( 'OutputFillClosedArrow' ) ) | ( ( 'InputFillClosedArrow' ) ) | ( ( 'Diamond' ) ) | ( ( 'FillDiamond' ) ) | ( ( 'InputArrowWithDiamond' ) ) | ( ( 'InputArrowWithFillDiamond' ) ) )
             int alt8=11;
             switch ( input.LA(1) ) {
-            case 23:
+            case 24:
                 {
                 alt8=1;
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt8=2;
                 }
                 break;
-            case 25:
+            case 26:
                 {
                 alt8=3;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt8=4;
                 }
                 break;
-            case 27:
+            case 28:
                 {
                 alt8=5;
                 }
                 break;
-            case 28:
+            case 29:
                 {
                 alt8=6;
                 }
                 break;
-            case 29:
+            case 30:
                 {
                 alt8=7;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt8=8;
                 }
                 break;
-            case 31:
+            case 32:
                 {
                 alt8=9;
                 }
                 break;
-            case 32:
+            case 33:
                 {
                 alt8=10;
                 }
                 break;
-            case 33:
+            case 34:
                 {
                 alt8=11;
                 }
@@ -4808,7 +4809,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1647:1: ( 'NoDecoration' )
                     // InternalSiriusTextDsl.g:1647:3: 'NoDecoration'
                     {
-                    match(input,23,FOLLOW_2); 
+                    match(input,24,FOLLOW_2); 
 
                     }
 
@@ -4829,7 +4830,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1654:1: ( 'OutputArrow' )
                     // InternalSiriusTextDsl.g:1654:3: 'OutputArrow'
                     {
-                    match(input,24,FOLLOW_2); 
+                    match(input,25,FOLLOW_2); 
 
                     }
 
@@ -4850,7 +4851,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1661:1: ( 'InputArrow' )
                     // InternalSiriusTextDsl.g:1661:3: 'InputArrow'
                     {
-                    match(input,25,FOLLOW_2); 
+                    match(input,26,FOLLOW_2); 
 
                     }
 
@@ -4871,7 +4872,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1668:1: ( 'OutputClosedArrow' )
                     // InternalSiriusTextDsl.g:1668:3: 'OutputClosedArrow'
                     {
-                    match(input,26,FOLLOW_2); 
+                    match(input,27,FOLLOW_2); 
 
                     }
 
@@ -4892,7 +4893,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1675:1: ( 'InputClosedArrow' )
                     // InternalSiriusTextDsl.g:1675:3: 'InputClosedArrow'
                     {
-                    match(input,27,FOLLOW_2); 
+                    match(input,28,FOLLOW_2); 
 
                     }
 
@@ -4913,7 +4914,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1682:1: ( 'OutputFillClosedArrow' )
                     // InternalSiriusTextDsl.g:1682:3: 'OutputFillClosedArrow'
                     {
-                    match(input,28,FOLLOW_2); 
+                    match(input,29,FOLLOW_2); 
 
                     }
 
@@ -4934,7 +4935,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1689:1: ( 'InputFillClosedArrow' )
                     // InternalSiriusTextDsl.g:1689:3: 'InputFillClosedArrow'
                     {
-                    match(input,29,FOLLOW_2); 
+                    match(input,30,FOLLOW_2); 
 
                     }
 
@@ -4955,7 +4956,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1696:1: ( 'Diamond' )
                     // InternalSiriusTextDsl.g:1696:3: 'Diamond'
                     {
-                    match(input,30,FOLLOW_2); 
+                    match(input,31,FOLLOW_2); 
 
                     }
 
@@ -4976,7 +4977,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1703:1: ( 'FillDiamond' )
                     // InternalSiriusTextDsl.g:1703:3: 'FillDiamond'
                     {
-                    match(input,31,FOLLOW_2); 
+                    match(input,32,FOLLOW_2); 
 
                     }
 
@@ -4997,7 +4998,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1710:1: ( 'InputArrowWithDiamond' )
                     // InternalSiriusTextDsl.g:1710:3: 'InputArrowWithDiamond'
                     {
-                    match(input,32,FOLLOW_2); 
+                    match(input,33,FOLLOW_2); 
 
                     }
 
@@ -5018,7 +5019,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1717:1: ( 'InputArrowWithFillDiamond' )
                     // InternalSiriusTextDsl.g:1717:3: 'InputArrowWithFillDiamond'
                     {
-                    match(input,33,FOLLOW_2); 
+                    match(input,34,FOLLOW_2); 
 
                     }
 
@@ -5056,17 +5057,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1731:1: ( ( ( 'none' ) ) | ( ( 'source' ) ) | ( ( 'target' ) ) )
             int alt9=3;
             switch ( input.LA(1) ) {
-            case 34:
+            case 35:
                 {
                 alt9=1;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt9=2;
                 }
                 break;
-            case 36:
+            case 37:
                 {
                 alt9=3;
                 }
@@ -5089,7 +5090,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1734:1: ( 'none' )
                     // InternalSiriusTextDsl.g:1734:3: 'none'
                     {
-                    match(input,34,FOLLOW_2); 
+                    match(input,35,FOLLOW_2); 
 
                     }
 
@@ -5110,7 +5111,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1741:1: ( 'source' )
                     // InternalSiriusTextDsl.g:1741:3: 'source'
                     {
-                    match(input,35,FOLLOW_2); 
+                    match(input,36,FOLLOW_2); 
 
                     }
 
@@ -5131,7 +5132,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1748:1: ( 'target' )
                     // InternalSiriusTextDsl.g:1748:3: 'target'
                     {
-                    match(input,36,FOLLOW_2); 
+                    match(input,37,FOLLOW_2); 
 
                     }
 
@@ -5169,22 +5170,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1762:1: ( ( ( 'none' ) ) | ( ( 'both' ) ) | ( ( 'source' ) ) | ( ( 'target' ) ) )
             int alt10=4;
             switch ( input.LA(1) ) {
-            case 34:
+            case 35:
                 {
                 alt10=1;
                 }
                 break;
-            case 37:
+            case 38:
                 {
                 alt10=2;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt10=3;
                 }
                 break;
-            case 36:
+            case 37:
                 {
                 alt10=4;
                 }
@@ -5207,7 +5208,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1765:1: ( 'none' )
                     // InternalSiriusTextDsl.g:1765:3: 'none'
                     {
-                    match(input,34,FOLLOW_2); 
+                    match(input,35,FOLLOW_2); 
 
                     }
 
@@ -5228,7 +5229,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1772:1: ( 'both' )
                     // InternalSiriusTextDsl.g:1772:3: 'both'
                     {
-                    match(input,37,FOLLOW_2); 
+                    match(input,38,FOLLOW_2); 
 
                     }
 
@@ -5249,7 +5250,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1779:1: ( 'source' )
                     // InternalSiriusTextDsl.g:1779:3: 'source'
                     {
-                    match(input,35,FOLLOW_2); 
+                    match(input,36,FOLLOW_2); 
 
                     }
 
@@ -5270,7 +5271,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                     // InternalSiriusTextDsl.g:1786:1: ( 'target' )
                     // InternalSiriusTextDsl.g:1786:3: 'target'
                     {
-                    match(input,36,FOLLOW_2); 
+                    match(input,37,FOLLOW_2); 
 
                     }
 
@@ -5446,7 +5447,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:1845:1: 'package'
             {
              before(grammarAccess.getSiriusFileAccess().getPackageKeyword_1()); 
-            match(input,38,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getSiriusFileAccess().getPackageKeyword_1()); 
 
             }
@@ -5612,7 +5613,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==41) ) {
+                if ( (LA12_0==42) ) {
                     alt12=1;
                 }
 
@@ -5865,7 +5866,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==39) ) {
+                if ( (LA13_0==40) ) {
                     alt13=1;
                 }
 
@@ -5962,7 +5963,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2033:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,39,FOLLOW_2); 
+            match(input,40,FOLLOW_2); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -6185,14 +6186,14 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==40) ) {
+            if ( (LA14_0==41) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
                     // InternalSiriusTextDsl.g:2126:2: '.*'
                     {
-                    match(input,40,FOLLOW_2); 
+                    match(input,41,FOLLOW_2); 
 
                     }
                     break;
@@ -6273,7 +6274,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2159:1: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_0()); 
-            match(input,41,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getImportAccess().getImportKeyword_0()); 
 
             }
@@ -6524,7 +6525,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2251:1: 'designer'
             {
              before(grammarAccess.getDesignerAccess().getDesignerKeyword_1()); 
-            match(input,42,FOLLOW_2); 
+            match(input,43,FOLLOW_2); 
              after(grammarAccess.getDesignerAccess().getDesignerKeyword_1()); 
 
             }
@@ -6688,7 +6689,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==45) ) {
+            if ( (LA16_0==46) ) {
                 alt16=1;
             }
             switch (alt16) {
@@ -6780,7 +6781,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2340:1: '{'
             {
              before(grammarAccess.getDesignerAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getDesignerAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -6861,7 +6862,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_DOCUMENTATION||LA17_0==46) ) {
+                if ( (LA17_0==RULE_DOCUMENTATION||LA17_0==47) ) {
                     alt17=1;
                 }
 
@@ -6953,7 +6954,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2399:1: '}'
             {
              before(grammarAccess.getDesignerAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getDesignerAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -7028,7 +7029,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2444:1: 'as'
             {
              before(grammarAccess.getDesignerAccess().getAsKeyword_3_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getDesignerAccess().getAsKeyword_3_0()); 
 
             }
@@ -7279,7 +7280,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2536:1: 'viewpoint'
             {
              before(grammarAccess.getViewpointAccess().getViewpointKeyword_1()); 
-            match(input,46,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getViewpointKeyword_1()); 
 
             }
@@ -7443,7 +7444,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==45) ) {
+            if ( (LA19_0==46) ) {
                 alt19=1;
             }
             switch (alt19) {
@@ -7535,7 +7536,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2625:1: '{'
             {
              before(grammarAccess.getViewpointAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -7614,7 +7615,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==47) ) {
+            if ( (LA20_0==48) ) {
                 alt20=1;
             }
             switch (alt20) {
@@ -7710,7 +7711,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==52) ) {
+            if ( (LA21_0==53) ) {
                 alt21=1;
             }
             switch (alt21) {
@@ -7806,7 +7807,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==53) ) {
+            if ( (LA22_0==54) ) {
                 alt22=1;
             }
             switch (alt22) {
@@ -7902,7 +7903,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==54) ) {
+            if ( (LA23_0==55) ) {
                 alt23=1;
             }
             switch (alt23) {
@@ -7989,7 +7990,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2771:1: '}'
             {
              before(grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_9()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_9()); 
 
             }
@@ -8064,7 +8065,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2822:1: 'as'
             {
              before(grammarAccess.getViewpointAccess().getAsKeyword_3_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getAsKeyword_3_0()); 
 
             }
@@ -8219,7 +8220,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2885:1: 'modelFileExtensions'
             {
              before(grammarAccess.getViewpointAccess().getModelFileExtensionsKeyword_5_0()); 
-            match(input,47,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getModelFileExtensionsKeyword_5_0()); 
 
             }
@@ -8294,7 +8295,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2916:1: '='
             {
              before(grammarAccess.getViewpointAccess().getEqualsSignKeyword_5_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getEqualsSignKeyword_5_1()); 
 
             }
@@ -8369,7 +8370,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:2947:1: '['
             {
              before(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_5_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_5_2()); 
 
             }
@@ -8535,7 +8536,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==51) ) {
+                if ( (LA24_0==52) ) {
                     alt24=1;
                 }
 
@@ -8627,7 +8628,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3035:1: ']'
             {
              before(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_5_5()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_5_5()); 
 
             }
@@ -8702,7 +8703,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3078:1: ','
             {
              before(grammarAccess.getViewpointAccess().getCommaKeyword_5_4_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getCommaKeyword_5_4_0()); 
 
             }
@@ -8857,7 +8858,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3141:1: 'icon'
             {
              before(grammarAccess.getViewpointAccess().getIconKeyword_6_0()); 
-            match(input,52,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getIconKeyword_6_0()); 
 
             }
@@ -8932,7 +8933,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3172:1: '='
             {
              before(grammarAccess.getViewpointAccess().getEqualsSignKeyword_6_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getEqualsSignKeyword_6_1()); 
 
             }
@@ -9087,7 +9088,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3237:1: 'representations'
             {
              before(grammarAccess.getViewpointAccess().getRepresentationsKeyword_7_0()); 
-            match(input,53,FOLLOW_2); 
+            match(input,54,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getRepresentationsKeyword_7_0()); 
 
             }
@@ -9162,7 +9163,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3268:1: '='
             {
              before(grammarAccess.getViewpointAccess().getEqualsSignKeyword_7_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getEqualsSignKeyword_7_1()); 
 
             }
@@ -9237,7 +9238,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3299:1: '['
             {
              before(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_7_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_7_2()); 
 
             }
@@ -9403,7 +9404,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3358:1: ']'
             {
              before(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_7_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_7_4()); 
 
             }
@@ -9564,7 +9565,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( (LA26_0==51) ) {
+                if ( (LA26_0==52) ) {
                     alt26=1;
                 }
 
@@ -9661,7 +9662,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3460:1: ','
             {
              before(grammarAccess.getViewpointAccess().getCommaKeyword_7_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getCommaKeyword_7_3_1_0()); 
 
             }
@@ -9816,7 +9817,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3523:1: 'javaExtensions'
             {
              before(grammarAccess.getViewpointAccess().getJavaExtensionsKeyword_8_0()); 
-            match(input,54,FOLLOW_2); 
+            match(input,55,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getJavaExtensionsKeyword_8_0()); 
 
             }
@@ -9891,7 +9892,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3554:1: '='
             {
              before(grammarAccess.getViewpointAccess().getEqualsSignKeyword_8_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getEqualsSignKeyword_8_1()); 
 
             }
@@ -9966,7 +9967,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3585:1: '['
             {
              before(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_8_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getLeftSquareBracketKeyword_8_2()); 
 
             }
@@ -10132,7 +10133,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3644:1: ']'
             {
              before(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_8_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getRightSquareBracketKeyword_8_4()); 
 
             }
@@ -10293,7 +10294,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt28=2;
                 int LA28_0 = input.LA(1);
 
-                if ( (LA28_0==51) ) {
+                if ( (LA28_0==52) ) {
                     alt28=1;
                 }
 
@@ -10390,7 +10391,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3746:1: ','
             {
              before(grammarAccess.getViewpointAccess().getCommaKeyword_8_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getViewpointAccess().getCommaKeyword_8_3_1_0()); 
 
             }
@@ -10645,7 +10646,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==132) ) {
+            if ( (LA30_0==133) ) {
                 alt30=1;
             }
             switch (alt30) {
@@ -10741,7 +10742,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0==133) ) {
+            if ( (LA31_0==134) ) {
                 alt31=1;
             }
             switch (alt31) {
@@ -10837,7 +10838,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt32=2;
             int LA32_0 = input.LA(1);
 
-            if ( (LA32_0==134) ) {
+            if ( (LA32_0==135) ) {
                 alt32=1;
             }
             switch (alt32) {
@@ -10935,7 +10936,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3927:1: ( '@MetamodelUris' )
             // InternalSiriusTextDsl.g:3928:2: '@MetamodelUris'
             {
-            match(input,55,FOLLOW_25); 
+            match(input,56,FOLLOW_25); 
 
             }
 
@@ -10953,7 +10954,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==55) ) {
+                if ( (LA33_0==56) ) {
                     alt33=1;
                 }
 
@@ -10962,7 +10963,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             	case 1 :
             	    // InternalSiriusTextDsl.g:3935:2: '@MetamodelUris'
             	    {
-            	    match(input,55,FOLLOW_25); 
+            	    match(input,56,FOLLOW_25); 
 
             	    }
             	    break;
@@ -11049,7 +11050,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:3965:1: '({'
             {
              before(grammarAccess.getDiagramAccess().getLeftParenthesisLeftCurlyBracketKeyword_5()); 
-            match(input,56,FOLLOW_2); 
+            match(input,57,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getLeftParenthesisLeftCurlyBracketKeyword_5()); 
 
             }
@@ -11215,7 +11216,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt34=2;
                 int LA34_0 = input.LA(1);
 
-                if ( (LA34_0==51) ) {
+                if ( (LA34_0==52) ) {
                     alt34=1;
                 }
 
@@ -11312,7 +11313,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4054:1: '})'
             {
              before(grammarAccess.getDiagramAccess().getRightCurlyBracketRightParenthesisKeyword_8()); 
-            match(input,57,FOLLOW_2); 
+            match(input,58,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getRightCurlyBracketRightParenthesisKeyword_8()); 
 
             }
@@ -11387,7 +11388,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4085:1: 'diagram'
             {
              before(grammarAccess.getDiagramAccess().getDiagramKeyword_9()); 
-            match(input,58,FOLLOW_2); 
+            match(input,59,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getDiagramKeyword_9()); 
 
             }
@@ -11551,7 +11552,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt35=2;
             int LA35_0 = input.LA(1);
 
-            if ( (LA35_0==45) ) {
+            if ( (LA35_0==46) ) {
                 alt35=1;
             }
             switch (alt35) {
@@ -11643,7 +11644,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4174:1: 'for'
             {
              before(grammarAccess.getDiagramAccess().getForKeyword_12()); 
-            match(input,59,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getForKeyword_12()); 
 
             }
@@ -11807,7 +11808,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==60) ) {
+            if ( (LA36_0==61) ) {
                 alt36=1;
             }
             switch (alt36) {
@@ -11899,7 +11900,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4263:1: '{'
             {
              before(grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_15()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getLeftCurlyBracketKeyword_15()); 
 
             }
@@ -11978,7 +11979,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt37=2;
             int LA37_0 = input.LA(1);
 
-            if ( (LA37_0==61) ) {
+            if ( (LA37_0==62) ) {
                 alt37=1;
             }
             switch (alt37) {
@@ -12074,7 +12075,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( (LA38_0==62) ) {
+            if ( (LA38_0==63) ) {
                 alt38=1;
             }
             switch (alt38) {
@@ -12170,7 +12171,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt39=2;
             int LA39_0 = input.LA(1);
 
-            if ( (LA39_0==63) ) {
+            if ( (LA39_0==64) ) {
                 alt39=1;
             }
             switch (alt39) {
@@ -12266,7 +12267,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==64) ) {
+            if ( (LA40_0==65) ) {
                 alt40=1;
             }
             switch (alt40) {
@@ -12362,7 +12363,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==65) ) {
+            if ( (LA41_0==66) ) {
                 alt41=1;
             }
             switch (alt41) {
@@ -12449,7 +12450,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4438:1: '}'
             {
              before(grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_21()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_21()); 
 
             }
@@ -12524,7 +12525,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4513:1: ','
             {
              before(grammarAccess.getDiagramAccess().getCommaKeyword_7_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getCommaKeyword_7_0()); 
 
             }
@@ -12679,7 +12680,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4576:1: 'as'
             {
              before(grammarAccess.getDiagramAccess().getAsKeyword_11_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getAsKeyword_11_0()); 
 
             }
@@ -12834,7 +12835,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4639:1: '?'
             {
              before(grammarAccess.getDiagramAccess().getQuestionMarkKeyword_14_0()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getQuestionMarkKeyword_14_0()); 
 
             }
@@ -12989,7 +12990,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4702:1: 'documentation'
             {
              before(grammarAccess.getDiagramAccess().getDocumentationKeyword_16_0()); 
-            match(input,61,FOLLOW_2); 
+            match(input,62,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getDocumentationKeyword_16_0()); 
 
             }
@@ -13064,7 +13065,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4733:1: '='
             {
              before(grammarAccess.getDiagramAccess().getEqualsSignKeyword_16_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEqualsSignKeyword_16_1()); 
 
             }
@@ -13219,7 +13220,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4798:1: 'titleExpression'
             {
              before(grammarAccess.getDiagramAccess().getTitleExpressionKeyword_17_0()); 
-            match(input,62,FOLLOW_2); 
+            match(input,63,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getTitleExpressionKeyword_17_0()); 
 
             }
@@ -13294,7 +13295,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4829:1: '='
             {
              before(grammarAccess.getDiagramAccess().getEqualsSignKeyword_17_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEqualsSignKeyword_17_1()); 
 
             }
@@ -13449,7 +13450,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4894:1: 'rootExpression'
             {
              before(grammarAccess.getDiagramAccess().getRootExpressionKeyword_18_0()); 
-            match(input,63,FOLLOW_2); 
+            match(input,64,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getRootExpressionKeyword_18_0()); 
 
             }
@@ -13524,7 +13525,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4925:1: '='
             {
              before(grammarAccess.getDiagramAccess().getEqualsSignKeyword_18_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEqualsSignKeyword_18_1()); 
 
             }
@@ -13679,7 +13680,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:4990:1: 'defaultLayer'
             {
              before(grammarAccess.getDiagramAccess().getDefaultLayerKeyword_19_0()); 
-            match(input,64,FOLLOW_2); 
+            match(input,65,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getDefaultLayerKeyword_19_0()); 
 
             }
@@ -13754,7 +13755,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5021:1: '='
             {
              before(grammarAccess.getDiagramAccess().getEqualsSignKeyword_19_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEqualsSignKeyword_19_1()); 
 
             }
@@ -13909,7 +13910,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5086:1: 'additionalLayers'
             {
              before(grammarAccess.getDiagramAccess().getAdditionalLayersKeyword_20_0()); 
-            match(input,65,FOLLOW_2); 
+            match(input,66,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getAdditionalLayersKeyword_20_0()); 
 
             }
@@ -13984,7 +13985,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5117:1: '='
             {
              before(grammarAccess.getDiagramAccess().getEqualsSignKeyword_20_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEqualsSignKeyword_20_1()); 
 
             }
@@ -14059,7 +14060,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5148:1: '['
             {
              before(grammarAccess.getDiagramAccess().getLeftSquareBracketKeyword_20_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getLeftSquareBracketKeyword_20_2()); 
 
             }
@@ -14225,7 +14226,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5207:1: ']'
             {
              before(grammarAccess.getDiagramAccess().getRightSquareBracketKeyword_20_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getRightSquareBracketKeyword_20_4()); 
 
             }
@@ -14386,7 +14387,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt43=2;
                 int LA43_0 = input.LA(1);
 
-                if ( (LA43_0==51) ) {
+                if ( (LA43_0==52) ) {
                     alt43=1;
                 }
 
@@ -14483,7 +14484,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5309:1: ','
             {
              before(grammarAccess.getDiagramAccess().getCommaKeyword_20_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getCommaKeyword_20_3_1_0()); 
 
             }
@@ -14734,7 +14735,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5401:1: 'layer'
             {
              before(grammarAccess.getLayerAccess().getLayerKeyword_1()); 
-            match(input,66,FOLLOW_2); 
+            match(input,67,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getLayerKeyword_1()); 
 
             }
@@ -14894,7 +14895,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5461:1: '{'
             {
              before(grammarAccess.getLayerAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -14973,7 +14974,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==52) ) {
+            if ( (LA45_0==53) ) {
                 alt45=1;
             }
             switch (alt45) {
@@ -15069,7 +15070,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==67) ) {
+            if ( (LA46_0==68) ) {
                 alt46=1;
             }
             switch (alt46) {
@@ -15165,7 +15166,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==68) ) {
+            if ( (LA47_0==69) ) {
                 alt47=1;
             }
             switch (alt47) {
@@ -15261,7 +15262,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==69) ) {
+            if ( (LA48_0==70) ) {
                 alt48=1;
             }
             switch (alt48) {
@@ -15348,7 +15349,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5607:1: '}'
             {
              before(grammarAccess.getLayerAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getRightCurlyBracketKeyword_8()); 
 
             }
@@ -15423,7 +15424,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5656:1: 'icon'
             {
              before(grammarAccess.getLayerAccess().getIconKeyword_4_0()); 
-            match(input,52,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getIconKeyword_4_0()); 
 
             }
@@ -15498,7 +15499,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5687:1: '='
             {
              before(grammarAccess.getLayerAccess().getEqualsSignKeyword_4_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getEqualsSignKeyword_4_1()); 
 
             }
@@ -15653,7 +15654,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5752:1: 'mappings'
             {
              before(grammarAccess.getLayerAccess().getMappingsKeyword_5_0()); 
-            match(input,67,FOLLOW_2); 
+            match(input,68,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getMappingsKeyword_5_0()); 
 
             }
@@ -15728,7 +15729,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5783:1: '='
             {
              before(grammarAccess.getLayerAccess().getEqualsSignKeyword_5_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getEqualsSignKeyword_5_1()); 
 
             }
@@ -15803,7 +15804,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5814:1: '['
             {
              before(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_5_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_5_2()); 
 
             }
@@ -15969,7 +15970,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5873:1: ']'
             {
              before(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_5_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_5_4()); 
 
             }
@@ -16130,7 +16131,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt50=2;
                 int LA50_0 = input.LA(1);
 
-                if ( (LA50_0==51) ) {
+                if ( (LA50_0==52) ) {
                     alt50=1;
                 }
 
@@ -16227,7 +16228,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:5975:1: ','
             {
              before(grammarAccess.getLayerAccess().getCommaKeyword_5_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getCommaKeyword_5_3_1_0()); 
 
             }
@@ -16382,7 +16383,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6038:1: 'edges'
             {
              before(grammarAccess.getLayerAccess().getEdgesKeyword_6_0()); 
-            match(input,68,FOLLOW_2); 
+            match(input,69,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getEdgesKeyword_6_0()); 
 
             }
@@ -16457,7 +16458,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6069:1: '='
             {
              before(grammarAccess.getLayerAccess().getEqualsSignKeyword_6_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getEqualsSignKeyword_6_1()); 
 
             }
@@ -16532,7 +16533,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6100:1: '['
             {
              before(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_6_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_6_2()); 
 
             }
@@ -16698,7 +16699,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6159:1: ']'
             {
              before(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_6_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_6_4()); 
 
             }
@@ -16859,7 +16860,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt52=2;
                 int LA52_0 = input.LA(1);
 
-                if ( (LA52_0==51) ) {
+                if ( (LA52_0==52) ) {
                     alt52=1;
                 }
 
@@ -16956,7 +16957,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6261:1: ','
             {
              before(grammarAccess.getLayerAccess().getCommaKeyword_6_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getCommaKeyword_6_3_1_0()); 
 
             }
@@ -17111,7 +17112,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6324:1: 'sections'
             {
              before(grammarAccess.getLayerAccess().getSectionsKeyword_7_0()); 
-            match(input,69,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getSectionsKeyword_7_0()); 
 
             }
@@ -17186,7 +17187,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6355:1: '='
             {
              before(grammarAccess.getLayerAccess().getEqualsSignKeyword_7_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getEqualsSignKeyword_7_1()); 
 
             }
@@ -17261,7 +17262,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6386:1: '['
             {
              before(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_7_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_7_2()); 
 
             }
@@ -17427,7 +17428,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6445:1: ']'
             {
              before(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_7_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getRightSquareBracketKeyword_7_4()); 
 
             }
@@ -17588,7 +17589,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( (LA54_0==51) ) {
+                if ( (LA54_0==52) ) {
                     alt54=1;
                 }
 
@@ -17685,7 +17686,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6547:1: ','
             {
              before(grammarAccess.getLayerAccess().getCommaKeyword_7_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getLayerAccess().getCommaKeyword_7_3_1_0()); 
 
             }
@@ -17936,7 +17937,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6639:1: 'section'
             {
              before(grammarAccess.getSectionAccess().getSectionKeyword_1()); 
-            match(input,70,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getSectionKeyword_1()); 
 
             }
@@ -18100,7 +18101,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( (LA56_0==45) ) {
+            if ( (LA56_0==46) ) {
                 alt56=1;
             }
             switch (alt56) {
@@ -18192,7 +18193,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6728:1: '{'
             {
              before(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -18271,7 +18272,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( (LA57_0==52) ) {
+            if ( (LA57_0==53) ) {
                 alt57=1;
             }
             switch (alt57) {
@@ -18367,7 +18368,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt58=2;
             int LA58_0 = input.LA(1);
 
-            if ( (LA58_0==71) ) {
+            if ( (LA58_0==72) ) {
                 alt58=1;
             }
             switch (alt58) {
@@ -18454,7 +18455,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6816:1: '}'
             {
              before(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_7()); 
 
             }
@@ -18529,7 +18530,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6863:1: 'as'
             {
              before(grammarAccess.getSectionAccess().getAsKeyword_3_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getAsKeyword_3_0()); 
 
             }
@@ -18684,7 +18685,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6926:1: 'icon'
             {
              before(grammarAccess.getSectionAccess().getIconKeyword_5_0()); 
-            match(input,52,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getIconKeyword_5_0()); 
 
             }
@@ -18759,7 +18760,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:6957:1: '='
             {
              before(grammarAccess.getSectionAccess().getEqualsSignKeyword_5_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getEqualsSignKeyword_5_1()); 
 
             }
@@ -18914,7 +18915,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7022:1: 'tools'
             {
              before(grammarAccess.getSectionAccess().getToolsKeyword_6_0()); 
-            match(input,71,FOLLOW_2); 
+            match(input,72,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getToolsKeyword_6_0()); 
 
             }
@@ -18989,7 +18990,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7053:1: '='
             {
              before(grammarAccess.getSectionAccess().getEqualsSignKeyword_6_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getEqualsSignKeyword_6_1()); 
 
             }
@@ -19064,7 +19065,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7084:1: '['
             {
              before(grammarAccess.getSectionAccess().getLeftSquareBracketKeyword_6_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getLeftSquareBracketKeyword_6_2()); 
 
             }
@@ -19230,7 +19231,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7143:1: ']'
             {
              before(grammarAccess.getSectionAccess().getRightSquareBracketKeyword_6_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getRightSquareBracketKeyword_6_4()); 
 
             }
@@ -19391,7 +19392,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt60=2;
                 int LA60_0 = input.LA(1);
 
-                if ( (LA60_0==51) ) {
+                if ( (LA60_0==52) ) {
                     alt60=1;
                 }
 
@@ -19488,7 +19489,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7245:1: ','
             {
              before(grammarAccess.getSectionAccess().getCommaKeyword_6_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getCommaKeyword_6_3_1_0()); 
 
             }
@@ -19743,7 +19744,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( (LA62_0==135) ) {
+            if ( (LA62_0==136) ) {
                 alt62=1;
             }
             switch (alt62) {
@@ -19835,7 +19836,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7366:1: '@NodeCreationVariable'
             {
              before(grammarAccess.getContainerCreationAccess().getNodeCreationVariableKeyword_2()); 
-            match(input,72,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getNodeCreationVariableKeyword_2()); 
 
             }
@@ -19910,7 +19911,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7397:1: '('
             {
              before(grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_3()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_3()); 
 
             }
@@ -20070,7 +20071,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7457:1: ')'
             {
              before(grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_5()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -20145,7 +20146,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7488:1: '@ContainerViewVariable'
             {
              before(grammarAccess.getContainerCreationAccess().getContainerViewVariableKeyword_6()); 
-            match(input,75,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getContainerViewVariableKeyword_6()); 
 
             }
@@ -20220,7 +20221,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7519:1: '('
             {
              before(grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_7()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftParenthesisKeyword_7()); 
 
             }
@@ -20380,7 +20381,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7579:1: ')'
             {
              before(grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -20455,7 +20456,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7610:1: 'containerCreation'
             {
              before(grammarAccess.getContainerCreationAccess().getContainerCreationKeyword_10()); 
-            match(input,76,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getContainerCreationKeyword_10()); 
 
             }
@@ -20619,7 +20620,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt63=2;
             int LA63_0 = input.LA(1);
 
-            if ( (LA63_0==45) ) {
+            if ( (LA63_0==46) ) {
                 alt63=1;
             }
             switch (alt63) {
@@ -20715,7 +20716,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt64=2;
             int LA64_0 = input.LA(1);
 
-            if ( (LA64_0==60) ) {
+            if ( (LA64_0==61) ) {
                 alt64=1;
             }
             switch (alt64) {
@@ -20807,7 +20808,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7728:1: '{'
             {
              before(grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_14()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_14()); 
 
             }
@@ -20886,7 +20887,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt65=2;
             int LA65_0 = input.LA(1);
 
-            if ( (LA65_0==52) ) {
+            if ( (LA65_0==53) ) {
                 alt65=1;
             }
             switch (alt65) {
@@ -20978,7 +20979,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7788:1: 'containerMappings'
             {
              before(grammarAccess.getContainerCreationAccess().getContainerMappingsKeyword_16()); 
-            match(input,77,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getContainerMappingsKeyword_16()); 
 
             }
@@ -21053,7 +21054,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7819:1: '='
             {
              before(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_17()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_17()); 
 
             }
@@ -21128,7 +21129,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7850:1: '['
             {
              before(grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_18()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_18()); 
 
             }
@@ -21299,7 +21300,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7910:1: ']'
             {
              before(grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_20()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_20()); 
 
             }
@@ -21378,7 +21379,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt67=2;
             int LA67_0 = input.LA(1);
 
-            if ( (LA67_0==79) ) {
+            if ( (LA67_0==80) ) {
                 alt67=1;
             }
             switch (alt67) {
@@ -21470,7 +21471,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:7970:1: 'begin'
             {
              before(grammarAccess.getContainerCreationAccess().getBeginKeyword_22()); 
-            match(input,78,FOLLOW_2); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getBeginKeyword_22()); 
 
             }
@@ -21545,7 +21546,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8001:1: '{'
             {
              before(grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_23()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftCurlyBracketKeyword_23()); 
 
             }
@@ -21624,7 +21625,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==59||LA68_0==80||(LA68_0>=82 && LA68_0<=83)||LA68_0==86||LA68_0==88||LA68_0==91||LA68_0==94||LA68_0==97||(LA68_0>=99 && LA68_0<=100)||LA68_0==102) ) {
+            if ( (LA68_0==60||LA68_0==81||(LA68_0>=83 && LA68_0<=84)||LA68_0==87||LA68_0==89||LA68_0==92||LA68_0==95||LA68_0==98||(LA68_0>=100 && LA68_0<=101)||LA68_0==103) ) {
                 alt68=1;
             }
             switch (alt68) {
@@ -21716,7 +21717,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8061:1: '}'
             {
              before(grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_25()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_25()); 
 
             }
@@ -21786,7 +21787,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8091:1: '}'
             {
              before(grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_26()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightCurlyBracketKeyword_26()); 
 
             }
@@ -21861,7 +21862,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8176:1: 'as'
             {
              before(grammarAccess.getContainerCreationAccess().getAsKeyword_12_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getAsKeyword_12_0()); 
 
             }
@@ -22016,7 +22017,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8239:1: '?'
             {
              before(grammarAccess.getContainerCreationAccess().getQuestionMarkKeyword_13_0()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getQuestionMarkKeyword_13_0()); 
 
             }
@@ -22171,7 +22172,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8302:1: 'icon'
             {
              before(grammarAccess.getContainerCreationAccess().getIconKeyword_15_0()); 
-            match(input,52,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getIconKeyword_15_0()); 
 
             }
@@ -22246,7 +22247,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8333:1: '='
             {
              before(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_15_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_15_1()); 
 
             }
@@ -22487,7 +22488,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt69=2;
                 int LA69_0 = input.LA(1);
 
-                if ( (LA69_0==51) ) {
+                if ( (LA69_0==52) ) {
                     alt69=1;
                 }
 
@@ -22584,7 +22585,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8459:1: ','
             {
              before(grammarAccess.getContainerCreationAccess().getCommaKeyword_19_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getCommaKeyword_19_1_0()); 
 
             }
@@ -22739,7 +22740,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8522:1: 'extraMappings'
             {
              before(grammarAccess.getContainerCreationAccess().getExtraMappingsKeyword_21_0()); 
-            match(input,79,FOLLOW_2); 
+            match(input,80,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getExtraMappingsKeyword_21_0()); 
 
             }
@@ -22814,7 +22815,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8553:1: '='
             {
              before(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_21_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_21_1()); 
 
             }
@@ -22889,7 +22890,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8584:1: '['
             {
              before(grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_21_2()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_21_2()); 
 
             }
@@ -23055,7 +23056,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8643:1: ']'
             {
              before(grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_21_4()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_21_4()); 
 
             }
@@ -23216,7 +23217,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt71=2;
                 int LA71_0 = input.LA(1);
 
-                if ( (LA71_0==51) ) {
+                if ( (LA71_0==52) ) {
                     alt71=1;
                 }
 
@@ -23313,7 +23314,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8745:1: ','
             {
              before(grammarAccess.getContainerCreationAccess().getCommaKeyword_21_3_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getCommaKeyword_21_3_1_0()); 
 
             }
@@ -23468,7 +23469,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8808:1: 'changeContext'
             {
              before(grammarAccess.getChangeContextAccess().getChangeContextKeyword_0()); 
-            match(input,80,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getChangeContextAccess().getChangeContextKeyword_0()); 
 
             }
@@ -23543,7 +23544,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8839:1: '('
             {
              before(grammarAccess.getChangeContextAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getChangeContextAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -23703,7 +23704,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8899:1: ')'
             {
              before(grammarAccess.getChangeContextAccess().getRightParenthesisKeyword_3()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getChangeContextAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -23777,7 +23778,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt72=2;
             int LA72_0 = input.LA(1);
 
-            if ( (LA72_0==43) ) {
+            if ( (LA72_0==44) ) {
                 alt72=1;
             }
             switch (alt72) {
@@ -23869,7 +23870,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:8968:1: '{'
             {
              before(grammarAccess.getChangeContextAccess().getLeftCurlyBracketKeyword_4_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getChangeContextAccess().getLeftCurlyBracketKeyword_4_0()); 
 
             }
@@ -23950,7 +23951,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt73=2;
                 int LA73_0 = input.LA(1);
 
-                if ( (LA73_0==59||LA73_0==80||(LA73_0>=82 && LA73_0<=83)||LA73_0==86||LA73_0==88||LA73_0==91||LA73_0==94||LA73_0==97||(LA73_0>=99 && LA73_0<=100)||LA73_0==102) ) {
+                if ( (LA73_0==60||LA73_0==81||(LA73_0>=83 && LA73_0<=84)||LA73_0==87||LA73_0==89||LA73_0==92||LA73_0==95||LA73_0==98||(LA73_0>=100 && LA73_0<=101)||LA73_0==103) ) {
                     alt73=1;
                 }
 
@@ -24042,7 +24043,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9027:1: '}'
             {
              before(grammarAccess.getChangeContextAccess().getRightCurlyBracketKeyword_4_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getChangeContextAccess().getRightCurlyBracketKeyword_4_2()); 
 
             }
@@ -24117,7 +24118,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9064:1: 'for'
             {
              before(grammarAccess.getForAccess().getForKeyword_0()); 
-            match(input,59,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getForAccess().getForKeyword_0()); 
 
             }
@@ -24192,7 +24193,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9095:1: '('
             {
              before(grammarAccess.getForAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getForAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -24352,7 +24353,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9155:1: ':'
             {
              before(grammarAccess.getForAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getForAccess().getColonKeyword_3()); 
 
             }
@@ -24512,7 +24513,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9215:1: ')'
             {
              before(grammarAccess.getForAccess().getRightParenthesisKeyword_5()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getForAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -24587,7 +24588,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9246:1: '{'
             {
              before(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_6()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_6()); 
 
             }
@@ -24668,7 +24669,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt74=2;
                 int LA74_0 = input.LA(1);
 
-                if ( (LA74_0==59||LA74_0==80||(LA74_0>=82 && LA74_0<=83)||LA74_0==86||LA74_0==88||LA74_0==91||LA74_0==94||LA74_0==97||(LA74_0>=99 && LA74_0<=100)||LA74_0==102) ) {
+                if ( (LA74_0==60||LA74_0==81||(LA74_0>=83 && LA74_0<=84)||LA74_0==87||LA74_0==89||LA74_0==92||LA74_0==95||LA74_0==98||(LA74_0>=100 && LA74_0<=101)||LA74_0==103) ) {
                     alt74=1;
                 }
 
@@ -24760,7 +24761,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9305:1: '}'
             {
              before(grammarAccess.getForAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getForAccess().getRightCurlyBracketKeyword_8()); 
 
             }
@@ -24835,7 +24836,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9354:1: 'if'
             {
              before(grammarAccess.getIfAccess().getIfKeyword_0()); 
-            match(input,82,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getIfKeyword_0()); 
 
             }
@@ -24910,7 +24911,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9385:1: '('
             {
              before(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -25070,7 +25071,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9445:1: ')'
             {
              before(grammarAccess.getIfAccess().getRightParenthesisKeyword_3()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -25145,7 +25146,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9476:1: '{'
             {
              before(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -25226,7 +25227,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt75=2;
                 int LA75_0 = input.LA(1);
 
-                if ( (LA75_0==59||LA75_0==80||(LA75_0>=82 && LA75_0<=83)||LA75_0==86||LA75_0==88||LA75_0==91||LA75_0==94||LA75_0==97||(LA75_0>=99 && LA75_0<=100)||LA75_0==102) ) {
+                if ( (LA75_0==60||LA75_0==81||(LA75_0>=83 && LA75_0<=84)||LA75_0==87||LA75_0==89||LA75_0==92||LA75_0==95||LA75_0==98||(LA75_0>=100 && LA75_0<=101)||LA75_0==103) ) {
                     alt75=1;
                 }
 
@@ -25318,7 +25319,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9535:1: '}'
             {
              before(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -25393,7 +25394,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9580:1: 'set'
             {
              before(grammarAccess.getSetAccess().getSetKeyword_0()); 
-            match(input,83,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getSetKeyword_0()); 
 
             }
@@ -25468,7 +25469,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9611:1: '('
             {
              before(grammarAccess.getSetAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -25543,7 +25544,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9642:1: 'featureName'
             {
              before(grammarAccess.getSetAccess().getFeatureNameKeyword_2()); 
-            match(input,84,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getFeatureNameKeyword_2()); 
 
             }
@@ -25618,7 +25619,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9673:1: ':'
             {
              before(grammarAccess.getSetAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getColonKeyword_3()); 
 
             }
@@ -25778,7 +25779,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9733:1: ','
             {
              before(grammarAccess.getSetAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getCommaKeyword_5()); 
 
             }
@@ -25853,7 +25854,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9764:1: 'valueExpression'
             {
              before(grammarAccess.getSetAccess().getValueExpressionKeyword_6()); 
-            match(input,85,FOLLOW_2); 
+            match(input,86,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getValueExpressionKeyword_6()); 
 
             }
@@ -25928,7 +25929,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9795:1: ':'
             {
              before(grammarAccess.getSetAccess().getColonKeyword_7()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getColonKeyword_7()); 
 
             }
@@ -26088,7 +26089,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9855:1: ')'
             {
              before(grammarAccess.getSetAccess().getRightParenthesisKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -26162,7 +26163,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt76=2;
             int LA76_0 = input.LA(1);
 
-            if ( (LA76_0==43) ) {
+            if ( (LA76_0==44) ) {
                 alt76=1;
             }
             switch (alt76) {
@@ -26254,7 +26255,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9936:1: '{'
             {
              before(grammarAccess.getSetAccess().getLeftCurlyBracketKeyword_10_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getLeftCurlyBracketKeyword_10_0()); 
 
             }
@@ -26335,7 +26336,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt77=2;
                 int LA77_0 = input.LA(1);
 
-                if ( (LA77_0==59||LA77_0==80||(LA77_0>=82 && LA77_0<=83)||LA77_0==86||LA77_0==88||LA77_0==91||LA77_0==94||LA77_0==97||(LA77_0>=99 && LA77_0<=100)||LA77_0==102) ) {
+                if ( (LA77_0==60||LA77_0==81||(LA77_0>=83 && LA77_0<=84)||LA77_0==87||LA77_0==89||LA77_0==92||LA77_0==95||LA77_0==98||(LA77_0>=100 && LA77_0<=101)||LA77_0==103) ) {
                     alt77=1;
                 }
 
@@ -26427,7 +26428,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:9995:1: '}'
             {
              before(grammarAccess.getSetAccess().getRightCurlyBracketKeyword_10_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getSetAccess().getRightCurlyBracketKeyword_10_2()); 
 
             }
@@ -26502,7 +26503,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10032:1: 'unset'
             {
              before(grammarAccess.getUnsetAccess().getUnsetKeyword_0()); 
-            match(input,86,FOLLOW_2); 
+            match(input,87,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getUnsetKeyword_0()); 
 
             }
@@ -26577,7 +26578,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10063:1: '('
             {
              before(grammarAccess.getUnsetAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -26652,7 +26653,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10094:1: 'featureName'
             {
              before(grammarAccess.getUnsetAccess().getFeatureNameKeyword_2()); 
-            match(input,84,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getFeatureNameKeyword_2()); 
 
             }
@@ -26727,7 +26728,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10125:1: ':'
             {
              before(grammarAccess.getUnsetAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getColonKeyword_3()); 
 
             }
@@ -26891,7 +26892,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt78=2;
             int LA78_0 = input.LA(1);
 
-            if ( (LA78_0==51) ) {
+            if ( (LA78_0==52) ) {
                 alt78=1;
             }
             switch (alt78) {
@@ -26983,7 +26984,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10214:1: ')'
             {
              before(grammarAccess.getUnsetAccess().getRightParenthesisKeyword_6()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -27057,7 +27058,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt79=2;
             int LA79_0 = input.LA(1);
 
-            if ( (LA79_0==43) ) {
+            if ( (LA79_0==44) ) {
                 alt79=1;
             }
             switch (alt79) {
@@ -27149,7 +27150,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10289:1: ','
             {
              before(grammarAccess.getUnsetAccess().getCommaKeyword_5_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getCommaKeyword_5_0()); 
 
             }
@@ -27224,7 +27225,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10320:1: 'elementExpression'
             {
              before(grammarAccess.getUnsetAccess().getElementExpressionKeyword_5_1()); 
-            match(input,87,FOLLOW_2); 
+            match(input,88,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getElementExpressionKeyword_5_1()); 
 
             }
@@ -27299,7 +27300,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10351:1: ':'
             {
              before(grammarAccess.getUnsetAccess().getColonKeyword_5_2()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getColonKeyword_5_2()); 
 
             }
@@ -27454,7 +27455,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10418:1: '{'
             {
              before(grammarAccess.getUnsetAccess().getLeftCurlyBracketKeyword_7_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getLeftCurlyBracketKeyword_7_0()); 
 
             }
@@ -27535,7 +27536,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt80=2;
                 int LA80_0 = input.LA(1);
 
-                if ( (LA80_0==59||LA80_0==80||(LA80_0>=82 && LA80_0<=83)||LA80_0==86||LA80_0==88||LA80_0==91||LA80_0==94||LA80_0==97||(LA80_0>=99 && LA80_0<=100)||LA80_0==102) ) {
+                if ( (LA80_0==60||LA80_0==81||(LA80_0>=83 && LA80_0<=84)||LA80_0==87||LA80_0==89||LA80_0==92||LA80_0==95||LA80_0==98||(LA80_0>=100 && LA80_0<=101)||LA80_0==103) ) {
                     alt80=1;
                 }
 
@@ -27627,7 +27628,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10477:1: '}'
             {
              before(grammarAccess.getUnsetAccess().getRightCurlyBracketKeyword_7_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getUnsetAccess().getRightCurlyBracketKeyword_7_2()); 
 
             }
@@ -27702,7 +27703,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10514:1: 'createInstance'
             {
              before(grammarAccess.getCreateInstanceAccess().getCreateInstanceKeyword_0()); 
-            match(input,88,FOLLOW_2); 
+            match(input,89,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getCreateInstanceKeyword_0()); 
 
             }
@@ -27777,7 +27778,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10545:1: '('
             {
              before(grammarAccess.getCreateInstanceAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -27852,7 +27853,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10576:1: 'referenceName'
             {
              before(grammarAccess.getCreateInstanceAccess().getReferenceNameKeyword_2()); 
-            match(input,89,FOLLOW_2); 
+            match(input,90,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getReferenceNameKeyword_2()); 
 
             }
@@ -27927,7 +27928,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10607:1: ':'
             {
              before(grammarAccess.getCreateInstanceAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getColonKeyword_3()); 
 
             }
@@ -28087,7 +28088,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10667:1: ','
             {
              before(grammarAccess.getCreateInstanceAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getCommaKeyword_5()); 
 
             }
@@ -28162,7 +28163,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10698:1: 'type'
             {
              before(grammarAccess.getCreateInstanceAccess().getTypeKeyword_6()); 
-            match(input,90,FOLLOW_2); 
+            match(input,91,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getTypeKeyword_6()); 
 
             }
@@ -28237,7 +28238,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10729:1: ':'
             {
              before(grammarAccess.getCreateInstanceAccess().getColonKeyword_7()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getColonKeyword_7()); 
 
             }
@@ -28397,7 +28398,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10789:1: ')'
             {
              before(grammarAccess.getCreateInstanceAccess().getRightParenthesisKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -28472,7 +28473,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10820:1: 'as'
             {
              before(grammarAccess.getCreateInstanceAccess().getAsKeyword_10()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getAsKeyword_10()); 
 
             }
@@ -28631,7 +28632,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt81=2;
             int LA81_0 = input.LA(1);
 
-            if ( (LA81_0==43) ) {
+            if ( (LA81_0==44) ) {
                 alt81=1;
             }
             switch (alt81) {
@@ -28723,7 +28724,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10934:1: '{'
             {
              before(grammarAccess.getCreateInstanceAccess().getLeftCurlyBracketKeyword_12_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getLeftCurlyBracketKeyword_12_0()); 
 
             }
@@ -28804,7 +28805,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt82=2;
                 int LA82_0 = input.LA(1);
 
-                if ( (LA82_0==59||LA82_0==80||(LA82_0>=82 && LA82_0<=83)||LA82_0==86||LA82_0==88||LA82_0==91||LA82_0==94||LA82_0==97||(LA82_0>=99 && LA82_0<=100)||LA82_0==102) ) {
+                if ( (LA82_0==60||LA82_0==81||(LA82_0>=83 && LA82_0<=84)||LA82_0==87||LA82_0==89||LA82_0==92||LA82_0==95||LA82_0==98||(LA82_0>=100 && LA82_0<=101)||LA82_0==103) ) {
                     alt82=1;
                 }
 
@@ -28896,7 +28897,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:10993:1: '}'
             {
              before(grammarAccess.getCreateInstanceAccess().getRightCurlyBracketKeyword_12_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getCreateInstanceAccess().getRightCurlyBracketKeyword_12_2()); 
 
             }
@@ -28971,7 +28972,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11030:1: 'createView'
             {
              before(grammarAccess.getCreateViewAccess().getCreateViewKeyword_0()); 
-            match(input,91,FOLLOW_2); 
+            match(input,92,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getCreateViewKeyword_0()); 
 
             }
@@ -29046,7 +29047,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11061:1: '('
             {
              before(grammarAccess.getCreateViewAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -29121,7 +29122,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11092:1: 'mapping'
             {
              before(grammarAccess.getCreateViewAccess().getMappingKeyword_2()); 
-            match(input,92,FOLLOW_2); 
+            match(input,93,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getMappingKeyword_2()); 
 
             }
@@ -29196,7 +29197,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11123:1: ':'
             {
              before(grammarAccess.getCreateViewAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getColonKeyword_3()); 
 
             }
@@ -29356,7 +29357,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11183:1: ','
             {
              before(grammarAccess.getCreateViewAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getCommaKeyword_5()); 
 
             }
@@ -29431,7 +29432,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11214:1: 'containerViewExpression'
             {
              before(grammarAccess.getCreateViewAccess().getContainerViewExpressionKeyword_6()); 
-            match(input,93,FOLLOW_2); 
+            match(input,94,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getContainerViewExpressionKeyword_6()); 
 
             }
@@ -29506,7 +29507,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11245:1: ':'
             {
              before(grammarAccess.getCreateViewAccess().getColonKeyword_7()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getColonKeyword_7()); 
 
             }
@@ -29666,7 +29667,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11305:1: ')'
             {
              before(grammarAccess.getCreateViewAccess().getRightParenthesisKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -29741,7 +29742,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11336:1: 'as'
             {
              before(grammarAccess.getCreateViewAccess().getAsKeyword_10()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getAsKeyword_10()); 
 
             }
@@ -29900,7 +29901,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt83=2;
             int LA83_0 = input.LA(1);
 
-            if ( (LA83_0==43) ) {
+            if ( (LA83_0==44) ) {
                 alt83=1;
             }
             switch (alt83) {
@@ -29992,7 +29993,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11450:1: '{'
             {
              before(grammarAccess.getCreateViewAccess().getLeftCurlyBracketKeyword_12_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getLeftCurlyBracketKeyword_12_0()); 
 
             }
@@ -30073,7 +30074,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt84=2;
                 int LA84_0 = input.LA(1);
 
-                if ( (LA84_0==59||LA84_0==80||(LA84_0>=82 && LA84_0<=83)||LA84_0==86||LA84_0==88||LA84_0==91||LA84_0==94||LA84_0==97||(LA84_0>=99 && LA84_0<=100)||LA84_0==102) ) {
+                if ( (LA84_0==60||LA84_0==81||(LA84_0>=83 && LA84_0<=84)||LA84_0==87||LA84_0==89||LA84_0==92||LA84_0==95||LA84_0==98||(LA84_0>=100 && LA84_0<=101)||LA84_0==103) ) {
                     alt84=1;
                 }
 
@@ -30165,7 +30166,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11509:1: '}'
             {
              before(grammarAccess.getCreateViewAccess().getRightCurlyBracketKeyword_12_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getCreateViewAccess().getRightCurlyBracketKeyword_12_2()); 
 
             }
@@ -30240,7 +30241,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11546:1: 'createEdgeView'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getCreateEdgeViewKeyword_0()); 
-            match(input,94,FOLLOW_2); 
+            match(input,95,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getCreateEdgeViewKeyword_0()); 
 
             }
@@ -30315,7 +30316,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11577:1: '('
             {
              before(grammarAccess.getCreateEdgeViewAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -30390,7 +30391,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11608:1: 'mapping'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getMappingKeyword_2()); 
-            match(input,92,FOLLOW_2); 
+            match(input,93,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getMappingKeyword_2()); 
 
             }
@@ -30465,7 +30466,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11639:1: ':'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_3()); 
 
             }
@@ -30625,7 +30626,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11699:1: ','
             {
              before(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_5()); 
 
             }
@@ -30700,7 +30701,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11730:1: 'sourceExpression'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getSourceExpressionKeyword_6()); 
-            match(input,95,FOLLOW_2); 
+            match(input,96,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getSourceExpressionKeyword_6()); 
 
             }
@@ -30775,7 +30776,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11761:1: ':'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_7()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_7()); 
 
             }
@@ -30935,7 +30936,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11821:1: ','
             {
              before(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_9()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_9()); 
 
             }
@@ -31010,7 +31011,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11852:1: 'targetExpression'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getTargetExpressionKeyword_10()); 
-            match(input,96,FOLLOW_2); 
+            match(input,97,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getTargetExpressionKeyword_10()); 
 
             }
@@ -31085,7 +31086,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11883:1: ':'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_11()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_11()); 
 
             }
@@ -31245,7 +31246,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11943:1: ','
             {
              before(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_13()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getCommaKeyword_13()); 
 
             }
@@ -31320,7 +31321,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:11974:1: 'containerViewExpression'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getContainerViewExpressionKeyword_14()); 
-            match(input,93,FOLLOW_2); 
+            match(input,94,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getContainerViewExpressionKeyword_14()); 
 
             }
@@ -31395,7 +31396,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12005:1: ':'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_15()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getColonKeyword_15()); 
 
             }
@@ -31555,7 +31556,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12065:1: ')'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getRightParenthesisKeyword_17()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getRightParenthesisKeyword_17()); 
 
             }
@@ -31630,7 +31631,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12096:1: 'as'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getAsKeyword_18()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getAsKeyword_18()); 
 
             }
@@ -31789,7 +31790,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt85=2;
             int LA85_0 = input.LA(1);
 
-            if ( (LA85_0==43) ) {
+            if ( (LA85_0==44) ) {
                 alt85=1;
             }
             switch (alt85) {
@@ -31881,7 +31882,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12226:1: '{'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getLeftCurlyBracketKeyword_20_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getLeftCurlyBracketKeyword_20_0()); 
 
             }
@@ -31962,7 +31963,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt86=2;
                 int LA86_0 = input.LA(1);
 
-                if ( (LA86_0==59||LA86_0==80||(LA86_0>=82 && LA86_0<=83)||LA86_0==86||LA86_0==88||LA86_0==91||LA86_0==94||LA86_0==97||(LA86_0>=99 && LA86_0<=100)||LA86_0==102) ) {
+                if ( (LA86_0==60||LA86_0==81||(LA86_0>=83 && LA86_0<=84)||LA86_0==87||LA86_0==89||LA86_0==92||LA86_0==95||LA86_0==98||(LA86_0>=100 && LA86_0<=101)||LA86_0==103) ) {
                     alt86=1;
                 }
 
@@ -32054,7 +32055,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12285:1: '}'
             {
              before(grammarAccess.getCreateEdgeViewAccess().getRightCurlyBracketKeyword_20_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getCreateEdgeViewAccess().getRightCurlyBracketKeyword_20_2()); 
 
             }
@@ -32204,7 +32205,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12353:1: 'deleteView'
             {
              before(grammarAccess.getDeleteViewAccess().getDeleteViewKeyword_1()); 
-            match(input,97,FOLLOW_2); 
+            match(input,98,FOLLOW_2); 
              after(grammarAccess.getDeleteViewAccess().getDeleteViewKeyword_1()); 
 
             }
@@ -32279,7 +32280,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12384:1: '()'
             {
              before(grammarAccess.getDeleteViewAccess().getLeftParenthesisRightParenthesisKeyword_2()); 
-            match(input,98,FOLLOW_2); 
+            match(input,99,FOLLOW_2); 
              after(grammarAccess.getDeleteViewAccess().getLeftParenthesisRightParenthesisKeyword_2()); 
 
             }
@@ -32353,7 +32354,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt87=2;
             int LA87_0 = input.LA(1);
 
-            if ( (LA87_0==43) ) {
+            if ( (LA87_0==44) ) {
                 alt87=1;
             }
             switch (alt87) {
@@ -32445,7 +32446,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12451:1: '{'
             {
              before(grammarAccess.getDeleteViewAccess().getLeftCurlyBracketKeyword_3_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getDeleteViewAccess().getLeftCurlyBracketKeyword_3_0()); 
 
             }
@@ -32526,7 +32527,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt88=2;
                 int LA88_0 = input.LA(1);
 
-                if ( (LA88_0==59||LA88_0==80||(LA88_0>=82 && LA88_0<=83)||LA88_0==86||LA88_0==88||LA88_0==91||LA88_0==94||LA88_0==97||(LA88_0>=99 && LA88_0<=100)||LA88_0==102) ) {
+                if ( (LA88_0==60||LA88_0==81||(LA88_0>=83 && LA88_0<=84)||LA88_0==87||LA88_0==89||LA88_0==92||LA88_0==95||LA88_0==98||(LA88_0>=100 && LA88_0<=101)||LA88_0==103) ) {
                     alt88=1;
                 }
 
@@ -32618,7 +32619,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12510:1: '}'
             {
              before(grammarAccess.getDeleteViewAccess().getRightCurlyBracketKeyword_3_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getDeleteViewAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
@@ -32768,7 +32769,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12578:1: 'remove'
             {
              before(grammarAccess.getRemoveAccess().getRemoveKeyword_1()); 
-            match(input,99,FOLLOW_2); 
+            match(input,100,FOLLOW_2); 
              after(grammarAccess.getRemoveAccess().getRemoveKeyword_1()); 
 
             }
@@ -32843,7 +32844,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12609:1: '()'
             {
              before(grammarAccess.getRemoveAccess().getLeftParenthesisRightParenthesisKeyword_2()); 
-            match(input,98,FOLLOW_2); 
+            match(input,99,FOLLOW_2); 
              after(grammarAccess.getRemoveAccess().getLeftParenthesisRightParenthesisKeyword_2()); 
 
             }
@@ -32917,7 +32918,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt89=2;
             int LA89_0 = input.LA(1);
 
-            if ( (LA89_0==43) ) {
+            if ( (LA89_0==44) ) {
                 alt89=1;
             }
             switch (alt89) {
@@ -33009,7 +33010,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12676:1: '{'
             {
              before(grammarAccess.getRemoveAccess().getLeftCurlyBracketKeyword_3_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getRemoveAccess().getLeftCurlyBracketKeyword_3_0()); 
 
             }
@@ -33090,7 +33091,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt90=2;
                 int LA90_0 = input.LA(1);
 
-                if ( (LA90_0==59||LA90_0==80||(LA90_0>=82 && LA90_0<=83)||LA90_0==86||LA90_0==88||LA90_0==91||LA90_0==94||LA90_0==97||(LA90_0>=99 && LA90_0<=100)||LA90_0==102) ) {
+                if ( (LA90_0==60||LA90_0==81||(LA90_0>=83 && LA90_0<=84)||LA90_0==87||LA90_0==89||LA90_0==92||LA90_0==95||LA90_0==98||(LA90_0>=100 && LA90_0<=101)||LA90_0==103) ) {
                     alt90=1;
                 }
 
@@ -33182,7 +33183,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12735:1: '}'
             {
              before(grammarAccess.getRemoveAccess().getRightCurlyBracketKeyword_3_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getRemoveAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
@@ -33257,7 +33258,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12772:1: 'move'
             {
              before(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
-            match(input,100,FOLLOW_2); 
+            match(input,101,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
 
             }
@@ -33332,7 +33333,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12803:1: '('
             {
              before(grammarAccess.getMoveAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -33407,7 +33408,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12834:1: 'newContainerExpression'
             {
              before(grammarAccess.getMoveAccess().getNewContainerExpressionKeyword_2()); 
-            match(input,101,FOLLOW_2); 
+            match(input,102,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getNewContainerExpressionKeyword_2()); 
 
             }
@@ -33482,7 +33483,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12865:1: ':'
             {
              before(grammarAccess.getMoveAccess().getColonKeyword_3()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getColonKeyword_3()); 
 
             }
@@ -33642,7 +33643,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12925:1: ','
             {
              before(grammarAccess.getMoveAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getCommaKeyword_5()); 
 
             }
@@ -33717,7 +33718,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12956:1: 'featureName'
             {
              before(grammarAccess.getMoveAccess().getFeatureNameKeyword_6()); 
-            match(input,84,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getFeatureNameKeyword_6()); 
 
             }
@@ -33792,7 +33793,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:12987:1: ':'
             {
              before(grammarAccess.getMoveAccess().getColonKeyword_7()); 
-            match(input,81,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getColonKeyword_7()); 
 
             }
@@ -33952,7 +33953,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13047:1: ')'
             {
              before(grammarAccess.getMoveAccess().getRightParenthesisKeyword_9()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -34026,7 +34027,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt91=2;
             int LA91_0 = input.LA(1);
 
-            if ( (LA91_0==43) ) {
+            if ( (LA91_0==44) ) {
                 alt91=1;
             }
             switch (alt91) {
@@ -34118,7 +34119,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13128:1: '{'
             {
              before(grammarAccess.getMoveAccess().getLeftCurlyBracketKeyword_10_0()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getLeftCurlyBracketKeyword_10_0()); 
 
             }
@@ -34199,7 +34200,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt92=2;
                 int LA92_0 = input.LA(1);
 
-                if ( (LA92_0==59||LA92_0==80||(LA92_0>=82 && LA92_0<=83)||LA92_0==86||LA92_0==88||LA92_0==91||LA92_0==94||LA92_0==97||(LA92_0>=99 && LA92_0<=100)||LA92_0==102) ) {
+                if ( (LA92_0==60||LA92_0==81||(LA92_0>=83 && LA92_0<=84)||LA92_0==87||LA92_0==89||LA92_0==92||LA92_0==95||LA92_0==98||(LA92_0>=100 && LA92_0<=101)||LA92_0==103) ) {
                     alt92=1;
                 }
 
@@ -34291,7 +34292,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13187:1: '}'
             {
              before(grammarAccess.getMoveAccess().getRightCurlyBracketKeyword_10_2()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getRightCurlyBracketKeyword_10_2()); 
 
             }
@@ -34366,7 +34367,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13224:1: 'switch'
             {
              before(grammarAccess.getSwitchAccess().getSwitchKeyword_0()); 
-            match(input,102,FOLLOW_2); 
+            match(input,103,FOLLOW_2); 
              after(grammarAccess.getSwitchAccess().getSwitchKeyword_0()); 
 
             }
@@ -34441,7 +34442,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13255:1: '{'
             {
              before(grammarAccess.getSwitchAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getSwitchAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -34544,7 +34545,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt93=2;
                 int LA93_0 = input.LA(1);
 
-                if ( (LA93_0==103) ) {
+                if ( (LA93_0==104) ) {
                     alt93=1;
                 }
 
@@ -34648,7 +34649,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt94=2;
             int LA94_0 = input.LA(1);
 
-            if ( (LA94_0==104) ) {
+            if ( (LA94_0==105) ) {
                 alt94=1;
             }
             switch (alt94) {
@@ -34735,7 +34736,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13350:1: '}'
             {
              before(grammarAccess.getSwitchAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getSwitchAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -34810,7 +34811,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13391:1: 'case'
             {
              before(grammarAccess.getCaseAccess().getCaseKeyword_0()); 
-            match(input,103,FOLLOW_2); 
+            match(input,104,FOLLOW_2); 
              after(grammarAccess.getCaseAccess().getCaseKeyword_0()); 
 
             }
@@ -34885,7 +34886,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13422:1: '('
             {
              before(grammarAccess.getCaseAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getCaseAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -35045,7 +35046,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13482:1: ')'
             {
              before(grammarAccess.getCaseAccess().getRightParenthesisKeyword_3()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getCaseAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -35120,7 +35121,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13513:1: '{'
             {
              before(grammarAccess.getCaseAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getCaseAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -35201,7 +35202,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt95=2;
                 int LA95_0 = input.LA(1);
 
-                if ( (LA95_0==59||LA95_0==80||(LA95_0>=82 && LA95_0<=83)||LA95_0==86||LA95_0==88||LA95_0==91||LA95_0==94||LA95_0==97||(LA95_0>=99 && LA95_0<=100)||LA95_0==102) ) {
+                if ( (LA95_0==60||LA95_0==81||(LA95_0>=83 && LA95_0<=84)||LA95_0==87||LA95_0==89||LA95_0==92||LA95_0==95||LA95_0==98||(LA95_0>=100 && LA95_0<=101)||LA95_0==103) ) {
                     alt95=1;
                 }
 
@@ -35293,7 +35294,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13572:1: '}'
             {
              before(grammarAccess.getCaseAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getCaseAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -35443,7 +35444,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13648:1: 'default'
             {
              before(grammarAccess.getDefaultAccess().getDefaultKeyword_1()); 
-            match(input,104,FOLLOW_2); 
+            match(input,105,FOLLOW_2); 
              after(grammarAccess.getDefaultAccess().getDefaultKeyword_1()); 
 
             }
@@ -35518,7 +35519,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13679:1: '{'
             {
              before(grammarAccess.getDefaultAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getDefaultAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -35599,7 +35600,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt96=2;
                 int LA96_0 = input.LA(1);
 
-                if ( (LA96_0==59||LA96_0==80||(LA96_0>=82 && LA96_0<=83)||LA96_0==86||LA96_0==88||LA96_0==91||LA96_0==94||LA96_0==97||(LA96_0>=99 && LA96_0<=100)||LA96_0==102) ) {
+                if ( (LA96_0==60||LA96_0==81||(LA96_0>=83 && LA96_0<=84)||LA96_0==87||LA96_0==89||LA96_0==92||LA96_0==95||LA96_0==98||(LA96_0>=100 && LA96_0<=101)||LA96_0==103) ) {
                     alt96=1;
                 }
 
@@ -35691,7 +35692,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13738:1: '}'
             {
              before(grammarAccess.getDefaultAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getDefaultAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -35866,7 +35867,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt98=2;
             int LA98_0 = input.LA(1);
 
-            if ( (LA98_0==136) ) {
+            if ( (LA98_0==137) ) {
                 alt98=1;
             }
             switch (alt98) {
@@ -35958,7 +35959,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13837:1: 'container'
             {
              before(grammarAccess.getContainerAccess().getContainerKeyword_2()); 
-            match(input,105,FOLLOW_2); 
+            match(input,106,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getContainerKeyword_2()); 
 
             }
@@ -36122,7 +36123,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt99=2;
             int LA99_0 = input.LA(1);
 
-            if ( (LA99_0==45) ) {
+            if ( (LA99_0==46) ) {
                 alt99=1;
             }
             switch (alt99) {
@@ -36214,7 +36215,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13926:1: 'for'
             {
              before(grammarAccess.getContainerAccess().getForKeyword_5()); 
-            match(input,59,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getForKeyword_5()); 
 
             }
@@ -36374,7 +36375,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:13986:1: 'style'
             {
              before(grammarAccess.getContainerAccess().getStyleKeyword_7()); 
-            match(input,106,FOLLOW_2); 
+            match(input,107,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getStyleKeyword_7()); 
 
             }
@@ -36538,7 +36539,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt100=2;
             int LA100_0 = input.LA(1);
 
-            if ( (LA100_0==60) ) {
+            if ( (LA100_0==61) ) {
                 alt100=1;
             }
             switch (alt100) {
@@ -36630,7 +36631,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14075:1: '{'
             {
              before(grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_10()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_10()); 
 
             }
@@ -36709,7 +36710,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt101=2;
             int LA101_0 = input.LA(1);
 
-            if ( (LA101_0==107) ) {
+            if ( (LA101_0==108) ) {
                 alt101=1;
             }
             switch (alt101) {
@@ -36807,7 +36808,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt102=2;
                 int LA102_0 = input.LA(1);
 
-                if ( (LA102_0==106) ) {
+                if ( (LA102_0==107) ) {
                     alt102=1;
                 }
 
@@ -36899,7 +36900,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14163:1: '}'
             {
              before(grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_13()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_13()); 
 
             }
@@ -36974,7 +36975,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14222:1: 'as'
             {
              before(grammarAccess.getContainerAccess().getAsKeyword_4_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getAsKeyword_4_0()); 
 
             }
@@ -37129,7 +37130,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14285:1: '?'
             {
              before(grammarAccess.getContainerAccess().getQuestionMarkKeyword_9_0()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getQuestionMarkKeyword_9_0()); 
 
             }
@@ -37284,7 +37285,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14348:1: 'semanticCandidatesExpression'
             {
              before(grammarAccess.getContainerAccess().getSemanticCandidatesExpressionKeyword_11_0()); 
-            match(input,107,FOLLOW_2); 
+            match(input,108,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getSemanticCandidatesExpressionKeyword_11_0()); 
 
             }
@@ -37359,7 +37360,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14379:1: '='
             {
              before(grammarAccess.getContainerAccess().getEqualsSignKeyword_11_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getEqualsSignKeyword_11_1()); 
 
             }
@@ -37514,7 +37515,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14444:1: 'style'
             {
              before(grammarAccess.getConditionalContainerStyleDeclarationAccess().getStyleKeyword_0()); 
-            match(input,106,FOLLOW_2); 
+            match(input,107,FOLLOW_2); 
              after(grammarAccess.getConditionalContainerStyleDeclarationAccess().getStyleKeyword_0()); 
 
             }
@@ -37674,7 +37675,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14504:1: 'if'
             {
              before(grammarAccess.getConditionalContainerStyleDeclarationAccess().getIfKeyword_2()); 
-            match(input,82,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getConditionalContainerStyleDeclarationAccess().getIfKeyword_2()); 
 
             }
@@ -37925,7 +37926,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14600:1: 'gradient'
             {
              before(grammarAccess.getGradientAccess().getGradientKeyword_1()); 
-            match(input,108,FOLLOW_2); 
+            match(input,109,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getGradientKeyword_1()); 
 
             }
@@ -38170,7 +38171,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14689:1: 'from'
             {
              before(grammarAccess.getGradientAccess().getFromKeyword_4()); 
-            match(input,109,FOLLOW_2); 
+            match(input,110,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getFromKeyword_4()); 
 
             }
@@ -38330,7 +38331,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14749:1: 'to'
             {
              before(grammarAccess.getGradientAccess().getToKeyword_6()); 
-            match(input,110,FOLLOW_2); 
+            match(input,111,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getToKeyword_6()); 
 
             }
@@ -38490,7 +38491,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14809:1: '{'
             {
              before(grammarAccess.getGradientAccess().getLeftCurlyBracketKeyword_8()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getLeftCurlyBracketKeyword_8()); 
 
             }
@@ -38569,7 +38570,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt104=2;
             int LA104_0 = input.LA(1);
 
-            if ( (LA104_0==111) ) {
+            if ( (LA104_0==112) ) {
                 alt104=1;
             }
             switch (alt104) {
@@ -38665,7 +38666,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt105=2;
             int LA105_0 = input.LA(1);
 
-            if ( (LA105_0==113) ) {
+            if ( (LA105_0==114) ) {
                 alt105=1;
             }
             switch (alt105) {
@@ -38761,7 +38762,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt106=2;
             int LA106_0 = input.LA(1);
 
-            if ( (LA106_0==52) ) {
+            if ( (LA106_0==53) ) {
                 alt106=1;
             }
             switch (alt106) {
@@ -38857,7 +38858,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt107=2;
             int LA107_0 = input.LA(1);
 
-            if ( (LA107_0==115) ) {
+            if ( (LA107_0==116) ) {
                 alt107=1;
             }
             switch (alt107) {
@@ -38953,7 +38954,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt108=2;
             int LA108_0 = input.LA(1);
 
-            if ( (LA108_0==116) ) {
+            if ( (LA108_0==117) ) {
                 alt108=1;
             }
             switch (alt108) {
@@ -39040,7 +39041,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:14984:1: '}'
             {
              before(grammarAccess.getGradientAccess().getRightCurlyBracketKeyword_14()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getRightCurlyBracketKeyword_14()); 
 
             }
@@ -39115,7 +39116,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15045:1: 'label'
             {
              before(grammarAccess.getGradientAccess().getLabelKeyword_9_0()); 
-            match(input,111,FOLLOW_2); 
+            match(input,112,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getLabelKeyword_9_0()); 
 
             }
@@ -39360,7 +39361,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15134:1: 'in'
             {
              before(grammarAccess.getGradientAccess().getInKeyword_9_3()); 
-            match(input,112,FOLLOW_2); 
+            match(input,113,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getInKeyword_9_3()); 
 
             }
@@ -39515,7 +39516,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15203:1: 'border'
             {
              before(grammarAccess.getGradientAccess().getBorderKeyword_10_0()); 
-            match(input,113,FOLLOW_2); 
+            match(input,114,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getBorderKeyword_10_0()); 
 
             }
@@ -39590,7 +39591,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15234:1: 'size'
             {
              before(grammarAccess.getGradientAccess().getSizeKeyword_10_1()); 
-            match(input,114,FOLLOW_2); 
+            match(input,115,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getSizeKeyword_10_1()); 
 
             }
@@ -39665,7 +39666,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15265:1: '='
             {
              before(grammarAccess.getGradientAccess().getEqualsSignKeyword_10_2()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getEqualsSignKeyword_10_2()); 
 
             }
@@ -39825,7 +39826,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15325:1: 'in'
             {
              before(grammarAccess.getGradientAccess().getInKeyword_10_4()); 
-            match(input,112,FOLLOW_2); 
+            match(input,113,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getInKeyword_10_4()); 
 
             }
@@ -39980,7 +39981,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15396:1: 'icon'
             {
              before(grammarAccess.getGradientAccess().getIconKeyword_11_0()); 
-            match(input,52,FOLLOW_2); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getIconKeyword_11_0()); 
 
             }
@@ -40055,7 +40056,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15427:1: '='
             {
              before(grammarAccess.getGradientAccess().getEqualsSignKeyword_11_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getEqualsSignKeyword_11_1()); 
 
             }
@@ -40210,7 +40211,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15492:1: 'heightComputationExpression'
             {
              before(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); 
-            match(input,115,FOLLOW_2); 
+            match(input,116,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getHeightComputationExpressionKeyword_12_0()); 
 
             }
@@ -40285,7 +40286,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15523:1: '='
             {
              before(grammarAccess.getGradientAccess().getEqualsSignKeyword_12_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getEqualsSignKeyword_12_1()); 
 
             }
@@ -40440,7 +40441,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15588:1: 'widthComputationExpression'
             {
              before(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); 
-            match(input,116,FOLLOW_2); 
+            match(input,117,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getWidthComputationExpressionKeyword_13_0()); 
 
             }
@@ -40515,7 +40516,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15619:1: '='
             {
              before(grammarAccess.getGradientAccess().getEqualsSignKeyword_13_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getGradientAccess().getEqualsSignKeyword_13_1()); 
 
             }
@@ -40766,7 +40767,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15713:1: 'relationBasedEdge'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getRelationBasedEdgeKeyword_1()); 
-            match(input,117,FOLLOW_2); 
+            match(input,118,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getRelationBasedEdgeKeyword_1()); 
 
             }
@@ -40930,7 +40931,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt110=2;
             int LA110_0 = input.LA(1);
 
-            if ( (LA110_0==45) ) {
+            if ( (LA110_0==46) ) {
                 alt110=1;
             }
             switch (alt110) {
@@ -41022,7 +41023,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15802:1: 'style'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getStyleKeyword_4()); 
-            match(input,106,FOLLOW_2); 
+            match(input,107,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getStyleKeyword_4()); 
 
             }
@@ -41182,7 +41183,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15862:1: '{'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getLeftCurlyBracketKeyword_6()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getLeftCurlyBracketKeyword_6()); 
 
             }
@@ -41257,7 +41258,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15893:1: 'sourceMappings'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsKeyword_7()); 
-            match(input,118,FOLLOW_2); 
+            match(input,119,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsKeyword_7()); 
 
             }
@@ -41332,7 +41333,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15924:1: '='
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_8()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_8()); 
 
             }
@@ -41407,7 +41408,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:15955:1: '['
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_9()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_9()); 
 
             }
@@ -41578,7 +41579,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16015:1: ']'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_11()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_11()); 
 
             }
@@ -41653,7 +41654,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16046:1: 'targetMappings'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsKeyword_12()); 
-            match(input,119,FOLLOW_2); 
+            match(input,120,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsKeyword_12()); 
 
             }
@@ -41728,7 +41729,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16077:1: '='
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_13()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_13()); 
 
             }
@@ -41803,7 +41804,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16108:1: '['
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_14()); 
-            match(input,49,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getLeftSquareBracketKeyword_14()); 
 
             }
@@ -41974,7 +41975,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16168:1: ']'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_16()); 
-            match(input,50,FOLLOW_2); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getRightSquareBracketKeyword_16()); 
 
             }
@@ -42049,7 +42050,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16199:1: 'targetFileExpression'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetFileExpressionKeyword_17()); 
-            match(input,120,FOLLOW_2); 
+            match(input,121,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getTargetFileExpressionKeyword_17()); 
 
             }
@@ -42124,7 +42125,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16230:1: '='
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_18()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getEqualsSignKeyword_18()); 
 
             }
@@ -42279,7 +42280,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16289:1: '}'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getRightCurlyBracketKeyword_20()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getRightCurlyBracketKeyword_20()); 
 
             }
@@ -42354,7 +42355,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16362:1: 'as'
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getAsKeyword_3_0()); 
-            match(input,45,FOLLOW_2); 
+            match(input,46,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getAsKeyword_3_0()); 
 
             }
@@ -42595,7 +42596,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt113=2;
                 int LA113_0 = input.LA(1);
 
-                if ( (LA113_0==51) ) {
+                if ( (LA113_0==52) ) {
                     alt113=1;
                 }
 
@@ -42692,7 +42693,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16486:1: ','
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_10_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_10_1_0()); 
 
             }
@@ -42933,7 +42934,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt114=2;
                 int LA114_0 = input.LA(1);
 
-                if ( (LA114_0==51) ) {
+                if ( (LA114_0==52) ) {
                     alt114=1;
                 }
 
@@ -43030,7 +43031,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16610:1: ','
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_15_1_0()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getRelationBasedEdgeAccess().getCommaKeyword_15_1_0()); 
 
             }
@@ -43185,7 +43186,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16673:1: 'edgeStyle'
             {
              before(grammarAccess.getEdgeStyleAccess().getEdgeStyleKeyword_0()); 
-            match(input,121,FOLLOW_2); 
+            match(input,122,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEdgeStyleKeyword_0()); 
 
             }
@@ -43345,7 +43346,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16733:1: 'in'
             {
              before(grammarAccess.getEdgeStyleAccess().getInKeyword_2()); 
-            match(input,112,FOLLOW_2); 
+            match(input,113,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getInKeyword_2()); 
 
             }
@@ -43509,7 +43510,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt115=2;
             int LA115_0 = input.LA(1);
 
-            if ( (LA115_0==122) ) {
+            if ( (LA115_0==123) ) {
                 alt115=1;
             }
             switch (alt115) {
@@ -43605,7 +43606,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt116=2;
             int LA116_0 = input.LA(1);
 
-            if ( (LA116_0==123) ) {
+            if ( (LA116_0==124) ) {
                 alt116=1;
             }
             switch (alt116) {
@@ -43697,7 +43698,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:16851:1: '{'
             {
              before(grammarAccess.getEdgeStyleAccess().getLeftCurlyBracketKeyword_6()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getLeftCurlyBracketKeyword_6()); 
 
             }
@@ -43776,7 +43777,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt117=2;
             int LA117_0 = input.LA(1);
 
-            if ( (LA117_0==124) ) {
+            if ( (LA117_0==125) ) {
                 alt117=1;
             }
             switch (alt117) {
@@ -43872,7 +43873,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt118=2;
             int LA118_0 = input.LA(1);
 
-            if ( (LA118_0==125) ) {
+            if ( (LA118_0==126) ) {
                 alt118=1;
             }
             switch (alt118) {
@@ -43968,7 +43969,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt119=2;
             int LA119_0 = input.LA(1);
 
-            if ( (LA119_0==126) ) {
+            if ( (LA119_0==127) ) {
                 alt119=1;
             }
             switch (alt119) {
@@ -44064,7 +44065,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt120=2;
             int LA120_0 = input.LA(1);
 
-            if ( (LA120_0==127) ) {
+            if ( (LA120_0==128) ) {
                 alt120=1;
             }
             switch (alt120) {
@@ -44160,7 +44161,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             int alt121=2;
             int LA121_0 = input.LA(1);
 
-            if ( (LA121_0==128) ) {
+            if ( (LA121_0==129) ) {
                 alt121=1;
             }
             switch (alt121) {
@@ -44247,7 +44248,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17026:1: '}'
             {
              before(grammarAccess.getEdgeStyleAccess().getRightCurlyBracketKeyword_12()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getRightCurlyBracketKeyword_12()); 
 
             }
@@ -44322,7 +44323,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17083:1: 'line'
             {
              before(grammarAccess.getEdgeStyleAccess().getLineKeyword_4_0()); 
-            match(input,122,FOLLOW_2); 
+            match(input,123,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getLineKeyword_4_0()); 
 
             }
@@ -44397,7 +44398,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17114:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_4_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_4_1()); 
 
             }
@@ -44552,7 +44553,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17179:1: 'routing'
             {
              before(grammarAccess.getEdgeStyleAccess().getRoutingKeyword_5_0()); 
-            match(input,123,FOLLOW_2); 
+            match(input,124,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getRoutingKeyword_5_0()); 
 
             }
@@ -44627,7 +44628,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17210:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_5_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_5_1()); 
 
             }
@@ -44782,7 +44783,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17275:1: 'sourceArrow'
             {
              before(grammarAccess.getEdgeStyleAccess().getSourceArrowKeyword_7_0()); 
-            match(input,124,FOLLOW_2); 
+            match(input,125,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getSourceArrowKeyword_7_0()); 
 
             }
@@ -44857,7 +44858,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17306:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_7_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_7_1()); 
 
             }
@@ -45012,7 +45013,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17371:1: 'targetArrow'
             {
              before(grammarAccess.getEdgeStyleAccess().getTargetArrowKeyword_8_0()); 
-            match(input,125,FOLLOW_2); 
+            match(input,126,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getTargetArrowKeyword_8_0()); 
 
             }
@@ -45087,7 +45088,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17402:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_8_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_8_1()); 
 
             }
@@ -45242,7 +45243,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17467:1: 'sizeComputationExpression'
             {
              before(grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionKeyword_9_0()); 
-            match(input,126,FOLLOW_2); 
+            match(input,127,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionKeyword_9_0()); 
 
             }
@@ -45317,7 +45318,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17498:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_9_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_9_1()); 
 
             }
@@ -45472,7 +45473,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17563:1: 'foldingStyle'
             {
              before(grammarAccess.getEdgeStyleAccess().getFoldingStyleKeyword_10_0()); 
-            match(input,127,FOLLOW_2); 
+            match(input,128,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getFoldingStyleKeyword_10_0()); 
 
             }
@@ -45547,7 +45548,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17594:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_10_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_10_1()); 
 
             }
@@ -45702,7 +45703,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17659:1: 'endsCentering'
             {
              before(grammarAccess.getEdgeStyleAccess().getEndsCenteringKeyword_11_0()); 
-            match(input,128,FOLLOW_2); 
+            match(input,129,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEndsCenteringKeyword_11_0()); 
 
             }
@@ -45777,7 +45778,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17690:1: '='
             {
              before(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_11_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getEdgeStyleAccess().getEqualsSignKeyword_11_1()); 
 
             }
@@ -46028,7 +46029,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17784:1: 'palette'
             {
              before(grammarAccess.getPaletteAccess().getPaletteKeyword_1()); 
-            match(input,129,FOLLOW_2); 
+            match(input,130,FOLLOW_2); 
              after(grammarAccess.getPaletteAccess().getPaletteKeyword_1()); 
 
             }
@@ -46188,7 +46189,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17844:1: '{'
             {
              before(grammarAccess.getPaletteAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,43,FOLLOW_2); 
+            match(input,44,FOLLOW_2); 
              after(grammarAccess.getPaletteAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -46269,7 +46270,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
                 int alt123=2;
                 int LA123_0 = input.LA(1);
 
-                if ( (LA123_0==130) ) {
+                if ( (LA123_0==131) ) {
                     alt123=1;
                 }
 
@@ -46361,7 +46362,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17903:1: '}'
             {
              before(grammarAccess.getPaletteAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,44,FOLLOW_2); 
+            match(input,45,FOLLOW_2); 
              after(grammarAccess.getPaletteAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -46436,7 +46437,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:17946:1: 'color'
             {
              before(grammarAccess.getColorAccess().getColorKeyword_0()); 
-            match(input,130,FOLLOW_2); 
+            match(input,131,FOLLOW_2); 
              after(grammarAccess.getColorAccess().getColorKeyword_0()); 
 
             }
@@ -46596,7 +46597,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18006:1: '='
             {
              before(grammarAccess.getColorAccess().getEqualsSignKeyword_2()); 
-            match(input,48,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getColorAccess().getEqualsSignKeyword_2()); 
 
             }
@@ -46751,7 +46752,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18073:1: 'rgb'
             {
              before(grammarAccess.getRGBAccess().getRgbKeyword_0()); 
-            match(input,131,FOLLOW_2); 
+            match(input,132,FOLLOW_2); 
              after(grammarAccess.getRGBAccess().getRgbKeyword_0()); 
 
             }
@@ -46826,7 +46827,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18104:1: '('
             {
              before(grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -46986,7 +46987,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18164:1: ','
             {
              before(grammarAccess.getRGBAccess().getCommaKeyword_3()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getRGBAccess().getCommaKeyword_3()); 
 
             }
@@ -47146,7 +47147,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18224:1: ','
             {
              before(grammarAccess.getRGBAccess().getCommaKeyword_5()); 
-            match(input,51,FOLLOW_2); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getRGBAccess().getCommaKeyword_5()); 
 
             }
@@ -47301,7 +47302,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18283:1: ')'
             {
              before(grammarAccess.getRGBAccess().getRightParenthesisKeyword_7()); 
-            match(input,74,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getRGBAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -48150,7 +48151,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18637:1: '@Initialized'
             {
              before(grammarAccess.getDiagramAccess().getInitializedInitializedKeyword_1_0()); 
-            match(input,132,FOLLOW_2); 
+            match(input,133,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getInitializedInitializedKeyword_1_0()); 
 
             }
@@ -48195,7 +48196,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18660:1: '@ShowOnStartup'
             {
              before(grammarAccess.getDiagramAccess().getShowOnStartupShowOnStartupKeyword_2_0()); 
-            match(input,133,FOLLOW_2); 
+            match(input,134,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getShowOnStartupShowOnStartupKeyword_2_0()); 
 
             }
@@ -48240,7 +48241,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18683:1: '@EnablePopupBars'
             {
              before(grammarAccess.getDiagramAccess().getEnablePopupBarsEnablePopupBarsKeyword_3_0()); 
-            match(input,134,FOLLOW_2); 
+            match(input,135,FOLLOW_2); 
              after(grammarAccess.getDiagramAccess().getEnablePopupBarsEnablePopupBarsKeyword_3_0()); 
 
             }
@@ -49453,7 +49454,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:19170:1: '@ForceRefresh'
             {
              before(grammarAccess.getContainerCreationAccess().getForceRefreshForceRefreshKeyword_1_0()); 
-            match(input,135,FOLLOW_2); 
+            match(input,136,FOLLOW_2); 
              after(grammarAccess.getContainerCreationAccess().getForceRefreshForceRefreshKeyword_1_0()); 
 
             }
@@ -51447,7 +51448,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:19952:1: 'list'
             {
              before(grammarAccess.getContainerAccess().getListListKeyword_1_0()); 
-            match(input,136,FOLLOW_2); 
+            match(input,137,FOLLOW_2); 
              after(grammarAccess.getContainerAccess().getListListKeyword_1_0()); 
 
             }
@@ -53442,12 +53443,12 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
     protected DFA1 dfa1 = new DFA1(this);
     static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\1\5\1\52\11\uffff";
-    static final String dfa_3s = "\2\u0088\11\uffff";
+    static final String dfa_2s = "\1\5\1\53\11\uffff";
+    static final String dfa_3s = "\2\u0089\11\uffff";
     static final String dfa_4s = "\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11";
     static final String dfa_5s = "\13\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1\44\uffff\1\2\14\uffff\1\3\12\uffff\1\4\3\uffff\1\11\1\uffff\1\12\40\uffff\1\5\2\uffff\1\6\10\uffff\1\10\3\uffff\1\6\7\uffff\1\7\2\uffff\3\3\1\12\1\5",
+            "\1\1\45\uffff\1\2\14\uffff\1\3\12\uffff\1\4\3\uffff\1\11\1\uffff\1\12\40\uffff\1\5\2\uffff\1\6\10\uffff\1\10\3\uffff\1\6\7\uffff\1\7\2\uffff\3\3\1\12\1\5",
             "\1\2\14\uffff\1\3\12\uffff\1\4\3\uffff\1\11\1\uffff\1\12\40\uffff\1\5\2\uffff\1\6\10\uffff\1\10\13\uffff\1\7\2\uffff\3\3\1\12\1\5",
             "",
             "",
@@ -53488,99 +53489,99 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0080060000000020L,0x0220120000000144L,0x00000000000001F2L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000040000000020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000280000000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000500000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000400000000022L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x01000C0000000020L,0x0440240000000288L,0x00000000000003E4L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000080000000020L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000500000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000A00000000020L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000800000000022L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000400000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0070900000000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000C000000000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0008000000000002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0004000000000010L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0080000000000020L,0x0000000000000000L,0x0000000000000070L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0208000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0800200000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x1000080000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0xE000100000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000800000000020L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x00E1200000000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0018000000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0008000000000010L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0100000000000020L,0x0000000000000000L,0x00000000000000E0L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0410000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x1000400000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x2000100000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0xC000200000000000L,0x0000000000000007L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000004L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0010100000000000L,0x0000000000000038L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000040L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0010100000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x1000280000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0010000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x000000000000C000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0800100000000000L,0x0000005A494D0000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0800000000000002L,0x0000005A494D0000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0008000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000100000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000020L,0x0000020000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000100000000000L,0x00000C0000000000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000002L,0x0000040000000000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000020L,0x0000100000000000L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x000000000000E000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0010100000000000L,0x001A800000000000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000001C00L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000008L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0020200000000000L,0x0000000000000070L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000080L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0020200000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x2000500000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0020000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0000000000018000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x1000200000000000L,0x000000B4929A0000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x1000000000000002L,0x000000B4929A0000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0010000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000200000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000002L,0x0000010000000000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000020L,0x0000040000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000200000000000L,0x0000180000000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000020L,0x0000200000000000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x000000000001C000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0020200000000000L,0x0035000000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
     public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000020L,0x0020000000000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000200000000000L,0x0000040000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000080000000000L,0x0C00000000000000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000100000000000L,0xF000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x00000000000F0000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000700000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x00000003FF800000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000001C00000000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000003C00000000L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000100000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000020L,0x0040000000000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000400000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000100000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000200000000000L,0xE000000000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x00000000001E0000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000E00000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x00000007FF000000L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000003800000000L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000007800000000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
 
 }
