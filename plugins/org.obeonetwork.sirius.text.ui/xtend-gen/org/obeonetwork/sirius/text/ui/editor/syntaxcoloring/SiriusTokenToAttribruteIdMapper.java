@@ -35,7 +35,9 @@ public class SiriusTokenToAttribruteIdMapper extends DefaultAntlrTokenToAttribut
     Pair.<String, String>of("\'@MetamodelUris\'", SiriusHighlightingConfiguration.ANNOTATION_ID), 
     Pair.<String, String>of("\'@ForceRefresh\'", SiriusHighlightingConfiguration.ANNOTATION_ID), 
     Pair.<String, String>of("\'@NodeCreationVariable\'", SiriusHighlightingConfiguration.ANNOTATION_ID), 
-    Pair.<String, String>of("\'@ContainerViewVariable\'", SiriusHighlightingConfiguration.ANNOTATION_ID));
+    Pair.<String, String>of("\'@ContainerViewVariable\'", SiriusHighlightingConfiguration.ANNOTATION_ID), 
+    Pair.<String, String>of("\'@Initialized\'", SiriusHighlightingConfiguration.ANNOTATION_ID), 
+    Pair.<String, String>of("\'@EnablePopupBars\'", SiriusHighlightingConfiguration.ANNOTATION_ID));
   
   @Override
   protected String calculateId(final String tokenName, final int tokenType) {

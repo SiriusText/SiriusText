@@ -26,5 +26,5 @@ Export-Package: org.obeonetwork.sirius.text.ui.quickfix,
  org.obeonetwork.sirius.text.ui.internal,
  org.obeonetwork.sirius.text.ui.contentassist.antlr,
  org.obeonetwork.sirius.text.ui.contentassist.antlr.internal
-Bundle-Activator: org.obeonetwork.sirius.text.ui.internal.SiriusTextDslActivator
+Bundle-Activator: org.obeonetwork.sirius.text.ui.internal.SiriusTextUIPlugin
 Bundle-Localization: plugin

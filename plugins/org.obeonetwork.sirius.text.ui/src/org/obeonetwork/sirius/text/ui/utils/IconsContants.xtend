@@ -1,0 +1,38 @@
+package org.obeonetwork.sirius.text.ui.utils
+
+class IconsContants {
+	private static val String ICONS = "icons/"
+	private static val String OBJ_16 = "obj16/"
+	
+	public static val CASE_ICON = ICONS + OBJ_16 + "Case.gif"
+	public static val CHANGE_CONTEXT_ICON = ICONS + OBJ_16 + "ChangeContext.gif"
+	public static val CLASS_ICON = ICONS + OBJ_16 + "class_obj.png"
+	public static val CONDITIONAL_CONTAINER_STYLE_DESCRIPTION_ICON = ICONS + OBJ_16 + "ConditionalContainerStyleDescription.gif"
+	public static val CONTAINER_CREATION_DESCRIPTION_ICON = ICONS + OBJ_16 + "ContainerCreationDescription.gif"
+	public static val CONTAINER_MAPPING_ICON = ICONS + OBJ_16 + "ContainerMapping.gif"
+	public static val CREATE_INSTANCE_ICON = ICONS + OBJ_16 + "CreateInstance.gif"
+	public static val DEFAULT_ICON = ICONS + OBJ_16 + "Default.gif"
+	public static val DELETE_VIEW_ICON = ICONS + OBJ_16 + "DeleteView.gif"
+	public static val DIAGRAM_DESCRIPTION_ICON = ICONS + OBJ_16 + "DiagramDescription.gif"
+	public static val EDGE_CREATION_DESCRIPTION_ICON = ICONS + OBJ_16 + "EdgeCreationDescription.gif"
+	public static val EDGE_MAPPING_ICON = ICONS + OBJ_16 + "EdgeMapping.gif"
+	public static val EDGE_STYLE_ICON = ICONS + OBJ_16 + "EdgeStyle.gif"
+	public static val FOR_ICON = ICONS + OBJ_16 + "For.gif"
+	public static val GROUP_ICON = ICONS + OBJ_16 + "Group.gif"
+	public static val IF_ICON = ICONS + OBJ_16 + "If.gif"
+	public static val IMPORT_ICON = ICONS + OBJ_16 + "imp_obj.png"
+	public static val INITIAL_OPERATION_ICON = ICONS + OBJ_16 + "InitialOperation.gif"
+	public static val LAYER_ICON = ICONS + OBJ_16 + "Layer.gif"
+	public static val MOVE_ELEMENT_ICON = ICONS + OBJ_16 + "MoveElement.gif"
+	public static val PACKAGE_ICON = ICONS + OBJ_16 + "package_obj.png"
+	public static val RGB_VALUES_ICON = ICONS + OBJ_16 + "RGBValues.gif"
+	public static val SET_VALUE_ICON = ICONS + OBJ_16 + "SetValue.gif"
+	public static val SIRIUS_TEXT_FILE_ICON = ICONS + OBJ_16 + "sirius_text_file.gif"
+	public static val SIRIUS_TEXT_PROJECT_ICON = ICONS + OBJ_16 + "sirius_text_project.gif"
+	public static val SWITCH_ICON = ICONS + OBJ_16 + "Swicth.gif"
+	public static val TOOL_SECTION_ICON = ICONS + OBJ_16 + "ToolSection.gif"
+	public static val UNSET_ICON = ICONS + OBJ_16 + "Unset.gif"
+	public static val USER_COLORS_PALETTE_ICON = ICONS + OBJ_16 + "UserColorsPalette.gif"
+	public static val VIEWPOINT_ICON = ICONS + OBJ_16 + "Viewpoint.gif"
+	
+}
