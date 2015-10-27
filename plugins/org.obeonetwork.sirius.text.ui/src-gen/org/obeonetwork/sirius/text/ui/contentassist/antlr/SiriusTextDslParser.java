@@ -301,9 +301,9 @@ public class SiriusTextDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPaletteAccess().getColorsAssignment_4(), "rule__Palette__ColorsAssignment_4");
 					put(grammarAccess.getColorAccess().getNameAssignment_1(), "rule__Color__NameAssignment_1");
 					put(grammarAccess.getColorAccess().getValueAssignment_3(), "rule__Color__ValueAssignment_3");
-					put(grammarAccess.getRGBAccess().getRedAssignment_1(), "rule__RGB__RedAssignment_1");
-					put(grammarAccess.getRGBAccess().getGreenAssignment_3(), "rule__RGB__GreenAssignment_3");
-					put(grammarAccess.getRGBAccess().getBlueAssignment_5(), "rule__RGB__BlueAssignment_5");
+					put(grammarAccess.getRGBAccess().getRedAssignment_2(), "rule__RGB__RedAssignment_2");
+					put(grammarAccess.getRGBAccess().getGreenAssignment_4(), "rule__RGB__GreenAssignment_4");
+					put(grammarAccess.getRGBAccess().getBlueAssignment_6(), "rule__RGB__BlueAssignment_6");
 				}
 			};
 		}

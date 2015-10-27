@@ -316,7 +316,7 @@ ColorValue:
 ;
 
 RGB:
-	'rgb(' red=INT ',' green=INT ',' blue=INT ')'
+	'rgb''(' red=INT ',' green=INT ',' blue=INT ')'
 ;
 
 terminal DOCUMENTATION: '/**' -> '*/';

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'javaExtensions'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@ForceRefresh'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'extraMappings'", "'begin'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb('", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOCUMENTATION", "RULE_ID", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'as'", "'{'", "'}'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "','", "']'", "'icon'", "'representations'", "'javaExtensions'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@ForceRefresh'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'extraMappings'", "'begin'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'list'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -11257,40 +11257,45 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRGB"
-    // InternalSiriusTextDsl.g:4901:1: ruleRGB returns [EObject current=null] : (otherlv_0= 'rgb(' ( (lv_red_1_0= RULE_INT ) ) otherlv_2= ',' ( (lv_green_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_blue_5_0= RULE_INT ) ) otherlv_6= ')' ) ;
+    // InternalSiriusTextDsl.g:4901:1: ruleRGB returns [EObject current=null] : (otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')' ) ;
     public final EObject ruleRGB() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_red_1_0=null;
-        Token otherlv_2=null;
-        Token lv_green_3_0=null;
-        Token otherlv_4=null;
-        Token lv_blue_5_0=null;
-        Token otherlv_6=null;
+        Token otherlv_1=null;
+        Token lv_red_2_0=null;
+        Token otherlv_3=null;
+        Token lv_green_4_0=null;
+        Token otherlv_5=null;
+        Token lv_blue_6_0=null;
+        Token otherlv_7=null;
 
          enterRule(); 
             
         try {
-            // InternalSiriusTextDsl.g:4904:28: ( (otherlv_0= 'rgb(' ( (lv_red_1_0= RULE_INT ) ) otherlv_2= ',' ( (lv_green_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_blue_5_0= RULE_INT ) ) otherlv_6= ')' ) )
-            // InternalSiriusTextDsl.g:4905:1: (otherlv_0= 'rgb(' ( (lv_red_1_0= RULE_INT ) ) otherlv_2= ',' ( (lv_green_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_blue_5_0= RULE_INT ) ) otherlv_6= ')' )
+            // InternalSiriusTextDsl.g:4904:28: ( (otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')' ) )
+            // InternalSiriusTextDsl.g:4905:1: (otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')' )
             {
-            // InternalSiriusTextDsl.g:4905:1: (otherlv_0= 'rgb(' ( (lv_red_1_0= RULE_INT ) ) otherlv_2= ',' ( (lv_green_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_blue_5_0= RULE_INT ) ) otherlv_6= ')' )
-            // InternalSiriusTextDsl.g:4905:3: otherlv_0= 'rgb(' ( (lv_red_1_0= RULE_INT ) ) otherlv_2= ',' ( (lv_green_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_blue_5_0= RULE_INT ) ) otherlv_6= ')'
+            // InternalSiriusTextDsl.g:4905:1: (otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')' )
+            // InternalSiriusTextDsl.g:4905:3: otherlv_0= 'rgb' otherlv_1= '(' ( (lv_red_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_green_4_0= RULE_INT ) ) otherlv_5= ',' ( (lv_blue_6_0= RULE_INT ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,108,FOLLOW_92); 
+            otherlv_0=(Token)match(input,108,FOLLOW_49); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRGBAccess().getRgbKeyword_0());
                 
-            // InternalSiriusTextDsl.g:4909:1: ( (lv_red_1_0= RULE_INT ) )
-            // InternalSiriusTextDsl.g:4910:1: (lv_red_1_0= RULE_INT )
-            {
-            // InternalSiriusTextDsl.g:4910:1: (lv_red_1_0= RULE_INT )
-            // InternalSiriusTextDsl.g:4911:3: lv_red_1_0= RULE_INT
-            {
-            lv_red_1_0=(Token)match(input,RULE_INT,FOLLOW_62); 
+            otherlv_1=(Token)match(input,49,FOLLOW_92); 
 
-            			newLeafNode(lv_red_1_0, grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0()); 
+                	newLeafNode(otherlv_1, grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1());
+                
+            // InternalSiriusTextDsl.g:4913:1: ( (lv_red_2_0= RULE_INT ) )
+            // InternalSiriusTextDsl.g:4914:1: (lv_red_2_0= RULE_INT )
+            {
+            // InternalSiriusTextDsl.g:4914:1: (lv_red_2_0= RULE_INT )
+            // InternalSiriusTextDsl.g:4915:3: lv_red_2_0= RULE_INT
+            {
+            lv_red_2_0=(Token)match(input,RULE_INT,FOLLOW_62); 
+
+            			newLeafNode(lv_red_2_0, grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_2_0()); 
             		
 
             	        if (current==null) {
@@ -11299,7 +11304,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"red",
-                    		lv_red_1_0, 
+                    		lv_red_2_0, 
                     		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
             	    
 
@@ -11308,19 +11313,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,22,FOLLOW_92); 
+            otherlv_3=(Token)match(input,22,FOLLOW_92); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getRGBAccess().getCommaKeyword_2());
+                	newLeafNode(otherlv_3, grammarAccess.getRGBAccess().getCommaKeyword_3());
                 
-            // InternalSiriusTextDsl.g:4931:1: ( (lv_green_3_0= RULE_INT ) )
-            // InternalSiriusTextDsl.g:4932:1: (lv_green_3_0= RULE_INT )
+            // InternalSiriusTextDsl.g:4935:1: ( (lv_green_4_0= RULE_INT ) )
+            // InternalSiriusTextDsl.g:4936:1: (lv_green_4_0= RULE_INT )
             {
-            // InternalSiriusTextDsl.g:4932:1: (lv_green_3_0= RULE_INT )
-            // InternalSiriusTextDsl.g:4933:3: lv_green_3_0= RULE_INT
+            // InternalSiriusTextDsl.g:4936:1: (lv_green_4_0= RULE_INT )
+            // InternalSiriusTextDsl.g:4937:3: lv_green_4_0= RULE_INT
             {
-            lv_green_3_0=(Token)match(input,RULE_INT,FOLLOW_62); 
+            lv_green_4_0=(Token)match(input,RULE_INT,FOLLOW_62); 
 
-            			newLeafNode(lv_green_3_0, grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0()); 
+            			newLeafNode(lv_green_4_0, grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_4_0()); 
             		
 
             	        if (current==null) {
@@ -11329,7 +11334,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"green",
-                    		lv_green_3_0, 
+                    		lv_green_4_0, 
                     		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
             	    
 
@@ -11338,19 +11343,19 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,22,FOLLOW_92); 
+            otherlv_5=(Token)match(input,22,FOLLOW_92); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getRGBAccess().getCommaKeyword_4());
+                	newLeafNode(otherlv_5, grammarAccess.getRGBAccess().getCommaKeyword_5());
                 
-            // InternalSiriusTextDsl.g:4953:1: ( (lv_blue_5_0= RULE_INT ) )
-            // InternalSiriusTextDsl.g:4954:1: (lv_blue_5_0= RULE_INT )
+            // InternalSiriusTextDsl.g:4957:1: ( (lv_blue_6_0= RULE_INT ) )
+            // InternalSiriusTextDsl.g:4958:1: (lv_blue_6_0= RULE_INT )
             {
-            // InternalSiriusTextDsl.g:4954:1: (lv_blue_5_0= RULE_INT )
-            // InternalSiriusTextDsl.g:4955:3: lv_blue_5_0= RULE_INT
+            // InternalSiriusTextDsl.g:4958:1: (lv_blue_6_0= RULE_INT )
+            // InternalSiriusTextDsl.g:4959:3: lv_blue_6_0= RULE_INT
             {
-            lv_blue_5_0=(Token)match(input,RULE_INT,FOLLOW_50); 
+            lv_blue_6_0=(Token)match(input,RULE_INT,FOLLOW_50); 
 
-            			newLeafNode(lv_blue_5_0, grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0()); 
+            			newLeafNode(lv_blue_6_0, grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_6_0()); 
             		
 
             	        if (current==null) {
@@ -11359,7 +11364,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"blue",
-                    		lv_blue_5_0, 
+                    		lv_blue_6_0, 
                     		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
             	    
 
@@ -11368,9 +11373,9 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,50,FOLLOW_2); 
+            otherlv_7=(Token)match(input,50,FOLLOW_2); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getRGBAccess().getRightParenthesisKeyword_6());
+                	newLeafNode(otherlv_7, grammarAccess.getRGBAccess().getRightParenthesisKeyword_7());
                 
 
             }
@@ -11393,7 +11398,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabelAlignment"
-    // InternalSiriusTextDsl.g:4983:1: ruleLabelAlignment returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) ) ;
+    // InternalSiriusTextDsl.g:4987:1: ruleLabelAlignment returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) ) ;
     public final Enumerator ruleLabelAlignment() throws RecognitionException {
         Enumerator current = null;
 
@@ -11403,10 +11408,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:4985:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) ) )
-            // InternalSiriusTextDsl.g:4986:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) )
+            // InternalSiriusTextDsl.g:4989:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) ) )
+            // InternalSiriusTextDsl.g:4990:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) )
             {
-            // InternalSiriusTextDsl.g:4986:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) )
+            // InternalSiriusTextDsl.g:4990:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) )
             int alt117=3;
             switch ( input.LA(1) ) {
             case 109:
@@ -11433,10 +11438,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt117) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:4986:2: (enumLiteral_0= 'left' )
+                    // InternalSiriusTextDsl.g:4990:2: (enumLiteral_0= 'left' )
                     {
-                    // InternalSiriusTextDsl.g:4986:2: (enumLiteral_0= 'left' )
-                    // InternalSiriusTextDsl.g:4986:4: enumLiteral_0= 'left'
+                    // InternalSiriusTextDsl.g:4990:2: (enumLiteral_0= 'left' )
+                    // InternalSiriusTextDsl.g:4990:4: enumLiteral_0= 'left'
                     {
                     enumLiteral_0=(Token)match(input,109,FOLLOW_2); 
 
@@ -11450,10 +11455,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:4992:6: (enumLiteral_1= 'center' )
+                    // InternalSiriusTextDsl.g:4996:6: (enumLiteral_1= 'center' )
                     {
-                    // InternalSiriusTextDsl.g:4992:6: (enumLiteral_1= 'center' )
-                    // InternalSiriusTextDsl.g:4992:8: enumLiteral_1= 'center'
+                    // InternalSiriusTextDsl.g:4996:6: (enumLiteral_1= 'center' )
+                    // InternalSiriusTextDsl.g:4996:8: enumLiteral_1= 'center'
                     {
                     enumLiteral_1=(Token)match(input,110,FOLLOW_2); 
 
@@ -11467,10 +11472,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:4998:6: (enumLiteral_2= 'right' )
+                    // InternalSiriusTextDsl.g:5002:6: (enumLiteral_2= 'right' )
                     {
-                    // InternalSiriusTextDsl.g:4998:6: (enumLiteral_2= 'right' )
-                    // InternalSiriusTextDsl.g:4998:8: enumLiteral_2= 'right'
+                    // InternalSiriusTextDsl.g:5002:6: (enumLiteral_2= 'right' )
+                    // InternalSiriusTextDsl.g:5002:8: enumLiteral_2= 'right'
                     {
                     enumLiteral_2=(Token)match(input,111,FOLLOW_2); 
 
@@ -11504,7 +11509,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGradientDirection"
-    // InternalSiriusTextDsl.g:5008:1: ruleGradientDirection returns [Enumerator current=null] : ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) ) ;
+    // InternalSiriusTextDsl.g:5012:1: ruleGradientDirection returns [Enumerator current=null] : ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) ) ;
     public final Enumerator ruleGradientDirection() throws RecognitionException {
         Enumerator current = null;
 
@@ -11514,10 +11519,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5010:28: ( ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) ) )
-            // InternalSiriusTextDsl.g:5011:1: ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) )
+            // InternalSiriusTextDsl.g:5014:28: ( ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) ) )
+            // InternalSiriusTextDsl.g:5015:1: ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) )
             {
-            // InternalSiriusTextDsl.g:5011:1: ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) )
+            // InternalSiriusTextDsl.g:5015:1: ( (enumLiteral_0= 'oblique' ) | (enumLiteral_1= 'lefttoright' ) | (enumLiteral_2= 'toptobottom' ) )
             int alt118=3;
             switch ( input.LA(1) ) {
             case 112:
@@ -11544,10 +11549,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt118) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5011:2: (enumLiteral_0= 'oblique' )
+                    // InternalSiriusTextDsl.g:5015:2: (enumLiteral_0= 'oblique' )
                     {
-                    // InternalSiriusTextDsl.g:5011:2: (enumLiteral_0= 'oblique' )
-                    // InternalSiriusTextDsl.g:5011:4: enumLiteral_0= 'oblique'
+                    // InternalSiriusTextDsl.g:5015:2: (enumLiteral_0= 'oblique' )
+                    // InternalSiriusTextDsl.g:5015:4: enumLiteral_0= 'oblique'
                     {
                     enumLiteral_0=(Token)match(input,112,FOLLOW_2); 
 
@@ -11561,10 +11566,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5017:6: (enumLiteral_1= 'lefttoright' )
+                    // InternalSiriusTextDsl.g:5021:6: (enumLiteral_1= 'lefttoright' )
                     {
-                    // InternalSiriusTextDsl.g:5017:6: (enumLiteral_1= 'lefttoright' )
-                    // InternalSiriusTextDsl.g:5017:8: enumLiteral_1= 'lefttoright'
+                    // InternalSiriusTextDsl.g:5021:6: (enumLiteral_1= 'lefttoright' )
+                    // InternalSiriusTextDsl.g:5021:8: enumLiteral_1= 'lefttoright'
                     {
                     enumLiteral_1=(Token)match(input,113,FOLLOW_2); 
 
@@ -11578,10 +11583,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5023:6: (enumLiteral_2= 'toptobottom' )
+                    // InternalSiriusTextDsl.g:5027:6: (enumLiteral_2= 'toptobottom' )
                     {
-                    // InternalSiriusTextDsl.g:5023:6: (enumLiteral_2= 'toptobottom' )
-                    // InternalSiriusTextDsl.g:5023:8: enumLiteral_2= 'toptobottom'
+                    // InternalSiriusTextDsl.g:5027:6: (enumLiteral_2= 'toptobottom' )
+                    // InternalSiriusTextDsl.g:5027:8: enumLiteral_2= 'toptobottom'
                     {
                     enumLiteral_2=(Token)match(input,114,FOLLOW_2); 
 
@@ -11615,7 +11620,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLineStyle"
-    // InternalSiriusTextDsl.g:5033:1: ruleLineStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) ) ;
+    // InternalSiriusTextDsl.g:5037:1: ruleLineStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) ) ;
     public final Enumerator ruleLineStyle() throws RecognitionException {
         Enumerator current = null;
 
@@ -11626,10 +11631,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5035:28: ( ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) ) )
-            // InternalSiriusTextDsl.g:5036:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
+            // InternalSiriusTextDsl.g:5039:28: ( ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) ) )
+            // InternalSiriusTextDsl.g:5040:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
             {
-            // InternalSiriusTextDsl.g:5036:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
+            // InternalSiriusTextDsl.g:5040:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
             int alt119=4;
             switch ( input.LA(1) ) {
             case 115:
@@ -11661,10 +11666,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt119) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5036:2: (enumLiteral_0= 'solid' )
+                    // InternalSiriusTextDsl.g:5040:2: (enumLiteral_0= 'solid' )
                     {
-                    // InternalSiriusTextDsl.g:5036:2: (enumLiteral_0= 'solid' )
-                    // InternalSiriusTextDsl.g:5036:4: enumLiteral_0= 'solid'
+                    // InternalSiriusTextDsl.g:5040:2: (enumLiteral_0= 'solid' )
+                    // InternalSiriusTextDsl.g:5040:4: enumLiteral_0= 'solid'
                     {
                     enumLiteral_0=(Token)match(input,115,FOLLOW_2); 
 
@@ -11678,10 +11683,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5042:6: (enumLiteral_1= 'dash' )
+                    // InternalSiriusTextDsl.g:5046:6: (enumLiteral_1= 'dash' )
                     {
-                    // InternalSiriusTextDsl.g:5042:6: (enumLiteral_1= 'dash' )
-                    // InternalSiriusTextDsl.g:5042:8: enumLiteral_1= 'dash'
+                    // InternalSiriusTextDsl.g:5046:6: (enumLiteral_1= 'dash' )
+                    // InternalSiriusTextDsl.g:5046:8: enumLiteral_1= 'dash'
                     {
                     enumLiteral_1=(Token)match(input,116,FOLLOW_2); 
 
@@ -11695,10 +11700,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5048:6: (enumLiteral_2= 'dot' )
+                    // InternalSiriusTextDsl.g:5052:6: (enumLiteral_2= 'dot' )
                     {
-                    // InternalSiriusTextDsl.g:5048:6: (enumLiteral_2= 'dot' )
-                    // InternalSiriusTextDsl.g:5048:8: enumLiteral_2= 'dot'
+                    // InternalSiriusTextDsl.g:5052:6: (enumLiteral_2= 'dot' )
+                    // InternalSiriusTextDsl.g:5052:8: enumLiteral_2= 'dot'
                     {
                     enumLiteral_2=(Token)match(input,117,FOLLOW_2); 
 
@@ -11712,10 +11717,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSiriusTextDsl.g:5054:6: (enumLiteral_3= 'dash_dot' )
+                    // InternalSiriusTextDsl.g:5058:6: (enumLiteral_3= 'dash_dot' )
                     {
-                    // InternalSiriusTextDsl.g:5054:6: (enumLiteral_3= 'dash_dot' )
-                    // InternalSiriusTextDsl.g:5054:8: enumLiteral_3= 'dash_dot'
+                    // InternalSiriusTextDsl.g:5058:6: (enumLiteral_3= 'dash_dot' )
+                    // InternalSiriusTextDsl.g:5058:8: enumLiteral_3= 'dash_dot'
                     {
                     enumLiteral_3=(Token)match(input,118,FOLLOW_2); 
 
@@ -11749,7 +11754,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoutingStyle"
-    // InternalSiriusTextDsl.g:5064:1: ruleRoutingStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) ) ;
+    // InternalSiriusTextDsl.g:5068:1: ruleRoutingStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) ) ;
     public final Enumerator ruleRoutingStyle() throws RecognitionException {
         Enumerator current = null;
 
@@ -11759,10 +11764,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5066:28: ( ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) ) )
-            // InternalSiriusTextDsl.g:5067:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
+            // InternalSiriusTextDsl.g:5070:28: ( ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) ) )
+            // InternalSiriusTextDsl.g:5071:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
             {
-            // InternalSiriusTextDsl.g:5067:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
+            // InternalSiriusTextDsl.g:5071:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
             int alt120=3;
             switch ( input.LA(1) ) {
             case 119:
@@ -11789,10 +11794,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt120) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5067:2: (enumLiteral_0= 'straight' )
+                    // InternalSiriusTextDsl.g:5071:2: (enumLiteral_0= 'straight' )
                     {
-                    // InternalSiriusTextDsl.g:5067:2: (enumLiteral_0= 'straight' )
-                    // InternalSiriusTextDsl.g:5067:4: enumLiteral_0= 'straight'
+                    // InternalSiriusTextDsl.g:5071:2: (enumLiteral_0= 'straight' )
+                    // InternalSiriusTextDsl.g:5071:4: enumLiteral_0= 'straight'
                     {
                     enumLiteral_0=(Token)match(input,119,FOLLOW_2); 
 
@@ -11806,10 +11811,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5073:6: (enumLiteral_1= 'manhattan' )
+                    // InternalSiriusTextDsl.g:5077:6: (enumLiteral_1= 'manhattan' )
                     {
-                    // InternalSiriusTextDsl.g:5073:6: (enumLiteral_1= 'manhattan' )
-                    // InternalSiriusTextDsl.g:5073:8: enumLiteral_1= 'manhattan'
+                    // InternalSiriusTextDsl.g:5077:6: (enumLiteral_1= 'manhattan' )
+                    // InternalSiriusTextDsl.g:5077:8: enumLiteral_1= 'manhattan'
                     {
                     enumLiteral_1=(Token)match(input,120,FOLLOW_2); 
 
@@ -11823,10 +11828,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5079:6: (enumLiteral_2= 'tree' )
+                    // InternalSiriusTextDsl.g:5083:6: (enumLiteral_2= 'tree' )
                     {
-                    // InternalSiriusTextDsl.g:5079:6: (enumLiteral_2= 'tree' )
-                    // InternalSiriusTextDsl.g:5079:8: enumLiteral_2= 'tree'
+                    // InternalSiriusTextDsl.g:5083:6: (enumLiteral_2= 'tree' )
+                    // InternalSiriusTextDsl.g:5083:8: enumLiteral_2= 'tree'
                     {
                     enumLiteral_2=(Token)match(input,121,FOLLOW_2); 
 
@@ -11860,7 +11865,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrowDecorator"
-    // InternalSiriusTextDsl.g:5089:1: ruleArrowDecorator returns [Enumerator current=null] : ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) ) ;
+    // InternalSiriusTextDsl.g:5093:1: ruleArrowDecorator returns [Enumerator current=null] : ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) ) ;
     public final Enumerator ruleArrowDecorator() throws RecognitionException {
         Enumerator current = null;
 
@@ -11878,10 +11883,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5091:28: ( ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) ) )
-            // InternalSiriusTextDsl.g:5092:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) )
+            // InternalSiriusTextDsl.g:5095:28: ( ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) ) )
+            // InternalSiriusTextDsl.g:5096:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) )
             {
-            // InternalSiriusTextDsl.g:5092:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) )
+            // InternalSiriusTextDsl.g:5096:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWithFillDiamond' ) )
             int alt121=11;
             switch ( input.LA(1) ) {
             case 122:
@@ -11948,10 +11953,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt121) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5092:2: (enumLiteral_0= 'NoDecoration' )
+                    // InternalSiriusTextDsl.g:5096:2: (enumLiteral_0= 'NoDecoration' )
                     {
-                    // InternalSiriusTextDsl.g:5092:2: (enumLiteral_0= 'NoDecoration' )
-                    // InternalSiriusTextDsl.g:5092:4: enumLiteral_0= 'NoDecoration'
+                    // InternalSiriusTextDsl.g:5096:2: (enumLiteral_0= 'NoDecoration' )
+                    // InternalSiriusTextDsl.g:5096:4: enumLiteral_0= 'NoDecoration'
                     {
                     enumLiteral_0=(Token)match(input,122,FOLLOW_2); 
 
@@ -11965,10 +11970,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5098:6: (enumLiteral_1= 'OutputArrow' )
+                    // InternalSiriusTextDsl.g:5102:6: (enumLiteral_1= 'OutputArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5098:6: (enumLiteral_1= 'OutputArrow' )
-                    // InternalSiriusTextDsl.g:5098:8: enumLiteral_1= 'OutputArrow'
+                    // InternalSiriusTextDsl.g:5102:6: (enumLiteral_1= 'OutputArrow' )
+                    // InternalSiriusTextDsl.g:5102:8: enumLiteral_1= 'OutputArrow'
                     {
                     enumLiteral_1=(Token)match(input,123,FOLLOW_2); 
 
@@ -11982,10 +11987,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5104:6: (enumLiteral_2= 'InputArrow' )
+                    // InternalSiriusTextDsl.g:5108:6: (enumLiteral_2= 'InputArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5104:6: (enumLiteral_2= 'InputArrow' )
-                    // InternalSiriusTextDsl.g:5104:8: enumLiteral_2= 'InputArrow'
+                    // InternalSiriusTextDsl.g:5108:6: (enumLiteral_2= 'InputArrow' )
+                    // InternalSiriusTextDsl.g:5108:8: enumLiteral_2= 'InputArrow'
                     {
                     enumLiteral_2=(Token)match(input,124,FOLLOW_2); 
 
@@ -11999,10 +12004,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSiriusTextDsl.g:5110:6: (enumLiteral_3= 'OutputClosedArrow' )
+                    // InternalSiriusTextDsl.g:5114:6: (enumLiteral_3= 'OutputClosedArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5110:6: (enumLiteral_3= 'OutputClosedArrow' )
-                    // InternalSiriusTextDsl.g:5110:8: enumLiteral_3= 'OutputClosedArrow'
+                    // InternalSiriusTextDsl.g:5114:6: (enumLiteral_3= 'OutputClosedArrow' )
+                    // InternalSiriusTextDsl.g:5114:8: enumLiteral_3= 'OutputClosedArrow'
                     {
                     enumLiteral_3=(Token)match(input,125,FOLLOW_2); 
 
@@ -12016,10 +12021,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSiriusTextDsl.g:5116:6: (enumLiteral_4= 'InputClosedArrow' )
+                    // InternalSiriusTextDsl.g:5120:6: (enumLiteral_4= 'InputClosedArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5116:6: (enumLiteral_4= 'InputClosedArrow' )
-                    // InternalSiriusTextDsl.g:5116:8: enumLiteral_4= 'InputClosedArrow'
+                    // InternalSiriusTextDsl.g:5120:6: (enumLiteral_4= 'InputClosedArrow' )
+                    // InternalSiriusTextDsl.g:5120:8: enumLiteral_4= 'InputClosedArrow'
                     {
                     enumLiteral_4=(Token)match(input,126,FOLLOW_2); 
 
@@ -12033,10 +12038,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSiriusTextDsl.g:5122:6: (enumLiteral_5= 'OutputFillClosedArrow' )
+                    // InternalSiriusTextDsl.g:5126:6: (enumLiteral_5= 'OutputFillClosedArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5122:6: (enumLiteral_5= 'OutputFillClosedArrow' )
-                    // InternalSiriusTextDsl.g:5122:8: enumLiteral_5= 'OutputFillClosedArrow'
+                    // InternalSiriusTextDsl.g:5126:6: (enumLiteral_5= 'OutputFillClosedArrow' )
+                    // InternalSiriusTextDsl.g:5126:8: enumLiteral_5= 'OutputFillClosedArrow'
                     {
                     enumLiteral_5=(Token)match(input,127,FOLLOW_2); 
 
@@ -12050,10 +12055,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSiriusTextDsl.g:5128:6: (enumLiteral_6= 'InputFillClosedArrow' )
+                    // InternalSiriusTextDsl.g:5132:6: (enumLiteral_6= 'InputFillClosedArrow' )
                     {
-                    // InternalSiriusTextDsl.g:5128:6: (enumLiteral_6= 'InputFillClosedArrow' )
-                    // InternalSiriusTextDsl.g:5128:8: enumLiteral_6= 'InputFillClosedArrow'
+                    // InternalSiriusTextDsl.g:5132:6: (enumLiteral_6= 'InputFillClosedArrow' )
+                    // InternalSiriusTextDsl.g:5132:8: enumLiteral_6= 'InputFillClosedArrow'
                     {
                     enumLiteral_6=(Token)match(input,128,FOLLOW_2); 
 
@@ -12067,10 +12072,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalSiriusTextDsl.g:5134:6: (enumLiteral_7= 'Diamond' )
+                    // InternalSiriusTextDsl.g:5138:6: (enumLiteral_7= 'Diamond' )
                     {
-                    // InternalSiriusTextDsl.g:5134:6: (enumLiteral_7= 'Diamond' )
-                    // InternalSiriusTextDsl.g:5134:8: enumLiteral_7= 'Diamond'
+                    // InternalSiriusTextDsl.g:5138:6: (enumLiteral_7= 'Diamond' )
+                    // InternalSiriusTextDsl.g:5138:8: enumLiteral_7= 'Diamond'
                     {
                     enumLiteral_7=(Token)match(input,129,FOLLOW_2); 
 
@@ -12084,10 +12089,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalSiriusTextDsl.g:5140:6: (enumLiteral_8= 'FillDiamond' )
+                    // InternalSiriusTextDsl.g:5144:6: (enumLiteral_8= 'FillDiamond' )
                     {
-                    // InternalSiriusTextDsl.g:5140:6: (enumLiteral_8= 'FillDiamond' )
-                    // InternalSiriusTextDsl.g:5140:8: enumLiteral_8= 'FillDiamond'
+                    // InternalSiriusTextDsl.g:5144:6: (enumLiteral_8= 'FillDiamond' )
+                    // InternalSiriusTextDsl.g:5144:8: enumLiteral_8= 'FillDiamond'
                     {
                     enumLiteral_8=(Token)match(input,130,FOLLOW_2); 
 
@@ -12101,10 +12106,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalSiriusTextDsl.g:5146:6: (enumLiteral_9= 'InputArrowWithDiamond' )
+                    // InternalSiriusTextDsl.g:5150:6: (enumLiteral_9= 'InputArrowWithDiamond' )
                     {
-                    // InternalSiriusTextDsl.g:5146:6: (enumLiteral_9= 'InputArrowWithDiamond' )
-                    // InternalSiriusTextDsl.g:5146:8: enumLiteral_9= 'InputArrowWithDiamond'
+                    // InternalSiriusTextDsl.g:5150:6: (enumLiteral_9= 'InputArrowWithDiamond' )
+                    // InternalSiriusTextDsl.g:5150:8: enumLiteral_9= 'InputArrowWithDiamond'
                     {
                     enumLiteral_9=(Token)match(input,131,FOLLOW_2); 
 
@@ -12118,10 +12123,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalSiriusTextDsl.g:5152:6: (enumLiteral_10= 'InputArrowWithFillDiamond' )
+                    // InternalSiriusTextDsl.g:5156:6: (enumLiteral_10= 'InputArrowWithFillDiamond' )
                     {
-                    // InternalSiriusTextDsl.g:5152:6: (enumLiteral_10= 'InputArrowWithFillDiamond' )
-                    // InternalSiriusTextDsl.g:5152:8: enumLiteral_10= 'InputArrowWithFillDiamond'
+                    // InternalSiriusTextDsl.g:5156:6: (enumLiteral_10= 'InputArrowWithFillDiamond' )
+                    // InternalSiriusTextDsl.g:5156:8: enumLiteral_10= 'InputArrowWithFillDiamond'
                     {
                     enumLiteral_10=(Token)match(input,132,FOLLOW_2); 
 
@@ -12155,7 +12160,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFoldingStyle"
-    // InternalSiriusTextDsl.g:5162:1: ruleFoldingStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) ) ;
+    // InternalSiriusTextDsl.g:5166:1: ruleFoldingStyle returns [Enumerator current=null] : ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) ) ;
     public final Enumerator ruleFoldingStyle() throws RecognitionException {
         Enumerator current = null;
 
@@ -12165,10 +12170,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5164:28: ( ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) ) )
-            // InternalSiriusTextDsl.g:5165:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) )
+            // InternalSiriusTextDsl.g:5168:28: ( ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) ) )
+            // InternalSiriusTextDsl.g:5169:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) )
             {
-            // InternalSiriusTextDsl.g:5165:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) )
+            // InternalSiriusTextDsl.g:5169:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'source' ) | (enumLiteral_2= 'target' ) )
             int alt122=3;
             switch ( input.LA(1) ) {
             case 133:
@@ -12195,10 +12200,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt122) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5165:2: (enumLiteral_0= 'none' )
+                    // InternalSiriusTextDsl.g:5169:2: (enumLiteral_0= 'none' )
                     {
-                    // InternalSiriusTextDsl.g:5165:2: (enumLiteral_0= 'none' )
-                    // InternalSiriusTextDsl.g:5165:4: enumLiteral_0= 'none'
+                    // InternalSiriusTextDsl.g:5169:2: (enumLiteral_0= 'none' )
+                    // InternalSiriusTextDsl.g:5169:4: enumLiteral_0= 'none'
                     {
                     enumLiteral_0=(Token)match(input,133,FOLLOW_2); 
 
@@ -12212,10 +12217,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5171:6: (enumLiteral_1= 'source' )
+                    // InternalSiriusTextDsl.g:5175:6: (enumLiteral_1= 'source' )
                     {
-                    // InternalSiriusTextDsl.g:5171:6: (enumLiteral_1= 'source' )
-                    // InternalSiriusTextDsl.g:5171:8: enumLiteral_1= 'source'
+                    // InternalSiriusTextDsl.g:5175:6: (enumLiteral_1= 'source' )
+                    // InternalSiriusTextDsl.g:5175:8: enumLiteral_1= 'source'
                     {
                     enumLiteral_1=(Token)match(input,134,FOLLOW_2); 
 
@@ -12229,10 +12234,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5177:6: (enumLiteral_2= 'target' )
+                    // InternalSiriusTextDsl.g:5181:6: (enumLiteral_2= 'target' )
                     {
-                    // InternalSiriusTextDsl.g:5177:6: (enumLiteral_2= 'target' )
-                    // InternalSiriusTextDsl.g:5177:8: enumLiteral_2= 'target'
+                    // InternalSiriusTextDsl.g:5181:6: (enumLiteral_2= 'target' )
+                    // InternalSiriusTextDsl.g:5181:8: enumLiteral_2= 'target'
                     {
                     enumLiteral_2=(Token)match(input,135,FOLLOW_2); 
 
@@ -12266,7 +12271,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEndsCentering"
-    // InternalSiriusTextDsl.g:5187:1: ruleEndsCentering returns [Enumerator current=null] : ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) ) ;
+    // InternalSiriusTextDsl.g:5191:1: ruleEndsCentering returns [Enumerator current=null] : ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) ) ;
     public final Enumerator ruleEndsCentering() throws RecognitionException {
         Enumerator current = null;
 
@@ -12277,10 +12282,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalSiriusTextDsl.g:5189:28: ( ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) ) )
-            // InternalSiriusTextDsl.g:5190:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) )
+            // InternalSiriusTextDsl.g:5193:28: ( ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) ) )
+            // InternalSiriusTextDsl.g:5194:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) )
             {
-            // InternalSiriusTextDsl.g:5190:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) )
+            // InternalSiriusTextDsl.g:5194:1: ( (enumLiteral_0= 'none' ) | (enumLiteral_1= 'both' ) | (enumLiteral_2= 'source' ) | (enumLiteral_3= 'target' ) )
             int alt123=4;
             switch ( input.LA(1) ) {
             case 133:
@@ -12312,10 +12317,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
 
             switch (alt123) {
                 case 1 :
-                    // InternalSiriusTextDsl.g:5190:2: (enumLiteral_0= 'none' )
+                    // InternalSiriusTextDsl.g:5194:2: (enumLiteral_0= 'none' )
                     {
-                    // InternalSiriusTextDsl.g:5190:2: (enumLiteral_0= 'none' )
-                    // InternalSiriusTextDsl.g:5190:4: enumLiteral_0= 'none'
+                    // InternalSiriusTextDsl.g:5194:2: (enumLiteral_0= 'none' )
+                    // InternalSiriusTextDsl.g:5194:4: enumLiteral_0= 'none'
                     {
                     enumLiteral_0=(Token)match(input,133,FOLLOW_2); 
 
@@ -12329,10 +12334,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSiriusTextDsl.g:5196:6: (enumLiteral_1= 'both' )
+                    // InternalSiriusTextDsl.g:5200:6: (enumLiteral_1= 'both' )
                     {
-                    // InternalSiriusTextDsl.g:5196:6: (enumLiteral_1= 'both' )
-                    // InternalSiriusTextDsl.g:5196:8: enumLiteral_1= 'both'
+                    // InternalSiriusTextDsl.g:5200:6: (enumLiteral_1= 'both' )
+                    // InternalSiriusTextDsl.g:5200:8: enumLiteral_1= 'both'
                     {
                     enumLiteral_1=(Token)match(input,136,FOLLOW_2); 
 
@@ -12346,10 +12351,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSiriusTextDsl.g:5202:6: (enumLiteral_2= 'source' )
+                    // InternalSiriusTextDsl.g:5206:6: (enumLiteral_2= 'source' )
                     {
-                    // InternalSiriusTextDsl.g:5202:6: (enumLiteral_2= 'source' )
-                    // InternalSiriusTextDsl.g:5202:8: enumLiteral_2= 'source'
+                    // InternalSiriusTextDsl.g:5206:6: (enumLiteral_2= 'source' )
+                    // InternalSiriusTextDsl.g:5206:8: enumLiteral_2= 'source'
                     {
                     enumLiteral_2=(Token)match(input,134,FOLLOW_2); 
 
@@ -12363,10 +12368,10 @@ public class InternalSiriusTextDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSiriusTextDsl.g:5208:6: (enumLiteral_3= 'target' )
+                    // InternalSiriusTextDsl.g:5212:6: (enumLiteral_3= 'target' )
                     {
-                    // InternalSiriusTextDsl.g:5208:6: (enumLiteral_3= 'target' )
-                    // InternalSiriusTextDsl.g:5208:8: enumLiteral_3= 'target'
+                    // InternalSiriusTextDsl.g:5212:6: (enumLiteral_3= 'target' )
+                    // InternalSiriusTextDsl.g:5212:8: enumLiteral_3= 'target'
                     {
                     enumLiteral_3=(Token)match(input,135,FOLLOW_2); 
 

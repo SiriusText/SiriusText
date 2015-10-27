@@ -3499,52 +3499,56 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.obeonetwork.sirius.text.SiriusTextDsl.RGB");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRgbKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cRedAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRedINTTerminalRuleCall_1_0 = (RuleCall)cRedAssignment_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGreenAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGreenINTTerminalRuleCall_3_0 = (RuleCall)cGreenAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cBlueAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cBlueINTTerminalRuleCall_5_0 = (RuleCall)cBlueAssignment_5.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cRedAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRedINTTerminalRuleCall_2_0 = (RuleCall)cRedAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cGreenAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cGreenINTTerminalRuleCall_4_0 = (RuleCall)cGreenAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cBlueAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cBlueINTTerminalRuleCall_6_0 = (RuleCall)cBlueAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RGB:
-		//	'rgb(' red=INT ',' green=INT ',' blue=INT ')';
+		//	'rgb' '(' red=INT ',' green=INT ',' blue=INT ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//'rgb(' red=INT ',' green=INT ',' blue=INT ')'
+		//'rgb' '(' red=INT ',' green=INT ',' blue=INT ')'
 		public Group getGroup() { return cGroup; }
 
-		//'rgb('
+		//'rgb'
 		public Keyword getRgbKeyword_0() { return cRgbKeyword_0; }
 
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
 		//red=INT
-		public Assignment getRedAssignment_1() { return cRedAssignment_1; }
+		public Assignment getRedAssignment_2() { return cRedAssignment_2; }
 
 		//INT
-		public RuleCall getRedINTTerminalRuleCall_1_0() { return cRedINTTerminalRuleCall_1_0; }
+		public RuleCall getRedINTTerminalRuleCall_2_0() { return cRedINTTerminalRuleCall_2_0; }
 
 		//','
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
 		//green=INT
-		public Assignment getGreenAssignment_3() { return cGreenAssignment_3; }
+		public Assignment getGreenAssignment_4() { return cGreenAssignment_4; }
 
 		//INT
-		public RuleCall getGreenINTTerminalRuleCall_3_0() { return cGreenINTTerminalRuleCall_3_0; }
+		public RuleCall getGreenINTTerminalRuleCall_4_0() { return cGreenINTTerminalRuleCall_4_0; }
 
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 
 		//blue=INT
-		public Assignment getBlueAssignment_5() { return cBlueAssignment_5; }
+		public Assignment getBlueAssignment_6() { return cBlueAssignment_6; }
 
 		//INT
-		public RuleCall getBlueINTTerminalRuleCall_5_0() { return cBlueINTTerminalRuleCall_5_0; }
+		public RuleCall getBlueINTTerminalRuleCall_6_0() { return cBlueINTTerminalRuleCall_6_0; }
 
 		//')'
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	
 	
@@ -4602,7 +4606,7 @@ public class SiriusTextDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RGB:
-	//	'rgb(' red=INT ',' green=INT ',' blue=INT ')';
+	//	'rgb' '(' red=INT ',' green=INT ',' blue=INT ')';
 	public RGBElements getRGBAccess() {
 		return pRGB;
 	}

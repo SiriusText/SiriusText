@@ -4902,15 +4902,19 @@ ruleRGB returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='rgb(' 
+(	otherlv_0='rgb' 
     {
     	newLeafNode(otherlv_0, grammarAccess.getRGBAccess().getRgbKeyword_0());
     }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1());
+    }
 (
 (
-		lv_red_1_0=RULE_INT
+		lv_red_2_0=RULE_INT
 		{
-			newLeafNode(lv_red_1_0, grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0()); 
+			newLeafNode(lv_red_2_0, grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -4919,20 +4923,20 @@ ruleRGB returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"red",
-        		lv_red_1_0, 
+        		lv_red_2_0, 
         		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
 	    }
 
 )
-)	otherlv_2=',' 
+)	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getRGBAccess().getCommaKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getRGBAccess().getCommaKeyword_3());
     }
 (
 (
-		lv_green_3_0=RULE_INT
+		lv_green_4_0=RULE_INT
 		{
-			newLeafNode(lv_green_3_0, grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0()); 
+			newLeafNode(lv_green_4_0, grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -4941,20 +4945,20 @@ ruleRGB returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"green",
-        		lv_green_3_0, 
+        		lv_green_4_0, 
         		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
 	    }
 
 )
-)	otherlv_4=',' 
+)	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getRGBAccess().getCommaKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getRGBAccess().getCommaKeyword_5());
     }
 (
 (
-		lv_blue_5_0=RULE_INT
+		lv_blue_6_0=RULE_INT
 		{
-			newLeafNode(lv_blue_5_0, grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0()); 
+			newLeafNode(lv_blue_6_0, grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_6_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -4963,14 +4967,14 @@ ruleRGB returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"blue",
-        		lv_blue_5_0, 
+        		lv_blue_6_0, 
         		"org.obeonetwork.sirius.text.SiriusTextDsl.INT");
 	    }
 
 )
-)	otherlv_6=')' 
+)	otherlv_7=')' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getRGBAccess().getRightParenthesisKeyword_6());
+    	newLeafNode(otherlv_7, grammarAccess.getRGBAccess().getRightParenthesisKeyword_7());
     }
 )
 ;

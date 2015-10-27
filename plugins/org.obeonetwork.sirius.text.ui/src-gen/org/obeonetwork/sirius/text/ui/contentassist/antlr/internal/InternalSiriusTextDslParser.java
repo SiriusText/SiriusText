@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSiriusTextDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'javaExtensions'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'begin'", "'extraMappings'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb('", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@ForceRefresh'", "'list'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOCUMENTATION", "RULE_STRING", "RULE_EXPRESSION", "RULE_INT", "RULE_WS", "'left'", "'center'", "'right'", "'oblique'", "'lefttoright'", "'toptobottom'", "'solid'", "'dash'", "'dot'", "'dash_dot'", "'straight'", "'manhattan'", "'tree'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWithFillDiamond'", "'none'", "'source'", "'target'", "'both'", "'package'", "'.'", "'.*'", "'import'", "'designer'", "'{'", "'}'", "'as'", "'viewpoint'", "'modelFileExtensions'", "'='", "'['", "']'", "','", "'icon'", "'representations'", "'javaExtensions'", "'@MetamodelUris'", "'({'", "'})'", "'diagram'", "'for'", "'?'", "'documentation'", "'titleExpression'", "'rootExpression'", "'defaultLayer'", "'additionalLayers'", "'layer'", "'mappings'", "'edges'", "'sections'", "'section'", "'tools'", "'@NodeCreationVariable'", "'('", "')'", "'@ContainerViewVariable'", "'containerCreation'", "'containerMappings'", "'begin'", "'extraMappings'", "'changeContext'", "':'", "'if'", "'set'", "'featureName'", "'valueExpression'", "'unset'", "'elementExpression'", "'createInstance'", "'referenceName'", "'type'", "'createView'", "'mapping'", "'containerViewExpression'", "'createEdgeView'", "'sourceExpression'", "'targetExpression'", "'deleteView'", "'()'", "'remove'", "'move'", "'newContainerExpression'", "'switch'", "'case'", "'default'", "'container'", "'style'", "'semanticCandidatesExpression'", "'gradient'", "'from'", "'to'", "'label'", "'in'", "'border'", "'size'", "'heightComputationExpression'", "'widthComputationExpression'", "'relationBasedEdge'", "'sourceMappings'", "'targetMappings'", "'targetFileExpression'", "'edgeStyle'", "'line'", "'routing'", "'sourceArrow'", "'targetArrow'", "'sizeComputationExpression'", "'foldingStyle'", "'endsCentering'", "'palette'", "'color'", "'rgb'", "'@Initialized'", "'@ShowOnStartup'", "'@EnablePopupBars'", "'@ForceRefresh'", "'list'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -46709,7 +46709,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18059:1: ( rule__RGB__Group__0__Impl rule__RGB__Group__1 )
             // InternalSiriusTextDsl.g:18060:2: rule__RGB__Group__0__Impl rule__RGB__Group__1
             {
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_37);
             rule__RGB__Group__0__Impl();
 
             state._fsp--;
@@ -46738,17 +46738,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__0__Impl"
-    // InternalSiriusTextDsl.g:18067:1: rule__RGB__Group__0__Impl : ( 'rgb(' ) ;
+    // InternalSiriusTextDsl.g:18067:1: rule__RGB__Group__0__Impl : ( 'rgb' ) ;
     public final void rule__RGB__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18071:1: ( ( 'rgb(' ) )
-            // InternalSiriusTextDsl.g:18072:1: ( 'rgb(' )
+            // InternalSiriusTextDsl.g:18071:1: ( ( 'rgb' ) )
+            // InternalSiriusTextDsl.g:18072:1: ( 'rgb' )
             {
-            // InternalSiriusTextDsl.g:18072:1: ( 'rgb(' )
-            // InternalSiriusTextDsl.g:18073:1: 'rgb('
+            // InternalSiriusTextDsl.g:18072:1: ( 'rgb' )
+            // InternalSiriusTextDsl.g:18073:1: 'rgb'
             {
              before(grammarAccess.getRGBAccess().getRgbKeyword_0()); 
             match(input,131,FOLLOW_2); 
@@ -46784,7 +46784,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18090:1: ( rule__RGB__Group__1__Impl rule__RGB__Group__2 )
             // InternalSiriusTextDsl.g:18091:2: rule__RGB__Group__1__Impl rule__RGB__Group__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_80);
             rule__RGB__Group__1__Impl();
 
             state._fsp--;
@@ -46813,31 +46813,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__1__Impl"
-    // InternalSiriusTextDsl.g:18098:1: rule__RGB__Group__1__Impl : ( ( rule__RGB__RedAssignment_1 ) ) ;
+    // InternalSiriusTextDsl.g:18098:1: rule__RGB__Group__1__Impl : ( '(' ) ;
     public final void rule__RGB__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18102:1: ( ( ( rule__RGB__RedAssignment_1 ) ) )
-            // InternalSiriusTextDsl.g:18103:1: ( ( rule__RGB__RedAssignment_1 ) )
+            // InternalSiriusTextDsl.g:18102:1: ( ( '(' ) )
+            // InternalSiriusTextDsl.g:18103:1: ( '(' )
             {
-            // InternalSiriusTextDsl.g:18103:1: ( ( rule__RGB__RedAssignment_1 ) )
-            // InternalSiriusTextDsl.g:18104:1: ( rule__RGB__RedAssignment_1 )
+            // InternalSiriusTextDsl.g:18103:1: ( '(' )
+            // InternalSiriusTextDsl.g:18104:1: '('
             {
-             before(grammarAccess.getRGBAccess().getRedAssignment_1()); 
-            // InternalSiriusTextDsl.g:18105:1: ( rule__RGB__RedAssignment_1 )
-            // InternalSiriusTextDsl.g:18105:2: rule__RGB__RedAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__RGB__RedAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRGBAccess().getRedAssignment_1()); 
+             before(grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1()); 
+            match(input,73,FOLLOW_2); 
+             after(grammarAccess.getRGBAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -46860,16 +46850,16 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__2"
-    // InternalSiriusTextDsl.g:18115:1: rule__RGB__Group__2 : rule__RGB__Group__2__Impl rule__RGB__Group__3 ;
+    // InternalSiriusTextDsl.g:18117:1: rule__RGB__Group__2 : rule__RGB__Group__2__Impl rule__RGB__Group__3 ;
     public final void rule__RGB__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18119:1: ( rule__RGB__Group__2__Impl rule__RGB__Group__3 )
-            // InternalSiriusTextDsl.g:18120:2: rule__RGB__Group__2__Impl rule__RGB__Group__3
+            // InternalSiriusTextDsl.g:18121:1: ( rule__RGB__Group__2__Impl rule__RGB__Group__3 )
+            // InternalSiriusTextDsl.g:18122:2: rule__RGB__Group__2__Impl rule__RGB__Group__3
             {
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_22);
             rule__RGB__Group__2__Impl();
 
             state._fsp--;
@@ -46898,21 +46888,31 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__2__Impl"
-    // InternalSiriusTextDsl.g:18127:1: rule__RGB__Group__2__Impl : ( ',' ) ;
+    // InternalSiriusTextDsl.g:18129:1: rule__RGB__Group__2__Impl : ( ( rule__RGB__RedAssignment_2 ) ) ;
     public final void rule__RGB__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18131:1: ( ( ',' ) )
-            // InternalSiriusTextDsl.g:18132:1: ( ',' )
+            // InternalSiriusTextDsl.g:18133:1: ( ( ( rule__RGB__RedAssignment_2 ) ) )
+            // InternalSiriusTextDsl.g:18134:1: ( ( rule__RGB__RedAssignment_2 ) )
             {
-            // InternalSiriusTextDsl.g:18132:1: ( ',' )
-            // InternalSiriusTextDsl.g:18133:1: ','
+            // InternalSiriusTextDsl.g:18134:1: ( ( rule__RGB__RedAssignment_2 ) )
+            // InternalSiriusTextDsl.g:18135:1: ( rule__RGB__RedAssignment_2 )
             {
-             before(grammarAccess.getRGBAccess().getCommaKeyword_2()); 
-            match(input,51,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getCommaKeyword_2()); 
+             before(grammarAccess.getRGBAccess().getRedAssignment_2()); 
+            // InternalSiriusTextDsl.g:18136:1: ( rule__RGB__RedAssignment_2 )
+            // InternalSiriusTextDsl.g:18136:2: rule__RGB__RedAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__RGB__RedAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRGBAccess().getRedAssignment_2()); 
 
             }
 
@@ -46944,7 +46944,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18150:1: ( rule__RGB__Group__3__Impl rule__RGB__Group__4 )
             // InternalSiriusTextDsl.g:18151:2: rule__RGB__Group__3__Impl rule__RGB__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_80);
             rule__RGB__Group__3__Impl();
 
             state._fsp--;
@@ -46973,31 +46973,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__3__Impl"
-    // InternalSiriusTextDsl.g:18158:1: rule__RGB__Group__3__Impl : ( ( rule__RGB__GreenAssignment_3 ) ) ;
+    // InternalSiriusTextDsl.g:18158:1: rule__RGB__Group__3__Impl : ( ',' ) ;
     public final void rule__RGB__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18162:1: ( ( ( rule__RGB__GreenAssignment_3 ) ) )
-            // InternalSiriusTextDsl.g:18163:1: ( ( rule__RGB__GreenAssignment_3 ) )
+            // InternalSiriusTextDsl.g:18162:1: ( ( ',' ) )
+            // InternalSiriusTextDsl.g:18163:1: ( ',' )
             {
-            // InternalSiriusTextDsl.g:18163:1: ( ( rule__RGB__GreenAssignment_3 ) )
-            // InternalSiriusTextDsl.g:18164:1: ( rule__RGB__GreenAssignment_3 )
+            // InternalSiriusTextDsl.g:18163:1: ( ',' )
+            // InternalSiriusTextDsl.g:18164:1: ','
             {
-             before(grammarAccess.getRGBAccess().getGreenAssignment_3()); 
-            // InternalSiriusTextDsl.g:18165:1: ( rule__RGB__GreenAssignment_3 )
-            // InternalSiriusTextDsl.g:18165:2: rule__RGB__GreenAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__RGB__GreenAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRGBAccess().getGreenAssignment_3()); 
+             before(grammarAccess.getRGBAccess().getCommaKeyword_3()); 
+            match(input,51,FOLLOW_2); 
+             after(grammarAccess.getRGBAccess().getCommaKeyword_3()); 
 
             }
 
@@ -47020,16 +47010,16 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__4"
-    // InternalSiriusTextDsl.g:18175:1: rule__RGB__Group__4 : rule__RGB__Group__4__Impl rule__RGB__Group__5 ;
+    // InternalSiriusTextDsl.g:18177:1: rule__RGB__Group__4 : rule__RGB__Group__4__Impl rule__RGB__Group__5 ;
     public final void rule__RGB__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18179:1: ( rule__RGB__Group__4__Impl rule__RGB__Group__5 )
-            // InternalSiriusTextDsl.g:18180:2: rule__RGB__Group__4__Impl rule__RGB__Group__5
+            // InternalSiriusTextDsl.g:18181:1: ( rule__RGB__Group__4__Impl rule__RGB__Group__5 )
+            // InternalSiriusTextDsl.g:18182:2: rule__RGB__Group__4__Impl rule__RGB__Group__5
             {
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_22);
             rule__RGB__Group__4__Impl();
 
             state._fsp--;
@@ -47058,21 +47048,31 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__4__Impl"
-    // InternalSiriusTextDsl.g:18187:1: rule__RGB__Group__4__Impl : ( ',' ) ;
+    // InternalSiriusTextDsl.g:18189:1: rule__RGB__Group__4__Impl : ( ( rule__RGB__GreenAssignment_4 ) ) ;
     public final void rule__RGB__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18191:1: ( ( ',' ) )
-            // InternalSiriusTextDsl.g:18192:1: ( ',' )
+            // InternalSiriusTextDsl.g:18193:1: ( ( ( rule__RGB__GreenAssignment_4 ) ) )
+            // InternalSiriusTextDsl.g:18194:1: ( ( rule__RGB__GreenAssignment_4 ) )
             {
-            // InternalSiriusTextDsl.g:18192:1: ( ',' )
-            // InternalSiriusTextDsl.g:18193:1: ','
+            // InternalSiriusTextDsl.g:18194:1: ( ( rule__RGB__GreenAssignment_4 ) )
+            // InternalSiriusTextDsl.g:18195:1: ( rule__RGB__GreenAssignment_4 )
             {
-             before(grammarAccess.getRGBAccess().getCommaKeyword_4()); 
-            match(input,51,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getCommaKeyword_4()); 
+             before(grammarAccess.getRGBAccess().getGreenAssignment_4()); 
+            // InternalSiriusTextDsl.g:18196:1: ( rule__RGB__GreenAssignment_4 )
+            // InternalSiriusTextDsl.g:18196:2: rule__RGB__GreenAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__RGB__GreenAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRGBAccess().getGreenAssignment_4()); 
 
             }
 
@@ -47104,7 +47104,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
             // InternalSiriusTextDsl.g:18210:1: ( rule__RGB__Group__5__Impl rule__RGB__Group__6 )
             // InternalSiriusTextDsl.g:18211:2: rule__RGB__Group__5__Impl rule__RGB__Group__6
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_80);
             rule__RGB__Group__5__Impl();
 
             state._fsp--;
@@ -47133,31 +47133,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__5__Impl"
-    // InternalSiriusTextDsl.g:18218:1: rule__RGB__Group__5__Impl : ( ( rule__RGB__BlueAssignment_5 ) ) ;
+    // InternalSiriusTextDsl.g:18218:1: rule__RGB__Group__5__Impl : ( ',' ) ;
     public final void rule__RGB__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18222:1: ( ( ( rule__RGB__BlueAssignment_5 ) ) )
-            // InternalSiriusTextDsl.g:18223:1: ( ( rule__RGB__BlueAssignment_5 ) )
+            // InternalSiriusTextDsl.g:18222:1: ( ( ',' ) )
+            // InternalSiriusTextDsl.g:18223:1: ( ',' )
             {
-            // InternalSiriusTextDsl.g:18223:1: ( ( rule__RGB__BlueAssignment_5 ) )
-            // InternalSiriusTextDsl.g:18224:1: ( rule__RGB__BlueAssignment_5 )
+            // InternalSiriusTextDsl.g:18223:1: ( ',' )
+            // InternalSiriusTextDsl.g:18224:1: ','
             {
-             before(grammarAccess.getRGBAccess().getBlueAssignment_5()); 
-            // InternalSiriusTextDsl.g:18225:1: ( rule__RGB__BlueAssignment_5 )
-            // InternalSiriusTextDsl.g:18225:2: rule__RGB__BlueAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__RGB__BlueAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRGBAccess().getBlueAssignment_5()); 
+             before(grammarAccess.getRGBAccess().getCommaKeyword_5()); 
+            match(input,51,FOLLOW_2); 
+             after(grammarAccess.getRGBAccess().getCommaKeyword_5()); 
 
             }
 
@@ -47180,17 +47170,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__6"
-    // InternalSiriusTextDsl.g:18235:1: rule__RGB__Group__6 : rule__RGB__Group__6__Impl ;
+    // InternalSiriusTextDsl.g:18237:1: rule__RGB__Group__6 : rule__RGB__Group__6__Impl rule__RGB__Group__7 ;
     public final void rule__RGB__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18239:1: ( rule__RGB__Group__6__Impl )
-            // InternalSiriusTextDsl.g:18240:2: rule__RGB__Group__6__Impl
+            // InternalSiriusTextDsl.g:18241:1: ( rule__RGB__Group__6__Impl rule__RGB__Group__7 )
+            // InternalSiriusTextDsl.g:18242:2: rule__RGB__Group__6__Impl rule__RGB__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_38);
             rule__RGB__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RGB__Group__7();
 
             state._fsp--;
 
@@ -47213,21 +47208,31 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RGB__Group__6__Impl"
-    // InternalSiriusTextDsl.g:18246:1: rule__RGB__Group__6__Impl : ( ')' ) ;
+    // InternalSiriusTextDsl.g:18249:1: rule__RGB__Group__6__Impl : ( ( rule__RGB__BlueAssignment_6 ) ) ;
     public final void rule__RGB__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18250:1: ( ( ')' ) )
-            // InternalSiriusTextDsl.g:18251:1: ( ')' )
+            // InternalSiriusTextDsl.g:18253:1: ( ( ( rule__RGB__BlueAssignment_6 ) ) )
+            // InternalSiriusTextDsl.g:18254:1: ( ( rule__RGB__BlueAssignment_6 ) )
             {
-            // InternalSiriusTextDsl.g:18251:1: ( ')' )
-            // InternalSiriusTextDsl.g:18252:1: ')'
+            // InternalSiriusTextDsl.g:18254:1: ( ( rule__RGB__BlueAssignment_6 ) )
+            // InternalSiriusTextDsl.g:18255:1: ( rule__RGB__BlueAssignment_6 )
             {
-             before(grammarAccess.getRGBAccess().getRightParenthesisKeyword_6()); 
-            match(input,74,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getRightParenthesisKeyword_6()); 
+             before(grammarAccess.getRGBAccess().getBlueAssignment_6()); 
+            // InternalSiriusTextDsl.g:18256:1: ( rule__RGB__BlueAssignment_6 )
+            // InternalSiriusTextDsl.g:18256:2: rule__RGB__BlueAssignment_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__RGB__BlueAssignment_6();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRGBAccess().getBlueAssignment_6()); 
 
             }
 
@@ -47249,18 +47254,88 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__RGB__Group__6__Impl"
 
 
+    // $ANTLR start "rule__RGB__Group__7"
+    // InternalSiriusTextDsl.g:18266:1: rule__RGB__Group__7 : rule__RGB__Group__7__Impl ;
+    public final void rule__RGB__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalSiriusTextDsl.g:18270:1: ( rule__RGB__Group__7__Impl )
+            // InternalSiriusTextDsl.g:18271:2: rule__RGB__Group__7__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__RGB__Group__7__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RGB__Group__7"
+
+
+    // $ANTLR start "rule__RGB__Group__7__Impl"
+    // InternalSiriusTextDsl.g:18277:1: rule__RGB__Group__7__Impl : ( ')' ) ;
+    public final void rule__RGB__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // InternalSiriusTextDsl.g:18281:1: ( ( ')' ) )
+            // InternalSiriusTextDsl.g:18282:1: ( ')' )
+            {
+            // InternalSiriusTextDsl.g:18282:1: ( ')' )
+            // InternalSiriusTextDsl.g:18283:1: ')'
+            {
+             before(grammarAccess.getRGBAccess().getRightParenthesisKeyword_7()); 
+            match(input,74,FOLLOW_2); 
+             after(grammarAccess.getRGBAccess().getRightParenthesisKeyword_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RGB__Group__7__Impl"
+
+
     // $ANTLR start "rule__SiriusFile__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:18280:1: rule__SiriusFile__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:18313:1: rule__SiriusFile__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__SiriusFile__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18284:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:18285:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18317:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:18318:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:18285:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:18286:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:18318:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18319:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getSiriusFileAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -47287,17 +47362,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SiriusFile__NameAssignment_2"
-    // InternalSiriusTextDsl.g:18295:1: rule__SiriusFile__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalSiriusTextDsl.g:18328:1: rule__SiriusFile__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__SiriusFile__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18299:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18300:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18332:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18333:1: ( ruleQualifiedName )
             {
-            // InternalSiriusTextDsl.g:18300:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18301:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18333:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18334:1: ruleQualifiedName
             {
              before(grammarAccess.getSiriusFileAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -47328,17 +47403,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SiriusFile__ImportsAssignment_3"
-    // InternalSiriusTextDsl.g:18310:1: rule__SiriusFile__ImportsAssignment_3 : ( ruleImport ) ;
+    // InternalSiriusTextDsl.g:18343:1: rule__SiriusFile__ImportsAssignment_3 : ( ruleImport ) ;
     public final void rule__SiriusFile__ImportsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18314:1: ( ( ruleImport ) )
-            // InternalSiriusTextDsl.g:18315:1: ( ruleImport )
+            // InternalSiriusTextDsl.g:18347:1: ( ( ruleImport ) )
+            // InternalSiriusTextDsl.g:18348:1: ( ruleImport )
             {
-            // InternalSiriusTextDsl.g:18315:1: ( ruleImport )
-            // InternalSiriusTextDsl.g:18316:1: ruleImport
+            // InternalSiriusTextDsl.g:18348:1: ( ruleImport )
+            // InternalSiriusTextDsl.g:18349:1: ruleImport
             {
              before(grammarAccess.getSiriusFileAccess().getImportsImportParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -47369,17 +47444,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SiriusFile__BodyAssignment_4"
-    // InternalSiriusTextDsl.g:18325:1: rule__SiriusFile__BodyAssignment_4 : ( ruleSiriusFileBody ) ;
+    // InternalSiriusTextDsl.g:18358:1: rule__SiriusFile__BodyAssignment_4 : ( ruleSiriusFileBody ) ;
     public final void rule__SiriusFile__BodyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18329:1: ( ( ruleSiriusFileBody ) )
-            // InternalSiriusTextDsl.g:18330:1: ( ruleSiriusFileBody )
+            // InternalSiriusTextDsl.g:18362:1: ( ( ruleSiriusFileBody ) )
+            // InternalSiriusTextDsl.g:18363:1: ( ruleSiriusFileBody )
             {
-            // InternalSiriusTextDsl.g:18330:1: ( ruleSiriusFileBody )
-            // InternalSiriusTextDsl.g:18331:1: ruleSiriusFileBody
+            // InternalSiriusTextDsl.g:18363:1: ( ruleSiriusFileBody )
+            // InternalSiriusTextDsl.g:18364:1: ruleSiriusFileBody
             {
              before(grammarAccess.getSiriusFileAccess().getBodySiriusFileBodyParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -47410,17 +47485,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // InternalSiriusTextDsl.g:18340:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalSiriusTextDsl.g:18373:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18344:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalSiriusTextDsl.g:18345:1: ( ruleQualifiedNameWithWildcard )
+            // InternalSiriusTextDsl.g:18377:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalSiriusTextDsl.g:18378:1: ( ruleQualifiedNameWithWildcard )
             {
-            // InternalSiriusTextDsl.g:18345:1: ( ruleQualifiedNameWithWildcard )
-            // InternalSiriusTextDsl.g:18346:1: ruleQualifiedNameWithWildcard
+            // InternalSiriusTextDsl.g:18378:1: ( ruleQualifiedNameWithWildcard )
+            // InternalSiriusTextDsl.g:18379:1: ruleQualifiedNameWithWildcard
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -47451,17 +47526,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Designer__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:18355:1: rule__Designer__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:18388:1: rule__Designer__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Designer__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18359:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:18360:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18392:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:18393:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:18360:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:18361:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:18393:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18394:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getDesignerAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -47488,17 +47563,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Designer__NameAssignment_2"
-    // InternalSiriusTextDsl.g:18370:1: rule__Designer__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:18403:1: rule__Designer__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Designer__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18374:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:18375:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18407:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:18408:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:18375:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:18376:1: RULE_ID
+            // InternalSiriusTextDsl.g:18408:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18409:1: RULE_ID
             {
              before(grammarAccess.getDesignerAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -47525,17 +47600,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Designer__LabelAssignment_3_1"
-    // InternalSiriusTextDsl.g:18385:1: rule__Designer__LabelAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18418:1: rule__Designer__LabelAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__Designer__LabelAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18389:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18390:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18422:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18423:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18390:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18391:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18423:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18424:1: RULE_STRING
             {
              before(grammarAccess.getDesignerAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -47562,17 +47637,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Designer__ViewpointsAssignment_5"
-    // InternalSiriusTextDsl.g:18400:1: rule__Designer__ViewpointsAssignment_5 : ( ruleViewpoint ) ;
+    // InternalSiriusTextDsl.g:18433:1: rule__Designer__ViewpointsAssignment_5 : ( ruleViewpoint ) ;
     public final void rule__Designer__ViewpointsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18404:1: ( ( ruleViewpoint ) )
-            // InternalSiriusTextDsl.g:18405:1: ( ruleViewpoint )
+            // InternalSiriusTextDsl.g:18437:1: ( ( ruleViewpoint ) )
+            // InternalSiriusTextDsl.g:18438:1: ( ruleViewpoint )
             {
-            // InternalSiriusTextDsl.g:18405:1: ( ruleViewpoint )
-            // InternalSiriusTextDsl.g:18406:1: ruleViewpoint
+            // InternalSiriusTextDsl.g:18438:1: ( ruleViewpoint )
+            // InternalSiriusTextDsl.g:18439:1: ruleViewpoint
             {
              before(grammarAccess.getDesignerAccess().getViewpointsViewpointParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -47603,17 +47678,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:18415:1: rule__Viewpoint__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:18448:1: rule__Viewpoint__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Viewpoint__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18419:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:18420:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18452:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:18453:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:18420:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:18421:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:18453:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18454:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getViewpointAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -47640,17 +47715,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__NameAssignment_2"
-    // InternalSiriusTextDsl.g:18430:1: rule__Viewpoint__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:18463:1: rule__Viewpoint__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Viewpoint__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18434:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:18435:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18467:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:18468:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:18435:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:18436:1: RULE_ID
+            // InternalSiriusTextDsl.g:18468:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18469:1: RULE_ID
             {
              before(grammarAccess.getViewpointAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -47677,17 +47752,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__LabelAssignment_3_1"
-    // InternalSiriusTextDsl.g:18445:1: rule__Viewpoint__LabelAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18478:1: rule__Viewpoint__LabelAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__Viewpoint__LabelAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18449:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18450:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18482:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18483:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18450:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18451:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18483:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18484:1: RULE_STRING
             {
              before(grammarAccess.getViewpointAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -47714,17 +47789,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__ModelFileExtensionsAssignment_5_3"
-    // InternalSiriusTextDsl.g:18460:1: rule__Viewpoint__ModelFileExtensionsAssignment_5_3 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18493:1: rule__Viewpoint__ModelFileExtensionsAssignment_5_3 : ( RULE_STRING ) ;
     public final void rule__Viewpoint__ModelFileExtensionsAssignment_5_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18464:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18465:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18497:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18498:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18465:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18466:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18498:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18499:1: RULE_STRING
             {
              before(grammarAccess.getViewpointAccess().getModelFileExtensionsSTRINGTerminalRuleCall_5_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -47751,17 +47826,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__ModelFileExtensionsAssignment_5_4_1"
-    // InternalSiriusTextDsl.g:18475:1: rule__Viewpoint__ModelFileExtensionsAssignment_5_4_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18508:1: rule__Viewpoint__ModelFileExtensionsAssignment_5_4_1 : ( RULE_STRING ) ;
     public final void rule__Viewpoint__ModelFileExtensionsAssignment_5_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18479:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18480:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18512:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18513:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18480:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18481:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18513:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18514:1: RULE_STRING
             {
              before(grammarAccess.getViewpointAccess().getModelFileExtensionsSTRINGTerminalRuleCall_5_4_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -47788,17 +47863,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__IconAssignment_6_2"
-    // InternalSiriusTextDsl.g:18490:1: rule__Viewpoint__IconAssignment_6_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18523:1: rule__Viewpoint__IconAssignment_6_2 : ( RULE_STRING ) ;
     public final void rule__Viewpoint__IconAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18494:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18495:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18527:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18528:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18495:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18496:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18528:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18529:1: RULE_STRING
             {
              before(grammarAccess.getViewpointAccess().getIconSTRINGTerminalRuleCall_6_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -47825,21 +47900,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__RepresentationsAssignment_7_3_0"
-    // InternalSiriusTextDsl.g:18505:1: rule__Viewpoint__RepresentationsAssignment_7_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18538:1: rule__Viewpoint__RepresentationsAssignment_7_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Viewpoint__RepresentationsAssignment_7_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18509:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18510:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18542:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18543:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18510:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18511:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18543:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18544:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getViewpointAccess().getRepresentationsRepresentationCrossReference_7_3_0_0()); 
-            // InternalSiriusTextDsl.g:18512:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18513:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18545:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18546:1: ruleQualifiedName
             {
              before(grammarAccess.getViewpointAccess().getRepresentationsRepresentationQualifiedNameParserRuleCall_7_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -47874,21 +47949,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__RepresentationsAssignment_7_3_1_1"
-    // InternalSiriusTextDsl.g:18524:1: rule__Viewpoint__RepresentationsAssignment_7_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18557:1: rule__Viewpoint__RepresentationsAssignment_7_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Viewpoint__RepresentationsAssignment_7_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18528:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18529:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18561:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18562:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18529:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18530:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18562:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18563:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getViewpointAccess().getRepresentationsRepresentationCrossReference_7_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:18531:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18532:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18564:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18565:1: ruleQualifiedName
             {
              before(grammarAccess.getViewpointAccess().getRepresentationsRepresentationQualifiedNameParserRuleCall_7_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -47923,21 +47998,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__JavaExtensionAssignment_8_3_0"
-    // InternalSiriusTextDsl.g:18543:1: rule__Viewpoint__JavaExtensionAssignment_8_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18576:1: rule__Viewpoint__JavaExtensionAssignment_8_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Viewpoint__JavaExtensionAssignment_8_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18547:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18548:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18580:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18581:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18548:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18549:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18581:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18582:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeCrossReference_8_3_0_0()); 
-            // InternalSiriusTextDsl.g:18550:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18551:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18583:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18584:1: ruleQualifiedName
             {
              before(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -47972,21 +48047,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Viewpoint__JavaExtensionAssignment_8_3_1_1"
-    // InternalSiriusTextDsl.g:18562:1: rule__Viewpoint__JavaExtensionAssignment_8_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18595:1: rule__Viewpoint__JavaExtensionAssignment_8_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Viewpoint__JavaExtensionAssignment_8_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18566:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18567:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18599:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18600:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18567:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18568:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18600:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18601:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeCrossReference_8_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:18569:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18570:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18602:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18603:1: ruleQualifiedName
             {
              before(grammarAccess.getViewpointAccess().getJavaExtensionJvmTypeQualifiedNameParserRuleCall_8_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48021,17 +48096,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:18581:1: rule__Diagram__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:18614:1: rule__Diagram__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Diagram__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18585:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:18586:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18618:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:18619:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:18586:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:18587:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:18619:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18620:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getDiagramAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -48058,21 +48133,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__InitializedAssignment_1"
-    // InternalSiriusTextDsl.g:18596:1: rule__Diagram__InitializedAssignment_1 : ( ( '@Initialized' ) ) ;
+    // InternalSiriusTextDsl.g:18629:1: rule__Diagram__InitializedAssignment_1 : ( ( '@Initialized' ) ) ;
     public final void rule__Diagram__InitializedAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18600:1: ( ( ( '@Initialized' ) ) )
-            // InternalSiriusTextDsl.g:18601:1: ( ( '@Initialized' ) )
+            // InternalSiriusTextDsl.g:18633:1: ( ( ( '@Initialized' ) ) )
+            // InternalSiriusTextDsl.g:18634:1: ( ( '@Initialized' ) )
             {
-            // InternalSiriusTextDsl.g:18601:1: ( ( '@Initialized' ) )
-            // InternalSiriusTextDsl.g:18602:1: ( '@Initialized' )
+            // InternalSiriusTextDsl.g:18634:1: ( ( '@Initialized' ) )
+            // InternalSiriusTextDsl.g:18635:1: ( '@Initialized' )
             {
              before(grammarAccess.getDiagramAccess().getInitializedInitializedKeyword_1_0()); 
-            // InternalSiriusTextDsl.g:18603:1: ( '@Initialized' )
-            // InternalSiriusTextDsl.g:18604:1: '@Initialized'
+            // InternalSiriusTextDsl.g:18636:1: ( '@Initialized' )
+            // InternalSiriusTextDsl.g:18637:1: '@Initialized'
             {
              before(grammarAccess.getDiagramAccess().getInitializedInitializedKeyword_1_0()); 
             match(input,132,FOLLOW_2); 
@@ -48103,21 +48178,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__ShowOnStartupAssignment_2"
-    // InternalSiriusTextDsl.g:18619:1: rule__Diagram__ShowOnStartupAssignment_2 : ( ( '@ShowOnStartup' ) ) ;
+    // InternalSiriusTextDsl.g:18652:1: rule__Diagram__ShowOnStartupAssignment_2 : ( ( '@ShowOnStartup' ) ) ;
     public final void rule__Diagram__ShowOnStartupAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18623:1: ( ( ( '@ShowOnStartup' ) ) )
-            // InternalSiriusTextDsl.g:18624:1: ( ( '@ShowOnStartup' ) )
+            // InternalSiriusTextDsl.g:18656:1: ( ( ( '@ShowOnStartup' ) ) )
+            // InternalSiriusTextDsl.g:18657:1: ( ( '@ShowOnStartup' ) )
             {
-            // InternalSiriusTextDsl.g:18624:1: ( ( '@ShowOnStartup' ) )
-            // InternalSiriusTextDsl.g:18625:1: ( '@ShowOnStartup' )
+            // InternalSiriusTextDsl.g:18657:1: ( ( '@ShowOnStartup' ) )
+            // InternalSiriusTextDsl.g:18658:1: ( '@ShowOnStartup' )
             {
              before(grammarAccess.getDiagramAccess().getShowOnStartupShowOnStartupKeyword_2_0()); 
-            // InternalSiriusTextDsl.g:18626:1: ( '@ShowOnStartup' )
-            // InternalSiriusTextDsl.g:18627:1: '@ShowOnStartup'
+            // InternalSiriusTextDsl.g:18659:1: ( '@ShowOnStartup' )
+            // InternalSiriusTextDsl.g:18660:1: '@ShowOnStartup'
             {
              before(grammarAccess.getDiagramAccess().getShowOnStartupShowOnStartupKeyword_2_0()); 
             match(input,133,FOLLOW_2); 
@@ -48148,21 +48223,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__EnablePopupBarsAssignment_3"
-    // InternalSiriusTextDsl.g:18642:1: rule__Diagram__EnablePopupBarsAssignment_3 : ( ( '@EnablePopupBars' ) ) ;
+    // InternalSiriusTextDsl.g:18675:1: rule__Diagram__EnablePopupBarsAssignment_3 : ( ( '@EnablePopupBars' ) ) ;
     public final void rule__Diagram__EnablePopupBarsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18646:1: ( ( ( '@EnablePopupBars' ) ) )
-            // InternalSiriusTextDsl.g:18647:1: ( ( '@EnablePopupBars' ) )
+            // InternalSiriusTextDsl.g:18679:1: ( ( ( '@EnablePopupBars' ) ) )
+            // InternalSiriusTextDsl.g:18680:1: ( ( '@EnablePopupBars' ) )
             {
-            // InternalSiriusTextDsl.g:18647:1: ( ( '@EnablePopupBars' ) )
-            // InternalSiriusTextDsl.g:18648:1: ( '@EnablePopupBars' )
+            // InternalSiriusTextDsl.g:18680:1: ( ( '@EnablePopupBars' ) )
+            // InternalSiriusTextDsl.g:18681:1: ( '@EnablePopupBars' )
             {
              before(grammarAccess.getDiagramAccess().getEnablePopupBarsEnablePopupBarsKeyword_3_0()); 
-            // InternalSiriusTextDsl.g:18649:1: ( '@EnablePopupBars' )
-            // InternalSiriusTextDsl.g:18650:1: '@EnablePopupBars'
+            // InternalSiriusTextDsl.g:18682:1: ( '@EnablePopupBars' )
+            // InternalSiriusTextDsl.g:18683:1: '@EnablePopupBars'
             {
              before(grammarAccess.getDiagramAccess().getEnablePopupBarsEnablePopupBarsKeyword_3_0()); 
             match(input,134,FOLLOW_2); 
@@ -48193,17 +48268,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__MetamodelUrisAssignment_6"
-    // InternalSiriusTextDsl.g:18665:1: rule__Diagram__MetamodelUrisAssignment_6 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18698:1: rule__Diagram__MetamodelUrisAssignment_6 : ( RULE_STRING ) ;
     public final void rule__Diagram__MetamodelUrisAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18669:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18670:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18702:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18703:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18670:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18671:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18703:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18704:1: RULE_STRING
             {
              before(grammarAccess.getDiagramAccess().getMetamodelUrisSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48230,17 +48305,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__MetamodelUrisAssignment_7_1"
-    // InternalSiriusTextDsl.g:18680:1: rule__Diagram__MetamodelUrisAssignment_7_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18713:1: rule__Diagram__MetamodelUrisAssignment_7_1 : ( RULE_STRING ) ;
     public final void rule__Diagram__MetamodelUrisAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18684:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18685:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18717:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18718:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18685:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18686:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18718:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18719:1: RULE_STRING
             {
              before(grammarAccess.getDiagramAccess().getMetamodelUrisSTRINGTerminalRuleCall_7_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48267,17 +48342,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__NameAssignment_10"
-    // InternalSiriusTextDsl.g:18695:1: rule__Diagram__NameAssignment_10 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:18728:1: rule__Diagram__NameAssignment_10 : ( RULE_ID ) ;
     public final void rule__Diagram__NameAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18699:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:18700:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18732:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:18733:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:18700:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:18701:1: RULE_ID
+            // InternalSiriusTextDsl.g:18733:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18734:1: RULE_ID
             {
              before(grammarAccess.getDiagramAccess().getNameIDTerminalRuleCall_10_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -48304,17 +48379,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__LabelAssignment_11_1"
-    // InternalSiriusTextDsl.g:18710:1: rule__Diagram__LabelAssignment_11_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18743:1: rule__Diagram__LabelAssignment_11_1 : ( RULE_STRING ) ;
     public final void rule__Diagram__LabelAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18714:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18715:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18747:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18748:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18715:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18716:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18748:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18749:1: RULE_STRING
             {
              before(grammarAccess.getDiagramAccess().getLabelSTRINGTerminalRuleCall_11_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48341,17 +48416,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__DomainClassAssignment_13"
-    // InternalSiriusTextDsl.g:18725:1: rule__Diagram__DomainClassAssignment_13 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18758:1: rule__Diagram__DomainClassAssignment_13 : ( RULE_STRING ) ;
     public final void rule__Diagram__DomainClassAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18729:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18730:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18762:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18763:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18730:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18731:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18763:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18764:1: RULE_STRING
             {
              before(grammarAccess.getDiagramAccess().getDomainClassSTRINGTerminalRuleCall_13_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48378,17 +48453,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__PreconditionAssignment_14_1"
-    // InternalSiriusTextDsl.g:18740:1: rule__Diagram__PreconditionAssignment_14_1 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:18773:1: rule__Diagram__PreconditionAssignment_14_1 : ( RULE_EXPRESSION ) ;
     public final void rule__Diagram__PreconditionAssignment_14_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18744:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:18745:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18777:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:18778:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:18745:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:18746:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:18778:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18779:1: RULE_EXPRESSION
             {
              before(grammarAccess.getDiagramAccess().getPreconditionEXPRESSIONTerminalRuleCall_14_1_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -48415,17 +48490,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__EndUserDocumentationAssignment_16_2"
-    // InternalSiriusTextDsl.g:18755:1: rule__Diagram__EndUserDocumentationAssignment_16_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18788:1: rule__Diagram__EndUserDocumentationAssignment_16_2 : ( RULE_STRING ) ;
     public final void rule__Diagram__EndUserDocumentationAssignment_16_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18759:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18760:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18792:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18793:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18760:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18761:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18793:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18794:1: RULE_STRING
             {
              before(grammarAccess.getDiagramAccess().getEndUserDocumentationSTRINGTerminalRuleCall_16_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48452,17 +48527,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__TitleExpressionAssignment_17_2"
-    // InternalSiriusTextDsl.g:18770:1: rule__Diagram__TitleExpressionAssignment_17_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:18803:1: rule__Diagram__TitleExpressionAssignment_17_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Diagram__TitleExpressionAssignment_17_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18774:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:18775:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18807:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:18808:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:18775:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:18776:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:18808:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18809:1: RULE_EXPRESSION
             {
              before(grammarAccess.getDiagramAccess().getTitleExpressionEXPRESSIONTerminalRuleCall_17_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -48489,17 +48564,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__RootExpressionAssignment_18_2"
-    // InternalSiriusTextDsl.g:18785:1: rule__Diagram__RootExpressionAssignment_18_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:18818:1: rule__Diagram__RootExpressionAssignment_18_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Diagram__RootExpressionAssignment_18_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18789:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:18790:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18822:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:18823:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:18790:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:18791:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:18823:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:18824:1: RULE_EXPRESSION
             {
              before(grammarAccess.getDiagramAccess().getRootExpressionEXPRESSIONTerminalRuleCall_18_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -48526,21 +48601,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__DefaultLayerAssignment_19_2"
-    // InternalSiriusTextDsl.g:18800:1: rule__Diagram__DefaultLayerAssignment_19_2 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18833:1: rule__Diagram__DefaultLayerAssignment_19_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Diagram__DefaultLayerAssignment_19_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18804:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18805:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18837:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18838:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18805:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18806:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18838:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18839:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getDiagramAccess().getDefaultLayerLayerCrossReference_19_2_0()); 
-            // InternalSiriusTextDsl.g:18807:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18808:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18840:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18841:1: ruleQualifiedName
             {
              before(grammarAccess.getDiagramAccess().getDefaultLayerLayerQualifiedNameParserRuleCall_19_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48575,21 +48650,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__AdditionalLayersAssignment_20_3_0"
-    // InternalSiriusTextDsl.g:18819:1: rule__Diagram__AdditionalLayersAssignment_20_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18852:1: rule__Diagram__AdditionalLayersAssignment_20_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Diagram__AdditionalLayersAssignment_20_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18823:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18824:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18856:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18857:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18824:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18825:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18857:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18858:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getDiagramAccess().getAdditionalLayersLayerCrossReference_20_3_0_0()); 
-            // InternalSiriusTextDsl.g:18826:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18827:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18859:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18860:1: ruleQualifiedName
             {
              before(grammarAccess.getDiagramAccess().getAdditionalLayersLayerQualifiedNameParserRuleCall_20_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48624,21 +48699,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Diagram__AdditionalLayersAssignment_20_3_1_1"
-    // InternalSiriusTextDsl.g:18838:1: rule__Diagram__AdditionalLayersAssignment_20_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18871:1: rule__Diagram__AdditionalLayersAssignment_20_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Diagram__AdditionalLayersAssignment_20_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18842:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18843:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18875:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18876:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18843:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18844:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18876:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18877:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getDiagramAccess().getAdditionalLayersLayerCrossReference_20_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:18845:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18846:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18878:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18879:1: ruleQualifiedName
             {
              before(grammarAccess.getDiagramAccess().getAdditionalLayersLayerQualifiedNameParserRuleCall_20_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48673,17 +48748,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:18857:1: rule__Layer__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:18890:1: rule__Layer__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Layer__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18861:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:18862:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18894:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:18895:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:18862:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:18863:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:18895:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:18896:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getLayerAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -48710,17 +48785,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__NameAssignment_2"
-    // InternalSiriusTextDsl.g:18872:1: rule__Layer__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:18905:1: rule__Layer__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Layer__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18876:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:18877:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18909:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:18910:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:18877:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:18878:1: RULE_ID
+            // InternalSiriusTextDsl.g:18910:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:18911:1: RULE_ID
             {
              before(grammarAccess.getLayerAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -48747,17 +48822,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__IconAssignment_4_2"
-    // InternalSiriusTextDsl.g:18887:1: rule__Layer__IconAssignment_4_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:18920:1: rule__Layer__IconAssignment_4_2 : ( RULE_STRING ) ;
     public final void rule__Layer__IconAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18891:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:18892:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18924:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:18925:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:18892:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:18893:1: RULE_STRING
+            // InternalSiriusTextDsl.g:18925:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:18926:1: RULE_STRING
             {
              before(grammarAccess.getLayerAccess().getIconSTRINGTerminalRuleCall_4_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -48784,21 +48859,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__MappingsAssignment_5_3_0"
-    // InternalSiriusTextDsl.g:18902:1: rule__Layer__MappingsAssignment_5_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18935:1: rule__Layer__MappingsAssignment_5_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__MappingsAssignment_5_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18906:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18907:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18939:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18940:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18907:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18908:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18940:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18941:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getMappingsMappingCrossReference_5_3_0_0()); 
-            // InternalSiriusTextDsl.g:18909:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18910:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18942:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18943:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getMappingsMappingQualifiedNameParserRuleCall_5_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48833,21 +48908,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__MappingsAssignment_5_3_1_1"
-    // InternalSiriusTextDsl.g:18921:1: rule__Layer__MappingsAssignment_5_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18954:1: rule__Layer__MappingsAssignment_5_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__MappingsAssignment_5_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18925:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18926:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18958:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18959:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18926:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18927:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18959:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18960:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getMappingsMappingCrossReference_5_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:18928:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18929:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18961:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18962:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getMappingsMappingQualifiedNameParserRuleCall_5_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48882,21 +48957,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__EdgesAssignment_6_3_0"
-    // InternalSiriusTextDsl.g:18940:1: rule__Layer__EdgesAssignment_6_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18973:1: rule__Layer__EdgesAssignment_6_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__EdgesAssignment_6_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18944:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18945:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18977:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18978:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18945:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18946:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18978:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18979:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getEdgesEdgeCrossReference_6_3_0_0()); 
-            // InternalSiriusTextDsl.g:18947:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18948:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18980:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18981:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getEdgesEdgeQualifiedNameParserRuleCall_6_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48931,21 +49006,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__EdgesAssignment_6_3_1_1"
-    // InternalSiriusTextDsl.g:18959:1: rule__Layer__EdgesAssignment_6_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:18992:1: rule__Layer__EdgesAssignment_6_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__EdgesAssignment_6_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18963:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18964:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18996:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:18997:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18964:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18965:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:18997:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:18998:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getEdgesEdgeCrossReference_6_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:18966:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18967:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:18999:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19000:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getEdgesEdgeQualifiedNameParserRuleCall_6_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -48980,21 +49055,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__SectionsAssignment_7_3_0"
-    // InternalSiriusTextDsl.g:18978:1: rule__Layer__SectionsAssignment_7_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19011:1: rule__Layer__SectionsAssignment_7_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__SectionsAssignment_7_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:18982:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:18983:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19015:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19016:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:18983:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:18984:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19016:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19017:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getSectionsSectionCrossReference_7_3_0_0()); 
-            // InternalSiriusTextDsl.g:18985:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:18986:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19018:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19019:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getSectionsSectionQualifiedNameParserRuleCall_7_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49029,21 +49104,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Layer__SectionsAssignment_7_3_1_1"
-    // InternalSiriusTextDsl.g:18997:1: rule__Layer__SectionsAssignment_7_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19030:1: rule__Layer__SectionsAssignment_7_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Layer__SectionsAssignment_7_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19001:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19002:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19034:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19035:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19002:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19003:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19035:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19036:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getLayerAccess().getSectionsSectionCrossReference_7_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:19004:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19005:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19037:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19038:1: ruleQualifiedName
             {
              before(grammarAccess.getLayerAccess().getSectionsSectionQualifiedNameParserRuleCall_7_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49078,17 +49153,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:19016:1: rule__Section__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:19049:1: rule__Section__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Section__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19020:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:19021:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19053:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:19054:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:19021:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:19022:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:19054:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19055:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getSectionAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -49115,17 +49190,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__NameAssignment_2"
-    // InternalSiriusTextDsl.g:19031:1: rule__Section__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:19064:1: rule__Section__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Section__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19035:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:19036:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19068:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:19069:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:19036:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:19037:1: RULE_ID
+            // InternalSiriusTextDsl.g:19069:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19070:1: RULE_ID
             {
              before(grammarAccess.getSectionAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -49152,17 +49227,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__LabelAssignment_3_1"
-    // InternalSiriusTextDsl.g:19046:1: rule__Section__LabelAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19079:1: rule__Section__LabelAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__Section__LabelAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19050:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19051:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19083:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19084:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19051:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19052:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19084:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19085:1: RULE_STRING
             {
              before(grammarAccess.getSectionAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49189,17 +49264,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__IconAssignment_5_2"
-    // InternalSiriusTextDsl.g:19061:1: rule__Section__IconAssignment_5_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19094:1: rule__Section__IconAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__Section__IconAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19065:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19066:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19098:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19099:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19066:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19067:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19099:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19100:1: RULE_STRING
             {
              before(grammarAccess.getSectionAccess().getIconSTRINGTerminalRuleCall_5_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49226,21 +49301,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__ToolsAssignment_6_3_0"
-    // InternalSiriusTextDsl.g:19076:1: rule__Section__ToolsAssignment_6_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19109:1: rule__Section__ToolsAssignment_6_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Section__ToolsAssignment_6_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19080:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19081:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19113:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19114:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19081:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19082:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19114:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19115:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getSectionAccess().getToolsToolCrossReference_6_3_0_0()); 
-            // InternalSiriusTextDsl.g:19083:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19084:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19116:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19117:1: ruleQualifiedName
             {
              before(grammarAccess.getSectionAccess().getToolsToolQualifiedNameParserRuleCall_6_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49275,21 +49350,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Section__ToolsAssignment_6_3_1_1"
-    // InternalSiriusTextDsl.g:19095:1: rule__Section__ToolsAssignment_6_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19128:1: rule__Section__ToolsAssignment_6_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Section__ToolsAssignment_6_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19099:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19100:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19132:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19133:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19100:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19101:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19133:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19134:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getSectionAccess().getToolsToolCrossReference_6_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:19102:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19103:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19135:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19136:1: ruleQualifiedName
             {
              before(grammarAccess.getSectionAccess().getToolsToolQualifiedNameParserRuleCall_6_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49324,17 +49399,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:19114:1: rule__ContainerCreation__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:19147:1: rule__ContainerCreation__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__ContainerCreation__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19118:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:19119:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19151:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:19152:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:19119:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:19120:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:19152:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19153:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getContainerCreationAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -49361,21 +49436,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ForceRefreshAssignment_1"
-    // InternalSiriusTextDsl.g:19129:1: rule__ContainerCreation__ForceRefreshAssignment_1 : ( ( '@ForceRefresh' ) ) ;
+    // InternalSiriusTextDsl.g:19162:1: rule__ContainerCreation__ForceRefreshAssignment_1 : ( ( '@ForceRefresh' ) ) ;
     public final void rule__ContainerCreation__ForceRefreshAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19133:1: ( ( ( '@ForceRefresh' ) ) )
-            // InternalSiriusTextDsl.g:19134:1: ( ( '@ForceRefresh' ) )
+            // InternalSiriusTextDsl.g:19166:1: ( ( ( '@ForceRefresh' ) ) )
+            // InternalSiriusTextDsl.g:19167:1: ( ( '@ForceRefresh' ) )
             {
-            // InternalSiriusTextDsl.g:19134:1: ( ( '@ForceRefresh' ) )
-            // InternalSiriusTextDsl.g:19135:1: ( '@ForceRefresh' )
+            // InternalSiriusTextDsl.g:19167:1: ( ( '@ForceRefresh' ) )
+            // InternalSiriusTextDsl.g:19168:1: ( '@ForceRefresh' )
             {
              before(grammarAccess.getContainerCreationAccess().getForceRefreshForceRefreshKeyword_1_0()); 
-            // InternalSiriusTextDsl.g:19136:1: ( '@ForceRefresh' )
-            // InternalSiriusTextDsl.g:19137:1: '@ForceRefresh'
+            // InternalSiriusTextDsl.g:19169:1: ( '@ForceRefresh' )
+            // InternalSiriusTextDsl.g:19170:1: '@ForceRefresh'
             {
              before(grammarAccess.getContainerCreationAccess().getForceRefreshForceRefreshKeyword_1_0()); 
             match(input,135,FOLLOW_2); 
@@ -49406,17 +49481,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__NodeCreationVariableAssignment_4"
-    // InternalSiriusTextDsl.g:19152:1: rule__ContainerCreation__NodeCreationVariableAssignment_4 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19185:1: rule__ContainerCreation__NodeCreationVariableAssignment_4 : ( RULE_STRING ) ;
     public final void rule__ContainerCreation__NodeCreationVariableAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19156:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19157:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19189:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19190:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19157:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19158:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19190:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19191:1: RULE_STRING
             {
              before(grammarAccess.getContainerCreationAccess().getNodeCreationVariableSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49443,17 +49518,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ContainerViewVariableAssignment_8"
-    // InternalSiriusTextDsl.g:19167:1: rule__ContainerCreation__ContainerViewVariableAssignment_8 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19200:1: rule__ContainerCreation__ContainerViewVariableAssignment_8 : ( RULE_STRING ) ;
     public final void rule__ContainerCreation__ContainerViewVariableAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19171:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19172:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19204:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19205:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19172:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19173:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19205:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19206:1: RULE_STRING
             {
              before(grammarAccess.getContainerCreationAccess().getContainerViewVariableSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49480,17 +49555,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__NameAssignment_11"
-    // InternalSiriusTextDsl.g:19182:1: rule__ContainerCreation__NameAssignment_11 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:19215:1: rule__ContainerCreation__NameAssignment_11 : ( RULE_ID ) ;
     public final void rule__ContainerCreation__NameAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19186:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:19187:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19219:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:19220:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:19187:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:19188:1: RULE_ID
+            // InternalSiriusTextDsl.g:19220:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19221:1: RULE_ID
             {
              before(grammarAccess.getContainerCreationAccess().getNameIDTerminalRuleCall_11_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -49517,17 +49592,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__LabelAssignment_12_1"
-    // InternalSiriusTextDsl.g:19197:1: rule__ContainerCreation__LabelAssignment_12_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19230:1: rule__ContainerCreation__LabelAssignment_12_1 : ( RULE_STRING ) ;
     public final void rule__ContainerCreation__LabelAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19201:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19202:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19234:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19235:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19202:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19203:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19235:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19236:1: RULE_STRING
             {
              before(grammarAccess.getContainerCreationAccess().getLabelSTRINGTerminalRuleCall_12_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49554,17 +49629,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__PreconditionAssignment_13_1"
-    // InternalSiriusTextDsl.g:19212:1: rule__ContainerCreation__PreconditionAssignment_13_1 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19245:1: rule__ContainerCreation__PreconditionAssignment_13_1 : ( RULE_EXPRESSION ) ;
     public final void rule__ContainerCreation__PreconditionAssignment_13_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19216:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19217:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19249:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19250:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19217:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19218:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19250:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19251:1: RULE_EXPRESSION
             {
              before(grammarAccess.getContainerCreationAccess().getPreconditionEXPRESSIONTerminalRuleCall_13_1_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -49591,17 +49666,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__IconAssignment_15_2"
-    // InternalSiriusTextDsl.g:19227:1: rule__ContainerCreation__IconAssignment_15_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19260:1: rule__ContainerCreation__IconAssignment_15_2 : ( RULE_STRING ) ;
     public final void rule__ContainerCreation__IconAssignment_15_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19231:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19232:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19264:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19265:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19232:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19233:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19265:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19266:1: RULE_STRING
             {
              before(grammarAccess.getContainerCreationAccess().getIconSTRINGTerminalRuleCall_15_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49628,21 +49703,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ContainerMappingsAssignment_19_0"
-    // InternalSiriusTextDsl.g:19242:1: rule__ContainerCreation__ContainerMappingsAssignment_19_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19275:1: rule__ContainerCreation__ContainerMappingsAssignment_19_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ContainerCreation__ContainerMappingsAssignment_19_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19246:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19247:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19279:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19280:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19247:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19248:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19280:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19281:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getContainerCreationAccess().getContainerMappingsMappingCrossReference_19_0_0()); 
-            // InternalSiriusTextDsl.g:19249:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19250:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19282:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19283:1: ruleQualifiedName
             {
              before(grammarAccess.getContainerCreationAccess().getContainerMappingsMappingQualifiedNameParserRuleCall_19_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49677,21 +49752,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ContainerMappingsAssignment_19_1_1"
-    // InternalSiriusTextDsl.g:19261:1: rule__ContainerCreation__ContainerMappingsAssignment_19_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19294:1: rule__ContainerCreation__ContainerMappingsAssignment_19_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ContainerCreation__ContainerMappingsAssignment_19_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19265:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19266:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19298:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19299:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19266:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19267:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19299:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19300:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getContainerCreationAccess().getContainerMappingsMappingCrossReference_19_1_1_0()); 
-            // InternalSiriusTextDsl.g:19268:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19269:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19301:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19302:1: ruleQualifiedName
             {
              before(grammarAccess.getContainerCreationAccess().getContainerMappingsMappingQualifiedNameParserRuleCall_19_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49726,21 +49801,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ExtraMappingsAssignment_21_3_0"
-    // InternalSiriusTextDsl.g:19280:1: rule__ContainerCreation__ExtraMappingsAssignment_21_3_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19313:1: rule__ContainerCreation__ExtraMappingsAssignment_21_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ContainerCreation__ExtraMappingsAssignment_21_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19284:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19285:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19317:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19318:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19285:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19286:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19318:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19319:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getContainerCreationAccess().getExtraMappingsMappingCrossReference_21_3_0_0()); 
-            // InternalSiriusTextDsl.g:19287:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19288:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19320:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19321:1: ruleQualifiedName
             {
              before(grammarAccess.getContainerCreationAccess().getExtraMappingsMappingQualifiedNameParserRuleCall_21_3_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49775,21 +49850,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__ExtraMappingsAssignment_21_3_1_1"
-    // InternalSiriusTextDsl.g:19299:1: rule__ContainerCreation__ExtraMappingsAssignment_21_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19332:1: rule__ContainerCreation__ExtraMappingsAssignment_21_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ContainerCreation__ExtraMappingsAssignment_21_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19303:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19304:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19336:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19337:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19304:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19305:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19337:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19338:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getContainerCreationAccess().getExtraMappingsMappingCrossReference_21_3_1_1_0()); 
-            // InternalSiriusTextDsl.g:19306:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19307:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19339:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19340:1: ruleQualifiedName
             {
              before(grammarAccess.getContainerCreationAccess().getExtraMappingsMappingQualifiedNameParserRuleCall_21_3_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -49824,17 +49899,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ContainerCreation__BodyAssignment_24"
-    // InternalSiriusTextDsl.g:19318:1: rule__ContainerCreation__BodyAssignment_24 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19351:1: rule__ContainerCreation__BodyAssignment_24 : ( ruleOperation ) ;
     public final void rule__ContainerCreation__BodyAssignment_24() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19322:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19323:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19355:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19356:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19323:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19324:1: ruleOperation
+            // InternalSiriusTextDsl.g:19356:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19357:1: ruleOperation
             {
              before(grammarAccess.getContainerCreationAccess().getBodyOperationParserRuleCall_24_0()); 
             pushFollow(FOLLOW_2);
@@ -49865,17 +49940,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ChangeContext__BrowseExpressionAssignment_2"
-    // InternalSiriusTextDsl.g:19333:1: rule__ChangeContext__BrowseExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19366:1: rule__ChangeContext__BrowseExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
     public final void rule__ChangeContext__BrowseExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19337:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19338:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19370:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19371:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19338:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19339:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19371:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19372:1: RULE_EXPRESSION
             {
              before(grammarAccess.getChangeContextAccess().getBrowseExpressionEXPRESSIONTerminalRuleCall_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -49902,17 +49977,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ChangeContext__BodyAssignment_4_1"
-    // InternalSiriusTextDsl.g:19348:1: rule__ChangeContext__BodyAssignment_4_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19381:1: rule__ChangeContext__BodyAssignment_4_1 : ( ruleOperation ) ;
     public final void rule__ChangeContext__BodyAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19352:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19353:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19385:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19386:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19353:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19354:1: ruleOperation
+            // InternalSiriusTextDsl.g:19386:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19387:1: ruleOperation
             {
              before(grammarAccess.getChangeContextAccess().getBodyOperationParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -49943,17 +50018,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__For__IteratorNameAssignment_2"
-    // InternalSiriusTextDsl.g:19363:1: rule__For__IteratorNameAssignment_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19396:1: rule__For__IteratorNameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__For__IteratorNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19367:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19368:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19400:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19401:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19368:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19369:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19401:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19402:1: RULE_STRING
             {
              before(grammarAccess.getForAccess().getIteratorNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -49980,17 +50055,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__For__ExpressionAssignment_4"
-    // InternalSiriusTextDsl.g:19378:1: rule__For__ExpressionAssignment_4 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19411:1: rule__For__ExpressionAssignment_4 : ( RULE_EXPRESSION ) ;
     public final void rule__For__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19382:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19383:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19415:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19416:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19383:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19384:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19416:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19417:1: RULE_EXPRESSION
             {
              before(grammarAccess.getForAccess().getExpressionEXPRESSIONTerminalRuleCall_4_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50017,17 +50092,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__For__BodyAssignment_7"
-    // InternalSiriusTextDsl.g:19393:1: rule__For__BodyAssignment_7 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19426:1: rule__For__BodyAssignment_7 : ( ruleOperation ) ;
     public final void rule__For__BodyAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19397:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19398:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19430:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19431:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19398:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19399:1: ruleOperation
+            // InternalSiriusTextDsl.g:19431:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19432:1: ruleOperation
             {
              before(grammarAccess.getForAccess().getBodyOperationParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -50058,17 +50133,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__If__ConditionExpressionAssignment_2"
-    // InternalSiriusTextDsl.g:19408:1: rule__If__ConditionExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19441:1: rule__If__ConditionExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
     public final void rule__If__ConditionExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19412:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19413:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19445:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19446:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19413:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19414:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19446:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19447:1: RULE_EXPRESSION
             {
              before(grammarAccess.getIfAccess().getConditionExpressionEXPRESSIONTerminalRuleCall_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50095,17 +50170,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__If__BodyAssignment_5"
-    // InternalSiriusTextDsl.g:19423:1: rule__If__BodyAssignment_5 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19456:1: rule__If__BodyAssignment_5 : ( ruleOperation ) ;
     public final void rule__If__BodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19427:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19428:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19460:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19461:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19428:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19429:1: ruleOperation
+            // InternalSiriusTextDsl.g:19461:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19462:1: ruleOperation
             {
              before(grammarAccess.getIfAccess().getBodyOperationParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -50136,17 +50211,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Set__FeatureNameAssignment_4"
-    // InternalSiriusTextDsl.g:19438:1: rule__Set__FeatureNameAssignment_4 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19471:1: rule__Set__FeatureNameAssignment_4 : ( RULE_STRING ) ;
     public final void rule__Set__FeatureNameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19442:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19443:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19475:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19476:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19443:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19444:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19476:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19477:1: RULE_STRING
             {
              before(grammarAccess.getSetAccess().getFeatureNameSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50173,17 +50248,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Set__ValueExpressionAssignment_8"
-    // InternalSiriusTextDsl.g:19453:1: rule__Set__ValueExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19486:1: rule__Set__ValueExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
     public final void rule__Set__ValueExpressionAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19457:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19458:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19490:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19491:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19458:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19459:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19491:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19492:1: RULE_EXPRESSION
             {
              before(grammarAccess.getSetAccess().getValueExpressionEXPRESSIONTerminalRuleCall_8_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50210,17 +50285,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Set__BodyAssignment_10_1"
-    // InternalSiriusTextDsl.g:19468:1: rule__Set__BodyAssignment_10_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19501:1: rule__Set__BodyAssignment_10_1 : ( ruleOperation ) ;
     public final void rule__Set__BodyAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19472:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19473:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19505:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19506:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19473:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19474:1: ruleOperation
+            // InternalSiriusTextDsl.g:19506:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19507:1: ruleOperation
             {
              before(grammarAccess.getSetAccess().getBodyOperationParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50251,17 +50326,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Unset__FeatureNameAssignment_4"
-    // InternalSiriusTextDsl.g:19483:1: rule__Unset__FeatureNameAssignment_4 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19516:1: rule__Unset__FeatureNameAssignment_4 : ( RULE_STRING ) ;
     public final void rule__Unset__FeatureNameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19487:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19488:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19520:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19521:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19488:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19489:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19521:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19522:1: RULE_STRING
             {
              before(grammarAccess.getUnsetAccess().getFeatureNameSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50288,17 +50363,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Unset__ElementExpressionAssignment_5_3"
-    // InternalSiriusTextDsl.g:19498:1: rule__Unset__ElementExpressionAssignment_5_3 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19531:1: rule__Unset__ElementExpressionAssignment_5_3 : ( RULE_EXPRESSION ) ;
     public final void rule__Unset__ElementExpressionAssignment_5_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19502:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19503:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19535:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19536:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19503:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19504:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19536:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19537:1: RULE_EXPRESSION
             {
              before(grammarAccess.getUnsetAccess().getElementExpressionEXPRESSIONTerminalRuleCall_5_3_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50325,17 +50400,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Unset__BodyAssignment_7_1"
-    // InternalSiriusTextDsl.g:19513:1: rule__Unset__BodyAssignment_7_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19546:1: rule__Unset__BodyAssignment_7_1 : ( ruleOperation ) ;
     public final void rule__Unset__BodyAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19517:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19518:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19550:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19551:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19518:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19519:1: ruleOperation
+            // InternalSiriusTextDsl.g:19551:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19552:1: ruleOperation
             {
              before(grammarAccess.getUnsetAccess().getBodyOperationParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50366,17 +50441,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateInstance__ReferenceNameAssignment_4"
-    // InternalSiriusTextDsl.g:19528:1: rule__CreateInstance__ReferenceNameAssignment_4 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19561:1: rule__CreateInstance__ReferenceNameAssignment_4 : ( RULE_STRING ) ;
     public final void rule__CreateInstance__ReferenceNameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19532:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19533:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19565:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19566:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19533:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19534:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19566:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19567:1: RULE_STRING
             {
              before(grammarAccess.getCreateInstanceAccess().getReferenceNameSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50403,17 +50478,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateInstance__TypeAssignment_8"
-    // InternalSiriusTextDsl.g:19543:1: rule__CreateInstance__TypeAssignment_8 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19576:1: rule__CreateInstance__TypeAssignment_8 : ( RULE_STRING ) ;
     public final void rule__CreateInstance__TypeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19547:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19548:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19580:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19581:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19548:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19549:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19581:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19582:1: RULE_STRING
             {
              before(grammarAccess.getCreateInstanceAccess().getTypeSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50440,17 +50515,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateInstance__VariableNameAssignment_11"
-    // InternalSiriusTextDsl.g:19558:1: rule__CreateInstance__VariableNameAssignment_11 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19591:1: rule__CreateInstance__VariableNameAssignment_11 : ( RULE_STRING ) ;
     public final void rule__CreateInstance__VariableNameAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19562:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19563:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19595:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19596:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19563:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19564:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19596:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19597:1: RULE_STRING
             {
              before(grammarAccess.getCreateInstanceAccess().getVariableNameSTRINGTerminalRuleCall_11_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50477,17 +50552,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateInstance__BodyAssignment_12_1"
-    // InternalSiriusTextDsl.g:19573:1: rule__CreateInstance__BodyAssignment_12_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19606:1: rule__CreateInstance__BodyAssignment_12_1 : ( ruleOperation ) ;
     public final void rule__CreateInstance__BodyAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19577:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19578:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19610:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19611:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19578:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19579:1: ruleOperation
+            // InternalSiriusTextDsl.g:19611:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19612:1: ruleOperation
             {
              before(grammarAccess.getCreateInstanceAccess().getBodyOperationParserRuleCall_12_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50518,21 +50593,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateView__MappingAssignment_4"
-    // InternalSiriusTextDsl.g:19588:1: rule__CreateView__MappingAssignment_4 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19621:1: rule__CreateView__MappingAssignment_4 : ( ( ruleQualifiedName ) ) ;
     public final void rule__CreateView__MappingAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19592:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19593:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19625:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19626:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19593:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19594:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19626:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19627:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getCreateViewAccess().getMappingMappingCrossReference_4_0()); 
-            // InternalSiriusTextDsl.g:19595:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19596:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19628:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19629:1: ruleQualifiedName
             {
              before(grammarAccess.getCreateViewAccess().getMappingMappingQualifiedNameParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -50567,17 +50642,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateView__ContainerViewExpressionAssignment_8"
-    // InternalSiriusTextDsl.g:19607:1: rule__CreateView__ContainerViewExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19640:1: rule__CreateView__ContainerViewExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
     public final void rule__CreateView__ContainerViewExpressionAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19611:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19612:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19644:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19645:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19612:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19613:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19645:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19646:1: RULE_EXPRESSION
             {
              before(grammarAccess.getCreateViewAccess().getContainerViewExpressionEXPRESSIONTerminalRuleCall_8_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50604,17 +50679,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateView__VariableNameAssignment_11"
-    // InternalSiriusTextDsl.g:19622:1: rule__CreateView__VariableNameAssignment_11 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19655:1: rule__CreateView__VariableNameAssignment_11 : ( RULE_STRING ) ;
     public final void rule__CreateView__VariableNameAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19626:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19627:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19659:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19660:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19627:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19628:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19660:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19661:1: RULE_STRING
             {
              before(grammarAccess.getCreateViewAccess().getVariableNameSTRINGTerminalRuleCall_11_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50641,17 +50716,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateView__BodyAssignment_12_1"
-    // InternalSiriusTextDsl.g:19637:1: rule__CreateView__BodyAssignment_12_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19670:1: rule__CreateView__BodyAssignment_12_1 : ( ruleOperation ) ;
     public final void rule__CreateView__BodyAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19641:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19642:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19674:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19675:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19642:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19643:1: ruleOperation
+            // InternalSiriusTextDsl.g:19675:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19676:1: ruleOperation
             {
              before(grammarAccess.getCreateViewAccess().getBodyOperationParserRuleCall_12_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50682,21 +50757,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__EdgeAssignment_4"
-    // InternalSiriusTextDsl.g:19652:1: rule__CreateEdgeView__EdgeAssignment_4 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:19685:1: rule__CreateEdgeView__EdgeAssignment_4 : ( ( ruleQualifiedName ) ) ;
     public final void rule__CreateEdgeView__EdgeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19656:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19657:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19689:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:19690:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19657:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19658:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19690:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:19691:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getCreateEdgeViewAccess().getEdgeEdgeCrossReference_4_0()); 
-            // InternalSiriusTextDsl.g:19659:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19660:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:19692:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:19693:1: ruleQualifiedName
             {
              before(grammarAccess.getCreateEdgeViewAccess().getEdgeEdgeQualifiedNameParserRuleCall_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -50731,17 +50806,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__SourceExpressionAssignment_8"
-    // InternalSiriusTextDsl.g:19671:1: rule__CreateEdgeView__SourceExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19704:1: rule__CreateEdgeView__SourceExpressionAssignment_8 : ( RULE_EXPRESSION ) ;
     public final void rule__CreateEdgeView__SourceExpressionAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19675:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19676:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19708:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19709:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19676:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19677:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19709:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19710:1: RULE_EXPRESSION
             {
              before(grammarAccess.getCreateEdgeViewAccess().getSourceExpressionEXPRESSIONTerminalRuleCall_8_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50768,17 +50843,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__TargetExpressionAssignment_12"
-    // InternalSiriusTextDsl.g:19686:1: rule__CreateEdgeView__TargetExpressionAssignment_12 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19719:1: rule__CreateEdgeView__TargetExpressionAssignment_12 : ( RULE_EXPRESSION ) ;
     public final void rule__CreateEdgeView__TargetExpressionAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19690:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19691:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19723:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19724:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19691:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19692:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19724:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19725:1: RULE_EXPRESSION
             {
              before(grammarAccess.getCreateEdgeViewAccess().getTargetExpressionEXPRESSIONTerminalRuleCall_12_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50805,17 +50880,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__ContainerViewExpressionAssignment_16"
-    // InternalSiriusTextDsl.g:19701:1: rule__CreateEdgeView__ContainerViewExpressionAssignment_16 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19734:1: rule__CreateEdgeView__ContainerViewExpressionAssignment_16 : ( RULE_EXPRESSION ) ;
     public final void rule__CreateEdgeView__ContainerViewExpressionAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19705:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19706:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19738:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19739:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19706:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19707:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19739:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19740:1: RULE_EXPRESSION
             {
              before(grammarAccess.getCreateEdgeViewAccess().getContainerViewExpressionEXPRESSIONTerminalRuleCall_16_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -50842,17 +50917,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__VariableNameAssignment_19"
-    // InternalSiriusTextDsl.g:19716:1: rule__CreateEdgeView__VariableNameAssignment_19 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19749:1: rule__CreateEdgeView__VariableNameAssignment_19 : ( RULE_STRING ) ;
     public final void rule__CreateEdgeView__VariableNameAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19720:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19721:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19753:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19754:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19721:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19722:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19754:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19755:1: RULE_STRING
             {
              before(grammarAccess.getCreateEdgeViewAccess().getVariableNameSTRINGTerminalRuleCall_19_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -50879,17 +50954,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__CreateEdgeView__BodyAssignment_20_1"
-    // InternalSiriusTextDsl.g:19731:1: rule__CreateEdgeView__BodyAssignment_20_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19764:1: rule__CreateEdgeView__BodyAssignment_20_1 : ( ruleOperation ) ;
     public final void rule__CreateEdgeView__BodyAssignment_20_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19735:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19736:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19768:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19769:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19736:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19737:1: ruleOperation
+            // InternalSiriusTextDsl.g:19769:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19770:1: ruleOperation
             {
              before(grammarAccess.getCreateEdgeViewAccess().getBodyOperationParserRuleCall_20_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50920,17 +50995,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__DeleteView__BodyAssignment_3_1"
-    // InternalSiriusTextDsl.g:19746:1: rule__DeleteView__BodyAssignment_3_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19779:1: rule__DeleteView__BodyAssignment_3_1 : ( ruleOperation ) ;
     public final void rule__DeleteView__BodyAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19750:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19751:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19783:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19784:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19751:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19752:1: ruleOperation
+            // InternalSiriusTextDsl.g:19784:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19785:1: ruleOperation
             {
              before(grammarAccess.getDeleteViewAccess().getBodyOperationParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -50961,17 +51036,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Remove__BodyAssignment_3_1"
-    // InternalSiriusTextDsl.g:19761:1: rule__Remove__BodyAssignment_3_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19794:1: rule__Remove__BodyAssignment_3_1 : ( ruleOperation ) ;
     public final void rule__Remove__BodyAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19765:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19766:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19798:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19799:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19766:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19767:1: ruleOperation
+            // InternalSiriusTextDsl.g:19799:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19800:1: ruleOperation
             {
              before(grammarAccess.getRemoveAccess().getBodyOperationParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -51002,17 +51077,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__NewContainerExpressionAssignment_4"
-    // InternalSiriusTextDsl.g:19776:1: rule__Move__NewContainerExpressionAssignment_4 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19809:1: rule__Move__NewContainerExpressionAssignment_4 : ( RULE_EXPRESSION ) ;
     public final void rule__Move__NewContainerExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19780:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19781:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19813:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19814:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19781:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19782:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19814:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19815:1: RULE_EXPRESSION
             {
              before(grammarAccess.getMoveAccess().getNewContainerExpressionEXPRESSIONTerminalRuleCall_4_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -51039,17 +51114,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__FeatureNameAssignment_8"
-    // InternalSiriusTextDsl.g:19791:1: rule__Move__FeatureNameAssignment_8 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19824:1: rule__Move__FeatureNameAssignment_8 : ( RULE_STRING ) ;
     public final void rule__Move__FeatureNameAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19795:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19796:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19828:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19829:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19796:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19797:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19829:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19830:1: RULE_STRING
             {
              before(grammarAccess.getMoveAccess().getFeatureNameSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -51076,17 +51151,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__BodyAssignment_10_1"
-    // InternalSiriusTextDsl.g:19806:1: rule__Move__BodyAssignment_10_1 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19839:1: rule__Move__BodyAssignment_10_1 : ( ruleOperation ) ;
     public final void rule__Move__BodyAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19810:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19811:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19843:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19844:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19811:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19812:1: ruleOperation
+            // InternalSiriusTextDsl.g:19844:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19845:1: ruleOperation
             {
              before(grammarAccess.getMoveAccess().getBodyOperationParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);
@@ -51117,17 +51192,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Switch__CasesAssignment_2"
-    // InternalSiriusTextDsl.g:19821:1: rule__Switch__CasesAssignment_2 : ( ruleCase ) ;
+    // InternalSiriusTextDsl.g:19854:1: rule__Switch__CasesAssignment_2 : ( ruleCase ) ;
     public final void rule__Switch__CasesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19825:1: ( ( ruleCase ) )
-            // InternalSiriusTextDsl.g:19826:1: ( ruleCase )
+            // InternalSiriusTextDsl.g:19858:1: ( ( ruleCase ) )
+            // InternalSiriusTextDsl.g:19859:1: ( ruleCase )
             {
-            // InternalSiriusTextDsl.g:19826:1: ( ruleCase )
-            // InternalSiriusTextDsl.g:19827:1: ruleCase
+            // InternalSiriusTextDsl.g:19859:1: ( ruleCase )
+            // InternalSiriusTextDsl.g:19860:1: ruleCase
             {
              before(grammarAccess.getSwitchAccess().getCasesCaseParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -51158,17 +51233,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Switch__DefaultAssignment_3"
-    // InternalSiriusTextDsl.g:19836:1: rule__Switch__DefaultAssignment_3 : ( ruleDefault ) ;
+    // InternalSiriusTextDsl.g:19869:1: rule__Switch__DefaultAssignment_3 : ( ruleDefault ) ;
     public final void rule__Switch__DefaultAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19840:1: ( ( ruleDefault ) )
-            // InternalSiriusTextDsl.g:19841:1: ( ruleDefault )
+            // InternalSiriusTextDsl.g:19873:1: ( ( ruleDefault ) )
+            // InternalSiriusTextDsl.g:19874:1: ( ruleDefault )
             {
-            // InternalSiriusTextDsl.g:19841:1: ( ruleDefault )
-            // InternalSiriusTextDsl.g:19842:1: ruleDefault
+            // InternalSiriusTextDsl.g:19874:1: ( ruleDefault )
+            // InternalSiriusTextDsl.g:19875:1: ruleDefault
             {
              before(grammarAccess.getSwitchAccess().getDefaultDefaultParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -51199,17 +51274,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Case__ConditionExpressionAssignment_2"
-    // InternalSiriusTextDsl.g:19851:1: rule__Case__ConditionExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:19884:1: rule__Case__ConditionExpressionAssignment_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Case__ConditionExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19855:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:19856:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19888:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:19889:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:19856:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:19857:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:19889:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:19890:1: RULE_EXPRESSION
             {
              before(grammarAccess.getCaseAccess().getConditionExpressionEXPRESSIONTerminalRuleCall_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -51236,17 +51311,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Case__BodyAssignment_5"
-    // InternalSiriusTextDsl.g:19866:1: rule__Case__BodyAssignment_5 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19899:1: rule__Case__BodyAssignment_5 : ( ruleOperation ) ;
     public final void rule__Case__BodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19870:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19871:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19903:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19904:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19871:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19872:1: ruleOperation
+            // InternalSiriusTextDsl.g:19904:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19905:1: ruleOperation
             {
              before(grammarAccess.getCaseAccess().getBodyOperationParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -51277,17 +51352,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Default__BodyAssignment_3"
-    // InternalSiriusTextDsl.g:19881:1: rule__Default__BodyAssignment_3 : ( ruleOperation ) ;
+    // InternalSiriusTextDsl.g:19914:1: rule__Default__BodyAssignment_3 : ( ruleOperation ) ;
     public final void rule__Default__BodyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19885:1: ( ( ruleOperation ) )
-            // InternalSiriusTextDsl.g:19886:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19918:1: ( ( ruleOperation ) )
+            // InternalSiriusTextDsl.g:19919:1: ( ruleOperation )
             {
-            // InternalSiriusTextDsl.g:19886:1: ( ruleOperation )
-            // InternalSiriusTextDsl.g:19887:1: ruleOperation
+            // InternalSiriusTextDsl.g:19919:1: ( ruleOperation )
+            // InternalSiriusTextDsl.g:19920:1: ruleOperation
             {
              before(grammarAccess.getDefaultAccess().getBodyOperationParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -51318,17 +51393,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:19896:1: rule__Container__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:19929:1: rule__Container__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Container__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19900:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:19901:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19933:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:19934:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:19901:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:19902:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:19934:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:19935:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getContainerAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -51355,21 +51430,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__ListAssignment_1"
-    // InternalSiriusTextDsl.g:19911:1: rule__Container__ListAssignment_1 : ( ( 'list' ) ) ;
+    // InternalSiriusTextDsl.g:19944:1: rule__Container__ListAssignment_1 : ( ( 'list' ) ) ;
     public final void rule__Container__ListAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19915:1: ( ( ( 'list' ) ) )
-            // InternalSiriusTextDsl.g:19916:1: ( ( 'list' ) )
+            // InternalSiriusTextDsl.g:19948:1: ( ( ( 'list' ) ) )
+            // InternalSiriusTextDsl.g:19949:1: ( ( 'list' ) )
             {
-            // InternalSiriusTextDsl.g:19916:1: ( ( 'list' ) )
-            // InternalSiriusTextDsl.g:19917:1: ( 'list' )
+            // InternalSiriusTextDsl.g:19949:1: ( ( 'list' ) )
+            // InternalSiriusTextDsl.g:19950:1: ( 'list' )
             {
              before(grammarAccess.getContainerAccess().getListListKeyword_1_0()); 
-            // InternalSiriusTextDsl.g:19918:1: ( 'list' )
-            // InternalSiriusTextDsl.g:19919:1: 'list'
+            // InternalSiriusTextDsl.g:19951:1: ( 'list' )
+            // InternalSiriusTextDsl.g:19952:1: 'list'
             {
              before(grammarAccess.getContainerAccess().getListListKeyword_1_0()); 
             match(input,136,FOLLOW_2); 
@@ -51400,17 +51475,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__NameAssignment_3"
-    // InternalSiriusTextDsl.g:19934:1: rule__Container__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:19967:1: rule__Container__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Container__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19938:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:19939:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19971:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:19972:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:19939:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:19940:1: RULE_ID
+            // InternalSiriusTextDsl.g:19972:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:19973:1: RULE_ID
             {
              before(grammarAccess.getContainerAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -51437,17 +51512,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__LabelAssignment_4_1"
-    // InternalSiriusTextDsl.g:19949:1: rule__Container__LabelAssignment_4_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19982:1: rule__Container__LabelAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__Container__LabelAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19953:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19954:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19986:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:19987:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19954:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19955:1: RULE_STRING
+            // InternalSiriusTextDsl.g:19987:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:19988:1: RULE_STRING
             {
              before(grammarAccess.getContainerAccess().getLabelSTRINGTerminalRuleCall_4_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -51474,17 +51549,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__DomainClassAssignment_6"
-    // InternalSiriusTextDsl.g:19964:1: rule__Container__DomainClassAssignment_6 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:19997:1: rule__Container__DomainClassAssignment_6 : ( RULE_STRING ) ;
     public final void rule__Container__DomainClassAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19968:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:19969:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20001:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:20002:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:19969:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:19970:1: RULE_STRING
+            // InternalSiriusTextDsl.g:20002:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20003:1: RULE_STRING
             {
              before(grammarAccess.getContainerAccess().getDomainClassSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -51511,21 +51586,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__StyleAssignment_8"
-    // InternalSiriusTextDsl.g:19979:1: rule__Container__StyleAssignment_8 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20012:1: rule__Container__StyleAssignment_8 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Container__StyleAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:19983:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:19984:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20016:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20017:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:19984:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:19985:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20017:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20018:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getContainerAccess().getStyleContainerStyleCrossReference_8_0()); 
-            // InternalSiriusTextDsl.g:19986:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:19987:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20019:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20020:1: ruleQualifiedName
             {
              before(grammarAccess.getContainerAccess().getStyleContainerStyleQualifiedNameParserRuleCall_8_0_1()); 
             pushFollow(FOLLOW_2);
@@ -51560,17 +51635,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__PreconditionAssignment_9_1"
-    // InternalSiriusTextDsl.g:19998:1: rule__Container__PreconditionAssignment_9_1 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20031:1: rule__Container__PreconditionAssignment_9_1 : ( RULE_EXPRESSION ) ;
     public final void rule__Container__PreconditionAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20002:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20003:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20035:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20036:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20003:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20004:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20036:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20037:1: RULE_EXPRESSION
             {
              before(grammarAccess.getContainerAccess().getPreconditionEXPRESSIONTerminalRuleCall_9_1_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -51597,17 +51672,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__SemanticCanditatesExpressionAssignment_11_2"
-    // InternalSiriusTextDsl.g:20013:1: rule__Container__SemanticCanditatesExpressionAssignment_11_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20046:1: rule__Container__SemanticCanditatesExpressionAssignment_11_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Container__SemanticCanditatesExpressionAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20017:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20018:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20050:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20051:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20018:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20019:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20051:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20052:1: RULE_EXPRESSION
             {
              before(grammarAccess.getContainerAccess().getSemanticCanditatesExpressionEXPRESSIONTerminalRuleCall_11_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -51634,17 +51709,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Container__ConditionalStylesAssignment_12"
-    // InternalSiriusTextDsl.g:20028:1: rule__Container__ConditionalStylesAssignment_12 : ( ruleConditionalContainerStyleDeclaration ) ;
+    // InternalSiriusTextDsl.g:20061:1: rule__Container__ConditionalStylesAssignment_12 : ( ruleConditionalContainerStyleDeclaration ) ;
     public final void rule__Container__ConditionalStylesAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20032:1: ( ( ruleConditionalContainerStyleDeclaration ) )
-            // InternalSiriusTextDsl.g:20033:1: ( ruleConditionalContainerStyleDeclaration )
+            // InternalSiriusTextDsl.g:20065:1: ( ( ruleConditionalContainerStyleDeclaration ) )
+            // InternalSiriusTextDsl.g:20066:1: ( ruleConditionalContainerStyleDeclaration )
             {
-            // InternalSiriusTextDsl.g:20033:1: ( ruleConditionalContainerStyleDeclaration )
-            // InternalSiriusTextDsl.g:20034:1: ruleConditionalContainerStyleDeclaration
+            // InternalSiriusTextDsl.g:20066:1: ( ruleConditionalContainerStyleDeclaration )
+            // InternalSiriusTextDsl.g:20067:1: ruleConditionalContainerStyleDeclaration
             {
              before(grammarAccess.getContainerAccess().getConditionalStylesConditionalContainerStyleDeclarationParserRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -51675,21 +51750,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ConditionalContainerStyleDeclaration__StyleAssignment_1"
-    // InternalSiriusTextDsl.g:20043:1: rule__ConditionalContainerStyleDeclaration__StyleAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20076:1: rule__ConditionalContainerStyleDeclaration__StyleAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ConditionalContainerStyleDeclaration__StyleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20047:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20048:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20080:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20081:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20048:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20049:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20081:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20082:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getConditionalContainerStyleDeclarationAccess().getStyleContainerStyleCrossReference_1_0()); 
-            // InternalSiriusTextDsl.g:20050:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20051:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20083:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20084:1: ruleQualifiedName
             {
              before(grammarAccess.getConditionalContainerStyleDeclarationAccess().getStyleContainerStyleQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -51724,17 +51799,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ConditionalContainerStyleDeclaration__ConditionalStyleExpressionAssignment_3"
-    // InternalSiriusTextDsl.g:20062:1: rule__ConditionalContainerStyleDeclaration__ConditionalStyleExpressionAssignment_3 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20095:1: rule__ConditionalContainerStyleDeclaration__ConditionalStyleExpressionAssignment_3 : ( RULE_EXPRESSION ) ;
     public final void rule__ConditionalContainerStyleDeclaration__ConditionalStyleExpressionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20066:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20067:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20099:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20100:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20067:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20068:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20100:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20101:1: RULE_EXPRESSION
             {
              before(grammarAccess.getConditionalContainerStyleDeclarationAccess().getConditionalStyleExpressionEXPRESSIONTerminalRuleCall_3_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -51761,17 +51836,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:20077:1: rule__Gradient__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:20110:1: rule__Gradient__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Gradient__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20081:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:20082:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20114:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:20115:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:20082:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:20083:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:20115:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20116:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getGradientAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -51798,17 +51873,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__DirectionAssignment_2"
-    // InternalSiriusTextDsl.g:20092:1: rule__Gradient__DirectionAssignment_2 : ( ruleGradientDirection ) ;
+    // InternalSiriusTextDsl.g:20125:1: rule__Gradient__DirectionAssignment_2 : ( ruleGradientDirection ) ;
     public final void rule__Gradient__DirectionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20096:1: ( ( ruleGradientDirection ) )
-            // InternalSiriusTextDsl.g:20097:1: ( ruleGradientDirection )
+            // InternalSiriusTextDsl.g:20129:1: ( ( ruleGradientDirection ) )
+            // InternalSiriusTextDsl.g:20130:1: ( ruleGradientDirection )
             {
-            // InternalSiriusTextDsl.g:20097:1: ( ruleGradientDirection )
-            // InternalSiriusTextDsl.g:20098:1: ruleGradientDirection
+            // InternalSiriusTextDsl.g:20130:1: ( ruleGradientDirection )
+            // InternalSiriusTextDsl.g:20131:1: ruleGradientDirection
             {
              before(grammarAccess.getGradientAccess().getDirectionGradientDirectionEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -51839,17 +51914,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__NameAssignment_3"
-    // InternalSiriusTextDsl.g:20107:1: rule__Gradient__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:20140:1: rule__Gradient__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__Gradient__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20111:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:20112:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20144:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:20145:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:20112:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:20113:1: RULE_ID
+            // InternalSiriusTextDsl.g:20145:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20146:1: RULE_ID
             {
              before(grammarAccess.getGradientAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -51876,21 +51951,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__BackgroundColorAssignment_5"
-    // InternalSiriusTextDsl.g:20122:1: rule__Gradient__BackgroundColorAssignment_5 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20155:1: rule__Gradient__BackgroundColorAssignment_5 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Gradient__BackgroundColorAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20126:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20127:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20159:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20160:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20127:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20128:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20160:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20161:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getGradientAccess().getBackgroundColorColorCrossReference_5_0()); 
-            // InternalSiriusTextDsl.g:20129:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20130:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20162:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20163:1: ruleQualifiedName
             {
              before(grammarAccess.getGradientAccess().getBackgroundColorColorQualifiedNameParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -51925,21 +52000,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__ForegroundColorAssignment_7"
-    // InternalSiriusTextDsl.g:20141:1: rule__Gradient__ForegroundColorAssignment_7 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20174:1: rule__Gradient__ForegroundColorAssignment_7 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Gradient__ForegroundColorAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20145:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20146:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20178:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20179:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20146:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20147:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20179:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20180:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getGradientAccess().getForegroundColorColorCrossReference_7_0()); 
-            // InternalSiriusTextDsl.g:20148:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20149:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20181:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20182:1: ruleQualifiedName
             {
              before(grammarAccess.getGradientAccess().getForegroundColorColorQualifiedNameParserRuleCall_7_0_1()); 
             pushFollow(FOLLOW_2);
@@ -51974,17 +52049,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__LabelAlignmentAssignment_9_1"
-    // InternalSiriusTextDsl.g:20160:1: rule__Gradient__LabelAlignmentAssignment_9_1 : ( ruleLabelAlignment ) ;
+    // InternalSiriusTextDsl.g:20193:1: rule__Gradient__LabelAlignmentAssignment_9_1 : ( ruleLabelAlignment ) ;
     public final void rule__Gradient__LabelAlignmentAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20164:1: ( ( ruleLabelAlignment ) )
-            // InternalSiriusTextDsl.g:20165:1: ( ruleLabelAlignment )
+            // InternalSiriusTextDsl.g:20197:1: ( ( ruleLabelAlignment ) )
+            // InternalSiriusTextDsl.g:20198:1: ( ruleLabelAlignment )
             {
-            // InternalSiriusTextDsl.g:20165:1: ( ruleLabelAlignment )
-            // InternalSiriusTextDsl.g:20166:1: ruleLabelAlignment
+            // InternalSiriusTextDsl.g:20198:1: ( ruleLabelAlignment )
+            // InternalSiriusTextDsl.g:20199:1: ruleLabelAlignment
             {
              before(grammarAccess.getGradientAccess().getLabelAlignmentLabelAlignmentEnumRuleCall_9_1_0()); 
             pushFollow(FOLLOW_2);
@@ -52015,17 +52090,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__LabelExpressionAssignment_9_2"
-    // InternalSiriusTextDsl.g:20175:1: rule__Gradient__LabelExpressionAssignment_9_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20208:1: rule__Gradient__LabelExpressionAssignment_9_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Gradient__LabelExpressionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20179:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20180:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20212:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20213:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20180:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20181:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20213:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20214:1: RULE_EXPRESSION
             {
              before(grammarAccess.getGradientAccess().getLabelExpressionEXPRESSIONTerminalRuleCall_9_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -52052,21 +52127,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__LabelColorAssignment_9_4"
-    // InternalSiriusTextDsl.g:20190:1: rule__Gradient__LabelColorAssignment_9_4 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20223:1: rule__Gradient__LabelColorAssignment_9_4 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Gradient__LabelColorAssignment_9_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20194:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20195:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20227:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20228:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20195:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20196:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20228:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20229:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getGradientAccess().getLabelColorColorCrossReference_9_4_0()); 
-            // InternalSiriusTextDsl.g:20197:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20198:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20230:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20231:1: ruleQualifiedName
             {
              before(grammarAccess.getGradientAccess().getLabelColorColorQualifiedNameParserRuleCall_9_4_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52101,17 +52176,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__BorderSizeAssignment_10_3"
-    // InternalSiriusTextDsl.g:20209:1: rule__Gradient__BorderSizeAssignment_10_3 : ( RULE_INT ) ;
+    // InternalSiriusTextDsl.g:20242:1: rule__Gradient__BorderSizeAssignment_10_3 : ( RULE_INT ) ;
     public final void rule__Gradient__BorderSizeAssignment_10_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20213:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:20214:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20246:1: ( ( RULE_INT ) )
+            // InternalSiriusTextDsl.g:20247:1: ( RULE_INT )
             {
-            // InternalSiriusTextDsl.g:20214:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:20215:1: RULE_INT
+            // InternalSiriusTextDsl.g:20247:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20248:1: RULE_INT
             {
              before(grammarAccess.getGradientAccess().getBorderSizeINTTerminalRuleCall_10_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -52138,21 +52213,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__BorderColorAssignment_10_5"
-    // InternalSiriusTextDsl.g:20224:1: rule__Gradient__BorderColorAssignment_10_5 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20257:1: rule__Gradient__BorderColorAssignment_10_5 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Gradient__BorderColorAssignment_10_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20228:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20229:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20261:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20262:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20229:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20230:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20262:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20263:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getGradientAccess().getBorderColorColorCrossReference_10_5_0()); 
-            // InternalSiriusTextDsl.g:20231:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20232:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20264:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20265:1: ruleQualifiedName
             {
              before(grammarAccess.getGradientAccess().getBorderColorColorQualifiedNameParserRuleCall_10_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52187,17 +52262,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__IconAssignment_11_2"
-    // InternalSiriusTextDsl.g:20243:1: rule__Gradient__IconAssignment_11_2 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:20276:1: rule__Gradient__IconAssignment_11_2 : ( RULE_STRING ) ;
     public final void rule__Gradient__IconAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20247:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:20248:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20280:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:20281:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:20248:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:20249:1: RULE_STRING
+            // InternalSiriusTextDsl.g:20281:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20282:1: RULE_STRING
             {
              before(grammarAccess.getGradientAccess().getIconSTRINGTerminalRuleCall_11_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -52224,17 +52299,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__HeightComputationExpressionAssignment_12_2"
-    // InternalSiriusTextDsl.g:20258:1: rule__Gradient__HeightComputationExpressionAssignment_12_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20291:1: rule__Gradient__HeightComputationExpressionAssignment_12_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Gradient__HeightComputationExpressionAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20262:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20263:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20295:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20296:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20263:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20264:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20296:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20297:1: RULE_EXPRESSION
             {
              before(grammarAccess.getGradientAccess().getHeightComputationExpressionEXPRESSIONTerminalRuleCall_12_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -52261,17 +52336,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Gradient__WidthComputationExpressionAssignment_13_2"
-    // InternalSiriusTextDsl.g:20273:1: rule__Gradient__WidthComputationExpressionAssignment_13_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20306:1: rule__Gradient__WidthComputationExpressionAssignment_13_2 : ( RULE_EXPRESSION ) ;
     public final void rule__Gradient__WidthComputationExpressionAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20277:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20278:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20310:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20311:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20278:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20279:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20311:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20312:1: RULE_EXPRESSION
             {
              before(grammarAccess.getGradientAccess().getWidthComputationExpressionEXPRESSIONTerminalRuleCall_13_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -52298,17 +52373,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:20288:1: rule__RelationBasedEdge__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:20321:1: rule__RelationBasedEdge__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__RelationBasedEdge__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20292:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:20293:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20325:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:20326:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:20293:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:20294:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:20326:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20327:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -52335,17 +52410,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__NameAssignment_2"
-    // InternalSiriusTextDsl.g:20303:1: rule__RelationBasedEdge__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:20336:1: rule__RelationBasedEdge__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__RelationBasedEdge__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20307:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:20308:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20340:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:20341:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:20308:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:20309:1: RULE_ID
+            // InternalSiriusTextDsl.g:20341:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20342:1: RULE_ID
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -52372,17 +52447,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__LabelAssignment_3_1"
-    // InternalSiriusTextDsl.g:20318:1: rule__RelationBasedEdge__LabelAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalSiriusTextDsl.g:20351:1: rule__RelationBasedEdge__LabelAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__RelationBasedEdge__LabelAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20322:1: ( ( RULE_STRING ) )
-            // InternalSiriusTextDsl.g:20323:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20355:1: ( ( RULE_STRING ) )
+            // InternalSiriusTextDsl.g:20356:1: ( RULE_STRING )
             {
-            // InternalSiriusTextDsl.g:20323:1: ( RULE_STRING )
-            // InternalSiriusTextDsl.g:20324:1: RULE_STRING
+            // InternalSiriusTextDsl.g:20356:1: ( RULE_STRING )
+            // InternalSiriusTextDsl.g:20357:1: RULE_STRING
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -52409,21 +52484,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__StyleAssignment_5"
-    // InternalSiriusTextDsl.g:20333:1: rule__RelationBasedEdge__StyleAssignment_5 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20366:1: rule__RelationBasedEdge__StyleAssignment_5 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RelationBasedEdge__StyleAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20337:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20338:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20370:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20371:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20338:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20339:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20371:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20372:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getStyleEdgeStyleCrossReference_5_0()); 
-            // InternalSiriusTextDsl.g:20340:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20341:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20373:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20374:1: ruleQualifiedName
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getStyleEdgeStyleQualifiedNameParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52458,21 +52533,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__SourceMappingsAssignment_10_0"
-    // InternalSiriusTextDsl.g:20352:1: rule__RelationBasedEdge__SourceMappingsAssignment_10_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20385:1: rule__RelationBasedEdge__SourceMappingsAssignment_10_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RelationBasedEdge__SourceMappingsAssignment_10_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20356:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20357:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20389:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20390:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20357:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20358:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20390:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20391:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingCrossReference_10_0_0()); 
-            // InternalSiriusTextDsl.g:20359:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20360:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20392:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20393:1: ruleQualifiedName
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingQualifiedNameParserRuleCall_10_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52507,21 +52582,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__SourceMappingsAssignment_10_1_1"
-    // InternalSiriusTextDsl.g:20371:1: rule__RelationBasedEdge__SourceMappingsAssignment_10_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20404:1: rule__RelationBasedEdge__SourceMappingsAssignment_10_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RelationBasedEdge__SourceMappingsAssignment_10_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20375:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20376:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20408:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20409:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20376:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20377:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20409:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20410:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingCrossReference_10_1_1_0()); 
-            // InternalSiriusTextDsl.g:20378:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20379:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20411:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20412:1: ruleQualifiedName
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getSourceMappingsMappingQualifiedNameParserRuleCall_10_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52556,21 +52631,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__TargetMappingsAssignment_15_0"
-    // InternalSiriusTextDsl.g:20390:1: rule__RelationBasedEdge__TargetMappingsAssignment_15_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20423:1: rule__RelationBasedEdge__TargetMappingsAssignment_15_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RelationBasedEdge__TargetMappingsAssignment_15_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20394:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20395:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20427:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20428:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20395:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20396:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20428:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20429:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingCrossReference_15_0_0()); 
-            // InternalSiriusTextDsl.g:20397:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20398:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20430:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20431:1: ruleQualifiedName
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingQualifiedNameParserRuleCall_15_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52605,21 +52680,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__TargetMappingsAssignment_15_1_1"
-    // InternalSiriusTextDsl.g:20409:1: rule__RelationBasedEdge__TargetMappingsAssignment_15_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20442:1: rule__RelationBasedEdge__TargetMappingsAssignment_15_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RelationBasedEdge__TargetMappingsAssignment_15_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20413:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20414:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20446:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20447:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20414:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20415:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20447:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20448:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingCrossReference_15_1_1_0()); 
-            // InternalSiriusTextDsl.g:20416:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20417:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20449:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20450:1: ruleQualifiedName
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetMappingsMappingQualifiedNameParserRuleCall_15_1_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52654,17 +52729,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__RelationBasedEdge__TargetFinderExpressionAssignment_19"
-    // InternalSiriusTextDsl.g:20428:1: rule__RelationBasedEdge__TargetFinderExpressionAssignment_19 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20461:1: rule__RelationBasedEdge__TargetFinderExpressionAssignment_19 : ( RULE_EXPRESSION ) ;
     public final void rule__RelationBasedEdge__TargetFinderExpressionAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20432:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20433:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20465:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20466:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20433:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20434:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20466:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20467:1: RULE_EXPRESSION
             {
              before(grammarAccess.getRelationBasedEdgeAccess().getTargetFinderExpressionEXPRESSIONTerminalRuleCall_19_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -52691,17 +52766,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__NameAssignment_1"
-    // InternalSiriusTextDsl.g:20443:1: rule__EdgeStyle__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:20476:1: rule__EdgeStyle__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EdgeStyle__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20447:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:20448:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20480:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:20481:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:20448:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:20449:1: RULE_ID
+            // InternalSiriusTextDsl.g:20481:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20482:1: RULE_ID
             {
              before(grammarAccess.getEdgeStyleAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -52728,21 +52803,21 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__StrokeColorAssignment_3"
-    // InternalSiriusTextDsl.g:20458:1: rule__EdgeStyle__StrokeColorAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // InternalSiriusTextDsl.g:20491:1: rule__EdgeStyle__StrokeColorAssignment_3 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EdgeStyle__StrokeColorAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20462:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalSiriusTextDsl.g:20463:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20495:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalSiriusTextDsl.g:20496:1: ( ( ruleQualifiedName ) )
             {
-            // InternalSiriusTextDsl.g:20463:1: ( ( ruleQualifiedName ) )
-            // InternalSiriusTextDsl.g:20464:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20496:1: ( ( ruleQualifiedName ) )
+            // InternalSiriusTextDsl.g:20497:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getEdgeStyleAccess().getStrokeColorColorCrossReference_3_0()); 
-            // InternalSiriusTextDsl.g:20465:1: ( ruleQualifiedName )
-            // InternalSiriusTextDsl.g:20466:1: ruleQualifiedName
+            // InternalSiriusTextDsl.g:20498:1: ( ruleQualifiedName )
+            // InternalSiriusTextDsl.g:20499:1: ruleQualifiedName
             {
              before(grammarAccess.getEdgeStyleAccess().getStrokeColorColorQualifiedNameParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -52777,17 +52852,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__LineStyleAssignment_4_2"
-    // InternalSiriusTextDsl.g:20477:1: rule__EdgeStyle__LineStyleAssignment_4_2 : ( ruleLineStyle ) ;
+    // InternalSiriusTextDsl.g:20510:1: rule__EdgeStyle__LineStyleAssignment_4_2 : ( ruleLineStyle ) ;
     public final void rule__EdgeStyle__LineStyleAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20481:1: ( ( ruleLineStyle ) )
-            // InternalSiriusTextDsl.g:20482:1: ( ruleLineStyle )
+            // InternalSiriusTextDsl.g:20514:1: ( ( ruleLineStyle ) )
+            // InternalSiriusTextDsl.g:20515:1: ( ruleLineStyle )
             {
-            // InternalSiriusTextDsl.g:20482:1: ( ruleLineStyle )
-            // InternalSiriusTextDsl.g:20483:1: ruleLineStyle
+            // InternalSiriusTextDsl.g:20515:1: ( ruleLineStyle )
+            // InternalSiriusTextDsl.g:20516:1: ruleLineStyle
             {
              before(grammarAccess.getEdgeStyleAccess().getLineStyleLineStyleEnumRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -52818,17 +52893,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__RoutingStyleAssignment_5_2"
-    // InternalSiriusTextDsl.g:20492:1: rule__EdgeStyle__RoutingStyleAssignment_5_2 : ( ruleRoutingStyle ) ;
+    // InternalSiriusTextDsl.g:20525:1: rule__EdgeStyle__RoutingStyleAssignment_5_2 : ( ruleRoutingStyle ) ;
     public final void rule__EdgeStyle__RoutingStyleAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20496:1: ( ( ruleRoutingStyle ) )
-            // InternalSiriusTextDsl.g:20497:1: ( ruleRoutingStyle )
+            // InternalSiriusTextDsl.g:20529:1: ( ( ruleRoutingStyle ) )
+            // InternalSiriusTextDsl.g:20530:1: ( ruleRoutingStyle )
             {
-            // InternalSiriusTextDsl.g:20497:1: ( ruleRoutingStyle )
-            // InternalSiriusTextDsl.g:20498:1: ruleRoutingStyle
+            // InternalSiriusTextDsl.g:20530:1: ( ruleRoutingStyle )
+            // InternalSiriusTextDsl.g:20531:1: ruleRoutingStyle
             {
              before(grammarAccess.getEdgeStyleAccess().getRoutingStyleRoutingStyleEnumRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -52859,17 +52934,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__SourceArrowAssignment_7_2"
-    // InternalSiriusTextDsl.g:20507:1: rule__EdgeStyle__SourceArrowAssignment_7_2 : ( ruleArrowDecorator ) ;
+    // InternalSiriusTextDsl.g:20540:1: rule__EdgeStyle__SourceArrowAssignment_7_2 : ( ruleArrowDecorator ) ;
     public final void rule__EdgeStyle__SourceArrowAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20511:1: ( ( ruleArrowDecorator ) )
-            // InternalSiriusTextDsl.g:20512:1: ( ruleArrowDecorator )
+            // InternalSiriusTextDsl.g:20544:1: ( ( ruleArrowDecorator ) )
+            // InternalSiriusTextDsl.g:20545:1: ( ruleArrowDecorator )
             {
-            // InternalSiriusTextDsl.g:20512:1: ( ruleArrowDecorator )
-            // InternalSiriusTextDsl.g:20513:1: ruleArrowDecorator
+            // InternalSiriusTextDsl.g:20545:1: ( ruleArrowDecorator )
+            // InternalSiriusTextDsl.g:20546:1: ruleArrowDecorator
             {
              before(grammarAccess.getEdgeStyleAccess().getSourceArrowArrowDecoratorEnumRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -52900,17 +52975,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__TargetArrowAssignment_8_2"
-    // InternalSiriusTextDsl.g:20522:1: rule__EdgeStyle__TargetArrowAssignment_8_2 : ( ruleArrowDecorator ) ;
+    // InternalSiriusTextDsl.g:20555:1: rule__EdgeStyle__TargetArrowAssignment_8_2 : ( ruleArrowDecorator ) ;
     public final void rule__EdgeStyle__TargetArrowAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20526:1: ( ( ruleArrowDecorator ) )
-            // InternalSiriusTextDsl.g:20527:1: ( ruleArrowDecorator )
+            // InternalSiriusTextDsl.g:20559:1: ( ( ruleArrowDecorator ) )
+            // InternalSiriusTextDsl.g:20560:1: ( ruleArrowDecorator )
             {
-            // InternalSiriusTextDsl.g:20527:1: ( ruleArrowDecorator )
-            // InternalSiriusTextDsl.g:20528:1: ruleArrowDecorator
+            // InternalSiriusTextDsl.g:20560:1: ( ruleArrowDecorator )
+            // InternalSiriusTextDsl.g:20561:1: ruleArrowDecorator
             {
              before(grammarAccess.getEdgeStyleAccess().getTargetArrowArrowDecoratorEnumRuleCall_8_2_0()); 
             pushFollow(FOLLOW_2);
@@ -52941,17 +53016,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__SizeComputationExpressionAssignment_9_2"
-    // InternalSiriusTextDsl.g:20537:1: rule__EdgeStyle__SizeComputationExpressionAssignment_9_2 : ( RULE_EXPRESSION ) ;
+    // InternalSiriusTextDsl.g:20570:1: rule__EdgeStyle__SizeComputationExpressionAssignment_9_2 : ( RULE_EXPRESSION ) ;
     public final void rule__EdgeStyle__SizeComputationExpressionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20541:1: ( ( RULE_EXPRESSION ) )
-            // InternalSiriusTextDsl.g:20542:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20574:1: ( ( RULE_EXPRESSION ) )
+            // InternalSiriusTextDsl.g:20575:1: ( RULE_EXPRESSION )
             {
-            // InternalSiriusTextDsl.g:20542:1: ( RULE_EXPRESSION )
-            // InternalSiriusTextDsl.g:20543:1: RULE_EXPRESSION
+            // InternalSiriusTextDsl.g:20575:1: ( RULE_EXPRESSION )
+            // InternalSiriusTextDsl.g:20576:1: RULE_EXPRESSION
             {
              before(grammarAccess.getEdgeStyleAccess().getSizeComputationExpressionEXPRESSIONTerminalRuleCall_9_2_0()); 
             match(input,RULE_EXPRESSION,FOLLOW_2); 
@@ -52978,17 +53053,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__FoldingStyleAssignment_10_2"
-    // InternalSiriusTextDsl.g:20552:1: rule__EdgeStyle__FoldingStyleAssignment_10_2 : ( ruleFoldingStyle ) ;
+    // InternalSiriusTextDsl.g:20585:1: rule__EdgeStyle__FoldingStyleAssignment_10_2 : ( ruleFoldingStyle ) ;
     public final void rule__EdgeStyle__FoldingStyleAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20556:1: ( ( ruleFoldingStyle ) )
-            // InternalSiriusTextDsl.g:20557:1: ( ruleFoldingStyle )
+            // InternalSiriusTextDsl.g:20589:1: ( ( ruleFoldingStyle ) )
+            // InternalSiriusTextDsl.g:20590:1: ( ruleFoldingStyle )
             {
-            // InternalSiriusTextDsl.g:20557:1: ( ruleFoldingStyle )
-            // InternalSiriusTextDsl.g:20558:1: ruleFoldingStyle
+            // InternalSiriusTextDsl.g:20590:1: ( ruleFoldingStyle )
+            // InternalSiriusTextDsl.g:20591:1: ruleFoldingStyle
             {
              before(grammarAccess.getEdgeStyleAccess().getFoldingStyleFoldingStyleEnumRuleCall_10_2_0()); 
             pushFollow(FOLLOW_2);
@@ -53019,17 +53094,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EdgeStyle__EndsCenteringAssignment_11_2"
-    // InternalSiriusTextDsl.g:20567:1: rule__EdgeStyle__EndsCenteringAssignment_11_2 : ( ruleEndsCentering ) ;
+    // InternalSiriusTextDsl.g:20600:1: rule__EdgeStyle__EndsCenteringAssignment_11_2 : ( ruleEndsCentering ) ;
     public final void rule__EdgeStyle__EndsCenteringAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20571:1: ( ( ruleEndsCentering ) )
-            // InternalSiriusTextDsl.g:20572:1: ( ruleEndsCentering )
+            // InternalSiriusTextDsl.g:20604:1: ( ( ruleEndsCentering ) )
+            // InternalSiriusTextDsl.g:20605:1: ( ruleEndsCentering )
             {
-            // InternalSiriusTextDsl.g:20572:1: ( ruleEndsCentering )
-            // InternalSiriusTextDsl.g:20573:1: ruleEndsCentering
+            // InternalSiriusTextDsl.g:20605:1: ( ruleEndsCentering )
+            // InternalSiriusTextDsl.g:20606:1: ruleEndsCentering
             {
              before(grammarAccess.getEdgeStyleAccess().getEndsCenteringEndsCenteringEnumRuleCall_11_2_0()); 
             pushFollow(FOLLOW_2);
@@ -53060,17 +53135,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Palette__DocumentationAssignment_0"
-    // InternalSiriusTextDsl.g:20582:1: rule__Palette__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
+    // InternalSiriusTextDsl.g:20615:1: rule__Palette__DocumentationAssignment_0 : ( RULE_DOCUMENTATION ) ;
     public final void rule__Palette__DocumentationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20586:1: ( ( RULE_DOCUMENTATION ) )
-            // InternalSiriusTextDsl.g:20587:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20619:1: ( ( RULE_DOCUMENTATION ) )
+            // InternalSiriusTextDsl.g:20620:1: ( RULE_DOCUMENTATION )
             {
-            // InternalSiriusTextDsl.g:20587:1: ( RULE_DOCUMENTATION )
-            // InternalSiriusTextDsl.g:20588:1: RULE_DOCUMENTATION
+            // InternalSiriusTextDsl.g:20620:1: ( RULE_DOCUMENTATION )
+            // InternalSiriusTextDsl.g:20621:1: RULE_DOCUMENTATION
             {
              before(grammarAccess.getPaletteAccess().getDocumentationDOCUMENTATIONTerminalRuleCall_0_0()); 
             match(input,RULE_DOCUMENTATION,FOLLOW_2); 
@@ -53097,17 +53172,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Palette__NameAssignment_2"
-    // InternalSiriusTextDsl.g:20597:1: rule__Palette__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:20630:1: rule__Palette__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Palette__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20601:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:20602:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20634:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:20635:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:20602:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:20603:1: RULE_ID
+            // InternalSiriusTextDsl.g:20635:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20636:1: RULE_ID
             {
              before(grammarAccess.getPaletteAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -53134,17 +53209,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Palette__ColorsAssignment_4"
-    // InternalSiriusTextDsl.g:20612:1: rule__Palette__ColorsAssignment_4 : ( ruleColor ) ;
+    // InternalSiriusTextDsl.g:20645:1: rule__Palette__ColorsAssignment_4 : ( ruleColor ) ;
     public final void rule__Palette__ColorsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20616:1: ( ( ruleColor ) )
-            // InternalSiriusTextDsl.g:20617:1: ( ruleColor )
+            // InternalSiriusTextDsl.g:20649:1: ( ( ruleColor ) )
+            // InternalSiriusTextDsl.g:20650:1: ( ruleColor )
             {
-            // InternalSiriusTextDsl.g:20617:1: ( ruleColor )
-            // InternalSiriusTextDsl.g:20618:1: ruleColor
+            // InternalSiriusTextDsl.g:20650:1: ( ruleColor )
+            // InternalSiriusTextDsl.g:20651:1: ruleColor
             {
              before(grammarAccess.getPaletteAccess().getColorsColorParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -53175,17 +53250,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Color__NameAssignment_1"
-    // InternalSiriusTextDsl.g:20627:1: rule__Color__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSiriusTextDsl.g:20660:1: rule__Color__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Color__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20631:1: ( ( RULE_ID ) )
-            // InternalSiriusTextDsl.g:20632:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20664:1: ( ( RULE_ID ) )
+            // InternalSiriusTextDsl.g:20665:1: ( RULE_ID )
             {
-            // InternalSiriusTextDsl.g:20632:1: ( RULE_ID )
-            // InternalSiriusTextDsl.g:20633:1: RULE_ID
+            // InternalSiriusTextDsl.g:20665:1: ( RULE_ID )
+            // InternalSiriusTextDsl.g:20666:1: RULE_ID
             {
              before(grammarAccess.getColorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -53212,17 +53287,17 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Color__ValueAssignment_3"
-    // InternalSiriusTextDsl.g:20642:1: rule__Color__ValueAssignment_3 : ( ruleColorValue ) ;
+    // InternalSiriusTextDsl.g:20675:1: rule__Color__ValueAssignment_3 : ( ruleColorValue ) ;
     public final void rule__Color__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20646:1: ( ( ruleColorValue ) )
-            // InternalSiriusTextDsl.g:20647:1: ( ruleColorValue )
+            // InternalSiriusTextDsl.g:20679:1: ( ( ruleColorValue ) )
+            // InternalSiriusTextDsl.g:20680:1: ( ruleColorValue )
             {
-            // InternalSiriusTextDsl.g:20647:1: ( ruleColorValue )
-            // InternalSiriusTextDsl.g:20648:1: ruleColorValue
+            // InternalSiriusTextDsl.g:20680:1: ( ruleColorValue )
+            // InternalSiriusTextDsl.g:20681:1: ruleColorValue
             {
              before(grammarAccess.getColorAccess().getValueColorValueParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -53252,22 +53327,22 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Color__ValueAssignment_3"
 
 
-    // $ANTLR start "rule__RGB__RedAssignment_1"
-    // InternalSiriusTextDsl.g:20657:1: rule__RGB__RedAssignment_1 : ( RULE_INT ) ;
-    public final void rule__RGB__RedAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__RGB__RedAssignment_2"
+    // InternalSiriusTextDsl.g:20690:1: rule__RGB__RedAssignment_2 : ( RULE_INT ) ;
+    public final void rule__RGB__RedAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20661:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:20662:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20694:1: ( ( RULE_INT ) )
+            // InternalSiriusTextDsl.g:20695:1: ( RULE_INT )
             {
-            // InternalSiriusTextDsl.g:20662:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:20663:1: RULE_INT
+            // InternalSiriusTextDsl.g:20695:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20696:1: RULE_INT
             {
-             before(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0()); 
+             after(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -53286,25 +53361,25 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__RGB__RedAssignment_1"
+    // $ANTLR end "rule__RGB__RedAssignment_2"
 
 
-    // $ANTLR start "rule__RGB__GreenAssignment_3"
-    // InternalSiriusTextDsl.g:20672:1: rule__RGB__GreenAssignment_3 : ( RULE_INT ) ;
-    public final void rule__RGB__GreenAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__RGB__GreenAssignment_4"
+    // InternalSiriusTextDsl.g:20705:1: rule__RGB__GreenAssignment_4 : ( RULE_INT ) ;
+    public final void rule__RGB__GreenAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20676:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:20677:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20709:1: ( ( RULE_INT ) )
+            // InternalSiriusTextDsl.g:20710:1: ( RULE_INT )
             {
-            // InternalSiriusTextDsl.g:20677:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:20678:1: RULE_INT
+            // InternalSiriusTextDsl.g:20710:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20711:1: RULE_INT
             {
-             before(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0()); 
+             before(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0()); 
+             after(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_4_0()); 
 
             }
 
@@ -53323,25 +53398,25 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__RGB__GreenAssignment_3"
+    // $ANTLR end "rule__RGB__GreenAssignment_4"
 
 
-    // $ANTLR start "rule__RGB__BlueAssignment_5"
-    // InternalSiriusTextDsl.g:20687:1: rule__RGB__BlueAssignment_5 : ( RULE_INT ) ;
-    public final void rule__RGB__BlueAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__RGB__BlueAssignment_6"
+    // InternalSiriusTextDsl.g:20720:1: rule__RGB__BlueAssignment_6 : ( RULE_INT ) ;
+    public final void rule__RGB__BlueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalSiriusTextDsl.g:20691:1: ( ( RULE_INT ) )
-            // InternalSiriusTextDsl.g:20692:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20724:1: ( ( RULE_INT ) )
+            // InternalSiriusTextDsl.g:20725:1: ( RULE_INT )
             {
-            // InternalSiriusTextDsl.g:20692:1: ( RULE_INT )
-            // InternalSiriusTextDsl.g:20693:1: RULE_INT
+            // InternalSiriusTextDsl.g:20725:1: ( RULE_INT )
+            // InternalSiriusTextDsl.g:20726:1: RULE_INT
             {
-             before(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0()); 
+             before(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0()); 
+             after(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_6_0()); 
 
             }
 
@@ -53360,7 +53435,7 @@ public class InternalSiriusTextDslParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__RGB__BlueAssignment_5"
+    // $ANTLR end "rule__RGB__BlueAssignment_6"
 
     // Delegated rules
 

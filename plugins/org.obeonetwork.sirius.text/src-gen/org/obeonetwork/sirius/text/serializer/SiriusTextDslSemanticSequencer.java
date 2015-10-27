@@ -456,9 +456,9 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_1_0(), semanticObject.getRed());
-		feeder.accept(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_3_0(), semanticObject.getGreen());
-		feeder.accept(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_5_0(), semanticObject.getBlue());
+		feeder.accept(grammarAccess.getRGBAccess().getRedINTTerminalRuleCall_2_0(), semanticObject.getRed());
+		feeder.accept(grammarAccess.getRGBAccess().getGreenINTTerminalRuleCall_4_0(), semanticObject.getGreen());
+		feeder.accept(grammarAccess.getRGBAccess().getBlueINTTerminalRuleCall_6_0(), semanticObject.getBlue());
 		feeder.finish();
 	}
 	
