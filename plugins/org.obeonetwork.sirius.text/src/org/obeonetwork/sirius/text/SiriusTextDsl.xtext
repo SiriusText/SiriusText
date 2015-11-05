@@ -37,7 +37,7 @@ Designer:
 
 Viewpoint:
 	(documentation=DOCUMENTATION)?
-	('@IconPath(' iconPath=STRING ')')?
+	('@IconPath' '(' iconPath=STRING ')')?
 	'viewpoint' name=ID ('as' label=STRING)? '{'
 		('modelFileExtensions' '=' '[' modelFileExtensions+=STRING (',' modelFileExtensions+=STRING)*']')?
 		('representations' '=' '[' (representations+=[Representation | QualifiedName] (',' representations+=[Representation | QualifiedName])*)? ']')?
@@ -70,7 +70,7 @@ Diagram:
 
 Layer:
 	(documentation=DOCUMENTATION)?
-	('@IconPath(' iconPath=STRING ')')?
+	('@IconPath' '(' iconPath=STRING ')')?
 	'layer' name=ID '{'
 		('mappings' '=' '['
 			(mappings+=[Mapping | QualifiedName] (',' mappings+=[Mapping | QualifiedName])*)?
@@ -86,7 +86,7 @@ Layer:
 
 Section:
 	(documentation=DOCUMENTATION)?
-	('@IconPath(' iconPath=STRING ')')?
+	('@IconPath' '(' iconPath=STRING ')')?
 	'section' name=ID ('as' label=STRING)? '{'
 		('tools' '=' '['
 			(tools+=[Tool | QualifiedName] (',' tools+=[Tool | QualifiedName])*)?
@@ -101,9 +101,9 @@ Tool:
 ContainerCreation:
 	(documentation=DOCUMENTATION)?
 	(forceRefresh?='@ForceRefresh')?
-	('@IconPath(' iconPath=STRING ')')?
-	'@NodeCreationVariable' '('nodeCreationVariable=STRING')'
-	'@ContainerViewVariable' '('containerViewVariable=STRING')'
+	('@IconPath' '(' iconPath=STRING ')')?
+	('@NodeCreationVariable' '('nodeCreationVariable=STRING')')?
+	('@ContainerViewVariable' '('containerViewVariable=STRING')')?
 	'containerCreation' name=ID ('as' label=STRING)? ('?' preconditionExpression=EXPRESSION)? '{'
 		'containerMappings' '=' '['
 			(containerMappings+=[Mapping | QualifiedName] (',' containerMappings+=[Mapping | QualifiedName])*)?
@@ -269,7 +269,7 @@ Square:
 Label:
 	(showIcon?='@ShowIcon')?
 	(hideByDefault?='@HideByDefault')?
-	('@IconPath(' iconPath=STRING ')')?
+	('@IconPath' '(' iconPath=STRING ')')?
 	'label' (formatOptions+=LabelFormatOption)* (alignment=LabelAlignment)? ('size' '=' size=INT)? expression=EXPRESSION 'in' color=[Color | QualifiedName]
 ;
 
@@ -365,7 +365,7 @@ enum EndsCentering:
 
 EdgeLabel:
 	(showIcon?='@ShowIcon')?
-	('@IconPath(' iconPath=STRING ')')?
+	('@IconPath' '(' iconPath=STRING ')')?
 	'label' (formatOptions+=LabelFormatOption)* ('size' '=' size=INT)? expression=EXPRESSION 'in' color=[Color | QualifiedName]
 ;
 

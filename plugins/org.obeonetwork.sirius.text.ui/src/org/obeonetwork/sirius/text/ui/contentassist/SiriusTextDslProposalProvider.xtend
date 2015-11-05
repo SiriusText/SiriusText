@@ -25,6 +25,8 @@ import org.eclipse.core.resources.IFile
 import org.eclipse.jdt.core.IPackageFragment
 import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.IStorage
+import org.eclipse.xtext.Keyword
+import java.util.Set
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
@@ -32,8 +34,21 @@ import org.eclipse.core.resources.IStorage
  */
 class SiriusTextDslProposalProvider extends AbstractSiriusTextDslProposalProvider {
 	
+	private static final Set<String> KEYWORDS_TO_IGNORE = newLinkedHashSet('designer', '@IconPath', 'viewpoint',
+		'@Initialized', '@ShowOnStartup', '@EnablePopupBars', '@MetamodelUris', 'diagram', 'layer', 'section',
+		'@ForceRefresh', '@NodeCreationVariable', '@ContainerViewVariable', 'containerCreation', 'node', 'container',
+		'@AllowHorizontalResizing', '@AllowVerticalResizing', 'square', 'gradient', 'relationBasedEdge', 'edgeStyle',
+		'palette')
+	
 	@Inject
 	private IStorage2UriMapper storage2UriMapper;
+	
+	override completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
+		if (KEYWORDS_TO_IGNORE.contains(keyword.value)) {
+			return
+		}
+		super.completeKeyword(keyword, contentAssistContext, acceptor)
+	}
 	
 	override complete_SiriusFile(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		val packageName = this.getPackageName(model)

@@ -14,6 +14,7 @@ import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Calendar;
 import java.util.Iterator;
+import java.util.Set;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -27,12 +28,14 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.resource.IStorage2UriMapper;
 import org.eclipse.xtext.util.Pair;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.obeonetwork.sirius.text.ui.contentassist.AbstractSiriusTextDslProposalProvider;
 import org.obeonetwork.sirius.text.ui.contentassist.SiriusTextCompletionProposal;
@@ -43,8 +46,24 @@ import org.obeonetwork.sirius.text.ui.contentassist.SiriusTextCompletionProposal
  */
 @SuppressWarnings("all")
 public class SiriusTextDslProposalProvider extends AbstractSiriusTextDslProposalProvider {
+  private final static Set<String> KEYWORDS_TO_IGNORE = CollectionLiterals.<String>newLinkedHashSet("designer", "@IconPath", "viewpoint", 
+    "@Initialized", "@ShowOnStartup", "@EnablePopupBars", "@MetamodelUris", "diagram", "layer", "section", 
+    "@ForceRefresh", "@NodeCreationVariable", "@ContainerViewVariable", "containerCreation", "node", "container", 
+    "@AllowHorizontalResizing", "@AllowVerticalResizing", "square", "gradient", "relationBasedEdge", "edgeStyle", 
+    "palette");
+  
   @Inject
   private IStorage2UriMapper storage2UriMapper;
+  
+  @Override
+  public void completeKeyword(final Keyword keyword, final ContentAssistContext contentAssistContext, final ICompletionProposalAcceptor acceptor) {
+    String _value = keyword.getValue();
+    boolean _contains = SiriusTextDslProposalProvider.KEYWORDS_TO_IGNORE.contains(_value);
+    if (_contains) {
+      return;
+    }
+    super.completeKeyword(keyword, contentAssistContext, acceptor);
+  }
   
   @Override
   public void complete_SiriusFile(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {

@@ -1,4 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <templates>
-<template id="modelFileExtensionsTemplate" name="modelFileExtensions" description="Model File Extensions" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_modelFileExtensions" enabled="true">modelFileExtensions = ['xmi']</template> 
+<template id="designer" name="designer" description="Create a new designer" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_designer" enabled="true">/**
+ *
+ */
+designer ${DesignerName} as '${DesignerLabel}' {
+	${cursor}
+}
+</template>
+<template id="viewpoint" name="viewpoint" description="Create a new viewpoint" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_viewpoint" enabled="true">/**
+ *
+ */
+viewpoint ${ViewpointName} as '${ViewpointLabel}' {
+	modelFileExtensions = ['${xmi}']	
+	representations = [${cursor}]
+	javaExtensions = [${cursor}]
+}
+</template>
+<template id="diagram" name="diagram" description="Create a new diagram" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_diagram" enabled="true">/**
+ *
+ */
+@Initialized
+@EnablePopupBars
+@MetamodelUris({
+	'${metamodelUri}'
+})
+diagram ${DiagramName} as '${DiagramLabel}' for '${eClass}' {
+	documentation = ''
+	titleExpression = ""
+	rootExpression = ""
+	
+	defaultLayer = ${DefaultLayer}
+	additionalLayers = []
+}
+</template>
+<template id="layer" name="layer" description="Create a new layer" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_layer" enabled="true">/**
+ *
+ */
+layer ${LayerName} {
+	mappings = [${cursor}]
+	edges = [${cursor}]
+	sections = [${cursor}]
+}
+</template>
+<template id="node" name="node" description="Create a new node" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_node" enabled="true">/**
+ *
+ */
+node ${NodeName} as '${NodeLabel}' for '${eClass}' style ${NodeStyle} {
+	semanticCandidatesExpression = "${cursor}"
+}
+</template>
+<template id="container" name="container" description="Create a new container" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_container" enabled="true">/**
+ *
+ */
+container ${freeForm} ${ContainerName} as '${ContainerLabel}' for '${eClass}' style ${ContainerStyle} {
+	semanticCandidatesExpression = "${cursor}"
+}
+</template>
+<template id="relationBasedEdge" name="relationBasedEdge" description="Create a new relation-based edge" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_relationBasedEdge" enabled="true">/**
+ *
+ */
+relationBasedEdge ${EdgeName} as '${EdgeLabel}' style ${EdgeStyle} {
+	sourceMappings = []
+	targetMappings = []
+	targetFinderExpression = "${cursor}"
+}
+</template>
+<template id="square" name="square" description="Create a new square" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_square" enabled="true">/**
+ *
+ */
+@AllowVerticalResizing
+@AllowHorizontalResizing
+square ${SquareName} in '${SquareColor}' {
+	@ShowIcon
+	label center size = 8 "${cursor}" in ${LabelColor}
+	labelBorderStyle = ${node}
+	
+	border ${solid} size = "${1}" in ${BorderColor}
+	
+	height = ${0}
+	width = ${0}
+	
+	sizeComputationExpression = "${3}"
+	
+	tooltipExpression = "${cursor}"
+}
+</template>
+<template id="gradient" name="gradient" description="Create a new gradient" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_gradient" enabled="true">/**
+ *
+ */
+gradient ${GradientName} from '${BackgroundColor}' to '${ForegroundColor}' {
+	@ShowIcon
+	label center size = 8 "${cursor}" in ${LabelColor}
+	labelBorderStyle = ${labelBorderForContainer}
+	
+	border ${solid} size = "${1}" in ${borderColor}
+	
+	heightComputationExpression = "${12}"
+	widthComputationExpression = "${15}"
+	
+	arcHeight = ${5}
+	arcWidth = ${5}
+	
+	tooltipExpression = "${cursor}"
+}
+</template>
+<template id="edgeStyle" name="edgeStyle" description="Create a new edge style" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_edgeStyle" enabled="true">/**
+ *
+ */
+edgeStyle ${EdgeStyleName} in ${StrokeColor} line = ${solid} routing = ${straight} {
+	@ShowIcon
+	label size = 8 "${cursor}" in ${LabelColor}
+	
+	sourceArrow = ${NoDecoration}
+	targetArrow = ${OutputArrow}
+	
+	sizeComputationExpression = "${2}"
+	
+	foldingStyle = ${none}
+	endsCentering = ${none}
+}
+</template>
+<template id="containerCreation" name="containerCreation" description="Create a new container creation tool" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_containerCreation" enabled="true">/**
+ *
+ */
+@NodeCreationVariable('container')
+@ContainerViewVariable('containerView')
+containerCreation ${ContainerCreationName} as '${ContainerCreationLabel}' {
+	containerMappings = [${cursor}]
+	extraMappings = [${cursor}]
+	
+	begin {
+		${cursor}
+	}
+}
+</template>
+<template id="palette" name="palette" description="Create a new palette" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_palette" enabled="true">/**
+ *
+ */
+palette ${PaletteName} {
+	${cursor}
+}
+</template>
+<template id="color" name="color" description="Create a new color" context="org.obeonetwork.sirius.text.SiriusTextDsl.kw_color" enabled="true">color ${Black} = rgb(${0}, ${0}, ${0})</template>
 </templates>

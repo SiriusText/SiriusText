@@ -279,8 +279,8 @@ public class SiriusTextDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *         documentation=DOCUMENTATION? 
 	 *         forceRefresh?='@ForceRefresh'? 
 	 *         iconPath=STRING? 
-	 *         nodeCreationVariable=STRING 
-	 *         containerViewVariable=STRING 
+	 *         nodeCreationVariable=STRING? 
+	 *         containerViewVariable=STRING? 
 	 *         name=ID 
 	 *         label=STRING? 
 	 *         preconditionExpression=EXPRESSION? 

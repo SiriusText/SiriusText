@@ -22,7 +22,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 
 	protected SiriusTextDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ChangeContext___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
-	protected AbstractElementAlias match_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q;
+	protected AbstractElementAlias match_ContainerCreation___ExtraMappingsKeyword_15_0_EqualsSignKeyword_15_1_LeftSquareBracketKeyword_15_2_RightSquareBracketKeyword_15_4__q;
 	protected AbstractElementAlias match_CreateEdgeView___LeftCurlyBracketKeyword_20_0_RightCurlyBracketKeyword_20_2__q;
 	protected AbstractElementAlias match_CreateInstance___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q;
 	protected AbstractElementAlias match_CreateView___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q;
@@ -44,7 +44,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SiriusTextDslGrammarAccess) access;
 		match_ChangeContext___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getChangeContextAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getChangeContextAccess().getRightCurlyBracketKeyword_4_2()));
-		match_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getExtraMappingsKeyword_21_0()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_21_1()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_21_2()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_21_4()));
+		match_ContainerCreation___ExtraMappingsKeyword_15_0_EqualsSignKeyword_15_1_LeftSquareBracketKeyword_15_2_RightSquareBracketKeyword_15_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getExtraMappingsKeyword_15_0()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getEqualsSignKeyword_15_1()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getLeftSquareBracketKeyword_15_2()), new TokenAlias(false, false, grammarAccess.getContainerCreationAccess().getRightSquareBracketKeyword_15_4()));
 		match_CreateEdgeView___LeftCurlyBracketKeyword_20_0_RightCurlyBracketKeyword_20_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateEdgeViewAccess().getLeftCurlyBracketKeyword_20_0()), new TokenAlias(false, false, grammarAccess.getCreateEdgeViewAccess().getRightCurlyBracketKeyword_20_2()));
 		match_CreateInstance___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateInstanceAccess().getLeftCurlyBracketKeyword_12_0()), new TokenAlias(false, false, grammarAccess.getCreateInstanceAccess().getRightCurlyBracketKeyword_12_2()));
 		match_CreateView___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateViewAccess().getLeftCurlyBracketKeyword_12_0()), new TokenAlias(false, false, grammarAccess.getCreateViewAccess().getRightCurlyBracketKeyword_12_2()));
@@ -77,8 +77,8 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_ChangeContext___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_ChangeContext___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q.equals(syntax))
-				emit_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ContainerCreation___ExtraMappingsKeyword_15_0_EqualsSignKeyword_15_1_LeftSquareBracketKeyword_15_2_RightSquareBracketKeyword_15_4__q.equals(syntax))
+				emit_ContainerCreation___ExtraMappingsKeyword_15_0_EqualsSignKeyword_15_1_LeftSquareBracketKeyword_15_2_RightSquareBracketKeyword_15_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_CreateEdgeView___LeftCurlyBracketKeyword_20_0_RightCurlyBracketKeyword_20_2__q.equals(syntax))
 				emit_CreateEdgeView___LeftCurlyBracketKeyword_20_0_RightCurlyBracketKeyword_20_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_CreateInstance___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q.equals(syntax))
@@ -140,7 +140,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     preconditionExpression=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
 	 *     preconditionExpression=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
 	 */
-	protected void emit_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ContainerCreation___ExtraMappingsKeyword_15_0_EqualsSignKeyword_15_1_LeftSquareBracketKeyword_15_2_RightSquareBracketKeyword_15_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
