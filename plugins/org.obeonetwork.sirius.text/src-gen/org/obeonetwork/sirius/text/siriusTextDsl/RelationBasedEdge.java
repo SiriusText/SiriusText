@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getSourceMappings <em>Source Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetMappings <em>Target Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getTargetFinderExpression <em>Target Finder Expression</em>}</li>
@@ -131,6 +132,32 @@ public interface RelationBasedEdge extends Edge
    * @generated
    */
   void setStyle(EdgeStyle value);
+
+  /**
+   * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Precondition Expression</em>' attribute.
+   * @see #setPreconditionExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getRelationBasedEdge_PreconditionExpression()
+   * @model
+   * @generated
+   */
+  String getPreconditionExpression();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+   * @see #getPreconditionExpression()
+   * @generated
+   */
+  void setPreconditionExpression(String value);
 
   /**
    * Returns the value of the '<em><b>Source Mappings</b></em>' reference list.

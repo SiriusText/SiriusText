@@ -17,14 +17,14 @@ package org.obeonetwork.sirius.text.siriusTextDsl;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getForegroundColor <em>Foreground Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression <em>Label Expression</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelColor <em>Label Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize <em>Border Size</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderColor <em>Border Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelBorderStyle <em>Label Border Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorder <em>Border</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression <em>Height Computation Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getWidthComputationExpression <em>Width Computation Expression</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcHeight <em>Arc Height</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcWidth <em>Arc Width</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getTooltipExpression <em>Tooltip Expression</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient()
@@ -167,163 +167,85 @@ public interface Gradient extends ContainerStyle
   void setForegroundColor(Color value);
 
   /**
-   * Returns the value of the '<em><b>Label Alignment</b></em>' attribute.
-   * The literals are from the enumeration {@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment}.
+   * Returns the value of the '<em><b>Label</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Label Alignment</em>' attribute isn't clear,
+   * If the meaning of the '<em>Label</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Label Alignment</em>' attribute.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
-   * @see #setLabelAlignment(LabelAlignment)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_LabelAlignment()
-   * @model
+   * @return the value of the '<em>Label</em>' containment reference.
+   * @see #setLabel(Label)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Label()
+   * @model containment="true"
    * @generated
    */
-  LabelAlignment getLabelAlignment();
+  Label getLabel();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabel <em>Label</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Label Alignment</em>' attribute.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment
-   * @see #getLabelAlignment()
+   * @param value the new value of the '<em>Label</em>' containment reference.
+   * @see #getLabel()
    * @generated
    */
-  void setLabelAlignment(LabelAlignment value);
+  void setLabel(Label value);
 
   /**
-   * Returns the value of the '<em><b>Label Expression</b></em>' attribute.
+   * Returns the value of the '<em><b>Label Border Style</b></em>' attribute.
+   * The literals are from the enumeration {@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Label Expression</em>' attribute isn't clear,
+   * If the meaning of the '<em>Label Border Style</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Label Expression</em>' attribute.
-   * @see #setLabelExpression(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_LabelExpression()
+   * @return the value of the '<em>Label Border Style</em>' attribute.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle
+   * @see #setLabelBorderStyle(ContainerLabelBorderStyle)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_LabelBorderStyle()
    * @model
    * @generated
    */
-  String getLabelExpression();
+  ContainerLabelBorderStyle getLabelBorderStyle();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression <em>Label Expression</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelBorderStyle <em>Label Border Style</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Label Expression</em>' attribute.
-   * @see #getLabelExpression()
+   * @param value the new value of the '<em>Label Border Style</em>' attribute.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle
+   * @see #getLabelBorderStyle()
    * @generated
    */
-  void setLabelExpression(String value);
+  void setLabelBorderStyle(ContainerLabelBorderStyle value);
 
   /**
-   * Returns the value of the '<em><b>Label Color</b></em>' reference.
+   * Returns the value of the '<em><b>Border</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Label Color</em>' reference isn't clear,
+   * If the meaning of the '<em>Border</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Label Color</em>' reference.
-   * @see #setLabelColor(Color)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_LabelColor()
-   * @model
+   * @return the value of the '<em>Border</em>' containment reference.
+   * @see #setBorder(Border)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Border()
+   * @model containment="true"
    * @generated
    */
-  Color getLabelColor();
+  Border getBorder();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelColor <em>Label Color</em>}' reference.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorder <em>Border</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Label Color</em>' reference.
-   * @see #getLabelColor()
+   * @param value the new value of the '<em>Border</em>' containment reference.
+   * @see #getBorder()
    * @generated
    */
-  void setLabelColor(Color value);
-
-  /**
-   * Returns the value of the '<em><b>Border Size</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Border Size</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Border Size</em>' attribute.
-   * @see #setBorderSize(int)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_BorderSize()
-   * @model
-   * @generated
-   */
-  int getBorderSize();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize <em>Border Size</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Border Size</em>' attribute.
-   * @see #getBorderSize()
-   * @generated
-   */
-  void setBorderSize(int value);
-
-  /**
-   * Returns the value of the '<em><b>Border Color</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Border Color</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Border Color</em>' reference.
-   * @see #setBorderColor(Color)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_BorderColor()
-   * @model
-   * @generated
-   */
-  Color getBorderColor();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderColor <em>Border Color</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Border Color</em>' reference.
-   * @see #getBorderColor()
-   * @generated
-   */
-  void setBorderColor(Color value);
-
-  /**
-   * Returns the value of the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Icon</em>' attribute.
-   * @see #setIcon(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_Icon()
-   * @model
-   * @generated
-   */
-  String getIcon();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getIcon <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Icon</em>' attribute.
-   * @see #getIcon()
-   * @generated
-   */
-  void setIcon(String value);
+  void setBorder(Border value);
 
   /**
    * Returns the value of the '<em><b>Height Computation Expression</b></em>' attribute.
@@ -376,5 +298,83 @@ public interface Gradient extends ContainerStyle
    * @generated
    */
   void setWidthComputationExpression(String value);
+
+  /**
+   * Returns the value of the '<em><b>Arc Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Arc Height</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arc Height</em>' attribute.
+   * @see #setArcHeight(int)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_ArcHeight()
+   * @model
+   * @generated
+   */
+  int getArcHeight();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcHeight <em>Arc Height</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Arc Height</em>' attribute.
+   * @see #getArcHeight()
+   * @generated
+   */
+  void setArcHeight(int value);
+
+  /**
+   * Returns the value of the '<em><b>Arc Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Arc Width</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arc Width</em>' attribute.
+   * @see #setArcWidth(int)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_ArcWidth()
+   * @model
+   * @generated
+   */
+  int getArcWidth();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcWidth <em>Arc Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Arc Width</em>' attribute.
+   * @see #getArcWidth()
+   * @generated
+   */
+  void setArcWidth(int value);
+
+  /**
+   * Returns the value of the '<em><b>Tooltip Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Tooltip Expression</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Tooltip Expression</em>' attribute.
+   * @see #setTooltipExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getGradient_TooltipExpression()
+   * @model
+   * @generated
+   */
+  String getTooltipExpression();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getTooltipExpression <em>Tooltip Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Tooltip Expression</em>' attribute.
+   * @see #getTooltipExpression()
+   * @generated
+   */
+  void setTooltipExpression(String value);
 
 } // Gradient

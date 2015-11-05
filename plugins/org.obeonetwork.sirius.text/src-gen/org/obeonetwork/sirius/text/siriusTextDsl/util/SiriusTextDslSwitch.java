@@ -283,12 +283,28 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SiriusTextDslPackage.NODE:
+      {
+        Node node = (Node)theEObject;
+        T result = caseNode(node);
+        if (result == null) result = caseMapping(node);
+        if (result == null) result = caseSiriusFileBody(node);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SiriusTextDslPackage.CONTAINER:
       {
         Container container = (Container)theEObject;
         T result = caseContainer(container);
         if (result == null) result = caseMapping(container);
         if (result == null) result = caseSiriusFileBody(container);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.CONDITIONAL_NODE_STYLE_DECLARATION:
+      {
+        ConditionalNodeStyleDeclaration conditionalNodeStyleDeclaration = (ConditionalNodeStyleDeclaration)theEObject;
+        T result = caseConditionalNodeStyleDeclaration(conditionalNodeStyleDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -304,6 +320,39 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         Style style = (Style)theEObject;
         T result = caseStyle(style);
         if (result == null) result = caseSiriusFileBody(style);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.NODE_STYLE:
+      {
+        NodeStyle nodeStyle = (NodeStyle)theEObject;
+        T result = caseNodeStyle(nodeStyle);
+        if (result == null) result = caseStyle(nodeStyle);
+        if (result == null) result = caseSiriusFileBody(nodeStyle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.SQUARE:
+      {
+        Square square = (Square)theEObject;
+        T result = caseSquare(square);
+        if (result == null) result = caseNodeStyle(square);
+        if (result == null) result = caseStyle(square);
+        if (result == null) result = caseSiriusFileBody(square);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.LABEL:
+      {
+        Label label = (Label)theEObject;
+        T result = caseLabel(label);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.BORDER:
+      {
+        Border border = (Border)theEObject;
+        T result = caseBorder(border);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -349,6 +398,13 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
         T result = caseEdgeStyle(edgeStyle);
         if (result == null) result = caseStyle(edgeStyle);
         if (result == null) result = caseSiriusFileBody(edgeStyle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SiriusTextDslPackage.EDGE_LABEL:
+      {
+        EdgeLabel edgeLabel = (EdgeLabel)theEObject;
+        T result = caseEdgeLabel(edgeLabel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -819,6 +875,22 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNode(Node object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -830,6 +902,22 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseContainer(Container object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conditional Node Style Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conditional Node Style Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditionalNodeStyleDeclaration(ConditionalNodeStyleDeclaration object)
   {
     return null;
   }
@@ -862,6 +950,70 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStyle(Style object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Node Style</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node Style</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNodeStyle(NodeStyle object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Square</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Square</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSquare(Square object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Label</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLabel(Label object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Border</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Border</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBorder(Border object)
   {
     return null;
   }
@@ -942,6 +1094,22 @@ public class SiriusTextDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEdgeStyle(EdgeStyle object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edge Label</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edge Label</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEdgeLabel(EdgeLabel object)
   {
     return null;
   }

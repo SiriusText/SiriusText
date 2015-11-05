@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getDomainClass <em>Domain Class</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getEndUserDocumentation <em>End User Documentation</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getTitleExpression <em>Title Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getRootExpression <em>Root Expression</em>}</li>
@@ -234,30 +234,30 @@ public interface Diagram extends Representation
   void setDomainClass(String value);
 
   /**
-   * Returns the value of the '<em><b>Precondition</b></em>' attribute.
+   * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Precondition</em>' attribute isn't clear,
+   * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Precondition</em>' attribute.
-   * @see #setPrecondition(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getDiagram_Precondition()
+   * @return the value of the '<em>Precondition Expression</em>' attribute.
+   * @see #setPreconditionExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getDiagram_PreconditionExpression()
    * @model
    * @generated
    */
-  String getPrecondition();
+  String getPreconditionExpression();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPrecondition <em>Precondition</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Precondition</em>' attribute.
-   * @see #getPrecondition()
+   * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+   * @see #getPreconditionExpression()
    * @generated
    */
-  void setPrecondition(String value);
+  void setPreconditionExpression(String value);
 
   /**
    * Returns the value of the '<em><b>End User Documentation</b></em>' attribute.

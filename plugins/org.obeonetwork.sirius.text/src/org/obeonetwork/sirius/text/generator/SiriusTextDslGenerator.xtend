@@ -80,6 +80,16 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Switch
 import org.eclipse.sirius.viewpoint.description.tool.ToolPackage
 import org.obeonetwork.sirius.text.siriusTextDsl.Default
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration
+import org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription
+import org.obeonetwork.sirius.text.siriusTextDsl.Label
+import org.eclipse.sirius.viewpoint.FontFormat
+import org.obeonetwork.sirius.text.siriusTextDsl.Node
+import org.eclipse.sirius.diagram.description.NodeMapping
+import org.obeonetwork.sirius.text.siriusTextDsl.Square
+import org.eclipse.sirius.diagram.description.style.SquareDescription
+import org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription
+import org.eclipse.sirius.diagram.ResizeKind
+import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage
 
 /**
  * Generates code from your model files on save.
@@ -219,7 +229,7 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		siriusViewpoint.name = viewpoint.name
 		siriusViewpoint.label = viewpoint.label
 		siriusViewpoint.documentation = viewpoint.documentation
-		siriusViewpoint.icon = viewpoint.icon
+		siriusViewpoint.icon = this.trimQuotes(viewpoint.iconPath)
 		siriusViewpoint.modelFileExtension = viewpoint.modelFileExtensions.reduce[a, b | a + ", " + b]
 		
 		viewpoint.javaExtension.forEach[j |
@@ -245,6 +255,7 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		diagramDescription.showOnStartup = diagram.showOnStartup
 		diagramDescription.initialisation = diagram.initialized
 		diagramDescription.enablePopupBars = diagram.enablePopupBars
+		diagramDescription.preconditionExpression = this.trimQuotes(diagram.preconditionExpression)
 		
 		val defaultLayer = diagram.defaultLayer
 		if (defaultLayer != null) {
@@ -267,6 +278,13 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 			siriusLayer.containerMappings.add(containerMapping)
 			cache.put(c, containerMapping)
 			this.populateContainerMapping(containerMapping, c)
+		]
+		
+		layer.mappings.filter(Node).forEach[n |
+			val nodeMapping = DescriptionFactory.eINSTANCE.createNodeMapping
+			siriusLayer.nodeMappings.add(nodeMapping)
+			cache.put(n, nodeMapping)
+			this.populateNodeMapping(nodeMapping, n)
 		]
 		
 		layer.edges.filter(RelationBasedEdge).forEach[r |
@@ -302,8 +320,9 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 	def private populateContainerCreationDescription(ContainerCreationDescription containerCreationDescription, ContainerCreation containerCreation) {
 		containerCreationDescription.name = containerCreation.name
 		containerCreationDescription.label = containerCreation.label
+		containerCreationDescription.precondition = this.trimQuotes(containerCreation.preconditionExpression)
 		
-		val body = containerCreation.body;
+		val body = containerCreation.body
 		if (body != null) {
 			val initialOperation = containerCreationDescription.initialOperation
 			initialOperation.firstModelOperations = this.createModelOperation(body)
@@ -482,6 +501,7 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		edgeMapping.name = relationBasedEdge.name
 		edgeMapping.label = relationBasedEdge.label
 		edgeMapping.targetFinderExpression = this.trimQuotes(relationBasedEdge.targetFinderExpression)
+		edgeMapping.preconditionExpression = this.trimQuotes(relationBasedEdge.preconditionExpression)
 		
 		val style = relationBasedEdge.style
 		if (style != null) {
@@ -578,14 +598,68 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		return centeringStyle
 	}
 	
+	def private populateNodeMapping(NodeMapping nodeMapping, Node node) {
+		nodeMapping.name = node.name
+		nodeMapping.label = node.label
+		nodeMapping.domainClass = node.domainClass
+		nodeMapping.semanticCandidatesExpression = this.trimQuotes(node.semanticCandidatesExpression)
+		nodeMapping.preconditionExpression = this.trimQuotes(node.preconditionExpression)
+		
+		if (node.style instanceof Square) {
+			val square = node.style as Square
+			val squareStyle = StyleFactory.eINSTANCE.createSquareDescription
+			nodeMapping.style = squareStyle
+			this.populateSquareStyle(squareStyle, square)
+		}
+	}
+	
+	def private populateSquareStyle(SquareDescription squareStyle, Square square) {
+		if (square.label != null) {
+			this.populateLabel(squareStyle, square.label)
+		}
+		
+		squareStyle.height = square.height
+		squareStyle.width = square.width
+		squareStyle.sizeComputationExpression = this.trimQuotes(square.sizeComputationExpression)
+		
+		if (square.allowHorizontalResizing && square.allowVerticalResizing) {
+			squareStyle.resizeKind = ResizeKind.NSEW_LITERAL
+		} else if (!square.allowHorizontalResizing && square.allowVerticalResizing) {
+			squareStyle.resizeKind = ResizeKind.NORTH_SOUTH_LITERAL
+		} else if (square.allowHorizontalResizing && !square.allowVerticalResizing) {
+			squareStyle.resizeKind = ResizeKind.EAST_WEST_LITERAL
+		} else if (!square.allowHorizontalResizing && !square.allowVerticalResizing) {
+			squareStyle.resizeKind = ResizeKind.NONE_LITERAL
+		}
+		
+		val group = this.getGroup(squareStyle)
+		if (square.color != null && group != null) {
+			squareStyle.color = this.getColorDescription(group, square.color)	
+		}
+	}
+	
 	def private populateContainerMapping(ContainerMapping containerMapping, Container container) {
 		containerMapping.name = container.name
 		containerMapping.label = container.label
 		containerMapping.domainClass = container.domainClass
-		if (container.list) {
-			containerMapping.childrenPresentation = ContainerLayout.LIST
+		containerMapping.semanticCandidatesExpression = this.trimQuotes(container.semanticCandidatesExpression)
+		containerMapping.preconditionExpression = this.trimQuotes(container.preconditionExpression)
+		
+		switch (container.childrenPresentation) {
+			case FREE_FORM: {
+				containerMapping.childrenPresentation = ContainerLayout.FREE_FORM
+			}
+			case HORIZONTAL_STACK: {
+				containerMapping.childrenPresentation = ContainerLayout.HORIZONTAL_STACK
+			}
+			case LIST: {
+				containerMapping.childrenPresentation = ContainerLayout.LIST
+			}
+			case VERTICAL_STACK: {
+				containerMapping.childrenPresentation = ContainerLayout.VERTICAL_STACK
+			}
+			
 		}
-		containerMapping.semanticCandidatesExpression = this.trimQuotes(container.semanticCanditatesExpression)
 		
 		if (container.style instanceof Gradient) {
 			val gradient = container.style as Gradient
@@ -626,7 +700,10 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 	}
 	
 	def private populateGradientStyle(FlatContainerStyleDescription gradientStyle, Gradient gradient) {
-		gradientStyle.labelExpression = this.trimQuotes(gradient.labelExpression)
+		if (gradient.label != null) {
+			this.populateLabel(gradientStyle, gradient.label)
+		}
+				
 		if (gradient.heightComputationExpression != null) {
 			gradientStyle.heightComputationExpression = this.trimQuotes(gradient.heightComputationExpression)
 		}
@@ -642,14 +719,6 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 			gradientStyle.backgroundStyle = BackgroundStyle.GRADIENT_TOP_TO_BOTTOM_LITERAL
 		}
 		
-		if (gradient.labelAlignment == LabelAlignment.LEFT) {
-			gradientStyle.labelAlignment = LabelAlignment.LEFT
-		} else if (gradient.labelAlignment == LabelAlignment.CENTER) {
-			gradientStyle.labelAlignment = LabelAlignment.CENTER
-		} else if (gradient.labelAlignment == LabelAlignment.RIGHT) {
-			gradientStyle.labelAlignment = LabelAlignment.RIGHT
-		}
-		
 		val group = this.getGroup(gradientStyle)
 		if (gradient.backgroundColor != null && group != null) {
 			gradientStyle.backgroundColor = this.getColorDescription(group, gradient.backgroundColor)	
@@ -658,6 +727,48 @@ class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
 		if (gradient.foregroundColor != null && group != null) {
 			gradientStyle.foregroundColor = this.getColorDescription(group, gradient.foregroundColor)
 		}
+	}
+	
+	def private populateLabel(LabelStyleDescription labelStyleDescription, Label label) {
+		if (label.eIsSet(SiriusTextDslPackage.Literals.LABEL__SIZE)) {
+			labelStyleDescription.labelSize = label.size
+		}
+		
+		labelStyleDescription.labelExpression = this.trimQuotes(label.expression)
+		
+		if (labelStyleDescription instanceof HideLabelCapabilityStyleDescription) {
+			val hideLabelStyleDescription = labelStyleDescription as HideLabelCapabilityStyleDescription
+			hideLabelStyleDescription.hideLabelByDefault = label.hideByDefault
+		}
+		
+		switch (label.alignment) {
+			case CENTER: {
+				labelStyleDescription.labelAlignment = LabelAlignment.CENTER
+			}
+			case LEFT: {
+				labelStyleDescription.labelAlignment = LabelAlignment.LEFT
+			}
+			case RIGHT: {
+				labelStyleDescription.labelAlignment = LabelAlignment.RIGHT
+			}
+		}
+		
+		label.formatOptions.forEach[option |
+			switch (option) {
+				case BOLD: {
+					labelStyleDescription.labelFormat.add(FontFormat.BOLD_LITERAL)
+				}
+				case ITALIC: {
+					labelStyleDescription.labelFormat.add(FontFormat.ITALIC_LITERAL)
+				}
+				case STRIKETHROUGHT: {
+					labelStyleDescription.labelFormat.add(FontFormat.STRIKE_THROUGH_LITERAL)
+				}
+				case UNDERLINE: {
+					labelStyleDescription.labelFormat.add(FontFormat.UNDERLINE_LITERAL)
+				}
+			}
+		]
 	}
 	
 	def private Group getGroup(EObject eObject) {

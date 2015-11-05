@@ -210,9 +210,19 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
         return createMappingAdapter();
       }
       @Override
+      public Adapter caseNode(Node object)
+      {
+        return createNodeAdapter();
+      }
+      @Override
       public Adapter caseContainer(Container object)
       {
         return createContainerAdapter();
+      }
+      @Override
+      public Adapter caseConditionalNodeStyleDeclaration(ConditionalNodeStyleDeclaration object)
+      {
+        return createConditionalNodeStyleDeclarationAdapter();
       }
       @Override
       public Adapter caseConditionalContainerStyleDeclaration(ConditionalContainerStyleDeclaration object)
@@ -223,6 +233,26 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStyle(Style object)
       {
         return createStyleAdapter();
+      }
+      @Override
+      public Adapter caseNodeStyle(NodeStyle object)
+      {
+        return createNodeStyleAdapter();
+      }
+      @Override
+      public Adapter caseSquare(Square object)
+      {
+        return createSquareAdapter();
+      }
+      @Override
+      public Adapter caseLabel(Label object)
+      {
+        return createLabelAdapter();
+      }
+      @Override
+      public Adapter caseBorder(Border object)
+      {
+        return createBorderAdapter();
       }
       @Override
       public Adapter caseContainerStyle(ContainerStyle object)
@@ -248,6 +278,11 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseEdgeStyle(EdgeStyle object)
       {
         return createEdgeStyleAdapter();
+      }
+      @Override
+      public Adapter caseEdgeLabel(EdgeLabel object)
+      {
+        return createEdgeLabelAdapter();
       }
       @Override
       public Adapter casePalette(Palette object)
@@ -697,6 +732,21 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Node <em>Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Node
+   * @generated
+   */
+  public Adapter createNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -707,6 +757,21 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createContainerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration <em>Conditional Node Style Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration
+   * @generated
+   */
+  public Adapter createConditionalNodeStyleDeclarationAdapter()
   {
     return null;
   }
@@ -737,6 +802,66 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle <em>Node Style</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle
+   * @generated
+   */
+  public Adapter createNodeStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square <em>Square</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square
+   * @generated
+   */
+  public Adapter createSquareAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label
+   * @generated
+   */
+  public Adapter createLabelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Border <em>Border</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Border
+   * @generated
+   */
+  public Adapter createBorderAdapter()
   {
     return null;
   }
@@ -812,6 +937,21 @@ public class SiriusTextDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEdgeStyleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel <em>Edge Label</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel
+   * @generated
+   */
+  public Adapter createEdgeLabelAdapter()
   {
     return null;
   }

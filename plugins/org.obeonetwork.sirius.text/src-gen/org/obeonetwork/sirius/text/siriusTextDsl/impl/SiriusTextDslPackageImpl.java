@@ -13,12 +13,16 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.xtext.common.types.TypesPackage;
 
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
+import org.obeonetwork.sirius.text.siriusTextDsl.Border;
 import org.obeonetwork.sirius.text.siriusTextDsl.Case;
 import org.obeonetwork.sirius.text.siriusTextDsl.ChangeContext;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
+import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView;
 import org.obeonetwork.sirius.text.siriusTextDsl.CreateInstance;
@@ -28,6 +32,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.DeleteView;
 import org.obeonetwork.sirius.text.siriusTextDsl.Designer;
 import org.obeonetwork.sirius.text.siriusTextDsl.Diagram;
 import org.obeonetwork.sirius.text.siriusTextDsl.Edge;
+import org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel;
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering;
 import org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle;
@@ -36,11 +41,16 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
 import org.obeonetwork.sirius.text.siriusTextDsl.If;
 import org.obeonetwork.sirius.text.siriusTextDsl.Import;
+import org.obeonetwork.sirius.text.siriusTextDsl.Label;
 import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
+import org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.LineStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
 import org.obeonetwork.sirius.text.siriusTextDsl.Move;
+import org.obeonetwork.sirius.text.siriusTextDsl.Node;
+import org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle;
+import org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Operation;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge;
@@ -53,6 +63,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFileBody;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslFactory;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
+import org.obeonetwork.sirius.text.siriusTextDsl.Square;
 import org.obeonetwork.sirius.text.siriusTextDsl.Style;
 import org.obeonetwork.sirius.text.siriusTextDsl.Switch;
 import org.obeonetwork.sirius.text.siriusTextDsl.Tool;
@@ -261,7 +272,21 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass nodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass containerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionalNodeStyleDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -276,6 +301,34 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * @generated
    */
   private EClass styleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nodeStyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass squareEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass labelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass borderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,6 +370,13 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass edgeLabelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass paletteEClass = null;
 
   /**
@@ -345,7 +405,35 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  private EEnum containerChildrenPresentationEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum nodeLabelBorderStyleEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum labelFormatOptionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum labelAlignmentEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum containerLabelBorderStyleEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -610,7 +698,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_Name()
+  public EAttribute getViewpoint_IconPath()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(1);
   }
@@ -620,7 +708,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_Label()
+  public EAttribute getViewpoint_Name()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(2);
   }
@@ -630,7 +718,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_ModelFileExtensions()
+  public EAttribute getViewpoint_Label()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(3);
   }
@@ -640,7 +728,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_Icon()
+  public EAttribute getViewpoint_ModelFileExtensions()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(4);
   }
@@ -770,7 +858,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDiagram_Precondition()
+  public EAttribute getDiagram_PreconditionExpression()
   {
     return (EAttribute)diagramEClass.getEStructuralFeatures().get(8);
   }
@@ -850,7 +938,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLayer_Name()
+  public EAttribute getLayer_IconPath()
   {
     return (EAttribute)layerEClass.getEStructuralFeatures().get(1);
   }
@@ -860,7 +948,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLayer_Icon()
+  public EAttribute getLayer_Name()
   {
     return (EAttribute)layerEClass.getEStructuralFeatures().get(2);
   }
@@ -920,7 +1008,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSection_Name()
+  public EAttribute getSection_IconPath()
   {
     return (EAttribute)sectionEClass.getEStructuralFeatures().get(1);
   }
@@ -930,7 +1018,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSection_Label()
+  public EAttribute getSection_Name()
   {
     return (EAttribute)sectionEClass.getEStructuralFeatures().get(2);
   }
@@ -940,7 +1028,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSection_Icon()
+  public EAttribute getSection_Label()
   {
     return (EAttribute)sectionEClass.getEStructuralFeatures().get(3);
   }
@@ -1000,7 +1088,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_NodeCreationVariable()
+  public EAttribute getContainerCreation_IconPath()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(2);
   }
@@ -1010,7 +1098,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_ContainerViewVariable()
+  public EAttribute getContainerCreation_NodeCreationVariable()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(3);
   }
@@ -1020,7 +1108,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_Name()
+  public EAttribute getContainerCreation_ContainerViewVariable()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(4);
   }
@@ -1030,7 +1118,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_Label()
+  public EAttribute getContainerCreation_Name()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(5);
   }
@@ -1040,7 +1128,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_Precondition()
+  public EAttribute getContainerCreation_Label()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(6);
   }
@@ -1050,7 +1138,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerCreation_Icon()
+  public EAttribute getContainerCreation_PreconditionExpression()
   {
     return (EAttribute)containerCreationEClass.getEStructuralFeatures().get(7);
   }
@@ -1620,6 +1708,106 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMapping_Documentation()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_Name()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_Label()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_DomainClass()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_PreconditionExpression()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_SemanticCandidatesExpression()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapping_AssociatedElementsExpression()
+  {
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNode()
+  {
+    return nodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNode_Style()
+  {
+    return (EReference)nodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNode_ConditionalStyles()
+  {
+    return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getContainer()
   {
     return containerEClass;
@@ -1630,7 +1818,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_Documentation()
+  public EAttribute getContainer_ChildrenPresentation()
   {
     return (EAttribute)containerEClass.getEStructuralFeatures().get(0);
   }
@@ -1640,69 +1828,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_List()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContainer_Name()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContainer_Label()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContainer_DomainClass()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getContainer_Style()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContainer_Precondition()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getContainer_SemanticCanditatesExpression()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(7);
+    return (EReference)containerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1712,7 +1840,37 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    */
   public EReference getContainer_ConditionalStyles()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(8);
+    return (EReference)containerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConditionalNodeStyleDeclaration()
+  {
+    return conditionalNodeStyleDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditionalNodeStyleDeclaration_Style()
+  {
+    return (EReference)conditionalNodeStyleDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConditionalNodeStyleDeclaration_ConditionalStyleExpression()
+  {
+    return (EAttribute)conditionalNodeStyleDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1753,6 +1911,276 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
   public EClass getStyle()
   {
     return styleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNodeStyle()
+  {
+    return nodeStyleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSquare()
+  {
+    return squareEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_Documentation()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_AllowVerticalResizing()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_AllowHorizontalResizing()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_Name()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSquare_Color()
+  {
+    return (EReference)squareEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSquare_Label()
+  {
+    return (EReference)squareEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_LabelBorderStyle()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSquare_Border()
+  {
+    return (EReference)squareEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_Height()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_Width()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_SizeComputationExpression()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSquare_TooltipExpression()
+  {
+    return (EAttribute)squareEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLabel()
+  {
+    return labelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_ShowIcon()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_HideByDefault()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_IconPath()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_FormatOptions()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_Alignment()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_Size()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLabel_Expression()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLabel_Color()
+  {
+    return (EReference)labelEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBorder()
+  {
+    return borderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBorder_LineStyle()
+  {
+    return (EAttribute)borderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBorder_BorderSizeComputationExpression()
+  {
+    return (EAttribute)borderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBorder_BorderColor()
+  {
+    return (EReference)borderEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1830,9 +2258,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_LabelAlignment()
+  public EReference getGradient_Label()
   {
-    return (EAttribute)gradientEClass.getEStructuralFeatures().get(5);
+    return (EReference)gradientEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1840,7 +2268,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_LabelExpression()
+  public EAttribute getGradient_LabelBorderStyle()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(6);
   }
@@ -1850,7 +2278,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGradient_LabelColor()
+  public EReference getGradient_Border()
   {
     return (EReference)gradientEClass.getEStructuralFeatures().get(7);
   }
@@ -1860,7 +2288,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_BorderSize()
+  public EAttribute getGradient_HeightComputationExpression()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(8);
   }
@@ -1870,9 +2298,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGradient_BorderColor()
+  public EAttribute getGradient_WidthComputationExpression()
   {
-    return (EReference)gradientEClass.getEStructuralFeatures().get(9);
+    return (EAttribute)gradientEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1880,7 +2308,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_Icon()
+  public EAttribute getGradient_ArcHeight()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(10);
   }
@@ -1890,7 +2318,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_HeightComputationExpression()
+  public EAttribute getGradient_ArcWidth()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(11);
   }
@@ -1900,7 +2328,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGradient_WidthComputationExpression()
+  public EAttribute getGradient_TooltipExpression()
   {
     return (EAttribute)gradientEClass.getEStructuralFeatures().get(12);
   }
@@ -1970,9 +2398,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelationBasedEdge_SourceMappings()
+  public EAttribute getRelationBasedEdge_PreconditionExpression()
   {
-    return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1980,7 +2408,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelationBasedEdge_TargetMappings()
+  public EReference getRelationBasedEdge_SourceMappings()
   {
     return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(5);
   }
@@ -1990,9 +2418,19 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getRelationBasedEdge_TargetMappings()
+  {
+    return (EReference)relationBasedEdgeEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getRelationBasedEdge_TargetFinderExpression()
   {
-    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)relationBasedEdgeEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -2050,9 +2488,9 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEdgeStyle_SourceArrow()
+  public EReference getEdgeStyle_Label()
   {
-    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(4);
+    return (EReference)edgeStyleEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2060,7 +2498,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEdgeStyle_TargetArrow()
+  public EAttribute getEdgeStyle_SourceArrow()
   {
     return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(5);
   }
@@ -2070,7 +2508,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEdgeStyle_SizeComputationExpression()
+  public EAttribute getEdgeStyle_TargetArrow()
   {
     return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(6);
   }
@@ -2080,7 +2518,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEdgeStyle_FoldingStyle()
+  public EAttribute getEdgeStyle_SizeComputationExpression()
   {
     return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(7);
   }
@@ -2090,9 +2528,89 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEdgeStyle_EndsCentering()
+  public EAttribute getEdgeStyle_FoldingStyle()
   {
     return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeStyle_EndsCentering()
+  {
+    return (EAttribute)edgeStyleEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEdgeLabel()
+  {
+    return edgeLabelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeLabel_ShowIcon()
+  {
+    return (EAttribute)edgeLabelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeLabel_IconPath()
+  {
+    return (EAttribute)edgeLabelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeLabel_FormatOptions()
+  {
+    return (EAttribute)edgeLabelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeLabel_Size()
+  {
+    return (EAttribute)edgeLabelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEdgeLabel_Expression()
+  {
+    return (EAttribute)edgeLabelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEdgeLabel_Color()
+  {
+    return (EReference)edgeLabelEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2220,9 +2738,49 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getContainerChildrenPresentation()
+  {
+    return containerChildrenPresentationEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getNodeLabelBorderStyle()
+  {
+    return nodeLabelBorderStyleEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLabelFormatOption()
+  {
+    return labelFormatOptionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getLabelAlignment()
   {
     return labelAlignmentEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getContainerLabelBorderStyle()
+  {
+    return containerLabelBorderStyleEEnum;
   }
 
   /**
@@ -2334,10 +2892,10 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     viewpointEClass = createEClass(VIEWPOINT);
     createEAttribute(viewpointEClass, VIEWPOINT__DOCUMENTATION);
+    createEAttribute(viewpointEClass, VIEWPOINT__ICON_PATH);
     createEAttribute(viewpointEClass, VIEWPOINT__NAME);
     createEAttribute(viewpointEClass, VIEWPOINT__LABEL);
     createEAttribute(viewpointEClass, VIEWPOINT__MODEL_FILE_EXTENSIONS);
-    createEAttribute(viewpointEClass, VIEWPOINT__ICON);
     createEReference(viewpointEClass, VIEWPOINT__REPRESENTATIONS);
     createEReference(viewpointEClass, VIEWPOINT__JAVA_EXTENSION);
 
@@ -2352,7 +2910,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(diagramEClass, DIAGRAM__NAME);
     createEAttribute(diagramEClass, DIAGRAM__LABEL);
     createEAttribute(diagramEClass, DIAGRAM__DOMAIN_CLASS);
-    createEAttribute(diagramEClass, DIAGRAM__PRECONDITION);
+    createEAttribute(diagramEClass, DIAGRAM__PRECONDITION_EXPRESSION);
     createEAttribute(diagramEClass, DIAGRAM__END_USER_DOCUMENTATION);
     createEAttribute(diagramEClass, DIAGRAM__TITLE_EXPRESSION);
     createEAttribute(diagramEClass, DIAGRAM__ROOT_EXPRESSION);
@@ -2361,17 +2919,17 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     layerEClass = createEClass(LAYER);
     createEAttribute(layerEClass, LAYER__DOCUMENTATION);
+    createEAttribute(layerEClass, LAYER__ICON_PATH);
     createEAttribute(layerEClass, LAYER__NAME);
-    createEAttribute(layerEClass, LAYER__ICON);
     createEReference(layerEClass, LAYER__MAPPINGS);
     createEReference(layerEClass, LAYER__EDGES);
     createEReference(layerEClass, LAYER__SECTIONS);
 
     sectionEClass = createEClass(SECTION);
     createEAttribute(sectionEClass, SECTION__DOCUMENTATION);
+    createEAttribute(sectionEClass, SECTION__ICON_PATH);
     createEAttribute(sectionEClass, SECTION__NAME);
     createEAttribute(sectionEClass, SECTION__LABEL);
-    createEAttribute(sectionEClass, SECTION__ICON);
     createEReference(sectionEClass, SECTION__TOOLS);
 
     toolEClass = createEClass(TOOL);
@@ -2379,12 +2937,12 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     containerCreationEClass = createEClass(CONTAINER_CREATION);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__DOCUMENTATION);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__FORCE_REFRESH);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__ICON_PATH);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__NODE_CREATION_VARIABLE);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__NAME);
     createEAttribute(containerCreationEClass, CONTAINER_CREATION__LABEL);
-    createEAttribute(containerCreationEClass, CONTAINER_CREATION__PRECONDITION);
-    createEAttribute(containerCreationEClass, CONTAINER_CREATION__ICON);
+    createEAttribute(containerCreationEClass, CONTAINER_CREATION__PRECONDITION_EXPRESSION);
     createEReference(containerCreationEClass, CONTAINER_CREATION__CONTAINER_MAPPINGS);
     createEReference(containerCreationEClass, CONTAINER_CREATION__EXTRA_MAPPINGS);
     createEReference(containerCreationEClass, CONTAINER_CREATION__BODY);
@@ -2457,23 +3015,63 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEReference(defaultEClass, DEFAULT__BODY);
 
     mappingEClass = createEClass(MAPPING);
+    createEAttribute(mappingEClass, MAPPING__DOCUMENTATION);
+    createEAttribute(mappingEClass, MAPPING__NAME);
+    createEAttribute(mappingEClass, MAPPING__LABEL);
+    createEAttribute(mappingEClass, MAPPING__DOMAIN_CLASS);
+    createEAttribute(mappingEClass, MAPPING__PRECONDITION_EXPRESSION);
+    createEAttribute(mappingEClass, MAPPING__SEMANTIC_CANDIDATES_EXPRESSION);
+    createEAttribute(mappingEClass, MAPPING__ASSOCIATED_ELEMENTS_EXPRESSION);
+
+    nodeEClass = createEClass(NODE);
+    createEReference(nodeEClass, NODE__STYLE);
+    createEReference(nodeEClass, NODE__CONDITIONAL_STYLES);
 
     containerEClass = createEClass(CONTAINER);
-    createEAttribute(containerEClass, CONTAINER__DOCUMENTATION);
-    createEAttribute(containerEClass, CONTAINER__LIST);
-    createEAttribute(containerEClass, CONTAINER__NAME);
-    createEAttribute(containerEClass, CONTAINER__LABEL);
-    createEAttribute(containerEClass, CONTAINER__DOMAIN_CLASS);
+    createEAttribute(containerEClass, CONTAINER__CHILDREN_PRESENTATION);
     createEReference(containerEClass, CONTAINER__STYLE);
-    createEAttribute(containerEClass, CONTAINER__PRECONDITION);
-    createEAttribute(containerEClass, CONTAINER__SEMANTIC_CANDITATES_EXPRESSION);
     createEReference(containerEClass, CONTAINER__CONDITIONAL_STYLES);
+
+    conditionalNodeStyleDeclarationEClass = createEClass(CONDITIONAL_NODE_STYLE_DECLARATION);
+    createEReference(conditionalNodeStyleDeclarationEClass, CONDITIONAL_NODE_STYLE_DECLARATION__STYLE);
+    createEAttribute(conditionalNodeStyleDeclarationEClass, CONDITIONAL_NODE_STYLE_DECLARATION__CONDITIONAL_STYLE_EXPRESSION);
 
     conditionalContainerStyleDeclarationEClass = createEClass(CONDITIONAL_CONTAINER_STYLE_DECLARATION);
     createEReference(conditionalContainerStyleDeclarationEClass, CONDITIONAL_CONTAINER_STYLE_DECLARATION__STYLE);
     createEAttribute(conditionalContainerStyleDeclarationEClass, CONDITIONAL_CONTAINER_STYLE_DECLARATION__CONDITIONAL_STYLE_EXPRESSION);
 
     styleEClass = createEClass(STYLE);
+
+    nodeStyleEClass = createEClass(NODE_STYLE);
+
+    squareEClass = createEClass(SQUARE);
+    createEAttribute(squareEClass, SQUARE__DOCUMENTATION);
+    createEAttribute(squareEClass, SQUARE__ALLOW_VERTICAL_RESIZING);
+    createEAttribute(squareEClass, SQUARE__ALLOW_HORIZONTAL_RESIZING);
+    createEAttribute(squareEClass, SQUARE__NAME);
+    createEReference(squareEClass, SQUARE__COLOR);
+    createEReference(squareEClass, SQUARE__LABEL);
+    createEAttribute(squareEClass, SQUARE__LABEL_BORDER_STYLE);
+    createEReference(squareEClass, SQUARE__BORDER);
+    createEAttribute(squareEClass, SQUARE__HEIGHT);
+    createEAttribute(squareEClass, SQUARE__WIDTH);
+    createEAttribute(squareEClass, SQUARE__SIZE_COMPUTATION_EXPRESSION);
+    createEAttribute(squareEClass, SQUARE__TOOLTIP_EXPRESSION);
+
+    labelEClass = createEClass(LABEL);
+    createEAttribute(labelEClass, LABEL__SHOW_ICON);
+    createEAttribute(labelEClass, LABEL__HIDE_BY_DEFAULT);
+    createEAttribute(labelEClass, LABEL__ICON_PATH);
+    createEAttribute(labelEClass, LABEL__FORMAT_OPTIONS);
+    createEAttribute(labelEClass, LABEL__ALIGNMENT);
+    createEAttribute(labelEClass, LABEL__SIZE);
+    createEAttribute(labelEClass, LABEL__EXPRESSION);
+    createEReference(labelEClass, LABEL__COLOR);
+
+    borderEClass = createEClass(BORDER);
+    createEAttribute(borderEClass, BORDER__LINE_STYLE);
+    createEAttribute(borderEClass, BORDER__BORDER_SIZE_COMPUTATION_EXPRESSION);
+    createEReference(borderEClass, BORDER__BORDER_COLOR);
 
     containerStyleEClass = createEClass(CONTAINER_STYLE);
 
@@ -2483,14 +3081,14 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(gradientEClass, GRADIENT__NAME);
     createEReference(gradientEClass, GRADIENT__BACKGROUND_COLOR);
     createEReference(gradientEClass, GRADIENT__FOREGROUND_COLOR);
-    createEAttribute(gradientEClass, GRADIENT__LABEL_ALIGNMENT);
-    createEAttribute(gradientEClass, GRADIENT__LABEL_EXPRESSION);
-    createEReference(gradientEClass, GRADIENT__LABEL_COLOR);
-    createEAttribute(gradientEClass, GRADIENT__BORDER_SIZE);
-    createEReference(gradientEClass, GRADIENT__BORDER_COLOR);
-    createEAttribute(gradientEClass, GRADIENT__ICON);
+    createEReference(gradientEClass, GRADIENT__LABEL);
+    createEAttribute(gradientEClass, GRADIENT__LABEL_BORDER_STYLE);
+    createEReference(gradientEClass, GRADIENT__BORDER);
     createEAttribute(gradientEClass, GRADIENT__HEIGHT_COMPUTATION_EXPRESSION);
     createEAttribute(gradientEClass, GRADIENT__WIDTH_COMPUTATION_EXPRESSION);
+    createEAttribute(gradientEClass, GRADIENT__ARC_HEIGHT);
+    createEAttribute(gradientEClass, GRADIENT__ARC_WIDTH);
+    createEAttribute(gradientEClass, GRADIENT__TOOLTIP_EXPRESSION);
 
     edgeEClass = createEClass(EDGE);
 
@@ -2499,6 +3097,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__NAME);
     createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__LABEL);
     createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__STYLE);
+    createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__PRECONDITION_EXPRESSION);
     createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__SOURCE_MAPPINGS);
     createEReference(relationBasedEdgeEClass, RELATION_BASED_EDGE__TARGET_MAPPINGS);
     createEAttribute(relationBasedEdgeEClass, RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION);
@@ -2508,11 +3107,20 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEReference(edgeStyleEClass, EDGE_STYLE__STROKE_COLOR);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__LINE_STYLE);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__ROUTING_STYLE);
+    createEReference(edgeStyleEClass, EDGE_STYLE__LABEL);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__SOURCE_ARROW);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__TARGET_ARROW);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__FOLDING_STYLE);
     createEAttribute(edgeStyleEClass, EDGE_STYLE__ENDS_CENTERING);
+
+    edgeLabelEClass = createEClass(EDGE_LABEL);
+    createEAttribute(edgeLabelEClass, EDGE_LABEL__SHOW_ICON);
+    createEAttribute(edgeLabelEClass, EDGE_LABEL__ICON_PATH);
+    createEAttribute(edgeLabelEClass, EDGE_LABEL__FORMAT_OPTIONS);
+    createEAttribute(edgeLabelEClass, EDGE_LABEL__SIZE);
+    createEAttribute(edgeLabelEClass, EDGE_LABEL__EXPRESSION);
+    createEReference(edgeLabelEClass, EDGE_LABEL__COLOR);
 
     paletteEClass = createEClass(PALETTE);
     createEAttribute(paletteEClass, PALETTE__DOCUMENTATION);
@@ -2531,7 +3139,11 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     createEAttribute(rgbEClass, RGB__BLUE);
 
     // Create enums
+    containerChildrenPresentationEEnum = createEEnum(CONTAINER_CHILDREN_PRESENTATION);
+    nodeLabelBorderStyleEEnum = createEEnum(NODE_LABEL_BORDER_STYLE);
+    labelFormatOptionEEnum = createEEnum(LABEL_FORMAT_OPTION);
     labelAlignmentEEnum = createEEnum(LABEL_ALIGNMENT);
+    containerLabelBorderStyleEEnum = createEEnum(CONTAINER_LABEL_BORDER_STYLE);
     gradientDirectionEEnum = createEEnum(GRADIENT_DIRECTION);
     lineStyleEEnum = createEEnum(LINE_STYLE);
     routingStyleEEnum = createEEnum(ROUTING_STYLE);
@@ -2592,8 +3204,11 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     moveEClass.getESuperTypes().add(this.getOperation());
     switchEClass.getESuperTypes().add(this.getOperation());
     mappingEClass.getESuperTypes().add(this.getSiriusFileBody());
+    nodeEClass.getESuperTypes().add(this.getMapping());
     containerEClass.getESuperTypes().add(this.getMapping());
     styleEClass.getESuperTypes().add(this.getSiriusFileBody());
+    nodeStyleEClass.getESuperTypes().add(this.getStyle());
+    squareEClass.getESuperTypes().add(this.getNodeStyle());
     containerStyleEClass.getESuperTypes().add(this.getStyle());
     gradientEClass.getESuperTypes().add(this.getContainerStyle());
     edgeEClass.getESuperTypes().add(this.getSiriusFileBody());
@@ -2622,10 +3237,10 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     initEClass(viewpointEClass, Viewpoint.class, "Viewpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getViewpoint_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_Label(), ecorePackage.getEString(), "label", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_ModelFileExtensions(), ecorePackage.getEString(), "modelFileExtensions", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getViewpoint_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_Representations(), this.getRepresentation(), null, "representations", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_JavaExtension(), theTypesPackage.getJvmType(), null, "javaExtension", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2640,7 +3255,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getDiagram_Name(), ecorePackage.getEString(), "name", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDiagram_Label(), ecorePackage.getEString(), "label", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDiagram_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDiagram_Precondition(), ecorePackage.getEString(), "precondition", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDiagram_PreconditionExpression(), ecorePackage.getEString(), "preconditionExpression", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDiagram_EndUserDocumentation(), ecorePackage.getEString(), "endUserDocumentation", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDiagram_TitleExpression(), ecorePackage.getEString(), "titleExpression", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDiagram_RootExpression(), ecorePackage.getEString(), "rootExpression", null, 0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2649,17 +3264,17 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
 
     initEClass(layerEClass, Layer.class, "Layer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLayer_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLayer_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLayer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLayer_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Mappings(), this.getMapping(), null, "mappings", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Edges(), this.getEdge(), null, "edges", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayer_Sections(), this.getSection(), null, "sections", null, 0, -1, Layer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSection_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSection_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSection_Label(), ecorePackage.getEString(), "label", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSection_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSection_Tools(), this.getTool(), null, "tools", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2667,12 +3282,12 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEClass(containerCreationEClass, ContainerCreation.class, "ContainerCreation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getContainerCreation_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerCreation_ForceRefresh(), ecorePackage.getEBoolean(), "forceRefresh", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerCreation_NodeCreationVariable(), ecorePackage.getEString(), "nodeCreationVariable", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerCreation_ContainerViewVariable(), ecorePackage.getEString(), "containerViewVariable", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerCreation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerCreation_Label(), ecorePackage.getEString(), "label", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainerCreation_Precondition(), ecorePackage.getEString(), "precondition", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainerCreation_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainerCreation_PreconditionExpression(), ecorePackage.getEString(), "preconditionExpression", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainerCreation_ContainerMappings(), this.getMapping(), null, "containerMappings", null, 0, -1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainerCreation_ExtraMappings(), this.getMapping(), null, "extraMappings", null, 0, -1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainerCreation_Body(), this.getOperation(), null, "body", null, 0, 1, ContainerCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2745,23 +3360,63 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEReference(getDefault_Body(), this.getOperation(), null, "body", null, 0, -1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMapping_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_Name(), ecorePackage.getEString(), "name", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_Label(), ecorePackage.getEString(), "label", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_PreconditionExpression(), ecorePackage.getEString(), "preconditionExpression", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_SemanticCandidatesExpression(), ecorePackage.getEString(), "semanticCandidatesExpression", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapping_AssociatedElementsExpression(), ecorePackage.getEString(), "associatedElementsExpression", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNode_Style(), this.getNodeStyle(), null, "style", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNode_ConditionalStyles(), this.getConditionalNodeStyleDeclaration(), null, "conditionalStyles", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(containerEClass, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContainer_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_List(), ecorePackage.getEBoolean(), "list", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_Label(), ecorePackage.getEString(), "label", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainer_ChildrenPresentation(), this.getContainerChildrenPresentation(), "childrenPresentation", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_Style(), this.getContainerStyle(), null, "style", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_Precondition(), ecorePackage.getEString(), "precondition", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_SemanticCanditatesExpression(), ecorePackage.getEString(), "semanticCanditatesExpression", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_ConditionalStyles(), this.getConditionalContainerStyleDeclaration(), null, "conditionalStyles", null, 0, -1, org.obeonetwork.sirius.text.siriusTextDsl.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionalNodeStyleDeclarationEClass, ConditionalNodeStyleDeclaration.class, "ConditionalNodeStyleDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditionalNodeStyleDeclaration_Style(), this.getNodeStyle(), null, "style", null, 0, 1, ConditionalNodeStyleDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConditionalNodeStyleDeclaration_ConditionalStyleExpression(), ecorePackage.getEString(), "conditionalStyleExpression", null, 0, 1, ConditionalNodeStyleDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalContainerStyleDeclarationEClass, ConditionalContainerStyleDeclaration.class, "ConditionalContainerStyleDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConditionalContainerStyleDeclaration_Style(), this.getContainerStyle(), null, "style", null, 0, 1, ConditionalContainerStyleDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConditionalContainerStyleDeclaration_ConditionalStyleExpression(), ecorePackage.getEString(), "conditionalStyleExpression", null, 0, 1, ConditionalContainerStyleDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(styleEClass, Style.class, "Style", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nodeStyleEClass, NodeStyle.class, "NodeStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(squareEClass, Square.class, "Square", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSquare_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_AllowVerticalResizing(), ecorePackage.getEBoolean(), "allowVerticalResizing", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_AllowHorizontalResizing(), ecorePackage.getEBoolean(), "allowHorizontalResizing", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_Name(), ecorePackage.getEString(), "name", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSquare_Color(), this.getColor(), null, "color", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSquare_Label(), this.getLabel(), null, "label", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_LabelBorderStyle(), this.getNodeLabelBorderStyle(), "labelBorderStyle", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSquare_Border(), this.getBorder(), null, "border", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_SizeComputationExpression(), ecorePackage.getEString(), "sizeComputationExpression", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSquare_TooltipExpression(), ecorePackage.getEString(), "tooltipExpression", null, 0, 1, Square.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLabel_ShowIcon(), ecorePackage.getEBoolean(), "showIcon", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_HideByDefault(), ecorePackage.getEBoolean(), "hideByDefault", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_FormatOptions(), this.getLabelFormatOption(), "formatOptions", null, 0, -1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_Alignment(), this.getLabelAlignment(), "alignment", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabel_Color(), this.getColor(), null, "color", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(borderEClass, Border.class, "Border", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBorder_LineStyle(), this.getLineStyle(), "lineStyle", null, 0, 1, Border.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBorder_BorderSizeComputationExpression(), ecorePackage.getEString(), "borderSizeComputationExpression", null, 0, 1, Border.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBorder_BorderColor(), this.getColor(), null, "borderColor", null, 0, 1, Border.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(containerStyleEClass, ContainerStyle.class, "ContainerStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2771,14 +3426,14 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getGradient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_BackgroundColor(), this.getColor(), null, "backgroundColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGradient_ForegroundColor(), this.getColor(), null, "foregroundColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_LabelAlignment(), this.getLabelAlignment(), "labelAlignment", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGradient_LabelColor(), this.getColor(), null, "labelColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_BorderSize(), ecorePackage.getEInt(), "borderSize", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGradient_BorderColor(), this.getColor(), null, "borderColor", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGradient_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGradient_Label(), this.getLabel(), null, "label", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_LabelBorderStyle(), this.getContainerLabelBorderStyle(), "labelBorderStyle", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGradient_Border(), this.getBorder(), null, "border", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_HeightComputationExpression(), ecorePackage.getEString(), "heightComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGradient_WidthComputationExpression(), ecorePackage.getEString(), "widthComputationExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_ArcHeight(), ecorePackage.getEInt(), "arcHeight", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_ArcWidth(), ecorePackage.getEInt(), "arcWidth", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGradient_TooltipExpression(), ecorePackage.getEString(), "tooltipExpression", null, 0, 1, Gradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2787,6 +3442,7 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getRelationBasedEdge_Name(), ecorePackage.getEString(), "name", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRelationBasedEdge_Label(), ecorePackage.getEString(), "label", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRelationBasedEdge_Style(), this.getEdgeStyle(), null, "style", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationBasedEdge_PreconditionExpression(), ecorePackage.getEString(), "preconditionExpression", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRelationBasedEdge_SourceMappings(), this.getMapping(), null, "sourceMappings", null, 0, -1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRelationBasedEdge_TargetMappings(), this.getMapping(), null, "targetMappings", null, 0, -1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRelationBasedEdge_TargetFinderExpression(), ecorePackage.getEString(), "targetFinderExpression", null, 0, 1, RelationBasedEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2796,11 +3452,20 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEReference(getEdgeStyle_StrokeColor(), this.getColor(), null, "strokeColor", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_LineStyle(), this.getLineStyle(), "lineStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_RoutingStyle(), this.getRoutingStyle(), "routingStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEdgeStyle_Label(), this.getEdgeLabel(), null, "label", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_SourceArrow(), this.getArrowDecorator(), "sourceArrow", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_TargetArrow(), this.getArrowDecorator(), "targetArrow", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_SizeComputationExpression(), ecorePackage.getEString(), "sizeComputationExpression", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_FoldingStyle(), this.getFoldingStyle(), "foldingStyle", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEdgeStyle_EndsCentering(), this.getEndsCentering(), "endsCentering", null, 0, 1, EdgeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(edgeLabelEClass, EdgeLabel.class, "EdgeLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEdgeLabel_ShowIcon(), ecorePackage.getEBoolean(), "showIcon", null, 0, 1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeLabel_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeLabel_FormatOptions(), this.getLabelFormatOption(), "formatOptions", null, 0, -1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeLabel_Size(), ecorePackage.getEInt(), "size", null, 0, 1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEdgeLabel_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEdgeLabel_Color(), this.getColor(), null, "color", null, 0, 1, EdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paletteEClass, Palette.class, "Palette", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPalette_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Palette.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2819,10 +3484,31 @@ public class SiriusTextDslPackageImpl extends EPackageImpl implements SiriusText
     initEAttribute(getRGB_Blue(), ecorePackage.getEInt(), "blue", null, 0, 1, org.obeonetwork.sirius.text.siriusTextDsl.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
+    initEEnum(containerChildrenPresentationEEnum, ContainerChildrenPresentation.class, "ContainerChildrenPresentation");
+    addEEnumLiteral(containerChildrenPresentationEEnum, ContainerChildrenPresentation.FREE_FORM);
+    addEEnumLiteral(containerChildrenPresentationEEnum, ContainerChildrenPresentation.LIST);
+    addEEnumLiteral(containerChildrenPresentationEEnum, ContainerChildrenPresentation.HORIZONTAL_STACK);
+    addEEnumLiteral(containerChildrenPresentationEEnum, ContainerChildrenPresentation.VERTICAL_STACK);
+
+    initEEnum(nodeLabelBorderStyleEEnum, NodeLabelBorderStyle.class, "NodeLabelBorderStyle");
+    addEEnumLiteral(nodeLabelBorderStyleEEnum, NodeLabelBorderStyle.NODE);
+    addEEnumLiteral(nodeLabelBorderStyleEEnum, NodeLabelBorderStyle.BORDER);
+
+    initEEnum(labelFormatOptionEEnum, LabelFormatOption.class, "LabelFormatOption");
+    addEEnumLiteral(labelFormatOptionEEnum, LabelFormatOption.BOLD);
+    addEEnumLiteral(labelFormatOptionEEnum, LabelFormatOption.ITALIC);
+    addEEnumLiteral(labelFormatOptionEEnum, LabelFormatOption.UNDERLINE);
+    addEEnumLiteral(labelFormatOptionEEnum, LabelFormatOption.STRIKETHROUGHT);
+
     initEEnum(labelAlignmentEEnum, LabelAlignment.class, "LabelAlignment");
     addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.LEFT);
     addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.CENTER);
     addEEnumLiteral(labelAlignmentEEnum, LabelAlignment.RIGHT);
+
+    initEEnum(containerLabelBorderStyleEEnum, ContainerLabelBorderStyle.class, "ContainerLabelBorderStyle");
+    addEEnumLiteral(containerLabelBorderStyleEEnum, ContainerLabelBorderStyle.LABEL_BORDER_STYLE_WITH_BEVELED_CORNER);
+    addEEnumLiteral(containerLabelBorderStyleEEnum, ContainerLabelBorderStyle.LABEL_BORDER_FOR_CONTAINER);
+    addEEnumLiteral(containerLabelBorderStyleEEnum, ContainerLabelBorderStyle.NO_LABEL_BORDER_FOR_LIST);
 
     initEEnum(gradientDirectionEEnum, GradientDirection.class, "GradientDirection");
     addEEnumLiteral(gradientDirectionEEnum, GradientDirection.OBLIQUE);

@@ -14,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getName <em>Name</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getEdges <em>Edges</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getSections <em>Sections</em>}</li>
@@ -54,6 +54,32 @@ public interface Layer extends SiriusFileBody
   void setDocumentation(String value);
 
   /**
+   * Returns the value of the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Icon Path</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Icon Path</em>' attribute.
+   * @see #setIconPath(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getLayer_IconPath()
+   * @model
+   * @generated
+   */
+  String getIconPath();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIconPath <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Icon Path</em>' attribute.
+   * @see #getIconPath()
+   * @generated
+   */
+  void setIconPath(String value);
+
+  /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -78,32 +104,6 @@ public interface Layer extends SiriusFileBody
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Icon</em>' attribute.
-   * @see #setIcon(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getLayer_Icon()
-   * @model
-   * @generated
-   */
-  String getIcon();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIcon <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Icon</em>' attribute.
-   * @see #getIcon()
-   * @generated
-   */
-  void setIcon(String value);
 
   /**
    * Returns the value of the '<em><b>Mappings</b></em>' reference list.

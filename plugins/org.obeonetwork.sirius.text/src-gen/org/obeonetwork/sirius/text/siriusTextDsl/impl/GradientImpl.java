@@ -3,16 +3,19 @@
 package org.obeonetwork.sirius.text.siriusTextDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.obeonetwork.sirius.text.siriusTextDsl.Border;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
-import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
+import org.obeonetwork.sirius.text.siriusTextDsl.Label;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
 
 /**
@@ -28,14 +31,14 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getForegroundColor <em>Foreground Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelAlignment <em>Label Alignment</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelExpression <em>Label Expression</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelColor <em>Label Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorderSize <em>Border Size</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorderColor <em>Border Color</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getLabelBorderStyle <em>Label Border Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getBorder <em>Border</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getHeightComputationExpression <em>Height Computation Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getWidthComputationExpression <em>Width Computation Expression</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getArcHeight <em>Arc Height</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getArcWidth <em>Arc Width</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.GradientImpl#getTooltipExpression <em>Tooltip Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,104 +126,44 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
   protected Color foregroundColor;
 
   /**
-   * The default value of the '{@link #getLabelAlignment() <em>Label Alignment</em>}' attribute.
+   * The cached value of the '{@link #getLabel() <em>Label</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelAlignment()
+   * @see #getLabel()
    * @generated
    * @ordered
    */
-  protected static final LabelAlignment LABEL_ALIGNMENT_EDEFAULT = LabelAlignment.LEFT;
+  protected Label label;
 
   /**
-   * The cached value of the '{@link #getLabelAlignment() <em>Label Alignment</em>}' attribute.
+   * The default value of the '{@link #getLabelBorderStyle() <em>Label Border Style</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelAlignment()
+   * @see #getLabelBorderStyle()
    * @generated
    * @ordered
    */
-  protected LabelAlignment labelAlignment = LABEL_ALIGNMENT_EDEFAULT;
+  protected static final ContainerLabelBorderStyle LABEL_BORDER_STYLE_EDEFAULT = ContainerLabelBorderStyle.LABEL_BORDER_STYLE_WITH_BEVELED_CORNER;
 
   /**
-   * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+   * The cached value of the '{@link #getLabelBorderStyle() <em>Label Border Style</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelExpression()
+   * @see #getLabelBorderStyle()
    * @generated
    * @ordered
    */
-  protected static final String LABEL_EXPRESSION_EDEFAULT = null;
+  protected ContainerLabelBorderStyle labelBorderStyle = LABEL_BORDER_STYLE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+   * The cached value of the '{@link #getBorder() <em>Border</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelExpression()
+   * @see #getBorder()
    * @generated
    * @ordered
    */
-  protected String labelExpression = LABEL_EXPRESSION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getLabelColor() <em>Label Color</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLabelColor()
-   * @generated
-   * @ordered
-   */
-  protected Color labelColor;
-
-  /**
-   * The default value of the '{@link #getBorderSize() <em>Border Size</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBorderSize()
-   * @generated
-   * @ordered
-   */
-  protected static final int BORDER_SIZE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getBorderSize() <em>Border Size</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBorderSize()
-   * @generated
-   * @ordered
-   */
-  protected int borderSize = BORDER_SIZE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getBorderColor() <em>Border Color</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBorderColor()
-   * @generated
-   * @ordered
-   */
-  protected Color borderColor;
-
-  /**
-   * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected static final String ICON_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected String icon = ICON_EDEFAULT;
+  protected Border border;
 
   /**
    * The default value of the '{@link #getHeightComputationExpression() <em>Height Computation Expression</em>}' attribute.
@@ -261,6 +204,66 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * @ordered
    */
   protected String widthComputationExpression = WIDTH_COMPUTATION_EXPRESSION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getArcHeight() <em>Arc Height</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArcHeight()
+   * @generated
+   * @ordered
+   */
+  protected static final int ARC_HEIGHT_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getArcHeight() <em>Arc Height</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArcHeight()
+   * @generated
+   * @ordered
+   */
+  protected int arcHeight = ARC_HEIGHT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getArcWidth() <em>Arc Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArcWidth()
+   * @generated
+   * @ordered
+   */
+  protected static final int ARC_WIDTH_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getArcWidth() <em>Arc Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArcWidth()
+   * @generated
+   * @ordered
+   */
+  protected int arcWidth = ARC_WIDTH_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTooltipExpression() <em>Tooltip Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTooltipExpression()
+   * @generated
+   * @ordered
+   */
+  protected static final String TOOLTIP_EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTooltipExpression() <em>Tooltip Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTooltipExpression()
+   * @generated
+   * @ordered
+   */
+  protected String tooltipExpression = TOOLTIP_EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -443,9 +446,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public LabelAlignment getLabelAlignment()
+  public Label getLabel()
   {
-    return labelAlignment;
+    return label;
   }
 
   /**
@@ -453,55 +456,16 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLabelAlignment(LabelAlignment newLabelAlignment)
+  public NotificationChain basicSetLabel(Label newLabel, NotificationChain msgs)
   {
-    LabelAlignment oldLabelAlignment = labelAlignment;
-    labelAlignment = newLabelAlignment == null ? LABEL_ALIGNMENT_EDEFAULT : newLabelAlignment;
+    Label oldLabel = label;
+    label = newLabel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT, oldLabelAlignment, labelAlignment));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getLabelExpression()
-  {
-    return labelExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLabelExpression(String newLabelExpression)
-  {
-    String oldLabelExpression = labelExpression;
-    labelExpression = newLabelExpression;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION, oldLabelExpression, labelExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Color getLabelColor()
-  {
-    if (labelColor != null && labelColor.eIsProxy())
     {
-      InternalEObject oldLabelColor = (InternalEObject)labelColor;
-      labelColor = (Color)eResolveProxy(oldLabelColor);
-      if (labelColor != oldLabelColor)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SiriusTextDslPackage.GRADIENT__LABEL_COLOR, oldLabelColor, labelColor));
-      }
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL, oldLabel, newLabel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return labelColor;
+    return msgs;
   }
 
   /**
@@ -509,65 +473,20 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public Color basicGetLabelColor()
+  public void setLabel(Label newLabel)
   {
-    return labelColor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLabelColor(Color newLabelColor)
-  {
-    Color oldLabelColor = labelColor;
-    labelColor = newLabelColor;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL_COLOR, oldLabelColor, labelColor));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getBorderSize()
-  {
-    return borderSize;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBorderSize(int newBorderSize)
-  {
-    int oldBorderSize = borderSize;
-    borderSize = newBorderSize;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__BORDER_SIZE, oldBorderSize, borderSize));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Color getBorderColor()
-  {
-    if (borderColor != null && borderColor.eIsProxy())
+    if (newLabel != label)
     {
-      InternalEObject oldBorderColor = (InternalEObject)borderColor;
-      borderColor = (Color)eResolveProxy(oldBorderColor);
-      if (borderColor != oldBorderColor)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SiriusTextDslPackage.GRADIENT__BORDER_COLOR, oldBorderColor, borderColor));
-      }
+      NotificationChain msgs = null;
+      if (label != null)
+        msgs = ((InternalEObject)label).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.GRADIENT__LABEL, null, msgs);
+      if (newLabel != null)
+        msgs = ((InternalEObject)newLabel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.GRADIENT__LABEL, null, msgs);
+      msgs = basicSetLabel(newLabel, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return borderColor;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL, newLabel, newLabel));
   }
 
   /**
@@ -575,9 +494,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public Color basicGetBorderColor()
+  public ContainerLabelBorderStyle getLabelBorderStyle()
   {
-    return borderColor;
+    return labelBorderStyle;
   }
 
   /**
@@ -585,12 +504,12 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBorderColor(Color newBorderColor)
+  public void setLabelBorderStyle(ContainerLabelBorderStyle newLabelBorderStyle)
   {
-    Color oldBorderColor = borderColor;
-    borderColor = newBorderColor;
+    ContainerLabelBorderStyle oldLabelBorderStyle = labelBorderStyle;
+    labelBorderStyle = newLabelBorderStyle == null ? LABEL_BORDER_STYLE_EDEFAULT : newLabelBorderStyle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__BORDER_COLOR, oldBorderColor, borderColor));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__LABEL_BORDER_STYLE, oldLabelBorderStyle, labelBorderStyle));
   }
 
   /**
@@ -598,9 +517,9 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIcon()
+  public Border getBorder()
   {
-    return icon;
+    return border;
   }
 
   /**
@@ -608,12 +527,37 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIcon(String newIcon)
+  public NotificationChain basicSetBorder(Border newBorder, NotificationChain msgs)
   {
-    String oldIcon = icon;
-    icon = newIcon;
+    Border oldBorder = border;
+    border = newBorder;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__ICON, oldIcon, icon));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__BORDER, oldBorder, newBorder);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBorder(Border newBorder)
+  {
+    if (newBorder != border)
+    {
+      NotificationChain msgs = null;
+      if (border != null)
+        msgs = ((InternalEObject)border).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.GRADIENT__BORDER, null, msgs);
+      if (newBorder != null)
+        msgs = ((InternalEObject)newBorder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.GRADIENT__BORDER, null, msgs);
+      msgs = basicSetBorder(newBorder, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__BORDER, newBorder, newBorder));
   }
 
   /**
@@ -667,6 +611,93 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getArcHeight()
+  {
+    return arcHeight;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArcHeight(int newArcHeight)
+  {
+    int oldArcHeight = arcHeight;
+    arcHeight = newArcHeight;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__ARC_HEIGHT, oldArcHeight, arcHeight));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getArcWidth()
+  {
+    return arcWidth;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArcWidth(int newArcWidth)
+  {
+    int oldArcWidth = arcWidth;
+    arcWidth = newArcWidth;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__ARC_WIDTH, oldArcWidth, arcWidth));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getTooltipExpression()
+  {
+    return tooltipExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTooltipExpression(String newTooltipExpression)
+  {
+    String oldTooltipExpression = tooltipExpression;
+    tooltipExpression = newTooltipExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.GRADIENT__TOOLTIP_EXPRESSION, oldTooltipExpression, tooltipExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SiriusTextDslPackage.GRADIENT__LABEL:
+        return basicSetLabel(null, msgs);
+      case SiriusTextDslPackage.GRADIENT__BORDER:
+        return basicSetBorder(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -684,24 +715,22 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         if (resolve) return getForegroundColor();
         return basicGetForegroundColor();
-      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
-        return getLabelAlignment();
-      case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
-        return getLabelExpression();
-      case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
-        if (resolve) return getLabelColor();
-        return basicGetLabelColor();
-      case SiriusTextDslPackage.GRADIENT__BORDER_SIZE:
-        return getBorderSize();
-      case SiriusTextDslPackage.GRADIENT__BORDER_COLOR:
-        if (resolve) return getBorderColor();
-        return basicGetBorderColor();
-      case SiriusTextDslPackage.GRADIENT__ICON:
-        return getIcon();
+      case SiriusTextDslPackage.GRADIENT__LABEL:
+        return getLabel();
+      case SiriusTextDslPackage.GRADIENT__LABEL_BORDER_STYLE:
+        return getLabelBorderStyle();
+      case SiriusTextDslPackage.GRADIENT__BORDER:
+        return getBorder();
       case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
         return getHeightComputationExpression();
       case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
         return getWidthComputationExpression();
+      case SiriusTextDslPackage.GRADIENT__ARC_HEIGHT:
+        return getArcHeight();
+      case SiriusTextDslPackage.GRADIENT__ARC_WIDTH:
+        return getArcWidth();
+      case SiriusTextDslPackage.GRADIENT__TOOLTIP_EXPRESSION:
+        return getTooltipExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -731,29 +760,29 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         setForegroundColor((Color)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
-        setLabelAlignment((LabelAlignment)newValue);
+      case SiriusTextDslPackage.GRADIENT__LABEL:
+        setLabel((Label)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
-        setLabelExpression((String)newValue);
+      case SiriusTextDslPackage.GRADIENT__LABEL_BORDER_STYLE:
+        setLabelBorderStyle((ContainerLabelBorderStyle)newValue);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
-        setLabelColor((Color)newValue);
-        return;
-      case SiriusTextDslPackage.GRADIENT__BORDER_SIZE:
-        setBorderSize((Integer)newValue);
-        return;
-      case SiriusTextDslPackage.GRADIENT__BORDER_COLOR:
-        setBorderColor((Color)newValue);
-        return;
-      case SiriusTextDslPackage.GRADIENT__ICON:
-        setIcon((String)newValue);
+      case SiriusTextDslPackage.GRADIENT__BORDER:
+        setBorder((Border)newValue);
         return;
       case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
         setHeightComputationExpression((String)newValue);
         return;
       case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
         setWidthComputationExpression((String)newValue);
+        return;
+      case SiriusTextDslPackage.GRADIENT__ARC_HEIGHT:
+        setArcHeight((Integer)newValue);
+        return;
+      case SiriusTextDslPackage.GRADIENT__ARC_WIDTH:
+        setArcWidth((Integer)newValue);
+        return;
+      case SiriusTextDslPackage.GRADIENT__TOOLTIP_EXPRESSION:
+        setTooltipExpression((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -784,29 +813,29 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         setForegroundColor((Color)null);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
-        setLabelAlignment(LABEL_ALIGNMENT_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__LABEL:
+        setLabel((Label)null);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
-        setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__LABEL_BORDER_STYLE:
+        setLabelBorderStyle(LABEL_BORDER_STYLE_EDEFAULT);
         return;
-      case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
-        setLabelColor((Color)null);
-        return;
-      case SiriusTextDslPackage.GRADIENT__BORDER_SIZE:
-        setBorderSize(BORDER_SIZE_EDEFAULT);
-        return;
-      case SiriusTextDslPackage.GRADIENT__BORDER_COLOR:
-        setBorderColor((Color)null);
-        return;
-      case SiriusTextDslPackage.GRADIENT__ICON:
-        setIcon(ICON_EDEFAULT);
+      case SiriusTextDslPackage.GRADIENT__BORDER:
+        setBorder((Border)null);
         return;
       case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
         setHeightComputationExpression(HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT);
         return;
       case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
         setWidthComputationExpression(WIDTH_COMPUTATION_EXPRESSION_EDEFAULT);
+        return;
+      case SiriusTextDslPackage.GRADIENT__ARC_HEIGHT:
+        setArcHeight(ARC_HEIGHT_EDEFAULT);
+        return;
+      case SiriusTextDslPackage.GRADIENT__ARC_WIDTH:
+        setArcWidth(ARC_WIDTH_EDEFAULT);
+        return;
+      case SiriusTextDslPackage.GRADIENT__TOOLTIP_EXPRESSION:
+        setTooltipExpression(TOOLTIP_EXPRESSION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -832,22 +861,22 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
         return backgroundColor != null;
       case SiriusTextDslPackage.GRADIENT__FOREGROUND_COLOR:
         return foregroundColor != null;
-      case SiriusTextDslPackage.GRADIENT__LABEL_ALIGNMENT:
-        return labelAlignment != LABEL_ALIGNMENT_EDEFAULT;
-      case SiriusTextDslPackage.GRADIENT__LABEL_EXPRESSION:
-        return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
-      case SiriusTextDslPackage.GRADIENT__LABEL_COLOR:
-        return labelColor != null;
-      case SiriusTextDslPackage.GRADIENT__BORDER_SIZE:
-        return borderSize != BORDER_SIZE_EDEFAULT;
-      case SiriusTextDslPackage.GRADIENT__BORDER_COLOR:
-        return borderColor != null;
-      case SiriusTextDslPackage.GRADIENT__ICON:
-        return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
+      case SiriusTextDslPackage.GRADIENT__LABEL:
+        return label != null;
+      case SiriusTextDslPackage.GRADIENT__LABEL_BORDER_STYLE:
+        return labelBorderStyle != LABEL_BORDER_STYLE_EDEFAULT;
+      case SiriusTextDslPackage.GRADIENT__BORDER:
+        return border != null;
       case SiriusTextDslPackage.GRADIENT__HEIGHT_COMPUTATION_EXPRESSION:
         return HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT == null ? heightComputationExpression != null : !HEIGHT_COMPUTATION_EXPRESSION_EDEFAULT.equals(heightComputationExpression);
       case SiriusTextDslPackage.GRADIENT__WIDTH_COMPUTATION_EXPRESSION:
         return WIDTH_COMPUTATION_EXPRESSION_EDEFAULT == null ? widthComputationExpression != null : !WIDTH_COMPUTATION_EXPRESSION_EDEFAULT.equals(widthComputationExpression);
+      case SiriusTextDslPackage.GRADIENT__ARC_HEIGHT:
+        return arcHeight != ARC_HEIGHT_EDEFAULT;
+      case SiriusTextDslPackage.GRADIENT__ARC_WIDTH:
+        return arcWidth != ARC_WIDTH_EDEFAULT;
+      case SiriusTextDslPackage.GRADIENT__TOOLTIP_EXPRESSION:
+        return TOOLTIP_EXPRESSION_EDEFAULT == null ? tooltipExpression != null : !TOOLTIP_EXPRESSION_EDEFAULT.equals(tooltipExpression);
     }
     return super.eIsSet(featureID);
   }
@@ -869,18 +898,18 @@ public class GradientImpl extends ContainerStyleImpl implements Gradient
     result.append(direction);
     result.append(", name: ");
     result.append(name);
-    result.append(", labelAlignment: ");
-    result.append(labelAlignment);
-    result.append(", labelExpression: ");
-    result.append(labelExpression);
-    result.append(", borderSize: ");
-    result.append(borderSize);
-    result.append(", icon: ");
-    result.append(icon);
+    result.append(", labelBorderStyle: ");
+    result.append(labelBorderStyle);
     result.append(", heightComputationExpression: ");
     result.append(heightComputationExpression);
     result.append(", widthComputationExpression: ");
     result.append(widthComputationExpression);
+    result.append(", arcHeight: ");
+    result.append(arcHeight);
+    result.append(", arcWidth: ");
+    result.append(arcWidth);
+    result.append(", tooltipExpression: ");
+    result.append(tooltipExpression);
     result.append(')');
     return result.toString();
   }

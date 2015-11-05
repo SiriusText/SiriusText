@@ -27,9 +27,9 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Tool;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SectionImpl#getTools <em>Tools</em>}</li>
  * </ul>
  *
@@ -56,6 +56,26 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
    * @ordered
    */
   protected String documentation = DOCUMENTATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected static final String ICON_PATH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected String iconPath = ICON_PATH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -96,26 +116,6 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
    * @ordered
    */
   protected String label = LABEL_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected static final String ICON_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected String icon = ICON_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTools() <em>Tools</em>}' reference list.
@@ -176,6 +176,29 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getIconPath()
+  {
+    return iconPath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIconPath(String newIconPath)
+  {
+    String oldIconPath = iconPath;
+    iconPath = newIconPath;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.SECTION__ICON_PATH, oldIconPath, iconPath));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -222,29 +245,6 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIcon()
-  {
-    return icon;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIcon(String newIcon)
-  {
-    String oldIcon = icon;
-    icon = newIcon;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.SECTION__ICON, oldIcon, icon));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Tool> getTools()
   {
     if (tools == null)
@@ -266,12 +266,12 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
     {
       case SiriusTextDslPackage.SECTION__DOCUMENTATION:
         return getDocumentation();
+      case SiriusTextDslPackage.SECTION__ICON_PATH:
+        return getIconPath();
       case SiriusTextDslPackage.SECTION__NAME:
         return getName();
       case SiriusTextDslPackage.SECTION__LABEL:
         return getLabel();
-      case SiriusTextDslPackage.SECTION__ICON:
-        return getIcon();
       case SiriusTextDslPackage.SECTION__TOOLS:
         return getTools();
     }
@@ -292,14 +292,14 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
       case SiriusTextDslPackage.SECTION__DOCUMENTATION:
         setDocumentation((String)newValue);
         return;
+      case SiriusTextDslPackage.SECTION__ICON_PATH:
+        setIconPath((String)newValue);
+        return;
       case SiriusTextDslPackage.SECTION__NAME:
         setName((String)newValue);
         return;
       case SiriusTextDslPackage.SECTION__LABEL:
         setLabel((String)newValue);
-        return;
-      case SiriusTextDslPackage.SECTION__ICON:
-        setIcon((String)newValue);
         return;
       case SiriusTextDslPackage.SECTION__TOOLS:
         getTools().clear();
@@ -322,14 +322,14 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
       case SiriusTextDslPackage.SECTION__DOCUMENTATION:
         setDocumentation(DOCUMENTATION_EDEFAULT);
         return;
+      case SiriusTextDslPackage.SECTION__ICON_PATH:
+        setIconPath(ICON_PATH_EDEFAULT);
+        return;
       case SiriusTextDslPackage.SECTION__NAME:
         setName(NAME_EDEFAULT);
         return;
       case SiriusTextDslPackage.SECTION__LABEL:
         setLabel(LABEL_EDEFAULT);
-        return;
-      case SiriusTextDslPackage.SECTION__ICON:
-        setIcon(ICON_EDEFAULT);
         return;
       case SiriusTextDslPackage.SECTION__TOOLS:
         getTools().clear();
@@ -350,12 +350,12 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
     {
       case SiriusTextDslPackage.SECTION__DOCUMENTATION:
         return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+      case SiriusTextDslPackage.SECTION__ICON_PATH:
+        return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
       case SiriusTextDslPackage.SECTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SiriusTextDslPackage.SECTION__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-      case SiriusTextDslPackage.SECTION__ICON:
-        return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
       case SiriusTextDslPackage.SECTION__TOOLS:
         return tools != null && !tools.isEmpty();
     }
@@ -375,12 +375,12 @@ public class SectionImpl extends SiriusFileBodyImpl implements Section
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (documentation: ");
     result.append(documentation);
+    result.append(", iconPath: ");
+    result.append(iconPath);
     result.append(", name: ");
     result.append(name);
     result.append(", label: ");
     result.append(label);
-    result.append(", icon: ");
-    result.append(icon);
     result.append(')');
     return result.toString();
   }

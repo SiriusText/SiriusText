@@ -37,9 +37,9 @@ Designer:
 
 Viewpoint:
 	(documentation=DOCUMENTATION)?
+	('@IconPath(' iconPath=STRING ')')?
 	'viewpoint' name=ID ('as' label=STRING)? '{'
 		('modelFileExtensions' '=' '[' modelFileExtensions+=STRING (',' modelFileExtensions+=STRING)*']')?
-		('icon' '=' icon=STRING)?
 		('representations' '=' '[' (representations+=[Representation | QualifiedName] (',' representations+=[Representation | QualifiedName])*)? ']')?
 		('javaExtensions' '=' '[' (javaExtension+=[jvmTypes::JvmType|QualifiedName] (',' javaExtension+=[jvmTypes::JvmType|QualifiedName])*)? ']')?
 	'}'
@@ -54,10 +54,10 @@ Diagram:
 	(initialized ?= '@Initialized')?
 	(showOnStartup ?= '@ShowOnStartup')?
 	(enablePopupBars ?= '@EnablePopupBars')?
-	'@MetamodelUris'+'({'
+	('@MetamodelUris'+'({'
 		metamodelUris+=STRING (',' metamodelUris+=STRING)*
-	'})'
-	'diagram' name=ID ('as' label=STRING)? 'for' domainClass=STRING ('?' precondition=EXPRESSION)? '{'
+	'})')?
+	'diagram' name=ID ('as' label=STRING)? 'for' domainClass=STRING ('?' preconditionExpression=EXPRESSION)? '{'
 		('documentation' '=' endUserDocumentation=STRING)?
 		('titleExpression' '=' titleExpression=EXPRESSION)?
 		('rootExpression' '=' rootExpression=EXPRESSION)?
@@ -70,8 +70,8 @@ Diagram:
 
 Layer:
 	(documentation=DOCUMENTATION)?
+	('@IconPath(' iconPath=STRING ')')?
 	'layer' name=ID '{'
-		('icon' '=' icon=STRING)?
 		('mappings' '=' '['
 			(mappings+=[Mapping | QualifiedName] (',' mappings+=[Mapping | QualifiedName])*)?
 		']')?
@@ -86,8 +86,8 @@ Layer:
 
 Section:
 	(documentation=DOCUMENTATION)?
+	('@IconPath(' iconPath=STRING ')')?
 	'section' name=ID ('as' label=STRING)? '{'
-		('icon' '=' icon=STRING)?
 		('tools' '=' '['
 			(tools+=[Tool | QualifiedName] (',' tools+=[Tool | QualifiedName])*)?
 		']')?
@@ -101,10 +101,10 @@ Tool:
 ContainerCreation:
 	(documentation=DOCUMENTATION)?
 	(forceRefresh?='@ForceRefresh')?
+	('@IconPath(' iconPath=STRING ')')?
 	'@NodeCreationVariable' '('nodeCreationVariable=STRING')'
 	'@ContainerViewVariable' '('containerViewVariable=STRING')'
-	'containerCreation' name=ID ('as' label=STRING)? ('?' precondition=EXPRESSION)? '{'
-		('icon' '=' icon=STRING)?
+	'containerCreation' name=ID ('as' label=STRING)? ('?' preconditionExpression=EXPRESSION)? '{'
 		'containerMappings' '=' '['
 			(containerMappings+=[Mapping | QualifiedName] (',' containerMappings+=[Mapping | QualifiedName])*)?
 		']'
@@ -210,15 +210,33 @@ Default:
 ;
 
 Mapping:
-	Container
+	Container | Node
+;
+
+Node:
+	(documentation=DOCUMENTATION)?
+	'node' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style' style=[NodeStyle | QualifiedName] ('?' preconditionExpression=EXPRESSION)? '{'
+		('semanticCandidatesExpression' '=' semanticCandidatesExpression=EXPRESSION)?
+		('associatedElementsExpression' '=' associatedElementsExpression=EXPRESSION)?
+		(conditionalStyles+=ConditionalNodeStyleDeclaration)*
+	'}'
 ;
 
 Container:
 	(documentation=DOCUMENTATION)?
-	(list ?= 'list')? 'container' name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style' style=[ContainerStyle | QualifiedName] ('?' precondition=EXPRESSION)? '{'
-		('semanticCandidatesExpression' '=' semanticCanditatesExpression=EXPRESSION)?
+	'container' (childrenPresentation=ContainerChildrenPresentation)? name=ID ('as' label=STRING)? 'for' domainClass=STRING 'style' style=[ContainerStyle | QualifiedName] ('?' preconditionExpression=EXPRESSION)? '{'
+		('semanticCandidatesExpression' '=' semanticCandidatesExpression=EXPRESSION)?
+		('associatedElementsExpression' '=' associatedElementsExpression=EXPRESSION)?
 		(conditionalStyles+=ConditionalContainerStyleDeclaration)*
 	'}'
+;
+
+enum ContainerChildrenPresentation:
+	freeForm | list | horizontalStack | verticalStack
+;
+
+ConditionalNodeStyleDeclaration:
+	'style' style=[NodeStyle | QualifiedName] 'if' conditionalStyleExpression=EXPRESSION 
 ;
 
 ConditionalContainerStyleDeclaration:
@@ -226,7 +244,49 @@ ConditionalContainerStyleDeclaration:
 ;
 
 Style:
-	ContainerStyle | EdgeStyle
+	ContainerStyle | EdgeStyle | NodeStyle
+;
+
+NodeStyle:
+	Square
+;
+
+Square:
+	(documentation=DOCUMENTATION)?
+	(allowVerticalResizing?='@AllowVerticalResizing')?
+	(allowHorizontalResizing?='@AllowHorizontalResizing')?
+	'square' name=ID 'in' color=[Color | QualifiedName] '{'
+		(label=Label)?
+		('labelBorderStyle' '=' labelBorderStyle=NodeLabelBorderStyle)?
+		(border=Border)?
+		('height' '=' height=INT)?
+		('width' '=' width=INT)?
+		('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)?
+		('tooltipExpression' '=' tooltipExpression=EXPRESSION)?
+	'}'
+;
+
+Label:
+	(showIcon?='@ShowIcon')?
+	(hideByDefault?='@HideByDefault')?
+	('@IconPath(' iconPath=STRING ')')?
+	'label' (formatOptions+=LabelFormatOption)* (alignment=LabelAlignment)? ('size' '=' size=INT)? expression=EXPRESSION 'in' color=[Color | QualifiedName]
+;
+
+enum NodeLabelBorderStyle:
+	node | border
+;
+
+enum LabelFormatOption:
+	bold | italic | underline | strikethrought
+;
+
+enum LabelAlignment:
+	left | center | right
+;
+
+Border:
+	'border' lineStyle=LineStyle 'size' '=' borderSizeComputationExpression=EXPRESSION 'in' borderColor=[Color | QualifiedName]
 ;
 
 ContainerStyle:
@@ -236,17 +296,19 @@ ContainerStyle:
 Gradient:
 	(documentation=DOCUMENTATION)?
 	'gradient' direction=GradientDirection name=ID 'from' backgroundColor=[Color | QualifiedName] 'to' foregroundColor=[Color | QualifiedName] '{'
-		('label' labelAlignment=LabelAlignment labelExpression=EXPRESSION 'in' labelColor=[Color | QualifiedName] )?
-		('border''size' '=' borderSize=INT 'in' borderColor=[Color | QualifiedName])?
-		('icon' '=' icon=STRING)?
+		(label=Label)?
+		('labelBorderStyle' '=' labelBorderStyle=ContainerLabelBorderStyle)?
+		(border=Border)?
 		('heightComputationExpression' '=' heightComputationExpression=EXPRESSION)?
 		('widthComputationExpression' '=' widthComputationExpression=EXPRESSION)?
-		
+		('arcHeight' '=' arcHeight=INT)?
+		('arcWidth' '=' arcWidth=INT)?
+		('tooltipExpression' '=' tooltipExpression=EXPRESSION)?
 	'}'
 ;
 
-enum LabelAlignment:
-	left | center | right
+enum ContainerLabelBorderStyle:
+	labelBorderStyleWithBeveledCorner | labelBorderForContainer | noLabelBorderForList
 ;
 
 enum GradientDirection:
@@ -259,19 +321,20 @@ Edge:
 
 RelationBasedEdge:
 	(documentation=DOCUMENTATION)?
-	'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle | QualifiedName] '{'
+	'relationBasedEdge' name=ID ('as' label=STRING)? 'style' style=[EdgeStyle | QualifiedName] ('?' preconditionExpression=EXPRESSION)? '{'
 		'sourceMappings' '=' '['
 			(sourceMappings+=[Mapping | QualifiedName] (',' sourceMappings+=[Mapping | QualifiedName])*)?
 		']'
 		'targetMappings' '=' '['
 			(targetMappings+=[Mapping | QualifiedName] (',' targetMappings+=[Mapping | QualifiedName])*)?
 		']'
-		'targetFileExpression' '=' targetFinderExpression=EXPRESSION
+		'targetFinderExpression' '=' targetFinderExpression=EXPRESSION
 	'}'
 ;
 
 EdgeStyle:
 	'edgeStyle' name=ID 'in' strokeColor=[Color | QualifiedName] ('line' '=' lineStyle=LineStyle)? ('routing' '=' routingStyle=RoutingStyle)? '{'
+		(label=EdgeLabel)?
 		('sourceArrow' '=' sourceArrow=ArrowDecorator)?
 		('targetArrow' '=' targetArrow=ArrowDecorator)?
 		('sizeComputationExpression' '=' sizeComputationExpression=EXPRESSION)?
@@ -298,6 +361,12 @@ enum FoldingStyle:
 
 enum EndsCentering:
 	none | both | source | target
+;
+
+EdgeLabel:
+	(showIcon?='@ShowIcon')?
+	('@IconPath(' iconPath=STRING ')')?
+	'label' (formatOptions+=LabelFormatOption)* ('size' '=' size=INT)? expression=EXPRESSION 'in' color=[Color | QualifiedName]
 ;
 
 Palette:

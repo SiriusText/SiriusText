@@ -234,13 +234,22 @@ public interface SiriusTextDslPackage extends EPackage
   int VIEWPOINT__DOCUMENTATION = 0;
 
   /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEWPOINT__ICON_PATH = 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEWPOINT__NAME = 1;
+  int VIEWPOINT__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -249,7 +258,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__LABEL = 2;
+  int VIEWPOINT__LABEL = 3;
 
   /**
    * The feature id for the '<em><b>Model File Extensions</b></em>' attribute list.
@@ -258,16 +267,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__MODEL_FILE_EXTENSIONS = 3;
-
-  /**
-   * The feature id for the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VIEWPOINT__ICON = 4;
+  int VIEWPOINT__MODEL_FILE_EXTENSIONS = 4;
 
   /**
    * The feature id for the '<em><b>Representations</b></em>' reference list.
@@ -398,13 +398,13 @@ public interface SiriusTextDslPackage extends EPackage
   int DIAGRAM__DOMAIN_CLASS = REPRESENTATION_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Precondition</b></em>' attribute.
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIAGRAM__PRECONDITION = REPRESENTATION_FEATURE_COUNT + 8;
+  int DIAGRAM__PRECONDITION_EXPRESSION = REPRESENTATION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>End User Documentation</b></em>' attribute.
@@ -480,22 +480,22 @@ public interface SiriusTextDslPackage extends EPackage
   int LAYER__DOCUMENTATION = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYER__ICON_PATH = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYER__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LAYER__ICON = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
+  int LAYER__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Mappings</b></em>' reference list.
@@ -553,13 +553,22 @@ public interface SiriusTextDslPackage extends EPackage
   int SECTION__DOCUMENTATION = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTION__ICON_PATH = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SECTION__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
+  int SECTION__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -568,16 +577,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SECTION__LABEL = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SECTION__ICON = SIRIUS_FILE_BODY_FEATURE_COUNT + 3;
+  int SECTION__LABEL = SIRIUS_FILE_BODY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Tools</b></em>' reference list.
@@ -645,13 +645,22 @@ public interface SiriusTextDslPackage extends EPackage
   int CONTAINER_CREATION__FORCE_REFRESH = TOOL_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_CREATION__ICON_PATH = TOOL_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Node Creation Variable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER_CREATION__NODE_CREATION_VARIABLE = TOOL_FEATURE_COUNT + 2;
+  int CONTAINER_CREATION__NODE_CREATION_VARIABLE = TOOL_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Container View Variable</b></em>' attribute.
@@ -660,7 +669,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE = TOOL_FEATURE_COUNT + 3;
+  int CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE = TOOL_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -669,7 +678,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_CREATION__NAME = TOOL_FEATURE_COUNT + 4;
+  int CONTAINER_CREATION__NAME = TOOL_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -678,25 +687,16 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_CREATION__LABEL = TOOL_FEATURE_COUNT + 5;
+  int CONTAINER_CREATION__LABEL = TOOL_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Precondition</b></em>' attribute.
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER_CREATION__PRECONDITION = TOOL_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_CREATION__ICON = TOOL_FEATURE_COUNT + 7;
+  int CONTAINER_CREATION__PRECONDITION_EXPRESSION = TOOL_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Container Mappings</b></em>' reference list.
@@ -1363,13 +1363,176 @@ public interface SiriusTextDslPackage extends EPackage
   int MAPPING = 26;
 
   /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__DOCUMENTATION = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__NAME = SIRIUS_FILE_BODY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__LABEL = SIRIUS_FILE_BODY_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Domain Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__DOMAIN_CLASS = SIRIUS_FILE_BODY_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__PRECONDITION_EXPRESSION = SIRIUS_FILE_BODY_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__SEMANTIC_CANDIDATES_EXPRESSION = SIRIUS_FILE_BODY_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Associated Elements Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__ASSOCIATED_ELEMENTS_EXPRESSION = SIRIUS_FILE_BODY_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Mapping</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAPPING_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
+  int MAPPING_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeImpl <em>Node</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNode()
+   * @generated
+   */
+  int NODE = 27;
+
+  /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__DOCUMENTATION = MAPPING__DOCUMENTATION;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__NAME = MAPPING__NAME;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__LABEL = MAPPING__LABEL;
+
+  /**
+   * The feature id for the '<em><b>Domain Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__DOMAIN_CLASS = MAPPING__DOMAIN_CLASS;
+
+  /**
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__PRECONDITION_EXPRESSION = MAPPING__PRECONDITION_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__SEMANTIC_CANDIDATES_EXPRESSION = MAPPING__SEMANTIC_CANDIDATES_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Associated Elements Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__ASSOCIATED_ELEMENTS_EXPRESSION = MAPPING__ASSOCIATED_ELEMENTS_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Style</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__STYLE = MAPPING_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE__CONDITIONAL_STYLES = MAPPING_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Node</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_FEATURE_COUNT = MAPPING_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerImpl <em>Container</em>}' class.
@@ -1379,7 +1542,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainer()
    * @generated
    */
-  int CONTAINER = 27;
+  int CONTAINER = 28;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1388,16 +1551,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__DOCUMENTATION = MAPPING_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>List</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER__LIST = MAPPING_FEATURE_COUNT + 1;
+  int CONTAINER__DOCUMENTATION = MAPPING__DOCUMENTATION;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1406,7 +1560,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__NAME = MAPPING_FEATURE_COUNT + 2;
+  int CONTAINER__NAME = MAPPING__NAME;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1415,7 +1569,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__LABEL = MAPPING_FEATURE_COUNT + 3;
+  int CONTAINER__LABEL = MAPPING__LABEL;
 
   /**
    * The feature id for the '<em><b>Domain Class</b></em>' attribute.
@@ -1424,7 +1578,43 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__DOMAIN_CLASS = MAPPING_FEATURE_COUNT + 4;
+  int CONTAINER__DOMAIN_CLASS = MAPPING__DOMAIN_CLASS;
+
+  /**
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER__PRECONDITION_EXPRESSION = MAPPING__PRECONDITION_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Semantic Candidates Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER__SEMANTIC_CANDIDATES_EXPRESSION = MAPPING__SEMANTIC_CANDIDATES_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Associated Elements Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER__ASSOCIATED_ELEMENTS_EXPRESSION = MAPPING__ASSOCIATED_ELEMENTS_EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Children Presentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER__CHILDREN_PRESENTATION = MAPPING_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Style</b></em>' reference.
@@ -1433,25 +1623,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__STYLE = MAPPING_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Precondition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER__PRECONDITION = MAPPING_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Semantic Canditates Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER__SEMANTIC_CANDITATES_EXPRESSION = MAPPING_FEATURE_COUNT + 7;
+  int CONTAINER__STYLE = MAPPING_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list.
@@ -1460,7 +1632,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__CONDITIONAL_STYLES = MAPPING_FEATURE_COUNT + 8;
+  int CONTAINER__CONDITIONAL_STYLES = MAPPING_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Container</em>' class.
@@ -1469,7 +1641,44 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_FEATURE_COUNT = MAPPING_FEATURE_COUNT + 9;
+  int CONTAINER_FEATURE_COUNT = MAPPING_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalNodeStyleDeclarationImpl <em>Conditional Node Style Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalNodeStyleDeclarationImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getConditionalNodeStyleDeclaration()
+   * @generated
+   */
+  int CONDITIONAL_NODE_STYLE_DECLARATION = 29;
+
+  /**
+   * The feature id for the '<em><b>Style</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL_NODE_STYLE_DECLARATION__STYLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Conditional Style Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL_NODE_STYLE_DECLARATION__CONDITIONAL_STYLE_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Conditional Node Style Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL_NODE_STYLE_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalContainerStyleDeclarationImpl <em>Conditional Container Style Declaration</em>}' class.
@@ -1479,7 +1688,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getConditionalContainerStyleDeclaration()
    * @generated
    */
-  int CONDITIONAL_CONTAINER_STYLE_DECLARATION = 28;
+  int CONDITIONAL_CONTAINER_STYLE_DECLARATION = 30;
 
   /**
    * The feature id for the '<em><b>Style</b></em>' reference.
@@ -1516,7 +1725,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getStyle()
    * @generated
    */
-  int STYLE = 29;
+  int STYLE = 31;
 
   /**
    * The number of structural features of the '<em>Style</em>' class.
@@ -1528,6 +1737,289 @@ public interface SiriusTextDslPackage extends EPackage
   int STYLE_FEATURE_COUNT = SIRIUS_FILE_BODY_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeStyleImpl <em>Node Style</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeStyleImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNodeStyle()
+   * @generated
+   */
+  int NODE_STYLE = 32;
+
+  /**
+   * The number of structural features of the '<em>Node Style</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_STYLE_FEATURE_COUNT = STYLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SquareImpl <em>Square</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SquareImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSquare()
+   * @generated
+   */
+  int SQUARE = 33;
+
+  /**
+   * The feature id for the '<em><b>Documentation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__DOCUMENTATION = NODE_STYLE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Allow Vertical Resizing</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__ALLOW_VERTICAL_RESIZING = NODE_STYLE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Allow Horizontal Resizing</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__ALLOW_HORIZONTAL_RESIZING = NODE_STYLE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__NAME = NODE_STYLE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__COLOR = NODE_STYLE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__LABEL = NODE_STYLE_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Label Border Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__LABEL_BORDER_STYLE = NODE_STYLE_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Border</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__BORDER = NODE_STYLE_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__HEIGHT = NODE_STYLE_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__WIDTH = NODE_STYLE_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Size Computation Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__SIZE_COMPUTATION_EXPRESSION = NODE_STYLE_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Tooltip Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE__TOOLTIP_EXPRESSION = NODE_STYLE_FEATURE_COUNT + 11;
+
+  /**
+   * The number of structural features of the '<em>Square</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_FEATURE_COUNT = NODE_STYLE_FEATURE_COUNT + 12;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LabelImpl <em>Label</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.LabelImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabel()
+   * @generated
+   */
+  int LABEL = 34;
+
+  /**
+   * The feature id for the '<em><b>Show Icon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__SHOW_ICON = 0;
+
+  /**
+   * The feature id for the '<em><b>Hide By Default</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__HIDE_BY_DEFAULT = 1;
+
+  /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__ICON_PATH = 2;
+
+  /**
+   * The feature id for the '<em><b>Format Options</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__FORMAT_OPTIONS = 3;
+
+  /**
+   * The feature id for the '<em><b>Alignment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__ALIGNMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__SIZE = 5;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__EXPRESSION = 6;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL__COLOR = 7;
+
+  /**
+   * The number of structural features of the '<em>Label</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_FEATURE_COUNT = 8;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.BorderImpl <em>Border</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.BorderImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getBorder()
+   * @generated
+   */
+  int BORDER = 35;
+
+  /**
+   * The feature id for the '<em><b>Line Style</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BORDER__LINE_STYLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Border Size Computation Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BORDER__BORDER_SIZE_COMPUTATION_EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Border Color</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BORDER__BORDER_COLOR = 2;
+
+  /**
+   * The number of structural features of the '<em>Border</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BORDER_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerStyleImpl <em>Container Style</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1535,7 +2027,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerStyle()
    * @generated
    */
-  int CONTAINER_STYLE = 30;
+  int CONTAINER_STYLE = 36;
 
   /**
    * The number of structural features of the '<em>Container Style</em>' class.
@@ -1554,7 +2046,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradient()
    * @generated
    */
-  int GRADIENT = 31;
+  int GRADIENT = 37;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1602,58 +2094,31 @@ public interface SiriusTextDslPackage extends EPackage
   int GRADIENT__FOREGROUND_COLOR = CONTAINER_STYLE_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Label Alignment</b></em>' attribute.
+   * The feature id for the '<em><b>Label</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__LABEL_ALIGNMENT = CONTAINER_STYLE_FEATURE_COUNT + 5;
+  int GRADIENT__LABEL = CONTAINER_STYLE_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Label Expression</b></em>' attribute.
+   * The feature id for the '<em><b>Label Border Style</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__LABEL_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 6;
+  int GRADIENT__LABEL_BORDER_STYLE = CONTAINER_STYLE_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Label Color</b></em>' reference.
+   * The feature id for the '<em><b>Border</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRADIENT__LABEL_COLOR = CONTAINER_STYLE_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Border Size</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GRADIENT__BORDER_SIZE = CONTAINER_STYLE_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>Border Color</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GRADIENT__BORDER_COLOR = CONTAINER_STYLE_FEATURE_COUNT + 9;
-
-  /**
-   * The feature id for the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GRADIENT__ICON = CONTAINER_STYLE_FEATURE_COUNT + 10;
+  int GRADIENT__BORDER = CONTAINER_STYLE_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Height Computation Expression</b></em>' attribute.
@@ -1662,7 +2127,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRADIENT__HEIGHT_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 11;
+  int GRADIENT__HEIGHT_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Width Computation Expression</b></em>' attribute.
@@ -1671,7 +2136,34 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRADIENT__WIDTH_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 12;
+  int GRADIENT__WIDTH_COMPUTATION_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Arc Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRADIENT__ARC_HEIGHT = CONTAINER_STYLE_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Arc Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRADIENT__ARC_WIDTH = CONTAINER_STYLE_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Tooltip Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRADIENT__TOOLTIP_EXPRESSION = CONTAINER_STYLE_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Gradient</em>' class.
@@ -1690,7 +2182,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdge()
    * @generated
    */
-  int EDGE = 32;
+  int EDGE = 38;
 
   /**
    * The number of structural features of the '<em>Edge</em>' class.
@@ -1709,7 +2201,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRelationBasedEdge()
    * @generated
    */
-  int RELATION_BASED_EDGE = 33;
+  int RELATION_BASED_EDGE = 39;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1748,13 +2240,22 @@ public interface SiriusTextDslPackage extends EPackage
   int RELATION_BASED_EDGE__STYLE = EDGE_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION_BASED_EDGE__PRECONDITION_EXPRESSION = EDGE_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Source Mappings</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATION_BASED_EDGE__SOURCE_MAPPINGS = EDGE_FEATURE_COUNT + 4;
+  int RELATION_BASED_EDGE__SOURCE_MAPPINGS = EDGE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Target Mappings</b></em>' reference list.
@@ -1763,7 +2264,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATION_BASED_EDGE__TARGET_MAPPINGS = EDGE_FEATURE_COUNT + 5;
+  int RELATION_BASED_EDGE__TARGET_MAPPINGS = EDGE_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Target Finder Expression</b></em>' attribute.
@@ -1772,7 +2273,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION = EDGE_FEATURE_COUNT + 6;
+  int RELATION_BASED_EDGE__TARGET_FINDER_EXPRESSION = EDGE_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Relation Based Edge</em>' class.
@@ -1781,7 +2282,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATION_BASED_EDGE_FEATURE_COUNT = EDGE_FEATURE_COUNT + 7;
+  int RELATION_BASED_EDGE_FEATURE_COUNT = EDGE_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl <em>Edge Style</em>}' class.
@@ -1791,7 +2292,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeStyle()
    * @generated
    */
-  int EDGE_STYLE = 34;
+  int EDGE_STYLE = 40;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1830,13 +2331,22 @@ public interface SiriusTextDslPackage extends EPackage
   int EDGE_STYLE__ROUTING_STYLE = STYLE_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Label</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_STYLE__LABEL = STYLE_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Source Arrow</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EDGE_STYLE__SOURCE_ARROW = STYLE_FEATURE_COUNT + 4;
+  int EDGE_STYLE__SOURCE_ARROW = STYLE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Target Arrow</b></em>' attribute.
@@ -1845,7 +2355,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDGE_STYLE__TARGET_ARROW = STYLE_FEATURE_COUNT + 5;
+  int EDGE_STYLE__TARGET_ARROW = STYLE_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Size Computation Expression</b></em>' attribute.
@@ -1854,7 +2364,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION = STYLE_FEATURE_COUNT + 6;
+  int EDGE_STYLE__SIZE_COMPUTATION_EXPRESSION = STYLE_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Folding Style</b></em>' attribute.
@@ -1863,7 +2373,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDGE_STYLE__FOLDING_STYLE = STYLE_FEATURE_COUNT + 7;
+  int EDGE_STYLE__FOLDING_STYLE = STYLE_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Ends Centering</b></em>' attribute.
@@ -1872,7 +2382,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDGE_STYLE__ENDS_CENTERING = STYLE_FEATURE_COUNT + 8;
+  int EDGE_STYLE__ENDS_CENTERING = STYLE_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Edge Style</em>' class.
@@ -1881,7 +2391,80 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDGE_STYLE_FEATURE_COUNT = STYLE_FEATURE_COUNT + 9;
+  int EDGE_STYLE_FEATURE_COUNT = STYLE_FEATURE_COUNT + 10;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeLabelImpl <em>Edge Label</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeLabelImpl
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeLabel()
+   * @generated
+   */
+  int EDGE_LABEL = 41;
+
+  /**
+   * The feature id for the '<em><b>Show Icon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__SHOW_ICON = 0;
+
+  /**
+   * The feature id for the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__ICON_PATH = 1;
+
+  /**
+   * The feature id for the '<em><b>Format Options</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__FORMAT_OPTIONS = 2;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__SIZE = 3;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__EXPRESSION = 4;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL__COLOR = 5;
+
+  /**
+   * The number of structural features of the '<em>Edge Label</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDGE_LABEL_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.PaletteImpl <em>Palette</em>}' class.
@@ -1891,7 +2474,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getPalette()
    * @generated
    */
-  int PALETTE = 35;
+  int PALETTE = 42;
 
   /**
    * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1937,7 +2520,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 36;
+  int COLOR = 43;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1974,7 +2557,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getColorValue()
    * @generated
    */
-  int COLOR_VALUE = 37;
+  int COLOR_VALUE = 44;
 
   /**
    * The number of structural features of the '<em>Color Value</em>' class.
@@ -1993,7 +2576,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRGB()
    * @generated
    */
-  int RGB = 38;
+  int RGB = 45;
 
   /**
    * The feature id for the '<em><b>Red</b></em>' attribute.
@@ -2032,6 +2615,36 @@ public interface SiriusTextDslPackage extends EPackage
   int RGB_FEATURE_COUNT = COLOR_VALUE_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation <em>Container Children Presentation</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerChildrenPresentation()
+   * @generated
+   */
+  int CONTAINER_CHILDREN_PRESENTATION = 46;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle <em>Node Label Border Style</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNodeLabelBorderStyle()
+   * @generated
+   */
+  int NODE_LABEL_BORDER_STYLE = 47;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption <em>Label Format Option</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelFormatOption()
+   * @generated
+   */
+  int LABEL_FORMAT_OPTION = 48;
+
+  /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2039,7 +2652,17 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelAlignment()
    * @generated
    */
-  int LABEL_ALIGNMENT = 39;
+  int LABEL_ALIGNMENT = 49;
+
+  /**
+   * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle <em>Container Label Border Style</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerLabelBorderStyle()
+   * @generated
+   */
+  int CONTAINER_LABEL_BORDER_STYLE = 50;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.
@@ -2049,7 +2672,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getGradientDirection()
    * @generated
    */
-  int GRADIENT_DIRECTION = 40;
+  int GRADIENT_DIRECTION = 51;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LineStyle <em>Line Style</em>}' enum.
@@ -2059,7 +2682,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLineStyle()
    * @generated
    */
-  int LINE_STYLE = 41;
+  int LINE_STYLE = 52;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle <em>Routing Style</em>}' enum.
@@ -2069,7 +2692,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getRoutingStyle()
    * @generated
    */
-  int ROUTING_STYLE = 42;
+  int ROUTING_STYLE = 53;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator <em>Arrow Decorator</em>}' enum.
@@ -2079,7 +2702,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getArrowDecorator()
    * @generated
    */
-  int ARROW_DECORATOR = 43;
+  int ARROW_DECORATOR = 54;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle <em>Folding Style</em>}' enum.
@@ -2089,7 +2712,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getFoldingStyle()
    * @generated
    */
-  int FOLDING_STYLE = 44;
+  int FOLDING_STYLE = 55;
 
   /**
    * The meta object id for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering <em>Ends Centering</em>}' enum.
@@ -2099,7 +2722,7 @@ public interface SiriusTextDslPackage extends EPackage
    * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEndsCentering()
    * @generated
    */
-  int ENDS_CENTERING = 45;
+  int ENDS_CENTERING = 56;
 
 
   /**
@@ -2263,6 +2886,17 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getViewpoint_Documentation();
 
   /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIconPath()
+   * @see #getViewpoint()
+   * @generated
+   */
+  EAttribute getViewpoint_IconPath();
+
+  /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2294,17 +2928,6 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getViewpoint_ModelFileExtensions();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIcon <em>Icon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Icon</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIcon()
-   * @see #getViewpoint()
-   * @generated
-   */
-  EAttribute getViewpoint_Icon();
 
   /**
    * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getRepresentations <em>Representations</em>}'.
@@ -2437,15 +3060,15 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getDiagram_DomainClass();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPrecondition <em>Precondition</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPreconditionExpression <em>Precondition Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Precondition</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPrecondition()
+   * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getPreconditionExpression()
    * @see #getDiagram()
    * @generated
    */
-  EAttribute getDiagram_Precondition();
+  EAttribute getDiagram_PreconditionExpression();
 
   /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Diagram#getEndUserDocumentation <em>End User Documentation</em>}'.
@@ -2524,6 +3147,17 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getLayer_Documentation();
 
   /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIconPath()
+   * @see #getLayer()
+   * @generated
+   */
+  EAttribute getLayer_IconPath();
+
+  /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2533,17 +3167,6 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getLayer_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIcon <em>Icon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Icon</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Layer#getIcon()
-   * @see #getLayer()
-   * @generated
-   */
-  EAttribute getLayer_Icon();
 
   /**
    * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Layer#getMappings <em>Mappings</em>}'.
@@ -2600,6 +3223,17 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getSection_Documentation();
 
   /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getIconPath()
+   * @see #getSection()
+   * @generated
+   */
+  EAttribute getSection_IconPath();
+
+  /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2620,17 +3254,6 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getSection_Label();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon <em>Icon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Icon</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon()
-   * @see #getSection()
-   * @generated
-   */
-  EAttribute getSection_Icon();
 
   /**
    * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getTools <em>Tools</em>}'.
@@ -2686,6 +3309,17 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getContainerCreation_ForceRefresh();
 
   /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIconPath()
+   * @see #getContainerCreation()
+   * @generated
+   */
+  EAttribute getContainerCreation_IconPath();
+
+  /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getNodeCreationVariable <em>Node Creation Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2730,26 +3364,15 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getContainerCreation_Label();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition <em>Precondition</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPreconditionExpression <em>Precondition Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Precondition</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition()
+   * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPreconditionExpression()
    * @see #getContainerCreation()
    * @generated
    */
-  EAttribute getContainerCreation_Precondition();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon <em>Icon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Icon</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon()
-   * @see #getContainerCreation()
-   * @generated
-   */
-  EAttribute getContainerCreation_Icon();
+  EAttribute getContainerCreation_PreconditionExpression();
 
   /**
    * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerMappings <em>Container Mappings</em>}'.
@@ -3352,6 +3975,115 @@ public interface SiriusTextDslPackage extends EPackage
   EClass getMapping();
 
   /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getDocumentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Documentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getDocumentation()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getName()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getLabel()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getDomainClass <em>Domain Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Domain Class</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getDomainClass()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_DomainClass();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getPreconditionExpression <em>Precondition Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getPreconditionExpression()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_PreconditionExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getSemanticCandidatesExpression <em>Semantic Candidates Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Semantic Candidates Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getSemanticCandidatesExpression()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_SemanticCandidatesExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getAssociatedElementsExpression <em>Associated Elements Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Associated Elements Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Mapping#getAssociatedElementsExpression()
+   * @see #getMapping()
+   * @generated
+   */
+  EAttribute getMapping_AssociatedElementsExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Node <em>Node</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Node</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Node
+   * @generated
+   */
+  EClass getNode();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Node#getStyle <em>Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Node#getStyle()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_Style();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Node#getConditionalStyles <em>Conditional Styles</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Node#getConditionalStyles()
+   * @see #getNode()
+   * @generated
+   */
+  EReference getNode_ConditionalStyles();
+
+  /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3362,59 +4094,15 @@ public interface SiriusTextDslPackage extends EPackage
   EClass getContainer();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getDocumentation <em>Documentation</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getChildrenPresentation <em>Children Presentation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Documentation</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getDocumentation()
+   * @return the meta object for the attribute '<em>Children Presentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getChildrenPresentation()
    * @see #getContainer()
    * @generated
    */
-  EAttribute getContainer_Documentation();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#isList <em>List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>List</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#isList()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_List();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getName()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getLabel <em>Label</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getLabel()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_Label();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getDomainClass <em>Domain Class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Domain Class</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getDomainClass()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_DomainClass();
+  EAttribute getContainer_ChildrenPresentation();
 
   /**
    * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getStyle <em>Style</em>}'.
@@ -3428,28 +4116,6 @@ public interface SiriusTextDslPackage extends EPackage
   EReference getContainer_Style();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getPrecondition <em>Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Precondition</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getPrecondition()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_Precondition();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getSemanticCanditatesExpression <em>Semantic Canditates Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Semantic Canditates Expression</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Container#getSemanticCanditatesExpression()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_SemanticCanditatesExpression();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Container#getConditionalStyles <em>Conditional Styles</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3459,6 +4125,38 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EReference getContainer_ConditionalStyles();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration <em>Conditional Node Style Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Conditional Node Style Declaration</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration
+   * @generated
+   */
+  EClass getConditionalNodeStyleDeclaration();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration#getStyle <em>Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration#getStyle()
+   * @see #getConditionalNodeStyleDeclaration()
+   * @generated
+   */
+  EReference getConditionalNodeStyleDeclaration_Style();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration#getConditionalStyleExpression <em>Conditional Style Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conditional Style Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ConditionalNodeStyleDeclaration#getConditionalStyleExpression()
+   * @see #getConditionalNodeStyleDeclaration()
+   * @generated
+   */
+  EAttribute getConditionalNodeStyleDeclaration_ConditionalStyleExpression();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration <em>Conditional Container Style Declaration</em>}'.
@@ -3501,6 +4199,299 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EClass getStyle();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle <em>Node Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Node Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle
+   * @generated
+   */
+  EClass getNodeStyle();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square <em>Square</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Square</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square
+   * @generated
+   */
+  EClass getSquare();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getDocumentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Documentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getDocumentation()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#isAllowVerticalResizing <em>Allow Vertical Resizing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Allow Vertical Resizing</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#isAllowVerticalResizing()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_AllowVerticalResizing();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#isAllowHorizontalResizing <em>Allow Horizontal Resizing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Allow Horizontal Resizing</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#isAllowHorizontalResizing()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_AllowHorizontalResizing();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getName()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Color</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getColor()
+   * @see #getSquare()
+   * @generated
+   */
+  EReference getSquare_Color();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getLabel()
+   * @see #getSquare()
+   * @generated
+   */
+  EReference getSquare_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getLabelBorderStyle <em>Label Border Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label Border Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getLabelBorderStyle()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_LabelBorderStyle();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getBorder <em>Border</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Border</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getBorder()
+   * @see #getSquare()
+   * @generated
+   */
+  EReference getSquare_Border();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getHeight <em>Height</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Height</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getHeight()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_Height();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getWidth <em>Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Width</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getWidth()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_Width();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getSizeComputationExpression <em>Size Computation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size Computation Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getSizeComputationExpression()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_SizeComputationExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Square#getTooltipExpression <em>Tooltip Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tooltip Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Square#getTooltipExpression()
+   * @see #getSquare()
+   * @generated
+   */
+  EAttribute getSquare_TooltipExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label
+   * @generated
+   */
+  EClass getLabel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#isShowIcon <em>Show Icon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Show Icon</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#isShowIcon()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_ShowIcon();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#isHideByDefault <em>Hide By Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Hide By Default</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#isHideByDefault()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_HideByDefault();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getIconPath()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_IconPath();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getFormatOptions <em>Format Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Format Options</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getFormatOptions()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_FormatOptions();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getAlignment <em>Alignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Alignment</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getAlignment()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_Alignment();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getSize()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_Size();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getExpression()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_Expression();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Label#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Color</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Label#getColor()
+   * @see #getLabel()
+   * @generated
+   */
+  EReference getLabel_Color();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Border <em>Border</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Border</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Border
+   * @generated
+   */
+  EClass getBorder();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Border#getLineStyle <em>Line Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Line Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Border#getLineStyle()
+   * @see #getBorder()
+   * @generated
+   */
+  EAttribute getBorder_LineStyle();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Border#getBorderSizeComputationExpression <em>Border Size Computation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Border Size Computation Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Border#getBorderSizeComputationExpression()
+   * @see #getBorder()
+   * @generated
+   */
+  EAttribute getBorder_BorderSizeComputationExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Border#getBorderColor <em>Border Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Border Color</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Border#getBorderColor()
+   * @see #getBorder()
+   * @generated
+   */
+  EReference getBorder_BorderColor();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle <em>Container Style</em>}'.
@@ -3578,70 +4569,37 @@ public interface SiriusTextDslPackage extends EPackage
   EReference getGradient_ForegroundColor();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment <em>Label Alignment</em>}'.
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabel <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label Alignment</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelAlignment()
+   * @return the meta object for the containment reference '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabel()
    * @see #getGradient()
    * @generated
    */
-  EAttribute getGradient_LabelAlignment();
+  EReference getGradient_Label();
 
   /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression <em>Label Expression</em>}'.
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelBorderStyle <em>Label Border Style</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label Expression</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelExpression()
+   * @return the meta object for the attribute '<em>Label Border Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelBorderStyle()
    * @see #getGradient()
    * @generated
    */
-  EAttribute getGradient_LabelExpression();
+  EAttribute getGradient_LabelBorderStyle();
 
   /**
-   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelColor <em>Label Color</em>}'.
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorder <em>Border</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Label Color</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getLabelColor()
+   * @return the meta object for the containment reference '<em>Border</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorder()
    * @see #getGradient()
    * @generated
    */
-  EReference getGradient_LabelColor();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize <em>Border Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Border Size</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderSize()
-   * @see #getGradient()
-   * @generated
-   */
-  EAttribute getGradient_BorderSize();
-
-  /**
-   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderColor <em>Border Color</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Border Color</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getBorderColor()
-   * @see #getGradient()
-   * @generated
-   */
-  EReference getGradient_BorderColor();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getIcon <em>Icon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Icon</em>'.
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getIcon()
-   * @see #getGradient()
-   * @generated
-   */
-  EAttribute getGradient_Icon();
+  EReference getGradient_Border();
 
   /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getHeightComputationExpression <em>Height Computation Expression</em>}'.
@@ -3664,6 +4622,39 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getGradient_WidthComputationExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcHeight <em>Arc Height</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Arc Height</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcHeight()
+   * @see #getGradient()
+   * @generated
+   */
+  EAttribute getGradient_ArcHeight();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcWidth <em>Arc Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Arc Width</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getArcWidth()
+   * @see #getGradient()
+   * @generated
+   */
+  EAttribute getGradient_ArcWidth();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getTooltipExpression <em>Tooltip Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tooltip Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.Gradient#getTooltipExpression()
+   * @see #getGradient()
+   * @generated
+   */
+  EAttribute getGradient_TooltipExpression();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Edge <em>Edge</em>}'.
@@ -3728,6 +4719,17 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EReference getRelationBasedEdge_Style();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getPreconditionExpression <em>Precondition Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getPreconditionExpression()
+   * @see #getRelationBasedEdge()
+   * @generated
+   */
+  EAttribute getRelationBasedEdge_PreconditionExpression();
 
   /**
    * Returns the meta object for the reference list '{@link org.obeonetwork.sirius.text.siriusTextDsl.RelationBasedEdge#getSourceMappings <em>Source Mappings</em>}'.
@@ -3817,6 +4819,17 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getEdgeStyle_RoutingStyle();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLabel()
+   * @see #getEdgeStyle()
+   * @generated
+   */
+  EReference getEdgeStyle_Label();
+
+  /**
    * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSourceArrow <em>Source Arrow</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3870,6 +4883,82 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EAttribute getEdgeStyle_EndsCentering();
+
+  /**
+   * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel <em>Edge Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edge Label</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel
+   * @generated
+   */
+  EClass getEdgeLabel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#isShowIcon <em>Show Icon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Show Icon</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#isShowIcon()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EAttribute getEdgeLabel_ShowIcon();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getIconPath <em>Icon Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Icon Path</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getIconPath()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EAttribute getEdgeLabel_IconPath();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getFormatOptions <em>Format Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Format Options</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getFormatOptions()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EAttribute getEdgeLabel_FormatOptions();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getSize()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EAttribute getEdgeLabel_Size();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getExpression()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EAttribute getEdgeLabel_Expression();
+
+  /**
+   * Returns the meta object for the reference '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Color</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel#getColor()
+   * @see #getEdgeLabel()
+   * @generated
+   */
+  EReference getEdgeLabel_Color();
 
   /**
    * Returns the meta object for class '{@link org.obeonetwork.sirius.text.siriusTextDsl.Palette <em>Palette</em>}'.
@@ -4000,6 +5089,36 @@ public interface SiriusTextDslPackage extends EPackage
   EAttribute getRGB_Blue();
 
   /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation <em>Container Children Presentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Container Children Presentation</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation
+   * @generated
+   */
+  EEnum getContainerChildrenPresentation();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle <em>Node Label Border Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Node Label Border Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle
+   * @generated
+   */
+  EEnum getNodeLabelBorderStyle();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption <em>Label Format Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Label Format Option</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption
+   * @generated
+   */
+  EEnum getLabelFormatOption();
+
+  /**
    * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4008,6 +5127,16 @@ public interface SiriusTextDslPackage extends EPackage
    * @generated
    */
   EEnum getLabelAlignment();
+
+  /**
+   * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle <em>Container Label Border Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Container Label Border Style</em>'.
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle
+   * @generated
+   */
+  EEnum getContainerLabelBorderStyle();
 
   /**
    * Returns the meta object for enum '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}'.
@@ -4223,6 +5352,14 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute VIEWPOINT__DOCUMENTATION = eINSTANCE.getViewpoint_Documentation();
 
     /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VIEWPOINT__ICON_PATH = eINSTANCE.getViewpoint_IconPath();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4245,14 +5382,6 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EAttribute VIEWPOINT__MODEL_FILE_EXTENSIONS = eINSTANCE.getViewpoint_ModelFileExtensions();
-
-    /**
-     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VIEWPOINT__ICON = eINSTANCE.getViewpoint_Icon();
 
     /**
      * The meta object literal for the '<em><b>Representations</b></em>' reference list feature.
@@ -4355,12 +5484,12 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute DIAGRAM__DOMAIN_CLASS = eINSTANCE.getDiagram_DomainClass();
 
     /**
-     * The meta object literal for the '<em><b>Precondition</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIAGRAM__PRECONDITION = eINSTANCE.getDiagram_Precondition();
+    EAttribute DIAGRAM__PRECONDITION_EXPRESSION = eINSTANCE.getDiagram_PreconditionExpression();
 
     /**
      * The meta object literal for the '<em><b>End User Documentation</b></em>' attribute feature.
@@ -4421,20 +5550,20 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute LAYER__DOCUMENTATION = eINSTANCE.getLayer_Documentation();
 
     /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAYER__ICON_PATH = eINSTANCE.getLayer_IconPath();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute LAYER__NAME = eINSTANCE.getLayer_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LAYER__ICON = eINSTANCE.getLayer_Icon();
 
     /**
      * The meta object literal for the '<em><b>Mappings</b></em>' reference list feature.
@@ -4479,6 +5608,14 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute SECTION__DOCUMENTATION = eINSTANCE.getSection_Documentation();
 
     /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECTION__ICON_PATH = eINSTANCE.getSection_IconPath();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4493,14 +5630,6 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EAttribute SECTION__LABEL = eINSTANCE.getSection_Label();
-
-    /**
-     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SECTION__ICON = eINSTANCE.getSection_Icon();
 
     /**
      * The meta object literal for the '<em><b>Tools</b></em>' reference list feature.
@@ -4547,6 +5676,14 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute CONTAINER_CREATION__FORCE_REFRESH = eINSTANCE.getContainerCreation_ForceRefresh();
 
     /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_CREATION__ICON_PATH = eINSTANCE.getContainerCreation_IconPath();
+
+    /**
      * The meta object literal for the '<em><b>Node Creation Variable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4579,20 +5716,12 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute CONTAINER_CREATION__LABEL = eINSTANCE.getContainerCreation_Label();
 
     /**
-     * The meta object literal for the '<em><b>Precondition</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTAINER_CREATION__PRECONDITION = eINSTANCE.getContainerCreation_Precondition();
-
-    /**
-     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER_CREATION__ICON = eINSTANCE.getContainerCreation_Icon();
+    EAttribute CONTAINER_CREATION__PRECONDITION_EXPRESSION = eINSTANCE.getContainerCreation_PreconditionExpression();
 
     /**
      * The meta object literal for the '<em><b>Container Mappings</b></em>' reference list feature.
@@ -5075,6 +6204,88 @@ public interface SiriusTextDslPackage extends EPackage
     EClass MAPPING = eINSTANCE.getMapping();
 
     /**
+     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__DOCUMENTATION = eINSTANCE.getMapping_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__NAME = eINSTANCE.getMapping_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__LABEL = eINSTANCE.getMapping_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__DOMAIN_CLASS = eINSTANCE.getMapping_DomainClass();
+
+    /**
+     * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__PRECONDITION_EXPRESSION = eINSTANCE.getMapping_PreconditionExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Semantic Candidates Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__SEMANTIC_CANDIDATES_EXPRESSION = eINSTANCE.getMapping_SemanticCandidatesExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Associated Elements Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPING__ASSOCIATED_ELEMENTS_EXPRESSION = eINSTANCE.getMapping_AssociatedElementsExpression();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeImpl <em>Node</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNode()
+     * @generated
+     */
+    EClass NODE = eINSTANCE.getNode();
+
+    /**
+     * The meta object literal for the '<em><b>Style</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__STYLE = eINSTANCE.getNode_Style();
+
+    /**
+     * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE__CONDITIONAL_STYLES = eINSTANCE.getNode_ConditionalStyles();
+
+    /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerImpl <em>Container</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5085,44 +6296,12 @@ public interface SiriusTextDslPackage extends EPackage
     EClass CONTAINER = eINSTANCE.getContainer();
 
     /**
-     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Children Presentation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTAINER__DOCUMENTATION = eINSTANCE.getContainer_Documentation();
-
-    /**
-     * The meta object literal for the '<em><b>List</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__LIST = eINSTANCE.getContainer_List();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__NAME = eINSTANCE.getContainer_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__LABEL = eINSTANCE.getContainer_Label();
-
-    /**
-     * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__DOMAIN_CLASS = eINSTANCE.getContainer_DomainClass();
+    EAttribute CONTAINER__CHILDREN_PRESENTATION = eINSTANCE.getContainer_ChildrenPresentation();
 
     /**
      * The meta object literal for the '<em><b>Style</b></em>' reference feature.
@@ -5133,28 +6312,38 @@ public interface SiriusTextDslPackage extends EPackage
     EReference CONTAINER__STYLE = eINSTANCE.getContainer_Style();
 
     /**
-     * The meta object literal for the '<em><b>Precondition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__PRECONDITION = eINSTANCE.getContainer_Precondition();
-
-    /**
-     * The meta object literal for the '<em><b>Semantic Canditates Expression</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__SEMANTIC_CANDITATES_EXPRESSION = eINSTANCE.getContainer_SemanticCanditatesExpression();
-
-    /**
      * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference CONTAINER__CONDITIONAL_STYLES = eINSTANCE.getContainer_ConditionalStyles();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalNodeStyleDeclarationImpl <em>Conditional Node Style Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalNodeStyleDeclarationImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getConditionalNodeStyleDeclaration()
+     * @generated
+     */
+    EClass CONDITIONAL_NODE_STYLE_DECLARATION = eINSTANCE.getConditionalNodeStyleDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Style</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDITIONAL_NODE_STYLE_DECLARATION__STYLE = eINSTANCE.getConditionalNodeStyleDeclaration_Style();
+
+    /**
+     * The meta object literal for the '<em><b>Conditional Style Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITIONAL_NODE_STYLE_DECLARATION__CONDITIONAL_STYLE_EXPRESSION = eINSTANCE.getConditionalNodeStyleDeclaration_ConditionalStyleExpression();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ConditionalContainerStyleDeclarationImpl <em>Conditional Container Style Declaration</em>}' class.
@@ -5191,6 +6380,230 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EClass STYLE = eINSTANCE.getStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeStyleImpl <em>Node Style</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.NodeStyleImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNodeStyle()
+     * @generated
+     */
+    EClass NODE_STYLE = eINSTANCE.getNodeStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.SquareImpl <em>Square</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SquareImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getSquare()
+     * @generated
+     */
+    EClass SQUARE = eINSTANCE.getSquare();
+
+    /**
+     * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__DOCUMENTATION = eINSTANCE.getSquare_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Allow Vertical Resizing</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__ALLOW_VERTICAL_RESIZING = eINSTANCE.getSquare_AllowVerticalResizing();
+
+    /**
+     * The meta object literal for the '<em><b>Allow Horizontal Resizing</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__ALLOW_HORIZONTAL_RESIZING = eINSTANCE.getSquare_AllowHorizontalResizing();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__NAME = eINSTANCE.getSquare_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Color</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQUARE__COLOR = eINSTANCE.getSquare_Color();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQUARE__LABEL = eINSTANCE.getSquare_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Label Border Style</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__LABEL_BORDER_STYLE = eINSTANCE.getSquare_LabelBorderStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Border</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQUARE__BORDER = eINSTANCE.getSquare_Border();
+
+    /**
+     * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__HEIGHT = eINSTANCE.getSquare_Height();
+
+    /**
+     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__WIDTH = eINSTANCE.getSquare_Width();
+
+    /**
+     * The meta object literal for the '<em><b>Size Computation Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__SIZE_COMPUTATION_EXPRESSION = eINSTANCE.getSquare_SizeComputationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Tooltip Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SQUARE__TOOLTIP_EXPRESSION = eINSTANCE.getSquare_TooltipExpression();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.LabelImpl <em>Label</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.LabelImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabel()
+     * @generated
+     */
+    EClass LABEL = eINSTANCE.getLabel();
+
+    /**
+     * The meta object literal for the '<em><b>Show Icon</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__SHOW_ICON = eINSTANCE.getLabel_ShowIcon();
+
+    /**
+     * The meta object literal for the '<em><b>Hide By Default</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__HIDE_BY_DEFAULT = eINSTANCE.getLabel_HideByDefault();
+
+    /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__ICON_PATH = eINSTANCE.getLabel_IconPath();
+
+    /**
+     * The meta object literal for the '<em><b>Format Options</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__FORMAT_OPTIONS = eINSTANCE.getLabel_FormatOptions();
+
+    /**
+     * The meta object literal for the '<em><b>Alignment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__ALIGNMENT = eINSTANCE.getLabel_Alignment();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__SIZE = eINSTANCE.getLabel_Size();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__EXPRESSION = eINSTANCE.getLabel_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Color</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABEL__COLOR = eINSTANCE.getLabel_Color();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.BorderImpl <em>Border</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.BorderImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getBorder()
+     * @generated
+     */
+    EClass BORDER = eINSTANCE.getBorder();
+
+    /**
+     * The meta object literal for the '<em><b>Line Style</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BORDER__LINE_STYLE = eINSTANCE.getBorder_LineStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Border Size Computation Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BORDER__BORDER_SIZE_COMPUTATION_EXPRESSION = eINSTANCE.getBorder_BorderSizeComputationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Border Color</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BORDER__BORDER_COLOR = eINSTANCE.getBorder_BorderColor();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerStyleImpl <em>Container Style</em>}' class.
@@ -5253,52 +6666,28 @@ public interface SiriusTextDslPackage extends EPackage
     EReference GRADIENT__FOREGROUND_COLOR = eINSTANCE.getGradient_ForegroundColor();
 
     /**
-     * The meta object literal for the '<em><b>Label Alignment</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Label</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GRADIENT__LABEL_ALIGNMENT = eINSTANCE.getGradient_LabelAlignment();
+    EReference GRADIENT__LABEL = eINSTANCE.getGradient_Label();
 
     /**
-     * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Label Border Style</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GRADIENT__LABEL_EXPRESSION = eINSTANCE.getGradient_LabelExpression();
+    EAttribute GRADIENT__LABEL_BORDER_STYLE = eINSTANCE.getGradient_LabelBorderStyle();
 
     /**
-     * The meta object literal for the '<em><b>Label Color</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Border</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GRADIENT__LABEL_COLOR = eINSTANCE.getGradient_LabelColor();
-
-    /**
-     * The meta object literal for the '<em><b>Border Size</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GRADIENT__BORDER_SIZE = eINSTANCE.getGradient_BorderSize();
-
-    /**
-     * The meta object literal for the '<em><b>Border Color</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GRADIENT__BORDER_COLOR = eINSTANCE.getGradient_BorderColor();
-
-    /**
-     * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GRADIENT__ICON = eINSTANCE.getGradient_Icon();
+    EReference GRADIENT__BORDER = eINSTANCE.getGradient_Border();
 
     /**
      * The meta object literal for the '<em><b>Height Computation Expression</b></em>' attribute feature.
@@ -5315,6 +6704,30 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EAttribute GRADIENT__WIDTH_COMPUTATION_EXPRESSION = eINSTANCE.getGradient_WidthComputationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Arc Height</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRADIENT__ARC_HEIGHT = eINSTANCE.getGradient_ArcHeight();
+
+    /**
+     * The meta object literal for the '<em><b>Arc Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRADIENT__ARC_WIDTH = eINSTANCE.getGradient_ArcWidth();
+
+    /**
+     * The meta object literal for the '<em><b>Tooltip Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRADIENT__TOOLTIP_EXPRESSION = eINSTANCE.getGradient_TooltipExpression();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeImpl <em>Edge</em>}' class.
@@ -5367,6 +6780,14 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EReference RELATION_BASED_EDGE__STYLE = eINSTANCE.getRelationBasedEdge_Style();
+
+    /**
+     * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION_BASED_EDGE__PRECONDITION_EXPRESSION = eINSTANCE.getRelationBasedEdge_PreconditionExpression();
 
     /**
      * The meta object literal for the '<em><b>Source Mappings</b></em>' reference list feature.
@@ -5435,6 +6856,14 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute EDGE_STYLE__ROUTING_STYLE = eINSTANCE.getEdgeStyle_RoutingStyle();
 
     /**
+     * The meta object literal for the '<em><b>Label</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDGE_STYLE__LABEL = eINSTANCE.getEdgeStyle_Label();
+
+    /**
      * The meta object literal for the '<em><b>Source Arrow</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5473,6 +6902,64 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EAttribute EDGE_STYLE__ENDS_CENTERING = eINSTANCE.getEdgeStyle_EndsCentering();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeLabelImpl <em>Edge Label</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeLabelImpl
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getEdgeLabel()
+     * @generated
+     */
+    EClass EDGE_LABEL = eINSTANCE.getEdgeLabel();
+
+    /**
+     * The meta object literal for the '<em><b>Show Icon</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_LABEL__SHOW_ICON = eINSTANCE.getEdgeLabel_ShowIcon();
+
+    /**
+     * The meta object literal for the '<em><b>Icon Path</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_LABEL__ICON_PATH = eINSTANCE.getEdgeLabel_IconPath();
+
+    /**
+     * The meta object literal for the '<em><b>Format Options</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_LABEL__FORMAT_OPTIONS = eINSTANCE.getEdgeLabel_FormatOptions();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_LABEL__SIZE = eINSTANCE.getEdgeLabel_Size();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDGE_LABEL__EXPRESSION = eINSTANCE.getEdgeLabel_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Color</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDGE_LABEL__COLOR = eINSTANCE.getEdgeLabel_Color();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.PaletteImpl <em>Palette</em>}' class.
@@ -5579,6 +7066,36 @@ public interface SiriusTextDslPackage extends EPackage
     EAttribute RGB__BLUE = eINSTANCE.getRGB_Blue();
 
     /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation <em>Container Children Presentation</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerChildrenPresentation()
+     * @generated
+     */
+    EEnum CONTAINER_CHILDREN_PRESENTATION = eINSTANCE.getContainerChildrenPresentation();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle <em>Node Label Border Style</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.NodeLabelBorderStyle
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getNodeLabelBorderStyle()
+     * @generated
+     */
+    EEnum NODE_LABEL_BORDER_STYLE = eINSTANCE.getNodeLabelBorderStyle();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption <em>Label Format Option</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getLabelFormatOption()
+     * @generated
+     */
+    EEnum LABEL_FORMAT_OPTION = eINSTANCE.getLabelFormatOption();
+
+    /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment <em>Label Alignment</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5587,6 +7104,16 @@ public interface SiriusTextDslPackage extends EPackage
      * @generated
      */
     EEnum LABEL_ALIGNMENT = eINSTANCE.getLabelAlignment();
+
+    /**
+     * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle <em>Container Label Border Style</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.ContainerLabelBorderStyle
+     * @see org.obeonetwork.sirius.text.siriusTextDsl.impl.SiriusTextDslPackageImpl#getContainerLabelBorderStyle()
+     * @generated
+     */
+    EEnum CONTAINER_LABEL_BORDER_STYLE = eINSTANCE.getContainerLabelBorderStyle();
 
     /**
      * The meta object literal for the '{@link org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection <em>Gradient Direction</em>}' enum.

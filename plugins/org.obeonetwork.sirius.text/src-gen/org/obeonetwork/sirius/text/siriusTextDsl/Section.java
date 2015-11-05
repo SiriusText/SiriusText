@@ -14,9 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getLabel <em>Label</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getTools <em>Tools</em>}</li>
  * </ul>
  *
@@ -51,6 +51,32 @@ public interface Section extends SiriusFileBody
    * @generated
    */
   void setDocumentation(String value);
+
+  /**
+   * Returns the value of the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Icon Path</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Icon Path</em>' attribute.
+   * @see #setIconPath(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getSection_IconPath()
+   * @model
+   * @generated
+   */
+  String getIconPath();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIconPath <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Icon Path</em>' attribute.
+   * @see #getIconPath()
+   * @generated
+   */
+  void setIconPath(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -103,32 +129,6 @@ public interface Section extends SiriusFileBody
    * @generated
    */
   void setLabel(String value);
-
-  /**
-   * Returns the value of the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Icon</em>' attribute.
-   * @see #setIcon(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getSection_Icon()
-   * @model
-   * @generated
-   */
-  String getIcon();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Section#getIcon <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Icon</em>' attribute.
-   * @see #getIcon()
-   * @generated
-   */
-  void setIcon(String value);
 
   /**
    * Returns the value of the '<em><b>Tools</b></em>' reference list.

@@ -18,10 +18,10 @@ import org.eclipse.xtext.common.types.JvmType;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getModelFileExtensions <em>Model File Extensions</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getRepresentations <em>Representations</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getJavaExtension <em>Java Extension</em>}</li>
  * </ul>
@@ -57,6 +57,32 @@ public interface Viewpoint extends EObject
    * @generated
    */
   void setDocumentation(String value);
+
+  /**
+   * Returns the value of the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Icon Path</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Icon Path</em>' attribute.
+   * @see #setIconPath(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getViewpoint_IconPath()
+   * @model
+   * @generated
+   */
+  String getIconPath();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIconPath <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Icon Path</em>' attribute.
+   * @see #getIconPath()
+   * @generated
+   */
+  void setIconPath(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -125,32 +151,6 @@ public interface Viewpoint extends EObject
    * @generated
    */
   EList<String> getModelFileExtensions();
-
-  /**
-   * Returns the value of the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Icon</em>' attribute.
-   * @see #setIcon(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getViewpoint_Icon()
-   * @model
-   * @generated
-   */
-  String getIcon();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint#getIcon <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Icon</em>' attribute.
-   * @see #getIcon()
-   * @generated
-   */
-  void setIcon(String value);
 
   /**
    * Returns the value of the '<em><b>Representations</b></em>' reference list.

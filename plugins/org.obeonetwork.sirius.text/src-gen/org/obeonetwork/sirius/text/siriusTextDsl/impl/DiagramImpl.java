@@ -36,7 +36,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getDomainClass <em>Domain Class</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getEndUserDocumentation <em>End User Documentation</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getTitleExpression <em>Title Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.DiagramImpl#getRootExpression <em>Root Expression</em>}</li>
@@ -199,24 +199,24 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
   protected String domainClass = DOMAIN_CLASS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
+   * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrecondition()
+   * @see #getPreconditionExpression()
    * @generated
    * @ordered
    */
-  protected static final String PRECONDITION_EDEFAULT = null;
+  protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
+   * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrecondition()
+   * @see #getPreconditionExpression()
    * @generated
    * @ordered
    */
-  protected String precondition = PRECONDITION_EDEFAULT;
+  protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getEndUserDocumentation() <em>End User Documentation</em>}' attribute.
@@ -499,9 +499,9 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPrecondition()
+  public String getPreconditionExpression()
   {
-    return precondition;
+    return preconditionExpression;
   }
 
   /**
@@ -509,12 +509,12 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrecondition(String newPrecondition)
+  public void setPreconditionExpression(String newPreconditionExpression)
   {
-    String oldPrecondition = precondition;
-    precondition = newPrecondition;
+    String oldPreconditionExpression = preconditionExpression;
+    preconditionExpression = newPreconditionExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.DIAGRAM__PRECONDITION, oldPrecondition, precondition));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.DIAGRAM__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
   }
 
   /**
@@ -669,8 +669,8 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
         return getLabel();
       case SiriusTextDslPackage.DIAGRAM__DOMAIN_CLASS:
         return getDomainClass();
-      case SiriusTextDslPackage.DIAGRAM__PRECONDITION:
-        return getPrecondition();
+      case SiriusTextDslPackage.DIAGRAM__PRECONDITION_EXPRESSION:
+        return getPreconditionExpression();
       case SiriusTextDslPackage.DIAGRAM__END_USER_DOCUMENTATION:
         return getEndUserDocumentation();
       case SiriusTextDslPackage.DIAGRAM__TITLE_EXPRESSION:
@@ -722,8 +722,8 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
       case SiriusTextDslPackage.DIAGRAM__DOMAIN_CLASS:
         setDomainClass((String)newValue);
         return;
-      case SiriusTextDslPackage.DIAGRAM__PRECONDITION:
-        setPrecondition((String)newValue);
+      case SiriusTextDslPackage.DIAGRAM__PRECONDITION_EXPRESSION:
+        setPreconditionExpression((String)newValue);
         return;
       case SiriusTextDslPackage.DIAGRAM__END_USER_DOCUMENTATION:
         setEndUserDocumentation((String)newValue);
@@ -779,8 +779,8 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
       case SiriusTextDslPackage.DIAGRAM__DOMAIN_CLASS:
         setDomainClass(DOMAIN_CLASS_EDEFAULT);
         return;
-      case SiriusTextDslPackage.DIAGRAM__PRECONDITION:
-        setPrecondition(PRECONDITION_EDEFAULT);
+      case SiriusTextDslPackage.DIAGRAM__PRECONDITION_EXPRESSION:
+        setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
         return;
       case SiriusTextDslPackage.DIAGRAM__END_USER_DOCUMENTATION:
         setEndUserDocumentation(END_USER_DOCUMENTATION_EDEFAULT);
@@ -827,8 +827,8 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case SiriusTextDslPackage.DIAGRAM__DOMAIN_CLASS:
         return DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !DOMAIN_CLASS_EDEFAULT.equals(domainClass);
-      case SiriusTextDslPackage.DIAGRAM__PRECONDITION:
-        return PRECONDITION_EDEFAULT == null ? precondition != null : !PRECONDITION_EDEFAULT.equals(precondition);
+      case SiriusTextDslPackage.DIAGRAM__PRECONDITION_EXPRESSION:
+        return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null : !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
       case SiriusTextDslPackage.DIAGRAM__END_USER_DOCUMENTATION:
         return END_USER_DOCUMENTATION_EDEFAULT == null ? endUserDocumentation != null : !END_USER_DOCUMENTATION_EDEFAULT.equals(endUserDocumentation);
       case SiriusTextDslPackage.DIAGRAM__TITLE_EXPRESSION:
@@ -870,8 +870,8 @@ public class DiagramImpl extends RepresentationImpl implements Diagram
     result.append(label);
     result.append(", domainClass: ");
     result.append(domainClass);
-    result.append(", precondition: ");
-    result.append(precondition);
+    result.append(", preconditionExpression: ");
+    result.append(preconditionExpression);
     result.append(", endUserDocumentation: ");
     result.append(endUserDocumentation);
     result.append(", titleExpression: ");

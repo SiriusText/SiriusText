@@ -92,14 +92,21 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
       case SiriusTextDslPackage.CASE: return createCase();
       case SiriusTextDslPackage.DEFAULT: return createDefault();
       case SiriusTextDslPackage.MAPPING: return createMapping();
+      case SiriusTextDslPackage.NODE: return createNode();
       case SiriusTextDslPackage.CONTAINER: return createContainer();
+      case SiriusTextDslPackage.CONDITIONAL_NODE_STYLE_DECLARATION: return createConditionalNodeStyleDeclaration();
       case SiriusTextDslPackage.CONDITIONAL_CONTAINER_STYLE_DECLARATION: return createConditionalContainerStyleDeclaration();
       case SiriusTextDslPackage.STYLE: return createStyle();
+      case SiriusTextDslPackage.NODE_STYLE: return createNodeStyle();
+      case SiriusTextDslPackage.SQUARE: return createSquare();
+      case SiriusTextDslPackage.LABEL: return createLabel();
+      case SiriusTextDslPackage.BORDER: return createBorder();
       case SiriusTextDslPackage.CONTAINER_STYLE: return createContainerStyle();
       case SiriusTextDslPackage.GRADIENT: return createGradient();
       case SiriusTextDslPackage.EDGE: return createEdge();
       case SiriusTextDslPackage.RELATION_BASED_EDGE: return createRelationBasedEdge();
       case SiriusTextDslPackage.EDGE_STYLE: return createEdgeStyle();
+      case SiriusTextDslPackage.EDGE_LABEL: return createEdgeLabel();
       case SiriusTextDslPackage.PALETTE: return createPalette();
       case SiriusTextDslPackage.COLOR: return createColor();
       case SiriusTextDslPackage.COLOR_VALUE: return createColorValue();
@@ -119,8 +126,16 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     switch (eDataType.getClassifierID())
     {
+      case SiriusTextDslPackage.CONTAINER_CHILDREN_PRESENTATION:
+        return createContainerChildrenPresentationFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.NODE_LABEL_BORDER_STYLE:
+        return createNodeLabelBorderStyleFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.LABEL_FORMAT_OPTION:
+        return createLabelFormatOptionFromString(eDataType, initialValue);
       case SiriusTextDslPackage.LABEL_ALIGNMENT:
         return createLabelAlignmentFromString(eDataType, initialValue);
+      case SiriusTextDslPackage.CONTAINER_LABEL_BORDER_STYLE:
+        return createContainerLabelBorderStyleFromString(eDataType, initialValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return createGradientDirectionFromString(eDataType, initialValue);
       case SiriusTextDslPackage.LINE_STYLE:
@@ -148,8 +163,16 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     switch (eDataType.getClassifierID())
     {
+      case SiriusTextDslPackage.CONTAINER_CHILDREN_PRESENTATION:
+        return convertContainerChildrenPresentationToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.NODE_LABEL_BORDER_STYLE:
+        return convertNodeLabelBorderStyleToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.LABEL_FORMAT_OPTION:
+        return convertLabelFormatOptionToString(eDataType, instanceValue);
       case SiriusTextDslPackage.LABEL_ALIGNMENT:
         return convertLabelAlignmentToString(eDataType, instanceValue);
+      case SiriusTextDslPackage.CONTAINER_LABEL_BORDER_STYLE:
+        return convertContainerLabelBorderStyleToString(eDataType, instanceValue);
       case SiriusTextDslPackage.GRADIENT_DIRECTION:
         return convertGradientDirectionToString(eDataType, instanceValue);
       case SiriusTextDslPackage.LINE_STYLE:
@@ -469,10 +492,32 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public Node createNode()
+  {
+    NodeImpl node = new NodeImpl();
+    return node;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public org.obeonetwork.sirius.text.siriusTextDsl.Container createContainer()
   {
     ContainerImpl container = new ContainerImpl();
     return container;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConditionalNodeStyleDeclaration createConditionalNodeStyleDeclaration()
+  {
+    ConditionalNodeStyleDeclarationImpl conditionalNodeStyleDeclaration = new ConditionalNodeStyleDeclarationImpl();
+    return conditionalNodeStyleDeclaration;
   }
 
   /**
@@ -495,6 +540,50 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
   {
     StyleImpl style = new StyleImpl();
     return style;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeStyle createNodeStyle()
+  {
+    NodeStyleImpl nodeStyle = new NodeStyleImpl();
+    return nodeStyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Square createSquare()
+  {
+    SquareImpl square = new SquareImpl();
+    return square;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Label createLabel()
+  {
+    LabelImpl label = new LabelImpl();
+    return label;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Border createBorder()
+  {
+    BorderImpl border = new BorderImpl();
+    return border;
   }
 
   /**
@@ -557,6 +646,17 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public EdgeLabel createEdgeLabel()
+  {
+    EdgeLabelImpl edgeLabel = new EdgeLabelImpl();
+    return edgeLabel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Palette createPalette()
   {
     PaletteImpl palette = new PaletteImpl();
@@ -601,6 +701,72 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * <!-- end-user-doc -->
    * @generated
    */
+  public ContainerChildrenPresentation createContainerChildrenPresentationFromString(EDataType eDataType, String initialValue)
+  {
+    ContainerChildrenPresentation result = ContainerChildrenPresentation.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertContainerChildrenPresentationToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeLabelBorderStyle createNodeLabelBorderStyleFromString(EDataType eDataType, String initialValue)
+  {
+    NodeLabelBorderStyle result = NodeLabelBorderStyle.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertNodeLabelBorderStyleToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LabelFormatOption createLabelFormatOptionFromString(EDataType eDataType, String initialValue)
+  {
+    LabelFormatOption result = LabelFormatOption.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLabelFormatOptionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LabelAlignment createLabelAlignmentFromString(EDataType eDataType, String initialValue)
   {
     LabelAlignment result = LabelAlignment.get(initialValue);
@@ -614,6 +780,28 @@ public class SiriusTextDslFactoryImpl extends EFactoryImpl implements SiriusText
    * @generated
    */
   public String convertLabelAlignmentToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ContainerLabelBorderStyle createContainerLabelBorderStyleFromString(EDataType eDataType, String initialValue)
+  {
+    ContainerLabelBorderStyle result = ContainerLabelBorderStyle.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertContainerLabelBorderStyleToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

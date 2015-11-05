@@ -266,6 +266,15 @@ public interface SiriusTextDslFactory extends EFactory
   Mapping createMapping();
 
   /**
+   * Returns a new object of class '<em>Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node</em>'.
+   * @generated
+   */
+  Node createNode();
+
+  /**
    * Returns a new object of class '<em>Container</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -273,6 +282,15 @@ public interface SiriusTextDslFactory extends EFactory
    * @generated
    */
   Container createContainer();
+
+  /**
+   * Returns a new object of class '<em>Conditional Node Style Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conditional Node Style Declaration</em>'.
+   * @generated
+   */
+  ConditionalNodeStyleDeclaration createConditionalNodeStyleDeclaration();
 
   /**
    * Returns a new object of class '<em>Conditional Container Style Declaration</em>'.
@@ -291,6 +309,42 @@ public interface SiriusTextDslFactory extends EFactory
    * @generated
    */
   Style createStyle();
+
+  /**
+   * Returns a new object of class '<em>Node Style</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Style</em>'.
+   * @generated
+   */
+  NodeStyle createNodeStyle();
+
+  /**
+   * Returns a new object of class '<em>Square</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Square</em>'.
+   * @generated
+   */
+  Square createSquare();
+
+  /**
+   * Returns a new object of class '<em>Label</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Label</em>'.
+   * @generated
+   */
+  Label createLabel();
+
+  /**
+   * Returns a new object of class '<em>Border</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Border</em>'.
+   * @generated
+   */
+  Border createBorder();
 
   /**
    * Returns a new object of class '<em>Container Style</em>'.
@@ -336,6 +390,15 @@ public interface SiriusTextDslFactory extends EFactory
    * @generated
    */
   EdgeStyle createEdgeStyle();
+
+  /**
+   * Returns a new object of class '<em>Edge Label</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edge Label</em>'.
+   * @generated
+   */
+  EdgeLabel createEdgeLabel();
 
   /**
    * Returns a new object of class '<em>Palette</em>'.

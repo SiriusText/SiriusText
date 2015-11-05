@@ -15,12 +15,12 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#isForceRefresh <em>Force Refresh</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getNodeCreationVariable <em>Node Creation Variable</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerViewVariable <em>Container View Variable</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getLabel <em>Label</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getContainerMappings <em>Container Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getExtraMappings <em>Extra Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getBody <em>Body</em>}</li>
@@ -83,6 +83,32 @@ public interface ContainerCreation extends Tool
    * @generated
    */
   void setForceRefresh(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Icon Path</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Icon Path</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Icon Path</em>' attribute.
+   * @see #setIconPath(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getContainerCreation_IconPath()
+   * @model
+   * @generated
+   */
+  String getIconPath();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIconPath <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Icon Path</em>' attribute.
+   * @see #getIconPath()
+   * @generated
+   */
+  void setIconPath(String value);
 
   /**
    * Returns the value of the '<em><b>Node Creation Variable</b></em>' attribute.
@@ -189,56 +215,30 @@ public interface ContainerCreation extends Tool
   void setLabel(String value);
 
   /**
-   * Returns the value of the '<em><b>Precondition</b></em>' attribute.
+   * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Precondition</em>' attribute isn't clear,
+   * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Precondition</em>' attribute.
-   * @see #setPrecondition(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getContainerCreation_Precondition()
+   * @return the value of the '<em>Precondition Expression</em>' attribute.
+   * @see #setPreconditionExpression(String)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getContainerCreation_PreconditionExpression()
    * @model
    * @generated
    */
-  String getPrecondition();
+  String getPreconditionExpression();
 
   /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPrecondition <em>Precondition</em>}' attribute.
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Precondition</em>' attribute.
-   * @see #getPrecondition()
+   * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+   * @see #getPreconditionExpression()
    * @generated
    */
-  void setPrecondition(String value);
-
-  /**
-   * Returns the value of the '<em><b>Icon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Icon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Icon</em>' attribute.
-   * @see #setIcon(String)
-   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getContainerCreation_Icon()
-   * @model
-   * @generated
-   */
-  String getIcon();
-
-  /**
-   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation#getIcon <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Icon</em>' attribute.
-   * @see #getIcon()
-   * @generated
-   */
-  void setIcon(String value);
+  void setPreconditionExpression(String value);
 
   /**
    * Returns the value of the '<em><b>Container Mappings</b></em>' reference list.

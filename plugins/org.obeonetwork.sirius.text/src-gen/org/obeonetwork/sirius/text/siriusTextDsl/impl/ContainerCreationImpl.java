@@ -31,12 +31,12 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#isForceRefresh <em>Force Refresh</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getNodeCreationVariable <em>Node Creation Variable</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getContainerViewVariable <em>Container View Variable</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getContainerMappings <em>Container Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getExtraMappings <em>Extra Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ContainerCreationImpl#getBody <em>Body</em>}</li>
@@ -85,6 +85,26 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
    * @ordered
    */
   protected boolean forceRefresh = FORCE_REFRESH_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected static final String ICON_PATH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected String iconPath = ICON_PATH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNodeCreationVariable() <em>Node Creation Variable</em>}' attribute.
@@ -167,44 +187,24 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
   protected String label = LABEL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
+   * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrecondition()
+   * @see #getPreconditionExpression()
    * @generated
    * @ordered
    */
-  protected static final String PRECONDITION_EDEFAULT = null;
+  protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
+   * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrecondition()
+   * @see #getPreconditionExpression()
    * @generated
    * @ordered
    */
-  protected String precondition = PRECONDITION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected static final String ICON_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected String icon = ICON_EDEFAULT;
+  protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getContainerMappings() <em>Container Mappings</em>}' reference list.
@@ -308,6 +308,29 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getIconPath()
+  {
+    return iconPath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIconPath(String newIconPath)
+  {
+    String oldIconPath = iconPath;
+    iconPath = newIconPath;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.CONTAINER_CREATION__ICON_PATH, oldIconPath, iconPath));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getNodeCreationVariable()
   {
     return nodeCreationVariable;
@@ -400,9 +423,9 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPrecondition()
+  public String getPreconditionExpression()
   {
-    return precondition;
+    return preconditionExpression;
   }
 
   /**
@@ -410,35 +433,12 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrecondition(String newPrecondition)
+  public void setPreconditionExpression(String newPreconditionExpression)
   {
-    String oldPrecondition = precondition;
-    precondition = newPrecondition;
+    String oldPreconditionExpression = preconditionExpression;
+    preconditionExpression = newPreconditionExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION, oldPrecondition, precondition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getIcon()
-  {
-    return icon;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIcon(String newIcon)
-  {
-    String oldIcon = icon;
-    icon = newIcon;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.CONTAINER_CREATION__ICON, oldIcon, icon));
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
   }
 
   /**
@@ -547,6 +547,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
         return getDocumentation();
       case SiriusTextDslPackage.CONTAINER_CREATION__FORCE_REFRESH:
         return isForceRefresh();
+      case SiriusTextDslPackage.CONTAINER_CREATION__ICON_PATH:
+        return getIconPath();
       case SiriusTextDslPackage.CONTAINER_CREATION__NODE_CREATION_VARIABLE:
         return getNodeCreationVariable();
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE:
@@ -555,10 +557,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
         return getName();
       case SiriusTextDslPackage.CONTAINER_CREATION__LABEL:
         return getLabel();
-      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION:
-        return getPrecondition();
-      case SiriusTextDslPackage.CONTAINER_CREATION__ICON:
-        return getIcon();
+      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION_EXPRESSION:
+        return getPreconditionExpression();
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_MAPPINGS:
         return getContainerMappings();
       case SiriusTextDslPackage.CONTAINER_CREATION__EXTRA_MAPPINGS:
@@ -586,6 +586,9 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
       case SiriusTextDslPackage.CONTAINER_CREATION__FORCE_REFRESH:
         setForceRefresh((Boolean)newValue);
         return;
+      case SiriusTextDslPackage.CONTAINER_CREATION__ICON_PATH:
+        setIconPath((String)newValue);
+        return;
       case SiriusTextDslPackage.CONTAINER_CREATION__NODE_CREATION_VARIABLE:
         setNodeCreationVariable((String)newValue);
         return;
@@ -598,11 +601,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
       case SiriusTextDslPackage.CONTAINER_CREATION__LABEL:
         setLabel((String)newValue);
         return;
-      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION:
-        setPrecondition((String)newValue);
-        return;
-      case SiriusTextDslPackage.CONTAINER_CREATION__ICON:
-        setIcon((String)newValue);
+      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION_EXPRESSION:
+        setPreconditionExpression((String)newValue);
         return;
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_MAPPINGS:
         getContainerMappings().clear();
@@ -635,6 +635,9 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
       case SiriusTextDslPackage.CONTAINER_CREATION__FORCE_REFRESH:
         setForceRefresh(FORCE_REFRESH_EDEFAULT);
         return;
+      case SiriusTextDslPackage.CONTAINER_CREATION__ICON_PATH:
+        setIconPath(ICON_PATH_EDEFAULT);
+        return;
       case SiriusTextDslPackage.CONTAINER_CREATION__NODE_CREATION_VARIABLE:
         setNodeCreationVariable(NODE_CREATION_VARIABLE_EDEFAULT);
         return;
@@ -647,11 +650,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
       case SiriusTextDslPackage.CONTAINER_CREATION__LABEL:
         setLabel(LABEL_EDEFAULT);
         return;
-      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION:
-        setPrecondition(PRECONDITION_EDEFAULT);
-        return;
-      case SiriusTextDslPackage.CONTAINER_CREATION__ICON:
-        setIcon(ICON_EDEFAULT);
+      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION_EXPRESSION:
+        setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
         return;
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_MAPPINGS:
         getContainerMappings().clear();
@@ -680,6 +680,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
         return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
       case SiriusTextDslPackage.CONTAINER_CREATION__FORCE_REFRESH:
         return forceRefresh != FORCE_REFRESH_EDEFAULT;
+      case SiriusTextDslPackage.CONTAINER_CREATION__ICON_PATH:
+        return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
       case SiriusTextDslPackage.CONTAINER_CREATION__NODE_CREATION_VARIABLE:
         return NODE_CREATION_VARIABLE_EDEFAULT == null ? nodeCreationVariable != null : !NODE_CREATION_VARIABLE_EDEFAULT.equals(nodeCreationVariable);
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_VIEW_VARIABLE:
@@ -688,10 +690,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SiriusTextDslPackage.CONTAINER_CREATION__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION:
-        return PRECONDITION_EDEFAULT == null ? precondition != null : !PRECONDITION_EDEFAULT.equals(precondition);
-      case SiriusTextDslPackage.CONTAINER_CREATION__ICON:
-        return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
+      case SiriusTextDslPackage.CONTAINER_CREATION__PRECONDITION_EXPRESSION:
+        return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null : !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
       case SiriusTextDslPackage.CONTAINER_CREATION__CONTAINER_MAPPINGS:
         return containerMappings != null && !containerMappings.isEmpty();
       case SiriusTextDslPackage.CONTAINER_CREATION__EXTRA_MAPPINGS:
@@ -717,6 +717,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
     result.append(documentation);
     result.append(", forceRefresh: ");
     result.append(forceRefresh);
+    result.append(", iconPath: ");
+    result.append(iconPath);
     result.append(", nodeCreationVariable: ");
     result.append(nodeCreationVariable);
     result.append(", containerViewVariable: ");
@@ -725,10 +727,8 @@ public class ContainerCreationImpl extends ToolImpl implements ContainerCreation
     result.append(name);
     result.append(", label: ");
     result.append(label);
-    result.append(", precondition: ");
-    result.append(precondition);
-    result.append(", icon: ");
-    result.append(icon);
+    result.append(", preconditionExpression: ");
+    result.append(preconditionExpression);
     result.append(')');
     return result.toString();
   }

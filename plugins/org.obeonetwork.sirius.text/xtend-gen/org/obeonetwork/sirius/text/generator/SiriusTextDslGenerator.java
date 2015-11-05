@@ -27,6 +27,7 @@ import org.eclipse.sirius.diagram.BackgroundStyle;
 import org.eclipse.sirius.diagram.ContainerLayout;
 import org.eclipse.sirius.diagram.EdgeArrows;
 import org.eclipse.sirius.diagram.EdgeRouting;
+import org.eclipse.sirius.diagram.ResizeKind;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.description.CenteringStyle;
@@ -35,12 +36,16 @@ import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription;
+import org.eclipse.sirius.diagram.description.style.SquareDescription;
 import org.eclipse.sirius.diagram.description.style.StyleFactory;
 import org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription;
 import org.eclipse.sirius.diagram.description.tool.ToolFactory;
 import org.eclipse.sirius.diagram.description.tool.ToolSection;
+import org.eclipse.sirius.viewpoint.FontFormat;
 import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
@@ -50,6 +55,7 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.UserColor;
 import org.eclipse.sirius.viewpoint.description.UserColorsPalette;
 import org.eclipse.sirius.viewpoint.description.UserFixedColor;
+import org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription;
 import org.eclipse.sirius.viewpoint.description.tool.InitialNodeCreationOperation;
 import org.eclipse.sirius.viewpoint.description.tool.ModelOperation;
 import org.eclipse.sirius.viewpoint.description.tool.MoveElement;
@@ -74,6 +80,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Color;
 import org.obeonetwork.sirius.text.siriusTextDsl.ColorValue;
 import org.obeonetwork.sirius.text.siriusTextDsl.ConditionalContainerStyleDeclaration;
 import org.obeonetwork.sirius.text.siriusTextDsl.Container;
+import org.obeonetwork.sirius.text.siriusTextDsl.ContainerChildrenPresentation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerCreation;
 import org.obeonetwork.sirius.text.siriusTextDsl.ContainerStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.CreateEdgeView;
@@ -91,11 +98,15 @@ import org.obeonetwork.sirius.text.siriusTextDsl.For;
 import org.obeonetwork.sirius.text.siriusTextDsl.Gradient;
 import org.obeonetwork.sirius.text.siriusTextDsl.GradientDirection;
 import org.obeonetwork.sirius.text.siriusTextDsl.If;
+import org.obeonetwork.sirius.text.siriusTextDsl.Label;
 import org.obeonetwork.sirius.text.siriusTextDsl.LabelAlignment;
+import org.obeonetwork.sirius.text.siriusTextDsl.LabelFormatOption;
 import org.obeonetwork.sirius.text.siriusTextDsl.Layer;
 import org.obeonetwork.sirius.text.siriusTextDsl.LineStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Mapping;
 import org.obeonetwork.sirius.text.siriusTextDsl.Move;
+import org.obeonetwork.sirius.text.siriusTextDsl.Node;
+import org.obeonetwork.sirius.text.siriusTextDsl.NodeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Operation;
 import org.obeonetwork.sirius.text.siriusTextDsl.Palette;
 import org.obeonetwork.sirius.text.siriusTextDsl.RGB;
@@ -106,6 +117,8 @@ import org.obeonetwork.sirius.text.siriusTextDsl.RoutingStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.Section;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFile;
 import org.obeonetwork.sirius.text.siriusTextDsl.SiriusFileBody;
+import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
+import org.obeonetwork.sirius.text.siriusTextDsl.Square;
 import org.obeonetwork.sirius.text.siriusTextDsl.Switch;
 import org.obeonetwork.sirius.text.siriusTextDsl.Tool;
 import org.obeonetwork.sirius.text.siriusTextDsl.Unset;
@@ -375,8 +388,9 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     siriusViewpoint.setLabel(_label);
     String _documentation = viewpoint.getDocumentation();
     siriusViewpoint.setDocumentation(_documentation);
-    String _icon = viewpoint.getIcon();
-    siriusViewpoint.setIcon(_icon);
+    String _iconPath = viewpoint.getIconPath();
+    String _trimQuotes = this.trimQuotes(_iconPath);
+    siriusViewpoint.setIcon(_trimQuotes);
     EList<String> _modelFileExtensions = viewpoint.getModelFileExtensions();
     final Function2<String, String, String> _function = (String a, String b) -> {
       return ((a + ", ") + b);
@@ -419,6 +433,9 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     diagramDescription.setInitialisation(_isInitialized);
     boolean _isEnablePopupBars = diagram.isEnablePopupBars();
     diagramDescription.setEnablePopupBars(_isEnablePopupBars);
+    String _preconditionExpression = diagram.getPreconditionExpression();
+    String _trimQuotes = this.trimQuotes(_preconditionExpression);
+    diagramDescription.setPreconditionExpression(_trimQuotes);
     final Layer defaultLayer = diagram.getDefaultLayer();
     boolean _notEquals = (!Objects.equal(defaultLayer, null));
     if (_notEquals) {
@@ -449,24 +466,34 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
       this.populateContainerMapping(containerMapping, c);
     };
     _filter.forEach(_function);
+    EList<Mapping> _mappings_1 = layer.getMappings();
+    Iterable<Node> _filter_1 = Iterables.<Node>filter(_mappings_1, Node.class);
+    final Consumer<Node> _function_1 = (Node n) -> {
+      final NodeMapping nodeMapping = org.eclipse.sirius.diagram.description.DescriptionFactory.eINSTANCE.createNodeMapping();
+      EList<NodeMapping> _nodeMappings = siriusLayer.getNodeMappings();
+      _nodeMappings.add(nodeMapping);
+      this.cache.put(n, nodeMapping);
+      this.populateNodeMapping(nodeMapping, n);
+    };
+    _filter_1.forEach(_function_1);
     EList<Edge> _edges = layer.getEdges();
-    Iterable<RelationBasedEdge> _filter_1 = Iterables.<RelationBasedEdge>filter(_edges, RelationBasedEdge.class);
-    final Consumer<RelationBasedEdge> _function_1 = (RelationBasedEdge r) -> {
+    Iterable<RelationBasedEdge> _filter_2 = Iterables.<RelationBasedEdge>filter(_edges, RelationBasedEdge.class);
+    final Consumer<RelationBasedEdge> _function_2 = (RelationBasedEdge r) -> {
       final EdgeMapping edgeMapping = org.eclipse.sirius.diagram.description.DescriptionFactory.eINSTANCE.createEdgeMapping();
       EList<EdgeMapping> _edgeMappings = siriusLayer.getEdgeMappings();
       _edgeMappings.add(edgeMapping);
       this.elementsToResolve.put(r, edgeMapping);
       this.populateRelationBasedEdgeMapping(edgeMapping, r);
     };
-    _filter_1.forEach(_function_1);
+    _filter_2.forEach(_function_2);
     EList<Section> _sections = layer.getSections();
-    final Consumer<Section> _function_2 = (Section s) -> {
+    final Consumer<Section> _function_3 = (Section s) -> {
       final ToolSection toolSection = ToolFactory.eINSTANCE.createToolSection();
       EList<ToolSection> _toolSections = siriusLayer.getToolSections();
       _toolSections.add(toolSection);
       this.populateToolSection(toolSection, s);
     };
-    _sections.forEach(_function_2);
+    _sections.forEach(_function_3);
   }
   
   private Object populateAdditionalLayer(final AdditionalLayer siriusLayer, final Layer layer) {
@@ -497,6 +524,9 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
       containerCreationDescription.setName(_name);
       String _label = containerCreation.getLabel();
       containerCreationDescription.setLabel(_label);
+      String _preconditionExpression = containerCreation.getPreconditionExpression();
+      String _trimQuotes = this.trimQuotes(_preconditionExpression);
+      containerCreationDescription.setPrecondition(_trimQuotes);
       final Operation body = containerCreation.getBody();
       boolean _notEquals = (!Objects.equal(body, null));
       if (_notEquals) {
@@ -770,6 +800,9 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     String _targetFinderExpression = relationBasedEdge.getTargetFinderExpression();
     String _trimQuotes = this.trimQuotes(_targetFinderExpression);
     edgeMapping.setTargetFinderExpression(_trimQuotes);
+    String _preconditionExpression = relationBasedEdge.getPreconditionExpression();
+    String _trimQuotes_1 = this.trimQuotes(_preconditionExpression);
+    edgeMapping.setPreconditionExpression(_trimQuotes_1);
     final EdgeStyle style = relationBasedEdge.getStyle();
     boolean _notEquals = (!Objects.equal(style, null));
     if (_notEquals) {
@@ -938,6 +971,111 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     return centeringStyle;
   }
   
+  private void populateNodeMapping(final NodeMapping nodeMapping, final Node node) {
+    String _name = node.getName();
+    nodeMapping.setName(_name);
+    String _label = node.getLabel();
+    nodeMapping.setLabel(_label);
+    String _domainClass = node.getDomainClass();
+    nodeMapping.setDomainClass(_domainClass);
+    String _semanticCandidatesExpression = node.getSemanticCandidatesExpression();
+    String _trimQuotes = this.trimQuotes(_semanticCandidatesExpression);
+    nodeMapping.setSemanticCandidatesExpression(_trimQuotes);
+    String _preconditionExpression = node.getPreconditionExpression();
+    String _trimQuotes_1 = this.trimQuotes(_preconditionExpression);
+    nodeMapping.setPreconditionExpression(_trimQuotes_1);
+    NodeStyle _style = node.getStyle();
+    if ((_style instanceof Square)) {
+      NodeStyle _style_1 = node.getStyle();
+      final Square square = ((Square) _style_1);
+      final SquareDescription squareStyle = StyleFactory.eINSTANCE.createSquareDescription();
+      nodeMapping.setStyle(squareStyle);
+      this.populateSquareStyle(squareStyle, square);
+    }
+  }
+  
+  private void populateSquareStyle(final SquareDescription squareStyle, final Square square) {
+    Label _label = square.getLabel();
+    boolean _notEquals = (!Objects.equal(_label, null));
+    if (_notEquals) {
+      Label _label_1 = square.getLabel();
+      this.populateLabel(squareStyle, _label_1);
+    }
+    int _height = square.getHeight();
+    squareStyle.setHeight(Integer.valueOf(_height));
+    int _width = square.getWidth();
+    squareStyle.setWidth(Integer.valueOf(_width));
+    String _sizeComputationExpression = square.getSizeComputationExpression();
+    String _trimQuotes = this.trimQuotes(_sizeComputationExpression);
+    squareStyle.setSizeComputationExpression(_trimQuotes);
+    boolean _and = false;
+    boolean _isAllowHorizontalResizing = square.isAllowHorizontalResizing();
+    if (!_isAllowHorizontalResizing) {
+      _and = false;
+    } else {
+      boolean _isAllowVerticalResizing = square.isAllowVerticalResizing();
+      _and = _isAllowVerticalResizing;
+    }
+    if (_and) {
+      squareStyle.setResizeKind(ResizeKind.NSEW_LITERAL);
+    } else {
+      boolean _and_1 = false;
+      boolean _isAllowHorizontalResizing_1 = square.isAllowHorizontalResizing();
+      boolean _not = (!_isAllowHorizontalResizing_1);
+      if (!_not) {
+        _and_1 = false;
+      } else {
+        boolean _isAllowVerticalResizing_1 = square.isAllowVerticalResizing();
+        _and_1 = _isAllowVerticalResizing_1;
+      }
+      if (_and_1) {
+        squareStyle.setResizeKind(ResizeKind.NORTH_SOUTH_LITERAL);
+      } else {
+        boolean _and_2 = false;
+        boolean _isAllowHorizontalResizing_2 = square.isAllowHorizontalResizing();
+        if (!_isAllowHorizontalResizing_2) {
+          _and_2 = false;
+        } else {
+          boolean _isAllowVerticalResizing_2 = square.isAllowVerticalResizing();
+          boolean _not_1 = (!_isAllowVerticalResizing_2);
+          _and_2 = _not_1;
+        }
+        if (_and_2) {
+          squareStyle.setResizeKind(ResizeKind.EAST_WEST_LITERAL);
+        } else {
+          boolean _and_3 = false;
+          boolean _isAllowHorizontalResizing_3 = square.isAllowHorizontalResizing();
+          boolean _not_2 = (!_isAllowHorizontalResizing_3);
+          if (!_not_2) {
+            _and_3 = false;
+          } else {
+            boolean _isAllowVerticalResizing_3 = square.isAllowVerticalResizing();
+            boolean _not_3 = (!_isAllowVerticalResizing_3);
+            _and_3 = _not_3;
+          }
+          if (_and_3) {
+            squareStyle.setResizeKind(ResizeKind.NONE_LITERAL);
+          }
+        }
+      }
+    }
+    final Group group = this.getGroup(squareStyle);
+    boolean _and_4 = false;
+    Color _color = square.getColor();
+    boolean _notEquals_1 = (!Objects.equal(_color, null));
+    if (!_notEquals_1) {
+      _and_4 = false;
+    } else {
+      boolean _notEquals_2 = (!Objects.equal(group, null));
+      _and_4 = _notEquals_2;
+    }
+    if (_and_4) {
+      Color _color_1 = square.getColor();
+      ColorDescription _colorDescription = this.getColorDescription(group, _color_1);
+      squareStyle.setColor(_colorDescription);
+    }
+  }
+  
   private void populateContainerMapping(final ContainerMapping containerMapping, final Container container) {
     String _name = container.getName();
     containerMapping.setName(_name);
@@ -945,13 +1083,31 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     containerMapping.setLabel(_label);
     String _domainClass = container.getDomainClass();
     containerMapping.setDomainClass(_domainClass);
-    boolean _isList = container.isList();
-    if (_isList) {
-      containerMapping.setChildrenPresentation(ContainerLayout.LIST);
-    }
-    String _semanticCanditatesExpression = container.getSemanticCanditatesExpression();
-    String _trimQuotes = this.trimQuotes(_semanticCanditatesExpression);
+    String _semanticCandidatesExpression = container.getSemanticCandidatesExpression();
+    String _trimQuotes = this.trimQuotes(_semanticCandidatesExpression);
     containerMapping.setSemanticCandidatesExpression(_trimQuotes);
+    String _preconditionExpression = container.getPreconditionExpression();
+    String _trimQuotes_1 = this.trimQuotes(_preconditionExpression);
+    containerMapping.setPreconditionExpression(_trimQuotes_1);
+    ContainerChildrenPresentation _childrenPresentation = container.getChildrenPresentation();
+    if (_childrenPresentation != null) {
+      switch (_childrenPresentation) {
+        case FREE_FORM:
+          containerMapping.setChildrenPresentation(ContainerLayout.FREE_FORM);
+          break;
+        case HORIZONTAL_STACK:
+          containerMapping.setChildrenPresentation(ContainerLayout.HORIZONTAL_STACK);
+          break;
+        case LIST:
+          containerMapping.setChildrenPresentation(ContainerLayout.LIST);
+          break;
+        case VERTICAL_STACK:
+          containerMapping.setChildrenPresentation(ContainerLayout.VERTICAL_STACK);
+          break;
+        default:
+          break;
+      }
+    }
     ContainerStyle _style = container.getStyle();
     if ((_style instanceof Gradient)) {
       ContainerStyle _style_1 = container.getStyle();
@@ -966,8 +1122,8 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
         final ConditionalContainerStyleDeclaration conditionalContainerStyle = ((ConditionalContainerStyleDeclaration) s);
         final ConditionalContainerStyleDescription conditionnalStyle = org.eclipse.sirius.diagram.description.DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription();
         String _conditionalStyleExpression = conditionalContainerStyle.getConditionalStyleExpression();
-        String _trimQuotes_1 = this.trimQuotes(_conditionalStyleExpression);
-        conditionnalStyle.setPredicateExpression(_trimQuotes_1);
+        String _trimQuotes_2 = this.trimQuotes(_conditionalStyleExpression);
+        conditionnalStyle.setPredicateExpression(_trimQuotes_2);
         EList<ConditionalContainerStyleDescription> _conditionnalStyles = containerMapping.getConditionnalStyles();
         _conditionnalStyles.add(conditionnalStyle);
         final ContainerStyle style = conditionalContainerStyle.getStyle();
@@ -1021,22 +1177,25 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
   }
   
   private void populateGradientStyle(final FlatContainerStyleDescription gradientStyle, final Gradient gradient) {
-    String _labelExpression = gradient.getLabelExpression();
-    String _trimQuotes = this.trimQuotes(_labelExpression);
-    gradientStyle.setLabelExpression(_trimQuotes);
-    String _heightComputationExpression = gradient.getHeightComputationExpression();
-    boolean _notEquals = (!Objects.equal(_heightComputationExpression, null));
+    Label _label = gradient.getLabel();
+    boolean _notEquals = (!Objects.equal(_label, null));
     if (_notEquals) {
+      Label _label_1 = gradient.getLabel();
+      this.populateLabel(gradientStyle, _label_1);
+    }
+    String _heightComputationExpression = gradient.getHeightComputationExpression();
+    boolean _notEquals_1 = (!Objects.equal(_heightComputationExpression, null));
+    if (_notEquals_1) {
       String _heightComputationExpression_1 = gradient.getHeightComputationExpression();
-      String _trimQuotes_1 = this.trimQuotes(_heightComputationExpression_1);
-      gradientStyle.setHeightComputationExpression(_trimQuotes_1);
+      String _trimQuotes = this.trimQuotes(_heightComputationExpression_1);
+      gradientStyle.setHeightComputationExpression(_trimQuotes);
     }
     String _widthComputationExpression = gradient.getWidthComputationExpression();
-    boolean _notEquals_1 = (!Objects.equal(_widthComputationExpression, null));
-    if (_notEquals_1) {
+    boolean _notEquals_2 = (!Objects.equal(_widthComputationExpression, null));
+    if (_notEquals_2) {
       String _widthComputationExpression_1 = gradient.getWidthComputationExpression();
-      String _trimQuotes_2 = this.trimQuotes(_widthComputationExpression_1);
-      gradientStyle.setWidthComputationExpression(_trimQuotes_2);
+      String _trimQuotes_1 = this.trimQuotes(_widthComputationExpression_1);
+      gradientStyle.setWidthComputationExpression(_trimQuotes_1);
     }
     GradientDirection _direction = gradient.getDirection();
     boolean _equals = Objects.equal(_direction, GradientDirection.LEFTTORIGHT);
@@ -1055,32 +1214,15 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
         }
       }
     }
-    LabelAlignment _labelAlignment = gradient.getLabelAlignment();
-    boolean _equals_3 = Objects.equal(_labelAlignment, org.eclipse.sirius.viewpoint.LabelAlignment.LEFT);
-    if (_equals_3) {
-      gradientStyle.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.LEFT);
-    } else {
-      LabelAlignment _labelAlignment_1 = gradient.getLabelAlignment();
-      boolean _equals_4 = Objects.equal(_labelAlignment_1, org.eclipse.sirius.viewpoint.LabelAlignment.CENTER);
-      if (_equals_4) {
-        gradientStyle.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.CENTER);
-      } else {
-        LabelAlignment _labelAlignment_2 = gradient.getLabelAlignment();
-        boolean _equals_5 = Objects.equal(_labelAlignment_2, org.eclipse.sirius.viewpoint.LabelAlignment.RIGHT);
-        if (_equals_5) {
-          gradientStyle.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.RIGHT);
-        }
-      }
-    }
     final Group group = this.getGroup(gradientStyle);
     boolean _and = false;
     Color _backgroundColor = gradient.getBackgroundColor();
-    boolean _notEquals_2 = (!Objects.equal(_backgroundColor, null));
-    if (!_notEquals_2) {
+    boolean _notEquals_3 = (!Objects.equal(_backgroundColor, null));
+    if (!_notEquals_3) {
       _and = false;
     } else {
-      boolean _notEquals_3 = (!Objects.equal(group, null));
-      _and = _notEquals_3;
+      boolean _notEquals_4 = (!Objects.equal(group, null));
+      _and = _notEquals_4;
     }
     if (_and) {
       Color _backgroundColor_1 = gradient.getBackgroundColor();
@@ -1089,18 +1231,76 @@ public class SiriusTextDslGenerator implements IMultipleResourcesGenerator {
     }
     boolean _and_1 = false;
     Color _foregroundColor = gradient.getForegroundColor();
-    boolean _notEquals_4 = (!Objects.equal(_foregroundColor, null));
-    if (!_notEquals_4) {
+    boolean _notEquals_5 = (!Objects.equal(_foregroundColor, null));
+    if (!_notEquals_5) {
       _and_1 = false;
     } else {
-      boolean _notEquals_5 = (!Objects.equal(group, null));
-      _and_1 = _notEquals_5;
+      boolean _notEquals_6 = (!Objects.equal(group, null));
+      _and_1 = _notEquals_6;
     }
     if (_and_1) {
       Color _foregroundColor_1 = gradient.getForegroundColor();
       ColorDescription _colorDescription_1 = this.getColorDescription(group, _foregroundColor_1);
       gradientStyle.setForegroundColor(_colorDescription_1);
     }
+  }
+  
+  private void populateLabel(final LabelStyleDescription labelStyleDescription, final Label label) {
+    boolean _eIsSet = label.eIsSet(SiriusTextDslPackage.Literals.LABEL__SIZE);
+    if (_eIsSet) {
+      int _size = label.getSize();
+      labelStyleDescription.setLabelSize(_size);
+    }
+    String _expression = label.getExpression();
+    String _trimQuotes = this.trimQuotes(_expression);
+    labelStyleDescription.setLabelExpression(_trimQuotes);
+    if ((labelStyleDescription instanceof HideLabelCapabilityStyleDescription)) {
+      final HideLabelCapabilityStyleDescription hideLabelStyleDescription = ((HideLabelCapabilityStyleDescription) labelStyleDescription);
+      boolean _isHideByDefault = label.isHideByDefault();
+      hideLabelStyleDescription.setHideLabelByDefault(_isHideByDefault);
+    }
+    LabelAlignment _alignment = label.getAlignment();
+    if (_alignment != null) {
+      switch (_alignment) {
+        case CENTER:
+          labelStyleDescription.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.CENTER);
+          break;
+        case LEFT:
+          labelStyleDescription.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.LEFT);
+          break;
+        case RIGHT:
+          labelStyleDescription.setLabelAlignment(org.eclipse.sirius.viewpoint.LabelAlignment.RIGHT);
+          break;
+        default:
+          break;
+      }
+    }
+    EList<LabelFormatOption> _formatOptions = label.getFormatOptions();
+    final Consumer<LabelFormatOption> _function = (LabelFormatOption option) -> {
+      if (option != null) {
+        switch (option) {
+          case BOLD:
+            EList<FontFormat> _labelFormat = labelStyleDescription.getLabelFormat();
+            _labelFormat.add(FontFormat.BOLD_LITERAL);
+            break;
+          case ITALIC:
+            EList<FontFormat> _labelFormat_1 = labelStyleDescription.getLabelFormat();
+            _labelFormat_1.add(FontFormat.ITALIC_LITERAL);
+            break;
+          case STRIKETHROUGHT:
+            EList<FontFormat> _labelFormat_2 = labelStyleDescription.getLabelFormat();
+            _labelFormat_2.add(FontFormat.STRIKE_THROUGH_LITERAL);
+            break;
+          case UNDERLINE:
+            EList<FontFormat> _labelFormat_3 = labelStyleDescription.getLabelFormat();
+            _labelFormat_3.add(FontFormat.UNDERLINE_LITERAL);
+            break;
+          default:
+            break;
+        }
+      }
+    };
+    _formatOptions.forEach(_function);
   }
   
   private Group getGroup(final EObject eObject) {

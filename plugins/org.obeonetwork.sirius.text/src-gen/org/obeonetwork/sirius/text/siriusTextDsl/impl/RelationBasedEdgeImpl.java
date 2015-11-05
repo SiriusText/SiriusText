@@ -32,6 +32,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getSourceMappings <em>Source Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getTargetMappings <em>Target Mappings</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.RelationBasedEdgeImpl#getTargetFinderExpression <em>Target Finder Expression</em>}</li>
@@ -110,6 +111,26 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
    * @ordered
    */
   protected EdgeStyle style;
+
+  /**
+   * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreconditionExpression()
+   * @generated
+   * @ordered
+   */
+  protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreconditionExpression()
+   * @generated
+   * @ordered
+   */
+  protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSourceMappings() <em>Source Mappings</em>}' reference list.
@@ -289,6 +310,29 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPreconditionExpression()
+  {
+    return preconditionExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreconditionExpression(String newPreconditionExpression)
+  {
+    String oldPreconditionExpression = preconditionExpression;
+    preconditionExpression = newPreconditionExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.RELATION_BASED_EDGE__PRECONDITION_EXPRESSION, oldPreconditionExpression, preconditionExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Mapping> getSourceMappings()
   {
     if (sourceMappings == null)
@@ -354,6 +398,8 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
       case SiriusTextDslPackage.RELATION_BASED_EDGE__STYLE:
         if (resolve) return getStyle();
         return basicGetStyle();
+      case SiriusTextDslPackage.RELATION_BASED_EDGE__PRECONDITION_EXPRESSION:
+        return getPreconditionExpression();
       case SiriusTextDslPackage.RELATION_BASED_EDGE__SOURCE_MAPPINGS:
         return getSourceMappings();
       case SiriusTextDslPackage.RELATION_BASED_EDGE__TARGET_MAPPINGS:
@@ -386,6 +432,9 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
         return;
       case SiriusTextDslPackage.RELATION_BASED_EDGE__STYLE:
         setStyle((EdgeStyle)newValue);
+        return;
+      case SiriusTextDslPackage.RELATION_BASED_EDGE__PRECONDITION_EXPRESSION:
+        setPreconditionExpression((String)newValue);
         return;
       case SiriusTextDslPackage.RELATION_BASED_EDGE__SOURCE_MAPPINGS:
         getSourceMappings().clear();
@@ -424,6 +473,9 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
       case SiriusTextDslPackage.RELATION_BASED_EDGE__STYLE:
         setStyle((EdgeStyle)null);
         return;
+      case SiriusTextDslPackage.RELATION_BASED_EDGE__PRECONDITION_EXPRESSION:
+        setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
+        return;
       case SiriusTextDslPackage.RELATION_BASED_EDGE__SOURCE_MAPPINGS:
         getSourceMappings().clear();
         return;
@@ -455,6 +507,8 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case SiriusTextDslPackage.RELATION_BASED_EDGE__STYLE:
         return style != null;
+      case SiriusTextDslPackage.RELATION_BASED_EDGE__PRECONDITION_EXPRESSION:
+        return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null : !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
       case SiriusTextDslPackage.RELATION_BASED_EDGE__SOURCE_MAPPINGS:
         return sourceMappings != null && !sourceMappings.isEmpty();
       case SiriusTextDslPackage.RELATION_BASED_EDGE__TARGET_MAPPINGS:
@@ -482,6 +536,8 @@ public class RelationBasedEdgeImpl extends EdgeImpl implements RelationBasedEdge
     result.append(name);
     result.append(", label: ");
     result.append(label);
+    result.append(", preconditionExpression: ");
+    result.append(preconditionExpression);
     result.append(", targetFinderExpression: ");
     result.append(targetFinderExpression);
     result.append(')');

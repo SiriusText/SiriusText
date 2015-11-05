@@ -31,10 +31,10 @@ import org.obeonetwork.sirius.text.siriusTextDsl.Viewpoint;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getIconPath <em>Icon Path</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getModelFileExtensions <em>Model File Extensions</em>}</li>
- *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getIcon <em>Icon</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getRepresentations <em>Representations</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.ViewpointImpl#getJavaExtension <em>Java Extension</em>}</li>
  * </ul>
@@ -62,6 +62,26 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * @ordered
    */
   protected String documentation = DOCUMENTATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected static final String ICON_PATH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIconPath()
+   * @generated
+   * @ordered
+   */
+  protected String iconPath = ICON_PATH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -112,26 +132,6 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * @ordered
    */
   protected EList<String> modelFileExtensions;
-
-  /**
-   * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected static final String ICON_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIcon()
-   * @generated
-   * @ordered
-   */
-  protected String icon = ICON_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRepresentations() <em>Representations</em>}' reference list.
@@ -202,6 +202,29 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getIconPath()
+  {
+    return iconPath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIconPath(String newIconPath)
+  {
+    String oldIconPath = iconPath;
+    iconPath = newIconPath;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.VIEWPOINT__ICON_PATH, oldIconPath, iconPath));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -262,29 +285,6 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIcon()
-  {
-    return icon;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIcon(String newIcon)
-  {
-    String oldIcon = icon;
-    icon = newIcon;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.VIEWPOINT__ICON, oldIcon, icon));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Representation> getRepresentations()
   {
     if (representations == null)
@@ -320,14 +320,14 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
     {
       case SiriusTextDslPackage.VIEWPOINT__DOCUMENTATION:
         return getDocumentation();
+      case SiriusTextDslPackage.VIEWPOINT__ICON_PATH:
+        return getIconPath();
       case SiriusTextDslPackage.VIEWPOINT__NAME:
         return getName();
       case SiriusTextDslPackage.VIEWPOINT__LABEL:
         return getLabel();
       case SiriusTextDslPackage.VIEWPOINT__MODEL_FILE_EXTENSIONS:
         return getModelFileExtensions();
-      case SiriusTextDslPackage.VIEWPOINT__ICON:
-        return getIcon();
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         return getRepresentations();
       case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
@@ -350,6 +350,9 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case SiriusTextDslPackage.VIEWPOINT__DOCUMENTATION:
         setDocumentation((String)newValue);
         return;
+      case SiriusTextDslPackage.VIEWPOINT__ICON_PATH:
+        setIconPath((String)newValue);
+        return;
       case SiriusTextDslPackage.VIEWPOINT__NAME:
         setName((String)newValue);
         return;
@@ -359,9 +362,6 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case SiriusTextDslPackage.VIEWPOINT__MODEL_FILE_EXTENSIONS:
         getModelFileExtensions().clear();
         getModelFileExtensions().addAll((Collection<? extends String>)newValue);
-        return;
-      case SiriusTextDslPackage.VIEWPOINT__ICON:
-        setIcon((String)newValue);
         return;
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         getRepresentations().clear();
@@ -388,6 +388,9 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case SiriusTextDslPackage.VIEWPOINT__DOCUMENTATION:
         setDocumentation(DOCUMENTATION_EDEFAULT);
         return;
+      case SiriusTextDslPackage.VIEWPOINT__ICON_PATH:
+        setIconPath(ICON_PATH_EDEFAULT);
+        return;
       case SiriusTextDslPackage.VIEWPOINT__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -396,9 +399,6 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return;
       case SiriusTextDslPackage.VIEWPOINT__MODEL_FILE_EXTENSIONS:
         getModelFileExtensions().clear();
-        return;
-      case SiriusTextDslPackage.VIEWPOINT__ICON:
-        setIcon(ICON_EDEFAULT);
         return;
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         getRepresentations().clear();
@@ -422,14 +422,14 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
     {
       case SiriusTextDslPackage.VIEWPOINT__DOCUMENTATION:
         return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+      case SiriusTextDslPackage.VIEWPOINT__ICON_PATH:
+        return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
       case SiriusTextDslPackage.VIEWPOINT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SiriusTextDslPackage.VIEWPOINT__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case SiriusTextDslPackage.VIEWPOINT__MODEL_FILE_EXTENSIONS:
         return modelFileExtensions != null && !modelFileExtensions.isEmpty();
-      case SiriusTextDslPackage.VIEWPOINT__ICON:
-        return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
       case SiriusTextDslPackage.VIEWPOINT__REPRESENTATIONS:
         return representations != null && !representations.isEmpty();
       case SiriusTextDslPackage.VIEWPOINT__JAVA_EXTENSION:
@@ -451,14 +451,14 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (documentation: ");
     result.append(documentation);
+    result.append(", iconPath: ");
+    result.append(iconPath);
     result.append(", name: ");
     result.append(name);
     result.append(", label: ");
     result.append(label);
     result.append(", modelFileExtensions: ");
     result.append(modelFileExtensions);
-    result.append(", icon: ");
-    result.append(icon);
     result.append(')');
     return result.toString();
   }

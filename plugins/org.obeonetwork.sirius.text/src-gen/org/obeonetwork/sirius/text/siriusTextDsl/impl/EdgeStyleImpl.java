@@ -3,6 +3,7 @@
 package org.obeonetwork.sirius.text.siriusTextDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.obeonetwork.sirius.text.siriusTextDsl.ArrowDecorator;
 import org.obeonetwork.sirius.text.siriusTextDsl.Color;
+import org.obeonetwork.sirius.text.siriusTextDsl.EdgeLabel;
 import org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle;
 import org.obeonetwork.sirius.text.siriusTextDsl.EndsCentering;
 import org.obeonetwork.sirius.text.siriusTextDsl.FoldingStyle;
@@ -30,6 +32,7 @@ import org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getStrokeColor <em>Stroke Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getLineStyle <em>Line Style</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getRoutingStyle <em>Routing Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getSourceArrow <em>Source Arrow</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getTargetArrow <em>Target Arrow</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.impl.EdgeStyleImpl#getSizeComputationExpression <em>Size Computation Expression</em>}</li>
@@ -110,6 +113,16 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
    * @ordered
    */
   protected RoutingStyle routingStyle = ROUTING_STYLE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getLabel() <em>Label</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLabel()
+   * @generated
+   * @ordered
+   */
+  protected EdgeLabel label;
 
   /**
    * The default value of the '{@link #getSourceArrow() <em>Source Arrow</em>}' attribute.
@@ -349,6 +362,54 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
    * <!-- end-user-doc -->
    * @generated
    */
+  public EdgeLabel getLabel()
+  {
+    return label;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLabel(EdgeLabel newLabel, NotificationChain msgs)
+  {
+    EdgeLabel oldLabel = label;
+    label = newLabel;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.EDGE_STYLE__LABEL, oldLabel, newLabel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLabel(EdgeLabel newLabel)
+  {
+    if (newLabel != label)
+    {
+      NotificationChain msgs = null;
+      if (label != null)
+        msgs = ((InternalEObject)label).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.EDGE_STYLE__LABEL, null, msgs);
+      if (newLabel != null)
+        msgs = ((InternalEObject)newLabel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SiriusTextDslPackage.EDGE_STYLE__LABEL, null, msgs);
+      msgs = basicSetLabel(newLabel, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SiriusTextDslPackage.EDGE_STYLE__LABEL, newLabel, newLabel));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ArrowDecorator getSourceArrow()
   {
     return sourceArrow;
@@ -465,6 +526,22 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SiriusTextDslPackage.EDGE_STYLE__LABEL:
+        return basicSetLabel(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -478,6 +555,8 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
         return getLineStyle();
       case SiriusTextDslPackage.EDGE_STYLE__ROUTING_STYLE:
         return getRoutingStyle();
+      case SiriusTextDslPackage.EDGE_STYLE__LABEL:
+        return getLabel();
       case SiriusTextDslPackage.EDGE_STYLE__SOURCE_ARROW:
         return getSourceArrow();
       case SiriusTextDslPackage.EDGE_STYLE__TARGET_ARROW:
@@ -513,6 +592,9 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
         return;
       case SiriusTextDslPackage.EDGE_STYLE__ROUTING_STYLE:
         setRoutingStyle((RoutingStyle)newValue);
+        return;
+      case SiriusTextDslPackage.EDGE_STYLE__LABEL:
+        setLabel((EdgeLabel)newValue);
         return;
       case SiriusTextDslPackage.EDGE_STYLE__SOURCE_ARROW:
         setSourceArrow((ArrowDecorator)newValue);
@@ -555,6 +637,9 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
       case SiriusTextDslPackage.EDGE_STYLE__ROUTING_STYLE:
         setRoutingStyle(ROUTING_STYLE_EDEFAULT);
         return;
+      case SiriusTextDslPackage.EDGE_STYLE__LABEL:
+        setLabel((EdgeLabel)null);
+        return;
       case SiriusTextDslPackage.EDGE_STYLE__SOURCE_ARROW:
         setSourceArrow(SOURCE_ARROW_EDEFAULT);
         return;
@@ -592,6 +677,8 @@ public class EdgeStyleImpl extends StyleImpl implements EdgeStyle
         return lineStyle != LINE_STYLE_EDEFAULT;
       case SiriusTextDslPackage.EDGE_STYLE__ROUTING_STYLE:
         return routingStyle != ROUTING_STYLE_EDEFAULT;
+      case SiriusTextDslPackage.EDGE_STYLE__LABEL:
+        return label != null;
       case SiriusTextDslPackage.EDGE_STYLE__SOURCE_ARROW:
         return sourceArrow != SOURCE_ARROW_EDEFAULT;
       case SiriusTextDslPackage.EDGE_STYLE__TARGET_ARROW:

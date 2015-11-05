@@ -177,8 +177,8 @@ class DesignerParserTests {
 			
 			designer DartDesigner as 'Dart Designer' {
 				
+				@IconPath('/org.obeonetwork.sirius.text.dartdesigner/icons/obj16/viewpoints/architect.png')
 				viewpoint Architect {
-					icon = 'platform:/resource/org.obeonetwork.sirius.text.dartdesigner/icons/obj16/viewpoints/architect.png'
 				}
 			}
 		'''.parse.assertNoErrors
@@ -367,9 +367,9 @@ class DesignerParserTests {
 			
 			designer DartDesigner as 'Dart Designer' {
 				
+				@IconPath('/org.obeonetwork.sirius.text.dartdesigner/icons/obj16/viewpoints/architect.png')
 				viewpoint Architect {
 					modelFileExtensions = ['dartspec']
-					icon = 'platform:/resource/org.obeonetwork.sirius.text.dartdesigner/icons/obj16/viewpoints/architect.png'
 					representations = [
 						ClassDiagram,
 						org.obeonetwork.sirius.text.dartdesigner.components.ComponentDiagram

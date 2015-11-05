@@ -27,8 +27,8 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	protected AbstractElementAlias match_CreateInstance___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q;
 	protected AbstractElementAlias match_CreateView___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q;
 	protected AbstractElementAlias match_DeleteView___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
-	protected AbstractElementAlias match_Diagram_MetamodelUrisKeyword_4_p;
-	protected AbstractElementAlias match_Diagram___AdditionalLayersKeyword_20_0_EqualsSignKeyword_20_1_LeftSquareBracketKeyword_20_2_RightSquareBracketKeyword_20_4__q;
+	protected AbstractElementAlias match_Diagram_MetamodelUrisKeyword_4_0_p;
+	protected AbstractElementAlias match_Diagram___AdditionalLayersKeyword_16_0_EqualsSignKeyword_16_1_LeftSquareBracketKeyword_16_2_RightSquareBracketKeyword_16_4__q;
 	protected AbstractElementAlias match_Layer___EdgesKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q;
 	protected AbstractElementAlias match_Layer___MappingsKeyword_5_0_EqualsSignKeyword_5_1_LeftSquareBracketKeyword_5_2_RightSquareBracketKeyword_5_4__q;
 	protected AbstractElementAlias match_Layer___SectionsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q;
@@ -49,8 +49,8 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 		match_CreateInstance___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateInstanceAccess().getLeftCurlyBracketKeyword_12_0()), new TokenAlias(false, false, grammarAccess.getCreateInstanceAccess().getRightCurlyBracketKeyword_12_2()));
 		match_CreateView___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCreateViewAccess().getLeftCurlyBracketKeyword_12_0()), new TokenAlias(false, false, grammarAccess.getCreateViewAccess().getRightCurlyBracketKeyword_12_2()));
 		match_DeleteView___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDeleteViewAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDeleteViewAccess().getRightCurlyBracketKeyword_3_2()));
-		match_Diagram_MetamodelUrisKeyword_4_p = new TokenAlias(true, false, grammarAccess.getDiagramAccess().getMetamodelUrisKeyword_4());
-		match_Diagram___AdditionalLayersKeyword_20_0_EqualsSignKeyword_20_1_LeftSquareBracketKeyword_20_2_RightSquareBracketKeyword_20_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDiagramAccess().getAdditionalLayersKeyword_20_0()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getEqualsSignKeyword_20_1()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getLeftSquareBracketKeyword_20_2()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getRightSquareBracketKeyword_20_4()));
+		match_Diagram_MetamodelUrisKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getDiagramAccess().getMetamodelUrisKeyword_4_0());
+		match_Diagram___AdditionalLayersKeyword_16_0_EqualsSignKeyword_16_1_LeftSquareBracketKeyword_16_2_RightSquareBracketKeyword_16_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDiagramAccess().getAdditionalLayersKeyword_16_0()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getEqualsSignKeyword_16_1()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getLeftSquareBracketKeyword_16_2()), new TokenAlias(false, false, grammarAccess.getDiagramAccess().getRightSquareBracketKeyword_16_4()));
 		match_Layer___EdgesKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getLayerAccess().getEdgesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getEqualsSignKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_6_2()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_6_4()));
 		match_Layer___MappingsKeyword_5_0_EqualsSignKeyword_5_1_LeftSquareBracketKeyword_5_2_RightSquareBracketKeyword_5_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getLayerAccess().getMappingsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getEqualsSignKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_5_2()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_5_4()));
 		match_Layer___SectionsKeyword_7_0_EqualsSignKeyword_7_1_LeftSquareBracketKeyword_7_2_RightSquareBracketKeyword_7_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getLayerAccess().getSectionsKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getEqualsSignKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getLeftSquareBracketKeyword_7_2()), new TokenAlias(false, false, grammarAccess.getLayerAccess().getRightSquareBracketKeyword_7_4()));
@@ -87,10 +87,10 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 				emit_CreateView___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_DeleteView___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
 				emit_DeleteView___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Diagram_MetamodelUrisKeyword_4_p.equals(syntax))
-				emit_Diagram_MetamodelUrisKeyword_4_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Diagram___AdditionalLayersKeyword_20_0_EqualsSignKeyword_20_1_LeftSquareBracketKeyword_20_2_RightSquareBracketKeyword_20_4__q.equals(syntax))
-				emit_Diagram___AdditionalLayersKeyword_20_0_EqualsSignKeyword_20_1_LeftSquareBracketKeyword_20_2_RightSquareBracketKeyword_20_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Diagram_MetamodelUrisKeyword_4_0_p.equals(syntax))
+				emit_Diagram_MetamodelUrisKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Diagram___AdditionalLayersKeyword_16_0_EqualsSignKeyword_16_1_LeftSquareBracketKeyword_16_2_RightSquareBracketKeyword_16_4__q.equals(syntax))
+				emit_Diagram___AdditionalLayersKeyword_16_0_EqualsSignKeyword_16_1_LeftSquareBracketKeyword_16_2_RightSquareBracketKeyword_16_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Layer___EdgesKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q.equals(syntax))
 				emit_Layer___EdgesKeyword_6_0_EqualsSignKeyword_6_1_LeftSquareBracketKeyword_6_2_RightSquareBracketKeyword_6_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Layer___MappingsKeyword_5_0_EqualsSignKeyword_5_1_LeftSquareBracketKeyword_5_2_RightSquareBracketKeyword_5_4__q.equals(syntax))
@@ -133,14 +133,12 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 * This ambiguous syntax occurs at:
 	 *     containerMappings+=[Mapping|QualifiedName] ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
 	 *     containerMappings+=[Mapping|QualifiedName] ']' (ambiguity) 'begin' '{' body=Operation
-	 *     icon=STRING 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
-	 *     icon=STRING 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
 	 *     label=STRING '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
 	 *     label=STRING '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
 	 *     name=ID '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
 	 *     name=ID '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
-	 *     precondition=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
-	 *     precondition=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
+	 *     preconditionExpression=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' '}' '}' (rule end)
+	 *     preconditionExpression=EXPRESSION '{' 'containerMappings' '=' '[' ']' (ambiguity) 'begin' '{' body=Operation
 	 */
 	protected void emit_ContainerCreation___ExtraMappingsKeyword_21_0_EqualsSignKeyword_21_1_LeftSquareBracketKeyword_21_2_RightSquareBracketKeyword_21_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -201,7 +199,7 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     initialized?='@Initialized' (ambiguity) '({' metamodelUris+=STRING
 	 *     showOnStartup?='@ShowOnStartup' (ambiguity) '({' metamodelUris+=STRING
 	 */
-	protected void emit_Diagram_MetamodelUrisKeyword_4_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Diagram_MetamodelUrisKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -213,11 +211,11 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     defaultLayer=[Layer|QualifiedName] (ambiguity) '}' (rule end)
 	 *     domainClass=STRING '{' (ambiguity) '}' (rule end)
 	 *     endUserDocumentation=STRING (ambiguity) '}' (rule end)
-	 *     precondition=EXPRESSION '{' (ambiguity) '}' (rule end)
+	 *     preconditionExpression=EXPRESSION '{' (ambiguity) '}' (rule end)
 	 *     rootExpression=EXPRESSION (ambiguity) '}' (rule end)
 	 *     titleExpression=EXPRESSION (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Diagram___AdditionalLayersKeyword_20_0_EqualsSignKeyword_20_1_LeftSquareBracketKeyword_20_2_RightSquareBracketKeyword_20_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Diagram___AdditionalLayersKeyword_16_0_EqualsSignKeyword_16_1_LeftSquareBracketKeyword_16_2_RightSquareBracketKeyword_16_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -226,8 +224,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     ('edges' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING ('mappings' '=' '[' ']')? (ambiguity) 'sections' '=' '[' sections+=[Section|QualifiedName]
-	 *     icon=STRING ('mappings' '=' '[' ']')? (ambiguity) ('sections' '=' '[' ']')? '}' (rule end)
 	 *     mappings+=[Mapping|QualifiedName] ']' (ambiguity) 'sections' '=' '[' sections+=[Section|QualifiedName]
 	 *     mappings+=[Mapping|QualifiedName] ']' (ambiguity) ('sections' '=' '[' ']')? '}' (rule end)
 	 *     name=ID '{' ('mappings' '=' '[' ']')? (ambiguity) 'sections' '=' '[' sections+=[Section|QualifiedName]
@@ -242,9 +238,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     ('mappings' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING (ambiguity) 'edges' '=' '[' edges+=[Edge|QualifiedName]
-	 *     icon=STRING (ambiguity) ('edges' '=' '[' ']')? 'sections' '=' '[' sections+=[Section|QualifiedName]
-	 *     icon=STRING (ambiguity) ('edges' '=' '[' ']')? ('sections' '=' '[' ']')? '}' (rule end)
 	 *     name=ID '{' (ambiguity) 'edges' '=' '[' edges+=[Edge|QualifiedName]
 	 *     name=ID '{' (ambiguity) ('edges' '=' '[' ']')? 'sections' '=' '[' sections+=[Section|QualifiedName]
 	 *     name=ID '{' (ambiguity) ('edges' '=' '[' ']')? ('sections' '=' '[' ']')? '}' (rule end)
@@ -259,7 +252,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     edges+=[Edge|QualifiedName] ']' (ambiguity) '}' (rule end)
-	 *     icon=STRING ('mappings' '=' '[' ']')? ('edges' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 *     mappings+=[Mapping|QualifiedName] ']' ('edges' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 *     name=ID '{' ('mappings' '=' '[' ']')? ('edges' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 */
@@ -294,7 +286,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     ('tools' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING (ambiguity) '}' (rule end)
 	 *     label=STRING '{' (ambiguity) '}' (rule end)
 	 *     name=ID '{' (ambiguity) '}' (rule end)
 	 */
@@ -330,7 +321,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     ('javaExtensions' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 *     label=STRING '{' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 *     modelFileExtensions+=STRING ']' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
 	 *     name=ID '{' ('representations' '=' '[' ']')? (ambiguity) '}' (rule end)
@@ -345,8 +335,6 @@ public class SiriusTextDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 *     ('representations' '=' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     icon=STRING (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
-	 *     icon=STRING (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
 	 *     label=STRING '{' (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]
 	 *     label=STRING '{' (ambiguity) ('javaExtensions' '=' '[' ']')? '}' (rule end)
 	 *     modelFileExtensions+=STRING ']' (ambiguity) 'javaExtensions' '=' '[' javaExtension+=[JvmType|QualifiedName]

@@ -16,6 +16,7 @@ package org.obeonetwork.sirius.text.siriusTextDsl;
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getStrokeColor <em>Stroke Color</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLineStyle <em>Line Style</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getRoutingStyle <em>Routing Style</em>}</li>
+ *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLabel <em>Label</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSourceArrow <em>Source Arrow</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getTargetArrow <em>Target Arrow</em>}</li>
  *   <li>{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getSizeComputationExpression <em>Size Computation Expression</em>}</li>
@@ -138,6 +139,32 @@ public interface EdgeStyle extends Style
    * @generated
    */
   void setRoutingStyle(RoutingStyle value);
+
+  /**
+   * Returns the value of the '<em><b>Label</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Label</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Label</em>' containment reference.
+   * @see #setLabel(EdgeLabel)
+   * @see org.obeonetwork.sirius.text.siriusTextDsl.SiriusTextDslPackage#getEdgeStyle_Label()
+   * @model containment="true"
+   * @generated
+   */
+  EdgeLabel getLabel();
+
+  /**
+   * Sets the value of the '{@link org.obeonetwork.sirius.text.siriusTextDsl.EdgeStyle#getLabel <em>Label</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Label</em>' containment reference.
+   * @see #getLabel()
+   * @generated
+   */
+  void setLabel(EdgeLabel value);
 
   /**
    * Returns the value of the '<em><b>Source Arrow</b></em>' attribute.
