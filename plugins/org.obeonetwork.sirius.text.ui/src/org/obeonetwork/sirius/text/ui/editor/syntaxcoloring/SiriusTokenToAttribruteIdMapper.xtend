@@ -17,7 +17,6 @@ class SiriusTokenToAttribruteIdMapper extends DefaultAntlrTokenToAttributeIdMapp
 		"'createInstance'" -> SiriusHighlightingConfiguration.OPERATION_ID,
 		"'referenceName'" -> SiriusHighlightingConfiguration.PARAMETER_NAME_ID,
 		"'type'" -> SiriusHighlightingConfiguration.PARAMETER_NAME_ID,
-		"'as'" -> SiriusHighlightingConfiguration.AS_ID,
 		"'createView'" -> SiriusHighlightingConfiguration.OPERATION_ID,
 		"'sourceExpression'" -> SiriusHighlightingConfiguration.PARAMETER_NAME_ID,
 		"'targetExpression'" -> SiriusHighlightingConfiguration.PARAMETER_NAME_ID,

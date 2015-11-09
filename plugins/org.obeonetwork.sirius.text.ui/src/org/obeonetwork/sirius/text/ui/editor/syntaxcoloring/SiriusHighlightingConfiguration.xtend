@@ -18,7 +18,6 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 	public static final String PARAMETER_NAME_ID = "parameter name"
 	public static final String FOR_ID = "for"
 	public static final String IF_ID = "if"
-	public static final String AS_ID = "as"
 	public static final String SWITCH_ID = "switch"
 	public static final String ANNOTATION_ID = "annotation"
 	
@@ -34,7 +33,6 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 		acceptor.acceptDefaultHighlighting(PARAMETER_NAME_ID, "Parameter Name", parameterNameTextStyle)
 		acceptor.acceptDefaultHighlighting(FOR_ID, "For", forTextStyle)
 		acceptor.acceptDefaultHighlighting(IF_ID, "If", ifTextStyle)
-		acceptor.acceptDefaultHighlighting(AS_ID, "As", asTextStyle)
 		acceptor.acceptDefaultHighlighting(SWITCH_ID, "Switch", switchTextStyle)
 		acceptor.acceptDefaultHighlighting(ANNOTATION_ID, "As", annotationTextStyle)
 	}
@@ -96,11 +94,6 @@ class SiriusHighlightingConfiguration implements IHighlightingConfiguration {
 		val textStyle = defaultTextStyle.copy
 		textStyle.setColor(new RGB(127, 0, 85))
 		textStyle.setStyle(SWT.BOLD)
-		return textStyle
-	}
-	
-	def TextStyle asTextStyle() {
-		val textStyle = defaultTextStyle.copy
 		return textStyle
 	}
 	

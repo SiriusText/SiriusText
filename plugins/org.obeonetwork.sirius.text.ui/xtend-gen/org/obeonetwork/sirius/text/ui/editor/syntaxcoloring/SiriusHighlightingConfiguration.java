@@ -30,8 +30,6 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
   
   public final static String IF_ID = "if";
   
-  public final static String AS_ID = "as";
-  
   public final static String SWITCH_ID = "switch";
   
   public final static String ANNOTATION_ID = "annotation";
@@ -60,8 +58,6 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.FOR_ID, "For", _forTextStyle);
     TextStyle _ifTextStyle = this.ifTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.IF_ID, "If", _ifTextStyle);
-    TextStyle _asTextStyle = this.asTextStyle();
-    acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.AS_ID, "As", _asTextStyle);
     TextStyle _switchTextStyle = this.switchTextStyle();
     acceptor.acceptDefaultHighlighting(SiriusHighlightingConfiguration.SWITCH_ID, "Switch", _switchTextStyle);
     TextStyle _annotationTextStyle = this.annotationTextStyle();
@@ -141,12 +137,6 @@ public class SiriusHighlightingConfiguration implements IHighlightingConfigurati
     RGB _rGB = new RGB(127, 0, 85);
     textStyle.setColor(_rGB);
     textStyle.setStyle(SWT.BOLD);
-    return textStyle;
-  }
-  
-  public TextStyle asTextStyle() {
-    TextStyle _defaultTextStyle = this.defaultTextStyle();
-    final TextStyle textStyle = _defaultTextStyle.copy();
     return textStyle;
   }
   
